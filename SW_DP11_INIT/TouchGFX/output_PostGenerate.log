@@ -1,105 +1,19 @@
-<File>
-  <FileName>FrontendApplication.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/gui/src/common/frontendapplication.cpp</FilePath>
-</File>
-<File>
-  <FileName>Model.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
-</File>
-<File>
-  <FileName>Screen1Presenter.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/gui/src/screen1_screen/screen1presenter.cpp</FilePath>
-</File>
-<File>
-  <FileName>Screen1View.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/gui/src/screen1_screen/screen1view.cpp</FilePath>
-</File>
-<File>
-  <FileName>ApplicationFontProvider.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/applicationfontprovider.cpp</FilePath>
-</File>
-<File>
-  <FileName>BitmapDatabase.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
-</File>
-<File>
-  <FileName>Font_verdana_10_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Font_verdana_20_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Font_verdana_40_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/font_verdana_40_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>FontGetters.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/fontgetters.cpp</FilePath>
-</File>
-<File>
-  <FileName>FrontendApplicationBase.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
-</File>
-<File>
-  <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_20_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Kerning_verdana_40_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>LanguageGb.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/texts/src/languagegb.cpp</FilePath>
-</File>
-<File>
-  <FileName>Screen1ViewBase.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
-</File>
-<File>
-  <FileName>Table_verdana_10_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/table_verdana_10_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Table_verdana_20_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/table_verdana_20_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Table_verdana_40_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/table_verdana_40_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Texts.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/texts/src/texts.cpp</FilePath>
-</File>
-<File>
-  <FileName>TypedTextDatabase.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/texts/src/typedtextdatabase.cpp</FilePath>
-</File>
+C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx/generators/keil_project_updater.rb:115:in `read': No such file or directory - ../MDK-ARM/SW_DP11_INIT.uvprojx (Errno::ENOENT)
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx/generators/keil_project_updater.rb:115:in `project_file_contents'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx/generators/keil_project_updater.rb:119:in `project_file_xml'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx/generators/keil_project_updater.rb:33:in `check_project_node'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx/generators/keil_project_updater.rb:22:in `run'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx/generators/update_project.rb:44:in `run'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx/cli/inside.rb:45:in `update_project'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx.rb:16:in `<module:CLI>'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx.rb:9:in `<module:TouchGFX>'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/lib/touchgfx.rb:8:in `<top (required)>'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/site_ruby/1.9.1/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/site_ruby/1.9.1/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/lib/ruby/gems/1.9.1/gems/touchgfx-cli-4.10.0/bin/touchgfx:6:in `<top (required)>'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/bin/touchgfx:22:in `load'
+	from C:/TouchGFX/4.10.0/env/MinGW/msys/1.0/Ruby193/bin/touchgfx:22:in `<main>'
