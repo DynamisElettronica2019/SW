@@ -1,0 +1,6 @@
+Eliminare un branch in locale:
+git branch -d nomebranchlocale
+
+
+Eliminare un branch in remoto:
+git push origin --delete nomebranchremoto
