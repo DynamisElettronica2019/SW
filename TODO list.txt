@@ -1,0 +1,4 @@
+-github?
+-Nascondere i blocchi dentro ai subsystem della libreria
+- portare fuori Efi_setRPMLimiter da CAN
+- generare il codice da GCU_Model con referenced models
