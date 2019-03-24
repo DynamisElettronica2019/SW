@@ -161,7 +161,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     __HAL_LINKDMA(hadc,DMA_Handle,hdma_adc1);
 
     /* ADC1 interrupt Init */
-    HAL_NVIC_SetPriority(ADC_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(ADC_IRQn, 14, 0);
     HAL_NVIC_EnableIRQ(ADC_IRQn);
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
@@ -238,8 +238,10 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* hcan)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* CAN1 interrupt Init */
-    HAL_NVIC_SetPriority(CAN1_TX_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(CAN1_TX_IRQn, 9, 0);
     HAL_NVIC_EnableIRQ(CAN1_TX_IRQn);
+    HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 9, 0);
+    HAL_NVIC_EnableIRQ(CAN1_RX0_IRQn);
   /* USER CODE BEGIN CAN1_MspInit 1 */
 
   /* USER CODE END CAN1_MspInit 1 */
@@ -273,6 +275,7 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* hcan)
 
     /* CAN1 interrupt DeInit */
     HAL_NVIC_DisableIRQ(CAN1_TX_IRQn);
+    HAL_NVIC_DisableIRQ(CAN1_RX0_IRQn);
   /* USER CODE BEGIN CAN1_MspDeInit 1 */
 
   /* USER CODE END CAN1_MspDeInit 1 */
@@ -357,6 +360,11 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
 
     /* Peripheral clock enable */
     __HAL_RCC_I2C1_CLK_ENABLE();
+    /* I2C1 interrupt Init */
+    HAL_NVIC_SetPriority(I2C1_EV_IRQn, 14, 0);
+    HAL_NVIC_EnableIRQ(I2C1_EV_IRQn);
+    HAL_NVIC_SetPriority(I2C1_ER_IRQn, 14, 0);
+    HAL_NVIC_EnableIRQ(I2C1_ER_IRQn);
   /* USER CODE BEGIN I2C1_MspInit 1 */
 
   /* USER CODE END I2C1_MspInit 1 */
@@ -388,6 +396,9 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
     */
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_7|GPIO_PIN_8);
 
+    /* I2C1 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(I2C1_EV_IRQn);
+    HAL_NVIC_DisableIRQ(I2C1_ER_IRQn);
   /* USER CODE BEGIN I2C1_MspDeInit 1 */
 
   /* USER CODE END I2C1_MspDeInit 1 */
@@ -452,7 +463,7 @@ void HAL_QSPI_MspInit(QSPI_HandleTypeDef* hqspi)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* QUADSPI interrupt Init */
-    HAL_NVIC_SetPriority(QUADSPI_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(QUADSPI_IRQn, 15, 0);
     HAL_NVIC_EnableIRQ(QUADSPI_IRQn);
   /* USER CODE BEGIN QUADSPI_MspInit 1 */
 
@@ -598,7 +609,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
     /* Peripheral clock enable */
     __HAL_RCC_TIM7_CLK_ENABLE();
     /* TIM7 interrupt Init */
-    HAL_NVIC_SetPriority(TIM7_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(TIM7_IRQn, 11, 0);
     HAL_NVIC_EnableIRQ(TIM7_IRQn);
   /* USER CODE BEGIN TIM7_MspInit 1 */
 

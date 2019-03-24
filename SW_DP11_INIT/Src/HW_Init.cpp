@@ -346,8 +346,10 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef* ltdcHandle)
     HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
     /* Peripheral interrupt init */
-    HAL_NVIC_SetPriority(LTDC_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(LTDC_IRQn, 10, 0);
     HAL_NVIC_EnableIRQ(LTDC_IRQn);
+    HAL_NVIC_SetPriority(LTDC_ER_IRQn, 10, 0);
+    HAL_NVIC_EnableIRQ(LTDC_ER_IRQn);
   /* USER CODE BEGIN LTDC_MspInit 1 */
 
   /* USER CODE END LTDC_MspInit 1 */
@@ -403,6 +405,8 @@ void HAL_LTDC_MspDeInit(LTDC_HandleTypeDef* ltdcHandle)
 
     /* Peripheral interrupt Deinit*/
     HAL_NVIC_DisableIRQ(LTDC_IRQn);
+
+    HAL_NVIC_DisableIRQ(LTDC_ER_IRQn);
 
   /* USER CODE BEGIN LTDC_MspDeInit 1 */
 
@@ -513,7 +517,7 @@ static void HAL_FMC_MspInit(void){
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /* Peripheral interrupt init */
-  HAL_NVIC_SetPriority(FMC_IRQn, 12, 0);
+  HAL_NVIC_SetPriority(FMC_IRQn, 15, 0);
   HAL_NVIC_EnableIRQ(FMC_IRQn);
   /* USER CODE BEGIN FMC_MspInit 1 */
 
@@ -629,7 +633,7 @@ void HAL_DMA2D_MspInit(DMA2D_HandleTypeDef* dma2dHandle)
     __HAL_RCC_DMA2D_CLK_ENABLE();
 
     /* Peripheral interrupt init */
-    HAL_NVIC_SetPriority(DMA2D_IRQn, 10, 0);
+    HAL_NVIC_SetPriority(DMA2D_IRQn, 15, 0);
     HAL_NVIC_EnableIRQ(DMA2D_IRQn);
   /* USER CODE BEGIN DMA2D_MspInit 1 */
 

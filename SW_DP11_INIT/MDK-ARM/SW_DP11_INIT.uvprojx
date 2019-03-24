@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Src;../TouchGFX/generated/fonts/include;../TouchGFX/generated/texts/include;../TouchGFX/generated/images/include;../TouchGFX/generated/gui_generated/include;../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;     ../Src;     ../TouchGFX/generated/fonts/include;     ../TouchGFX/generated/texts/include;     ../TouchGFX/generated/images/include;     ../TouchGFX/generated/gui_generated/include;     ../TouchGFX/gui/include;     ../middlewares/st/touchgfx/touchgfx/framework/include;     ../Drivers/STM32F7xx_HAL_Driver/Inc;     ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;     ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;     ../Drivers/CMSIS/Include;    ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -390,6 +390,11 @@
         <Group>
           <GroupName>Application/User</GroupName>
           <Files>
+            <File>
+              <FileName>d_ltdc_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\d_ltdc_init.c</FilePath>
+            </File>
             <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
@@ -449,11 +454,6 @@
               <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/stm32f7xx_hal_timebase_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>d_ltdc_init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\d_ltdc_init.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -669,6 +669,11 @@
               <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
               <FileName>OSWrappers.cpp</FileName>

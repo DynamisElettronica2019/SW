@@ -1,5 +1,6 @@
 --cpu Cortex-M7.fp.sp
 "sw_dp11_init\startup_stm32f746xx.o"
+"sw_dp11_init\d_ltdc_init.o"
 "sw_dp11_init\main.o"
 "sw_dp11_init\freertos.o"
 "sw_dp11_init\boardconfiguration.o"
@@ -12,7 +13,6 @@
 "sw_dp11_init\stm32f7xx_it.o"
 "sw_dp11_init\stm32f7xx_hal_msp.o"
 "sw_dp11_init\stm32f7xx_hal_timebase_tim.o"
-"sw_dp11_init\d_ltdc_init.o"
 "sw_dp11_init\stm32f7xx_hal_dma2d.o"
 "sw_dp11_init\stm32f7xx_ll_fmc.o"
 "sw_dp11_init\stm32f7xx_hal_sdram.o"
@@ -52,6 +52,7 @@
 "sw_dp11_init\heap_4.o"
 "sw_dp11_init\port.o"
 "../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib"
+"../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib"
 "sw_dp11_init\oswrappers.o"
 "sw_dp11_init\frontendapplication.o"
 "sw_dp11_init\model.o"
