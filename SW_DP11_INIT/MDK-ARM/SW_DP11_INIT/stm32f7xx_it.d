@@ -1,7 +1,7 @@
-sw_dp11_init\stm32f7xx_it.o: ../Src/stm32f7xx_it.c
-sw_dp11_init\stm32f7xx_it.o: ../Inc/main.h
+sw_dp11_init\stm32f7xx_it.o: ../Core/Src/stm32f7xx_it.c
+sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/main.h
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\stm32f7xx_it.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
@@ -41,11 +41,11 @@ sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_q
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
-sw_dp11_init\stm32f7xx_it.o: ../Inc/stm32f7xx_it.h
+sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/stm32f7xx_it.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 sw_dp11_init\stm32f7xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-sw_dp11_init\stm32f7xx_it.o: ../Inc/FreeRTOSConfig.h
+sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/FreeRTOSConfig.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h

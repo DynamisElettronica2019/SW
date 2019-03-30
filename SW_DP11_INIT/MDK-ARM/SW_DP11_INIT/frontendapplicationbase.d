@@ -63,4 +63,6 @@ sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/fram
 sw_dp11_init\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
 sw_dp11_init\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
+sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
+sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp

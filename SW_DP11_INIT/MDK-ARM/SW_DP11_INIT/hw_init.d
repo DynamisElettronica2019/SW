@@ -1,8 +1,8 @@
-sw_dp11_init\hw_init.o: ../Src/HW_Init.cpp
-sw_dp11_init\hw_init.o: ../Src/HW_Init.hpp
-sw_dp11_init\hw_init.o: ../Inc/main.h
+sw_dp11_init\hw_init.o: ../TouchGFX/target/HW_Init.cpp
+sw_dp11_init\hw_init.o: ../TouchGFX/target/HW_Init.hpp
+sw_dp11_init\hw_init.o: ../Core/Inc/main.h
 sw_dp11_init\hw_init.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\hw_init.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\hw_init.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\hw_init.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\hw_init.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\hw_init.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h

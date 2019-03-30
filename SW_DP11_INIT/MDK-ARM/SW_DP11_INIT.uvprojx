@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;     ../Src;     ../TouchGFX/generated/fonts/include;     ../TouchGFX/generated/texts/include;     ../TouchGFX/generated/images/include;     ../TouchGFX/generated/gui_generated/include;     ../TouchGFX/gui/include;     ../middlewares/st/touchgfx/touchgfx/framework/include;     ../Drivers/STM32F7xx_HAL_Driver/Inc;     ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;     ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;     ../Drivers/CMSIS/Include;    ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Core/Inc;../TouchGFX/target;../TouchGFX/generated/fonts/include;../TouchGFX/generated/texts/include;../TouchGFX/generated/images/include;../TouchGFX/generated/gui_generated/include;../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -354,7 +354,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\\Inc</IncludePath>
+              <IncludePath>..\Core\Inc</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -388,72 +388,120 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Application/User</GroupName>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Application/User/Core</GroupName>
           <Files>
-            <File>
-              <FileName>d_ltdc_init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\d_ltdc_init.c</FilePath>
-            </File>
             <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../Src/main.cpp</FilePath>
+              <FilePath>../Core/Src/main.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/can.c</FilePath>
+            </File>
+            <File>
+              <FileName>crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/dma.c</FilePath>
             </File>
             <File>
               <FileName>freertos.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/freertos.c</FilePath>
+              <FilePath>../Core/Src/freertos.c</FilePath>
             </File>
             <File>
-              <FileName>BoardConfiguration.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Src/BoardConfiguration.cpp</FilePath>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/i2c.c</FilePath>
             </File>
             <File>
-              <FileName>GPIO.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Src/GPIO.cpp</FilePath>
+              <FileName>quadspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/quadspi.c</FilePath>
             </File>
             <File>
-              <FileName>STM32F7DMA.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Src/STM32F7DMA.cpp</FilePath>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/spi.c</FilePath>
             </File>
             <File>
-              <FileName>STM32F7HAL.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Src/STM32F7HAL.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>STM32F7TouchController.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Src/STM32F7TouchController.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>STM32F7Instrumentation.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Src/STM32F7Instrumentation.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>HW_Init.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Src/HW_Init.cpp</FilePath>
+              <FileName>tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/tim.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_it.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/stm32f7xx_it.c</FilePath>
+              <FilePath>../Core/Src/stm32f7xx_it.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_hal_msp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/stm32f7xx_hal_msp.c</FilePath>
+              <FilePath>../Core/Src/stm32f7xx_hal_msp.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/stm32f7xx_hal_timebase_tim.c</FilePath>
+              <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/TouchGFX/target</GroupName>
+          <Files>
+            <File>
+              <FileName>BoardConfiguration.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/BoardConfiguration.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/GPIO.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7DMA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7DMA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7HAL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7HAL.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7TouchController.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7TouchController.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7Instrumentation.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7Instrumentation.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HW_Init.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/HW_Init.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -608,7 +656,7 @@
             <File>
               <FileName>system_stm32f7xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/system_stm32f7xx.c</FilePath>
+              <FilePath>../Core/Src/system_stm32f7xx.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -671,11 +719,6 @@
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappers.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
@@ -719,6 +762,16 @@
               <FileName>BitmapDatabase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_buttons_round_edge_small.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_edge_small.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_buttons_round_edge_small_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_edge_small_pressed.cpp</FilePath>
             </File>
             <File>
               <FileName>Font_verdana_10_4bpp.cpp</FileName>
@@ -796,9 +849,6 @@
               <FilePath>../touchgfx/generated/texts/src/typedtextdatabase.cpp</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>

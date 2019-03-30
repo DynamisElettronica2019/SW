@@ -2,7 +2,7 @@ sw_dp11_init\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/AR
 sw_dp11_init\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 sw_dp11_init\port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 sw_dp11_init\port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-sw_dp11_init\port.o: ../Inc/FreeRTOSConfig.h
+sw_dp11_init\port.o: ../Core/Inc/FreeRTOSConfig.h
 sw_dp11_init\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 sw_dp11_init\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 sw_dp11_init\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h

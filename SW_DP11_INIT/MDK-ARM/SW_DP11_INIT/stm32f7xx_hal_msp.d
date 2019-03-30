@@ -1,7 +1,7 @@
-sw_dp11_init\stm32f7xx_hal_msp.o: ../Src/stm32f7xx_hal_msp.c
-sw_dp11_init\stm32f7xx_hal_msp.o: ../Inc/main.h
+sw_dp11_init\stm32f7xx_hal_msp.o: ../Core/Src/stm32f7xx_hal_msp.c
+sw_dp11_init\stm32f7xx_hal_msp.o: ../Core/Inc/main.h
 sw_dp11_init\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\stm32f7xx_hal_msp.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\stm32f7xx_hal_msp.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h

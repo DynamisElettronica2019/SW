@@ -1,6 +1,6 @@
-sw_dp11_init\stm32f7instrumentation.o: ../Src/STM32F7Instrumentation.cpp
+sw_dp11_init\stm32f7instrumentation.o: ../TouchGFX/target/STM32F7Instrumentation.cpp
 sw_dp11_init\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\stm32f7instrumentation.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\stm32f7instrumentation.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\stm32f7instrumentation.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
@@ -58,5 +58,5 @@ sw_dp11_init\stm32f7instrumentation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdar
 sw_dp11_init\stm32f7instrumentation.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/driver/touch/TouchController.hpp
 sw_dp11_init\stm32f7instrumentation.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/driver/button/ButtonController.hpp
 sw_dp11_init\stm32f7instrumentation.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp
-sw_dp11_init\stm32f7instrumentation.o: ../Src/STM32F7Instrumentation.hpp
-sw_dp11_init\stm32f7instrumentation.o: ../Inc/main.h
+sw_dp11_init\stm32f7instrumentation.o: ../TouchGFX/target/STM32F7Instrumentation.hpp
+sw_dp11_init\stm32f7instrumentation.o: ../Core/Inc/main.h

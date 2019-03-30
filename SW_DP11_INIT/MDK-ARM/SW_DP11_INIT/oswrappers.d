@@ -6,7 +6,7 @@ sw_dp11_init\oswrappers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\oswrappers.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp
 sw_dp11_init\oswrappers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 sw_dp11_init\oswrappers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-sw_dp11_init\oswrappers.o: ../Inc/FreeRTOSConfig.h
+sw_dp11_init\oswrappers.o: ../Core/Inc/FreeRTOSConfig.h
 sw_dp11_init\oswrappers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 sw_dp11_init\oswrappers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 sw_dp11_init\oswrappers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h

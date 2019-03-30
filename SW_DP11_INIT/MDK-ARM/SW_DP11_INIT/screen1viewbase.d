@@ -59,5 +59,8 @@ sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/in
 sw_dp11_init\screen1viewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
 sw_dp11_init\screen1viewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
+sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
+sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
 sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp
 sw_dp11_init\screen1viewbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
+sw_dp11_init\screen1viewbase.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp

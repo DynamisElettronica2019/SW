@@ -1,4 +1,4 @@
-sw_dp11_init\system_stm32f7xx.o: ../Src/system_stm32f7xx.c
+sw_dp11_init\system_stm32f7xx.o: ../Core/Src/system_stm32f7xx.c
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/CMSIS/Include/core_cm7.h
@@ -9,7 +9,7 @@ sw_dp11_init\system_stm32f7xx.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/CMSIS/Include/core_cmSimd.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\system_stm32f7xx.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\system_stm32f7xx.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h

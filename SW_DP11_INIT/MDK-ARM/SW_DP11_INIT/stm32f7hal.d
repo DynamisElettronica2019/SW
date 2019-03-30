@@ -1,4 +1,4 @@
-sw_dp11_init\stm32f7hal.o: ../Src/STM32F7HAL.cpp
+sw_dp11_init\stm32f7hal.o: ../TouchGFX/target/STM32F7HAL.cpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
 sw_dp11_init\stm32f7hal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -35,7 +35,7 @@ sw_dp11_init\stm32f7hal.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/CMSIS/Include/core_cmSimd.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\stm32f7hal.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\stm32f7hal.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
@@ -66,5 +66,5 @@ sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qsp
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
-sw_dp11_init\stm32f7hal.o: ../Src/STM32F7HAL.hpp
-sw_dp11_init\stm32f7hal.o: ../Src/STM32F7DMA.hpp
+sw_dp11_init\stm32f7hal.o: ../TouchGFX/target/STM32F7HAL.hpp
+sw_dp11_init\stm32f7hal.o: ../TouchGFX/target/STM32F7DMA.hpp

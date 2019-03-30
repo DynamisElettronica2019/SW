@@ -1,7 +1,7 @@
-sw_dp11_init\main.o: ../Src/main.cpp
-sw_dp11_init\main.o: ../Inc/main.h
+sw_dp11_init\main.o: ../Core/Src/main.cpp
+sw_dp11_init\main.o: ../Core/Inc/main.h
 sw_dp11_init\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\main.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\main.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\main.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
@@ -44,7 +44,7 @@ sw_dp11_init\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 sw_dp11_init\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-sw_dp11_init\main.o: ../Inc/FreeRTOSConfig.h
+sw_dp11_init\main.o: ../Core/Inc/FreeRTOSConfig.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
@@ -56,4 +56,13 @@ sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sw_dp11_init\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-sw_dp11_init\main.o: ../Inc/d_ltdc_init.h
+sw_dp11_init\main.o: ../Core/Inc/adc.h
+sw_dp11_init\main.o: ../Core/Inc/can.h
+sw_dp11_init\main.o: ../Core/Inc/crc.h
+sw_dp11_init\main.o: ../Core/Inc/dma.h
+sw_dp11_init\main.o: ../Core/Inc/i2c.h
+sw_dp11_init\main.o: ../Core/Inc/quadspi.h
+sw_dp11_init\main.o: ../Core/Inc/spi.h
+sw_dp11_init\main.o: ../Core/Inc/tim.h
+sw_dp11_init\main.o: ../Core/Inc/gpio.h
+sw_dp11_init\main.o: ../Core/Inc/general.h

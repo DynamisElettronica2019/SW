@@ -1,6 +1,6 @@
 sw_dp11_init\stm32f7xx_hal_cortex.o: ../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c
 sw_dp11_init\stm32f7xx_hal_cortex.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\stm32f7xx_hal_cortex.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\stm32f7xx_hal_cortex.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\stm32f7xx_hal_cortex.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\stm32f7xx_hal_cortex.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\stm32f7xx_hal_cortex.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h

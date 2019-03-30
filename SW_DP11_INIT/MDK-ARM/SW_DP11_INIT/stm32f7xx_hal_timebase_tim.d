@@ -1,6 +1,6 @@
-sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Src/stm32f7xx_hal_timebase_tim.c
+sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Core/Src/stm32f7xx_hal_timebase_tim.c
 sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
-sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Inc/stm32f7xx_hal_conf.h
+sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\stm32f7xx_hal_timebase_tim.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
