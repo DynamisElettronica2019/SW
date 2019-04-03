@@ -668,7 +668,9 @@ void neutralButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(neutralButtonSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    // invio messaggio CAN 
+		HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
+		osDelay(1);
   }
   /* USER CODE END neutralButtonTask */
 }
@@ -687,7 +689,9 @@ void okButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    // CAMBIO STATO ACC - AUTOX: MESSAGGIO CAN INVIATO NELLA TASK DELLA MODALITA' DI GUIDA
+		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);   
+		osDelay(1);
   }
   /* USER CODE END okButtonTask */
 }
@@ -706,7 +710,9 @@ void aux1ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux1ButtonSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+		// invio messaggio CAN - START/STOP ACQUISITION
+		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+		osDelay(1);
   }
   /* USER CODE END aux1ButtonTask */
 }
@@ -725,7 +731,9 @@ void aux2ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux2ButtonSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    // invio messaggio CAN - RESET?
+		HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
+		osDelay(1);
   }
   /* USER CODE END aux2ButtonTask */
 }

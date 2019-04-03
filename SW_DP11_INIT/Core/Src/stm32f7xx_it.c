@@ -519,12 +519,16 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   switch(GPIO_Pin)
   { 
     case NEUTRAL_BUTTON_INT_Pin:
+			xSemaphoreGiveFromISR(neutralButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case OK_BUTTON_INT_Pin:
+			xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case AUX_1_BUTTON_INT_Pin:
+			xSemaphoreGiveFromISR(aux1ButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
-    case AUX_2_BUTTON_INT_Pin: 
+    case AUX_2_BUTTON_INT_Pin:
+			xSemaphoreGiveFromISR(aux2ButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case SEL_MAP_1_INT_Pin:
       break;
@@ -537,6 +541,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     default: 
       break;
   }
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 /* USER CODE END 1 */
