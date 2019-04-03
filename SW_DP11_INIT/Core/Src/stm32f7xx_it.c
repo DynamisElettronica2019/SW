@@ -223,7 +223,10 @@ void EXTI0_IRQHandler(void)
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
-
+	
+	xSemaphoreGiveFromISR(rightEncoderSemaphoreHandle, &xHigherPriorityTaskWoken);
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+	
   /* USER CODE END EXTI0_IRQn 1 */
 }
 
@@ -239,6 +242,9 @@ void EXTI1_IRQHandler(void)
   /* USER CODE END EXTI1_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
   /* USER CODE BEGIN EXTI1_IRQn 1 */
+	
+	xSemaphoreGiveFromISR(leftEncoderSemaphoreHandle, &xHigherPriorityTaskWoken);
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 
   /* USER CODE END EXTI1_IRQn 1 */
 }
@@ -516,7 +522,7 @@ void QUADSPI_IRQHandler(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  switch(GPIO_Pin)
+   switch(GPIO_Pin)
   { 
     case NEUTRAL_BUTTON_INT_Pin:
       break;
@@ -527,16 +533,19 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     case AUX_2_BUTTON_INT_Pin: 
       break;
     case SEL_MAP_1_INT_Pin:
+			 xSemaphoreGiveFromISR(mapSelectorSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case START_BUTTON_INT_Pin: 
       break;
     case AUX_3_BUTTON_INT_Pin: // non c'è
       break;
     case SEL_MODE_1_INT_Pin: 
+			 xSemaphoreGiveFromISR(modeSelectorSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     default: 
       break;
   }
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 /* USER CODE END 1 */

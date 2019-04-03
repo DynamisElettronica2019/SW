@@ -88,6 +88,7 @@
 /* USER CODE BEGIN PV */
 
 char driveMode, engineMap;
+char leftPosition, rightPosition;
 int state;
 
 /* USER CODE END PV */

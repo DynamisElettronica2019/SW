@@ -23,7 +23,28 @@
 	 
 #define MAX_DRIVE_MODE			SKIDPAD_MODE
 	 
+	 
+/*******************STATES*****************************************************/
 
+#define AUTOX_MODE_DEFAULT						0
+#define AUTOX_MODE_START							1
+
+#define ACCELERATION_MODE_DEFAULT			0
+#define ACCELERATION_MODE_START				1
+
+#define ENDURANCE_MODE_DEFAULT				0
+#define ENDURANCE_MODE_START					1
+
+#define SKIDPAD_MODE_DEFAULT					0
+#define SKIDPAD_MODE_START						1
+
+#define DEBUG_MODE_DEFAULT						0
+
+#define BOARD_DEBUG_MODE_DEFAULT			0
+
+#define SETTINGS_MODE_DEFAULT					0
+	 
+	 
 /********************FUNCTIONS*******************/
 
 
