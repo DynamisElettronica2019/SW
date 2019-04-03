@@ -535,7 +535,9 @@ void upShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(upShiftSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
+		// invio messaggio su CAN - no controlli   
+		osDelay(1);
   }
   /* USER CODE END upShiftTask */
 }
@@ -554,7 +556,9 @@ void downShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(downShiftSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+		// invio messaggio su CAN - no controlli
+		osDelay(1);
   }
   /* USER CODE END downShiftTask */
 }
