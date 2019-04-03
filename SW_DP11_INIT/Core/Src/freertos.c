@@ -58,6 +58,8 @@
 /* USER CODE BEGIN Includes */     
 
 #include "general.h"
+#include "adc.h"
+#include "d_sensors.h"
 
 /* USER CODE END Includes */
 
@@ -78,6 +80,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+
+int timerClutch = 0;
+int timerTempCurr = 0;
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -775,14 +780,29 @@ void rpmStripeTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_sensorsTask */
-void sensorsTask(void const * argument)
+void sensorsTask(void const * argument)	//------------------- BISOGNA INSERIRE LA CHIAMATA ALLA TASK-----------------
 {
   /* USER CODE BEGIN sensorsTask */
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(sensorsSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+		
+		timerClutch = timerClutch + 1;
+		timerTempCurr = timerTempCurr + 1;
+		
+		ADC_read();
+		
+		if (timerClutch == 2){
+			dSensors_Clutch_send();		// oppure invio diretto su CAN
+			dSensors_update();
+			timerClutch = 0;
+		}
+		if (timerTempCurr == 200){
+			dSensors_Sensors_send();	// oppure invio diretto su CAN
+			timerTempCurr = 0;
+		}
+    //osDelay(1);
   }
   /* USER CODE END sensorsTask */
 }
