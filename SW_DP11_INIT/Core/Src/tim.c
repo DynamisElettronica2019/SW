@@ -52,6 +52,26 @@
 
 /* USER CODE BEGIN 0 */
 
+#include "general.h"
+#include "cmsis_os.h"
+
+extern osSemaphoreId startButtonSemaphoreHandle;
+extern osSemaphoreId rpmStripeSemaphoreHandle;
+extern osSemaphoreId sensorsSemaphoreHandle;
+extern osSemaphoreId settingsModeSemaphoreHandle;
+extern osSemaphoreId boardDebugModeSemaphoreHandle;
+extern osSemaphoreId debugModeSemaphoreHandle;
+extern osSemaphoreId enduranceModeSemaphoreHandle;
+extern osSemaphoreId accelerationModeSemaphoreHandle;
+extern osSemaphoreId autocrossModeSemaphoreHandle;
+extern osSemaphoreId skidpadModeSemaphoreHandle;
+
+extern char driveMode;
+	
+int timerSensors = 0;
+int timerStartButton = 0;
+int timerRpmStripe = 0;
+
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim7;
@@ -247,6 +267,68 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+	
+	if (htim->Instance == TIM7) {
+		
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		
+		timerSensors = timerSensors + 1;
+		timerStartButton = timerStartButton + 1;
+		timerRpmStripe = timerRpmStripe + 1;
+		
+		if ( SENSORS_TIME == timerSensors ){
+			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
+			timerSensors = 0;
+		}
+		if ( START_BUTTON_TIME == timerStartButton ){
+			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
+			timerStartButton = 0;
+		}
+		if ( RPM_STRIPE_TIME == timerRpmStripe ){
+			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
+			timerRpmStripe = 0;
+		}		
+		
+		switch (driveMode ){
+			case SETTINGS_MODE	:
+				xSemaphoreGiveFromISR( settingsModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+				break;
+			case BOARD_DEBUG_MODE	:
+				xSemaphoreGiveFromISR( boardDebugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+				break;
+			case DEBUG_MODE	:
+				xSemaphoreGiveFromISR( debugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+				break;
+			case ENDURANCE_MODE	:
+				xSemaphoreGiveFromISR( enduranceModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+				break;
+			case ACCELERATION_MODE	:
+				xSemaphoreGiveFromISR( accelerationModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+				break;
+			case AUTOX_MODE	:
+				xSemaphoreGiveFromISR( autocrossModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+				break;
+			case SKIDPAD_MODE	:
+				xSemaphoreGiveFromISR( skidpadModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+				break;
+			
+		}
+		
+		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+  }
+	
+  /* USER CODE END Callback 1 */
+}
 
 /* USER CODE END 1 */
 

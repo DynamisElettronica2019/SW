@@ -142,7 +142,7 @@ int main(void)
   MX_I2C1_Init();
   MX_ADC1_Init();
   MX_CRC_Init();
-  MX_TIM7_Init();
+  MX_TIM7_Init();		// in caso di errori, spostare l'inizializzazione a dopo l'inizializzazione di freertos
   MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
 	
@@ -252,18 +252,27 @@ void SystemClock_Config(void)
   * @param  htim : TIM handle
   * @retval None
   */
+/*
+
+//----------------Da eliminare tutta la funzione, è stata spostata in tim.c------------------------------
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+*/
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM6) {
+  /*
+	if (htim->Instance == TIM6) {
     HAL_IncTick();
   }
+	*/
   /* USER CODE BEGIN Callback 1 */
 
   /* USER CODE END Callback 1 */
+	/*
 }
+*/
 
 /**
   * @brief  This function is executed in case of error occurrence.

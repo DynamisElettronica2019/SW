@@ -57,3 +57,4 @@ sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queu
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 sw_dp11_init\freertos.o: ../Core/Inc/general.h
+sw_dp11_init\freertos.o: ../Core/Inc/tim.h

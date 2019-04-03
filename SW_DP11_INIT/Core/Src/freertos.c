@@ -58,6 +58,7 @@
 /* USER CODE BEGIN Includes */     
 
 #include "general.h"
+#include "tim.h"
 
 /* USER CODE END Includes */
 
@@ -336,6 +337,9 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+	
+	HAL_TIM_Base_Start_IT(&htim7);
+	
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the thread(s) */

@@ -23,6 +23,10 @@
 	 
 #define MAX_DRIVE_MODE			SKIDPAD_MODE
 	 
+	 
+#define SENSORS_TIME					200
+#define START_BUTTON_TIME			40
+#define RPM_STRIPE_TIME				1000
 
 /********************FUNCTIONS*******************/
 
