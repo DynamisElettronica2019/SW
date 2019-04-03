@@ -59,6 +59,8 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 
+BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -84,6 +86,32 @@ extern TIM_HandleTypeDef htim7;
 extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
+
+extern osSemaphoreId canSemaphoreHandle;
+extern osSemaphoreId upShiftSemaphoreHandle;
+extern osSemaphoreId downShiftSemaphoreHandle;
+extern osSemaphoreId modeSelectorSemaphoreHandle;
+extern osSemaphoreId mapSelectorSemaphoreHandle;
+extern osSemaphoreId leftEncoderSemaphoreHandle;
+extern osSemaphoreId rightEncoderSemaphoreHandle;
+extern osSemaphoreId startButtonSemaphoreHandle;
+extern osSemaphoreId neutralButtonSemaphoreHandle;
+extern osSemaphoreId okButtonSemaphoreHandle;
+extern osSemaphoreId aux1ButtonSemaphoreHandle;
+extern osSemaphoreId aux2ButtonSemaphoreHandle;
+extern osSemaphoreId aux3ButtonSemaphoreHandle;
+extern osSemaphoreId rpmStripeSemaphoreHandle;
+extern osSemaphoreId sensorsSemaphoreHandle;
+extern osSemaphoreId accelerationModeSemaphoreHandle;
+extern osSemaphoreId autocrossModeSemaphoreHandle;
+extern osSemaphoreId enduranceModeSemaphoreHandle;
+extern osSemaphoreId skidpadModeSemaphoreHandle;
+extern osSemaphoreId settingsModeSemaphoreHandle;
+extern osSemaphoreId debugModeSemaphoreHandle;
+extern osSemaphoreId boardDebugModeSemaphoreHandle;
+extern osSemaphoreId debugFreeRTOSSemaphoreHandle;
+extern osSemaphoreId aux1SemaphoreHandle;
+extern osSemaphoreId aux2SemaphoreHandle;
 
 /* USER CODE END EV */
 
