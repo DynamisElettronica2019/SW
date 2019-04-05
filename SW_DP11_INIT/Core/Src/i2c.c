@@ -52,6 +52,8 @@
 
 /* USER CODE BEGIN 0 */
 
+	uint8_t i2cData[2];
+
 /* USER CODE END 0 */
 
 I2C_HandleTypeDef hi2c1;
@@ -151,6 +153,237 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+
+void I2C_brightness_max (uint16_t controller){
+
+	i2cData[1] = 0xFF;
+	
+	i2cData[0] = 0x07; 	 
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x08; 	 	
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x09; 	 	
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x0A; 	 		
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x0B; 	 	
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x0C; 	 	
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x0D; 	 		
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x0E; 	 	
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	
+	return;
+}
+	
+void I2C_controller_0_ON(void){
+	
+	i2cData[0] = 0x00; 	// registro 
+	i2cData[1] = 0x40;		// dati
+	HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	
+	i2cData[0] = 0x01; 	 
+	i2cData[1] = 0x00;		
+	HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	
+	i2cData[0] = 0x02; 	 
+	i2cData[1] = 0x00;		
+	HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	
+	I2C_brightness_max (controller_0);
+	return ;
+}
+
+void I2C_controller_1_ON(void){
+	
+	i2cData[0] = 0x00; 	// registro 
+	i2cData[1] = 0x40;		// dati
+	HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	
+	i2cData[0] = 0x01; 	
+	i2cData[1] = 0x00;		
+	HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	
+	i2cData[0] = 0x02; 	
+	i2cData[1] = 0x00;		
+	HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	
+	I2C_brightness_max (controller_1);
+	return ;
+}
+
+void I2C_debug_red(uint16_t controller){
+	
+	i2cData[1] = 0xFF;
+	i2cData[0] = 0x0F;
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x12;
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x15;
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x18;
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x1B;
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);
+	i2cData[0] = 0x1E;
+	HAL_I2C_Master_Transmit(&hi2c1, controller<<1, i2cData, 2, 10);	
+	return;
+}
+
+void I2C_rpm_update(void){ 
+	int RPM;
+	//RPM = *indirizzo_della_matrice_degli_rpm;
+	
+	if (RPM > 700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x0F;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x0F;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 1700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x12;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x12;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 2700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x15;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x15;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 3700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x18;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x18;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 4700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x1B;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x1B;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 5700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x1E;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x1E;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
+	}
+	
+	
+	if (RPM > 6700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x0F;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x0F;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 7700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x12;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x12;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 8700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x15;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x15;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 9700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x18;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x18;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 10700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x1B;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x1B;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	
+	if (RPM > 11700){
+		i2cData[1] = 0xFF;
+		i2cData[0] = 0x1E;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	else{
+		i2cData[1] = 0x00;
+		i2cData[0] = 0x1E;
+		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+	}
+	
+	return ;
+}
+void I2C_test(void){
+	
+	I2C_debug_red(controller_0);
+	I2C_debug_red(controller_1);
+	return;
+}
+void I2C_rpm_setup (void) {
+	HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_SET);
+	I2C_controller_0_ON();
+	I2C_controller_1_ON();
+	HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_RESET);
+	return;
+}
 
 /* USER CODE END 1 */
 

@@ -58,6 +58,7 @@
 /* USER CODE BEGIN Includes */     
 
 #include "general.h"
+#include "i2c.h"
 
 /* USER CODE END Includes */
 
@@ -756,14 +757,19 @@ void aux3ButtonTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_rpmStripeTask */
-void rpmStripeTask(void const * argument)
+void rpmStripeTask(void const * argument)	//-------------------------------INSERIRE LA CHIAMATA ALLA TASK----------------------------
 {
   /* USER CODE BEGIN rpmStripeTask */
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(rpmStripeSemaphoreHandle, portMAX_DELAY);
+		
+		I2C_test();
+		//	I2C_rpm_update();
+		
     osDelay(1);
+	
   }
   /* USER CODE END rpmStripeTask */
 }

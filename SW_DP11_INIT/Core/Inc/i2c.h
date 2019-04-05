@@ -64,12 +64,23 @@ extern I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN Private defines */
 
+	#define controller_0 0x28
+	#define controller_1 0x29
+	 
 /* USER CODE END Private defines */
 
 void MX_I2C1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
+	 void I2C_rpm_setup(void);
+	 void I2C_test(void);
+	 void I2C_brightness_max (uint16_t);
+	 void I2C_controller_0_ON(void);
+	 void I2C_controller_1_ON(void);
+	 void I2C_debug_red(uint16_t);
+	 void I2C_rpm_update(void);
+	 
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

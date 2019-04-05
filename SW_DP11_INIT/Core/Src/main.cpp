@@ -65,6 +65,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "general.h"
+#include "i2c.h"
 
 /* USER CODE END Includes */
 
@@ -147,6 +148,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	
 	SPI_ltdc_init_sequence(&hspi1);
+	
+	I2C_rpm_setup();
 	
   /* USER CODE END 2 */
 
