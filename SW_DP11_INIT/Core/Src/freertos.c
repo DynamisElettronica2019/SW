@@ -642,13 +642,23 @@ void rightEncoderTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_startButtonTask */
-void startButtonTask(void const * argument)
+void startButtonTask(void const * argument)  //----------------------INSERIRE CHIAMATA ALLA TASK---------------------------
 {
   /* USER CODE BEGIN startButtonTask */
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(startButtonSemaphoreHandle, portMAX_DELAY);
+		
+		if( 1 == HAL_GPIO_ReadPin(START_BUTTON_INT_GPIO_Port, START_BUTTON_INT_Pin) ) // con pulsante premuto valore alto
+		{
+			//invio su can
+			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
+		}
+		else{
+			
+			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
+		}
     osDelay(1);
   }
   /* USER CODE END startButtonTask */
