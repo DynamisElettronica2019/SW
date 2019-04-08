@@ -58,6 +58,7 @@
 /* USER CODE BEGIN Includes */     
 
 #include "general.h"
+#include "i2c.h"
 
 /* USER CODE END Includes */
 
@@ -566,13 +567,22 @@ void downShiftTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_modeSelectorTask */
-void modeSelectorTask(void const * argument)
+void modeSelectorTask(void const * argument)	//-----------------------INSERIRE LA CHIAMATA ALLA TASK---------------------------
 {
   /* USER CODE BEGIN modeSelectorTask */
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
+		uint8_t indirizzo = 10;
+		I2C_eeprom_write (indirizzo , 0);			// mando il valore 10 nell'inidirizzo 0 della eeprom
+		if ( 10 == I2C_eeprom_read (0)){			// se leggo il valore 10 nell'indirizzo 0 della eeprom
+			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
+		}
+		else{
+			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
+		}
+		
     osDelay(1);
   }
   /* USER CODE END modeSelectorTask */
