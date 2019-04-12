@@ -27,6 +27,7 @@
 #define SENSORS_TIME					200
 #define START_BUTTON_TIME			40
 #define RPM_STRIPE_TIME				1000
+#define DRIVE_MODE_TIME				10		//---- valore da definire
 
 /********************FUNCTIONS*******************/
 

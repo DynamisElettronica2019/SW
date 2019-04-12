@@ -71,6 +71,7 @@ extern char driveMode;
 int timerSensors = 0;
 int timerStartButton = 0;
 int timerRpmStripe = 0;
+int timerDriveMode = 0;
 
 /* USER CODE END 0 */
 
@@ -278,52 +279,57 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
 	
-	if (htim->Instance == TIM7) {
+	if (htim->Instance == TIM7) {		//----------------- Un led di debug messo anche nel controllo della striscia led perchè è a 1 HZ ----------	
 		
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		
+		HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
 		
 		timerSensors = timerSensors + 1;
 		timerStartButton = timerStartButton + 1;
 		timerRpmStripe = timerRpmStripe + 1;
+		timerDriveMode = timerDriveMode + 1;
 		
-		if ( SENSORS_TIME == timerSensors ){
+		if (  timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerSensors = 0;
 		}
-		if ( START_BUTTON_TIME == timerStartButton ){
+		if ( timerStartButton >= START_BUTTON_TIME){
 			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerStartButton = 0;
 		}
-		if ( RPM_STRIPE_TIME == timerRpmStripe ){
+		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
+			HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerRpmStripe = 0;
 		}		
 		
-		switch (driveMode ){
-			case SETTINGS_MODE	:
-				xSemaphoreGiveFromISR( settingsModeSemaphoreHandle, &xHigherPriorityTaskWoken );
-				break;
-			case BOARD_DEBUG_MODE	:
-				xSemaphoreGiveFromISR( boardDebugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
-				break;
-			case DEBUG_MODE	:
-				xSemaphoreGiveFromISR( debugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
-				break;
-			case ENDURANCE_MODE	:
-				xSemaphoreGiveFromISR( enduranceModeSemaphoreHandle, &xHigherPriorityTaskWoken );
-				break;
-			case ACCELERATION_MODE	:
-				xSemaphoreGiveFromISR( accelerationModeSemaphoreHandle, &xHigherPriorityTaskWoken );
-				break;
-			case AUTOX_MODE	:
-				xSemaphoreGiveFromISR( autocrossModeSemaphoreHandle, &xHigherPriorityTaskWoken );
-				break;
-			case SKIDPAD_MODE	:
-				xSemaphoreGiveFromISR( skidpadModeSemaphoreHandle, &xHigherPriorityTaskWoken );
-				break;
-			
+		if ( timerDriveMode >= DRIVE_MODE_TIME ){
+			switch ( driveMode ){
+				case SETTINGS_MODE	:
+					xSemaphoreGiveFromISR( settingsModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case BOARD_DEBUG_MODE	:
+					xSemaphoreGiveFromISR( boardDebugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case DEBUG_MODE	:
+					xSemaphoreGiveFromISR( debugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case ENDURANCE_MODE	:
+					xSemaphoreGiveFromISR( enduranceModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case ACCELERATION_MODE	:
+					xSemaphoreGiveFromISR( accelerationModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case AUTOX_MODE	:
+					xSemaphoreGiveFromISR( autocrossModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case SKIDPAD_MODE	:
+					xSemaphoreGiveFromISR( skidpadModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+			}
+			timerDriveMode = 0;
 		}
-		
 		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
   }
 	
