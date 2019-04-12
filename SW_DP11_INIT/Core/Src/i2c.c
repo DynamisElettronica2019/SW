@@ -154,16 +154,19 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 
 void I2C_eeprom_write (uint8_t indicatorAddress, uint16_t memAddress) {
 	
-	HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
-	HAL_I2C_Mem_Write(&hi2c1, EEPROM_ADDRESS, memAddress, I2C_MEMADD_SIZE_8BIT, &indicatorAddress, sizeof(uint8_t), 10);
+	HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_SET);
+	
+	HAL_I2C_Mem_Write(&hi2c1, EEPROM_ADDRESS, memAddress, I2C_MEMADD_SIZE_8BIT, &indicatorAddress, sizeof(uint8_t), 100);
 	//HAL_Delay (10);
 	return;
 }
 
 uint8_t I2C_eeprom_read (uint16_t memAddress) {
 	
+	HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_RESET);
+	
 	uint8_t indicatore;
-	HAL_I2C_Mem_Read(&hi2c1, EEPROM_ADDRESS, memAddress, I2C_MEMADD_SIZE_8BIT, &indicatore, sizeof(uint8_t), 10);
+	HAL_I2C_Mem_Read(&hi2c1, EEPROM_ADDRESS, memAddress, I2C_MEMADD_SIZE_8BIT, &indicatore, sizeof(uint8_t), 100);
 	return indicatore;
 }
 
