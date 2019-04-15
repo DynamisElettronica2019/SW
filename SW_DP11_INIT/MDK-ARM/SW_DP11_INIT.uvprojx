@@ -465,6 +465,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\Src\d_traction_control.c</FilePath>
             </File>
+            <File>
+              <FileName>d_rpm_limiter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_rpm_limiter.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

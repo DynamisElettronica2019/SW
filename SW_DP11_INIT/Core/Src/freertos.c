@@ -61,6 +61,7 @@
 #include "gpio.h"
 
 #include "d_traction_control.h"
+#include "d_rpm_limiter.h"
 
 /* USER CODE END Includes */
 
@@ -700,6 +701,10 @@ void rightEncoderTask(void const * argument)
 	  rightPosition = rightPosition + movement;
 		switch(driveMode)
 		{
+			case AUTOX_MODE:
+			case ACCELERATION_MODE:
+				d_rpm_limiter_handle(movement);
+				break;
 			case BOARD_DEBUG_MODE:
 				// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
 				break;

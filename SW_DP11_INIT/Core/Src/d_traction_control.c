@@ -6,7 +6,7 @@
   * Computation of the new traction control value and propagation of the
 	*	updated value on CANbus. The traction value is sent when the driving
 	* mode is among ENDURANCE, ACCELERATION, AUTOCROSS and SKIDPAD.
-	* Traction MAX and MIN values are decided together with GCU. 
+	* Traction MAX and MIN values are decided together with GCU and EFI. 
   ******************************************************************************
   */
 
