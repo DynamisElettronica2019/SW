@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Apr 12 10:49:57 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Apr 19 16:38:02 2019
 <BR><P>
 <H3>Maximum Stack Usage =        824 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1993,7 +1993,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
 
-<P><STRONG><a name="[1d1]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 230 bytes, Stack size 24 bytes, tim.o(i.HAL_TIM_PeriodElapsedCallback))
+<P><STRONG><a name="[1d1]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 246 bytes, Stack size 24 bytes, tim.o(i.HAL_TIM_PeriodElapsedCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; xQueueGiveFromISR &rArr; xTaskRemoveFromEventList
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
@@ -2471,8 +2471,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[88]"></a>STM32F7HAL::~STM32F7HAL()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-<LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[2e4]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
@@ -3537,9 +3537,9 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidateRect(touchgfx::Rect&) const
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::getVisibleRect(touchgfx::Rect&) const
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::draw(const touchgfx::Rect&) const
 <LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &(const touchgfx::Rect&) const
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawPartialBitmap(const touchgfx::Bitmap&, short, short, const touchgfx::Rect&, unsigned char, bool)
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::draw(const touchgfx::Rect&) const
 </UL>
 
 <P><STRONG><a name="[22e]"></a>touchgfx::View&lang;Screen1Presenter&rang;::~View()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, screen1viewbase.o(i._ZN8touchgfx4ViewI16Screen1PresenterED1Ev))
@@ -3982,9 +3982,9 @@ Global Symbols
 <P><STRONG><a name="[12f]"></a>touchgfx::TextArea::getTextHeight()</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, textarea.o(i._ZN8touchgfx8TextArea13getTextHeightEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = touchgfx::TextArea::getTextHeight() &rArr; touchgfx::TextArea::getTextHeightInternal(const unsigned short*, ...) const &rArr; touchgfx::LCD::getNumLines(touchgfx::TextProvider&, touchgfx::WideTextAction, unsigned char, const touchgfx::Font*, short) &rArr; touchgfx::LCD::WideTextInternalStruct::getStringLengthForLine(bool) &rArr; touchgfx::TextProvider::getNextLigature(unsigned char) &rArr; touchgfx::TextProvider::getNextChar() &rArr; touchgfx::TextProvider::getNextCharInternal()
 </UL>
-<BR>[Calls]<UL><LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextHeightInternal(const unsigned short*, ...) const
-<LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::getText() const
+<BR>[Calls]<UL><LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::getText() const
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::hasValidId() const
+<LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextHeightInternal(const unsigned short*, ...) const
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
@@ -4192,8 +4192,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::Rect(short, short, short, short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::getSolidRect() const
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawPartialBitmap(const touchgfx::Bitmap&, short, short, const touchgfx::Rect&, unsigned char, bool)
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawPartialBitmap(const touchgfx::Bitmap&, short, short, const touchgfx::Rect&, unsigned char, bool)
+<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::getSolidRect() const
 </UL>
 
 <P><STRONG><a name="[289]"></a>touchgfx::Bitmap::hasTransparentPixels() const</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, bitmap.o(i._ZNK8touchgfx6Bitmap20hasTransparentPixelsEv))
@@ -4210,8 +4210,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::Bitmap::getWidth() const
 </UL>
 <BR>[Called By]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&)
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::draw(const touchgfx::Rect&) const
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawPartialBitmap(const touchgfx::Bitmap&, short, short, const touchgfx::Rect&, unsigned char, bool)
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::draw(const touchgfx::Rect&) const
 </UL>
 
 <P><STRONG><a name="[286]"></a>touchgfx::Bitmap::getFormat() const</STRONG> (Thumb, 112 bytes, Stack size 8 bytes, bitmap.o(i._ZNK8touchgfx6Bitmap9getFormatEv))
@@ -4226,8 +4226,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::Bitmap::getHeight() const
 </UL>
 <BR>[Called By]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&)
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::draw(const touchgfx::Rect&) const
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawPartialBitmap(const touchgfx::Bitmap&, short, short, const touchgfx::Rect&, unsigned char, bool)
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::draw(const touchgfx::Rect&) const
 </UL>
 
 <P><STRONG><a name="[121]"></a>touchgfx::Button::getSolidRect() const</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, button.o(i._ZNK8touchgfx6Button12getSolidRectEv))
@@ -4287,9 +4287,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleGestureEvent(const touchgfx::GestureEvent&)
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&)
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleDragEvent(const touchgfx::DragEvent&)
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
 <LI><a href="#[281]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::getCachedAbsY()
 <LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::getCachedAbsX()
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
 </UL>
 
 <P><STRONG><a name="[112]"></a>touchgfx::Drawable::translateRectToAbsolute(touchgfx::Rect&) const</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, drawable.o(i._ZNK8touchgfx8Drawable23translateRectToAbsoluteERNS_4RectE))
@@ -4380,19 +4380,19 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[28f]"></a>touchgfx::TypedText::hasValidId() const</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, textarea.o(i._ZNK8touchgfx9TypedText10hasValidIdEv))
-<BR><BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextWidth() const
-<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::resizeToCurrentText()
+<BR><BR>[Called By]<UL><LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::resizeToCurrentText()
 <LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextHeight()
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextWidth() const
 </UL>
 
 <P><STRONG><a name="[295]"></a>touchgfx::TypedText::assertValid() const</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, textarea.o(i._ZNK8touchgfx9TypedText11assertValidEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::TypedText::assertValid() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
-<LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::getText() const
+<BR>[Called By]<UL><LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::getText() const
 <LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::getFont() const
 <LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::getTextDirection() const
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
 </UL>
 
 <P><STRONG><a name="[294]"></a>touchgfx::TypedText::getTextDirection() const</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, textarea.o(i._ZNK8touchgfx9TypedText16getTextDirectionEv))
@@ -4420,9 +4420,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::assertValid() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
+<BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextHeight()
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::draw(const touchgfx::Rect&) const
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextWidth() const
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextHeight()
 </UL>
 
 <P><STRONG><a name="[21f]"></a>__aeabi_vec_ctor_nocookie_nodtor</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, aeabi_vec_ctor_nocookie_nodtor.o(i.__aeabi_vec_ctor_nocookie_nodtor))

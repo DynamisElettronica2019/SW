@@ -72,6 +72,7 @@ int timerSensors = 0;
 int timerStartButton = 0;
 int timerRpmStripe = 0;
 int timerDriveMode = 0;
+int timerMapTractionRpm = 0;
 
 /* USER CODE END 0 */
 
@@ -269,6 +270,14 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 
 /* USER CODE BEGIN 1 */
 
+void TIM_MapTractionRpm_send (){
+	
+	// invio su can dei valori di:
+	//	-mappa motore
+	//	-traction
+	//	-rpm_limiter (se necessario)
+}
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
@@ -278,6 +287,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
+	
 	
 	if (htim->Instance == TIM7) {		//----------------- Un led di debug messo anche nel controllo della striscia led perchè è a 1 HZ ----------	
 		
@@ -289,6 +299,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		timerStartButton = timerStartButton + 1;
 		timerRpmStripe = timerRpmStripe + 1;
 		timerDriveMode = timerDriveMode + 1;
+		timerMapTractionRpm = timerMapTractionRpm + 1;
 		
 		if (  timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
@@ -302,7 +313,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerRpmStripe = 0;
-		}		
+		}
+		if ( timerMapTractionRpm >= MAP_TRACTION_RPM_TIME ){
+			TIM_MapTractionRpm_send();
+			timerMapTractionRpm = 0;
+		}
 		
 		if ( timerDriveMode >= DRIVE_MODE_TIME ){
 			switch ( driveMode ){
