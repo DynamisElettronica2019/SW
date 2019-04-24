@@ -21,7 +21,7 @@ non_opaque_image_format := ARGB8888
 
 # Settings for image converter screen orientation (empty string =
 # default value, -rotate90 rotates the image 90 degrees)
-screen_orientation :=
+screen_orientation := -rotate90
 
 # Settings for Hardware accelerated text rendering on STM32F4 and F7
 # devices. Must correspond to value of bitsPerPixel for font to have

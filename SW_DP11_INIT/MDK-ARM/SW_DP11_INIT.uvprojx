@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc; ../TouchGFX/target; ../TouchGFX/generated/fonts/include; ../TouchGFX/generated/texts/include; ../TouchGFX/generated/images/include; ../TouchGFX/generated/gui_generated/include; ../TouchGFX/gui/include; ../middlewares/st/touchgfx/touchgfx/framework/include; ../Drivers/STM32F7xx_HAL_Driver/Inc; ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy; ../Middlewares/Third_Party/FreeRTOS/Source/include; ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS; ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1; ../Drivers/CMSIS/Device/ST/STM32F7xx/Include; ../Drivers/CMSIS/Include;../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Core/Inc;    ../TouchGFX/target;    ../TouchGFX/generated/fonts/include;    ../TouchGFX/generated/texts/include;    ../TouchGFX/generated/images/include;    ../TouchGFX/generated/gui_generated/include;    ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;    ../Drivers/STM32F7xx_HAL_Driver/Inc;    ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;    ../Middlewares/Third_Party/FreeRTOS/Source/include;    ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;    ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;    ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;    ../Drivers/CMSIS/Include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -367,7 +367,7 @@
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile></ScatterFile>
+            <ScatterFile>SW_DP11_INIT\SW_DP11_INIT.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -716,11 +716,6 @@
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappers.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
@@ -730,6 +725,36 @@
         <Group>
           <GroupName>Application/User/TouchGFX/gui</GroupName>
           <Files>
+            <File>
+              <FileName>ACCELERATIONPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/acceleration_screen/accelerationpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ACCELERATIONView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/acceleration_screen/accelerationview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>AUTOCROSSPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/autocross_screen/autocrosspresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>AUTOCROSSView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ENDURANCEPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/endurance_screen/endurancepresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ENDURANCEView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/endurance_screen/enduranceview.cpp</FilePath>
+            </File>
             <File>
               <FileName>FrontendApplication.cpp</FileName>
               <FileType>8</FileType>
@@ -750,15 +775,35 @@
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/screen1_screen/screen1view.cpp</FilePath>
             </File>
+            <File>
+              <FileName>SKIDPADPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/skidpad_screen/skidpadpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SKIDPADView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/skidpad_screen/skidpadview.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Application/User/TouchGFX/generated</GroupName>
           <Files>
             <File>
+              <FileName>ACCELERATIONViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/acceleration_screen/accelerationviewbase.cpp</FilePath>
+            </File>
+            <File>
               <FileName>ApplicationFontProvider.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/applicationfontprovider.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>AUTOCROSSViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/autocross_screen/autocrossviewbase.cpp</FilePath>
             </File>
             <File>
               <FileName>BitmapDatabase.cpp</FileName>
@@ -766,29 +811,34 @@
               <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
             </File>
             <File>
-              <FileName>blue_buttons_round_edge_small.cpp</FileName>
+              <FileName>ENDURANCEViewBase.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_edge_small.cpp</FilePath>
+              <FilePath>../touchgfx/generated/gui_generated/src/endurance_screen/enduranceviewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>blue_buttons_round_edge_small_pressed.cpp</FileName>
+              <FileName>Font_Roboto_Bold_20_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_edge_small_pressed.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_bold_20_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_10_4bpp.cpp</FileName>
+              <FileName>Font_Roboto_Bold_25_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_bold_25_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_20_4bpp.cpp</FileName>
+              <FileName>Font_Roboto_Regular_180_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_180_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_40_4bpp.cpp</FileName>
+              <FileName>Font_Roboto_Regular_420_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_verdana_40_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_420_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_Roboto_Regular_63_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_63_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>FontGetters.cpp</FileName>
@@ -801,19 +851,29 @@
               <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
+              <FileName>Kerning_Roboto_Bold_20_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_bold_20_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
+              <FileName>Kerning_Roboto_Bold_25_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_20_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_bold_25_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Kerning_verdana_40_4bpp.cpp</FileName>
+              <FileName>Kerning_Roboto_Regular_180_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_180_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_Roboto_Regular_420_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_420_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_Roboto_Regular_63_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_63_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>LanguageGb.cpp</FileName>
@@ -826,19 +886,34 @@
               <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Table_verdana_10_4bpp.cpp</FileName>
+              <FileName>SKIDPADViewBase.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_verdana_10_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/gui_generated/src/skidpad_screen/skidpadviewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Table_verdana_20_4bpp.cpp</FileName>
+              <FileName>Table_Roboto_Bold_20_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_verdana_20_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_bold_20_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Table_verdana_40_4bpp.cpp</FileName>
+              <FileName>Table_Roboto_Bold_25_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_verdana_40_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_bold_25_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_Roboto_Regular_180_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_180_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_Roboto_Regular_420_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_420_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_Roboto_Regular_63_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_63_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Texts.cpp</FileName>

@@ -54,11 +54,3 @@ sw_dp11_init\screen1presenter.o: ../TouchGFX/gui/include/gui/model/ModelListener
 sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp
 sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 sw_dp11_init\screen1presenter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
-sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
-sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
-sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp
-sw_dp11_init\screen1presenter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
-sw_dp11_init\screen1presenter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
-sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
-sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
-sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp

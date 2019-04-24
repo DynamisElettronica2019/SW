@@ -41,18 +41,30 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/transitions/NoTransition.hpp \
  gui/include/gui/common/FrontendApplication.hpp \
- gui/include/gui/screen1_screen/Screen1View.hpp \
- generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
- gui/include/gui/screen1_screen/Screen1Presenter.hpp \
+ gui/include/gui/endurance_screen/ENDURANCEView.hpp \
+ generated/gui_generated/include/gui_generated/endurance_screen/ENDURANCEViewBase.hpp \
+ gui/include/gui/endurance_screen/ENDURANCEPresenter.hpp \
  gui/include/gui/model/ModelListener.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/Box.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/Widget.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextArea.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/FontManager.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/TypedText.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/Texts.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/Button.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/AbstractButton.hpp \
+ gui/include/gui/skidpad_screen/SKIDPADView.hpp \
+ generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp \
+ gui/include/gui/skidpad_screen/SKIDPADPresenter.hpp \
+ gui/include/gui/autocross_screen/AUTOCROSSView.hpp \
+ generated/gui_generated/include/gui_generated/autocross_screen/AUTOCROSSViewBase.hpp \
+ gui/include/gui/autocross_screen/AUTOCROSSPresenter.hpp \
+ gui/include/gui/acceleration_screen/ACCELERATIONView.hpp \
+ generated/gui_generated/include/gui_generated/acceleration_screen/ACCELERATIONViewBase.hpp \
+ gui/include/gui/acceleration_screen/ACCELERATIONPresenter.hpp \
+ gui/include/gui/screen1_screen/Screen1View.hpp \
+ generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
+ gui/include/gui/screen1_screen/Screen1Presenter.hpp \
  generated/texts/include/texts/TextKeysAndLanguages.hpp
 
 generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
@@ -139,17 +151,21 @@ generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp:
 
 gui/include/gui/common/FrontendApplication.hpp:
 
-gui/include/gui/screen1_screen/Screen1View.hpp:
+gui/include/gui/endurance_screen/ENDURANCEView.hpp:
 
-generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:
+generated/gui_generated/include/gui_generated/endurance_screen/ENDURANCEViewBase.hpp:
 
-gui/include/gui/screen1_screen/Screen1Presenter.hpp:
+gui/include/gui/endurance_screen/ENDURANCEPresenter.hpp:
 
 gui/include/gui/model/ModelListener.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/Box.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/Widget.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextArea.hpp:
 
@@ -159,8 +175,28 @@ gui/include/gui/model/ModelListener.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/Texts.hpp:
 
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/Button.hpp:
+gui/include/gui/skidpad_screen/SKIDPADView.hpp:
 
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/AbstractButton.hpp:
+generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp:
+
+gui/include/gui/skidpad_screen/SKIDPADPresenter.hpp:
+
+gui/include/gui/autocross_screen/AUTOCROSSView.hpp:
+
+generated/gui_generated/include/gui_generated/autocross_screen/AUTOCROSSViewBase.hpp:
+
+gui/include/gui/autocross_screen/AUTOCROSSPresenter.hpp:
+
+gui/include/gui/acceleration_screen/ACCELERATIONView.hpp:
+
+generated/gui_generated/include/gui_generated/acceleration_screen/ACCELERATIONViewBase.hpp:
+
+gui/include/gui/acceleration_screen/ACCELERATIONPresenter.hpp:
+
+gui/include/gui/screen1_screen/Screen1View.hpp:
+
+generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:
+
+gui/include/gui/screen1_screen/Screen1Presenter.hpp:
 
 generated/texts/include/texts/TextKeysAndLanguages.hpp:
