@@ -7,10 +7,10 @@
 #endif
 /********************DEFINES********************/
 	 
-#define N_INDICATORS 49
-#define TIT_LEN 7
+#define N_INDICATORS 49		//------------- Da decidere quali indicatori utilizzare
+#define TIT_LEN 7					//------------- Lunghezza massima della stringa va visualizzare come titolo
 	
-/********************DATA TYPE********************/
+/********************DATA TYPE********************/	 // per ora vengono creati in freertos.c e dichiarati come extern dalle altre parti
 
 typedef enum {
         /* car parameters */

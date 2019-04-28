@@ -260,8 +260,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId2",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -288,8 +288,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId4",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -316,8 +316,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId8",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -344,8 +344,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId6",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -372,8 +372,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId10",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -400,8 +400,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId12",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -429,7 +429,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId14",
               "UseBuffer": true,
-              "BufferSize": 5
+              "BufferSize": 6
             },
             "Name": "textIndValue1",
             "X": 18,
@@ -457,7 +457,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId16",
               "UseBuffer": true,
-              "BufferSize": 5
+              "BufferSize": 6
             },
             "Name": "textIndValue2",
             "X": 492,
@@ -485,7 +485,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId18",
               "UseBuffer": true,
-              "BufferSize": 5
+              "BufferSize": 6
             },
             "Name": "textIndValue3",
             "X": 18,
@@ -513,7 +513,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId20",
               "UseBuffer": true,
-              "BufferSize": 5
+              "BufferSize": 6
             },
             "Name": "textIndValue4",
             "X": 176,
@@ -541,7 +541,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId22",
               "UseBuffer": true,
-              "BufferSize": 5
+              "BufferSize": 6
             },
             "Name": "textIndValue5",
             "X": 334,
@@ -569,7 +569,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId24",
               "UseBuffer": true,
-              "BufferSize": 5
+              "BufferSize": 6
             },
             "Name": "textIndValue6",
             "X": 492,
@@ -594,6 +594,11 @@
             "Alpha": 255,
             "AutoSize": false,
             "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId148",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
             "Name": "textIndGearValue",
             "X": 180,
             "Y": -49,
@@ -665,8 +670,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId30",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndTcValue",
             "X": 48,
@@ -693,8 +698,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId32",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndMapValue",
             "X": 522,
@@ -738,7 +743,7 @@
               "Blue": 0
             },
             "Alpha": 255,
-            "Name": "box1",
+            "Name": "boxAcquisition",
             "X": 25,
             "Y": 305,
             "Width": 125,
@@ -763,8 +768,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId35",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 5
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
@@ -1103,8 +1108,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId38",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -1131,8 +1136,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId40",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -1159,8 +1164,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId42",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -1187,8 +1192,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId44",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -1215,8 +1220,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId46",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -1243,8 +1248,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId48",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -1271,8 +1276,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId50",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue1",
             "X": 18,
@@ -1299,8 +1304,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId52",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue2",
             "X": 492,
@@ -1327,8 +1332,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId54",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue3",
             "X": 18,
@@ -1355,8 +1360,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId56",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue4",
             "X": 176,
@@ -1383,8 +1388,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId58",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue5",
             "X": 334,
@@ -1411,8 +1416,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId60",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue6",
             "X": 492,
@@ -1437,6 +1442,11 @@
             "Alpha": 255,
             "AutoSize": false,
             "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId149",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
             "Name": "textIndGearValue",
             "X": 180,
             "Y": -49,
@@ -1508,8 +1518,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId65",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndTcValue",
             "X": 48,
@@ -1536,8 +1546,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId67",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndMapValue",
             "X": 522,
@@ -1581,7 +1591,7 @@
               "Blue": 0
             },
             "Alpha": 255,
-            "Name": "box1",
+            "Name": "boxAcquisition",
             "X": 25,
             "Y": 305,
             "Width": 125,
@@ -1606,8 +1616,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId70",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 5
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
@@ -1946,8 +1956,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId73",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -1974,8 +1984,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId75",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -2002,8 +2012,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId77",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -2030,8 +2040,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId79",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -2058,8 +2068,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId81",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -2086,8 +2096,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId83",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -2114,8 +2124,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId85",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue1",
             "X": 18,
@@ -2142,8 +2152,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId87",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue2",
             "X": 492,
@@ -2170,8 +2180,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId89",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue3",
             "X": 18,
@@ -2198,8 +2208,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId91",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue4",
             "X": 176,
@@ -2226,8 +2236,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId93",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue5",
             "X": 334,
@@ -2254,8 +2264,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId95",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue6",
             "X": 492,
@@ -2280,6 +2290,11 @@
             "Alpha": 255,
             "AutoSize": false,
             "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId150",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
             "Name": "textIndGearValue",
             "X": 180,
             "Y": -49,
@@ -2351,8 +2366,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId100",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndTcValue",
             "X": 48,
@@ -2379,8 +2394,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId102",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndMapValue",
             "X": 522,
@@ -2424,7 +2439,7 @@
               "Blue": 0
             },
             "Alpha": 255,
-            "Name": "box1",
+            "Name": "boxAcquisition",
             "X": 25,
             "Y": 305,
             "Width": 125,
@@ -2449,8 +2464,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId105",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 5
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
@@ -2523,10 +2538,10 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId144",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
-            "Name": "textIndValue6_1",
+            "Name": "textRpmLimiterValue",
             "X": 467,
             "Y": 299,
             "Width": 173,
@@ -2840,8 +2855,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId108",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -2868,8 +2883,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId110",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -2896,8 +2911,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId112",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -2924,8 +2939,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId114",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -2952,8 +2967,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId116",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -2980,8 +2995,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId118",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -3008,8 +3023,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId120",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue1",
             "X": 18,
@@ -3036,8 +3051,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId122",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue2",
             "X": 492,
@@ -3064,8 +3079,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId124",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue3",
             "X": 18,
@@ -3092,8 +3107,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId126",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue4",
             "X": 176,
@@ -3120,8 +3135,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId128",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue5",
             "X": 334,
@@ -3148,8 +3163,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId130",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 6
             },
             "Name": "textIndValue6",
             "X": 492,
@@ -3174,6 +3189,11 @@
             "Alpha": 255,
             "AutoSize": false,
             "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId151",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
             "Name": "textIndGearValue",
             "X": 180,
             "Y": -49,
@@ -3245,8 +3265,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId135",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndTcValue",
             "X": 48,
@@ -3273,8 +3293,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId137",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 3
             },
             "Name": "textIndMapValue",
             "X": 522,
@@ -3318,7 +3338,7 @@
               "Blue": 0
             },
             "Alpha": 255,
-            "Name": "box1",
+            "Name": "boxAcquisition",
             "X": 25,
             "Y": 305,
             "Width": 125,
@@ -3343,8 +3363,8 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId140",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 5
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
@@ -3417,10 +3437,10 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "TextId": "SingleUseId147",
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 7
             },
-            "Name": "textIndValue6_1",
+            "Name": "textRpmLimiterValue",
             "X": 467,
             "Y": 299,
             "Width": 173,
@@ -4087,6 +4107,22 @@
       },
       {
         "TextEntryId": "SingleUseId147",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId148",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId149",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId150",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId151",
         "IsResource": false
       }
     ],

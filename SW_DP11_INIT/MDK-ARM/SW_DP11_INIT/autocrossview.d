@@ -62,3 +62,7 @@ sw_dp11_init\autocrossview.o: ../middlewares/st/touchgfx/touchgfx/framework/incl
 sw_dp11_init\autocrossview.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
 sw_dp11_init\autocrossview.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\autocrossview.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
+sw_dp11_init\autocrossview.o: ../Core/Inc/general.h
+sw_dp11_init\autocrossview.o: ../Core/Inc/data.h
+sw_dp11_init\autocrossview.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sw_dp11_init\autocrossview.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp

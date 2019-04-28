@@ -58,7 +58,6 @@
 /* USER CODE BEGIN Includes */     
 
 #include "general.h"
-
 #include "data.h"
 
 /* USER CODE END Includes */
@@ -80,6 +79,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+
+Indicator_Value Indicators[N_INDICATORS];	//---- Deve essere inserita una funzione dove si inizializza il vettore di indicatori
+
+//Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
+uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;

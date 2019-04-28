@@ -31,6 +31,8 @@ private:
     ACCELERATIONPresenter();
 
     ACCELERATIONView& view;
+
+		virtual void update();
 };
 
 

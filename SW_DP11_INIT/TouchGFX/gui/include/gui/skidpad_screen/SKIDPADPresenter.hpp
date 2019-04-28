@@ -31,6 +31,8 @@ private:
     SKIDPADPresenter();
 
     SKIDPADView& view;
+
+		virtual void update();
 };
 
 

@@ -31,6 +31,8 @@ private:
     AUTOCROSSPresenter();
 
     AUTOCROSSView& view;
+
+		virtual void update();
 };
 
 

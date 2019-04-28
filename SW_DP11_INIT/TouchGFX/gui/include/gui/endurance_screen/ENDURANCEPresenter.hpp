@@ -31,6 +31,8 @@ private:
     ENDURANCEPresenter();
 
     ENDURANCEView& view;
+
+		virtual void update();
 };
 
 

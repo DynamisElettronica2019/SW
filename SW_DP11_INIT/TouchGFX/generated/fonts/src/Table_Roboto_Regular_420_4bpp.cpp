@@ -8,6 +8,7 @@ using namespace touchgfx;
 FONT_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_Roboto_Regular_420_4bpp[] FONT_LOCATION_FLASH_ATTRIBUTE =
 {
+    {     0,   2,   0,   0,   0,   0,   0, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     {     0,  42, 170, 174,  43,   5, 181, 255,   0, touchgfx::GLYPH_DATA_TOP_BIT8 | touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 14790,  43, 205, 218, 248,  16, 238, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 37244,  44,  59, 105,  45,   5,  82, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},

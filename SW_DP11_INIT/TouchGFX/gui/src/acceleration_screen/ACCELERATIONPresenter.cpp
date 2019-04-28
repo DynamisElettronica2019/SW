@@ -15,3 +15,8 @@ void ACCELERATIONPresenter::deactivate()
 {
 
 }
+
+void ACCELERATIONPresenter::update()
+{
+	view.refreshAcceleration();
+}

@@ -15,3 +15,8 @@ void AUTOCROSSPresenter::deactivate()
 {
 
 }
+
+void AUTOCROSSPresenter::update()
+{
+	view.refreshAutocross();
+}

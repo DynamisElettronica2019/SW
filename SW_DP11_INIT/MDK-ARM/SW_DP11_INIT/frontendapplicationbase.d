@@ -65,6 +65,8 @@ sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/fram
 sw_dp11_init\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
 sw_dp11_init\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
+sw_dp11_init\frontendapplicationbase.o: ../Core/Inc/general.h
+sw_dp11_init\frontendapplicationbase.o: ../Core/Inc/data.h
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADView.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADPresenter.hpp

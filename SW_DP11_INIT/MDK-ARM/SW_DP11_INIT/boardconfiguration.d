@@ -68,6 +68,8 @@ sw_dp11_init\boardconfiguration.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
+sw_dp11_init\boardconfiguration.o: ../Core/Inc/general.h
+sw_dp11_init\boardconfiguration.o: ../Core/Inc/data.h
 sw_dp11_init\boardconfiguration.o: ../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADView.hpp
 sw_dp11_init\boardconfiguration.o: ../TouchGFX/generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp
 sw_dp11_init\boardconfiguration.o: ../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADPresenter.hpp
@@ -130,5 +132,4 @@ sw_dp11_init\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx
 sw_dp11_init\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 sw_dp11_init\boardconfiguration.o: ../TouchGFX/target/STM32F7Instrumentation.hpp
-sw_dp11_init\boardconfiguration.o: ../Core/Inc/general.h
 sw_dp11_init\boardconfiguration.o: ../TouchGFX/target/HW_Init.hpp
