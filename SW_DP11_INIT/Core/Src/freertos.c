@@ -59,6 +59,8 @@
 
 #include "general.h"
 
+#include "data.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

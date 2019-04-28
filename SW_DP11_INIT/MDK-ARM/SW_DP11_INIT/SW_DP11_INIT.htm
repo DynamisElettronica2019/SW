@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sun Apr 28 11:25:56 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sun Apr 28 11:31:59 2019
 <BR><P>
 <H3>Maximum Stack Usage =        824 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -955,11 +955,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___22_BoardConfiguration_cpp_2f1c5dae
 <LI><a href="#[27c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
-<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
-<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 <LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_25_4bpp()
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_20_4bpp()
+<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
+<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 </UL>
 
 <P><STRONG><a name="[15e]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
@@ -2573,8 +2573,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[88]"></a>STM32F7HAL::~STM32F7HAL()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
-<LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
+<BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
+<LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
 </UL>
 <P><STRONG><a name="[31a]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
@@ -3089,8 +3089,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f9]"></a>touchgfx::Application::handleKeyEvent(unsigned char)</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx11Application14handleKeyEventEh))
-<BR>[Address Reference Count : 4]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 4]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
@@ -3109,8 +3109,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f7]"></a>touchgfx::Application::handleDragEvent(const touchgfx::DragEvent&)</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx11Application15handleDragEventERKNS_9DragEventE))
-<BR>[Address Reference Count : 4]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 4]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
@@ -3124,14 +3124,14 @@ Global Symbols
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
 <P><STRONG><a name="[f6]"></a>touchgfx::Application::handleClickEvent(const touchgfx::ClickEvent&)</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx11Application16handleClickEventERKNS_10ClickEventE))
-<BR>[Address Reference Count : 4]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 4]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
 <P><STRONG><a name="[f8]"></a>touchgfx::Application::handleGestureEvent(const touchgfx::GestureEvent&)</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx11Application18handleGestureEventERKNS_12GestureEventE))
-<BR>[Address Reference Count : 4]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 4]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
@@ -3146,8 +3146,8 @@ Global Symbols
 <LI><a href="#[271]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &(const touchgfx::Rect&) const
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Application::invalidateArea(touchgfx::Rect)
 </UL>
-<BR>[Address Reference Count : 4]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 4]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
@@ -3166,8 +3166,8 @@ Global Symbols
 <LI><a href="#[271]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &(const touchgfx::Rect&) const
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Application::invalidateArea(touchgfx::Rect)
 </UL>
-<BR>[Address Reference Count : 4]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 4]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
@@ -3176,8 +3176,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::Rect(short, short, short, short)
 </UL>
-<BR>[Address Reference Count : 4]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 4]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 <LI> application.o(.constdata__ZTVN8touchgfx11ApplicationE)
 </UL>
@@ -3358,8 +3358,8 @@ Global Symbols
 <P><STRONG><a name="[fb]"></a>touchgfx::MVPApplication::handlePendingScreenTransition()</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, boardconfiguration.o(i._ZN8touchgfx14MVPApplication29handlePendingScreenTransitionEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::MVPApplication::handlePendingScreenTransition()
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-<LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<BR>[Address Reference Count : 3]<UL><LI> frontendapplication.o(.constdata__ZTV19FrontendApplication)
+<LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 <LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
 </UL>
 <P><STRONG><a name="[27d]"></a>touchgfx::TouchCalibration::translatePoint(touchgfx::Point&)</STRONG> (Thumb, 152 bytes, Stack size 40 bytes, touchcalibration.o(i._ZN8touchgfx16TouchCalibration14translatePointERNS_5PointE))
@@ -3392,11 +3392,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ConstFont::ConstFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, unsigned short, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
-<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
-<LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
+<BR>[Called By]<UL><LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_25_4bpp()
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_20_4bpp()
+<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
+<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 </UL>
 
 <P><STRONG><a name="[342]"></a>touchgfx::InternalFlashFont::InternalFlashFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)</STRONG> (Thumb, 0 bytes, Stack size 56 bytes, internalflashfont.o(i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt), UNUSED)
@@ -3976,11 +3976,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[dc]"></a>touchgfx::Screen::handleKeyEvent(unsigned char)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen14handleKeyEventEh))
-<BR>[Address Reference Count : 9]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<BR>[Address Reference Count : 9]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
@@ -3994,11 +3994,11 @@ Global Symbols
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[d6]"></a>touchgfx::Screen::afterTransition()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen15afterTransitionEv))
-<BR>[Address Reference Count : 9]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<BR>[Address Reference Count : 9]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
@@ -4011,22 +4011,22 @@ Global Symbols
 <LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::intersect(short, short) const
 <LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ClickEvent::ClickEvent(touchgfx::ClickEvent::ClickEventType, short, short, short)
 </UL>
-<BR>[Address Reference Count : 9]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<BR>[Address Reference Count : 9]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[db]"></a>touchgfx::Screen::handleTickEvent()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen15handleTickEventEv))
-<BR>[Address Reference Count : 9]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<BR>[Address Reference Count : 9]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
@@ -4042,11 +4042,11 @@ Global Symbols
 <LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ClickEvent::ClickEvent(touchgfx::ClickEvent::ClickEventType, short, short, short)
 <LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Address Reference Count : 9]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<BR>[Address Reference Count : 9]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
@@ -4057,11 +4057,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::getAbsoluteRect() const
 </UL>
-<BR>[Address Reference Count : 9]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<BR>[Address Reference Count : 9]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
@@ -4085,11 +4085,11 @@ Global Symbols
 <LI><a href="#[271]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &(const touchgfx::Rect&) const
 <LI><a href="#[2ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::startSMOC(touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 9]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<BR>[Address Reference Count : 9]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
@@ -4912,11 +4912,11 @@ Global Symbols
 
 <P><STRONG><a name="[22c]"></a>__cxa_guard_acquire</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, cxa_guard_acquire.o(i.__cxa_guard_acquire))
 <BR><BR>[Called By]<UL><LI><a href="#[27c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
-<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
-<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 <LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_25_4bpp()
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_20_4bpp()
+<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
+<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 </UL>
 
 <P><STRONG><a name="[11d]"></a>__cxa_pure_virtual</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, pure_virt.o(i.__cxa_pure_virtual))
@@ -5322,10 +5322,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2d3]"></a>vPortEnterCritical</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, port.o(i.vPortEnterCritical))
-<BR><BR>[Called By]<UL><LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetApplicationTaskTag
+<BR><BR>[Called By]<UL><LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetApplicationTaskTag
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[2d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[2f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
@@ -5335,10 +5335,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2d5]"></a>vPortExitCritical</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, port.o(i.vPortExitCritical))
-<BR><BR>[Called By]<UL><LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetApplicationTaskTag
+<BR><BR>[Called By]<UL><LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetApplicationTaskTag
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[2d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[2f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
@@ -5429,9 +5429,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2d7]"></a>vTaskSuspendAll</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, tasks.o(i.vTaskSuspendAll))
-<BR><BR>[Called By]<UL><LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR><BR>[Called By]<UL><LI><a href="#[2c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
@@ -5469,9 +5469,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<BR>[Called By]<UL><LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::initialize()
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 <LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
-<LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::initialize()
 <LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateCountingSemaphore
 </UL>
 
@@ -5493,7 +5493,10 @@ Global Symbols
 <LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[2d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
+<BR>[Called By]<UL><LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::tryTakeFrameBufferSemaphore()
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::takeFrameBufferSemaphore()
+<LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::waitForVSync()
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skidpadModeTask
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settingsModeTask
@@ -5518,9 +5521,6 @@ Global Symbols
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aux1ButtonTask
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autocrossModeTask
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accelerationModeTask
-<LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::tryTakeFrameBufferSemaphore()
-<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::takeFrameBufferSemaphore()
-<LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::waitForVSync()
 </UL>
 
 <P><STRONG><a name="[2f5]"></a>xQueueGenericReset</STRONG> (Thumb, 148 bytes, Stack size 32 bytes, queue.o(i.xQueueGenericReset))
@@ -5549,9 +5549,9 @@ Global Symbols
 <LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[2d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
-<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::giveFrameBufferSemaphore()
+<BR>[Called By]<UL><LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::giveFrameBufferSemaphore()
 <LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::initialize()
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 </UL>
 
 <P><STRONG><a name="[25f]"></a>xQueueGenericSendFromISR</STRONG> (Thumb, 204 bytes, Stack size 32 bytes, queue.o(i.xQueueGenericSendFromISR))
@@ -5592,8 +5592,8 @@ Global Symbols
 <LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
-<LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<BR>[Called By]<UL><LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
 </UL>
 
 <P><STRONG><a name="[2f6]"></a>xTaskGetSchedulerState</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, tasks.o(i.xTaskGetSchedulerState))
@@ -5645,9 +5645,9 @@ Global Symbols
 <LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[2d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR>[Called By]<UL><LI><a href="#[2c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
@@ -6205,11 +6205,11 @@ Local Symbols
 <P><STRONG><a name="[153]"></a>__sti___21_typedtextdatabase_cpp_42ef4e5b</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, typedtextdatabase.o(i.__sti___21_typedtextdatabase_cpp_42ef4e5b))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = __sti___21_typedtextdatabase_cpp_42ef4e5b &rArr; getFont_Roboto_Regular_420_4bpp() &rArr; touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short) &rArr; touchgfx::ConstFont::ConstFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, unsigned short, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
-<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
-<LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
+<BR>[Calls]<UL><LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_25_4bpp()
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Bold_20_4bpp()
+<LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
+<LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> typedtextdatabase.o(.init_array)
 </UL><P>
