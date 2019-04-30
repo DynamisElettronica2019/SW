@@ -22,18 +22,21 @@ Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
 C:\Users\sofia\Desktop\GIT REPO\SW\SW_DP11_INIT\MDK-ARM\SW_DP11_INIT.uvprojx
-Project File Date:  04/03/2019
+Project File Date:  04/30/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 *** Warning: Using Microlib and C++ file(s) might cause the linker to fail !
   
 Build target 'SW_DP11_INIT'
-compiling stm32f7xx_it.c...
+compiling freertos.c...
+../Core/Src/freertos.c(977): warning:  #223-D: function "strncpy" declared implicitly
+  				strncpy(message,ptrTaskList+beginIndex,250-beginIndex);
+../Core/Src/freertos.c: 1 warning, 0 errors
 linking...
-Program Size: Code=47792 RO-data=87056 RW-data=540 ZI-data=72020  
+Program Size: Code=49316 RO-data=87056 RW-data=544 ZI-data=72016  
 FromELF: creating hex file...
-"SW_DP11_INIT\SW_DP11_INIT.axf" - 0 Error(s), 0 Warning(s).
+"SW_DP11_INIT\SW_DP11_INIT.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -56,7 +59,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.1.2
-Build Time Elapsed:  00:00:08
+Build Time Elapsed:  00:00:09
 </pre>
 </body>
 </html>

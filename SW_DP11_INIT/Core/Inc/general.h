@@ -23,6 +23,10 @@
 	 
 #define MAX_DRIVE_MODE			SKIDPAD_MODE
 	 
+#define NUMBER_OF_TASKS			27
+#define TASK_NUMBER_OFFSET	3
+#define ASCII_OFFSET				48	 
+	 
 
 /********************FUNCTIONS*******************/
 

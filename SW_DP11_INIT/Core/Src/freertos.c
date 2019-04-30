@@ -78,6 +78,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+uint8_t taskNumber;
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -516,6 +517,9 @@ void canTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(canSemaphoreHandle, portMAX_DELAY);
+		// quando arriva il messaggio CAN dal CANdebugger, lo spacchettiamo e troviamo
+		// il numero della task che vogliamo ricevere e lo salviamo in taskNumber
+		// attiviamo il semaforo debugFreeRTOSSemaphoreHandle
     osDelay(1);
   }
   /* USER CODE END canTask */
@@ -930,11 +934,63 @@ void boardDebugModeTask(void const * argument)
 void debugFreeRTOSTask(void const * argument)
 {
   /* USER CODE BEGIN debugFreeRTOSTask */
+	int i;
+	uint8_t beginIndex,currentTaskNumber,taskIndex,taskLength,previousTaskLength;
+	char ptrTaskList[250],message[250],first_int[2],second_int[2],third_int[2],fourth_int[2];
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(debugFreeRTOSSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+		currentTaskNumber = 0;
+	  taskLength = 0;
+		previousTaskLength = 0;
+			
+		vTaskList(ptrTaskList);
+
+		/* Task State Prio Stack */
+		
+		if(taskNumber < NUMBER_OF_TASKS) 
+		{
+			beginIndex = previousTaskLength;
+			while(currentTaskNumber != taskNumber)
+			{				
+				for (i = previousTaskLength; i < (250-previousTaskLength)	; i++)
+				{
+					if (ptrTaskList[i] != '\n');
+					else 
+					{
+						taskIndex = i+1;
+						i = 250;
+					}
+				}
+				taskLength = taskIndex - previousTaskLength;
+				taskNumber = ptrTaskList[taskIndex-TASK_NUMBER_OFFSET]-ASCII_OFFSET;
+				
+				if(currentTaskNumber != taskNumber)
+				{
+					previousTaskLength = taskIndex;
+					beginIndex = previousTaskLength;
+				}
+			}
+				
+			if(currentTaskNumber == taskNumber){
+				strncpy(message,ptrTaskList+beginIndex,250-beginIndex);
+				message[taskLength] = '\0';
+	
+				strncpy(first_int,ptrTaskList+(beginIndex),250-(beginIndex));
+				first_int[taskLength/4] = '\0';
+				strncpy(second_int,ptrTaskList+(beginIndex+taskLength/4),250-(beginIndex+taskLength/4));
+				second_int[taskLength/2] = '\0';
+				strncpy(third_int,ptrTaskList+(beginIndex+taskLength/2),250-(beginIndex+taskLength/2));
+				third_int[3*taskLength/2] = '\0';
+				strncpy(fourth_int,ptrTaskList+(beginIndex+3*taskLength/4),250-(beginIndex+3*taskLength/4));
+				fourth_int[taskLength] = '\0';
+				// invio su CAN della stringa spezzettata 
+			}
+		} else {
+			// va mandato su CAN un messaggio che dica che la task è inesistente
+		}   
+		osDelay(1);
   }
   /* USER CODE END debugFreeRTOSTask */
 }
