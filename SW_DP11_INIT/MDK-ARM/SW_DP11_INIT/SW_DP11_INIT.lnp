@@ -60,6 +60,7 @@
 "sw_dp11_init\heap_4.o"
 "sw_dp11_init\port.o"
 "../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib"
+"../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib"
 "sw_dp11_init\oswrappers.o"
 "sw_dp11_init\accelerationpresenter.o"
 "sw_dp11_init\accelerationview.o"
