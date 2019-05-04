@@ -19,6 +19,26 @@
   <FilePath>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</FilePath>
 </File>
 <File>
+  <FileName>BOARD_DEBUGPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>BOARD_DEBUGView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugview.cpp</FilePath>
+</File>
+<File>
+  <FileName>DEBUG_MODEPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/debug_mode_screen/debug_modepresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>DEBUG_MODEView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/debug_mode_screen/debug_modeview.cpp</FilePath>
+</File>
+<File>
   <FileName>ENDURANCEPresenter.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/endurance_screen/endurancepresenter.cpp</FilePath>
@@ -49,6 +69,16 @@
   <FilePath>../touchgfx/gui/src/screen1_screen/screen1view.cpp</FilePath>
 </File>
 <File>
+  <FileName>SETTINGSPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/settings_screen/settingspresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>SETTINGSView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/settings_screen/settingsview.cpp</FilePath>
+</File>
+<File>
   <FileName>SKIDPADPresenter.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/skidpad_screen/skidpadpresenter.cpp</FilePath>
@@ -77,6 +107,16 @@
   <FileName>BitmapDatabase.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+</File>
+<File>
+  <FileName>BOARD_DEBUGViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/gui_generated/src/board_debug_screen/board_debugviewbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>DEBUG_MODEViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/gui_generated/src/debug_mode_screen/debug_modeviewbase.cpp</FilePath>
 </File>
 <File>
   <FileName>ENDURANCEViewBase.cpp</FileName>
@@ -152,6 +192,11 @@
   <FileName>Screen1ViewBase.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>SETTINGSViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/gui_generated/src/settings_screen/settingsviewbase.cpp</FilePath>
 </File>
 <File>
   <FileName>SKIDPADViewBase.cpp</FileName>

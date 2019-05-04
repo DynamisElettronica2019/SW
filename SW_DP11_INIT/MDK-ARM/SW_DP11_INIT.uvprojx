@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx,QSPI_CLOCK_PRESCALER=2,QSPI_DDRMODE,QSPI_XIP_MODE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;     ../TouchGFX/target;     ../TouchGFX/generated/fonts/include;     ../TouchGFX/generated/texts/include;     ../TouchGFX/generated/images/include;     ../TouchGFX/generated/gui_generated/include;     ../TouchGFX/gui/include; ../middlewares/st/touchgfx/touchgfx/framework/include;     ../Drivers/STM32F7xx_HAL_Driver/Inc;     ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;     ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;     ../Drivers/CMSIS/Include; ../middlewares/st/touchgfx/touchgfx/framework/include; ../middlewares/st/touchgfx/touchgfx/framework/include;../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Core/Inc;     ../TouchGFX/target;     ../TouchGFX/generated/fonts/include;     ../TouchGFX/generated/texts/include;     ../TouchGFX/generated/images/include;     ../TouchGFX/generated/gui_generated/include;     ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;     ../Drivers/STM32F7xx_HAL_Driver/Inc;     ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;     ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;     ../Drivers/CMSIS/Include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -716,11 +716,6 @@
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappers.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
@@ -751,6 +746,26 @@
               <FilePath>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</FilePath>
             </File>
             <File>
+              <FileName>BOARD_DEBUGPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BOARD_DEBUGView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>DEBUG_MODEPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/debug_mode_screen/debug_modepresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>DEBUG_MODEView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/debug_mode_screen/debug_modeview.cpp</FilePath>
+            </File>
+            <File>
               <FileName>ENDURANCEPresenter.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/endurance_screen/endurancepresenter.cpp</FilePath>
@@ -779,6 +794,16 @@
               <FileName>Screen1View.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/screen1_screen/screen1view.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SETTINGSPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/settings_screen/settingspresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SETTINGSView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/settings_screen/settingsview.cpp</FilePath>
             </File>
             <File>
               <FileName>SKIDPADPresenter.cpp</FileName>
@@ -814,6 +839,16 @@
               <FileName>BitmapDatabase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BOARD_DEBUGViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/board_debug_screen/board_debugviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>DEBUG_MODEViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/debug_mode_screen/debug_modeviewbase.cpp</FilePath>
             </File>
             <File>
               <FileName>ENDURANCEViewBase.cpp</FileName>
@@ -889,6 +924,11 @@
               <FileName>Screen1ViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SETTINGSViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/settings_screen/settingsviewbase.cpp</FilePath>
             </File>
             <File>
               <FileName>SKIDPADViewBase.cpp</FileName>

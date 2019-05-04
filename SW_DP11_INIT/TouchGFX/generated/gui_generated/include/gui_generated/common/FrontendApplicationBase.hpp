@@ -30,6 +30,18 @@ public:
     // ACCELERATION
     void gotoACCELERATIONScreenNoTransition();
 
+
+    // SETTINGS
+    void gotoSETTINGSScreenNoTransition();
+
+
+    // BOARD_DEBUG
+    void gotoBOARD_DEBUGScreenNoTransition();
+
+
+    // DEBUG_MODE
+    void gotoDEBUG_MODEScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -49,6 +61,18 @@ protected:
 
     // ACCELERATION
     void gotoACCELERATIONScreenNoTransitionImpl();
+
+
+    // SETTINGS
+    void gotoSETTINGSScreenNoTransitionImpl();
+
+
+    // BOARD_DEBUG
+    void gotoBOARD_DEBUGScreenNoTransitionImpl();
+
+
+    // DEBUG_MODE
+    void gotoDEBUG_MODEScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

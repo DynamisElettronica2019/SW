@@ -21,6 +21,36 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
@@ -32,6 +62,12 @@
 #include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
 #include <gui/acceleration_screen/ACCELERATIONView.hpp>
 #include <gui/acceleration_screen/ACCELERATIONPresenter.hpp>
+#include <gui/settings_screen/SETTINGSView.hpp>
+#include <gui/settings_screen/SETTINGSPresenter.hpp>
+#include <gui/board_debug_screen/BOARD_DEBUGView.hpp>
+#include <gui/board_debug_screen/BOARD_DEBUGPresenter.hpp>
+#include <gui/debug_mode_screen/DEBUG_MODEView.hpp>
+#include <gui/debug_mode_screen/DEBUG_MODEPresenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 
@@ -60,8 +96,11 @@ public:
             meta::TypeList< SKIDPADView,
             meta::TypeList< AUTOCROSSView,
             meta::TypeList< ACCELERATIONView,
+            meta::TypeList< SETTINGSView,
+            meta::TypeList< BOARD_DEBUGView,
+            meta::TypeList< DEBUG_MODEView,
             meta::TypeList< Screen1View,
-            meta::Nil > > > >
+            meta::Nil > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -77,8 +116,11 @@ public:
             meta::TypeList< SKIDPADPresenter,
             meta::TypeList< AUTOCROSSPresenter,
             meta::TypeList< ACCELERATIONPresenter,
+            meta::TypeList< SETTINGSPresenter,
+            meta::TypeList< BOARD_DEBUGPresenter,
+            meta::TypeList< DEBUG_MODEPresenter,
             meta::TypeList< Screen1Presenter,
-            meta::Nil > > > >
+            meta::Nil > > > > > > >
             > GeneratedPresenterTypes;
 
     /**
