@@ -92,6 +92,8 @@ void SKIDPADView::refreshSkidpad()
 	}
 	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
 	
+	/****************REFFRESH OGGETTI*****************/
+	
 	textIndTitle1.invalidate();
 	textIndTitle2.invalidate();
 	textIndTitle3.invalidate();
@@ -119,13 +121,13 @@ void SKIDPADView::checkChangeScreen()
 {
 	switch ( driveMode ){
 				case SETTINGS_MODE	:
-					
+					application().gotoSETTINGSScreenNoTransition();
 					break;
 				case BOARD_DEBUG_MODE	:
-					
+					application().gotoBOARD_DEBUGScreenNoTransition();
 					break;
 				case DEBUG_MODE	:
-					
+					application().gotoDEBUG_MODEScreenNoTransition();
 					break;
 				case ENDURANCE_MODE	:
 					application().gotoENDURANCEScreenNoTransition();
@@ -139,5 +141,5 @@ void SKIDPADView::checkChangeScreen()
 				case SKIDPAD_MODE	:
 					
 					break;
-	}
+	}	
 }

@@ -78,3 +78,5 @@ sw_dp11_init\debug_modepresenter.o: ../middlewares/st/touchgfx/touchgfx/framewor
 sw_dp11_init\debug_modepresenter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
 sw_dp11_init\debug_modepresenter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\debug_modepresenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
+sw_dp11_init\debug_modepresenter.o: ../Core/Inc/general.h
+sw_dp11_init\debug_modepresenter.o: ../Core/Inc/data.h

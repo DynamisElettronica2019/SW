@@ -81,6 +81,10 @@ void ACCELERATIONView::refreshAcceleration()
 	Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%d", Indicators[TRACTION_CONTROL].intValore);
 	Unicode::snprintf(textIndMapValueBuffer, TEXTINDMAPVALUE_SIZE, "%d", Indicators[MAP].intValore);
 
+	/****************RPM LIMITER*****************/
+	
+	Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%d", Indicators[RPM_LIM].intValore);
+	
 	/****************ACQUISITION*****************/
 	
 	if ( Indicators[ACQ].intValore == 1 ){			//--------- da decidere come modificare il valore quando letto da CAN
@@ -92,6 +96,8 @@ void ACCELERATIONView::refreshAcceleration()
 		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
 	}
 	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
+	
+	/****************REFFRESH OGGETTI*****************/
 	
 	textIndTitle1.invalidate();
 	textIndTitle2.invalidate();
@@ -111,6 +117,8 @@ void ACCELERATIONView::refreshAcceleration()
 	textIndTcValue.invalidate();
 	textIndMapValue.invalidate();
 	
+	textRpmLimiterValue.invalidate();
+	
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();
 	
@@ -120,13 +128,13 @@ void ACCELERATIONView::checkChangeScreen()
 {
 	switch ( driveMode ){
 				case SETTINGS_MODE	:
-					
+					application().gotoSETTINGSScreenNoTransition();
 					break;
 				case BOARD_DEBUG_MODE	:
-					
+					application().gotoBOARD_DEBUGScreenNoTransition();
 					break;
 				case DEBUG_MODE	:
-					
+					application().gotoDEBUG_MODEScreenNoTransition();
 					break;
 				case ENDURANCE_MODE	:
 					application().gotoENDURANCEScreenNoTransition();
@@ -140,6 +148,6 @@ void ACCELERATIONView::checkChangeScreen()
 				case SKIDPAD_MODE	:
 					application().gotoSKIDPADScreenNoTransition();
 					break;
-	}	
+	}		
 }
 

@@ -81,6 +81,10 @@
 /* USER CODE BEGIN Variables */
 
 Indicator_Value Indicators[N_INDICATORS];	//---- Deve essere inserita una funzione dove si inizializza il vettore di indicatori
+int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
+int box_driveMode;
+int box_indicator;
+uint8_t pointer_scroll;
 
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
@@ -613,6 +617,64 @@ void mapSelectorTask(void const * argument)
 void leftEncoderTask(void const * argument)
 {
   /* USER CODE BEGIN leftEncoderTask */
+	
+/*----------- PARTE AGGIUNTA PER COLLEGARSI ALLA GRAFICA ---------------
+	
+	int movement = 0;
+
+  for(;;)
+  {
+		xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
+		movement = GPIO_encoders_left_encoder_movement();
+		leftPosition = leftPosition + movement; 
+		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
+		// la posizione relativa o assoluta
+		switch(driveMode)
+		{
+			case AUTOX_MODE:
+			case ACCELERATION_MODE:
+			case ENDURANCE_MODE:
+			case SKIDPAD_MODE:
+				d_traction_control_handle(movement);
+				break;
+			case BOARD_DEBUG_MODE:
+			case SETTINGS_MODE:
+				// scorri il menu - AGGIORNIAMO MATRICE GLOBALE
+	---------------------------------------------------------------------
+				switch (schermata_settings){
+				case 0 ;
+					if (movement == 1)
+						box_driveMode = box_driveMode + 1;
+					if (movement == -1)
+						box_driveMode = box_driveMode - 1;
+					if (box_driveMode == 4 )
+						box_driveMode = 0;
+					if (box_driveMode == -1 )
+						box_driveMode = 3;
+					break;
+				case 1 ;
+					pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
+					if (movement == 1)
+						box_indicator = box_indicator + 1;
+					if (movement == -1)
+						box_indicator = box_indicator - 1;
+					if (box_indicator == 6)
+						box_indicator = 0;
+					if (box_indicator == -1)
+						box_indicator = 5;
+				}
+				break;
+	----------------------------------------------------------------------			
+			case DEBUG_MODE:
+				// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE 
+				break;
+			default: 
+				break;
+		}
+    osDelay(1);
+	}
+*/
+	
   /* Infinite loop */
   for(;;)
   {
@@ -632,6 +694,46 @@ void leftEncoderTask(void const * argument)
 void rightEncoderTask(void const * argument)
 {
   /* USER CODE BEGIN rightEncoderTask */
+
+/*----------- PARTE AGGIUNTA PER COLLEGARSI ALLA GRAFICA ----------------
+	
+	int movement = 0;
+	
+  for(;;)
+  {
+		xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
+		movement = GPIO_encoders_right_encoder_movement();
+	  rightPosition = rightPosition + movement;
+		switch(driveMode)
+		{
+			case AUTOX_MODE:
+			case ACCELERATION_MODE:
+				d_rpm_limiter_handle(movement);
+				break;
+			case BOARD_DEBUG_MODE:
+				// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
+				break;
+			case DEBUG_MODE:
+				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
+				break;
+			case SETTINGS_MODE:
+				// scorri le finestrelle - AGGIORNARE LA MATRICE GLOBALE
+				if (movement == 1)
+					pointer_scroll = pointer_scroll + 1;
+				if (movement == -1)
+					pointer_scroll = pointer_scroll - 1;
+				if (pointer_scroll == -1)
+					pointer_scroll = N_INDICATORS - 1;
+				if (pointer_scroll == N_INDICATORS)
+					pointer_scroll = 0;
+				break;
+			default: 
+				break;
+		}
+    osDelay(1);
+}
+*/
+
   /* Infinite loop */
   for(;;)
   {
@@ -693,6 +795,20 @@ void okButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
+		
+		/* ------------------------ PARTE AGGIUNTA PER COLLEGARSI ALLA GRAFICA --------------------
+		switch(driveMode)
+		{
+			
+			case ACCELERATION_MODE:
+				// invio su can
+				break;
+		case SETTINGS_MODE:
+			if (schermata_settings == 0 )
+				schermata_settings = 1;
+			break;
+		
+		*/
     osDelay(1);
   }
   /* USER CODE END okButtonTask */

@@ -282,7 +282,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h)(0x5CCD4568)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h)(0x5CCD4568)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h)(0x5CCD4568)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x5CCD4568)
-F (../Core/Src/freertos.c)(0x5CCD45B4)(--c99 -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\freertos.o --omf_browse sw_dp11_init\freertos.crf --depend sw_dp11_init\freertos.d)
+F (../Core/Src/freertos.c)(0x5CCDB3A4)(--c99 -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\freertos.o --omf_browse sw_dp11_init\freertos.crf --depend sw_dp11_init\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5CCD4578)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BE5B4)
@@ -340,7 +340,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5CCD4578)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5CCD4578)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5CCD4578)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
+I (../Core/Inc/data.h)(0x5CCD984C)
 F (../Core/Src/i2c.c)(0x5CCD45B4)(--c99 -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\i2c.o --omf_browse sw_dp11_init\i2c.crf --depend sw_dp11_init\i2c.d)
 I (../Core/Inc/i2c.h)(0x5CCD4564)
 I (../Core/Inc/main.h)(0x5CCD4564)
@@ -719,7 +719,7 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/BoxWit
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0x5CCD4574)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
+I (../Core/Inc/data.h)(0x5CCD984C)
 I (../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADPresenter.hpp)(0x5CCD45BC)
@@ -729,12 +729,12 @@ I (../TouchGFX/gui/include/gui/autocross_screen/AUTOCROSSPresenter.hpp)(0x5CCD45
 I (../TouchGFX/gui/include/gui/acceleration_screen/ACCELERATIONView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/acceleration_screen/ACCELERATIONViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/acceleration_screen/ACCELERATIONPresenter.hpp)(0x5CCD45BC)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCD4A1E)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCDB5FA)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/settings_screen/SETTINGSViewBase.hpp)(0x5CCD6AB0)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD4A1E)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD6022)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD9558)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD937C)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/board_debug_screen/BOARD_DEBUGViewBase.hpp)(0x5CCD6B36)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD6022)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD937C)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/transforms/DisplayTransformation.hpp)(0x5CCD4574)
@@ -750,9 +750,9 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x5CCD4574)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD6CC6)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD9492)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/debug_mode_screen/DEBUG_MODEViewBase.hpp)(0x5CCD6F72)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD6CC6)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD9492)
 I (../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp)(0x5CCD457E)
@@ -2506,8 +2506,8 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
-F (../touchgfx/gui/src/acceleration_screen/accelerationview.cpp)(0x5CCD45BC)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\accelerationview.o --omf_browse sw_dp11_init\accelerationview.crf --depend sw_dp11_init\accelerationview.d)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/acceleration_screen/accelerationview.cpp)(0x5CCD97A6)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\accelerationview.o --omf_browse sw_dp11_init\accelerationview.crf --depend sw_dp11_init\accelerationview.d)
 I (../TouchGFX/gui/include/gui/acceleration_screen/ACCELERATIONView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/acceleration_screen/ACCELERATIONViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
@@ -2566,7 +2566,7 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
+I (../Core/Inc/data.h)(0x5CCD984C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BE5B4)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp)(0x5CCD456E)
 F (../touchgfx/gui/src/autocross_screen/autocrosspresenter.cpp)(0x5CCD45BC)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\autocrosspresenter.o --omf_browse sw_dp11_init\autocrosspresenter.crf --depend sw_dp11_init\autocrosspresenter.d)
@@ -2628,8 +2628,8 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
-F (../touchgfx/gui/src/autocross_screen/autocrossview.cpp)(0x5CCD45BC)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\autocrossview.o --omf_browse sw_dp11_init\autocrossview.crf --depend sw_dp11_init\autocrossview.d)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/autocross_screen/autocrossview.cpp)(0x5CCD9886)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\autocrossview.o --omf_browse sw_dp11_init\autocrossview.crf --depend sw_dp11_init\autocrossview.d)
 I (../TouchGFX/gui/include/gui/autocross_screen/AUTOCROSSView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/autocross_screen/AUTOCROSSViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
@@ -2688,11 +2688,11 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
+I (../Core/Inc/data.h)(0x5CCD984C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BE5B4)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp)(0x5CCD456E)
-F (../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp)(0x5CCD6022)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\board_debugpresenter.o --omf_browse sw_dp11_init\board_debugpresenter.crf --depend sw_dp11_init\board_debugpresenter.d)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD6022)
+F (../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp)(0x5CCD939E)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\board_debugpresenter.o --omf_browse sw_dp11_init\board_debugpresenter.crf --depend sw_dp11_init\board_debugpresenter.d)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD937C)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/board_debug_screen/BOARD_DEBUGViewBase.hpp)(0x5CCD6B36)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x5CCD7356)
@@ -2739,7 +2739,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD6022)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD937C)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -2764,8 +2764,10 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp)(0x5CCD4574)
-F (../touchgfx/gui/src/board_debug_screen/board_debugview.cpp)(0x5CCD6022)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\board_debugview.o --omf_browse sw_dp11_init\board_debugview.crf --depend sw_dp11_init\board_debugview.d)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD6022)
+I (../Core/Inc/general.h)(0x5CCD4564)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/board_debug_screen/board_debugview.cpp)(0x5CCD9654)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\board_debugview.o --omf_browse sw_dp11_init\board_debugview.crf --depend sw_dp11_init\board_debugview.d)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD937C)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/board_debug_screen/BOARD_DEBUGViewBase.hpp)(0x5CCD6B36)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x5CCD7356)
@@ -2812,7 +2814,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD6022)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD937C)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -2837,8 +2839,10 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp)(0x5CCD4574)
-F (../touchgfx/gui/src/debug_mode_screen/debug_modepresenter.cpp)(0x5CCD6CC6)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\debug_modepresenter.o --omf_browse sw_dp11_init\debug_modepresenter.crf --depend sw_dp11_init\debug_modepresenter.d)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD6CC6)
+I (../Core/Inc/general.h)(0x5CCD4564)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/debug_mode_screen/debug_modepresenter.cpp)(0x5CCD9492)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\debug_modepresenter.o --omf_browse sw_dp11_init\debug_modepresenter.crf --depend sw_dp11_init\debug_modepresenter.d)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD9492)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/debug_mode_screen/DEBUG_MODEViewBase.hpp)(0x5CCD6F72)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x5CCD7356)
@@ -2885,7 +2889,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD6CC6)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD9492)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -2909,8 +2913,10 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAr
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
-F (../touchgfx/gui/src/debug_mode_screen/debug_modeview.cpp)(0x5CCD6CC6)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\debug_modeview.o --omf_browse sw_dp11_init\debug_modeview.crf --depend sw_dp11_init\debug_modeview.d)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD6CC6)
+I (../Core/Inc/general.h)(0x5CCD4564)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/debug_mode_screen/debug_modeview.cpp)(0x5CCD9654)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\debug_modeview.o --omf_browse sw_dp11_init\debug_modeview.crf --depend sw_dp11_init\debug_modeview.d)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD9492)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/debug_mode_screen/DEBUG_MODEViewBase.hpp)(0x5CCD6F72)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x5CCD7356)
@@ -2957,7 +2963,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD6CC6)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD9492)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -2981,6 +2987,8 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAr
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
+I (../Core/Inc/general.h)(0x5CCD4564)
+I (../Core/Inc/data.h)(0x5CCD984C)
 F (../touchgfx/gui/src/endurance_screen/endurancepresenter.cpp)(0x5CCD45BC)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\endurancepresenter.o --omf_browse sw_dp11_init\endurancepresenter.crf --depend sw_dp11_init\endurancepresenter.d)
 I (../TouchGFX/gui/include/gui/endurance_screen/ENDURANCEView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/endurance_screen/ENDURANCEViewBase.hpp)(0x5CCD45BA)
@@ -3040,8 +3048,8 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
-F (../touchgfx/gui/src/endurance_screen/enduranceview.cpp)(0x5CCD45BC)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\enduranceview.o --omf_browse sw_dp11_init\enduranceview.crf --depend sw_dp11_init\enduranceview.d)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/endurance_screen/enduranceview.cpp)(0x5CCD9836)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\enduranceview.o --omf_browse sw_dp11_init\enduranceview.crf --depend sw_dp11_init\enduranceview.d)
 I (../TouchGFX/gui/include/gui/endurance_screen/ENDURANCEView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/endurance_screen/ENDURANCEViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
@@ -3100,7 +3108,7 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
+I (../Core/Inc/data.h)(0x5CCD984C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BE5B4)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp)(0x5CCD456E)
 F (../touchgfx/gui/src/common/frontendapplication.cpp)(0x5CCD457E)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\frontendapplication.o --omf_browse sw_dp11_init\frontendapplication.crf --depend sw_dp11_init\frontendapplication.d)
@@ -3256,8 +3264,8 @@ I (../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp)(0x5CCD457E)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
-F (../touchgfx/gui/src/settings_screen/settingspresenter.cpp)(0x5CCD4A1E)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\settingspresenter.o --omf_browse sw_dp11_init\settingspresenter.crf --depend sw_dp11_init\settingspresenter.d)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCD4A1E)
+F (../touchgfx/gui/src/settings_screen/settingspresenter.cpp)(0x5CCD9570)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\settingspresenter.o --omf_browse sw_dp11_init\settingspresenter.crf --depend sw_dp11_init\settingspresenter.d)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCDB5FA)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/settings_screen/SETTINGSViewBase.hpp)(0x5CCD6AB0)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x5CCD7356)
@@ -3304,7 +3312,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD4A1E)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD9558)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -3314,8 +3322,10 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAr
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
-F (../touchgfx/gui/src/settings_screen/settingsview.cpp)(0x5CCD4A1E)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\settingsview.o --omf_browse sw_dp11_init\settingsview.crf --depend sw_dp11_init\settingsview.d)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCD4A1E)
+I (../Core/Inc/general.h)(0x5CCD4564)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/settings_screen/settingsview.cpp)(0x5CCDB5FA)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\settingsview.o --omf_browse sw_dp11_init\settingsview.crf --depend sw_dp11_init\settingsview.d)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCDB5FA)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/settings_screen/SETTINGSViewBase.hpp)(0x5CCD6AB0)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x5CCD7356)
@@ -3362,7 +3372,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD4A1E)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD9558)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -3372,6 +3382,9 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAr
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
+I (../Core/Inc/general.h)(0x5CCD4564)
+I (../Core/Inc/data.h)(0x5CCD984C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BE5B4)
 F (../touchgfx/gui/src/skidpad_screen/skidpadpresenter.cpp)(0x5CCD45BC)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\skidpadpresenter.o --omf_browse sw_dp11_init\skidpadpresenter.crf --depend sw_dp11_init\skidpadpresenter.d)
 I (../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp)(0x5CCD45BA)
@@ -3431,8 +3444,8 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
-F (../touchgfx/gui/src/skidpad_screen/skidpadview.cpp)(0x5CCD45BC)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\skidpadview.o --omf_browse sw_dp11_init\skidpadview.crf --depend sw_dp11_init\skidpadview.d)
+I (../Core/Inc/data.h)(0x5CCD984C)
+F (../touchgfx/gui/src/skidpad_screen/skidpadview.cpp)(0x5CCD9836)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\skidpadview.o --omf_browse sw_dp11_init\skidpadview.crf --depend sw_dp11_init\skidpadview.d)
 I (../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/common/FrontendApplication.hpp)(0x5CCD457E)
@@ -3491,7 +3504,7 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
+I (../Core/Inc/data.h)(0x5CCD984C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588BE5B4)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp)(0x5CCD456E)
 F (../touchgfx/generated/gui_generated/src/acceleration_screen/accelerationviewbase.cpp)(0x5CCD45BA)(--cpp -c --cpu Cortex-M7.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../TouchGFX/target -I ../TouchGFX/generated/fonts/include -I ../TouchGFX/generated/texts/include -I ../TouchGFX/generated/images/include -I ../TouchGFX/generated/gui_generated/include -I ../TouchGFX/gui/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include -I ../middlewares/st/touchgfx/touchgfx/framework/include-I.\RTE\_SW_DP11_INIT-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F746xx -DUSE_HAL_DRIVER -DSTM32F746xx -DQSPI_CLOCK_PRESCALER="2" -DQSPI_DDRMODE -DQSPI_XIP_MODE-o sw_dp11_init\accelerationviewbase.o --omf_browse sw_dp11_init\accelerationviewbase.crf --depend sw_dp11_init\accelerationviewbase.d)
@@ -3680,7 +3693,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD6022)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD937C)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -3754,7 +3767,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD6CC6)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD9492)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)
@@ -3937,7 +3950,7 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hp
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x5CCD456E)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp)(0x5CCD456E)
 I (../Core/Inc/general.h)(0x5CCD4564)
-I (../Core/Inc/data.h)(0x5CCD45B4)
+I (../Core/Inc/data.h)(0x5CCD984C)
 I (../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADPresenter.hpp)(0x5CCD45BC)
@@ -3947,12 +3960,12 @@ I (../TouchGFX/gui/include/gui/autocross_screen/AUTOCROSSPresenter.hpp)(0x5CCD45
 I (../TouchGFX/gui/include/gui/acceleration_screen/ACCELERATIONView.hpp)(0x5CCD45BC)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/acceleration_screen/ACCELERATIONViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/acceleration_screen/ACCELERATIONPresenter.hpp)(0x5CCD45BC)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCD4A1E)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSView.hpp)(0x5CCDB5FA)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/settings_screen/SETTINGSViewBase.hpp)(0x5CCD6AB0)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD4A1E)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD6022)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD9558)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp)(0x5CCD937C)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/board_debug_screen/BOARD_DEBUGViewBase.hpp)(0x5CCD6B36)
-I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD6022)
+I (../TouchGFX/gui/include/gui/board_debug_screen/BOARD_DEBUGPresenter.hpp)(0x5CCD937C)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/transforms/DisplayTransformation.hpp)(0x5CCD4574)
@@ -3968,9 +3981,9 @@ I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x5CCD4574)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD6CC6)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp)(0x5CCD9492)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/debug_mode_screen/DEBUG_MODEViewBase.hpp)(0x5CCD6F72)
-I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD6CC6)
+I (../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp)(0x5CCD9492)
 I (../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp)(0x5CCD457E)
 I (../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp)(0x5CCD45BA)
 I (../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp)(0x5CCD457E)
@@ -4126,7 +4139,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\new)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588BE5B4)
 I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x588BE5B4)
 I (../TouchGFX/gui/include/gui/model/Model.hpp)(0x5CCD457E)
-I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD4A1E)
+I (../TouchGFX/gui/include/gui/settings_screen/SETTINGSPresenter.hpp)(0x5CCD9558)
 I (../TouchGFX/gui/include/gui/model/ModelListener.hpp)(0x5CCD45BC)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp)(0x5CCD4574)
 I (../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x5CCD4574)

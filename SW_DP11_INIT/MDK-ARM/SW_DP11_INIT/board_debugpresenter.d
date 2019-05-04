@@ -79,3 +79,5 @@ sw_dp11_init\board_debugpresenter.o: ../middlewares/st/touchgfx/touchgfx/framewo
 sw_dp11_init\board_debugpresenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp
 sw_dp11_init\board_debugpresenter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\board_debugpresenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
+sw_dp11_init\board_debugpresenter.o: ../Core/Inc/general.h
+sw_dp11_init\board_debugpresenter.o: ../Core/Inc/data.h

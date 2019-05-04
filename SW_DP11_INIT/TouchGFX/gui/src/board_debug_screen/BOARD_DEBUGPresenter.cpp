@@ -15,3 +15,8 @@ void BOARD_DEBUGPresenter::deactivate()
 {
 
 }
+
+void BOARD_DEBUGPresenter::update()
+{
+	view.refreshBoardDebug();
+}

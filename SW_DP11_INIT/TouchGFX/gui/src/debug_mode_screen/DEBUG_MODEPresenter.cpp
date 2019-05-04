@@ -15,3 +15,8 @@ void DEBUG_MODEPresenter::deactivate()
 {
 
 }
+
+void DEBUG_MODEPresenter::update()
+{
+	view.refreshDebugMode();
+}

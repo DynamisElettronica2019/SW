@@ -31,6 +31,8 @@ private:
     SETTINGSPresenter();
 
     SETTINGSView& view;
+
+		virtual void update();
 };
 
 

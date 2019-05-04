@@ -31,6 +31,8 @@ private:
     DEBUG_MODEPresenter();
 
     DEBUG_MODEView& view;
+
+		virtual void update();
 };
 
 

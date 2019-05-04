@@ -15,3 +15,8 @@ void SETTINGSPresenter::deactivate()
 {
 
 }
+
+void SETTINGSPresenter::update()
+{
+	view.refreshSettings();
+}

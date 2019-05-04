@@ -31,6 +31,8 @@ private:
     BOARD_DEBUGPresenter();
 
     BOARD_DEBUGView& view;
+
+		virtual void update();
 };
 
 
