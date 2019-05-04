@@ -85,6 +85,7 @@ int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entr
 int box_driveMode;
 int box_indicator;
 uint8_t pointer_scroll;
+int board_debug_scroll;
 
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
@@ -638,6 +639,15 @@ void leftEncoderTask(void const * argument)
 				d_traction_control_handle(movement);
 				break;
 			case BOARD_DEBUG_MODE:
+				if (movement == 1)
+					board_debug_scroll = board_debug_scroll + 1;
+				if (movement == -1)
+					board_debug_scroll = board_debug_scroll - 1;
+				break;
+				if (board_debug_scroll > END_BOARD)
+					board_debug_scroll = START_BOARD;
+				if (board_debug_scroll < START_BOARD)
+					board_debug_scroll = END_BOARD;
 			case SETTINGS_MODE:
 				// scorri il menu - AGGIORNIAMO MATRICE GLOBALE
 	---------------------------------------------------------------------
@@ -715,6 +725,14 @@ void rightEncoderTask(void const * argument)
 				break;
 			case DEBUG_MODE:
 				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
+				if (movement == 1)
+					board_debug_scroll = board_debug_scroll + 1;
+				if (movement == -1)
+					board_debug_scroll = board_debug_scroll - 1;
+				if (board_debug_scroll > END_BOARD)
+					board_debug_scroll = START_BOARD;
+				if (board_debug_scroll < START_BOARD)
+					board_debug_scroll = END_BOARD;
 				break;
 			case SETTINGS_MODE:
 				// scorri le finestrelle - AGGIORNARE LA MATRICE GLOBALE

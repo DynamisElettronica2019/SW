@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat May 04 17:55:44 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat May 04 18:35:31 2019
 <BR><P>
 <H3>Maximum Stack Usage =        824 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2754,8 +2754,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[89]"></a>STM32F7HAL::~STM32F7HAL()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-<LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[3c5]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
@@ -3111,7 +3111,7 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[3d1]"></a>DEBUG_MODEView::~DEBUG_MODEView__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, debug_modeview.o(i._ZN14DEBUG_MODEViewD1Ev), UNUSED)
 
-<P><STRONG><a name="[fe]"></a>BOARD_DEBUGView::setupScreen()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView11setupScreenEv))
+<P><STRONG><a name="[fe]"></a>BOARD_DEBUGView::setupScreen()</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView11setupScreenEv))
 <BR><BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::setupScreen()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
@@ -3134,10 +3134,13 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 </UL>
-<P><STRONG><a name="[100]"></a>BOARD_DEBUGView::refreshBoardDebug()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView17refreshBoardDebugEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BOARD_DEBUGView::refreshBoardDebug() &rArr; BOARD_DEBUGView::checkChangeScreen() &rArr; FrontendApplicationBase::gotoACCELERATIONScreenNoTransition() &rArr; touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
+<P><STRONG><a name="[100]"></a>BOARD_DEBUGView::refreshBoardDebug()</STRONG> (Thumb, 234 bytes, Stack size 24 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView17refreshBoardDebugEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = BOARD_DEBUGView::refreshBoardDebug() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
+<BR>[Calls]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
+<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
+<LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 </UL>
@@ -5656,6 +5659,7 @@ Global Symbols
 <LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*)
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
@@ -5680,6 +5684,7 @@ Global Symbols
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[2a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[299]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
@@ -6374,6 +6379,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
 </UL>
@@ -7451,7 +7457,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplicationBase::gotoDEBUG_MODEScreenNoTransitionImpl()
 </UL>
 
-<P><STRONG><a name="[2c6]"></a>T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI15BOARD_DEBUGView20BOARD_DEBUGPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
+<P><STRONG><a name="[2c6]"></a>T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI15BOARD_DEBUGView20BOARD_DEBUGPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 592<LI>Call Chain = T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; BOARD_DEBUGView::BOARD_DEBUGView() &rArr; BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::BOARD_DEBUGView()

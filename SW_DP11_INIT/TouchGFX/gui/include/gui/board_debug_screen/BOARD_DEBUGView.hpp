@@ -17,6 +17,12 @@ public:
 		virtual void refreshBoardDebug();
 		virtual void checkChangeScreen();
 protected:
+		touchgfx::Unicode::UnicodeChar Title1[6];
+		touchgfx::Unicode::UnicodeChar Title2[6];
+		touchgfx::Unicode::UnicodeChar Title3[6];
+		uint8_t pointer1;
+		uint8_t pointer2;
+		uint8_t pointer3;
 };
 
 #endif // BOARD_DEBUG_VIEW_HPP

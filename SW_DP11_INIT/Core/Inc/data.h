@@ -7,8 +7,10 @@
 #endif
 /********************DEFINES********************/
 	 
-#define N_INDICATORS 50		//------------- Da decidere quali indicatori utilizzare
-#define TIT_LEN 7					//------------- Lunghezza massima della stringa va visualizzare come titolo
+#define N_INDICATORS 50	//------------- Da decidere quali indicatori utilizzare
+#define TIT_LEN 7				//------------- Lunghezza massima della stringa va visualizzare come titolo
+#define START_BOARD 10	//------------- Inizio indicatori per schermata board debug
+#define END_BOARD 20		//------------- Fine indicatori per schermata board debug
 	
 /********************DATA TYPE********************/	 // per ora vengono creati in freertos.c e dichiarati come extern dalle altre parti
 
