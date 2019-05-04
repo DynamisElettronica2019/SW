@@ -31,8 +31,8 @@ protected:
      * Member Declarations
      */
     touchgfx::Box background;
-    touchgfx::TextArea textACCELERATION;
-    touchgfx::TextArea textENDURANCE;
+    touchgfx::TextArea textCURR;
+    touchgfx::TextArea textTEMP;
     touchgfx::BoxWithBorder boxIndCurrent;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;

@@ -86,6 +86,8 @@ int box_driveMode;
 int box_indicator;
 uint8_t pointer_scroll;
 int board_debug_scroll;
+int debug_mode_scroll_sx;
+int debug_mode_scroll_dx;
 
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
@@ -657,26 +659,34 @@ void leftEncoderTask(void const * argument)
 						box_driveMode = box_driveMode + 1;
 					if (movement == -1)
 						box_driveMode = box_driveMode - 1;
-					if (box_driveMode == 4 )
+					if (box_driveMode >= 4 )
 						box_driveMode = 0;
-					if (box_driveMode == -1 )
+					if (box_driveMode <= -1 )
 						box_driveMode = 3;
 					break;
 				case 1 ;
 					pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
 					if (movement == 1)
 						box_indicator = box_indicator + 1;
-					if (movement == -1)
+					if (movement = -1)
 						box_indicator = box_indicator - 1;
-					if (box_indicator == 6)
+					if (box_indicator >= 6)
 						box_indicator = 0;
-					if (box_indicator == -1)
+					if (box_indicator <= -1)
 						box_indicator = 5;
 				}
 				break;
 	----------------------------------------------------------------------			
 			case DEBUG_MODE:
-				// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE 
+				// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE
+				if (movement == 1)
+						debug_mode_scroll_sx = debug_mode_scroll_sx + 1;
+				if (movement == -1)
+						debug_mode_scroll_sx = debug_mode_scroll_sx - 1;
+				if (debug_mode_scroll_sx < 3 )
+					debug_mode_scroll_sx = 3;
+				if (debug_mode_scroll_sx >= N_INDICATORS)
+					debug_mode_scroll_sx = N_INDICATORS - 1;
 				break;
 			default: 
 				break;
@@ -722,9 +732,6 @@ void rightEncoderTask(void const * argument)
 				break;
 			case BOARD_DEBUG_MODE:
 				// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
-				break;
-			case DEBUG_MODE:
-				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
 				if (movement == 1)
 					board_debug_scroll = board_debug_scroll + 1;
 				if (movement == -1)
@@ -734,15 +741,26 @@ void rightEncoderTask(void const * argument)
 				if (board_debug_scroll < START_BOARD)
 					board_debug_scroll = END_BOARD;
 				break;
+			case DEBUG_MODE:
+				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
+				if (movement == 1)
+						debug_mode_scroll_dx = debug_mode_scroll_dx + 1;
+				if (movement == -1)
+						debug_mode_scroll_dx = debug_mode_scroll_dx - 1;
+				if (debug_mode_scroll_dx < 3 )
+					debug_mode_scroll_dx = 3;
+				if (debug_mode_scroll_dx >= N_INDICATORS)
+					debug_mode_scroll_dx = N_INDICATORS - 1;
+				break;
 			case SETTINGS_MODE:
 				// scorri le finestrelle - AGGIORNARE LA MATRICE GLOBALE
 				if (movement == 1)
 					pointer_scroll = pointer_scroll + 1;
 				if (movement == -1)
 					pointer_scroll = pointer_scroll - 1;
-				if (pointer_scroll == -1)
+				if (pointer_scroll <= -1)
 					pointer_scroll = N_INDICATORS - 1;
-				if (pointer_scroll == N_INDICATORS)
+				if (pointer_scroll >= N_INDICATORS)
 					pointer_scroll = 0;
 				break;
 			default: 

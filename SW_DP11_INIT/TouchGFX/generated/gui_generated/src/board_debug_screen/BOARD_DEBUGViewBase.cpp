@@ -12,15 +12,15 @@ BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
     background.setPosition(0, 0, 640, 480);
     background.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
-    textACCELERATION.setPosition(432, 17, 200, 75);
-    textACCELERATION.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    textACCELERATION.setLinespacing(0);
-    textACCELERATION.setTypedText(TypedText(T_SINGLEUSEID187));
+    textCURR.setPosition(432, 17, 200, 75);
+    textCURR.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textCURR.setLinespacing(0);
+    textCURR.setTypedText(TypedText(T_SINGLEUSEID187));
 
-    textENDURANCE.setPosition(220, 17, 200, 75);
-    textENDURANCE.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    textENDURANCE.setLinespacing(0);
-    textENDURANCE.setTypedText(TypedText(T_SINGLEUSEID188));
+    textTEMP.setPosition(220, 17, 200, 75);
+    textTEMP.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textTEMP.setLinespacing(0);
+    textTEMP.setTypedText(TypedText(T_SINGLEUSEID188));
 
     boxIndCurrent.setPosition(2, 194, 636, 123);
     boxIndCurrent.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
@@ -139,8 +139,8 @@ BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
     textIndValueCurr4.setTypedText(TypedText(T_SINGLEUSEID215));
 
     add(background);
-    add(textACCELERATION);
-    add(textENDURANCE);
+    add(textCURR);
+    add(textTEMP);
     add(boxIndCurrent);
     add(line1);
     add(line2);

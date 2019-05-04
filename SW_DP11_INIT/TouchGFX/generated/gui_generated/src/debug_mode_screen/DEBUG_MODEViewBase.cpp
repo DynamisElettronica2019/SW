@@ -12,25 +12,13 @@ DEBUG_MODEViewBase::DEBUG_MODEViewBase()
     background.setPosition(0, 0, 640, 480);
     background.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
-    box1.setPosition(320, 0, 320, 480);
-    box1.setVisible(false);
-    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(244, 0, 0));
-
-    box2.setPosition(0, 0, 320, 240);
-    box2.setVisible(false);
-    box2.setColor(touchgfx::Color::getColorFrom24BitRGB(217, 255, 0));
-
-    box3.setPosition(0, 360, 320, 120);
-    box3.setVisible(false);
-    box3.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 240, 41));
-
-    line1.setPosition(315, 0, 15, 480);
-    line1Painter.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    line1.setPainter(line1Painter);
-    line1.setStart(5, 10);
-    line1.setEnd(5, 470);
-    line1.setLineWidth(4);
-    line1.setLineEndingStyle(Line::SQUARE_CAP_ENDING);
+    middleLine.setPosition(315, 0, 15, 480);
+    middleLinePainter.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    middleLine.setPainter(middleLinePainter);
+    middleLine.setStart(5, 10);
+    middleLine.setEnd(5, 470);
+    middleLine.setLineWidth(4);
+    middleLine.setLineEndingStyle(Line::SQUARE_CAP_ENDING);
 
     textIndTitle1sx.setPosition(0, 23, 166, 75);
     textIndTitle1sx.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -144,38 +132,8 @@ DEBUG_MODEViewBase::DEBUG_MODEViewBase()
     textIndValue4dx.setWildcard(textIndValue4dxBuffer);
     textIndValue4dx.setTypedText(TypedText(T_SINGLEUSEID247));
 
-    line1_1.setPosition(69, 109, 502, 15);
-    line1_1Painter.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    line1_1.setPainter(line1_1Painter);
-    line1_1.setStart(0, 5);
-    line1_1.setEnd(500, 5);
-    line1_1.setLineWidth(1);
-    line1_1.setLineEndingStyle(Line::ROUND_CAP_ENDING);
-    line1_1.setVisible(false);
-
-    line1_1_1.setPosition(69, 233, 502, 15);
-    line1_1_1Painter.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    line1_1_1.setPainter(line1_1_1Painter);
-    line1_1_1.setStart(0, 5);
-    line1_1_1.setEnd(500, 5);
-    line1_1_1.setLineWidth(1);
-    line1_1_1.setLineEndingStyle(Line::ROUND_CAP_ENDING);
-    line1_1_1.setVisible(false);
-
-    line1_1_2.setPosition(69, 356, 502, 15);
-    line1_1_2Painter.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    line1_1_2.setPainter(line1_1_2Painter);
-    line1_1_2.setStart(0, 5);
-    line1_1_2.setEnd(500, 5);
-    line1_1_2.setLineWidth(1);
-    line1_1_2.setLineEndingStyle(Line::ROUND_CAP_ENDING);
-    line1_1_2.setVisible(false);
-
     add(background);
-    add(box1);
-    add(box2);
-    add(box3);
-    add(line1);
+    add(middleLine);
     add(textIndTitle1sx);
     add(textIndTitle2sx);
     add(textIndTitle3sx);
@@ -192,9 +150,6 @@ DEBUG_MODEViewBase::DEBUG_MODEViewBase()
     add(textIndValue2dx);
     add(textIndValue3dx);
     add(textIndValue4dx);
-    add(line1_1);
-    add(line1_1_1);
-    add(line1_1_2);
 }
 
 void DEBUG_MODEViewBase::setupScreen()

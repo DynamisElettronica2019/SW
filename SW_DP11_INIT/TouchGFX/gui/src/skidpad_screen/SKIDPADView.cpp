@@ -46,7 +46,7 @@ void SKIDPADView::refreshSkidpad()
 	if ( Indicators[SkiPointer[0]].TIPO == INT )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[SkiPointer[0]].intValore);
 	else
-		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[SkiPointer[0]].floatValore);
+		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[SkiPointer[0]].floatValore);
 	
 	if ( Indicators[SkiPointer[1]].TIPO == INT )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[SkiPointer[1]].intValore);

@@ -29,11 +29,8 @@ protected:
      * Member Declarations
      */
     touchgfx::Box background;
-    touchgfx::Box box1;
-    touchgfx::Box box2;
-    touchgfx::Box box3;
-    touchgfx::Line line1;
-    touchgfx::PainterRGB565 line1Painter;
+    touchgfx::Line middleLine;
+    touchgfx::PainterRGB565 middleLinePainter;
     touchgfx::TextAreaWithOneWildcard textIndTitle1sx;
     touchgfx::TextAreaWithOneWildcard textIndTitle2sx;
     touchgfx::TextAreaWithOneWildcard textIndTitle3sx;
@@ -50,12 +47,6 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndValue2dx;
     touchgfx::TextAreaWithOneWildcard textIndValue3dx;
     touchgfx::TextAreaWithOneWildcard textIndValue4dx;
-    touchgfx::Line line1_1;
-    touchgfx::PainterRGB565 line1_1Painter;
-    touchgfx::Line line1_1_1;
-    touchgfx::PainterRGB565 line1_1_1Painter;
-    touchgfx::Line line1_1_2;
-    touchgfx::PainterRGB565 line1_1_2Painter;
 
     /*
      * Wildcard Buffers
