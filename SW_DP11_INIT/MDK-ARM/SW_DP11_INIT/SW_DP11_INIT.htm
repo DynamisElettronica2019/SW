@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu May 02 21:25:30 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat May 04 20:06:54 2019
 <BR><P>
 <H3>Maximum Stack Usage =        824 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -509,7 +509,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[150]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<P><STRONG><a name="[145]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
@@ -519,7 +519,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = _main_cpp_init$empty &rArr; __cpp_initialize__aeabi_
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cpp_initialize__aeabi_
+<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cpp_initialize__aeabi_ (via Veneer)
 </UL>
 
 <P><STRONG><a name="[2d4]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
@@ -532,10 +532,24 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
 <LI>Call Chain = __rt_final_cpp$nonempty &rArr; __cxa_finalize &rArr; free
 </UL>
-<BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
+<BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize (via Veneer)
 </UL>
 
 <P><STRONG><a name="[2d7]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+
+<P><STRONG><a name="[141]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+</UL>
+<BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+</UL>
+
+<P><STRONG><a name="[2d8]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+
+<P><STRONG><a name="[2d9]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+
+<P><STRONG><a name="[2da]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+
+<P><STRONG><a name="[2db]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[11]"></a>SVC_Handler</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, port.o(.emb_text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
@@ -551,7 +565,7 @@ Global Symbols
 <P><STRONG><a name="[13]"></a>PendSV_Handler</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, port.o(.emb_text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = PendSV_Handler &rArr; vTaskSwitchContext
 </UL>
-<BR>[Calls]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
+<BR>[Calls]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
@@ -800,11 +814,11 @@ Global Symbols
 <P><STRONG><a name="[15]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f746xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
-<P><STRONG><a name="[146]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text))
+<P><STRONG><a name="[147]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
 </UL>
@@ -821,20 +835,20 @@ Global Symbols
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LockFreeDMA_Queue::pushCopyOf(const touchgfx::BlitOp&)
 </UL>
 
-<P><STRONG><a name="[2d8]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[2dc]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[14a]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
+<P><STRONG><a name="[14b]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
-<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
-<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
+<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[2d9]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[2dd]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[2da]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[2de]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[149]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<P><STRONG><a name="[14a]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
 <P><STRONG><a name="[15e]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
@@ -850,23 +864,23 @@ Global Symbols
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::STM32F7Instrumentation::init()
 </UL>
 
-<P><STRONG><a name="[2db]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[2df]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[14b]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<P><STRONG><a name="[14c]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
 <P><STRONG><a name="[13f]"></a>__cpp_initialize__aeabi_</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, cpp_init.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __cpp_initialize__aeabi_
 </UL>
-<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_cpp_init$empty
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_cpp_init$empty (via Veneer)
 </UL>
 
-<P><STRONG><a name="[14c]"></a>__aeabi_atexit</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, aeabi_atexit.o(.text))
+<P><STRONG><a name="[14d]"></a>__aeabi_atexit</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, aeabi_atexit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = __aeabi_atexit &rArr; malloc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ddtor_pointer_addr
-<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<BR>[Calls]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ddtor_pointer_addr
+<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___22_BoardConfiguration_cpp_2f1c5dae
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_verdana_40_4bpp()
@@ -875,21 +889,21 @@ Global Symbols
 <LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
 </UL>
 
-<P><STRONG><a name="[148]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<P><STRONG><a name="[149]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[2dc]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[2e0]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
-<P><STRONG><a name="[147]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<P><STRONG><a name="[148]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[2dd]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[2e1]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[14e]"></a>__rt_ddtor_pointer_addr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, cpp_dtor.o(.text))
+<P><STRONG><a name="[14f]"></a>__rt_ddtor_pointer_addr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, cpp_dtor.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 </UL>
 
 <P><STRONG><a name="[297]"></a>__rt_SIGPVFN</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, cpp_signal.o(.text))
@@ -899,25 +913,17 @@ Global Symbols
 <P><STRONG><a name="[144]"></a>__cxa_finalize</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, cxa_finalize.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __cxa_finalize &rArr; free
 </UL>
-<BR>[Calls]<UL><LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ddtor_pointer_addr
-<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+<BR>[Calls]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ddtor_pointer_addr
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_final_cpp$nonempty
-</UL>
-
-<P><STRONG><a name="[141]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
-</UL>
-<BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_final_cpp$nonempty (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2de]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[2e2]"></a>__rt_lib_shutdown_cpp_2</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, cpp_final.o(.text), UNUSED)
 
-<P><STRONG><a name="[2df]"></a>__rt_lib_shutdown_cpp_2</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, cpp_final.o(.text), UNUSED)
+<P><STRONG><a name="[2e3]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[2e0]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
-
-<P><STRONG><a name="[2e1]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[2e4]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[27]"></a>ADC_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.ADC_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_IRQHandler &rArr; HAL_ADC_IRQHandler
@@ -1785,7 +1791,7 @@ Global Symbols
 <P><STRONG><a name="[1b6]"></a>HAL_RCC_GetSysClockFreq</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, stm32f7xx_hal_rcc.o(i.HAL_RCC_GetSysClockFreq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_RCC_GetSysClockFreq &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<BR>[Calls]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 </UL>
@@ -2337,7 +2343,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = getFont_verdana_10_4bpp() &rArr; touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short) &rArr; touchgfx::ConstFont::ConstFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, unsigned short, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_guard_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___21_typedtextdatabase_cpp_42ef4e5b
@@ -2347,7 +2353,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = getFont_verdana_20_4bpp() &rArr; touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short) &rArr; touchgfx::ConstFont::ConstFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, unsigned short, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_guard_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___21_typedtextdatabase_cpp_42ef4e5b
@@ -2357,7 +2363,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = getFont_verdana_40_4bpp() &rArr; touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short) &rArr; touchgfx::ConstFont::ConstFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, unsigned short, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_guard_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___21_typedtextdatabase_cpp_42ef4e5b
@@ -2412,7 +2418,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___22_BoardConfiguration_cpp_2f1c5dae
 </UL>
 
-<P><STRONG><a name="[2e2]"></a>STM32F7DMA::STM32F7DMA__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, stm32f7dma.o(i._ZN10STM32F7DMAC1Ev), UNUSED)
+<P><STRONG><a name="[2e5]"></a>STM32F7DMA::STM32F7DMA__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, stm32f7dma.o(i._ZN10STM32F7DMAC1Ev), UNUSED)
 
 <P><STRONG><a name="[81]"></a>STM32F7DMA::~STM32F7DMA()</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32f7dma.o(i._ZN10STM32F7DMAD1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = STM32F7DMA::~STM32F7DMA() &rArr; HAL_DMA2D_DeInit &rArr; HAL_DMA2D_CLUTLoading_Abort
@@ -2422,7 +2428,7 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(i.__sti___22_BoardConfiguration_cpp_2f1c5dae)
 <LI> stm32f7dma.o(.constdata__ZTV10STM32F7DMA)
 </UL>
-<P><STRONG><a name="[2e3]"></a>STM32F7DMA::~STM32F7DMA__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, stm32f7dma.o(i._ZN10STM32F7DMAD1Ev), UNUSED)
+<P><STRONG><a name="[2e6]"></a>STM32F7DMA::~STM32F7DMA__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, stm32f7dma.o(i._ZN10STM32F7DMAD1Ev), UNUSED)
 
 <P><STRONG><a name="[c6]"></a>STM32F7HAL::enableInterrupts()</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f7hal.o(i._ZN10STM32F7HAL16enableInterruptsEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = STM32F7HAL::enableInterrupts()
@@ -2464,10 +2470,10 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[88]"></a>STM32F7HAL::~STM32F7HAL()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-<LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
-<P><STRONG><a name="[2e4]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
+<P><STRONG><a name="[2e7]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
 <P><STRONG><a name="[d5]"></a>Screen1View::setupScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, screen1view.o(i._ZN11Screen1View11setupScreenEv))
 <BR>[Address Reference Count : 1]<UL><LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -2483,12 +2489,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T2* touchgfx::makeTransition&lang;Screen1View, Screen1Presenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)
 </UL>
 
-<P><STRONG><a name="[2e5]"></a>Screen1View::Screen1View__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, screen1view.o(i._ZN11Screen1ViewC1Ev), UNUSED)
+<P><STRONG><a name="[2e8]"></a>Screen1View::Screen1View__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, screen1view.o(i._ZN11Screen1ViewC1Ev), UNUSED)
 
 <P><STRONG><a name="[d3]"></a>Screen1View::~Screen1View()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, screen1view.o(i._ZN11Screen1ViewD1Ev))
 <BR>[Address Reference Count : 1]<UL><LI> screen1view.o(.constdata__ZTV11Screen1View)
 </UL>
-<P><STRONG><a name="[2e6]"></a>Screen1View::~Screen1View__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1view.o(i._ZN11Screen1ViewD1Ev), UNUSED)
+<P><STRONG><a name="[2e9]"></a>Screen1View::~Screen1View__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1view.o(i._ZN11Screen1ViewD1Ev), UNUSED)
 
 <P><STRONG><a name="[223]"></a>FrontendHeap::FrontendHeap()</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, boardconfiguration.o(i._ZN12FrontendHeapC1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = FrontendHeap::FrontendHeap() &rArr; FrontendApplication::FrontendApplication(Model&, FrontendHeap&) &rArr; FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&) &rArr; touchgfx::Application::Application() &rArr; touchgfx::Screen::draw() &rArr; touchgfx::Rect::Rect(short, short, short, short)
@@ -2501,7 +2507,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
 </UL>
 
-<P><STRONG><a name="[2e7]"></a>FrontendHeap::FrontendHeap__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, boardconfiguration.o(i._ZN12FrontendHeapC1Ev), UNUSED)
+<P><STRONG><a name="[2ea]"></a>FrontendHeap::FrontendHeap__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, boardconfiguration.o(i._ZN12FrontendHeapC1Ev), UNUSED)
 
 <P><STRONG><a name="[89]"></a>FrontendHeap::~FrontendHeap()</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, boardconfiguration.o(i._ZN12FrontendHeapD1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = FrontendHeap::~FrontendHeap()
@@ -2512,7 +2518,7 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
 <LI> boardconfiguration.o(.constdata__ZTV12FrontendHeap)
 </UL>
-<P><STRONG><a name="[2e8]"></a>FrontendHeap::~FrontendHeap__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, boardconfiguration.o(i._ZN12FrontendHeapD1Ev), UNUSED)
+<P><STRONG><a name="[2eb]"></a>FrontendHeap::~FrontendHeap__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, boardconfiguration.o(i._ZN12FrontendHeapD1Ev), UNUSED)
 
 <P><STRONG><a name="[2d0]"></a>BitmapDatabase::getInstance()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, bitmapdatabase.o(i._ZN14BitmapDatabase11getInstanceEv))
 <BR><BR>[Called By]<UL><LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
@@ -2540,14 +2546,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::Screen1View()
 </UL>
 
-<P><STRONG><a name="[2e9]"></a>Screen1ViewBase::Screen1ViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, screen1viewbase.o(i._ZN15Screen1ViewBaseC1Ev), UNUSED)
+<P><STRONG><a name="[2ec]"></a>Screen1ViewBase::Screen1ViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, screen1viewbase.o(i._ZN15Screen1ViewBaseC1Ev), UNUSED)
 
 <P><STRONG><a name="[dd]"></a>Screen1ViewBase::~Screen1ViewBase()</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, screen1viewbase.o(i._ZN15Screen1ViewBaseD1Ev))
 <BR><BR>[Calls]<UL><LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::View&lang;Screen1Presenter&rang;::~View()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 </UL>
-<P><STRONG><a name="[2ea]"></a>Screen1ViewBase::~Screen1ViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1viewbase.o(i._ZN15Screen1ViewBaseD1Ev), UNUSED)
+<P><STRONG><a name="[2ed]"></a>Screen1ViewBase::~Screen1ViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1viewbase.o(i._ZN15Screen1ViewBaseD1Ev), UNUSED)
 
 <P><STRONG><a name="[e1]"></a>Screen1Presenter::deactivate()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, screen1presenter.o(i._ZN16Screen1Presenter10deactivateEv))
 <BR>[Address Reference Count : 1]<UL><LI> screen1presenter.o(.constdata__ZTV16Screen1Presenter)
@@ -2559,12 +2565,12 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T2* touchgfx::makeTransition&lang;Screen1View, Screen1Presenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)
 </UL>
 
-<P><STRONG><a name="[2eb]"></a>Screen1Presenter::Screen1Presenter__sub_object(Screen1View&)</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1presenter.o(i._ZN16Screen1PresenterC1ER11Screen1View), UNUSED)
+<P><STRONG><a name="[2ee]"></a>Screen1Presenter::Screen1Presenter__sub_object(Screen1View&)</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1presenter.o(i._ZN16Screen1PresenterC1ER11Screen1View), UNUSED)
 
 <P><STRONG><a name="[e2]"></a>Screen1Presenter::~Screen1Presenter()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, screen1presenter.o(i._ZN16Screen1PresenterD1Ev))
 <BR>[Address Reference Count : 1]<UL><LI> screen1presenter.o(.constdata__ZTV16Screen1Presenter)
 </UL>
-<P><STRONG><a name="[2ec]"></a>Screen1Presenter::~Screen1Presenter__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1presenter.o(i._ZN16Screen1PresenterD1Ev), UNUSED)
+<P><STRONG><a name="[2ef]"></a>Screen1Presenter::~Screen1Presenter__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1presenter.o(i._ZN16Screen1PresenterD1Ev), UNUSED)
 
 <P><STRONG><a name="[272]"></a>TypedTextDatabase::getInstance(unsigned short)</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, typedtextdatabase.o(i._ZN17TypedTextDatabase11getInstanceEt))
 <BR><BR>[Called By]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Texts::setLanguage(unsigned short)
@@ -2594,13 +2600,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::FrontendHeap()
 </UL>
 
-<P><STRONG><a name="[2ed]"></a>FrontendApplication::FrontendApplication__sub_object(Model&, FrontendHeap&)</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, frontendapplication.o(i._ZN19FrontendApplicationC1ER5ModelR12FrontendHeap), UNUSED)
+<P><STRONG><a name="[2f0]"></a>FrontendApplication::FrontendApplication__sub_object(Model&, FrontendHeap&)</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, frontendapplication.o(i._ZN19FrontendApplicationC1ER5ModelR12FrontendHeap), UNUSED)
 
 <P><STRONG><a name="[80]"></a>ApplicationFontProvider::~ApplicationFontProvider()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN23ApplicationFontProviderD1Ev))
 <BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(i.__sti___22_BoardConfiguration_cpp_2f1c5dae)
 <LI> applicationfontprovider.o(.constdata__ZTV23ApplicationFontProvider)
 </UL>
-<P><STRONG><a name="[2ee]"></a>ApplicationFontProvider::~ApplicationFontProvider__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN23ApplicationFontProviderD1Ev), UNUSED)
+<P><STRONG><a name="[2f1]"></a>ApplicationFontProvider::~ApplicationFontProvider__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN23ApplicationFontProviderD1Ev), UNUSED)
 
 <P><STRONG><a name="[227]"></a>FrontendApplicationBase::gotoScreen1ScreenNoTransition()</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase29gotoScreen1ScreenNoTransitionEv))
 <BR><BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::FrontendHeap()
@@ -2622,14 +2628,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplication::FrontendApplication(Model&, FrontendHeap&)
 </UL>
 
-<P><STRONG><a name="[2ef]"></a>FrontendApplicationBase::FrontendApplicationBase__sub_object(Model&, FrontendHeap&)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBaseC1ER5ModelR12FrontendHeap), UNUSED)
+<P><STRONG><a name="[2f2]"></a>FrontendApplicationBase::FrontendApplicationBase__sub_object(Model&, FrontendHeap&)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBaseC1ER5ModelR12FrontendHeap), UNUSED)
 
 <P><STRONG><a name="[ed]"></a>FrontendApplicationBase::~FrontendApplicationBase()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN23FrontendApplicationBaseD1Ev))
 <BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::~FrontendHeap()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
 </UL>
-<P><STRONG><a name="[2f0]"></a>FrontendApplicationBase::~FrontendApplicationBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN23FrontendApplicationBaseD1Ev), UNUSED)
+<P><STRONG><a name="[2f3]"></a>FrontendApplicationBase::~FrontendApplicationBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN23FrontendApplicationBaseD1Ev), UNUSED)
 
 <P><STRONG><a name="[22d]"></a>Model::tick()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, model.o(i._ZN5Model4tickEv))
 <BR><BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplication::handleTickEvent()
@@ -2639,7 +2645,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::FrontendHeap()
 </UL>
 
-<P><STRONG><a name="[2f1]"></a>Model::Model__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, model.o(i._ZN5ModelC1Ev), UNUSED)
+<P><STRONG><a name="[2f4]"></a>Model::Model__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, model.o(i._ZN5ModelC1Ev), UNUSED)
 
 <P><STRONG><a name="[27c]"></a>touchgfx::ClickEvent::ClickEvent(touchgfx::ClickEvent::ClickEventType, short, short, short)</STRONG> (Thumb, 18 bytes, Stack size 12 bytes, screen.o(i._ZN8touchgfx10ClickEventC1ENS0_14ClickEventTypeEsss))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = touchgfx::ClickEvent::ClickEvent(touchgfx::ClickEvent::ClickEventType, short, short, short)
@@ -2648,7 +2654,7 @@ Global Symbols
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleDragEvent(const touchgfx::DragEvent&)
 </UL>
 
-<P><STRONG><a name="[2f2]"></a>touchgfx::ClickEvent::ClickEvent__sub_object(touchgfx::ClickEvent::ClickEventType, short, short, short)</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, screen.o(i._ZN8touchgfx10ClickEventC1ENS0_14ClickEventTypeEsss), UNUSED)
+<P><STRONG><a name="[2f5]"></a>touchgfx::ClickEvent::ClickEvent__sub_object(touchgfx::ClickEvent::ClickEventType, short, short, short)</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, screen.o(i._ZN8touchgfx10ClickEventC1ENS0_14ClickEventTypeEsss), UNUSED)
 
 <P><STRONG><a name="[232]"></a>touchgfx::OSWrappers::initialize()</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, oswrappers.o(i._ZN8touchgfx10OSWrappers10initializeEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = touchgfx::OSWrappers::initialize() &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
@@ -2829,7 +2835,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)
 </UL>
 
-<P><STRONG><a name="[2f3]"></a>touchgfx::Application::Application__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, application.o(i._ZN8touchgfx11ApplicationC1Ev), UNUSED)
+<P><STRONG><a name="[2f6]"></a>touchgfx::Application::Application__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, application.o(i._ZN8touchgfx11ApplicationC1Ev), UNUSED)
 
 <P><STRONG><a name="[2d1]"></a>touchgfx::FontManager::setFontProvider(touchgfx::FontProvider*)</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fontmanager.o(i._ZN8touchgfx11FontManager15setFontProviderEPNS_12FontProviderE))
 <BR><BR>[Called By]<UL><LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
@@ -2841,7 +2847,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Gestures::registerClickEvent(touchgfx::ClickEvent::ClickEventType, unsigned short, unsigned short)
 </UL>
 
-<P><STRONG><a name="[2f4]"></a>touchgfx::GestureEvent::GestureEvent__sub_object(touchgfx::GestureEvent::GestureType, short, short, short)</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, gestures.o(i._ZN8touchgfx12GestureEventC1ENS0_11GestureTypeEsss), UNUSED)
+<P><STRONG><a name="[2f7]"></a>touchgfx::GestureEvent::GestureEvent__sub_object(touchgfx::GestureEvent::GestureType, short, short, short)</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, gestures.o(i._ZN8touchgfx12GestureEventC1ENS0_11GestureTypeEsss), UNUSED)
 
 <P><STRONG><a name="[f0]"></a>touchgfx::NoTransition::handleTickEvent()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, frontendapplicationbase.o(i._ZN8touchgfx12NoTransition15handleTickEventEv))
 <BR>[Address Reference Count : 1]<UL><LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx12NoTransitionE)
@@ -2849,7 +2855,7 @@ Global Symbols
 <P><STRONG><a name="[ef]"></a>touchgfx::NoTransition::~NoTransition()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, frontendapplicationbase.o(i._ZN8touchgfx12NoTransitionD1Ev))
 <BR>[Address Reference Count : 1]<UL><LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx12NoTransitionE)
 </UL>
-<P><STRONG><a name="[2f5]"></a>touchgfx::NoTransition::~NoTransition__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, frontendapplicationbase.o(i._ZN8touchgfx12NoTransitionD1Ev), UNUSED)
+<P><STRONG><a name="[2f8]"></a>touchgfx::NoTransition::~NoTransition__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, frontendapplicationbase.o(i._ZN8touchgfx12NoTransitionD1Ev), UNUSED)
 
 <P><STRONG><a name="[24b]"></a>touchgfx::TextProvider::initialize(const unsigned short*, std::__va_list)</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, textprovider.o(i._ZN8touchgfx12TextProvider10initializeEPKtSt9__va_list))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::TextProvider::initialize(const unsigned short*, std::__va_list) &rArr; touchgfx::TextProvider::initializeInternal() &rArr; touchgfx::TextProvider::getNextCharInternal()
@@ -2908,7 +2914,7 @@ Global Symbols
 <LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::getTextHeightInternal(const unsigned short*, ...) const
 </UL>
 
-<P><STRONG><a name="[2f6]"></a>touchgfx::TextProvider::TextProvider__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, textprovider.o(i._ZN8touchgfx12TextProviderC1Ev), UNUSED)
+<P><STRONG><a name="[2f9]"></a>touchgfx::TextProvider::TextProvider__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, textprovider.o(i._ZN8touchgfx12TextProviderC1Ev), UNUSED)
 
 <P><STRONG><a name="[a8]"></a>touchgfx::DMA_Interface::addToQueue(const touchgfx::BlitOp&)</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, dma.o(i._ZN8touchgfx13DMA_Interface10addToQueueERKNS_6BlitOpE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = touchgfx::DMA_Interface::addToQueue(const touchgfx::BlitOp&) &rArr; touchgfx::OSWrappers::tryTakeFrameBufferSemaphore() &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
@@ -2998,7 +3004,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::FrontendHeap()
 </UL>
 
-<P><STRONG><a name="[2f7]"></a>touchgfx::AbstractPartition::~AbstractPartition()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, abstractpartition.o(i._ZN8touchgfx17AbstractPartitionD2Ev), UNUSED)
+<P><STRONG><a name="[2fa]"></a>touchgfx::AbstractPartition::~AbstractPartition()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, abstractpartition.o(i._ZN8touchgfx17AbstractPartitionD2Ev), UNUSED)
 
 <P><STRONG><a name="[f4]"></a>touchgfx::AbstractPartition::~AbstractPartition__sub_object()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, abstractpartition.o(i._ZN8touchgfx17AbstractPartitionD2Ev))
 <BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::~FrontendHeap()
@@ -3015,7 +3021,7 @@ Global Symbols
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_verdana_10_4bpp()
 </UL>
 
-<P><STRONG><a name="[2f8]"></a>touchgfx::InternalFlashFont::InternalFlashFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)</STRONG> (Thumb, 0 bytes, Stack size 56 bytes, internalflashfont.o(i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt), UNUSED)
+<P><STRONG><a name="[2fb]"></a>touchgfx::InternalFlashFont::InternalFlashFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)</STRONG> (Thumb, 0 bytes, Stack size 56 bytes, internalflashfont.o(i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt), UNUSED)
 
 <P><STRONG><a name="[7c]"></a>touchgfx::InternalFlashFont::~InternalFlashFont()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, fontgetters.o(i._ZN8touchgfx17InternalFlashFontD1Ev))
 <BR>[Address Reference Count : 4]<UL><LI> fontgetters.o(i._Z23getFont_verdana_10_4bppv)
@@ -3023,7 +3029,7 @@ Global Symbols
 <LI> fontgetters.o(i._Z23getFont_verdana_40_4bppv)
 <LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
 </UL>
-<P><STRONG><a name="[2f9]"></a>touchgfx::InternalFlashFont::~InternalFlashFont__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fontgetters.o(i._ZN8touchgfx17InternalFlashFontD1Ev), UNUSED)
+<P><STRONG><a name="[2fc]"></a>touchgfx::InternalFlashFont::~InternalFlashFont__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fontgetters.o(i._ZN8touchgfx17InternalFlashFontD1Ev), UNUSED)
 
 <P><STRONG><a name="[102]"></a>touchgfx::LockFreeDMA_Queue::pushCopyOf(const touchgfx::BlitOp&)</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, dma.o(i._ZN8touchgfx17LockFreeDMA_Queue10pushCopyOfERKNS_6BlitOpE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::LockFreeDMA_Queue::pushCopyOf(const touchgfx::BlitOp&)
@@ -3050,7 +3056,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM32F7DMA::STM32F7DMA()
 </UL>
 
-<P><STRONG><a name="[2fa]"></a>touchgfx::LockFreeDMA_Queue::LockFreeDMA_Queue__sub_object(touchgfx::BlitOp*, unsigned long)</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dma.o(i._ZN8touchgfx17LockFreeDMA_QueueC1EPNS_6BlitOpEm), UNUSED)
+<P><STRONG><a name="[2fd]"></a>touchgfx::LockFreeDMA_Queue::LockFreeDMA_Queue__sub_object(touchgfx::BlitOp*, unsigned long)</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dma.o(i._ZN8touchgfx17LockFreeDMA_QueueC1EPNS_6BlitOpEm), UNUSED)
 
 <P><STRONG><a name="[108]"></a>touchgfx::MCUInstrumentation::getCCConsumed()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f7instrumentation.o(i._ZN8touchgfx18MCUInstrumentation13getCCConsumedEv))
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
@@ -3132,7 +3138,7 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(i.__sti___22_BoardConfiguration_cpp_2f1c5dae)
 <LI> stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
 </UL>
-<P><STRONG><a name="[2fb]"></a>touchgfx::STM32F7Instrumentation::~STM32F7Instrumentation__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN8touchgfx22STM32F7InstrumentationD1Ev), UNUSED)
+<P><STRONG><a name="[2fe]"></a>touchgfx::STM32F7Instrumentation::~STM32F7Instrumentation__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN8touchgfx22STM32F7InstrumentationD1Ev), UNUSED)
 
 <P><STRONG><a name="[10b]"></a>touchgfx::STM32F7TouchController::sampleTouch(int&, int&)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f7touchcontroller.o(i._ZN8touchgfx22STM32F7TouchController11sampleTouchERiS1_))
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7touchcontroller.o(.constdata__ZTVN8touchgfx22STM32F7TouchControllerE)
@@ -3144,7 +3150,7 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(i.__sti___22_BoardConfiguration_cpp_2f1c5dae)
 <LI> stm32f7touchcontroller.o(.constdata__ZTVN8touchgfx22STM32F7TouchControllerE)
 </UL>
-<P><STRONG><a name="[2fc]"></a>touchgfx::STM32F7TouchController::~STM32F7TouchController__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN8touchgfx22STM32F7TouchControllerD1Ev), UNUSED)
+<P><STRONG><a name="[2ff]"></a>touchgfx::STM32F7TouchController::~STM32F7TouchController__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN8touchgfx22STM32F7TouchControllerD1Ev), UNUSED)
 
 <P><STRONG><a name="[cd]"></a>touchgfx::HAL::beginFrame()</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hal.o(i._ZN8touchgfx3HAL10beginFrameEv))
 <BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
@@ -3445,7 +3451,7 @@ Global Symbols
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD::getNumLines(touchgfx::TextProvider&, touchgfx::WideTextAction, unsigned char, const touchgfx::Font*, short)
 </UL>
 
-<P><STRONG><a name="[2fd]"></a>touchgfx::LCD::WideTextInternalStruct::WideTextInternalStruct__sub_object(touchgfx::TextProvider&, unsigned short, unsigned char, const touchgfx::Font*, touchgfx::WideTextAction)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, lcd.o(i._ZN8touchgfx3LCD22WideTextInternalStructC1ERNS_12TextProviderEthPKNS_4FontENS_14WideTextActionE), UNUSED)
+<P><STRONG><a name="[300]"></a>touchgfx::LCD::WideTextInternalStruct::WideTextInternalStruct__sub_object(touchgfx::TextProvider&, unsigned short, unsigned char, const touchgfx::Font*, touchgfx::WideTextAction)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, lcd.o(i._ZN8touchgfx3LCD22WideTextInternalStructC1ERNS_12TextProviderEthPKNS_4FontENS_14WideTextActionE), UNUSED)
 
 <P><STRONG><a name="[26f]"></a>touchgfx::LCD::realX(const touchgfx::Rect&, short, short, touchgfx::TextRotation)</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, lcd.o(i._ZN8touchgfx3LCD5realXERKNS_4RectEssNS_12TextRotationE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = touchgfx::LCD::realX(const touchgfx::Rect&, short, short, touchgfx::TextRotation)
@@ -3510,7 +3516,7 @@ Global Symbols
 <LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD::rotateRect(touchgfx::Rect&, const touchgfx::Rect&, touchgfx::TextRotation)
 </UL>
 
-<P><STRONG><a name="[2fe]"></a>touchgfx::Rect::Rect__sub_object(short, short, short, short)</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, lcd16bpp.o(i._ZN8touchgfx4RectC1Essss), UNUSED)
+<P><STRONG><a name="[301]"></a>touchgfx::Rect::Rect__sub_object(short, short, short, short)</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, lcd16bpp.o(i._ZN8touchgfx4RectC1Essss), UNUSED)
 
 <P><STRONG><a name="[8a]"></a>touchgfx::Rect::Rect()</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx4RectC1Ev))
 <BR><BR>[Called By]<UL><LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::Screen()
@@ -3519,7 +3525,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> application.o(t._ZN8touchgfx6VectorINS_4RectELt8EEC1Ev)
 </UL>
-<P><STRONG><a name="[2ff]"></a>touchgfx::Rect::Rect__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx4RectC1Ev), UNUSED)
+<P><STRONG><a name="[302]"></a>touchgfx::Rect::Rect__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx4RectC1Ev), UNUSED)
 
 <P><STRONG><a name="[271]"></a>touchgfx::Rect::operator &=(const touchgfx::Rect&)</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, application.o(i._ZN8touchgfx4RectaNERKS0_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = touchgfx::Rect::operator &=(const touchgfx::Rect&) &rArr; touchgfx::Rect::intersect(const touchgfx::Rect&) const
@@ -3539,7 +3545,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::~Screen1ViewBase()
 </UL>
 
-<P><STRONG><a name="[300]"></a>touchgfx::View&lang;Screen1Presenter&rang;::~View__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1viewbase.o(i._ZN8touchgfx4ViewI16Screen1PresenterED1Ev), UNUSED)
+<P><STRONG><a name="[303]"></a>touchgfx::View&lang;Screen1Presenter&rang;::~View__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen1viewbase.o(i._ZN8touchgfx4ViewI16Screen1PresenterED1Ev), UNUSED)
 
 <P><STRONG><a name="[22a]"></a>touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, color.o(i._ZN8touchgfx5Color20getColorFrom24BitRGBEhhh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
@@ -3588,7 +3594,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7dma.o(i._ZN10STM32F7DMAC1Ev)
 </UL>
-<P><STRONG><a name="[301]"></a>touchgfx::BlitOp::BlitOp__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, stm32f7dma.o(i._ZN8touchgfx6BlitOpC1Ev), UNUSED)
+<P><STRONG><a name="[304]"></a>touchgfx::BlitOp::BlitOp__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, stm32f7dma.o(i._ZN8touchgfx6BlitOpC1Ev), UNUSED)
 
 <P><STRONG><a name="[123]"></a>touchgfx::Button::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&)</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, button.o(i._ZN8touchgfx6Button10setBitmapsERKNS_6BitmapES3_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::Button::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&) &rArr; touchgfx::Bitmap::getHeight() const
@@ -3717,12 +3723,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
 </UL>
 
-<P><STRONG><a name="[302]"></a>touchgfx::Screen::Screen__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, screen.o(i._ZN8touchgfx6ScreenC1Ev), UNUSED)
+<P><STRONG><a name="[305]"></a>touchgfx::Screen::Screen__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, screen.o(i._ZN8touchgfx6ScreenC1Ev), UNUSED)
 
 <P><STRONG><a name="[124]"></a>touchgfx::Screen::~Screen()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, screen.o(i._ZN8touchgfx6ScreenD1Ev))
 <BR>[Address Reference Count : 1]<UL><LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
-<P><STRONG><a name="[303]"></a>touchgfx::Screen::~Screen__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen.o(i._ZN8touchgfx6ScreenD1Ev), UNUSED)
+<P><STRONG><a name="[306]"></a>touchgfx::Screen::~Screen__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen.o(i._ZN8touchgfx6ScreenD1Ev), UNUSED)
 
 <P><STRONG><a name="[110]"></a>touchgfx::Widget::getLastChild(short, short, touchgfx::Drawable**)</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, screen1viewbase.o(i._ZN8touchgfx6Widget12getLastChildEssPPNS_8DrawableE))
 <BR>[Address Reference Count : 4]<UL><LI> screen1viewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
@@ -3962,7 +3968,7 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(i.__sti___22_BoardConfiguration_cpp_2f1c5dae)
 <LI> lcd16bpp.o(.constdata__ZTVN8touchgfx8LCD16bppE)
 </UL>
-<P><STRONG><a name="[304]"></a>touchgfx::LCD16bpp::~LCD16bpp__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN8touchgfx8LCD16bppD1Ev), UNUSED)
+<P><STRONG><a name="[307]"></a>touchgfx::LCD16bpp::~LCD16bpp__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN8touchgfx8LCD16bppD1Ev), UNUSED)
 
 <P><STRONG><a name="[22b]"></a>touchgfx::TextArea::setTypedText(touchgfx::TypedText)</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, textarea.o(i._ZN8touchgfx8TextArea12setTypedTextENS_9TypedTextE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::TextArea::setTypedText(touchgfx::TypedText) &rArr; touchgfx::TextArea::resizeToCurrentText()
@@ -4441,12 +4447,6 @@ Global Symbols
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 <LI> hal.o(.constdata__ZTVN8touchgfx3HALE)
 </UL>
-<P><STRONG><a name="[305]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
-
-<P><STRONG><a name="[306]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
-
-<P><STRONG><a name="[307]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
-
 <P><STRONG><a name="[9c]"></a>accelerationModeTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.accelerationModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = accelerationModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
@@ -4551,7 +4551,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
-<P><STRONG><a name="[14f]"></a>free</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, malloc.o(i.free))
+<P><STRONG><a name="[150]"></a>free</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, malloc.o(i.free))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = free
 </UL>
 <BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
@@ -4596,10 +4596,10 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[14d]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc))
+<P><STRONG><a name="[14e]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<BR>[Called By]<UL><LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 </UL>
 
 <P><STRONG><a name="[91]"></a>mapSelectorTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.mapSelectorTask))
@@ -4811,7 +4811,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[2bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vApplicationStackOverflowHook
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vApplicationStackOverflowHook
-<LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 </UL>
 
 <P><STRONG><a name="[2a5]"></a>vListInitialise</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, list.o(i.vListInitialise))
@@ -4956,7 +4956,7 @@ Global Symbols
 <LI><a href="#[2b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 </UL>
 
-<P><STRONG><a name="[145]"></a>vTaskSwitchContext</STRONG> (Thumb, 130 bytes, Stack size 8 bytes, tasks.o(i.vTaskSwitchContext))
+<P><STRONG><a name="[146]"></a>vTaskSwitchContext</STRONG> (Thumb, 130 bytes, Stack size 8 bytes, tasks.o(i.vTaskSwitchContext))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = vTaskSwitchContext
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vApplicationStackOverflowHook
@@ -5196,7 +5196,7 @@ Global Symbols
 <LI><a href="#[2d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BitmapDatabase::getInstance()
 <LI><a href="#[2ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::HAL__sub_object(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, unsigned short, unsigned short)
 <LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::FrontendHeap()
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_guard_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::touchgfx_init()
@@ -5265,7 +5265,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = __sti___22_BoardConfiguration_cpp_2f1c5dae &rArr; __aeabi_atexit &rArr; malloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STM32F7DMA::STM32F7DMA()
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> boardconfiguration.o(.init_array)
 </UL>
@@ -5449,8 +5449,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_ErrorCallback
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7xx_hal_qspi.o(i.HAL_QSPI_IRQHandler)
-<LI> stm32f7xx_hal_qspi.o(i.HAL_QSPI_Abort_IT)
+<BR>[Address Reference Count : 2]<UL><LI> stm32f7xx_hal_qspi.o(i.HAL_QSPI_Abort_IT)
+<LI> stm32f7xx_hal_qspi.o(i.HAL_QSPI_IRQHandler)
 </UL>
 <P><STRONG><a name="[1b3]"></a>QSPI_WaitFlagStateUntilTimeout</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, stm32f7xx_hal_qspi.o(i.QSPI_WaitFlagStateUntilTimeout))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = QSPI_WaitFlagStateUntilTimeout
@@ -5590,7 +5590,7 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pxPortInitialiseStack
 <LI><a href="#[2b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialiseItem
-<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[29e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
