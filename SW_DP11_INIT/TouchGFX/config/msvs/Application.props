@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <UseBPP>16</UseBPP>
-    <RotateImage90>false</RotateImage90>
+    <RotateImage90>true</RotateImage90>
     <TouchGFXReleasePath>..\..\..\..\..\touchgfx</TouchGFXReleasePath>
     <AlphaDitherImage>yes</AlphaDitherImage>
     <DitherAlgorithm>2</DitherAlgorithm>

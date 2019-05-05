@@ -155,7 +155,7 @@ int main(void)
 
   /* Initialise the graphical stack engine */
   GRAPHICS_Init();
-
+      
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
 

@@ -1,5 +1,5 @@
-build/MINGW32_NT-6.2/generated/fonts/src/Table_verdana_40_4bpp.o: \
- generated/fonts/src/Table_verdana_40_4bpp.cpp \
+build/MINGW32_NT-6.2/generated/fonts/src/Kerning_verdana_80_4bpp.o: \
+ generated/fonts/src/Kerning_verdana_80_4bpp.cpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/Font.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/TextProvider.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/Unicode.hpp \

@@ -65,9 +65,8 @@ sw_dp11_init\boardconfiguration.o: ../TouchGFX/gui/include/gui/model/ModelListen
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 sw_dp11_init\boardconfiguration.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
-sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
-sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
 sw_dp11_init\boardconfiguration.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/BoardConfiguration.hpp
 sw_dp11_init\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/GPIO.hpp

@@ -10,13 +10,13 @@ using namespace touchgfx;
 #endif
 
 extern touchgfx::InternalFlashFont& getFont_verdana_20_4bpp();
-extern touchgfx::InternalFlashFont& getFont_verdana_40_4bpp();
+extern touchgfx::InternalFlashFont& getFont_verdana_80_4bpp();
 extern touchgfx::InternalFlashFont& getFont_verdana_10_4bpp();
 
 const touchgfx::Font* const _fonts[] =
 {
     &(getFont_verdana_20_4bpp()),
-    &(getFont_verdana_40_4bpp()),
+    &(getFont_verdana_80_4bpp()),
     &(getFont_verdana_10_4bpp())
 };
 

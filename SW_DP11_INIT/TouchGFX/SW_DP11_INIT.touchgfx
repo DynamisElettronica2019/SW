@@ -5,17 +5,42 @@
         "Components": [
           {
             "Color": {
-              "Red": 196,
-              "Green": 36,
-              "Blue": 109
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
-            "Name": "box1",
+            "Name": "box3",
             "X": 0,
-            "Y": 38,
-            "Width": 480,
-            "Height": 571,
+            "Y": 0,
+            "Width": 640,
+            "Height": 480,
             "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxWithBorder1",
+            "X": 196,
+            "Y": 41,
+            "Width": 249,
+            "Height": 167,
+            "Type": "BoxWithBorder",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -27,17 +52,17 @@
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 233,
-              "Blue": 0
+              "Green": 255,
+              "Blue": 255
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
-            "X": 188,
-            "Y": 241,
-            "Width": 104,
-            "Height": 49,
+            "X": 217,
+            "Y": 72,
+            "Width": 207,
+            "Height": 98,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -46,16 +71,75 @@
             "Moveable": false
           },
           {
-            "Pressed": "__designer\\blue_buttons_round_edge_small_pressed.png",
-            "Released": "__designer\\blue_buttons_round_edge_small.png",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
             "Alpha": 255,
-            "Style": "Style4",
-            "Name": "button1",
-            "X": 155,
-            "Y": 290,
-            "Width": 170,
-            "Height": 60,
-            "Type": "Button",
+            "Name": "box2",
+            "X": 214,
+            "Y": 256,
+            "Width": 212,
+            "Height": 164,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "Name": "box4",
+            "X": 494,
+            "Y": 0,
+            "Width": 146,
+            "Height": 88,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 255,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "Name": "box4_1",
+            "X": 494,
+            "Y": 88,
+            "Width": 146,
+            "Height": 88,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "box4_2",
+            "X": 494,
+            "Y": 168,
+            "Width": 146,
+            "Height": 88,
+            "Type": "Box",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -78,8 +162,8 @@
     ],
     "Name": "MyApplication",
     "Resolution": {
-      "Width": 480,
-      "Height": 640
+      "Width": 640,
+      "Height": 480
     },
     "SelectedColorDepth": 16,
     "StartupScreenName": "Screen1",

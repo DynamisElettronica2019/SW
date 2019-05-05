@@ -167,7 +167,11 @@ void SPI_ltdc_init_sequence(SPI_HandleTypeDef *hspi)
 	//HAL_Delay(10);
 	SPI_display_ON(hspi);
 	HAL_Delay(10);
-	//SPI_invert_colors(hspi);
+	SPI_invert_colors(hspi);
+	SPI_brightness(hspi);
+	//SPI_flip_vertical(hspi);
+	SPI_flip_horizontal(hspi);
+
 	HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
 }
 
@@ -250,6 +254,53 @@ void SPI_invert_colors(SPI_HandleTypeDef *hspi)
 	spiData[1] = 0x00;
 
 	HAL_SPI_Transmit(hspi, spiData, 1, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+void SPI_brightness(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0x51;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0xFF;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+void SPI_flip_vertical(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0x36;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0x09;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+void SPI_flip_horizontal(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0x36;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0x0A;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
 
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 }

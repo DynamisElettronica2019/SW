@@ -4,24 +4,41 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-#include "BitmapDatabase.hpp"
 
 Screen1ViewBase::Screen1ViewBase()
 {
-    box1.setPosition(0, 38, 480, 571);
-    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(196, 36, 109));
+    box3.setPosition(0, 0, 640, 480);
+    box3.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
-    textArea1.setXY(188, 241);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 233, 0));
+    boxWithBorder1.setPosition(196, 41, 249, 167);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    boxWithBorder1.setBorderSize(5);
+
+    textArea1.setXY(217, 72);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(TypedText(T_SINGLEUSEID1));
 
-    button1.setXY(155, 290);
-    button1.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    box2.setPosition(214, 256, 212, 164);
+    box2.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 
-    add(box1);
+    box4.setPosition(494, 0, 146, 88);
+    box4.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+
+    box4_1.setPosition(494, 88, 146, 88);
+    box4_1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
+
+    box4_2.setPosition(494, 168, 146, 88);
+    box4_2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 255));
+
+    add(box3);
+    add(boxWithBorder1);
     add(textArea1);
-    add(button1);
+    add(box2);
+    add(box4);
+    add(box4_1);
+    add(box4_2);
 }
 
 void Screen1ViewBase::setupScreen()
