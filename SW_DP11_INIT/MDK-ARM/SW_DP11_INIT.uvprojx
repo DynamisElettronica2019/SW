@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="project_projx.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
 
   <SchemaVersion>2.1</SchemaVersion>
 
@@ -19,28 +19,28 @@
           <PackID>Keil.STM32F7xx_DFP.2.11.0</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
           <Cpu>IRAM(0x20000000-0x2004FFFF) IROM(0x8000000-0x80FFFFF) CLOCK(12000000) FPU3(SFPU) CPUTYPE("Cortex-M7") ELITTLE</Cpu>
-          <FlashUtilSpec />
-          <StartupFile />
-          <FlashDriverDll />
-          <DeviceId />
-          <RegisterFile />
-          <MemoryEnv />
-          <Cmp />
-          <Asm />
-          <Linker />
-          <OHString />
-          <InfinionOptionDll />
-          <SLE66CMisc />
-          <SLE66AMisc />
-          <SLE66LinkerMisc />
+          <FlashUtilSpec></FlashUtilSpec>
+          <StartupFile></StartupFile>
+          <FlashDriverDll></FlashDriverDll>
+          <DeviceId></DeviceId>
+          <RegisterFile></RegisterFile>
+          <MemoryEnv></MemoryEnv>
+          <Cmp></Cmp>
+          <Asm></Asm>
+          <Linker></Linker>
+          <OHString></OHString>
+          <InfinionOptionDll></InfinionOptionDll>
+          <SLE66CMisc></SLE66CMisc>
+          <SLE66AMisc></SLE66AMisc>
+          <SLE66LinkerMisc></SLE66LinkerMisc>
           <SFDFile>$$Device:STM32F746IGTx$CMSIS\SVD\STM32F7x6_v1r1.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath />
-          <IncludePath />
-          <LibPath />
-          <RegisterFilePath />
-          <DBRegisterFilePath />
+          <BinPath></BinPath>
+          <IncludePath></IncludePath>
+          <LibPath></LibPath>
+          <RegisterFilePath></RegisterFilePath>
+          <DBRegisterFilePath></DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -55,15 +55,15 @@
           <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath />
+          <ListingPath></ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopU1X>0</nStopU1X>
@@ -72,8 +72,8 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopB1X>0</nStopB1X>
@@ -82,15 +82,15 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
             <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
-          <SVCSIdString />
+          <SVCSIdString></SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -104,8 +104,8 @@
           <AssembleAssemblyFile>0</AssembleAssemblyFile>
           <PublicsOnly>0</PublicsOnly>
           <StopOnExitCode>3</StopOnExitCode>
-          <CustomArgument />
-          <IncludeLibraryModules />
+          <CustomArgument></CustomArgument>
+          <IncludeLibraryModules></IncludeLibraryModules>
           <ComprImg>0</ComprImg>
         </CommonProperty>
         <DllOption>
@@ -139,10 +139,10 @@
           <bUseTDR>1</bUseTDR>
           <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
           <Flash3>"" ()</Flash3>
-          <Flash4 />
-          <pFcarmOut />
-          <pFcarmGrp />
-          <pFcArmRoot />
+          <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -175,7 +175,7 @@
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M7"</AdsCpuType>
-            <RvctDeviceName />
+            <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
@@ -200,7 +200,7 @@
             <NoZi3>0</NoZi3>
             <NoZi4>0</NoZi4>
             <NoZi5>0</NoZi5>
-            <Ro1Chk>1</Ro1Chk>
+            <Ro1Chk>0</Ro1Chk>
             <Ro2Chk>0</Ro2Chk>
             <Ro3Chk>0</Ro3Chk>
             <Ir1Chk>1</Ir1Chk>
@@ -258,8 +258,8 @@
               </XRAM>
               <OCR_RVCT1>
                 <Type>1</Type>
-                <StartAddress>0x90000000</StartAddress>
-                <Size>0x4000000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </OCR_RVCT1>
               <OCR_RVCT2>
                 <Type>1</Type>
@@ -307,7 +307,7 @@
                 <Size>0x0</Size>
               </OCR_RVCT10>
             </OnChipMemories>
-            <RvctStartVector />
+            <RvctStartVector></RvctStartVector>
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
@@ -333,10 +333,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls />
+              <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx,QSPI_CLOCK_PRESCALER=2,QSPI_DDRMODE,QSPI_XIP_MODE</Define>
-              <Undefine />
-              <IncludePath>../Core/Inc;       ../TouchGFX/target;       ../TouchGFX/generated/fonts/include;       ../TouchGFX/generated/texts/include;       ../TouchGFX/generated/images/include;       ../TouchGFX/generated/gui_generated/include;       ../TouchGFX/gui/include; ../middlewares/st/touchgfx/touchgfx/framework/include;       ../Drivers/STM32F7xx_HAL_Driver/Inc;       ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;       ../Middlewares/Third_Party/FreeRTOS/Source/include;       ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;       ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;       ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;       ../Drivers/CMSIS/Include; ../middlewares/st/touchgfx/touchgfx/framework/include; ../middlewares/st/touchgfx/touchgfx/framework/include; ../middlewares/st/touchgfx/touchgfx/framework/include;../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
+              <Undefine></Undefine>
+              <IncludePath>../Core/Inc;        ../TouchGFX/target;        ../TouchGFX/generated/fonts/include;        ../TouchGFX/generated/texts/include;        ../TouchGFX/generated/images/include;        ../TouchGFX/generated/gui_generated/include;        ../TouchGFX/gui/include;  ../middlewares/st/touchgfx/touchgfx/framework/include;        ../Drivers/STM32F7xx_HAL_Driver/Inc;        ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;        ../Middlewares/Third_Party/FreeRTOS/Source/include;        ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;        ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;        ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;        ../Drivers/CMSIS/Include;  ../middlewares/st/touchgfx/touchgfx/framework/include;  ../middlewares/st/touchgfx/touchgfx/framework/include;  ../middlewares/st/touchgfx/touchgfx/framework/include; ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -351,9 +351,9 @@
             <useXO>0</useXO>
             <uClangAs>0</uClangAs>
             <VariousControls>
-              <MiscControls />
-              <Define />
-              <Undefine />
+              <MiscControls></MiscControls>
+              <Define></Define>
+              <Undefine></Undefine>
               <IncludePath>..\Core\Inc</IncludePath>
             </VariousControls>
           </Aads>
@@ -366,13 +366,13 @@
             <useFile>0</useFile>
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
-            <pXoBase />
+            <pXoBase></pXoBase>
             <ScatterFile>SW_DP11_INIT\SW_DP11_INIT.sct</ScatterFile>
-            <IncludeLibs />
-            <IncludeLibsPath />
-            <Misc />
-            <LinkerInputFile />
-            <DisabledWarnings />
+            <IncludeLibs></IncludeLibs>
+            <IncludeLibsPath></IncludeLibsPath>
+            <Misc></Misc>
+            <LinkerInputFile></LinkerInputFile>
+            <DisabledWarnings></DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>
@@ -387,12 +387,346 @@
             </File>
           </Files>
         </Group>
-        <Group><GroupName>Application/User/Core</GroupName><Files><File><FileName>main.cpp</FileName><FileType>8</FileType><FilePath>../Core/Src/main.cpp</FilePath></File><File><FileName>gpio.c</FileName><FileType>1</FileType><FilePath>../Core/Src/gpio.c</FilePath></File><File><FileName>adc.c</FileName><FileType>1</FileType><FilePath>../Core/Src/adc.c</FilePath></File><File><FileName>can.c</FileName><FileType>1</FileType><FilePath>../Core/Src/can.c</FilePath></File><File><FileName>crc.c</FileName><FileType>1</FileType><FilePath>../Core/Src/crc.c</FilePath></File><File><FileName>dma.c</FileName><FileType>1</FileType><FilePath>../Core/Src/dma.c</FilePath></File><File><FileName>freertos.c</FileName><FileType>1</FileType><FilePath>../Core/Src/freertos.c</FilePath></File><File><FileName>i2c.c</FileName><FileType>1</FileType><FilePath>../Core/Src/i2c.c</FilePath></File><File><FileName>quadspi.c</FileName><FileType>1</FileType><FilePath>../Core/Src/quadspi.c</FilePath></File><File><FileName>spi.c</FileName><FileType>1</FileType><FilePath>../Core/Src/spi.c</FilePath></File><File><FileName>tim.c</FileName><FileType>1</FileType><FilePath>../Core/Src/tim.c</FilePath></File><File><FileName>stm32f7xx_it.c</FileName><FileType>1</FileType><FilePath>../Core/Src/stm32f7xx_it.c</FilePath></File><File><FileName>stm32f7xx_hal_msp.c</FileName><FileType>1</FileType><FilePath>../Core/Src/stm32f7xx_hal_msp.c</FilePath></File><File><FileName>stm32f7xx_hal_timebase_tim.c</FileName><FileType>1</FileType><FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath></File></Files></Group>
-        <Group><GroupName>Application/User/TouchGFX/target</GroupName><Files><File><FileName>BoardConfiguration.cpp</FileName><FileType>8</FileType><FilePath>../TouchGFX/target/BoardConfiguration.cpp</FilePath></File><File><FileName>GPIO.cpp</FileName><FileType>8</FileType><FilePath>../TouchGFX/target/GPIO.cpp</FilePath></File><File><FileName>STM32F7DMA.cpp</FileName><FileType>8</FileType><FilePath>../TouchGFX/target/STM32F7DMA.cpp</FilePath></File><File><FileName>STM32F7HAL.cpp</FileName><FileType>8</FileType><FilePath>../TouchGFX/target/STM32F7HAL.cpp</FilePath></File><File><FileName>STM32F7TouchController.cpp</FileName><FileType>8</FileType><FilePath>../TouchGFX/target/STM32F7TouchController.cpp</FilePath></File><File><FileName>STM32F7Instrumentation.cpp</FileName><FileType>8</FileType><FilePath>../TouchGFX/target/STM32F7Instrumentation.cpp</FilePath></File><File><FileName>HW_Init.cpp</FileName><FileType>8</FileType><FilePath>../TouchGFX/target/HW_Init.cpp</FilePath></File></Files></Group>
-        <Group><GroupName>Drivers/STM32F7xx_HAL_Driver</GroupName><Files><File><FileName>stm32f7xx_hal_dma2d.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c</FilePath></File><File><FileName>stm32f7xx_ll_fmc.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.c</FilePath></File><File><FileName>stm32f7xx_hal_sdram.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.c</FilePath></File><File><FileName>stm32f7xx_hal_ltdc.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc.c</FilePath></File><File><FileName>stm32f7xx_hal_ltdc_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_dsi.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c</FilePath></File><File><FileName>stm32f7xx_hal_tim.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c</FilePath></File><File><FileName>stm32f7xx_hal_tim_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_adc.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.c</FilePath></File><File><FileName>stm32f7xx_hal_adc_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_can.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_can.c</FilePath></File><File><FileName>stm32f7xx_hal_cortex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c</FilePath></File><File><FileName>stm32f7xx_hal_crc.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c</FilePath></File><File><FileName>stm32f7xx_hal_crc_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_i2c.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c</FilePath></File><File><FileName>stm32f7xx_hal_i2c_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_qspi.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_qspi.c</FilePath></File><File><FileName>stm32f7xx_hal_spi.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.c</FilePath></File><File><FileName>stm32f7xx_hal_rcc.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c</FilePath></File><File><FileName>stm32f7xx_hal_rcc_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_flash.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c</FilePath></File><File><FileName>stm32f7xx_hal_flash_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_gpio.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c</FilePath></File><File><FileName>stm32f7xx_hal_dma.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c</FilePath></File><File><FileName>stm32f7xx_hal_dma_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c</FilePath></File><File><FileName>stm32f7xx_hal_pwr.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c</FilePath></File><File><FileName>stm32f7xx_hal_pwr_ex.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c</FilePath></File><File><FileName>stm32f7xx_hal.c</FileName><FileType>1</FileType><FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c</FilePath></File></Files></Group>
-        <Group><GroupName>Drivers/CMSIS</GroupName><Files><File><FileName>system_stm32f7xx.c</FileName><FileType>1</FileType><FilePath>../Core/Src/system_stm32f7xx.c</FilePath></File></Files></Group>
-        <Group><GroupName>Middlewares/FreeRTOS</GroupName><Files><File><FileName>croutine.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/croutine.c</FilePath></File><File><FileName>event_groups.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</FilePath></File><File><FileName>list.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/list.c</FilePath></File><File><FileName>queue.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/queue.c</FilePath></File><File><FileName>tasks.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/tasks.c</FilePath></File><File><FileName>timers.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/timers.c</FilePath></File><File><FileName>cmsis_os.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</FilePath></File><File><FileName>heap_4.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</FilePath></File><File><FileName>port.c</FileName><FileType>1</FileType><FilePath>../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1/port.c</FilePath></File></Files></Group>
-        <Group><GroupName>Middlewares/TouchGFX</GroupName><Files><File><FileName>touchgfx_core.lib</FileName><FileType>4</FileType><FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath></File><File><FileName>touchgfx_core.lib</FileName><FileType>4</FileType><FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath></File><File><FileName>OSWrappers.cpp</FileName><FileType>8</FileType><FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath></File></Files></Group>
+        <Group>
+          <GroupName>Application/User/Core</GroupName>
+          <Files>
+            <File>
+              <FileName>main.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Core/Src/main.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/can.c</FilePath>
+            </File>
+            <File>
+              <FileName>crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/freertos.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>quadspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/quadspi.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/stm32f7xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/stm32f7xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/TouchGFX/target</GroupName>
+          <Files>
+            <File>
+              <FileName>BoardConfiguration.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/BoardConfiguration.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/GPIO.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7DMA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7DMA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7HAL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7HAL.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7TouchController.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7TouchController.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7Instrumentation.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/STM32F7Instrumentation.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HW_Init.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../TouchGFX/target/HW_Init.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/STM32F7xx_HAL_Driver</GroupName>
+          <Files>
+            <File>
+              <FileName>stm32f7xx_hal_dma2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_ll_fmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_fmc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_sdram.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_ltdc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_ltdc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_dsi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_adc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_cortex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_crc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_i2c_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_qspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_qspi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_rcc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_flash_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_dma_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_pwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_pwr_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/CMSIS</GroupName>
+          <Files>
+            <File>
+              <FileName>system_stm32f7xx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/system_stm32f7xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/FreeRTOS</GroupName>
+          <Files>
+            <File>
+              <FileName>croutine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/croutine.c</FilePath>
+            </File>
+            <File>
+              <FileName>event_groups.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</FilePath>
+            </File>
+            <File>
+              <FileName>list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/list.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</FilePath>
+            </File>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1/port.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/TouchGFX</GroupName>
+          <Files>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappers.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
         <Group>
           <GroupName>Application/User/TouchGFX/gui</GroupName>
           <Files>
@@ -526,16 +860,16 @@
   </Targets>
 
   <RTE>
-    <apis />
+    <apis/>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0" />
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
         <targetInfos>
-          <targetInfo name="SW_DP11_INIT" />
+          <targetInfo name="SW_DP11_INIT"/>
         </targetInfos>
       </component>
     </components>
-    <files />
+    <files/>
   </RTE>
 
 </Project>

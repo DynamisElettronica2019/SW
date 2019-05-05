@@ -145,9 +145,9 @@ int main(void)
   MX_TIM7_Init();
   MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
-	
+		
 	SPI_ltdc_init_sequence(&hspi1);
-	
+      
   /* USER CODE END 2 */
 
 /* Initialise the graphical hardware */
@@ -155,7 +155,7 @@ int main(void)
 
   /* Initialise the graphical stack engine */
   GRAPHICS_Init();
-      
+
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
 
