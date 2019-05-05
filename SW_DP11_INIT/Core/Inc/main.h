@@ -113,6 +113,8 @@ void Error_Handler(void);
 #define ENC_LEFT_8_GPIO_Port GPIOH
 #define CLUTCH_ANALOG_INPUT_Pin GPIO_PIN_3
 #define CLUTCH_ANALOG_INPUT_GPIO_Port GPIOA
+#define SPI_NSS_Pin GPIO_PIN_4
+#define SPI_NSS_GPIO_Port GPIOA
 #define SW_CURRENT_SENSE_Pin GPIO_PIN_6
 #define SW_CURRENT_SENSE_GPIO_Port GPIOA
 #define BUZZER_PWM_Pin GPIO_PIN_6
