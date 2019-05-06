@@ -1656,6 +1656,8 @@ Section Cross References
     bitmapdatabase.o(i._ZN14BitmapDatabase11getInstanceEv) refers to bitmapdatabase.o(.constdata) for .constdata
     bitmapdatabase.o(.ARM.exidx) refers to bitmapdatabase.o(i._ZN14BitmapDatabase11getInstanceEv) for i._ZN14BitmapDatabase11getInstanceEv
     bitmapdatabase.o(.ARM.exidx) refers to bitmapdatabase.o(i._ZN14BitmapDatabase15getInstanceSizeEv) for i._ZN14BitmapDatabase15getInstanceSizeEv
+    bitmapdatabase.o(.constdata) refers to disco_f746ng_mbed_pinout_v5.o(ExtFlashSection) for _disco_f746ng_mbed_pinout_v5
+    bitmapdatabase.o(.constdata) refers to dynamis.o(ExtFlashSection) for _dynamis
     fontgetters.o(i._Z23getFont_verdana_10_4bppv) refers to cxa_guard_acquire.o(i.__cxa_guard_acquire) for __cxa_guard_acquire
     fontgetters.o(i._Z23getFont_verdana_10_4bppv) refers to internalflashfont.o(i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt) for touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)
     fontgetters.o(i._Z23getFont_verdana_10_4bppv) refers to aeabi_atexit.o(.text) for __aeabi_atexit
@@ -5191,19 +5193,19 @@ Image Symbol Table
 
     ../../../clib/unwind_pr.c                0x00000000   Number         0  unwind_pr0.o ABSOLUTE
     ../../../clib/unwind_pr.c                0x00000000   Number         0  unwind_prcommon.o ABSOLUTE
-    ../../../clib/unwinder.c                 0x00000000   Number         0  unwind_activity.o ABSOLUTE
+    ../../../clib/unwinder.c                 0x00000000   Number         0  unwinder.o ABSOLUTE
     ../../../clib/unwinder.c                 0x00000000   Number         0  unwind_activity.o ABSOLUTE
     ../../../clib/unwinder.c                 0x00000000   Number         0  unwinder.o ABSOLUTE
-    ../../../clib/unwinder.c                 0x00000000   Number         0  unwinder.o ABSOLUTE
+    ../../../clib/unwinder.c                 0x00000000   Number         0  unwind_activity.o ABSOLUTE
     ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_callterm.o ABSOLUTE
-    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_globs.o ABSOLUTE
     ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_terminate.o ABSOLUTE
-    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_mem.o ABSOLUTE
     ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_support.o ABSOLUTE
+    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_globs.o ABSOLUTE
+    ../../../edgfe/lib_src/arm_exceptions.c  0x00000000   Number         0  arm_exceptions_mem.o ABSOLUTE
     ../../../edgfe/lib_src/arm_noexceptions.c 0x00000000   Number         0  arm_begincatch_noexceptions.o ABSOLUTE
     ../../../edgfe/lib_src/delete.c          0x00000000   Number         0  delete.o ABSOLUTE
-    ../../../edgfe/lib_src/guard.c           0x00000000   Number         0  cxa_guard_acquire.o ABSOLUTE
     ../../../edgfe/lib_src/guard.c           0x00000000   Number         0  cxa_guard_release.o ABSOLUTE
+    ../../../edgfe/lib_src/guard.c           0x00000000   Number         0  cxa_guard_acquire.o ABSOLUTE
     ../../../edgfe/lib_src/pure_virt.c       0x00000000   Number         0  pure_virt.o ABSOLUTE
     ../../../edgfe/lib_src/typeinfo.c        0x00000000   Number         0  type_info_dtor.o ABSOLUTE
     ../../../edgfe/lib_src/typeinfo.c        0x00000000   Number         0  lib_rtti_impl.o ABSOLUTE
@@ -5276,33 +5278,33 @@ Image Symbol Table
     ../clib/microlib/cpp/cpp_memory.c        0x00000000   Number         0  cpp_memory.o ABSOLUTE
     ../clib/microlib/cpp/cpp_signal.c        0x00000000   Number         0  cpp_signal.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
     ../clib/microlib/stdlib/abort.c          0x00000000   Number         0  abort.o ABSOLUTE
     ../clib/microlib/stdlib/bsearch.c        0x00000000   Number         0  bsearch.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
-    ../clib/stdlib.c                         0x00000000   Number         0  cxa_finalize.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  aeabi_atexit.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  cxa_finalize.o ABSOLUTE
     ../touchgfx/generated/fonts/src/applicationfontprovider.cpp 0x00000000   Number         0  applicationfontprovider.o ABSOLUTE
     ../touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp 0x00000000   Number         0  font_verdana_10_4bpp.o ABSOLUTE
     ../touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp 0x00000000   Number         0  font_verdana_20_4bpp.o ABSOLUTE
@@ -5317,6 +5319,8 @@ Image Symbol Table
     ../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp 0x00000000   Number         0  frontendapplicationbase.o ABSOLUTE
     ../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp 0x00000000   Number         0  screen1viewbase.o ABSOLUTE
     ../touchgfx/generated/images/src/bitmapdatabase.cpp 0x00000000   Number         0  bitmapdatabase.o ABSOLUTE
+    ../touchgfx/generated/images/src/disco_f746ng_mbed_pinout_v5.cpp 0x00000000   Number         0  disco_f746ng_mbed_pinout_v5.o ABSOLUTE
+    ../touchgfx/generated/images/src/dynamis.cpp 0x00000000   Number         0  dynamis.o ABSOLUTE
     ../touchgfx/generated/texts/src/languagegb.cpp 0x00000000   Number         0  languagegb.o ABSOLUTE
     ../touchgfx/generated/texts/src/texts.cpp 0x00000000   Number         0  texts.o ABSOLUTE
     ../touchgfx/generated/texts/src/typedtextdatabase.cpp 0x00000000   Number         0  typedtextdatabase.o ABSOLUTE
@@ -6093,69 +6097,69 @@ Image Symbol Table
     flagBitshiftOffset                       0x0800b588   Data           8  stm32f7xx_hal_dma.o(.constdata)
     .constdata                               0x0800b590   Section       16  system_stm32f7xx.o(.constdata)
     .constdata                               0x0800b5a0   Section        8  system_stm32f7xx.o(.constdata)
-    .constdata                               0x0800b5a8   Section       20  bitmapdatabase.o(.constdata)
-    bitmap_database                          0x0800b5a8   Data          20  bitmapdatabase.o(.constdata)
-    .constdata                               0x0800b5bc   Section       16  frontendapplicationbase.o(.constdata)
-    <Data1>                                  0x0800b5bc   Data           8  frontendapplicationbase.o(.constdata)
-    <Data2>                                  0x0800b5c4   Data           8  frontendapplicationbase.o(.constdata)
-    .constdata                               0x0800b5cc   Section       72  screen.o(.constdata)
-    .constdata__ZTV10STM32F7DMA              0x0800b614   Section       76  stm32f7dma.o(.constdata__ZTV10STM32F7DMA)
-    .constdata__ZTV10STM32F7HAL              0x0800b660   Section      168  stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-    .constdata__ZTV11Screen1View             0x0800b708   Section       52  screen1view.o(.constdata__ZTV11Screen1View)
-    .constdata__ZTV12FrontendHeap            0x0800b73c   Section       20  boardconfiguration.o(.constdata__ZTV12FrontendHeap)
-    .constdata__ZTV15Screen1ViewBase         0x0800b750   Section       52  screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
-    .constdata__ZTV16Screen1Presenter        0x0800b784   Section       40  screen1presenter.o(.constdata__ZTV16Screen1Presenter)
-    .constdata__ZTV19FrontendApplication     0x0800b7ac   Section       60  frontendapplication.o(.constdata__ZTV19FrontendApplication)
-    .constdata__ZTV23ApplicationFontProvider 0x0800b7e8   Section       20  applicationfontprovider.o(.constdata__ZTV23ApplicationFontProvider)
-    .constdata__ZTV23FrontendApplicationBase 0x0800b7fc   Section       60  boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-    .constdata__ZTVN8touchgfx10ClickEventE   0x0800b838   Section       20  screen.o(.constdata__ZTVN8touchgfx10ClickEventE)
-    .constdata__ZTVN8touchgfx11ApplicationE  0x0800b84c   Section       60  application.o(.constdata__ZTVN8touchgfx11ApplicationE)
-    .constdata__ZTVN8touchgfx12GestureEventE 0x0800b888   Section       20  screen.o(.constdata__ZTVN8touchgfx12GestureEventE)
-    .constdata__ZTVN8touchgfx12NoTransitionE 0x0800b89c   Section       32  frontendapplicationbase.o(.constdata__ZTVN8touchgfx12NoTransitionE)
-    .constdata__ZTVN8touchgfx13BoxWithBorderE 0x0800b8bc   Section      108  boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
-    .constdata__ZTVN8touchgfx14MVPApplicationE 0x0800b928   Section       60  frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
-    .constdata__ZTVN8touchgfx17AbstractPartitionE 0x0800b964   Section       52  abstractpartition.o(.constdata__ZTVN8touchgfx17AbstractPartitionE)
-    .constdata__ZTVN8touchgfx17InternalFlashFontE 0x0800b998   Section       76  internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
-    .constdata__ZTVN8touchgfx17LockFreeDMA_QueueE 0x0800b9e4   Section       36  dma.o(.constdata__ZTVN8touchgfx17LockFreeDMA_QueueE)
-    .constdata__ZTVN8touchgfx22STM32F7InstrumentationE 0x0800ba08   Section       40  stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
-    .constdata__ZTVN8touchgfx22STM32F7TouchControllerE 0x0800ba30   Section       24  stm32f7touchcontroller.o(.constdata__ZTVN8touchgfx22STM32F7TouchControllerE)
-    .constdata__ZTVN8touchgfx3BoxE           0x0800ba48   Section      108  box.o(.constdata__ZTVN8touchgfx3BoxE)
-    .constdata__ZTVN8touchgfx3HALE           0x0800bab4   Section      168  hal.o(.constdata__ZTVN8touchgfx3HALE)
-    .constdata__ZTVN8touchgfx6ScreenE        0x0800bb5c   Section       52  screen.o(.constdata__ZTVN8touchgfx6ScreenE)
-    .constdata__ZTVN8touchgfx6WidgetE        0x0800bb90   Section      108  screen1viewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
-    .constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE 0x0800bbfc   Section       24  frontendapplicationbase.o(.constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE)
-    .constdata__ZTVN8touchgfx8DrawableE      0x0800bc14   Section      108  drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
-    .constdata__ZTVN8touchgfx8LCD16bppE      0x0800bc80   Section       52  lcd16bpp.o(.constdata__ZTVN8touchgfx8LCD16bppE)
-    .constdata__ZTVN8touchgfx8TextAreaE      0x0800bcb4   Section      124  textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
-    .constdata__ZTVN8touchgfx9ConstFontE     0x0800bd30   Section       76  constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-    .constdata__ZTVN8touchgfx9ContainerE     0x0800bd7c   Section      144  container.o(.constdata__ZTVN8touchgfx9ContainerE)
-    .constdata__ZTVN8touchgfx9DragEventE     0x0800be0c   Section       20  screen.o(.constdata__ZTVN8touchgfx9DragEventE)
-    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE 0x0800be20   Section       52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE)
-    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE 0x0800be54   Section       52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE)
-    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE 0x0800be88   Section       52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE)
-    .conststring                             0x0800bebc   Section      392  freertos.o(.conststring)
-    FontFlashSection                         0x0800c044   Section        1  font_verdana_10_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800c048   Section        1  font_verdana_20_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800c04c   Section     5522  font_verdana_80_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800d5e0   Section        4  kerning_verdana_10_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800d5e4   Section        4  kerning_verdana_20_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800d5e8   Section        4  kerning_verdana_80_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800d5ec   Section       14  table_verdana_10_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800d5fc   Section       14  table_verdana_20_4bpp.o(FontFlashSection)
-    FontFlashSection                         0x0800d60c   Section       56  table_verdana_80_4bpp.o(FontFlashSection)
-    TextFlashSection                         0x0800d664   Section       10  languagegb.o(TextFlashSection)
-    T_SingleUseId1_Gb                        0x0800d664   Data          10  languagegb.o(TextFlashSection)
-    TextFlashSection                         0x0800d670   Section        4  languagegb.o(TextFlashSection)
-    TextFlashSection                         0x0800d674   Section        4  texts.o(TextFlashSection)
-    languagesArray                           0x0800d674   Data           4  texts.o(TextFlashSection)
-    TextFlashSection                         0x0800d678   Section        2  typedtextdatabase.o(TextFlashSection)
-    typedText_database_DEFAULT               0x0800d678   Data           2  typedtextdatabase.o(TextFlashSection)
-    TextFlashSection                         0x0800d67c   Section        4  typedtextdatabase.o(TextFlashSection)
-    typedTextDatabaseArray                   0x0800d67c   Data           4  typedtextdatabase.o(TextFlashSection)
-    .init_array                              0x0800d680   Section        4  boardconfiguration.o(.init_array)
-    .init_array                              0x0800d684   Section        4  texts.o(.init_array)
-    .init_array                              0x0800d688   Section        4  typedtextdatabase.o(.init_array)
-    .init_array                              0x0800d68c   Section        0  cpp_init.o(.init_array)
+    .constdata                               0x0800b5a8   Section       40  bitmapdatabase.o(.constdata)
+    bitmap_database                          0x0800b5a8   Data          40  bitmapdatabase.o(.constdata)
+    .constdata                               0x0800b5d0   Section       16  frontendapplicationbase.o(.constdata)
+    <Data1>                                  0x0800b5d0   Data           8  frontendapplicationbase.o(.constdata)
+    <Data2>                                  0x0800b5d8   Data           8  frontendapplicationbase.o(.constdata)
+    .constdata                               0x0800b5e0   Section       72  screen.o(.constdata)
+    .constdata__ZTV10STM32F7DMA              0x0800b628   Section       76  stm32f7dma.o(.constdata__ZTV10STM32F7DMA)
+    .constdata__ZTV10STM32F7HAL              0x0800b674   Section      168  stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
+    .constdata__ZTV11Screen1View             0x0800b71c   Section       52  screen1view.o(.constdata__ZTV11Screen1View)
+    .constdata__ZTV12FrontendHeap            0x0800b750   Section       20  boardconfiguration.o(.constdata__ZTV12FrontendHeap)
+    .constdata__ZTV15Screen1ViewBase         0x0800b764   Section       52  screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+    .constdata__ZTV16Screen1Presenter        0x0800b798   Section       40  screen1presenter.o(.constdata__ZTV16Screen1Presenter)
+    .constdata__ZTV19FrontendApplication     0x0800b7c0   Section       60  frontendapplication.o(.constdata__ZTV19FrontendApplication)
+    .constdata__ZTV23ApplicationFontProvider 0x0800b7fc   Section       20  applicationfontprovider.o(.constdata__ZTV23ApplicationFontProvider)
+    .constdata__ZTV23FrontendApplicationBase 0x0800b810   Section       60  boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
+    .constdata__ZTVN8touchgfx10ClickEventE   0x0800b84c   Section       20  screen.o(.constdata__ZTVN8touchgfx10ClickEventE)
+    .constdata__ZTVN8touchgfx11ApplicationE  0x0800b860   Section       60  application.o(.constdata__ZTVN8touchgfx11ApplicationE)
+    .constdata__ZTVN8touchgfx12GestureEventE 0x0800b89c   Section       20  screen.o(.constdata__ZTVN8touchgfx12GestureEventE)
+    .constdata__ZTVN8touchgfx12NoTransitionE 0x0800b8b0   Section       32  frontendapplicationbase.o(.constdata__ZTVN8touchgfx12NoTransitionE)
+    .constdata__ZTVN8touchgfx13BoxWithBorderE 0x0800b8d0   Section      108  boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
+    .constdata__ZTVN8touchgfx14MVPApplicationE 0x0800b93c   Section       60  frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
+    .constdata__ZTVN8touchgfx17AbstractPartitionE 0x0800b978   Section       52  abstractpartition.o(.constdata__ZTVN8touchgfx17AbstractPartitionE)
+    .constdata__ZTVN8touchgfx17InternalFlashFontE 0x0800b9ac   Section       76  internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+    .constdata__ZTVN8touchgfx17LockFreeDMA_QueueE 0x0800b9f8   Section       36  dma.o(.constdata__ZTVN8touchgfx17LockFreeDMA_QueueE)
+    .constdata__ZTVN8touchgfx22STM32F7InstrumentationE 0x0800ba1c   Section       40  stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
+    .constdata__ZTVN8touchgfx22STM32F7TouchControllerE 0x0800ba44   Section       24  stm32f7touchcontroller.o(.constdata__ZTVN8touchgfx22STM32F7TouchControllerE)
+    .constdata__ZTVN8touchgfx3BoxE           0x0800ba5c   Section      108  box.o(.constdata__ZTVN8touchgfx3BoxE)
+    .constdata__ZTVN8touchgfx3HALE           0x0800bac8   Section      168  hal.o(.constdata__ZTVN8touchgfx3HALE)
+    .constdata__ZTVN8touchgfx6ScreenE        0x0800bb70   Section       52  screen.o(.constdata__ZTVN8touchgfx6ScreenE)
+    .constdata__ZTVN8touchgfx6WidgetE        0x0800bba4   Section      108  screen1viewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+    .constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE 0x0800bc10   Section       24  frontendapplicationbase.o(.constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE)
+    .constdata__ZTVN8touchgfx8DrawableE      0x0800bc28   Section      108  drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+    .constdata__ZTVN8touchgfx8LCD16bppE      0x0800bc94   Section       52  lcd16bpp.o(.constdata__ZTVN8touchgfx8LCD16bppE)
+    .constdata__ZTVN8touchgfx8TextAreaE      0x0800bcc8   Section      124  textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
+    .constdata__ZTVN8touchgfx9ConstFontE     0x0800bd44   Section       76  constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
+    .constdata__ZTVN8touchgfx9ContainerE     0x0800bd90   Section      144  container.o(.constdata__ZTVN8touchgfx9ContainerE)
+    .constdata__ZTVN8touchgfx9DragEventE     0x0800be20   Section       20  screen.o(.constdata__ZTVN8touchgfx9DragEventE)
+    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE 0x0800be34   Section       52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE)
+    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE 0x0800be68   Section       52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE)
+    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE 0x0800be9c   Section       52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE)
+    .conststring                             0x0800bed0   Section      392  freertos.o(.conststring)
+    FontFlashSection                         0x0800c058   Section        1  font_verdana_10_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800c05c   Section        1  font_verdana_20_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800c060   Section     5522  font_verdana_80_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800d5f4   Section        4  kerning_verdana_10_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800d5f8   Section        4  kerning_verdana_20_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800d5fc   Section        4  kerning_verdana_80_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800d600   Section       14  table_verdana_10_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800d610   Section       14  table_verdana_20_4bpp.o(FontFlashSection)
+    FontFlashSection                         0x0800d620   Section       56  table_verdana_80_4bpp.o(FontFlashSection)
+    TextFlashSection                         0x0800d678   Section       10  languagegb.o(TextFlashSection)
+    T_SingleUseId1_Gb                        0x0800d678   Data          10  languagegb.o(TextFlashSection)
+    TextFlashSection                         0x0800d684   Section        4  languagegb.o(TextFlashSection)
+    TextFlashSection                         0x0800d688   Section        4  texts.o(TextFlashSection)
+    languagesArray                           0x0800d688   Data           4  texts.o(TextFlashSection)
+    TextFlashSection                         0x0800d68c   Section        2  typedtextdatabase.o(TextFlashSection)
+    typedText_database_DEFAULT               0x0800d68c   Data           2  typedtextdatabase.o(TextFlashSection)
+    TextFlashSection                         0x0800d690   Section        4  typedtextdatabase.o(TextFlashSection)
+    typedTextDatabaseArray                   0x0800d690   Data           4  typedtextdatabase.o(TextFlashSection)
+    .init_array                              0x0800d694   Section        4  boardconfiguration.o(.init_array)
+    .init_array                              0x0800d698   Section        4  texts.o(.init_array)
+    .init_array                              0x0800d69c   Section        4  typedtextdatabase.o(.init_array)
+    .init_array                              0x0800d6a0   Section        0  cpp_init.o(.init_array)
     .data                                    0x20000000   Section      212  freertos.o(.data)
     .data                                    0x200000d4   Section        4  spi.o(.data)
     .data                                    0x200000d8   Section       20  boardconfiguration.o(.data)
@@ -6262,6 +6266,8 @@ Image Symbol Table
     .bss__ZZN8touchgfx6getHALI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssE3hal 0x20011604   Section      104  boardconfiguration.o(.bss__ZZN8touchgfx6getHALI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssE3hal)
     HEAP                                     0x20011670   Section      512  startup_stm32f746xx.o(HEAP)
     STACK                                    0x20011870   Section     1024  startup_stm32f746xx.o(STACK)
+    ExtFlashSection                          0x90000000   Section    1382400  disco_f746ng_mbed_pinout_v5.o(ExtFlashSection)
+    ExtFlashSection                          0x90151800   Section    1069440  dynamis.o(ExtFlashSection)
 
     Global Symbols
 
@@ -6995,54 +7001,54 @@ Image Symbol Table
     touchgfx::Callback<FrontendApplicationBase, void, void, void>::isValid() const 0x0800b34b   Thumb Code    24  frontendapplicationbase.o(t._ZNK8touchgfx8CallbackI23FrontendApplicationBasevvvE7isValidEv)
     AHBPrescTable                            0x0800b590   Data          16  system_stm32f7xx.o(.constdata)
     APBPrescTable                            0x0800b5a0   Data           8  system_stm32f7xx.o(.constdata)
-    vtable for STM32F7DMA                    0x0800b614   Data          76  stm32f7dma.o(.constdata__ZTV10STM32F7DMA)
-    vtable for STM32F7HAL                    0x0800b660   Data         168  stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-    vtable for Screen1View                   0x0800b708   Data          52  screen1view.o(.constdata__ZTV11Screen1View)
-    vtable for FrontendHeap                  0x0800b73c   Data          20  boardconfiguration.o(.constdata__ZTV12FrontendHeap)
-    vtable for Screen1ViewBase               0x0800b750   Data          52  screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
-    vtable for Screen1Presenter              0x0800b784   Data          40  screen1presenter.o(.constdata__ZTV16Screen1Presenter)
-    vtable for FrontendApplication           0x0800b7ac   Data          60  frontendapplication.o(.constdata__ZTV19FrontendApplication)
-    vtable for ApplicationFontProvider       0x0800b7e8   Data          20  applicationfontprovider.o(.constdata__ZTV23ApplicationFontProvider)
-    vtable for FrontendApplicationBase       0x0800b7fc   Data          60  boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
-    vtable for touchgfx::ClickEvent          0x0800b838   Data          20  screen.o(.constdata__ZTVN8touchgfx10ClickEventE)
-    vtable for touchgfx::Application         0x0800b84c   Data          60  application.o(.constdata__ZTVN8touchgfx11ApplicationE)
-    vtable for touchgfx::GestureEvent        0x0800b888   Data          20  screen.o(.constdata__ZTVN8touchgfx12GestureEventE)
-    vtable for touchgfx::NoTransition        0x0800b89c   Data          32  frontendapplicationbase.o(.constdata__ZTVN8touchgfx12NoTransitionE)
-    vtable for touchgfx::BoxWithBorder       0x0800b8bc   Data         108  boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
-    vtable for touchgfx::MVPApplication      0x0800b928   Data          60  frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
-    vtable for touchgfx::AbstractPartition   0x0800b964   Data          52  abstractpartition.o(.constdata__ZTVN8touchgfx17AbstractPartitionE)
-    vtable for touchgfx::InternalFlashFont   0x0800b998   Data          76  internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
-    vtable for touchgfx::LockFreeDMA_Queue   0x0800b9e4   Data          36  dma.o(.constdata__ZTVN8touchgfx17LockFreeDMA_QueueE)
-    vtable for touchgfx::STM32F7Instrumentation 0x0800ba08   Data          40  stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
-    vtable for touchgfx::STM32F7TouchController 0x0800ba30   Data          24  stm32f7touchcontroller.o(.constdata__ZTVN8touchgfx22STM32F7TouchControllerE)
-    vtable for touchgfx::Box                 0x0800ba48   Data         108  box.o(.constdata__ZTVN8touchgfx3BoxE)
-    vtable for touchgfx::HAL                 0x0800bab4   Data         168  hal.o(.constdata__ZTVN8touchgfx3HALE)
-    vtable for touchgfx::Screen              0x0800bb5c   Data          52  screen.o(.constdata__ZTVN8touchgfx6ScreenE)
-    vtable for touchgfx::Widget              0x0800bb90   Data         108  screen1viewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
-    vtable for touchgfx::Callback<FrontendApplicationBase, void, void, void> 0x0800bbfc   Data          24  frontendapplicationbase.o(.constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE)
-    vtable for touchgfx::Drawable            0x0800bc14   Data         108  drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
-    vtable for touchgfx::LCD16bpp            0x0800bc80   Data          52  lcd16bpp.o(.constdata__ZTVN8touchgfx8LCD16bppE)
-    vtable for touchgfx::TextArea            0x0800bcb4   Data         124  textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
-    vtable for touchgfx::ConstFont           0x0800bd30   Data          76  constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-    vtable for touchgfx::Container           0x0800bd7c   Data         144  container.o(.constdata__ZTVN8touchgfx9ContainerE)
-    vtable for touchgfx::DragEvent           0x0800be0c   Data          20  screen.o(.constdata__ZTVN8touchgfx9DragEventE)
-    vtable for touchgfx::Partition<touchgfx::meta::TypeList<Screen1View, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil>>, (unsigned short)1> 0x0800be20   Data          52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE)
-    vtable for touchgfx::Partition<touchgfx::meta::TypeList<Screen1Presenter, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil>>, (unsigned short)1> 0x0800be54   Data          52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE)
-    vtable for touchgfx::Partition<touchgfx::meta::TypeList<touchgfx::NoTransition, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil>>, (unsigned short)1> 0x0800be88   Data          52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE)
-    unicodes_verdana_10_4bpp                 0x0800c044   Data           1  font_verdana_10_4bpp.o(FontFlashSection)
-    unicodes_verdana_20_4bpp                 0x0800c048   Data           1  font_verdana_20_4bpp.o(FontFlashSection)
-    unicodes_verdana_80_4bpp                 0x0800c04c   Data        5522  font_verdana_80_4bpp.o(FontFlashSection)
-    kerning_verdana_10_4bpp                  0x0800d5e0   Data           4  kerning_verdana_10_4bpp.o(FontFlashSection)
-    kerning_verdana_20_4bpp                  0x0800d5e4   Data           4  kerning_verdana_20_4bpp.o(FontFlashSection)
-    kerning_verdana_80_4bpp                  0x0800d5e8   Data           4  kerning_verdana_80_4bpp.o(FontFlashSection)
-    glyphs_verdana_10_4bpp                   0x0800d5ec   Data          14  table_verdana_10_4bpp.o(FontFlashSection)
-    glyphs_verdana_20_4bpp                   0x0800d5fc   Data          14  table_verdana_20_4bpp.o(FontFlashSection)
-    glyphs_verdana_80_4bpp                   0x0800d60c   Data          56  table_verdana_80_4bpp.o(FontFlashSection)
-    Region$$Table$$Base                      0x0800d644   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800d664   Number         0  anon$$obj.o(Region$$Table)
-    textsGb                                  0x0800d670   Data           4  languagegb.o(TextFlashSection)
-    SHT$$INIT_ARRAY$$Base                    0x0800d680   Number         0  boardconfiguration.o(.init_array)
-    SHT$$INIT_ARRAY$$Limit                   0x0800d68c   Number         0  cpp_init.o(.init_array)
+    vtable for STM32F7DMA                    0x0800b628   Data          76  stm32f7dma.o(.constdata__ZTV10STM32F7DMA)
+    vtable for STM32F7HAL                    0x0800b674   Data         168  stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
+    vtable for Screen1View                   0x0800b71c   Data          52  screen1view.o(.constdata__ZTV11Screen1View)
+    vtable for FrontendHeap                  0x0800b750   Data          20  boardconfiguration.o(.constdata__ZTV12FrontendHeap)
+    vtable for Screen1ViewBase               0x0800b764   Data          52  screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+    vtable for Screen1Presenter              0x0800b798   Data          40  screen1presenter.o(.constdata__ZTV16Screen1Presenter)
+    vtable for FrontendApplication           0x0800b7c0   Data          60  frontendapplication.o(.constdata__ZTV19FrontendApplication)
+    vtable for ApplicationFontProvider       0x0800b7fc   Data          20  applicationfontprovider.o(.constdata__ZTV23ApplicationFontProvider)
+    vtable for FrontendApplicationBase       0x0800b810   Data          60  boardconfiguration.o(.constdata__ZTV23FrontendApplicationBase)
+    vtable for touchgfx::ClickEvent          0x0800b84c   Data          20  screen.o(.constdata__ZTVN8touchgfx10ClickEventE)
+    vtable for touchgfx::Application         0x0800b860   Data          60  application.o(.constdata__ZTVN8touchgfx11ApplicationE)
+    vtable for touchgfx::GestureEvent        0x0800b89c   Data          20  screen.o(.constdata__ZTVN8touchgfx12GestureEventE)
+    vtable for touchgfx::NoTransition        0x0800b8b0   Data          32  frontendapplicationbase.o(.constdata__ZTVN8touchgfx12NoTransitionE)
+    vtable for touchgfx::BoxWithBorder       0x0800b8d0   Data         108  boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
+    vtable for touchgfx::MVPApplication      0x0800b93c   Data          60  frontendapplicationbase.o(.constdata__ZTVN8touchgfx14MVPApplicationE)
+    vtable for touchgfx::AbstractPartition   0x0800b978   Data          52  abstractpartition.o(.constdata__ZTVN8touchgfx17AbstractPartitionE)
+    vtable for touchgfx::InternalFlashFont   0x0800b9ac   Data          76  internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+    vtable for touchgfx::LockFreeDMA_Queue   0x0800b9f8   Data          36  dma.o(.constdata__ZTVN8touchgfx17LockFreeDMA_QueueE)
+    vtable for touchgfx::STM32F7Instrumentation 0x0800ba1c   Data          40  stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
+    vtable for touchgfx::STM32F7TouchController 0x0800ba44   Data          24  stm32f7touchcontroller.o(.constdata__ZTVN8touchgfx22STM32F7TouchControllerE)
+    vtable for touchgfx::Box                 0x0800ba5c   Data         108  box.o(.constdata__ZTVN8touchgfx3BoxE)
+    vtable for touchgfx::HAL                 0x0800bac8   Data         168  hal.o(.constdata__ZTVN8touchgfx3HALE)
+    vtable for touchgfx::Screen              0x0800bb70   Data          52  screen.o(.constdata__ZTVN8touchgfx6ScreenE)
+    vtable for touchgfx::Widget              0x0800bba4   Data         108  screen1viewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+    vtable for touchgfx::Callback<FrontendApplicationBase, void, void, void> 0x0800bc10   Data          24  frontendapplicationbase.o(.constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE)
+    vtable for touchgfx::Drawable            0x0800bc28   Data         108  drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+    vtable for touchgfx::LCD16bpp            0x0800bc94   Data          52  lcd16bpp.o(.constdata__ZTVN8touchgfx8LCD16bppE)
+    vtable for touchgfx::TextArea            0x0800bcc8   Data         124  textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
+    vtable for touchgfx::ConstFont           0x0800bd44   Data          76  constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
+    vtable for touchgfx::Container           0x0800bd90   Data         144  container.o(.constdata__ZTVN8touchgfx9ContainerE)
+    vtable for touchgfx::DragEvent           0x0800be20   Data          20  screen.o(.constdata__ZTVN8touchgfx9DragEventE)
+    vtable for touchgfx::Partition<touchgfx::meta::TypeList<Screen1View, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil>>, (unsigned short)1> 0x0800be34   Data          52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE)
+    vtable for touchgfx::Partition<touchgfx::meta::TypeList<Screen1Presenter, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil>>, (unsigned short)1> 0x0800be68   Data          52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE)
+    vtable for touchgfx::Partition<touchgfx::meta::TypeList<touchgfx::NoTransition, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil>>, (unsigned short)1> 0x0800be9c   Data          52  boardconfiguration.o(.constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE)
+    unicodes_verdana_10_4bpp                 0x0800c058   Data           1  font_verdana_10_4bpp.o(FontFlashSection)
+    unicodes_verdana_20_4bpp                 0x0800c05c   Data           1  font_verdana_20_4bpp.o(FontFlashSection)
+    unicodes_verdana_80_4bpp                 0x0800c060   Data        5522  font_verdana_80_4bpp.o(FontFlashSection)
+    kerning_verdana_10_4bpp                  0x0800d5f4   Data           4  kerning_verdana_10_4bpp.o(FontFlashSection)
+    kerning_verdana_20_4bpp                  0x0800d5f8   Data           4  kerning_verdana_20_4bpp.o(FontFlashSection)
+    kerning_verdana_80_4bpp                  0x0800d5fc   Data           4  kerning_verdana_80_4bpp.o(FontFlashSection)
+    glyphs_verdana_10_4bpp                   0x0800d600   Data          14  table_verdana_10_4bpp.o(FontFlashSection)
+    glyphs_verdana_20_4bpp                   0x0800d610   Data          14  table_verdana_20_4bpp.o(FontFlashSection)
+    glyphs_verdana_80_4bpp                   0x0800d620   Data          56  table_verdana_80_4bpp.o(FontFlashSection)
+    Region$$Table$$Base                      0x0800d658   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800d678   Number         0  anon$$obj.o(Region$$Table)
+    textsGb                                  0x0800d684   Data           4  languagegb.o(TextFlashSection)
+    SHT$$INIT_ARRAY$$Base                    0x0800d694   Number         0  boardconfiguration.o(.init_array)
+    SHT$$INIT_ARRAY$$Limit                   0x0800d6a0   Number         0  cpp_init.o(.init_array)
     defaultTaskHandle                        0x20000000   Data           4  freertos.o(.data)
     ledBlink_TaskHandle                      0x20000004   Data           4  freertos.o(.data)
     can_TaskHandle                           0x20000008   Data           4  freertos.o(.data)
@@ -7164,6 +7170,8 @@ Image Symbol Table
     __heap_base                              0x20011670   Data           0  startup_stm32f746xx.o(HEAP)
     __heap_limit                             0x20011870   Data           0  startup_stm32f746xx.o(HEAP)
     __initial_sp                             0x20011c70   Data           0  startup_stm32f746xx.o(STACK)
+    _disco_f746ng_mbed_pinout_v5             0x90000000   Data       1382400  disco_f746ng_mbed_pinout_v5.o(ExtFlashSection)
+    _dynamis                                 0x90151800   Data       1069440  dynamis.o(ExtFlashSection)
 
 
 
@@ -7173,48 +7181,48 @@ Memory Map of the image
 
   Image Entry point : 0x080001c9
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000d8a8, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000d6b0])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000d8bc, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000d6c4])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000d68c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000d6a0, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000001c8   Data   RO            3    RESET               startup_stm32f746xx.o
-    0x080001c8   0x080001c8   0x00000000   Code   RO        13465  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001c8   0x080001c8   0x00000004   Code   RO        13501    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001cc   0x080001cc   0x00000004   Code   RO        13504    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001d0   0x080001d0   0x00000000   Code   RO        13506    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001d0   0x080001d0   0x00000004   Code   RO        13507    .ARM.Collect$$$$00000009  mc_w.l(entry8a.o)
-    0x080001d4   0x080001d4   0x00000000   Code   RO        13508    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001d4   0x080001d4   0x00000008   Code   RO        13509    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001dc   0x080001dc   0x00000000   Code   RO        13511    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001dc   0x080001dc   0x00000004   Code   RO        13512    .ARM.Collect$$$$0000000E  mc_w.l(entry10b.o)
-    0x080001e0   0x080001e0   0x00000000   Code   RO        13513    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001e0   0x080001e0   0x00000004   Code   RO        13502    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001c8   0x080001c8   0x00000000   Code   RO        13490  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001c8   0x080001c8   0x00000004   Code   RO        13526    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001cc   0x080001cc   0x00000004   Code   RO        13529    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001d0   0x080001d0   0x00000000   Code   RO        13531    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001d0   0x080001d0   0x00000004   Code   RO        13532    .ARM.Collect$$$$00000009  mc_w.l(entry8a.o)
+    0x080001d4   0x080001d4   0x00000000   Code   RO        13533    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001d4   0x080001d4   0x00000008   Code   RO        13534    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001dc   0x080001dc   0x00000000   Code   RO        13536    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001dc   0x080001dc   0x00000004   Code   RO        13537    .ARM.Collect$$$$0000000E  mc_w.l(entry10b.o)
+    0x080001e0   0x080001e0   0x00000000   Code   RO        13538    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001e0   0x080001e0   0x00000004   Code   RO        13527    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001e4   0x080001e4   0x000000ba   Code   RO         8516    .emb_text           port.o
     0x0800029e   0x0800029e   0x00000002   PAD
     0x080002a0   0x080002a0   0x00000024   Code   RO            4    .text               startup_stm32f746xx.o
-    0x080002c4   0x080002c4   0x00000062   Code   RO        13468    .text               mc_w.l(uldiv.o)
-    0x08000326   0x08000326   0x00000024   Code   RO        13472    .text               mc_w.l(memcpya.o)
-    0x0800034a   0x0800034a   0x00000024   Code   RO        13474    .text               mc_w.l(memseta.o)
+    0x080002c4   0x080002c4   0x00000062   Code   RO        13493    .text               mc_w.l(uldiv.o)
+    0x08000326   0x08000326   0x00000024   Code   RO        13497    .text               mc_w.l(memcpya.o)
+    0x0800034a   0x0800034a   0x00000024   Code   RO        13499    .text               mc_w.l(memseta.o)
     0x0800036e   0x0800036e   0x00000002   PAD
-    0x08000370   0x08000370   0x00000020   Code   RO        13481    .text               mc_w.l(cpp_init.o)
-    0x08000390   0x08000390   0x0000002e   Code   RO        13483    .text               mc_w.l(aeabi_atexit.o)
-    0x080003be   0x080003be   0x0000001e   Code   RO        13515    .text               mc_w.l(llshl.o)
-    0x080003dc   0x080003dc   0x00000020   Code   RO        13517    .text               mc_w.l(llushr.o)
-    0x080003fc   0x080003fc   0x00000008   Code   RO        13547    .text               mc_w.l(cpp_dtor.o)
-    0x08000404   0x08000404   0x00000002   Code   RO        13550    .text               mc_w.l(cpp_signal.o)
-    0x08000406   0x08000406   0x00000042   Code   RO        13552    .text               mc_w.l(cxa_finalize.o)
-    0x08000448   0x08000448   0x00000024   Code   RO        13570    .text               mc_w.l(init.o)
-    0x0800046c   0x0800046c   0x00000002   Code   RO        13574    .text               mc_w.l(cpp_final.o)
-    0x0800046e   0x0800046e   0x00000056   Code   RO        13598    .text               mc_w.l(__dczerorl2.o)
+    0x08000370   0x08000370   0x00000020   Code   RO        13506    .text               mc_w.l(cpp_init.o)
+    0x08000390   0x08000390   0x0000002e   Code   RO        13508    .text               mc_w.l(aeabi_atexit.o)
+    0x080003be   0x080003be   0x0000001e   Code   RO        13540    .text               mc_w.l(llshl.o)
+    0x080003dc   0x080003dc   0x00000020   Code   RO        13542    .text               mc_w.l(llushr.o)
+    0x080003fc   0x080003fc   0x00000008   Code   RO        13572    .text               mc_w.l(cpp_dtor.o)
+    0x08000404   0x08000404   0x00000002   Code   RO        13575    .text               mc_w.l(cpp_signal.o)
+    0x08000406   0x08000406   0x00000042   Code   RO        13577    .text               mc_w.l(cxa_finalize.o)
+    0x08000448   0x08000448   0x00000024   Code   RO        13595    .text               mc_w.l(init.o)
+    0x0800046c   0x0800046c   0x00000002   Code   RO        13599    .text               mc_w.l(cpp_final.o)
+    0x0800046e   0x0800046e   0x00000056   Code   RO        13623    .text               mc_w.l(__dczerorl2.o)
     0x080004c4   0x080004c4   0x0000000c   Code   RO         1092    i.ADC_IRQHandler    stm32f7xx_it.o
     0x080004d0   0x080004d0   0x00000134   Code   RO         4686    i.ADC_Init          stm32f7xx_hal_adc.o
     0x08000604   0x08000604   0x00000002   Code   RO         1093    i.BusFault_Handler  stm32f7xx_it.o
     0x08000606   0x08000606   0x00000002   PAD
     0x08000608   0x08000608   0x0000000c   Code   RO         1094    i.CAN1_RX0_IRQHandler  stm32f7xx_it.o
     0x08000614   0x08000614   0x0000000c   Code   RO         1095    i.CAN1_TX_IRQHandler  stm32f7xx_it.o
-    0x08000620   0x08000620   0x00000068   Code   RO        13140    i.CRC_Lock          touchgfx_core.lib(stm32_crc_lock.o)
+    0x08000620   0x08000620   0x00000068   Code   RO        13165    i.CRC_Lock          touchgfx_core.lib(stm32_crc_lock.o)
     0x08000688   0x08000688   0x0000000c   Code   RO         1096    i.DMA2D_IRQHandler  stm32f7xx_it.o
     0x08000694   0x08000694   0x00000092   Code   RO         2980    i.DMA2D_SetConfig   stm32f7xx_hal_dma2d.o
     0x08000726   0x08000726   0x00000002   PAD
@@ -7459,9 +7467,9 @@ Memory Map of the image
     0x08005848   0x08005848   0x00000010   Code   RO         2063    i._Z22DMA2D_XferCpltCallbackP21__DMA2D_HandleTypeDef  stm32f7dma.o
     0x08005858   0x08005858   0x00000002   Code   RO         2064    i._Z23DMA2D_XferErrorCallbackP21__DMA2D_HandleTypeDef  stm32f7dma.o
     0x0800585a   0x0800585a   0x00000002   PAD
-    0x0800585c   0x0800585c   0x00000068   Code   RO         9276    i._Z23getFont_verdana_10_4bppv  fontgetters.o
-    0x080058c4   0x080058c4   0x0000006c   Code   RO         9277    i._Z23getFont_verdana_20_4bppv  fontgetters.o
-    0x08005930   0x08005930   0x00000070   Code   RO         9278    i._Z23getFont_verdana_80_4bppv  fontgetters.o
+    0x0800585c   0x0800585c   0x00000068   Code   RO         9301    i._Z23getFont_verdana_10_4bppv  fontgetters.o
+    0x080058c4   0x080058c4   0x0000006c   Code   RO         9302    i._Z23getFont_verdana_20_4bppv  fontgetters.o
+    0x08005930   0x08005930   0x00000070   Code   RO         9303    i._Z23getFont_verdana_80_4bppv  fontgetters.o
     0x080059a0   0x080059a0   0x00000038   Code   RO         2065    i._ZN10STM32F7DMA10initializeEv  stm32f7dma.o
     0x080059d8   0x080059d8   0x00000014   Code   RO         2066    i._ZN10STM32F7DMA11getBlitCapsEv  stm32f7dma.o
     0x080059ec   0x080059ec   0x0000019c   Code   RO         2067    i._ZN10STM32F7DMA13setupDataCopyERKN8touchgfx6BlitOpE  stm32f7dma.o
@@ -7489,30 +7497,30 @@ Memory Map of the image
     0x08005e94   0x08005e94   0x0000002c   Code   RO         1415    i._ZN12FrontendHeapD1Ev  boardconfiguration.o
     0x08005ec0   0x08005ec0   0x00000008   Code   RO         9222    i._ZN14BitmapDatabase11getInstanceEv  bitmapdatabase.o
     0x08005ec8   0x08005ec8   0x00000004   Code   RO         9223    i._ZN14BitmapDatabase15getInstanceSizeEv  bitmapdatabase.o
-    0x08005ecc   0x08005ecc   0x00000002   Code   RO         9610    i._ZN15Screen1ViewBase11setupScreenEv  screen1viewbase.o
+    0x08005ecc   0x08005ecc   0x00000002   Code   RO         9635    i._ZN15Screen1ViewBase11setupScreenEv  screen1viewbase.o
     0x08005ece   0x08005ece   0x00000002   PAD
-    0x08005ed0   0x08005ed0   0x000001c4   Code   RO         9611    i._ZN15Screen1ViewBaseC1Ev  screen1viewbase.o
-    0x08006094   0x08006094   0x0000000c   Code   RO         9633    i._ZN15Screen1ViewBaseD1Ev  screen1viewbase.o
+    0x08005ed0   0x08005ed0   0x000001c4   Code   RO         9636    i._ZN15Screen1ViewBaseC1Ev  screen1viewbase.o
+    0x08006094   0x08006094   0x0000000c   Code   RO         9658    i._ZN15Screen1ViewBaseD1Ev  screen1viewbase.o
     0x080060a0   0x080060a0   0x00000002   Code   RO         8873    i._ZN16Screen1Presenter10deactivateEv  screen1presenter.o
     0x080060a2   0x080060a2   0x00000002   Code   RO         8874    i._ZN16Screen1Presenter8activateEv  screen1presenter.o
     0x080060a4   0x080060a4   0x00000018   Code   RO         8875    i._ZN16Screen1PresenterC1ER11Screen1View  screen1presenter.o
     0x080060bc   0x080060bc   0x00000002   Code   RO         8896    i._ZN16Screen1PresenterD1Ev  screen1presenter.o
     0x080060be   0x080060be   0x00000002   PAD
-    0x080060c0   0x080060c0   0x0000000c   Code   RO        10015    i._ZN17TypedTextDatabase11getInstanceEt  typedtextdatabase.o
-    0x080060cc   0x080060cc   0x00000004   Code   RO        10016    i._ZN17TypedTextDatabase15getInstanceSizeEv  typedtextdatabase.o
-    0x080060d0   0x080060d0   0x00000008   Code   RO        10017    i._ZN17TypedTextDatabase8getFontsEv  typedtextdatabase.o
+    0x080060c0   0x080060c0   0x0000000c   Code   RO        10040    i._ZN17TypedTextDatabase11getInstanceEt  typedtextdatabase.o
+    0x080060cc   0x080060cc   0x00000004   Code   RO        10041    i._ZN17TypedTextDatabase15getInstanceSizeEv  typedtextdatabase.o
+    0x080060d0   0x080060d0   0x00000008   Code   RO        10042    i._ZN17TypedTextDatabase8getFontsEv  typedtextdatabase.o
     0x080060d8   0x080060d8   0x00000016   Code   RO         8731    i._ZN19FrontendApplication15handleTickEventEv  frontendapplication.o
     0x080060ee   0x080060ee   0x00000002   PAD
     0x080060f0   0x080060f0   0x00000010   Code   RO         8709    i._ZN19FrontendApplicationC1ER5ModelR12FrontendHeap  frontendapplication.o
     0x08006100   0x08006100   0x00000002   Code   RO         1446    i._ZN23ApplicationFontProviderD1Ev  boardconfiguration.o
     0x08006102   0x08006102   0x00000002   PAD
-    0x08006104   0x08006104   0x0000001c   Code   RO         9327    i._ZN23FrontendApplicationBase29gotoScreen1ScreenNoTransitionEv  frontendapplicationbase.o
-    0x08006120   0x08006120   0x00000024   Code   RO         9328    i._ZN23FrontendApplicationBase33gotoScreen1ScreenNoTransitionImplEv  frontendapplicationbase.o
-    0x08006144   0x08006144   0x00000058   Code   RO         9329    i._ZN23FrontendApplicationBaseC1ER5ModelR12FrontendHeap  frontendapplicationbase.o
+    0x08006104   0x08006104   0x0000001c   Code   RO         9352    i._ZN23FrontendApplicationBase29gotoScreen1ScreenNoTransitionEv  frontendapplicationbase.o
+    0x08006120   0x08006120   0x00000024   Code   RO         9353    i._ZN23FrontendApplicationBase33gotoScreen1ScreenNoTransitionImplEv  frontendapplicationbase.o
+    0x08006144   0x08006144   0x00000058   Code   RO         9354    i._ZN23FrontendApplicationBaseC1ER5ModelR12FrontendHeap  frontendapplicationbase.o
     0x0800619c   0x0800619c   0x0000000c   Code   RO         1425    i._ZN23FrontendApplicationBaseD1Ev  boardconfiguration.o
     0x080061a8   0x080061a8   0x00000002   Code   RO         8855    i._ZN5Model4tickEv  model.o
     0x080061aa   0x080061aa   0x00000006   Code   RO         8856    i._ZN5ModelC1Ev     model.o
-    0x080061b0   0x080061b0   0x00000018   Code   RO        12493    i._ZN8touchgfx10ClickEventC1ENS0_14ClickEventTypeEsss  touchgfx_core.lib(screen.o)
+    0x080061b0   0x080061b0   0x00000018   Code   RO        12518    i._ZN8touchgfx10ClickEventC1ENS0_14ClickEventTypeEsss  touchgfx_core.lib(screen.o)
     0x080061c8   0x080061c8   0x00000030   Code   RO         8594    i._ZN8touchgfx10OSWrappers10initializeEv  oswrappers.o
     0x080061f8   0x080061f8   0x00000038   Code   RO         8595    i._ZN8touchgfx10OSWrappers11signalVSyncEv  oswrappers.o
     0x08006230   0x08006230   0x00000024   Code   RO         8596    i._ZN8touchgfx10OSWrappers12waitForVSyncEv  oswrappers.o
@@ -7520,69 +7528,69 @@ Memory Map of the image
     0x08006268   0x08006268   0x00000014   Code   RO         8598    i._ZN8touchgfx10OSWrappers24takeFrameBufferSemaphoreEv  oswrappers.o
     0x0800627c   0x0800627c   0x00000014   Code   RO         8599    i._ZN8touchgfx10OSWrappers27tryTakeFrameBufferSemaphoreEv  oswrappers.o
     0x08006290   0x08006290   0x00000030   Code   RO         8600    i._ZN8touchgfx10OSWrappers31giveFrameBufferSemaphoreFromISREv  oswrappers.o
-    0x080062c0   0x080062c0   0x00000004   Code   RO         9391    i._ZN8touchgfx10Transition18setScreenContainerERNS_9ContainerE  frontendapplicationbase.o
-    0x080062c4   0x080062c4   0x00000002   Code   RO         9385    i._ZN8touchgfx10Transition4initEv  frontendapplicationbase.o
-    0x080062c6   0x080062c6   0x00000002   Code   RO         9379    i._ZN8touchgfx10Transition8tearDownEv  frontendapplicationbase.o
-    0x080062c8   0x080062c8   0x0000000c   Code   RO        10399    i._ZN8touchgfx11Application11getInstanceEv  touchgfx_core.lib(application.o)
-    0x080062d4   0x080062d4   0x00000014   Code   RO        10401    i._ZN8touchgfx11Application14handleKeyEventEh  touchgfx_core.lib(application.o)
-    0x080062e8   0x080062e8   0x000000f2   Code   RO        10402    i._ZN8touchgfx11Application14invalidateAreaENS_4RectE  touchgfx_core.lib(application.o)
+    0x080062c0   0x080062c0   0x00000004   Code   RO         9416    i._ZN8touchgfx10Transition18setScreenContainerERNS_9ContainerE  frontendapplicationbase.o
+    0x080062c4   0x080062c4   0x00000002   Code   RO         9410    i._ZN8touchgfx10Transition4initEv  frontendapplicationbase.o
+    0x080062c6   0x080062c6   0x00000002   Code   RO         9404    i._ZN8touchgfx10Transition8tearDownEv  frontendapplicationbase.o
+    0x080062c8   0x080062c8   0x0000000c   Code   RO        10424    i._ZN8touchgfx11Application11getInstanceEv  touchgfx_core.lib(application.o)
+    0x080062d4   0x080062d4   0x00000014   Code   RO        10426    i._ZN8touchgfx11Application14handleKeyEventEh  touchgfx_core.lib(application.o)
+    0x080062e8   0x080062e8   0x000000f2   Code   RO        10427    i._ZN8touchgfx11Application14invalidateAreaENS_4RectE  touchgfx_core.lib(application.o)
     0x080063da   0x080063da   0x00000002   PAD
-    0x080063dc   0x080063dc   0x00000014   Code   RO        10403    i._ZN8touchgfx11Application15handleDragEventERKNS_9DragEventE  touchgfx_core.lib(application.o)
-    0x080063f0   0x080063f0   0x00000100   Code   RO        10404    i._ZN8touchgfx11Application15handleTickEventEv  touchgfx_core.lib(application.o)
-    0x080064f0   0x080064f0   0x00000014   Code   RO        10405    i._ZN8touchgfx11Application16handleClickEventERKNS_10ClickEventE  touchgfx_core.lib(application.o)
-    0x08006504   0x08006504   0x00000014   Code   RO        10406    i._ZN8touchgfx11Application18handleGestureEventERKNS_12GestureEventE  touchgfx_core.lib(application.o)
-    0x08006518   0x08006518   0x00000208   Code   RO        10407    i._ZN8touchgfx11Application19cacheDrawOperationsEb  touchgfx_core.lib(application.o)
-    0x08006720   0x08006720   0x00000016   Code   RO        10409    i._ZN8touchgfx11Application20clearAllTimerWidgetsEv  touchgfx_core.lib(application.o)
-    0x08006736   0x08006736   0x00000002   Code   RO        10411    i._ZN8touchgfx11Application29handlePendingScreenTransitionEv  touchgfx_core.lib(application.o)
-    0x08006738   0x08006738   0x00000070   Code   RO        10412    i._ZN8touchgfx11Application4drawERNS_4RectE  touchgfx_core.lib(application.o)
-    0x080067a8   0x080067a8   0x00000030   Code   RO        10413    i._ZN8touchgfx11Application4drawEv  touchgfx_core.lib(application.o)
-    0x080067d8   0x080067d8   0x00000068   Code   RO        10414    i._ZN8touchgfx11ApplicationC1Ev  touchgfx_core.lib(application.o)
-    0x08006840   0x08006840   0x0000000c   Code   RO        11812    i._ZN8touchgfx11FontManager15setFontProviderEPNS_12FontProviderE  touchgfx_core.lib(fontmanager.o)
-    0x0800684c   0x0800684c   0x00000018   Code   RO        13090    i._ZN8touchgfx12GestureEventC1ENS0_11GestureTypeEsss  touchgfx_core.lib(gestures.o)
-    0x08006864   0x08006864   0x00000006   Code   RO         9424    i._ZN8touchgfx12NoTransition15handleTickEventEv  frontendapplicationbase.o
-    0x0800686a   0x0800686a   0x00000002   Code   RO         9415    i._ZN8touchgfx12NoTransitionD1Ev  frontendapplicationbase.o
-    0x0800686c   0x0800686c   0x00000008   Code   RO        13156    i._ZN8touchgfx12TextProvider10initializeEPKtSt9__va_list  touchgfx_core.lib(textprovider.o)
-    0x08006874   0x08006874   0x00000016   Code   RO        13157    i._ZN8touchgfx12TextProvider11getNextCharEv  touchgfx_core.lib(textprovider.o)
+    0x080063dc   0x080063dc   0x00000014   Code   RO        10428    i._ZN8touchgfx11Application15handleDragEventERKNS_9DragEventE  touchgfx_core.lib(application.o)
+    0x080063f0   0x080063f0   0x00000100   Code   RO        10429    i._ZN8touchgfx11Application15handleTickEventEv  touchgfx_core.lib(application.o)
+    0x080064f0   0x080064f0   0x00000014   Code   RO        10430    i._ZN8touchgfx11Application16handleClickEventERKNS_10ClickEventE  touchgfx_core.lib(application.o)
+    0x08006504   0x08006504   0x00000014   Code   RO        10431    i._ZN8touchgfx11Application18handleGestureEventERKNS_12GestureEventE  touchgfx_core.lib(application.o)
+    0x08006518   0x08006518   0x00000208   Code   RO        10432    i._ZN8touchgfx11Application19cacheDrawOperationsEb  touchgfx_core.lib(application.o)
+    0x08006720   0x08006720   0x00000016   Code   RO        10434    i._ZN8touchgfx11Application20clearAllTimerWidgetsEv  touchgfx_core.lib(application.o)
+    0x08006736   0x08006736   0x00000002   Code   RO        10436    i._ZN8touchgfx11Application29handlePendingScreenTransitionEv  touchgfx_core.lib(application.o)
+    0x08006738   0x08006738   0x00000070   Code   RO        10437    i._ZN8touchgfx11Application4drawERNS_4RectE  touchgfx_core.lib(application.o)
+    0x080067a8   0x080067a8   0x00000030   Code   RO        10438    i._ZN8touchgfx11Application4drawEv  touchgfx_core.lib(application.o)
+    0x080067d8   0x080067d8   0x00000068   Code   RO        10439    i._ZN8touchgfx11ApplicationC1Ev  touchgfx_core.lib(application.o)
+    0x08006840   0x08006840   0x0000000c   Code   RO        11837    i._ZN8touchgfx11FontManager15setFontProviderEPNS_12FontProviderE  touchgfx_core.lib(fontmanager.o)
+    0x0800684c   0x0800684c   0x00000018   Code   RO        13115    i._ZN8touchgfx12GestureEventC1ENS0_11GestureTypeEsss  touchgfx_core.lib(gestures.o)
+    0x08006864   0x08006864   0x00000006   Code   RO         9449    i._ZN8touchgfx12NoTransition15handleTickEventEv  frontendapplicationbase.o
+    0x0800686a   0x0800686a   0x00000002   Code   RO         9440    i._ZN8touchgfx12NoTransitionD1Ev  frontendapplicationbase.o
+    0x0800686c   0x0800686c   0x00000008   Code   RO        13181    i._ZN8touchgfx12TextProvider10initializeEPKtSt9__va_list  touchgfx_core.lib(textprovider.o)
+    0x08006874   0x08006874   0x00000016   Code   RO        13182    i._ZN8touchgfx12TextProvider11getNextCharEv  touchgfx_core.lib(textprovider.o)
     0x0800688a   0x0800688a   0x00000002   PAD
-    0x0800688c   0x0800688c   0x00000040   Code   RO        13158    i._ZN8touchgfx12TextProvider15getNextLigatureEh  touchgfx_core.lib(textprovider.o)
-    0x080068cc   0x080068cc   0x00000044   Code   RO        13160    i._ZN8touchgfx12TextProvider18initializeInternalEv  touchgfx_core.lib(textprovider.o)
-    0x08006910   0x08006910   0x00000078   Code   RO        13161    i._ZN8touchgfx12TextProvider19getNextCharInternalEv  touchgfx_core.lib(textprovider.o)
-    0x08006988   0x08006988   0x00000014   Code   RO        13163    i._ZN8touchgfx12TextProviderC1Ev  touchgfx_core.lib(textprovider.o)
-    0x0800699c   0x0800699c   0x00000044   Code   RO        11363    i._ZN8touchgfx13DMA_Interface10addToQueueERKNS_6BlitOpE  touchgfx_core.lib(dma.o)
-    0x080069e0   0x080069e0   0x00000002   Code   RO        11364    i._ZN8touchgfx13DMA_Interface11enableAlphaEh  touchgfx_core.lib(dma.o)
-    0x080069e2   0x080069e2   0x00000002   Code   RO        11365    i._ZN8touchgfx13DMA_Interface12disableAlphaEv  touchgfx_core.lib(dma.o)
-    0x080069e4   0x080069e4   0x00000006   Code   RO        11366    i._ZN8touchgfx13DMA_Interface13seedExecutionEv  touchgfx_core.lib(dma.o)
-    0x080069ea   0x080069ea   0x00000008   Code   RO        11368    i._ZN8touchgfx13DMA_Interface15isDmaQueueEmptyEv  touchgfx_core.lib(dma.o)
-    0x080069f2   0x080069f2   0x0000003c   Code   RO        11369    i._ZN8touchgfx13DMA_Interface16executeCompletedEv  touchgfx_core.lib(dma.o)
-    0x08006a2e   0x08006a2e   0x0000000e   Code   RO        11370    i._ZN8touchgfx13DMA_Interface27waitForFrameBufferSemaphoreEv  touchgfx_core.lib(dma.o)
+    0x0800688c   0x0800688c   0x00000040   Code   RO        13183    i._ZN8touchgfx12TextProvider15getNextLigatureEh  touchgfx_core.lib(textprovider.o)
+    0x080068cc   0x080068cc   0x00000044   Code   RO        13185    i._ZN8touchgfx12TextProvider18initializeInternalEv  touchgfx_core.lib(textprovider.o)
+    0x08006910   0x08006910   0x00000078   Code   RO        13186    i._ZN8touchgfx12TextProvider19getNextCharInternalEv  touchgfx_core.lib(textprovider.o)
+    0x08006988   0x08006988   0x00000014   Code   RO        13188    i._ZN8touchgfx12TextProviderC1Ev  touchgfx_core.lib(textprovider.o)
+    0x0800699c   0x0800699c   0x00000044   Code   RO        11388    i._ZN8touchgfx13DMA_Interface10addToQueueERKNS_6BlitOpE  touchgfx_core.lib(dma.o)
+    0x080069e0   0x080069e0   0x00000002   Code   RO        11389    i._ZN8touchgfx13DMA_Interface11enableAlphaEh  touchgfx_core.lib(dma.o)
+    0x080069e2   0x080069e2   0x00000002   Code   RO        11390    i._ZN8touchgfx13DMA_Interface12disableAlphaEv  touchgfx_core.lib(dma.o)
+    0x080069e4   0x080069e4   0x00000006   Code   RO        11391    i._ZN8touchgfx13DMA_Interface13seedExecutionEv  touchgfx_core.lib(dma.o)
+    0x080069ea   0x080069ea   0x00000008   Code   RO        11393    i._ZN8touchgfx13DMA_Interface15isDmaQueueEmptyEv  touchgfx_core.lib(dma.o)
+    0x080069f2   0x080069f2   0x0000003c   Code   RO        11394    i._ZN8touchgfx13DMA_Interface16executeCompletedEv  touchgfx_core.lib(dma.o)
+    0x08006a2e   0x08006a2e   0x0000000e   Code   RO        11395    i._ZN8touchgfx13DMA_Interface27waitForFrameBufferSemaphoreEv  touchgfx_core.lib(dma.o)
     0x08006a3c   0x08006a3c   0x00000006   Code   RO         2155    i._ZN8touchgfx13DMA_Interface5flushEv  stm32f7dma.o
-    0x08006a42   0x08006a42   0x0000002a   Code   RO        11372    i._ZN8touchgfx13DMA_Interface5startEv  touchgfx_core.lib(dma.o)
-    0x08006a6c   0x08006a6c   0x0000007a   Code   RO        11373    i._ZN8touchgfx13DMA_Interface7executeEv  touchgfx_core.lib(dma.o)
+    0x08006a42   0x08006a42   0x0000002a   Code   RO        11397    i._ZN8touchgfx13DMA_Interface5startEv  touchgfx_core.lib(dma.o)
+    0x08006a6c   0x08006a6c   0x0000007a   Code   RO        11398    i._ZN8touchgfx13DMA_Interface7executeEv  touchgfx_core.lib(dma.o)
     0x08006ae6   0x08006ae6   0x00000002   PAD
     0x08006ae8   0x08006ae8   0x00000068   Code   RO         1356    i._ZN8touchgfx13touchgfx_initEv  boardconfiguration.o
     0x08006b50   0x08006b50   0x00000028   Code   RO         1527    i._ZN8touchgfx14MVPApplication29handlePendingScreenTransitionEv  boardconfiguration.o
-    0x08006b78   0x08006b78   0x0000009c   Code   RO        13269    i._ZN8touchgfx16TouchCalibration14translatePointERNS_5PointE  touchgfx_core.lib(touchcalibration.o)
-    0x08006c14   0x08006c14   0x00000062   Code   RO        13272    i._ZN8touchgfx16TouchCalibration6muldivEiiiiiiRi  touchgfx_core.lib(touchcalibration.o)
+    0x08006b78   0x08006b78   0x0000009c   Code   RO        13294    i._ZN8touchgfx16TouchCalibration14translatePointERNS_5PointE  touchgfx_core.lib(touchcalibration.o)
+    0x08006c14   0x08006c14   0x00000062   Code   RO        13297    i._ZN8touchgfx16TouchCalibration6muldivEiiiiiiRi  touchgfx_core.lib(touchcalibration.o)
     0x08006c76   0x08006c76   0x00000002   PAD
-    0x08006c78   0x08006c78   0x00000010   Code   RO        10057    i._ZN8touchgfx17AbstractPartitionC2Ev  touchgfx_core.lib(abstractpartition.o)
-    0x08006c88   0x08006c88   0x00000002   Code   RO        10059    i._ZN8touchgfx17AbstractPartitionD2Ev  touchgfx_core.lib(abstractpartition.o)
+    0x08006c78   0x08006c78   0x00000010   Code   RO        10082    i._ZN8touchgfx17AbstractPartitionC2Ev  touchgfx_core.lib(abstractpartition.o)
+    0x08006c88   0x08006c88   0x00000002   Code   RO        10084    i._ZN8touchgfx17AbstractPartitionD2Ev  touchgfx_core.lib(abstractpartition.o)
     0x08006c8a   0x08006c8a   0x00000002   PAD
-    0x08006c8c   0x08006c8c   0x0000003c   Code   RO        12127    i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt  touchgfx_core.lib(internalflashfont.o)
-    0x08006cc8   0x08006cc8   0x00000002   Code   RO         9302    i._ZN8touchgfx17InternalFlashFontD1Ev  fontgetters.o
-    0x08006cca   0x08006cca   0x0000003a   Code   RO        11374    i._ZN8touchgfx17LockFreeDMA_Queue10pushCopyOfERKNS_6BlitOpE  touchgfx_core.lib(dma.o)
-    0x08006d04   0x08006d04   0x00000022   Code   RO        11375    i._ZN8touchgfx17LockFreeDMA_Queue3popEv  touchgfx_core.lib(dma.o)
-    0x08006d26   0x08006d26   0x0000000e   Code   RO        11376    i._ZN8touchgfx17LockFreeDMA_Queue5firstEv  touchgfx_core.lib(dma.o)
-    0x08006d34   0x08006d34   0x0000001a   Code   RO        11377    i._ZN8touchgfx17LockFreeDMA_Queue6isFullEv  touchgfx_core.lib(dma.o)
-    0x08006d4e   0x08006d4e   0x00000010   Code   RO        11378    i._ZN8touchgfx17LockFreeDMA_Queue7isEmptyEv  touchgfx_core.lib(dma.o)
+    0x08006c8c   0x08006c8c   0x0000003c   Code   RO        12152    i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt  touchgfx_core.lib(internalflashfont.o)
+    0x08006cc8   0x08006cc8   0x00000002   Code   RO         9327    i._ZN8touchgfx17InternalFlashFontD1Ev  fontgetters.o
+    0x08006cca   0x08006cca   0x0000003a   Code   RO        11399    i._ZN8touchgfx17LockFreeDMA_Queue10pushCopyOfERKNS_6BlitOpE  touchgfx_core.lib(dma.o)
+    0x08006d04   0x08006d04   0x00000022   Code   RO        11400    i._ZN8touchgfx17LockFreeDMA_Queue3popEv  touchgfx_core.lib(dma.o)
+    0x08006d26   0x08006d26   0x0000000e   Code   RO        11401    i._ZN8touchgfx17LockFreeDMA_Queue5firstEv  touchgfx_core.lib(dma.o)
+    0x08006d34   0x08006d34   0x0000001a   Code   RO        11402    i._ZN8touchgfx17LockFreeDMA_Queue6isFullEv  touchgfx_core.lib(dma.o)
+    0x08006d4e   0x08006d4e   0x00000010   Code   RO        11403    i._ZN8touchgfx17LockFreeDMA_Queue7isEmptyEv  touchgfx_core.lib(dma.o)
     0x08006d5e   0x08006d5e   0x00000002   PAD
-    0x08006d60   0x08006d60   0x00000014   Code   RO        11379    i._ZN8touchgfx17LockFreeDMA_QueueC1EPNS_6BlitOpEm  touchgfx_core.lib(dma.o)
+    0x08006d60   0x08006d60   0x00000014   Code   RO        11404    i._ZN8touchgfx17LockFreeDMA_QueueC1EPNS_6BlitOpEm  touchgfx_core.lib(dma.o)
     0x08006d74   0x08006d74   0x00000004   Code   RO         2821    i._ZN8touchgfx18MCUInstrumentation13getCCConsumedEv  stm32f7instrumentation.o
     0x08006d78   0x08006d78   0x00000004   Code   RO         2827    i._ZN8touchgfx18MCUInstrumentation13setCCConsumedEj  stm32f7instrumentation.o
-    0x08006d7c   0x08006d7c   0x0000002c   Code   RO        12996    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERNS_4RectE  touchgfx_core.lib(displaytransformation.o)
-    0x08006da8   0x08006da8   0x00000034   Code   RO        12997    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERNS_4RectERKS1_  touchgfx_core.lib(displaytransformation.o)
-    0x08006ddc   0x08006ddc   0x0000002c   Code   RO        13000    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERsS1_  touchgfx_core.lib(displaytransformation.o)
-    0x08006e08   0x08006e08   0x00000024   Code   RO        13001    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERsS1_RKNS_4RectE  touchgfx_core.lib(displaytransformation.o)
-    0x08006e2c   0x08006e2c   0x00000028   Code   RO        13002    i._ZN8touchgfx21DisplayTransformation29transformFrameBufferToDisplayERsS1_  touchgfx_core.lib(displaytransformation.o)
+    0x08006d7c   0x08006d7c   0x0000002c   Code   RO        13021    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERNS_4RectE  touchgfx_core.lib(displaytransformation.o)
+    0x08006da8   0x08006da8   0x00000034   Code   RO        13022    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERNS_4RectERKS1_  touchgfx_core.lib(displaytransformation.o)
+    0x08006ddc   0x08006ddc   0x0000002c   Code   RO        13025    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERsS1_  touchgfx_core.lib(displaytransformation.o)
+    0x08006e08   0x08006e08   0x00000024   Code   RO        13026    i._ZN8touchgfx21DisplayTransformation29transformDisplayToFrameBufferERsS1_RKNS_4RectE  touchgfx_core.lib(displaytransformation.o)
+    0x08006e2c   0x08006e2c   0x00000028   Code   RO        13027    i._ZN8touchgfx21DisplayTransformation29transformFrameBufferToDisplayERsS1_  touchgfx_core.lib(displaytransformation.o)
     0x08006e54   0x08006e54   0x00000010   Code   RO         2780    i._ZN8touchgfx22STM32F7Instrumentation12getCPUCyclesEv  stm32f7instrumentation.o
     0x08006e64   0x08006e64   0x00000022   Code   RO         2782    i._ZN8touchgfx22STM32F7Instrumentation12setMCUActiveEb  stm32f7instrumentation.o
     0x08006e86   0x08006e86   0x00000002   PAD
@@ -7592,164 +7600,164 @@ Memory Map of the image
     0x08006efe   0x08006efe   0x00000002   Code   RO         2650    i._ZN8touchgfx22STM32F7TouchController4initEv  stm32f7touchcontroller.o
     0x08006f00   0x08006f00   0x00000002   Code   RO         1455    i._ZN8touchgfx22STM32F7TouchControllerD1Ev  boardconfiguration.o
     0x08006f02   0x08006f02   0x00000002   PAD
-    0x08006f04   0x08006f04   0x00000020   Code   RO         9659    i._ZN8touchgfx3BoxC1Ev  screen1viewbase.o
-    0x08006f24   0x08006f24   0x00000018   Code   RO        11839    i._ZN8touchgfx3HAL10beginFrameEv  touchgfx_core.lib(hal.o)
-    0x08006f3c   0x08006f3c   0x00000024   Code   RO        11840    i._ZN8touchgfx3HAL10initializeEv  touchgfx_core.lib(hal.o)
+    0x08006f04   0x08006f04   0x00000020   Code   RO         9684    i._ZN8touchgfx3BoxC1Ev  screen1viewbase.o
+    0x08006f24   0x08006f24   0x00000018   Code   RO        11864    i._ZN8touchgfx3HAL10beginFrameEv  touchgfx_core.lib(hal.o)
+    0x08006f3c   0x08006f3c   0x00000024   Code   RO        11865    i._ZN8touchgfx3HAL10initializeEv  touchgfx_core.lib(hal.o)
     0x08006f60   0x08006f60   0x00000008   Code   RO         2441    i._ZN8touchgfx3HAL11getBlitCapsEv  stm32f7hal.o
-    0x08006f68   0x08006f68   0x00000034   Code   RO        11842    i._ZN8touchgfx3HAL12setMCUActiveEb  touchgfx_core.lib(hal.o)
-    0x08006f9c   0x08006f9c   0x0000007c   Code   RO        11843    i._ZN8touchgfx3HAL13blitCopyGlyphEPKhtttttNS_9colortypeEhNS_14BlitOperationsE  touchgfx_core.lib(hal.o)
+    0x08006f68   0x08006f68   0x00000034   Code   RO        11867    i._ZN8touchgfx3HAL12setMCUActiveEb  touchgfx_core.lib(hal.o)
+    0x08006f9c   0x08006f9c   0x0000007c   Code   RO        11868    i._ZN8touchgfx3HAL13blitCopyGlyphEPKhtttttNS_9colortypeEhNS_14BlitOperationsE  touchgfx_core.lib(hal.o)
     0x08007018   0x08007018   0x00000016   Code   RO         2448    i._ZN8touchgfx3HAL15backPorchExitedEv  stm32f7hal.o
-    0x0800702e   0x0800702e   0x00000004   Code   RO        11844    i._ZN8touchgfx3HAL15cacheTextStringEPKt  touchgfx_core.lib(hal.o)
+    0x0800702e   0x0800702e   0x00000004   Code   RO        11869    i._ZN8touchgfx3HAL15cacheTextStringEPKt  touchgfx_core.lib(hal.o)
     0x08007032   0x08007032   0x00000002   PAD
-    0x08007034   0x08007034   0x0000002c   Code   RO        11845    i._ZN8touchgfx3HAL15lockFrameBufferEv  touchgfx_core.lib(hal.o)
-    0x08007060   0x08007060   0x0000000c   Code   RO        11847    i._ZN8touchgfx3HAL16flushFrameBufferERKNS_4RectE  touchgfx_core.lib(hal.o)
-    0x0800706c   0x0800706c   0x00000034   Code   RO        11849    i._ZN8touchgfx3HAL16swapFrameBuffersEv  touchgfx_core.lib(hal.o)
-    0x080070a0   0x080070a0   0x0000000e   Code   RO        11850    i._ZN8touchgfx3HAL17allowDMATransfersEv  touchgfx_core.lib(hal.o)
-    0x080070ae   0x080070ae   0x00000006   Code   RO        12058    i._ZN8touchgfx3HAL17getTFTCurrentLineEv  touchgfx_core.lib(hal.o)
-    0x080070b4   0x080070b4   0x00000004   Code   RO        11852    i._ZN8touchgfx3HAL17unlockFrameBufferEv  touchgfx_core.lib(hal.o)
-    0x080070b8   0x080070b8   0x00000024   Code   RO        12039    i._ZN8touchgfx3HAL20getClientFrameBufferEv  touchgfx_core.lib(hal.o)
-    0x080070dc   0x080070dc   0x00000008   Code   RO        11855    i._ZN8touchgfx3HAL21registerEventListenerERNS_15UIEventListenerE  touchgfx_core.lib(hal.o)
+    0x08007034   0x08007034   0x0000002c   Code   RO        11870    i._ZN8touchgfx3HAL15lockFrameBufferEv  touchgfx_core.lib(hal.o)
+    0x08007060   0x08007060   0x0000000c   Code   RO        11872    i._ZN8touchgfx3HAL16flushFrameBufferERKNS_4RectE  touchgfx_core.lib(hal.o)
+    0x0800706c   0x0800706c   0x00000034   Code   RO        11874    i._ZN8touchgfx3HAL16swapFrameBuffersEv  touchgfx_core.lib(hal.o)
+    0x080070a0   0x080070a0   0x0000000e   Code   RO        11875    i._ZN8touchgfx3HAL17allowDMATransfersEv  touchgfx_core.lib(hal.o)
+    0x080070ae   0x080070ae   0x00000006   Code   RO        12083    i._ZN8touchgfx3HAL17getTFTCurrentLineEv  touchgfx_core.lib(hal.o)
+    0x080070b4   0x080070b4   0x00000004   Code   RO        11877    i._ZN8touchgfx3HAL17unlockFrameBufferEv  touchgfx_core.lib(hal.o)
+    0x080070b8   0x080070b8   0x00000024   Code   RO        12064    i._ZN8touchgfx3HAL20getClientFrameBufferEv  touchgfx_core.lib(hal.o)
+    0x080070dc   0x080070dc   0x00000008   Code   RO        11880    i._ZN8touchgfx3HAL21registerEventListenerERNS_15UIEventListenerE  touchgfx_core.lib(hal.o)
     0x080070e4   0x080070e4   0x0000000c   Code   RO         2435    i._ZN8touchgfx3HAL21setDisplayOrientationENS_18DisplayOrientationE  stm32f7hal.o
-    0x080070f0   0x080070f0   0x0000006c   Code   RO        12046    i._ZN8touchgfx3HAL26setFrameBufferStartAddressEPvtbb  touchgfx_core.lib(hal.o)
-    0x0800715c   0x0800715c   0x0000003c   Code   RO        12064    i._ZN8touchgfx3HAL31performDisplayOrientationChangeEv  touchgfx_core.lib(hal.o)
-    0x08007198   0x08007198   0x0000017c   Code   RO        11857    i._ZN8touchgfx3HAL4tickEv  touchgfx_core.lib(hal.o)
-    0x08007314   0x08007314   0x0000005e   Code   RO        11858    i._ZN8touchgfx3HAL5touchEii  touchgfx_core.lib(hal.o)
-    0x08007372   0x08007372   0x0000002a   Code   RO        11859    i._ZN8touchgfx3HAL7noTouchEv  touchgfx_core.lib(hal.o)
-    0x0800739c   0x0800739c   0x00000080   Code   RO        11861    i._ZN8touchgfx3HAL8blitFillENS_9colortypeEtttth  touchgfx_core.lib(hal.o)
-    0x0800741c   0x0800741c   0x0000001c   Code   RO        11862    i._ZN8touchgfx3HAL8endFrameEv  touchgfx_core.lib(hal.o)
-    0x08007438   0x08007438   0x00000008   Code   RO        11863    i._ZN8touchgfx3HAL8flushDMAEv  touchgfx_core.lib(hal.o)
+    0x080070f0   0x080070f0   0x0000006c   Code   RO        12071    i._ZN8touchgfx3HAL26setFrameBufferStartAddressEPvtbb  touchgfx_core.lib(hal.o)
+    0x0800715c   0x0800715c   0x0000003c   Code   RO        12089    i._ZN8touchgfx3HAL31performDisplayOrientationChangeEv  touchgfx_core.lib(hal.o)
+    0x08007198   0x08007198   0x0000017c   Code   RO        11882    i._ZN8touchgfx3HAL4tickEv  touchgfx_core.lib(hal.o)
+    0x08007314   0x08007314   0x0000005e   Code   RO        11883    i._ZN8touchgfx3HAL5touchEii  touchgfx_core.lib(hal.o)
+    0x08007372   0x08007372   0x0000002a   Code   RO        11884    i._ZN8touchgfx3HAL7noTouchEv  touchgfx_core.lib(hal.o)
+    0x0800739c   0x0800739c   0x00000080   Code   RO        11886    i._ZN8touchgfx3HAL8blitFillENS_9colortypeEtttth  touchgfx_core.lib(hal.o)
+    0x0800741c   0x0800741c   0x0000001c   Code   RO        11887    i._ZN8touchgfx3HAL8endFrameEv  touchgfx_core.lib(hal.o)
+    0x08007438   0x08007438   0x00000008   Code   RO        11888    i._ZN8touchgfx3HAL8flushDMAEv  touchgfx_core.lib(hal.o)
     0x08007440   0x08007440   0x0000000c   Code   RO         2473    i._ZN8touchgfx3HAL9taskDelayEt  stm32f7hal.o
-    0x0800744c   0x0800744c   0x0000001c   Code   RO        11865    i._ZN8touchgfx3HAL9taskEntryEv  touchgfx_core.lib(hal.o)
+    0x0800744c   0x0800744c   0x0000001c   Code   RO        11890    i._ZN8touchgfx3HAL9taskEntryEv  touchgfx_core.lib(hal.o)
     0x08007468   0x08007468   0x000000b0   Code   RO         1440    i._ZN8touchgfx3HALC2ERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEtt  boardconfiguration.o
-    0x08007518   0x08007518   0x00000030   Code   RO        12177    i._ZN8touchgfx3LCD10drawStringENS_4RectERKS1_RNS0_13StringVisualsEPKtz  touchgfx_core.lib(lcd.o)
-    0x08007548   0x08007548   0x0000007e   Code   RO        12178    i._ZN8touchgfx3LCD10rotateRectERNS_4RectERKS1_NS_12TextRotationE  touchgfx_core.lib(lcd.o)
-    0x080075c6   0x080075c6   0x00000050   Code   RO        12179    i._ZN8touchgfx3LCD11getNumLinesERNS_12TextProviderENS_14WideTextActionEhPKNS_4FontEs  touchgfx_core.lib(lcd.o)
-    0x08007616   0x08007616   0x00000062   Code   RO        12180    i._ZN8touchgfx3LCD11stringWidthERNS_12TextProviderERKNS_4FontEih  touchgfx_core.lib(lcd.o)
-    0x08007678   0x08007678   0x00000258   Code   RO        12181    i._ZN8touchgfx3LCD13drawStringLTRERKNS_4RectES3_RKNS0_13StringVisualsEPKtSt9__va_list  touchgfx_core.lib(lcd.o)
-    0x080078d0   0x080078d0   0x00000216   Code   RO        12186    i._ZN8touchgfx3LCD18drawStringInternalEPtPKNS_4RectEsRsRS3_PKNS0_13StringVisualsEhRNS_12TextProviderEib  touchgfx_core.lib(lcd.o)
-    0x08007ae6   0x08007ae6   0x00000174   Code   RO        12188    i._ZN8touchgfx3LCD22WideTextInternalStruct22getStringLengthForLineEb  touchgfx_core.lib(lcd.o)
-    0x08007c5a   0x08007c5a   0x00000020   Code   RO        12189    i._ZN8touchgfx3LCD22WideTextInternalStruct7addWordEttt  touchgfx_core.lib(lcd.o)
-    0x08007c7a   0x08007c7a   0x0000006c   Code   RO        12316    i._ZN8touchgfx3LCD22WideTextInternalStructC1ERNS_12TextProviderEthPKNS_4FontENS_14WideTextActionE  touchgfx_core.lib(lcd.o)
-    0x08007ce6   0x08007ce6   0x00000036   Code   RO        12192    i._ZN8touchgfx3LCD5realXERKNS_4RectEssNS_12TextRotationE  touchgfx_core.lib(lcd.o)
-    0x08007d1c   0x08007d1c   0x00000036   Code   RO        12193    i._ZN8touchgfx3LCD5realYERKNS_4RectEssNS_12TextRotationE  touchgfx_core.lib(lcd.o)
+    0x08007518   0x08007518   0x00000030   Code   RO        12202    i._ZN8touchgfx3LCD10drawStringENS_4RectERKS1_RNS0_13StringVisualsEPKtz  touchgfx_core.lib(lcd.o)
+    0x08007548   0x08007548   0x0000007e   Code   RO        12203    i._ZN8touchgfx3LCD10rotateRectERNS_4RectERKS1_NS_12TextRotationE  touchgfx_core.lib(lcd.o)
+    0x080075c6   0x080075c6   0x00000050   Code   RO        12204    i._ZN8touchgfx3LCD11getNumLinesERNS_12TextProviderENS_14WideTextActionEhPKNS_4FontEs  touchgfx_core.lib(lcd.o)
+    0x08007616   0x08007616   0x00000062   Code   RO        12205    i._ZN8touchgfx3LCD11stringWidthERNS_12TextProviderERKNS_4FontEih  touchgfx_core.lib(lcd.o)
+    0x08007678   0x08007678   0x00000258   Code   RO        12206    i._ZN8touchgfx3LCD13drawStringLTRERKNS_4RectES3_RKNS0_13StringVisualsEPKtSt9__va_list  touchgfx_core.lib(lcd.o)
+    0x080078d0   0x080078d0   0x00000216   Code   RO        12211    i._ZN8touchgfx3LCD18drawStringInternalEPtPKNS_4RectEsRsRS3_PKNS0_13StringVisualsEhRNS_12TextProviderEib  touchgfx_core.lib(lcd.o)
+    0x08007ae6   0x08007ae6   0x00000174   Code   RO        12213    i._ZN8touchgfx3LCD22WideTextInternalStruct22getStringLengthForLineEb  touchgfx_core.lib(lcd.o)
+    0x08007c5a   0x08007c5a   0x00000020   Code   RO        12214    i._ZN8touchgfx3LCD22WideTextInternalStruct7addWordEttt  touchgfx_core.lib(lcd.o)
+    0x08007c7a   0x08007c7a   0x0000006c   Code   RO        12341    i._ZN8touchgfx3LCD22WideTextInternalStructC1ERNS_12TextProviderEthPKNS_4FontENS_14WideTextActionE  touchgfx_core.lib(lcd.o)
+    0x08007ce6   0x08007ce6   0x00000036   Code   RO        12217    i._ZN8touchgfx3LCD5realXERKNS_4RectEssNS_12TextRotationE  touchgfx_core.lib(lcd.o)
+    0x08007d1c   0x08007d1c   0x00000036   Code   RO        12218    i._ZN8touchgfx3LCD5realYERKNS_4RectEssNS_12TextRotationE  touchgfx_core.lib(lcd.o)
     0x08007d52   0x08007d52   0x00000002   Code   RO         2021    i._ZN8touchgfx4GPIO3setENS0_7GPIO_IDE  gpio_1.o
     0x08007d54   0x08007d54   0x00000002   Code   RO         2022    i._ZN8touchgfx4GPIO4initEv  gpio_1.o
     0x08007d56   0x08007d56   0x00000002   Code   RO         2023    i._ZN8touchgfx4GPIO5clearENS0_7GPIO_IDE  gpio_1.o
     0x08007d58   0x08007d58   0x00000002   Code   RO         2024    i._ZN8touchgfx4GPIO6toggleENS0_7GPIO_IDE  gpio_1.o
-    0x08007d5a   0x08007d5a   0x00000096   Code   RO        10535    i._ZN8touchgfx4Rect11expandToFitERKS0_  touchgfx_core.lib(application.o)
-    0x08007df0   0x08007df0   0x0000000e   Code   RO        10229    i._ZN8touchgfx4RectC1Essss  touchgfx_core.lib(lcd16bpp.o)
-    0x08007dfe   0x08007dfe   0x0000000c   Code   RO        10550    i._ZN8touchgfx4RectC1Ev  touchgfx_core.lib(application.o)
-    0x08007e0a   0x08007e0a   0x00000080   Code   RO        10578    i._ZN8touchgfx4RectaNERKS0_  touchgfx_core.lib(application.o)
+    0x08007d5a   0x08007d5a   0x00000096   Code   RO        10560    i._ZN8touchgfx4Rect11expandToFitERKS0_  touchgfx_core.lib(application.o)
+    0x08007df0   0x08007df0   0x0000000e   Code   RO        10254    i._ZN8touchgfx4RectC1Essss  touchgfx_core.lib(lcd16bpp.o)
+    0x08007dfe   0x08007dfe   0x0000000c   Code   RO        10575    i._ZN8touchgfx4RectC1Ev  touchgfx_core.lib(application.o)
+    0x08007e0a   0x08007e0a   0x00000080   Code   RO        10603    i._ZN8touchgfx4RectaNERKS0_  touchgfx_core.lib(application.o)
     0x08007e8a   0x08007e8a   0x00000002   PAD
-    0x08007e8c   0x08007e8c   0x0000000c   Code   RO         9665    i._ZN8touchgfx4ViewI16Screen1PresenterED1Ev  screen1viewbase.o
-    0x08007e98   0x08007e98   0x0000007c   Code   RO        11130    i._ZN8touchgfx5Color20getColorFrom24BitRGBEhhh  touchgfx_core.lib(color.o)
-    0x08007f14   0x08007f14   0x00000040   Code   RO         9947    i._ZN8touchgfx5Texts11setLanguageEt  texts.o
-    0x08007f54   0x08007f54   0x00000070   Code   RO        10729    i._ZN8touchgfx6Bitmap10clearCacheEv  touchgfx_core.lib(bitmap.o)
-    0x08007fc4   0x08007fc4   0x00000028   Code   RO        10739    i._ZN8touchgfx6Bitmap22registerBitmapDatabaseEPKNS0_10BitmapDataEtPtjj  touchgfx_core.lib(bitmap.o)
-    0x08007fec   0x08007fec   0x0000003c   Code   RO        10744    i._ZN8touchgfx6Bitmap8setCacheEPtjj  touchgfx_core.lib(bitmap.o)
+    0x08007e8c   0x08007e8c   0x0000000c   Code   RO         9690    i._ZN8touchgfx4ViewI16Screen1PresenterED1Ev  screen1viewbase.o
+    0x08007e98   0x08007e98   0x0000007c   Code   RO        11155    i._ZN8touchgfx5Color20getColorFrom24BitRGBEhhh  touchgfx_core.lib(color.o)
+    0x08007f14   0x08007f14   0x00000040   Code   RO         9972    i._ZN8touchgfx5Texts11setLanguageEt  texts.o
+    0x08007f54   0x08007f54   0x00000070   Code   RO        10754    i._ZN8touchgfx6Bitmap10clearCacheEv  touchgfx_core.lib(bitmap.o)
+    0x08007fc4   0x08007fc4   0x00000028   Code   RO        10764    i._ZN8touchgfx6Bitmap22registerBitmapDatabaseEPKNS0_10BitmapDataEtPtjj  touchgfx_core.lib(bitmap.o)
+    0x08007fec   0x08007fec   0x0000003c   Code   RO        10769    i._ZN8touchgfx6Bitmap8setCacheEPtjj  touchgfx_core.lib(bitmap.o)
     0x08008028   0x08008028   0x00000006   Code   RO         2145    i._ZN8touchgfx6BlitOpC1Ev  stm32f7dma.o
-    0x0800802e   0x0800802e   0x00000002   Code   RO        12514    i._ZN8touchgfx6Screen11setupScreenEv  touchgfx_core.lib(screen.o)
-    0x08008030   0x08008030   0x0000000e   Code   RO        12401    i._ZN8touchgfx6Screen14bindTransitionERNS_10TransitionE  touchgfx_core.lib(screen.o)
+    0x0800802e   0x0800802e   0x00000002   Code   RO        12539    i._ZN8touchgfx6Screen11setupScreenEv  touchgfx_core.lib(screen.o)
+    0x08008030   0x08008030   0x0000000e   Code   RO        12426    i._ZN8touchgfx6Screen14bindTransitionERNS_10TransitionE  touchgfx_core.lib(screen.o)
     0x0800803e   0x0800803e   0x00000002   Code   RO         9101    i._ZN8touchgfx6Screen14handleKeyEventEh  screen1view.o
-    0x08008040   0x08008040   0x00000002   Code   RO         9671    i._ZN8touchgfx6Screen14tearDownScreenEv  screen1viewbase.o
+    0x08008040   0x08008040   0x00000002   Code   RO         9696    i._ZN8touchgfx6Screen14tearDownScreenEv  screen1viewbase.o
     0x08008042   0x08008042   0x00000002   Code   RO         9089    i._ZN8touchgfx6Screen15afterTransitionEv  screen1view.o
-    0x08008044   0x08008044   0x000000bc   Code   RO        12403    i._ZN8touchgfx6Screen15handleDragEventERKNS_9DragEventE  touchgfx_core.lib(screen.o)
+    0x08008044   0x08008044   0x000000bc   Code   RO        12428    i._ZN8touchgfx6Screen15handleDragEventERKNS_9DragEventE  touchgfx_core.lib(screen.o)
     0x08008100   0x08008100   0x00000002   Code   RO         9095    i._ZN8touchgfx6Screen15handleTickEventEv  screen1view.o
     0x08008102   0x08008102   0x00000002   PAD
-    0x08008104   0x08008104   0x000001b4   Code   RO        12404    i._ZN8touchgfx6Screen16handleClickEventERKNS_10ClickEventE  touchgfx_core.lib(screen.o)
-    0x080082b8   0x080082b8   0x00000058   Code   RO        12405    i._ZN8touchgfx6Screen18handleGestureEventERKNS_12GestureEventE  touchgfx_core.lib(screen.o)
-    0x08008310   0x08008310   0x00000006   Code   RO         9639    i._ZN8touchgfx6Screen3addERNS_8DrawableE  screen1viewbase.o
-    0x08008316   0x08008316   0x00000028   Code   RO        12406    i._ZN8touchgfx6Screen4drawERNS_4RectE  touchgfx_core.lib(screen.o)
+    0x08008104   0x08008104   0x000001b4   Code   RO        12429    i._ZN8touchgfx6Screen16handleClickEventERKNS_10ClickEventE  touchgfx_core.lib(screen.o)
+    0x080082b8   0x080082b8   0x00000058   Code   RO        12430    i._ZN8touchgfx6Screen18handleGestureEventERKNS_12GestureEventE  touchgfx_core.lib(screen.o)
+    0x08008310   0x08008310   0x00000006   Code   RO         9664    i._ZN8touchgfx6Screen3addERNS_8DrawableE  screen1viewbase.o
+    0x08008316   0x08008316   0x00000028   Code   RO        12431    i._ZN8touchgfx6Screen4drawERNS_4RectE  touchgfx_core.lib(screen.o)
     0x0800833e   0x0800833e   0x00000002   PAD
-    0x08008340   0x08008340   0x00000030   Code   RO        12407    i._ZN8touchgfx6Screen4drawEv  touchgfx_core.lib(screen.o)
-    0x08008370   0x08008370   0x0000021c   Code   RO        12408    i._ZN8touchgfx6Screen5JSMOCERKNS_4RectEPNS_8DrawableE  touchgfx_core.lib(screen.o)
-    0x0800858c   0x0800858c   0x00000022   Code   RO        12409    i._ZN8touchgfx6Screen9startSMOCERNS_4RectE  touchgfx_core.lib(screen.o)
+    0x08008340   0x08008340   0x00000030   Code   RO        12432    i._ZN8touchgfx6Screen4drawEv  touchgfx_core.lib(screen.o)
+    0x08008370   0x08008370   0x0000021c   Code   RO        12433    i._ZN8touchgfx6Screen5JSMOCERKNS_4RectEPNS_8DrawableE  touchgfx_core.lib(screen.o)
+    0x0800858c   0x0800858c   0x00000022   Code   RO        12434    i._ZN8touchgfx6Screen9startSMOCERNS_4RectE  touchgfx_core.lib(screen.o)
     0x080085ae   0x080085ae   0x00000002   PAD
-    0x080085b0   0x080085b0   0x00000090   Code   RO        12410    i._ZN8touchgfx6ScreenC1Ev  touchgfx_core.lib(screen.o)
-    0x08008640   0x08008640   0x0000000c   Code   RO        12481    i._ZN8touchgfx6ScreenD1Ev  touchgfx_core.lib(screen.o)
-    0x0800864c   0x0800864c   0x00000014   Code   RO         9761    i._ZN8touchgfx6Widget12getLastChildEssPPNS_8DrawableE  screen1viewbase.o
-    0x08008660   0x08008660   0x00000030   Code   RO         9627    i._ZN8touchgfx6WidgetC2Ev  screen1viewbase.o
-    0x08008690   0x08008690   0x0000002a   Code   RO         9645    i._ZN8touchgfx8Drawable11setPositionEssss  screen1viewbase.o
-    0x080086ba   0x080086ba   0x00000026   Code   RO        12499    i._ZN8touchgfx8Drawable13getCachedAbsXEv  touchgfx_core.lib(screen.o)
-    0x080086e0   0x080086e0   0x00000026   Code   RO        12505    i._ZN8touchgfx8Drawable13getCachedAbsYEv  touchgfx_core.lib(screen.o)
-    0x08008706   0x08008706   0x00000012   Code   RO         9752    i._ZN8touchgfx8Drawable14setupDrawChainERKNS_4RectEPPS0_  screen1viewbase.o
-    0x08008718   0x08008718   0x00000002   Code   RO         9733    i._ZN8touchgfx8Drawable15handleDragEventERKNS_9DragEventE  screen1viewbase.o
-    0x0800871a   0x0800871a   0x00000002   Code   RO         9739    i._ZN8touchgfx8Drawable15handleTickEventEv  screen1viewbase.o
-    0x0800871c   0x0800871c   0x00000002   Code   RO         9721    i._ZN8touchgfx8Drawable16handleClickEventERKNS_10ClickEventE  screen1viewbase.o
-    0x0800871e   0x0800871e   0x00000002   Code   RO         9727    i._ZN8touchgfx8Drawable18handleGestureEventERKNS_12GestureEventE  screen1viewbase.o
-    0x08008720   0x08008720   0x00000038   Code   RO        12474    i._ZN8touchgfx8Drawable20getCachedVisibleRectEv  touchgfx_core.lib(screen.o)
-    0x08008758   0x08008758   0x00000004   Code   RO         9691    i._ZN8touchgfx8Drawable4setXEs  screen1viewbase.o
-    0x0800875c   0x0800875c   0x00000004   Code   RO         9697    i._ZN8touchgfx8Drawable4setYEs  screen1viewbase.o
-    0x08008760   0x08008760   0x0000001c   Code   RO         9652    i._ZN8touchgfx8Drawable5setXYEss  screen1viewbase.o
-    0x0800877c   0x0800877c   0x00000004   Code   RO         9703    i._ZN8touchgfx8Drawable8setWidthEs  screen1viewbase.o
-    0x08008780   0x08008780   0x00000004   Code   RO         9709    i._ZN8touchgfx8Drawable9setHeightEs  screen1viewbase.o
-    0x08008784   0x08008784   0x00000080   Code   RO        13061    i._ZN8touchgfx8Gestures17registerDragEventEtttt  touchgfx_core.lib(gestures.o)
-    0x08008804   0x08008804   0x00000094   Code   RO        13062    i._ZN8touchgfx8Gestures18registerClickEventENS_10ClickEvent14ClickEventTypeEtt  touchgfx_core.lib(gestures.o)
-    0x08008898   0x08008898   0x00000004   Code   RO        13063    i._ZN8touchgfx8Gestures21registerEventListenerERNS_15UIEventListenerE  touchgfx_core.lib(gestures.o)
-    0x0800889c   0x0800889c   0x0000001c   Code   RO        13064    i._ZN8touchgfx8Gestures4tickEv  touchgfx_core.lib(gestures.o)
-    0x080088b8   0x080088b8   0x00000144   Code   RO        10135    i._ZN8touchgfx8LCD16bpp8fillRectERKNS_4RectENS_9colortypeEh  touchgfx_core.lib(lcd16bpp.o)
-    0x080089fc   0x080089fc   0x00000044   Code   RO        10136    i._ZN8touchgfx8LCD16bpp8nextLineEbNS_12TextRotationE  touchgfx_core.lib(lcd16bpp.o)
-    0x08008a40   0x08008a40   0x00000304   Code   RO        10137    i._ZN8touchgfx8LCD16bpp9drawGlyphEPtNS_4RectEssttRKS2_PKNS_9GlyphNodeEPKhNS_9colortypeEhhNS_12TextRotationE  touchgfx_core.lib(lcd16bpp.o)
-    0x08008d44   0x08008d44   0x00000040   Code   RO        10138    i._ZN8touchgfx8LCD16bpp9nextPixelEbNS_12TextRotationE  touchgfx_core.lib(lcd16bpp.o)
+    0x080085b0   0x080085b0   0x00000090   Code   RO        12435    i._ZN8touchgfx6ScreenC1Ev  touchgfx_core.lib(screen.o)
+    0x08008640   0x08008640   0x0000000c   Code   RO        12506    i._ZN8touchgfx6ScreenD1Ev  touchgfx_core.lib(screen.o)
+    0x0800864c   0x0800864c   0x00000014   Code   RO         9786    i._ZN8touchgfx6Widget12getLastChildEssPPNS_8DrawableE  screen1viewbase.o
+    0x08008660   0x08008660   0x00000030   Code   RO         9652    i._ZN8touchgfx6WidgetC2Ev  screen1viewbase.o
+    0x08008690   0x08008690   0x0000002a   Code   RO         9670    i._ZN8touchgfx8Drawable11setPositionEssss  screen1viewbase.o
+    0x080086ba   0x080086ba   0x00000026   Code   RO        12524    i._ZN8touchgfx8Drawable13getCachedAbsXEv  touchgfx_core.lib(screen.o)
+    0x080086e0   0x080086e0   0x00000026   Code   RO        12530    i._ZN8touchgfx8Drawable13getCachedAbsYEv  touchgfx_core.lib(screen.o)
+    0x08008706   0x08008706   0x00000012   Code   RO         9777    i._ZN8touchgfx8Drawable14setupDrawChainERKNS_4RectEPPS0_  screen1viewbase.o
+    0x08008718   0x08008718   0x00000002   Code   RO         9758    i._ZN8touchgfx8Drawable15handleDragEventERKNS_9DragEventE  screen1viewbase.o
+    0x0800871a   0x0800871a   0x00000002   Code   RO         9764    i._ZN8touchgfx8Drawable15handleTickEventEv  screen1viewbase.o
+    0x0800871c   0x0800871c   0x00000002   Code   RO         9746    i._ZN8touchgfx8Drawable16handleClickEventERKNS_10ClickEventE  screen1viewbase.o
+    0x0800871e   0x0800871e   0x00000002   Code   RO         9752    i._ZN8touchgfx8Drawable18handleGestureEventERKNS_12GestureEventE  screen1viewbase.o
+    0x08008720   0x08008720   0x00000038   Code   RO        12499    i._ZN8touchgfx8Drawable20getCachedVisibleRectEv  touchgfx_core.lib(screen.o)
+    0x08008758   0x08008758   0x00000004   Code   RO         9716    i._ZN8touchgfx8Drawable4setXEs  screen1viewbase.o
+    0x0800875c   0x0800875c   0x00000004   Code   RO         9722    i._ZN8touchgfx8Drawable4setYEs  screen1viewbase.o
+    0x08008760   0x08008760   0x0000001c   Code   RO         9677    i._ZN8touchgfx8Drawable5setXYEss  screen1viewbase.o
+    0x0800877c   0x0800877c   0x00000004   Code   RO         9728    i._ZN8touchgfx8Drawable8setWidthEs  screen1viewbase.o
+    0x08008780   0x08008780   0x00000004   Code   RO         9734    i._ZN8touchgfx8Drawable9setHeightEs  screen1viewbase.o
+    0x08008784   0x08008784   0x00000080   Code   RO        13086    i._ZN8touchgfx8Gestures17registerDragEventEtttt  touchgfx_core.lib(gestures.o)
+    0x08008804   0x08008804   0x00000094   Code   RO        13087    i._ZN8touchgfx8Gestures18registerClickEventENS_10ClickEvent14ClickEventTypeEtt  touchgfx_core.lib(gestures.o)
+    0x08008898   0x08008898   0x00000004   Code   RO        13088    i._ZN8touchgfx8Gestures21registerEventListenerERNS_15UIEventListenerE  touchgfx_core.lib(gestures.o)
+    0x0800889c   0x0800889c   0x0000001c   Code   RO        13089    i._ZN8touchgfx8Gestures4tickEv  touchgfx_core.lib(gestures.o)
+    0x080088b8   0x080088b8   0x00000144   Code   RO        10160    i._ZN8touchgfx8LCD16bpp8fillRectERKNS_4RectENS_9colortypeEh  touchgfx_core.lib(lcd16bpp.o)
+    0x080089fc   0x080089fc   0x00000044   Code   RO        10161    i._ZN8touchgfx8LCD16bpp8nextLineEbNS_12TextRotationE  touchgfx_core.lib(lcd16bpp.o)
+    0x08008a40   0x08008a40   0x00000304   Code   RO        10162    i._ZN8touchgfx8LCD16bpp9drawGlyphEPtNS_4RectEssttRKS2_PKNS_9GlyphNodeEPKhNS_9colortypeEhhNS_12TextRotationE  touchgfx_core.lib(lcd16bpp.o)
+    0x08008d44   0x08008d44   0x00000040   Code   RO        10163    i._ZN8touchgfx8LCD16bpp9nextPixelEbNS_12TextRotationE  touchgfx_core.lib(lcd16bpp.o)
     0x08008d84   0x08008d84   0x00000002   Code   RO         1449    i._ZN8touchgfx8LCD16bppD1Ev  boardconfiguration.o
-    0x08008d86   0x08008d86   0x0000001e   Code   RO        12729    i._ZN8touchgfx8TextArea12setTypedTextENS_9TypedTextE  touchgfx_core.lib(textarea.o)
-    0x08008da4   0x08008da4   0x00000024   Code   RO        12730    i._ZN8touchgfx8TextArea13getTextHeightEv  touchgfx_core.lib(textarea.o)
-    0x08008dc8   0x08008dc8   0x00000058   Code   RO        12731    i._ZN8touchgfx8TextArea19resizeToCurrentTextEv  touchgfx_core.lib(textarea.o)
-    0x08008e20   0x08008e20   0x00000030   Code   RO        12953    i._ZN8touchgfx9ConstFontC2EPKNS_9GlyphNodeEtthhhhtt  touchgfx_core.lib(constfont.o)
-    0x08008e50   0x08008e50   0x00000064   Code   RO        11177    i._ZN8touchgfx9Container12getLastChildEssPPNS_8DrawableE  touchgfx_core.lib(container.o)
-    0x08008eb4   0x08008eb4   0x00000058   Code   RO        11178    i._ZN8touchgfx9Container14setupDrawChainERKNS_4RectEPPNS_8DrawableE  touchgfx_core.lib(container.o)
-    0x08008f0c   0x08008f0c   0x00000030   Code   RO        11180    i._ZN8touchgfx9Container3addERNS_8DrawableE  touchgfx_core.lib(container.o)
+    0x08008d86   0x08008d86   0x0000001e   Code   RO        12754    i._ZN8touchgfx8TextArea12setTypedTextENS_9TypedTextE  touchgfx_core.lib(textarea.o)
+    0x08008da4   0x08008da4   0x00000024   Code   RO        12755    i._ZN8touchgfx8TextArea13getTextHeightEv  touchgfx_core.lib(textarea.o)
+    0x08008dc8   0x08008dc8   0x00000058   Code   RO        12756    i._ZN8touchgfx8TextArea19resizeToCurrentTextEv  touchgfx_core.lib(textarea.o)
+    0x08008e20   0x08008e20   0x00000030   Code   RO        12978    i._ZN8touchgfx9ConstFontC2EPKNS_9GlyphNodeEtthhhhtt  touchgfx_core.lib(constfont.o)
+    0x08008e50   0x08008e50   0x00000064   Code   RO        11202    i._ZN8touchgfx9Container12getLastChildEssPPNS_8DrawableE  touchgfx_core.lib(container.o)
+    0x08008eb4   0x08008eb4   0x00000058   Code   RO        11203    i._ZN8touchgfx9Container14setupDrawChainERKNS_4RectEPPNS_8DrawableE  touchgfx_core.lib(container.o)
+    0x08008f0c   0x08008f0c   0x00000030   Code   RO        11205    i._ZN8touchgfx9Container3addERNS_8DrawableE  touchgfx_core.lib(container.o)
     0x08008f3c   0x08008f3c   0x0000000c   Code   RO         2347    i._ZNK10STM32F7HAL17getTFTFrameBufferEv  stm32f7hal.o
-    0x08008f48   0x08008f48   0x00000034   Code   RO        11024    i._ZNK8touchgfx13BoxWithBorder12getSolidRectEv  touchgfx_core.lib(boxwithborder.o)
-    0x08008f7c   0x08008f7c   0x00000104   Code   RO        11025    i._ZNK8touchgfx13BoxWithBorder4drawERKNS_4RectE  touchgfx_core.lib(boxwithborder.o)
-    0x08009080   0x08009080   0x00000030   Code   RO        12128    i._ZNK8touchgfx17InternalFlashFont10getKerningEtPKNS_9GlyphNodeE  touchgfx_core.lib(internalflashfont.o)
-    0x080090b0   0x080090b0   0x00000008   Code   RO        12129    i._ZNK8touchgfx17InternalFlashFont12getPixelDataEPKNS_9GlyphNodeE  touchgfx_core.lib(internalflashfont.o)
-    0x080090b8   0x080090b8   0x00000038   Code   RO        10918    i._ZNK8touchgfx3Box12getSolidRectEv  touchgfx_core.lib(box.o)
-    0x080090f0   0x080090f0   0x00000030   Code   RO        10919    i._ZNK8touchgfx3Box4drawERKNS_4RectE  touchgfx_core.lib(box.o)
-    0x08009120   0x08009120   0x00000034   Code   RO        11866    i._ZNK8touchgfx3HAL13getDstAddressEttPt  touchgfx_core.lib(hal.o)
-    0x08009154   0x08009154   0x00000004   Code   RO        11752    i._ZNK8touchgfx4Font13getFontHeightEv  touchgfx_core.lib(font.o)
-    0x08009158   0x08009158   0x00000028   Code   RO        11662    i._ZNK8touchgfx4Font14getStringWidthEhPKtz  touchgfx_core.lib(font.o)
-    0x08009180   0x08009180   0x00000004   Code   RO        11764    i._ZNK8touchgfx4Font15getBitsPerPixelEv  touchgfx_core.lib(font.o)
-    0x08009184   0x08009184   0x00000004   Code   RO        11746    i._ZNK8touchgfx4Font15getEllipsisCharEv  touchgfx_core.lib(font.o)
-    0x08009188   0x08009188   0x00000004   Code   RO        11740    i._ZNK8touchgfx4Font15getFallbackCharEv  touchgfx_core.lib(font.o)
-    0x0800918c   0x0800918c   0x0000007e   Code   RO        11666    i._ZNK8touchgfx4Font17getStringWidthLTREhPKtSt9__va_list  touchgfx_core.lib(font.o)
-    0x0800920a   0x0800920a   0x0000000a   Code   RO        11758    i._ZNK8touchgfx4Font20getMinimumTextHeightEv  touchgfx_core.lib(font.o)
-    0x08009214   0x08009214   0x00000016   Code   RO        11733    i._ZNK8touchgfx4Font8getGlyphEt  touchgfx_core.lib(font.o)
-    0x0800922a   0x0800922a   0x0000000a   Code   RO        10235    i._ZNK8touchgfx4Rect5rightEv  touchgfx_core.lib(lcd16bpp.o)
-    0x08009234   0x08009234   0x0000000a   Code   RO        10241    i._ZNK8touchgfx4Rect6bottomEv  touchgfx_core.lib(lcd16bpp.o)
-    0x0800923e   0x0800923e   0x00000010   Code   RO        10253    i._ZNK8touchgfx4Rect7isEmptyEv  touchgfx_core.lib(lcd16bpp.o)
-    0x0800924e   0x0800924e   0x0000004a   Code   RO        10529    i._ZNK8touchgfx4Rect8includesERKS0_  touchgfx_core.lib(application.o)
-    0x08009298   0x08009298   0x00000046   Code   RO        10523    i._ZNK8touchgfx4Rect9intersectERKS0_  touchgfx_core.lib(application.o)
-    0x080092de   0x080092de   0x00000034   Code   RO        12487    i._ZNK8touchgfx4Rect9intersectEss  touchgfx_core.lib(screen.o)
-    0x08009312   0x08009312   0x0000001e   Code   RO        10556    i._ZNK8touchgfx4RectanERKS0_  touchgfx_core.lib(application.o)
-    0x08009330   0x08009330   0x0000003e   Code   RO        11535    i._ZNK8touchgfx8Drawable14getVisibleRectERNS_4RectE  touchgfx_core.lib(drawable.o)
-    0x0800936e   0x0800936e   0x00000030   Code   RO        11537    i._ZNK8touchgfx8Drawable15getAbsoluteRectEv  touchgfx_core.lib(drawable.o)
-    0x0800939e   0x0800939e   0x0000001e   Code   RO        11538    i._ZNK8touchgfx8Drawable23translateRectToAbsoluteERNS_4RectE  touchgfx_core.lib(drawable.o)
-    0x080093bc   0x080093bc   0x00000004   Code   RO        10262    i._ZNK8touchgfx8LCD16bpp8bitDepthEv  touchgfx_core.lib(lcd16bpp.o)
-    0x080093c0   0x080093c0   0x0000000e   Code   RO        12813    i._ZNK8touchgfx8TextArea12getSolidRectEv  touchgfx_core.lib(textarea.o)
-    0x080093ce   0x080093ce   0x00000036   Code   RO        12733    i._ZNK8touchgfx8TextArea12getTextWidthEv  touchgfx_core.lib(textarea.o)
-    0x08009404   0x08009404   0x00000064   Code   RO        12734    i._ZNK8touchgfx8TextArea21getTextHeightInternalEPKtz  touchgfx_core.lib(textarea.o)
-    0x08009468   0x08009468   0x000000ac   Code   RO        12735    i._ZNK8touchgfx8TextArea4drawERKNS_4RectE  touchgfx_core.lib(textarea.o)
-    0x08009514   0x08009514   0x00000044   Code   RO        12954    i._ZNK8touchgfx9ConstFont4findEt  touchgfx_core.lib(constfont.o)
-    0x08009558   0x08009558   0x00000050   Code   RO        12955    i._ZNK8touchgfx9ConstFont8getGlyphEtRPKhRh  touchgfx_core.lib(constfont.o)
-    0x080095a8   0x080095a8   0x0000000e   Code   RO        11186    i._ZNK8touchgfx9Container12getSolidRectEv  touchgfx_core.lib(container.o)
-    0x080095b6   0x080095b6   0x0000005e   Code   RO        11188    i._ZNK8touchgfx9Container4drawERKNS_4RectE  touchgfx_core.lib(container.o)
-    0x08009614   0x08009614   0x00000010   Code   RO        12323    i._ZNK8touchgfx9GlyphNode7advanceEv  touchgfx_core.lib(lcd.o)
-    0x08009624   0x08009624   0x00000012   Code   RO        12783    i._ZNK8touchgfx9TypedText10hasValidIdEv  touchgfx_core.lib(textarea.o)
+    0x08008f48   0x08008f48   0x00000034   Code   RO        11049    i._ZNK8touchgfx13BoxWithBorder12getSolidRectEv  touchgfx_core.lib(boxwithborder.o)
+    0x08008f7c   0x08008f7c   0x00000104   Code   RO        11050    i._ZNK8touchgfx13BoxWithBorder4drawERKNS_4RectE  touchgfx_core.lib(boxwithborder.o)
+    0x08009080   0x08009080   0x00000030   Code   RO        12153    i._ZNK8touchgfx17InternalFlashFont10getKerningEtPKNS_9GlyphNodeE  touchgfx_core.lib(internalflashfont.o)
+    0x080090b0   0x080090b0   0x00000008   Code   RO        12154    i._ZNK8touchgfx17InternalFlashFont12getPixelDataEPKNS_9GlyphNodeE  touchgfx_core.lib(internalflashfont.o)
+    0x080090b8   0x080090b8   0x00000038   Code   RO        10943    i._ZNK8touchgfx3Box12getSolidRectEv  touchgfx_core.lib(box.o)
+    0x080090f0   0x080090f0   0x00000030   Code   RO        10944    i._ZNK8touchgfx3Box4drawERKNS_4RectE  touchgfx_core.lib(box.o)
+    0x08009120   0x08009120   0x00000034   Code   RO        11891    i._ZNK8touchgfx3HAL13getDstAddressEttPt  touchgfx_core.lib(hal.o)
+    0x08009154   0x08009154   0x00000004   Code   RO        11777    i._ZNK8touchgfx4Font13getFontHeightEv  touchgfx_core.lib(font.o)
+    0x08009158   0x08009158   0x00000028   Code   RO        11687    i._ZNK8touchgfx4Font14getStringWidthEhPKtz  touchgfx_core.lib(font.o)
+    0x08009180   0x08009180   0x00000004   Code   RO        11789    i._ZNK8touchgfx4Font15getBitsPerPixelEv  touchgfx_core.lib(font.o)
+    0x08009184   0x08009184   0x00000004   Code   RO        11771    i._ZNK8touchgfx4Font15getEllipsisCharEv  touchgfx_core.lib(font.o)
+    0x08009188   0x08009188   0x00000004   Code   RO        11765    i._ZNK8touchgfx4Font15getFallbackCharEv  touchgfx_core.lib(font.o)
+    0x0800918c   0x0800918c   0x0000007e   Code   RO        11691    i._ZNK8touchgfx4Font17getStringWidthLTREhPKtSt9__va_list  touchgfx_core.lib(font.o)
+    0x0800920a   0x0800920a   0x0000000a   Code   RO        11783    i._ZNK8touchgfx4Font20getMinimumTextHeightEv  touchgfx_core.lib(font.o)
+    0x08009214   0x08009214   0x00000016   Code   RO        11758    i._ZNK8touchgfx4Font8getGlyphEt  touchgfx_core.lib(font.o)
+    0x0800922a   0x0800922a   0x0000000a   Code   RO        10260    i._ZNK8touchgfx4Rect5rightEv  touchgfx_core.lib(lcd16bpp.o)
+    0x08009234   0x08009234   0x0000000a   Code   RO        10266    i._ZNK8touchgfx4Rect6bottomEv  touchgfx_core.lib(lcd16bpp.o)
+    0x0800923e   0x0800923e   0x00000010   Code   RO        10278    i._ZNK8touchgfx4Rect7isEmptyEv  touchgfx_core.lib(lcd16bpp.o)
+    0x0800924e   0x0800924e   0x0000004a   Code   RO        10554    i._ZNK8touchgfx4Rect8includesERKS0_  touchgfx_core.lib(application.o)
+    0x08009298   0x08009298   0x00000046   Code   RO        10548    i._ZNK8touchgfx4Rect9intersectERKS0_  touchgfx_core.lib(application.o)
+    0x080092de   0x080092de   0x00000034   Code   RO        12512    i._ZNK8touchgfx4Rect9intersectEss  touchgfx_core.lib(screen.o)
+    0x08009312   0x08009312   0x0000001e   Code   RO        10581    i._ZNK8touchgfx4RectanERKS0_  touchgfx_core.lib(application.o)
+    0x08009330   0x08009330   0x0000003e   Code   RO        11560    i._ZNK8touchgfx8Drawable14getVisibleRectERNS_4RectE  touchgfx_core.lib(drawable.o)
+    0x0800936e   0x0800936e   0x00000030   Code   RO        11562    i._ZNK8touchgfx8Drawable15getAbsoluteRectEv  touchgfx_core.lib(drawable.o)
+    0x0800939e   0x0800939e   0x0000001e   Code   RO        11563    i._ZNK8touchgfx8Drawable23translateRectToAbsoluteERNS_4RectE  touchgfx_core.lib(drawable.o)
+    0x080093bc   0x080093bc   0x00000004   Code   RO        10287    i._ZNK8touchgfx8LCD16bpp8bitDepthEv  touchgfx_core.lib(lcd16bpp.o)
+    0x080093c0   0x080093c0   0x0000000e   Code   RO        12838    i._ZNK8touchgfx8TextArea12getSolidRectEv  touchgfx_core.lib(textarea.o)
+    0x080093ce   0x080093ce   0x00000036   Code   RO        12758    i._ZNK8touchgfx8TextArea12getTextWidthEv  touchgfx_core.lib(textarea.o)
+    0x08009404   0x08009404   0x00000064   Code   RO        12759    i._ZNK8touchgfx8TextArea21getTextHeightInternalEPKtz  touchgfx_core.lib(textarea.o)
+    0x08009468   0x08009468   0x000000ac   Code   RO        12760    i._ZNK8touchgfx8TextArea4drawERKNS_4RectE  touchgfx_core.lib(textarea.o)
+    0x08009514   0x08009514   0x00000044   Code   RO        12979    i._ZNK8touchgfx9ConstFont4findEt  touchgfx_core.lib(constfont.o)
+    0x08009558   0x08009558   0x00000050   Code   RO        12980    i._ZNK8touchgfx9ConstFont8getGlyphEtRPKhRh  touchgfx_core.lib(constfont.o)
+    0x080095a8   0x080095a8   0x0000000e   Code   RO        11211    i._ZNK8touchgfx9Container12getSolidRectEv  touchgfx_core.lib(container.o)
+    0x080095b6   0x080095b6   0x0000005e   Code   RO        11213    i._ZNK8touchgfx9Container4drawERKNS_4RectE  touchgfx_core.lib(container.o)
+    0x08009614   0x08009614   0x00000010   Code   RO        12348    i._ZNK8touchgfx9GlyphNode7advanceEv  touchgfx_core.lib(lcd.o)
+    0x08009624   0x08009624   0x00000012   Code   RO        12808    i._ZNK8touchgfx9TypedText10hasValidIdEv  touchgfx_core.lib(textarea.o)
     0x08009636   0x08009636   0x00000002   PAD
-    0x08009638   0x08009638   0x00000020   Code   RO        12789    i._ZNK8touchgfx9TypedText11assertValidEv  touchgfx_core.lib(textarea.o)
-    0x08009658   0x08009658   0x00000020   Code   RO        12807    i._ZNK8touchgfx9TypedText16getTextDirectionEv  touchgfx_core.lib(textarea.o)
-    0x08009678   0x08009678   0x00000024   Code   RO        12801    i._ZNK8touchgfx9TypedText7getFontEv  touchgfx_core.lib(textarea.o)
-    0x0800969c   0x0800969c   0x00000018   Code   RO        12795    i._ZNK8touchgfx9TypedText7getTextEv  touchgfx_core.lib(textarea.o)
-    0x080096b4   0x080096b4   0x00000024   Code   RO        13462    i.__aeabi_vec_ctor_nocookie_nodtor  cpprt_w.l(aeabi_vec_ctor_nocookie_nodtor.o)
-    0x080096d8   0x080096d8   0x00000010   Code   RO        13350    i.__cxa_guard_acquire  cpprt_w.l(cxa_guard_acquire.o)
-    0x080096e8   0x080096e8   0x00000006   Code   RO        13347    i.__cxa_pure_virtual  cpprt_w.l(pure_virt.o)
-    0x080096ee   0x080096ee   0x0000000e   Code   RO        13592    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080096fc   0x080096fc   0x00000002   Code   RO        13593    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080096fe   0x080096fe   0x0000000e   Code   RO        13594    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800970c   0x0800970c   0x0000001c   Code   RO        10018    i.__sti___21_typedtextdatabase_cpp_42ef4e5b  typedtextdatabase.o
+    0x08009638   0x08009638   0x00000020   Code   RO        12814    i._ZNK8touchgfx9TypedText11assertValidEv  touchgfx_core.lib(textarea.o)
+    0x08009658   0x08009658   0x00000020   Code   RO        12832    i._ZNK8touchgfx9TypedText16getTextDirectionEv  touchgfx_core.lib(textarea.o)
+    0x08009678   0x08009678   0x00000024   Code   RO        12826    i._ZNK8touchgfx9TypedText7getFontEv  touchgfx_core.lib(textarea.o)
+    0x0800969c   0x0800969c   0x00000018   Code   RO        12820    i._ZNK8touchgfx9TypedText7getTextEv  touchgfx_core.lib(textarea.o)
+    0x080096b4   0x080096b4   0x00000024   Code   RO        13487    i.__aeabi_vec_ctor_nocookie_nodtor  cpprt_w.l(aeabi_vec_ctor_nocookie_nodtor.o)
+    0x080096d8   0x080096d8   0x00000010   Code   RO        13375    i.__cxa_guard_acquire  cpprt_w.l(cxa_guard_acquire.o)
+    0x080096e8   0x080096e8   0x00000006   Code   RO        13372    i.__cxa_pure_virtual  cpprt_w.l(pure_virt.o)
+    0x080096ee   0x080096ee   0x0000000e   Code   RO        13617    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080096fc   0x080096fc   0x00000002   Code   RO        13618    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080096fe   0x080096fe   0x0000000e   Code   RO        13619    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800970c   0x0800970c   0x0000001c   Code   RO        10043    i.__sti___21_typedtextdatabase_cpp_42ef4e5b  typedtextdatabase.o
     0x08009728   0x08009728   0x0000008c   Code   RO         1357    i.__sti___22_BoardConfiguration_cpp_2f1c5dae  boardconfiguration.o
-    0x080097b4   0x080097b4   0x00000018   Code   RO         9948    i.__sti___9_texts_cpp_454ca793  texts.o
+    0x080097b4   0x080097b4   0x00000018   Code   RO         9973    i.__sti___9_texts_cpp_454ca793  texts.o
     0x080097cc   0x080097cc   0x00000020   Code   RO          581    i.accelerationModeTask  freertos.o
     0x080097ec   0x080097ec   0x00000020   Code   RO          582    i.autocrossModeTask  freertos.o
     0x0800980c   0x0800980c   0x00000020   Code   RO          583    i.aux1ButtonTask    freertos.o
@@ -7763,13 +7771,13 @@ Memory Map of the image
     0x0800990c   0x0800990c   0x00000020   Code   RO          591    i.debugModeTask     freertos.o
     0x0800992c   0x0800992c   0x00000020   Code   RO          592    i.downShiftTask     freertos.o
     0x0800994c   0x0800994c   0x00000020   Code   RO          593    i.enduranceModeTask  freertos.o
-    0x0800996c   0x0800996c   0x00000050   Code   RO        13519    i.free              mc_w.l(malloc.o)
+    0x0800996c   0x0800996c   0x00000050   Code   RO        13544    i.free              mc_w.l(malloc.o)
     0x080099bc   0x080099bc   0x00000018   Code   RO          594    i.ledBlinkTask      freertos.o
     0x080099d4   0x080099d4   0x00000020   Code   RO          595    i.leftEncoderTask   freertos.o
     0x080099f4   0x080099f4   0x00000058   Code   RO           16    i.main              main.o
     0x08009a4c   0x08009a4c   0x0000000e   Code   RO         8082    i.makeFreeRtosPriority  cmsis_os.o
     0x08009a5a   0x08009a5a   0x00000002   PAD
-    0x08009a5c   0x08009a5c   0x0000006c   Code   RO        13520    i.malloc            mc_w.l(malloc.o)
+    0x08009a5c   0x08009a5c   0x0000006c   Code   RO        13545    i.malloc            mc_w.l(malloc.o)
     0x08009ac8   0x08009ac8   0x00000020   Code   RO          596    i.mapSelectorTask   freertos.o
     0x08009ae8   0x08009ae8   0x00000020   Code   RO          597    i.modeSelectorTask  freertos.o
     0x08009b08   0x08009b08   0x00000020   Code   RO          598    i.neutralButtonTask  freertos.o
@@ -7845,92 +7853,92 @@ Memory Map of the image
     0x0800ae94   0x0800ae94   0x000000a8   Code   RO         7818    i.xTaskPriorityDisinherit  tasks.o
     0x0800af3c   0x0800af3c   0x00000078   Code   RO         7819    i.xTaskRemoveFromEventList  tasks.o
     0x0800afb4   0x0800afb4   0x000000c8   Code   RO         7821    i.xTaskResumeAll    tasks.o
-    0x0800b07c   0x0800b07c   0x0000011c   Code   RO         9349    t._ZN8touchgfx14makeTransitionI11Screen1View16Screen1PresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_  frontendapplicationbase.o
+    0x0800b07c   0x0800b07c   0x0000011c   Code   RO         9374    t._ZN8touchgfx14makeTransitionI11Screen1View16Screen1PresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_  frontendapplicationbase.o
     0x0800b198   0x0800b198   0x000000e0   Code   RO         1418    t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj  boardconfiguration.o
-    0x0800b278   0x0800b278   0x0000000a   Code   RO        13096    t._ZN8touchgfx3absIsEET_S1_  touchgfx_core.lib(gestures.o)
-    0x0800b282   0x0800b282   0x00000048   Code   RO        10541    t._ZN8touchgfx6VectorINS_4RectELt8EE13quickRemoveAtEt  touchgfx_core.lib(application.o)
-    0x0800b2ca   0x0800b2ca   0x0000001e   Code   RO        10568    t._ZN8touchgfx6VectorINS_4RectELt8EE3addES1_  touchgfx_core.lib(application.o)
-    0x0800b2e8   0x0800b2e8   0x00000018   Code   RO        10562    t._ZN8touchgfx6VectorINS_4RectELt8EEC1Ev  touchgfx_core.lib(application.o)
-    0x0800b300   0x0800b300   0x00000018   Code   RO         9400    t._ZN8touchgfx8CallbackI23FrontendApplicationBasevvvE7executeEv  frontendapplicationbase.o
+    0x0800b278   0x0800b278   0x0000000a   Code   RO        13121    t._ZN8touchgfx3absIsEET_S1_  touchgfx_core.lib(gestures.o)
+    0x0800b282   0x0800b282   0x00000048   Code   RO        10566    t._ZN8touchgfx6VectorINS_4RectELt8EE13quickRemoveAtEt  touchgfx_core.lib(application.o)
+    0x0800b2ca   0x0800b2ca   0x0000001e   Code   RO        10593    t._ZN8touchgfx6VectorINS_4RectELt8EE3addES1_  touchgfx_core.lib(application.o)
+    0x0800b2e8   0x0800b2e8   0x00000018   Code   RO        10587    t._ZN8touchgfx6VectorINS_4RectELt8EEC1Ev  touchgfx_core.lib(application.o)
+    0x0800b300   0x0800b300   0x00000018   Code   RO         9425    t._ZN8touchgfx8CallbackI23FrontendApplicationBasevvvE7executeEv  frontendapplicationbase.o
     0x0800b318   0x0800b318   0x00000006   Code   RO         1570    t._ZN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EE12element_sizeEv  boardconfiguration.o
     0x0800b31e   0x0800b31e   0x00000010   Code   RO         1576    t._ZN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EE7elementEt  boardconfiguration.o
     0x0800b32e   0x0800b32e   0x00000004   Code   RO         1543    t._ZN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EE12element_sizeEv  boardconfiguration.o
     0x0800b332   0x0800b332   0x00000008   Code   RO         1549    t._ZN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EE7elementEt  boardconfiguration.o
     0x0800b33a   0x0800b33a   0x00000004   Code   RO         1597    t._ZN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EE12element_sizeEv  boardconfiguration.o
     0x0800b33e   0x0800b33e   0x0000000c   Code   RO         1603    t._ZN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EE7elementEt  boardconfiguration.o
-    0x0800b34a   0x0800b34a   0x00000018   Code   RO         9406    t._ZNK8touchgfx8CallbackI23FrontendApplicationBasevvvE7isValidEv  frontendapplicationbase.o
+    0x0800b34a   0x0800b34a   0x00000018   Code   RO         9431    t._ZNK8touchgfx8CallbackI23FrontendApplicationBasevvvE7isValidEv  frontendapplicationbase.o
     0x0800b362   0x0800b362   0x00000002   PAD
     0x0800b364   0x0800b364   0x00000224   Data   RO          610    .constdata          freertos.o
     0x0800b588   0x0800b588   0x00000008   Data   RO         6899    .constdata          stm32f7xx_hal_dma.o
     0x0800b590   0x0800b590   0x00000010   Data   RO         7445    .constdata          system_stm32f7xx.o
     0x0800b5a0   0x0800b5a0   0x00000008   Data   RO         7446    .constdata          system_stm32f7xx.o
-    0x0800b5a8   0x0800b5a8   0x00000014   Data   RO         9226    .constdata          bitmapdatabase.o
-    0x0800b5bc   0x0800b5bc   0x00000010   Data   RO         9333    .constdata          frontendapplicationbase.o
-    0x0800b5cc   0x0800b5cc   0x00000048   Data   RO        12428    .constdata          touchgfx_core.lib(screen.o)
-    0x0800b614   0x0800b614   0x0000004c   Data   RO         2144    .constdata__ZTV10STM32F7DMA  stm32f7dma.o
-    0x0800b660   0x0800b660   0x000000a8   Data   RO         2425    .constdata__ZTV10STM32F7HAL  stm32f7hal.o
-    0x0800b708   0x0800b708   0x00000034   Data   RO         9079    .constdata__ZTV11Screen1View  screen1view.o
-    0x0800b73c   0x0800b73c   0x00000014   Data   RO         1470    .constdata__ZTV12FrontendHeap  boardconfiguration.o
-    0x0800b750   0x0800b750   0x00000034   Data   RO         9626    .constdata__ZTV15Screen1ViewBase  screen1viewbase.o
-    0x0800b784   0x0800b784   0x00000028   Data   RO         8895    .constdata__ZTV16Screen1Presenter  screen1presenter.o
-    0x0800b7ac   0x0800b7ac   0x0000003c   Data   RO         8719    .constdata__ZTV19FrontendApplication  frontendapplication.o
-    0x0800b7e8   0x0800b7e8   0x00000014   Data   RO         9184    .constdata__ZTV23ApplicationFontProvider  applicationfontprovider.o
-    0x0800b7fc   0x0800b7fc   0x0000003c   Data   RO         1462    .constdata__ZTV23FrontendApplicationBase  boardconfiguration.o
-    0x0800b838   0x0800b838   0x00000014   Data   RO        12521    .constdata__ZTVN8touchgfx10ClickEventE  touchgfx_core.lib(screen.o)
-    0x0800b84c   0x0800b84c   0x0000003c   Data   RO        10522    .constdata__ZTVN8touchgfx11ApplicationE  touchgfx_core.lib(application.o)
-    0x0800b888   0x0800b888   0x00000014   Data   RO        12525    .constdata__ZTVN8touchgfx12GestureEventE  touchgfx_core.lib(screen.o)
-    0x0800b89c   0x0800b89c   0x00000020   Data   RO         9361    .constdata__ZTVN8touchgfx12NoTransitionE  frontendapplicationbase.o
-    0x0800b8bc   0x0800b8bc   0x0000006c   Data   RO        11041    .constdata__ZTVN8touchgfx13BoxWithBorderE  touchgfx_core.lib(boxwithborder.o)
-    0x0800b928   0x0800b928   0x0000003c   Data   RO         9357    .constdata__ZTVN8touchgfx14MVPApplicationE  frontendapplicationbase.o
-    0x0800b964   0x0800b964   0x00000034   Data   RO        10105    .constdata__ZTVN8touchgfx17AbstractPartitionE  touchgfx_core.lib(abstractpartition.o)
-    0x0800b998   0x0800b998   0x0000004c   Data   RO        12149    .constdata__ZTVN8touchgfx17InternalFlashFontE  touchgfx_core.lib(internalflashfont.o)
-    0x0800b9e4   0x0800b9e4   0x00000024   Data   RO        11479    .constdata__ZTVN8touchgfx17LockFreeDMA_QueueE  touchgfx_core.lib(dma.o)
-    0x0800ba08   0x0800ba08   0x00000028   Data   RO         2820    .constdata__ZTVN8touchgfx22STM32F7InstrumentationE  stm32f7instrumentation.o
-    0x0800ba30   0x0800ba30   0x00000018   Data   RO         2674    .constdata__ZTVN8touchgfx22STM32F7TouchControllerE  stm32f7touchcontroller.o
-    0x0800ba48   0x0800ba48   0x0000006c   Data   RO        10935    .constdata__ZTVN8touchgfx3BoxE  touchgfx_core.lib(box.o)
-    0x0800bab4   0x0800bab4   0x000000a8   Data   RO        12029    .constdata__ZTVN8touchgfx3HALE  touchgfx_core.lib(hal.o)
-    0x0800bb5c   0x0800bb5c   0x00000034   Data   RO        12473    .constdata__ZTVN8touchgfx6ScreenE  touchgfx_core.lib(screen.o)
-    0x0800bb90   0x0800bb90   0x0000006c   Data   RO         9678    .constdata__ZTVN8touchgfx6WidgetE  screen1viewbase.o
-    0x0800bbfc   0x0800bbfc   0x00000018   Data   RO         9359    .constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE  frontendapplicationbase.o
-    0x0800bc14   0x0800bc14   0x0000006c   Data   RO        11585    .constdata__ZTVN8touchgfx8DrawableE  touchgfx_core.lib(drawable.o)
-    0x0800bc80   0x0800bc80   0x00000034   Data   RO        10216    .constdata__ZTVN8touchgfx8LCD16bppE  touchgfx_core.lib(lcd16bpp.o)
-    0x0800bcb4   0x0800bcb4   0x0000007c   Data   RO        12779    .constdata__ZTVN8touchgfx8TextAreaE  touchgfx_core.lib(textarea.o)
-    0x0800bd30   0x0800bd30   0x0000004c   Data   RO        12976    .constdata__ZTVN8touchgfx9ConstFontE  touchgfx_core.lib(constfont.o)
-    0x0800bd7c   0x0800bd7c   0x00000090   Data   RO        11264    .constdata__ZTVN8touchgfx9ContainerE  touchgfx_core.lib(container.o)
-    0x0800be0c   0x0800be0c   0x00000014   Data   RO        12523    .constdata__ZTVN8touchgfx9DragEventE  touchgfx_core.lib(screen.o)
-    0x0800be20   0x0800be20   0x00000034   Data   RO         1466    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE  boardconfiguration.o
-    0x0800be54   0x0800be54   0x00000034   Data   RO         1464    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE  boardconfiguration.o
-    0x0800be88   0x0800be88   0x00000034   Data   RO         1468    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE  boardconfiguration.o
-    0x0800bebc   0x0800bebc   0x00000188   Data   RO          611    .conststring        freertos.o
-    0x0800c044   0x0800c044   0x00000001   Data   RO         9249    FontFlashSection    font_verdana_10_4bpp.o
-    0x0800c045   0x0800c045   0x00000003   PAD
-    0x0800c048   0x0800c048   0x00000001   Data   RO         9258    FontFlashSection    font_verdana_20_4bpp.o
-    0x0800c049   0x0800c049   0x00000003   PAD
-    0x0800c04c   0x0800c04c   0x00001592   Data   RO         9267    FontFlashSection    font_verdana_80_4bpp.o
-    0x0800d5de   0x0800d5de   0x00000002   PAD
-    0x0800d5e0   0x0800d5e0   0x00000004   Data   RO         9564    FontFlashSection    kerning_verdana_10_4bpp.o
-    0x0800d5e4   0x0800d5e4   0x00000004   Data   RO         9582    FontFlashSection    kerning_verdana_20_4bpp.o
-    0x0800d5e8   0x0800d5e8   0x00000004   Data   RO         9591    FontFlashSection    kerning_verdana_80_4bpp.o
-    0x0800d5ec   0x0800d5ec   0x0000000e   Data   RO         9920    FontFlashSection    table_verdana_10_4bpp.o
-    0x0800d5fa   0x0800d5fa   0x00000002   PAD
-    0x0800d5fc   0x0800d5fc   0x0000000e   Data   RO         9929    FontFlashSection    table_verdana_20_4bpp.o
-    0x0800d60a   0x0800d60a   0x00000002   PAD
-    0x0800d60c   0x0800d60c   0x00000038   Data   RO         9938    FontFlashSection    table_verdana_80_4bpp.o
-    0x0800d644   0x0800d644   0x00000020   Data   RO        13591    Region$$Table       anon$$obj.o
-    0x0800d664   0x0800d664   0x0000000a   Data   RO         9600    TextFlashSection    languagegb.o
-    0x0800d66e   0x0800d66e   0x00000002   PAD
-    0x0800d670   0x0800d670   0x00000004   Data   RO         9601    TextFlashSection    languagegb.o
-    0x0800d674   0x0800d674   0x00000004   Data   RO         9957    TextFlashSection    texts.o
-    0x0800d678   0x0800d678   0x00000002   Data   RO        10025    TextFlashSection    typedtextdatabase.o
-    0x0800d67a   0x0800d67a   0x00000002   PAD
-    0x0800d67c   0x0800d67c   0x00000004   Data   RO        10026    TextFlashSection    typedtextdatabase.o
-    0x0800d680   0x0800d680   0x00000004   Data   RO         1367    .init_array         boardconfiguration.o
-    0x0800d684   0x0800d680   0x00000004   Data   RO         9956    .init_array         texts.o
-    0x0800d688   0x0800d680   0x00000004   Data   RO        10024    .init_array         typedtextdatabase.o
-    0x0800d68c   0x0800d680   0x00000000   Data   RO        13479    .init_array         mc_w.l(cpp_init.o)
+    0x0800b5a8   0x0800b5a8   0x00000028   Data   RO         9226    .constdata          bitmapdatabase.o
+    0x0800b5d0   0x0800b5d0   0x00000010   Data   RO         9358    .constdata          frontendapplicationbase.o
+    0x0800b5e0   0x0800b5e0   0x00000048   Data   RO        12453    .constdata          touchgfx_core.lib(screen.o)
+    0x0800b628   0x0800b628   0x0000004c   Data   RO         2144    .constdata__ZTV10STM32F7DMA  stm32f7dma.o
+    0x0800b674   0x0800b674   0x000000a8   Data   RO         2425    .constdata__ZTV10STM32F7HAL  stm32f7hal.o
+    0x0800b71c   0x0800b71c   0x00000034   Data   RO         9079    .constdata__ZTV11Screen1View  screen1view.o
+    0x0800b750   0x0800b750   0x00000014   Data   RO         1470    .constdata__ZTV12FrontendHeap  boardconfiguration.o
+    0x0800b764   0x0800b764   0x00000034   Data   RO         9651    .constdata__ZTV15Screen1ViewBase  screen1viewbase.o
+    0x0800b798   0x0800b798   0x00000028   Data   RO         8895    .constdata__ZTV16Screen1Presenter  screen1presenter.o
+    0x0800b7c0   0x0800b7c0   0x0000003c   Data   RO         8719    .constdata__ZTV19FrontendApplication  frontendapplication.o
+    0x0800b7fc   0x0800b7fc   0x00000014   Data   RO         9184    .constdata__ZTV23ApplicationFontProvider  applicationfontprovider.o
+    0x0800b810   0x0800b810   0x0000003c   Data   RO         1462    .constdata__ZTV23FrontendApplicationBase  boardconfiguration.o
+    0x0800b84c   0x0800b84c   0x00000014   Data   RO        12546    .constdata__ZTVN8touchgfx10ClickEventE  touchgfx_core.lib(screen.o)
+    0x0800b860   0x0800b860   0x0000003c   Data   RO        10547    .constdata__ZTVN8touchgfx11ApplicationE  touchgfx_core.lib(application.o)
+    0x0800b89c   0x0800b89c   0x00000014   Data   RO        12550    .constdata__ZTVN8touchgfx12GestureEventE  touchgfx_core.lib(screen.o)
+    0x0800b8b0   0x0800b8b0   0x00000020   Data   RO         9386    .constdata__ZTVN8touchgfx12NoTransitionE  frontendapplicationbase.o
+    0x0800b8d0   0x0800b8d0   0x0000006c   Data   RO        11066    .constdata__ZTVN8touchgfx13BoxWithBorderE  touchgfx_core.lib(boxwithborder.o)
+    0x0800b93c   0x0800b93c   0x0000003c   Data   RO         9382    .constdata__ZTVN8touchgfx14MVPApplicationE  frontendapplicationbase.o
+    0x0800b978   0x0800b978   0x00000034   Data   RO        10130    .constdata__ZTVN8touchgfx17AbstractPartitionE  touchgfx_core.lib(abstractpartition.o)
+    0x0800b9ac   0x0800b9ac   0x0000004c   Data   RO        12174    .constdata__ZTVN8touchgfx17InternalFlashFontE  touchgfx_core.lib(internalflashfont.o)
+    0x0800b9f8   0x0800b9f8   0x00000024   Data   RO        11504    .constdata__ZTVN8touchgfx17LockFreeDMA_QueueE  touchgfx_core.lib(dma.o)
+    0x0800ba1c   0x0800ba1c   0x00000028   Data   RO         2820    .constdata__ZTVN8touchgfx22STM32F7InstrumentationE  stm32f7instrumentation.o
+    0x0800ba44   0x0800ba44   0x00000018   Data   RO         2674    .constdata__ZTVN8touchgfx22STM32F7TouchControllerE  stm32f7touchcontroller.o
+    0x0800ba5c   0x0800ba5c   0x0000006c   Data   RO        10960    .constdata__ZTVN8touchgfx3BoxE  touchgfx_core.lib(box.o)
+    0x0800bac8   0x0800bac8   0x000000a8   Data   RO        12054    .constdata__ZTVN8touchgfx3HALE  touchgfx_core.lib(hal.o)
+    0x0800bb70   0x0800bb70   0x00000034   Data   RO        12498    .constdata__ZTVN8touchgfx6ScreenE  touchgfx_core.lib(screen.o)
+    0x0800bba4   0x0800bba4   0x0000006c   Data   RO         9703    .constdata__ZTVN8touchgfx6WidgetE  screen1viewbase.o
+    0x0800bc10   0x0800bc10   0x00000018   Data   RO         9384    .constdata__ZTVN8touchgfx8CallbackI23FrontendApplicationBasevvvEE  frontendapplicationbase.o
+    0x0800bc28   0x0800bc28   0x0000006c   Data   RO        11610    .constdata__ZTVN8touchgfx8DrawableE  touchgfx_core.lib(drawable.o)
+    0x0800bc94   0x0800bc94   0x00000034   Data   RO        10241    .constdata__ZTVN8touchgfx8LCD16bppE  touchgfx_core.lib(lcd16bpp.o)
+    0x0800bcc8   0x0800bcc8   0x0000007c   Data   RO        12804    .constdata__ZTVN8touchgfx8TextAreaE  touchgfx_core.lib(textarea.o)
+    0x0800bd44   0x0800bd44   0x0000004c   Data   RO        13001    .constdata__ZTVN8touchgfx9ConstFontE  touchgfx_core.lib(constfont.o)
+    0x0800bd90   0x0800bd90   0x00000090   Data   RO        11289    .constdata__ZTVN8touchgfx9ContainerE  touchgfx_core.lib(container.o)
+    0x0800be20   0x0800be20   0x00000014   Data   RO        12548    .constdata__ZTVN8touchgfx9DragEventE  touchgfx_core.lib(screen.o)
+    0x0800be34   0x0800be34   0x00000034   Data   RO         1466    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI11Screen1ViewNS2_INS1_3NilES4_EEEELt1EEE  boardconfiguration.o
+    0x0800be68   0x0800be68   0x00000034   Data   RO         1464    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListI16Screen1PresenterNS2_INS1_3NilES4_EEEELt1EEE  boardconfiguration.o
+    0x0800be9c   0x0800be9c   0x00000034   Data   RO         1468    .constdata__ZTVN8touchgfx9PartitionINS_4meta8TypeListINS_12NoTransitionENS2_INS1_3NilES4_EEEELt1EEE  boardconfiguration.o
+    0x0800bed0   0x0800bed0   0x00000188   Data   RO          611    .conststring        freertos.o
+    0x0800c058   0x0800c058   0x00000001   Data   RO         9274    FontFlashSection    font_verdana_10_4bpp.o
+    0x0800c059   0x0800c059   0x00000003   PAD
+    0x0800c05c   0x0800c05c   0x00000001   Data   RO         9283    FontFlashSection    font_verdana_20_4bpp.o
+    0x0800c05d   0x0800c05d   0x00000003   PAD
+    0x0800c060   0x0800c060   0x00001592   Data   RO         9292    FontFlashSection    font_verdana_80_4bpp.o
+    0x0800d5f2   0x0800d5f2   0x00000002   PAD
+    0x0800d5f4   0x0800d5f4   0x00000004   Data   RO         9589    FontFlashSection    kerning_verdana_10_4bpp.o
+    0x0800d5f8   0x0800d5f8   0x00000004   Data   RO         9607    FontFlashSection    kerning_verdana_20_4bpp.o
+    0x0800d5fc   0x0800d5fc   0x00000004   Data   RO         9616    FontFlashSection    kerning_verdana_80_4bpp.o
+    0x0800d600   0x0800d600   0x0000000e   Data   RO         9945    FontFlashSection    table_verdana_10_4bpp.o
+    0x0800d60e   0x0800d60e   0x00000002   PAD
+    0x0800d610   0x0800d610   0x0000000e   Data   RO         9954    FontFlashSection    table_verdana_20_4bpp.o
+    0x0800d61e   0x0800d61e   0x00000002   PAD
+    0x0800d620   0x0800d620   0x00000038   Data   RO         9963    FontFlashSection    table_verdana_80_4bpp.o
+    0x0800d658   0x0800d658   0x00000020   Data   RO        13616    Region$$Table       anon$$obj.o
+    0x0800d678   0x0800d678   0x0000000a   Data   RO         9625    TextFlashSection    languagegb.o
+    0x0800d682   0x0800d682   0x00000002   PAD
+    0x0800d684   0x0800d684   0x00000004   Data   RO         9626    TextFlashSection    languagegb.o
+    0x0800d688   0x0800d688   0x00000004   Data   RO         9982    TextFlashSection    texts.o
+    0x0800d68c   0x0800d68c   0x00000002   Data   RO        10050    TextFlashSection    typedtextdatabase.o
+    0x0800d68e   0x0800d68e   0x00000002   PAD
+    0x0800d690   0x0800d690   0x00000004   Data   RO        10051    TextFlashSection    typedtextdatabase.o
+    0x0800d694   0x0800d694   0x00000004   Data   RO         1367    .init_array         boardconfiguration.o
+    0x0800d698   0x0800d694   0x00000004   Data   RO         9981    .init_array         texts.o
+    0x0800d69c   0x0800d694   0x00000004   Data   RO        10049    .init_array         typedtextdatabase.o
+    0x0800d6a0   0x0800d694   0x00000000   Data   RO        13504    .init_array         mc_w.l(cpp_init.o)
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800d68c, Size: 0x00011c70, Max: 0x00050000, ABSOLUTE, COMPRESSED[0x00000024])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800d6a0, Size: 0x00011c70, Max: 0x00050000, ABSOLUTE, COMPRESSED[0x00000024])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -7948,24 +7956,24 @@ Memory Map of the image
     0x20000148   COMPRESSED   0x00000018   Data   RW         8463    .data               heap_4.o
     0x20000160   COMPRESSED   0x0000000c   Data   RW         8526    .data               port.o
     0x2000016c   COMPRESSED   0x0000000c   Data   RW         8617    .data               oswrappers.o
-    0x20000178   COMPRESSED   0x0000000c   Data   RW         9283    .data               fontgetters.o
-    0x20000184   COMPRESSED   0x00000008   Data   RW         9951    .data               texts.o
-    0x2000018c   COMPRESSED   0x00000008   Data   RW         9952    .data               texts.o
-    0x20000194   COMPRESSED   0x00000008   Data   RW         9953    .data               texts.o
-    0x2000019c   COMPRESSED   0x00000008   Data   RW         9954    .data               texts.o
-    0x200001a4   COMPRESSED   0x00000008   Data   RW         9955    .data               texts.o
-    0x200001ac   COMPRESSED   0x00000010   Data   RW        10444    .data               touchgfx_core.lib(application.o)
-    0x200001bc   COMPRESSED   0x00000024   Data   RW        10777    .data               touchgfx_core.lib(bitmap.o)
-    0x200001e0   COMPRESSED   0x00000004   Data   RW        11817    .data               touchgfx_core.lib(fontmanager.o)
-    0x200001e4   COMPRESSED   0x00000014   Data   RW        11911    .data               touchgfx_core.lib(hal.o)
-    0x200001f8   COMPRESSED   0x00000004   Data   RW        12936    .data               touchgfx_core.lib(typedtext.o)
-    0x200001fc   COMPRESSED   0x00000004   Data   RW        12937    .data               touchgfx_core.lib(typedtext.o)
-    0x20000200   COMPRESSED   0x00000004   Data   RW        12938    .data               touchgfx_core.lib(typedtext.o)
-    0x20000204   COMPRESSED   0x00000002   Data   RW        12939    .data               touchgfx_core.lib(typedtext.o)
+    0x20000178   COMPRESSED   0x0000000c   Data   RW         9308    .data               fontgetters.o
+    0x20000184   COMPRESSED   0x00000008   Data   RW         9976    .data               texts.o
+    0x2000018c   COMPRESSED   0x00000008   Data   RW         9977    .data               texts.o
+    0x20000194   COMPRESSED   0x00000008   Data   RW         9978    .data               texts.o
+    0x2000019c   COMPRESSED   0x00000008   Data   RW         9979    .data               texts.o
+    0x200001a4   COMPRESSED   0x00000008   Data   RW         9980    .data               texts.o
+    0x200001ac   COMPRESSED   0x00000010   Data   RW        10469    .data               touchgfx_core.lib(application.o)
+    0x200001bc   COMPRESSED   0x00000024   Data   RW        10802    .data               touchgfx_core.lib(bitmap.o)
+    0x200001e0   COMPRESSED   0x00000004   Data   RW        11842    .data               touchgfx_core.lib(fontmanager.o)
+    0x200001e4   COMPRESSED   0x00000014   Data   RW        11936    .data               touchgfx_core.lib(hal.o)
+    0x200001f8   COMPRESSED   0x00000004   Data   RW        12961    .data               touchgfx_core.lib(typedtext.o)
+    0x200001fc   COMPRESSED   0x00000004   Data   RW        12962    .data               touchgfx_core.lib(typedtext.o)
+    0x20000200   COMPRESSED   0x00000004   Data   RW        12963    .data               touchgfx_core.lib(typedtext.o)
+    0x20000204   COMPRESSED   0x00000002   Data   RW        12964    .data               touchgfx_core.lib(typedtext.o)
     0x20000206   COMPRESSED   0x00000002   PAD
-    0x20000208   COMPRESSED   0x00000004   Data   RW        13548    .data               mc_w.l(cpp_dtor.o)
-    0x2000020c   COMPRESSED   0x00000004   Data   RW        13572    .data               mc_w.l(mvars.o)
-    0x20000210   COMPRESSED   0x00000004   Data   RW        13573    .data               mc_w.l(mvars.o)
+    0x20000208   COMPRESSED   0x00000004   Data   RW        13573    .data               mc_w.l(cpp_dtor.o)
+    0x2000020c   COMPRESSED   0x00000004   Data   RW        13597    .data               mc_w.l(mvars.o)
+    0x20000210   COMPRESSED   0x00000004   Data   RW        13598    .data               mc_w.l(mvars.o)
     0x20000214   COMPRESSED   0x00000004   Data   RW         1471    .data__ZZN12FrontendHeap11getInstanceEvE8instance  boardconfiguration.o
     0x20000218   COMPRESSED   0x00000004   Data   RW         1473    .data__ZZN8touchgfx6getHALI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssE3hal  boardconfiguration.o
     0x2000021c        -       0x000000a8   Zero   RW          429    .bss                adc.o
@@ -7981,14 +7989,25 @@ Memory Map of the image
     0x20000ffc        -       0x0000012c   Zero   RW         2904    .bss                hw_init.o
     0x20001128        -       0x000000f0   Zero   RW         7823    .bss                tasks.o
     0x20001218        -       0x00010000   Zero   RW         8462    .bss                heap_4.o
-    0x20011218        -       0x00000060   Zero   RW         9282    .bss                fontgetters.o
-    0x20011278        -       0x0000000c   Zero   RW        10023    .bss                typedtextdatabase.o
-    0x20011284        -       0x0000004c   Zero   RW        13277    .bss                touchgfx_core.lib(touchcalibration.o)
+    0x20011218        -       0x00000060   Zero   RW         9307    .bss                fontgetters.o
+    0x20011278        -       0x0000000c   Zero   RW        10048    .bss                typedtextdatabase.o
+    0x20011284        -       0x0000004c   Zero   RW        13302    .bss                touchgfx_core.lib(touchcalibration.o)
     0x200112d0        -       0x00000334   Zero   RW         1472    .bss__ZZN12FrontendHeap11getInstanceEvE8instance  boardconfiguration.o
     0x20011604        -       0x00000068   Zero   RW         1474    .bss__ZZN8touchgfx6getHALI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssE3hal  boardconfiguration.o
     0x2001166c   COMPRESSED   0x00000004   PAD
     0x20011670        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f746xx.o
     0x20011870        -       0x00000400   Zero   RW            1    STACK               startup_stm32f746xx.o
+
+
+
+  Load Region LR_EROM1 (Base: 0x90000000, Size: 0x00256980, Max: 0x01000000, ABSOLUTE)
+
+    Execution Region extflash.bin (Exec base: 0x90000000, Load base: 0x90000000, Size: 0x00256980, Max: 0x01000000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x90000000   0x90000000   0x00151800   Data   RO         9253    ExtFlashSection     disco_f746ng_mbed_pinout_v5.o
+    0x90151800   0x90151800   0x00105180   Data   RO         9265    ExtFlashSection     dynamis.o
 
 
 ==============================================================================
@@ -7998,84 +8017,86 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       304         36          0          0        168       1867   adc.o
+       304         36          0          0        168       1891   adc.o
          0          0         20          0          0       1232   applicationfontprovider.o
-        12          4         20          0          0       8086   bitmapdatabase.o
-       994        174        240         28       3660     112790   boardconfiguration.o
-       196         20          0          0         40       1741   can.o
-       138          0          0          0          0      14163   cmsis_os.o
-        88         18          0          0         36       1575   crc.o
-        44          4          0          0          0        798   dma.o
-         0          0          0          0          0       9564   event_groups.o
-         0          0          1          0          0        723   font_verdana_10_4bpp.o
-         0          0          1          0          0        723   font_verdana_20_4bpp.o
-         0          0       5522          0          0        723   font_verdana_80_4bpp.o
-       326         86          0         12         96      14425   fontgetters.o
-      1784        174        940        212          0      41589   freertos.o
-        38          4         60          0          0      29020   frontendapplication.o
-       500         42        132          0          0      38203   frontendapplicationbase.o
-       596         40          0          0          0     882855   gpio.o
-         8          0          0          0          0       2268   gpio_1.o
-       492         22          0         24      65536       7511   heap_4.o
-      1016        134          0          8        300       7135   hw_init.o
-       220         24          0          0         76       1761   i2c.o
-         0          0          4          0          0       7714   kerning_verdana_10_4bpp.o
-         0          0          4          0          0       1422   kerning_verdana_20_4bpp.o
-         0          0          4          0          0       1422   kerning_verdana_80_4bpp.o
-         0          0         14          0          0        758   languagegb.o
-       136          0          0          0          0       3610   list.o
-       286         22          0          0          0     781024   main.o
-         8          0          0          0          0        956   model.o
-       292         52          0         12          0      20938   oswrappers.o
-       738         82          0         12          0      11937   port.o
-         0          0          0          0         76        212   quadspi.o
-      1698         14          0          0          0      15117   queue.o
-        30          6         40          0          0      48316   screen1presenter.o
-        38         10         52          0          0      22664   screen1view.o
-       698         36        160          0          0      53744   screen1viewbase.o
-       732         90          0          4        100       5951   spi.o
-        36          8        456          0       1536        848   startup_stm32f746xx.o
-       986         70         76          1          0     711135   stm32f7dma.o
-       426         42        168          4          0     710028   stm32f7hal.o
-       170         16         40          0         64      18464   stm32f7instrumentation.o
-         6          0         24          0          0     806396   stm32f7touchcontroller.o
-        86         14          0         12          0       3346   stm32f7xx_hal.o
-      1070         32          0          0          0       5490   stm32f7xx_hal_adc.o
-         2          0          0          0          0       1001   stm32f7xx_hal_adc_ex.o
-       816          0          0          0          0      10275   stm32f7xx_hal_can.o
-       178         12          0          0          0      35440   stm32f7xx_hal_cortex.o
-       120          6          0          0          0       1171   stm32f7xx_hal_crc.o
-        74          0          0          0          0       1227   stm32f7xx_hal_crc_ex.o
-       804         16          8          0          0       4871   stm32f7xx_hal_dma.o
-      1136         12          0          0          0       9647   stm32f7xx_hal_dma2d.o
-       854        108          0          0          0       4878   stm32f7xx_hal_gpio.o
-      1538         38          0          0          0      14735   stm32f7xx_hal_i2c.o
-       172          0          0          0          0       1995   stm32f7xx_hal_i2c_ex.o
-      1234         18          0          0          0       7435   stm32f7xx_hal_ltdc.o
-        56          4          0          0          0        886   stm32f7xx_hal_msp.o
-        16          4          0          0          0        559   stm32f7xx_hal_pwr.o
-       108          8          0          0          0       1288   stm32f7xx_hal_pwr_ex.o
-       650         12          0          0          0       8156   stm32f7xx_hal_qspi.o
-      1332         70          0          0          0       5762   stm32f7xx_hal_rcc.o
-      1276         16          0          0          0       2304   stm32f7xx_hal_rcc_ex.o
-       180          0          0          0          0       3984   stm32f7xx_hal_sdram.o
-       886          0          0          0          0       5270   stm32f7xx_hal_spi.o
-      1594        110          0          0          0      16121   stm32f7xx_hal_tim.o
-       564         38          0          0          0       5042   stm32f7xx_hal_tim_ex.o
-       116         16          0          0         64       1463   stm32f7xx_hal_timebase_tim.o
-       278         84          0          0          0      13052   stm32f7xx_it.o
-       278          6          0          0          0       3432   stm32f7xx_ll_fmc.o
-       488         68         24          4          0       2859   system_stm32f7xx.o
-         0          0         14          0          0       1417   table_verdana_10_4bpp.o
-         0          0         14          0          0       1417   table_verdana_20_4bpp.o
-         0          0         56          0          0       1417   table_verdana_80_4bpp.o
-      2224        176          0         60        240      23842   tasks.o
-        88         30          8         40          0       9894   texts.o
-       616         74          0          0        192       4466   tim.o
-        52         12         10          0         12       5592   typedtextdatabase.o
+        12          4         40          0          0       8282   bitmapdatabase.o
+       994        174        240         28       3660     113534   boardconfiguration.o
+       196         20          0          0         40       1761   can.o
+       138          0          0          0          0      14235   cmsis_os.o
+        88         18          0          0         36       1595   crc.o
+         0          0    1382400          0          0        787   disco_f746ng_mbed_pinout_v5.o
+        44          4          0          0          0        810   dma.o
+         0          0    1069440          0          0        687   dynamis.o
+         0          0          0          0          0       9580   event_groups.o
+         0          0          1          0          0        735   font_verdana_10_4bpp.o
+         0          0          1          0          0        735   font_verdana_20_4bpp.o
+         0          0       5522          0          0        739   font_verdana_80_4bpp.o
+       326         86          0         12         96      14489   fontgetters.o
+      1784        174        940        212          0      41821   freertos.o
+        38          4         60          0          0      29136   frontendapplication.o
+       500         42        132          0          0      38547   frontendapplicationbase.o
+       596         40          0          0          0     882987   gpio.o
+         8          0          0          0          0       2308   gpio_1.o
+       492         22          0         24      65536       7559   heap_4.o
+      1016        134          0          8        300       7207   hw_init.o
+       220         24          0          0         76       1781   i2c.o
+         0          0          4          0          0       7746   kerning_verdana_10_4bpp.o
+         0          0          4          0          0       1434   kerning_verdana_20_4bpp.o
+         0          0          4          0          0       1434   kerning_verdana_80_4bpp.o
+         0          0         14          0          0        766   languagegb.o
+       136          0          0          0          0       3642   list.o
+       286         22          0          0          0     781104   main.o
+         8          0          0          0          0        964   model.o
+       292         52          0         12          0      21038   oswrappers.o
+       738         82          0         12          0      12009   port.o
+         0          0          0          0         76        220   quadspi.o
+      1698         14          0          0          0      15197   queue.o
+        30          6         40          0          0      48544   screen1presenter.o
+        38         10         52          0          0      22800   screen1view.o
+       698         36        160          0          0      54132   screen1viewbase.o
+       732         90          0          4        100       6023   spi.o
+        36          8        456          0       1536        852   startup_stm32f746xx.o
+       986         70         76          1          0     711391   stm32f7dma.o
+       426         42        168          4          0     710308   stm32f7hal.o
+       170         16         40          0         64      18576   stm32f7instrumentation.o
+         6          0         24          0          0     806484   stm32f7touchcontroller.o
+        86         14          0         12          0       3386   stm32f7xx_hal.o
+      1070         32          0          0          0       5542   stm32f7xx_hal_adc.o
+         2          0          0          0          0       1009   stm32f7xx_hal_adc_ex.o
+       816          0          0          0          0      10371   stm32f7xx_hal_can.o
+       178         12          0          0          0      35484   stm32f7xx_hal_cortex.o
+       120          6          0          0          0       1187   stm32f7xx_hal_crc.o
+        74          0          0          0          0       1243   stm32f7xx_hal_crc_ex.o
+       804         16          8          0          0       4911   stm32f7xx_hal_dma.o
+      1136         12          0          0          0       9715   stm32f7xx_hal_dma2d.o
+       854        108          0          0          0       4906   stm32f7xx_hal_gpio.o
+      1538         38          0          0          0      14843   stm32f7xx_hal_i2c.o
+       172          0          0          0          0       2011   stm32f7xx_hal_i2c_ex.o
+      1234         18          0          0          0       7487   stm32f7xx_hal_ltdc.o
+        56          4          0          0          0        898   stm32f7xx_hal_msp.o
+        16          4          0          0          0        563   stm32f7xx_hal_pwr.o
+       108          8          0          0          0       1300   stm32f7xx_hal_pwr_ex.o
+       650         12          0          0          0       8220   stm32f7xx_hal_qspi.o
+      1332         70          0          0          0       5806   stm32f7xx_hal_rcc.o
+      1276         16          0          0          0       2316   stm32f7xx_hal_rcc_ex.o
+       180          0          0          0          0       4016   stm32f7xx_hal_sdram.o
+       886          0          0          0          0       5306   stm32f7xx_hal_spi.o
+      1594        110          0          0          0      16245   stm32f7xx_hal_tim.o
+       564         38          0          0          0       5078   stm32f7xx_hal_tim_ex.o
+       116         16          0          0         64       1479   stm32f7xx_hal_timebase_tim.o
+       278         84          0          0          0      13216   stm32f7xx_it.o
+       278          6          0          0          0       3468   stm32f7xx_ll_fmc.o
+       488         68         24          4          0       2887   system_stm32f7xx.o
+         0          0         14          0          0       1425   table_verdana_10_4bpp.o
+         0          0         14          0          0       1425   table_verdana_20_4bpp.o
+         0          0         56          0          0       1425   table_verdana_80_4bpp.o
+      2224        176          0         60        240      23994   tasks.o
+        88         30          8         40          0       9934   texts.o
+       616         74          0          0        192       4514   tim.o
+        52         12         10          0         12       5624   typedtextdatabase.o
 
     ----------------------------------------------------------------------
-     32002       2214       8160        436      72200    4621142   Object Totals
+     32002       2214    2460020        436      72200    4628336   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         80          0         16          3          4          0   (incl. Padding)
 
@@ -8159,15 +8180,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     45468       2704       9456        540      72276    5157305   Grand Totals
-     45468       2704       9456         36      72276    5157305   ELF Image Totals (compressed)
-     45468       2704       9456         36          0          0   ROM Totals
+     45468       2704    2461316        540      72276    5164499   Grand Totals
+     45468       2704    2461316         36      72276    5164499   ELF Image Totals (compressed)
+     45468       2704    2461316         36          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                54924 (  53.64kB)
+    Total RO  Size (Code + RO Data)              2506784 (2448.03kB)
     Total RW  Size (RW Data + ZI Data)             72816 (  71.11kB)
-    Total ROM Size (Code + RO Data + RW Data)      54960 (  53.67kB)
+    Total ROM Size (Code + RO Data + RW Data)    2506820 (2448.07kB)
 
 ==============================================================================
 

@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx,QSPI_CLOCK_PRESCALER=2,QSPI_DDRMODE,QSPI_XIP_MODE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;               ../TouchGFX/target;               ../TouchGFX/generated/fonts/include;               ../TouchGFX/generated/texts/include;               ../TouchGFX/generated/images/include;               ../TouchGFX/generated/gui_generated/include;               ../TouchGFX/gui/include;     ../middlewares/st/touchgfx/touchgfx/framework/include;               ../Drivers/STM32F7xx_HAL_Driver/Inc;               ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;               ../Middlewares/Third_Party/FreeRTOS/Source/include;               ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;               ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;               ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;               ../Drivers/CMSIS/Include;     ../middlewares/st/touchgfx/touchgfx/framework/include;     ../middlewares/st/touchgfx/touchgfx/framework/include;     ../middlewares/st/touchgfx/touchgfx/framework/include;     ../middlewares/st/touchgfx/touchgfx/framework/include;     ../middlewares/st/touchgfx/touchgfx/framework/include;    ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Core/Inc;               ../TouchGFX/target;               ../TouchGFX/generated/fonts/include;               ../TouchGFX/generated/texts/include;               ../TouchGFX/generated/images/include;               ../TouchGFX/generated/gui_generated/include;               ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;               ../Drivers/STM32F7xx_HAL_Driver/Inc;               ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;               ../Middlewares/Third_Party/FreeRTOS/Source/include;               ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;               ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;               ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;               ../Drivers/CMSIS/Include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -358,7 +358,7 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>1</umfTarg>
+            <umfTarg>0</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
@@ -716,11 +716,6 @@
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappers.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
@@ -764,6 +759,16 @@
               <FileName>BitmapDatabase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>disco_f746ng_mbed_pinout_v5.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/disco_f746ng_mbed_pinout_v5.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>dynamis.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/dynamis.cpp</FilePath>
             </File>
             <File>
               <FileName>Font_verdana_10_4bpp.cpp</FileName>

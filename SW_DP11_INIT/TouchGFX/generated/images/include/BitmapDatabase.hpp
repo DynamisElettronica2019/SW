@@ -6,6 +6,8 @@
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 
+const uint16_t BITMAP_DISCO_F746NG_MBED_PINOUT_V5_ID = 0; // Size: 960x720 pixels
+const uint16_t BITMAP_DYNAMIS_ID = 1; // Size: 960x557 pixels
 
 namespace BitmapDatabase
 {
