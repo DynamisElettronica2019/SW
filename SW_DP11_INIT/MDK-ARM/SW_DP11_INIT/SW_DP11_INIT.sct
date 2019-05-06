@@ -13,8 +13,9 @@ LR_IROM1 0x08000000 0x00100000  {    ; load region size_region
   }
 }
 
-LR_ROM1 0x90000000 0x04000000  {
-  ER_ROM1 0x90000000 0x04000000  {  ; load address = execution address
-   .ANY (+RO)
+	LR_EROM1 0x90000000 0x01000000  {    ; load region size_region
+	extflash.bin 0x90000000 0x01000000  {  ; load address = execution address
+	*.o (FontFlashSection)
+	*.o (TextFlashSection)
   }
 }
