@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sun May 05 16:14:43 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon May 06 08:10:00 2019
 <BR><P>
 <H3>Maximum Stack Usage =        824 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -119,7 +119,7 @@ Function Pointers
  <LI><a href="#[2e]">TIM1_UP_TIM10_IRQHandler</a> from startup_stm32f746xx.o(.text) referenced from startup_stm32f746xx.o(RESET)
  <LI><a href="#[31]">TIM2_IRQHandler</a> from startup_stm32f746xx.o(.text) referenced from startup_stm32f746xx.o(RESET)
  <LI><a href="#[32]">TIM3_IRQHandler</a> from startup_stm32f746xx.o(.text) referenced from startup_stm32f746xx.o(RESET)
- <LI><a href="#[33]">TIM4_IRQHandler</a> from startup_stm32f746xx.o(.text) referenced from startup_stm32f746xx.o(RESET)
+ <LI><a href="#[33]">TIM4_IRQHandler</a> from stm32f7xx_it.o(i.TIM4_IRQHandler) referenced from startup_stm32f746xx.o(RESET)
  <LI><a href="#[47]">TIM5_IRQHandler</a> from startup_stm32f746xx.o(.text) referenced from startup_stm32f746xx.o(RESET)
  <LI><a href="#[4b]">TIM6_DAC_IRQHandler</a> from stm32f7xx_it.o(i.TIM6_DAC_IRQHandler) referenced from startup_stm32f746xx.o(RESET)
  <LI><a href="#[4c]">TIM7_IRQHandler</a> from stm32f7xx_it.o(i.TIM7_IRQHandler) referenced from startup_stm32f746xx.o(RESET)
@@ -732,9 +732,6 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
 <P><STRONG><a name="[32]"></a>TIM3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f746xx.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
-</UL>
-<P><STRONG><a name="[33]"></a>TIM4_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f746xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
 <P><STRONG><a name="[47]"></a>TIM5_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f746xx.o(.text))
@@ -1363,8 +1360,8 @@ Global Symbols
 <LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
-<LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
+<LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 </UL>
 
 <P><STRONG><a name="[28b]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
@@ -1606,12 +1603,13 @@ Global Symbols
 <LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
 <LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
-<LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
+<LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 </UL>
 
 <P><STRONG><a name="[159]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_SetPriority))
@@ -1625,12 +1623,13 @@ Global Symbols
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
+<LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
 <LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
-<LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
+<LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 </UL>
 
 <P><STRONG><a name="[183]"></a>HAL_NVIC_SetPriorityGrouping</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping))
@@ -1881,10 +1880,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM7_Init
 <LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM12_Init
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::STM32F7Instrumentation::init()
 </UL>
 
-<P><STRONG><a name="[1bd]"></a>HAL_TIM_Base_MspInit</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, tim.o(i.HAL_TIM_Base_MspInit))
+<P><STRONG><a name="[1bd]"></a>HAL_TIM_Base_MspInit</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, tim.o(i.HAL_TIM_Base_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
@@ -1910,7 +1908,6 @@ Global Symbols
 <LI><a href="#[1c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITRx_SetConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM12_Init
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::STM32F7Instrumentation::init()
 </UL>
 
 <P><STRONG><a name="[1c5]"></a>HAL_TIM_IC_CaptureCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_IC_CaptureCallback))
@@ -1930,6 +1927,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM7_IRQHandler
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM6_DAC_IRQHandler
+<LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
 <P><STRONG><a name="[1cc]"></a>HAL_TIM_MspPostInit</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, tim.o(i.HAL_TIM_MspPostInit))
@@ -1960,7 +1958,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1d4]"></a>HAL_TIM_PWM_Init</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_PWM_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = HAL_TIM_PWM_Init &rArr; TIM_Base_SetConfig
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_TIM_PWM_Init &rArr; HAL_TIM_PWM_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
 <LI><a href="#[1be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
@@ -1969,8 +1967,13 @@ Global Symbols
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::STM32F7Instrumentation::init()
 </UL>
 
-<P><STRONG><a name="[1d5]"></a>HAL_TIM_PWM_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_PWM_MspInit))
-<BR><BR>[Called By]<UL><LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<P><STRONG><a name="[1d5]"></a>HAL_TIM_PWM_MspInit</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, tim.o(i.HAL_TIM_PWM_MspInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_TIM_PWM_MspInit &rArr; HAL_NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
 </UL>
 
 <P><STRONG><a name="[1c7]"></a>HAL_TIM_PWM_PulseFinishedCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_PWM_PulseFinishedCallback))
@@ -2252,6 +2255,13 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(.text)
 </UL>
+<P><STRONG><a name="[33]"></a>TIM4_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.TIM4_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM4_IRQHandler &rArr; HAL_TIM_IRQHandler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
+</UL>
 <P><STRONG><a name="[4b]"></a>TIM6_DAC_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.TIM6_DAC_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler
 </UL>
@@ -2489,8 +2499,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[88]"></a>STM32F7HAL::~STM32F7HAL()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-<LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[2d7]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
@@ -3122,18 +3132,16 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
 </UL>
-<P><STRONG><a name="[112]"></a>touchgfx::STM32F7Instrumentation::init()</STRONG> (Thumb, 224 bytes, Stack size 112 bytes, stm32f7instrumentation.o(i._ZN8touchgfx22STM32F7Instrumentation4initEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = touchgfx::STM32F7Instrumentation::init() &rArr; HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC6_SetConfig
+<P><STRONG><a name="[112]"></a>touchgfx::STM32F7Instrumentation::init()</STRONG> (Thumb, 164 bytes, Stack size 80 bytes, stm32f7instrumentation.o(i._ZN8touchgfx22STM32F7Instrumentation4initEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = touchgfx::STM32F7Instrumentation::init() &rArr; HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC6_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
+<LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
+<LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetClockConfig
 <LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
-<LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
-<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
-<LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
-<LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
@@ -3455,9 +3463,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[198]"></a>touchgfx::GPIO::set(touchgfx::GPIO::GPIO_ID)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gpio_1.o(i._ZN8touchgfx4GPIO3setENS0_7GPIO_IDE))
-<BR><BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::setMCUActive(bool)
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::tick()
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::tick()
 <LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_LineEventCallback
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::setMCUActive(bool)
 </UL>
 
 <P><STRONG><a name="[20d]"></a>touchgfx::GPIO::init()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gpio_1.o(i._ZN8touchgfx4GPIO4initEv))
@@ -3465,9 +3473,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[199]"></a>touchgfx::GPIO::clear(touchgfx::GPIO::GPIO_ID)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gpio_1.o(i._ZN8touchgfx4GPIO5clearENS0_7GPIO_IDE))
-<BR><BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::setMCUActive(bool)
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::tick()
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::tick()
 <LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_LineEventCallback
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::setMCUActive(bool)
 </UL>
 
 <P><STRONG><a name="[25c]"></a>touchgfx::GPIO::toggle(touchgfx::GPIO::GPIO_ID)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gpio_1.o(i._ZN8touchgfx4GPIO6toggleENS0_7GPIO_IDE))

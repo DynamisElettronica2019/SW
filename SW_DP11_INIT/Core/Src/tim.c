@@ -51,7 +51,7 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
-
+TIM_HandleTypeDef htim4;
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim7;
