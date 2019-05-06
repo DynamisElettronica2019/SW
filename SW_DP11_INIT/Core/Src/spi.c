@@ -68,7 +68,7 @@ void MX_SPI1_Init(void)
   hspi1.Init.DataSize = SPI_DATASIZE_9BIT;
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi1.Init.NSS = SPI_NSS_HARD_OUTPUT;
+  hspi1.Init.NSS = SPI_NSS_SOFT;
   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
@@ -97,11 +97,10 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
   
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**SPI1 GPIO Configuration    
-    PA4     ------> SPI1_NSS
     PA5     ------> SPI1_SCK
     PA7     ------> SPI1_MOSI 
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_7;
+    GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -126,11 +125,10 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
     __HAL_RCC_SPI1_CLK_DISABLE();
   
     /**SPI1 GPIO Configuration    
-    PA4     ------> SPI1_NSS
     PA5     ------> SPI1_SCK
     PA7     ------> SPI1_MOSI 
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_7);
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5|GPIO_PIN_7);
 
   /* USER CODE BEGIN SPI1_MspDeInit 1 */
 
@@ -141,8 +139,7 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
 /* USER CODE BEGIN 1 */
 
 /**
-  * @brief  send on SPI the initial command DISPLAY ON and COLMOD
-	* 				to the display. 
+  * @brief  send on SPI the initial commands to turn on the display. 
   * @param  SPI pointer to a SPI_HandleTypeDef structure that contains
   *         the configuration information for the SPI we want to send on.
   * @retval void
@@ -151,33 +148,55 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
 void SPI_ltdc_init_sequence(SPI_HandleTypeDef *hspi)
 {
 	HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
-	SPI_display_ON(hspi);
+	
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_11, GPIO_PIN_SET);
+	HAL_Delay(120);
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_11, GPIO_PIN_RESET);
+	HAL_Delay(120);
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_11, GPIO_PIN_SET);
+	HAL_Delay(120);
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_11, GPIO_PIN_RESET);
+	HAL_Delay(120);
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_11, GPIO_PIN_SET);
+	
+	HAL_Delay(10);
+	SPI_sleep_out(hspi);
+	HAL_Delay(130);
 	SPI_colmod(hspi);
+	//HAL_Delay(10);
+	SPI_display_ON(hspi);
+	HAL_Delay(10);
+	SPI_invert_colors(hspi);
+	SPI_brightness(hspi);
+	//SPI_flip_vertical(hspi);
+	SPI_flip_horizontal(hspi);
+
 	HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
 }
 
-
 /**
-  * @brief  send on SPI the initial command DISPLAY ON
-	* 				to the display. The message is composed by 9 bits: first bit is
-	*					the DNC and last 8 bits are the command. See datasheet for more 
-	*					information. 
-	*					DNC = 0 - COMMAND DISPLAY ON 0x29 : 00101001
+  * @brief  send on SPI the initial command SLEEP OUT
+	* 				to the display. The command is composed by 9 bits: first bit is
+	*					the DNC and last 8 bits are the command.
+	*   			DNC = 0 - COMMAND 0x11 : 00001011
+	*					The parameter is composed by 9 bits: first bit is the DNC and
+	*					last 8 bits are the parameter.
+	* 				See datasheet for more information. 
   * @param  SPI pointer to a SPI_HandleTypeDef structure that contains
   *         the configuration information for the SPI we want to send on.
   * @retval void
   */
 
 
-void SPI_display_ON(SPI_HandleTypeDef *hspi)
+void SPI_sleep_out(SPI_HandleTypeDef *hspi)
 {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
-	HAL_Delay(10);
+//	HAL_Delay(10);
 
-	spiData[0] = 0x00;
-	spiData[1] = 0x29;
+	spiData[0] = 0x11;
+	spiData[1] = 0x00;
 
-	HAL_SPI_Transmit(hspi, spiData, 2, 10);
+	HAL_SPI_Transmit(hspi, spiData, 1, 5);
 
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 }
@@ -199,15 +218,155 @@ void SPI_display_ON(SPI_HandleTypeDef *hspi)
 void SPI_colmod(SPI_HandleTypeDef *hspi)
 {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
-	HAL_Delay(10);
+//	HAL_Delay();
 	
-	spiData[0] = 0x00;
-	spiData[1] = 0x3A;
+	spiData[0] =  0x3A;
+	spiData[1] = 	0x00;
 
-	spiData[2] = 0x01;
-	spiData[3] = 0x6F;
+	spiData[2] = 0x6F;
+	spiData[3] = 0x01;
 
-	HAL_SPI_Transmit(hspi, spiData, 4, 10);
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+
+/**
+  * @brief  send on SPI the initial command DISPLAY ON
+	* 				to the display. The message is composed by 9 bits: first bit is
+	*					the DNC and last 8 bits are the command. See datasheet for more 
+	*					information. 
+	*					DNC = 0 - COMMAND DISPLAY ON 0x29 : 00101001
+  * @param  SPI pointer to a SPI_HandleTypeDef structure that contains
+  *         the configuration information for the SPI we want to send on.
+  * @retval void
+  */
+
+void SPI_display_ON(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay(10);
+
+	spiData[0] = 0x29;
+	spiData[1] = 0x00;
+
+	HAL_SPI_Transmit(hspi, spiData, 1, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+/**
+  * @brief  send on SPI the initial command INVERT COLORS
+	* 				to the display. The message is composed by 9 bits: first bit is
+	*					the DNC and last 8 bits are the command. See datasheet for more 
+	*					information. 
+	*					DNC = 0 - COMMAND INVERT COLORS 0x21 : 00100001
+  * @param  SPI pointer to a SPI_HandleTypeDef structure that contains
+  *         the configuration information for the SPI we want to send on.
+  * @retval void
+  */
+
+void SPI_invert_colors(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay(10);
+
+	spiData[0] = 0x21;
+	spiData[1] = 0x00;
+
+	HAL_SPI_Transmit(hspi, spiData, 1, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+
+/**
+  * @brief  send on SPI the initial command BRIGHTNESS and the parameters
+	* 				to the display. The command is composed by 9 bits: first bit is
+	*					the DNC and last 8 bits are the command.
+	*   			DNC = 0 - COMMAND 0x51 : 01010001
+	*					The parameter is composed by 9 bits: first bit is the DNC and
+	*					last 8 bits are the parameter.
+  *					DNC = 1 - PARAMETERS 0xFF : 11111111 (doesn's seem to work)
+	* 				See datasheet for more information. 
+  * @param  SPI pointer to a SPI_HandleTypeDef structure that contains
+  *         the configuration information for the SPI we want to send on.
+  * @retval void
+  */
+
+void SPI_brightness(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0x51;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0xFF;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+/**
+  * @brief  send on SPI the initial command MEMORY ACCESS CONTROL and the parameters
+	* 				to the display to FLIP VERTICALLY. The command is composed by 9 bits: 
+	*					first bit is the DNC and last 8 bits are the command.
+	*   			DNC = 0 - COMMAND 0x36 : 00110110
+	*					The parameter is composed by 9 bits: first bit is the DNC and
+	*					last 8 bits are the parameter.
+  *					DNC = 1 - PARAMETERS 0x09 : 00001001
+	* 				See datasheet for more information. 
+  * @param  SPI pointer to a SPI_HandleTypeDef structure that contains
+  *         the configuration information for the SPI we want to send on.
+  * @retval void
+  */
+
+void SPI_flip_vertical(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0x36;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0x09;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+/**
+  * @brief  send on SPI the initial command MEMORY ACCESS CONTROL and the parameters
+	* 				to the display to FLIP HORIZONTALLY. The command is composed by 9 bits: 
+	*					first bit is the DNC and last 8 bits are the command.
+	*   			DNC = 0 - COMMAND 0x36 : 00110110
+	*					The parameter is composed by 9 bits: first bit is the DNC and
+	*					last 8 bits are the parameter.
+  *					DNC = 1 - PARAMETERS 0x0A : 00001010
+	* 				See datasheet for more information. 
+  * @param  SPI pointer to a SPI_HandleTypeDef structure that contains
+  *         the configuration information for the SPI we want to send on.
+  * @retval void
+  */
+
+void SPI_flip_horizontal(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0x36;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0x0A;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
 
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 }

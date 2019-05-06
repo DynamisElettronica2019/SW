@@ -73,6 +73,11 @@ void MX_SPI1_Init(void);
 void SPI_ltdc_init_sequence(SPI_HandleTypeDef *hspi);
 void SPI_display_ON(SPI_HandleTypeDef *hspi);
 void SPI_colmod(SPI_HandleTypeDef *hspi);
+void SPI_invert_colors(SPI_HandleTypeDef *hspi);
+void SPI_sleep_out(SPI_HandleTypeDef *hspi);
+void SPI_brightness(SPI_HandleTypeDef *hspi);
+void SPI_flip_vertical(SPI_HandleTypeDef *hspi);
+void SPI_flip_horizontal(SPI_HandleTypeDef *hspi);
 
 /* USER CODE END Prototypes */
 
