@@ -144,9 +144,11 @@ int main(void)
   MX_CRC_Init();
   MX_TIM7_Init();
   MX_TIM12_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 	
 	SPI_ltdc_init_sequence(&hspi1);
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
 	
   /* USER CODE END 2 */
 
