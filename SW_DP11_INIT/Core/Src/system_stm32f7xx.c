@@ -89,9 +89,6 @@
   */
 
 /************************* Miscellaneous Configuration ************************/
-/*!< Uncomment the following line if you need to use QSPI memory mounted
-     on DK as data memory  */
-//#define DATA_IN_QSPI
 /*!< Uncomment the following line if you need to relocate your vector Table in
      Internal SRAM. */
 /* #define VECT_TAB_SRAM */
@@ -134,10 +131,7 @@
 /** @addtogroup STM32F7xx_System_Private_FunctionPrototypes
   * @{
   */
-#if defined (DATA_IN_QSPI)
-  //static void SetSysClk(void);
-  static void SystemInit_ExtMemCtl(void); 
-#endif /* DATA_IN_QSPI */
+	
 /**
   * @}
   */
@@ -277,148 +271,6 @@ void SystemCoreClockUpdate(void)
   SystemCoreClock >>= tmp;
 }
 
-#if defined (DATA_IN_QSPI)
-
-/**
-  * @brief  Setup the external memory controller.
-  *         Configures the GPIO and the QSPI in order to access the external 
-  *         QSPI memory at the init.
-  *         This function is called when the switch DATA_IN_QSPI is activated in 
-  *         SystemInit() before jump to main.
-  * @param  None
-  * @retval None
-  */
-void SystemInit_ExtMemCtl(void)
-{
-  /****************************************************************************/
-  /*                                                                          */
-  /* Configuration of the IOs :                                               */
-  /* --------------------------                                               */
-  /* GPIOB2  : CLK                                                            */
-  /* GPIOB6   : BK1_nCS                                                       */
-  /* GPIOF8   : BK1_IO0/SO                                                    */
-  /* GPIOF9   : BK1_IO1/SI                                                    */
-  /* GPIOF7   : BK1_IO2                                                       */
-  /* GPIOF6   : BK1_IO3                                                       */
-  /*                                                                          */
-  /* Configuration of the QSPI :                                              */
-  /* ---------------------------                                              */
-  /* - Instruction is on one single line                                      */
-  /* - Address is 32-bits on four lines                                       */
-  /* - No alternate bytes                                                     */
-  /* - Ten dummy cycles                                                       */
-  /* - Data is on four lines                                                  */
-  /*                                                                          */
-  /* If the clock is changed :                                                */
-  /* -------------------------                                                */
-  /* - Modify the prescaler in the control register                           */
-  /* - Update the number of dummy cycles on the memory side and on            */
-  /*   communication configuration register                                   */
-  /*                                                                          */
-  /* If the memory is changed :                                               */
-  /* --------------------------                                               */
-  /* - Update the device configuration register with the memory configuration */
-  /* - Modify the instructions with the instruction set of the memory         */
-  /* - Configure the number of dummy cycles as described in memory datasheet  */
-  /* - Modify the data size and alternate bytes according memory datasheet    */
-  /*                                                                          */
-  /****************************************************************************/
-  
-  register uint32_t tmpreg = 0, datareg = 0,tmp = 0, timeout = 0xFFFF;
-  
-  /*--------------------------------------------------------------------------*/
-  /*------------------ Activation of the peripheral clocks -------------------*/
-  /*--------------------------------------------------------------------------*/      
-  /* Enable GPIOB and GPIOF interface clock */ 
-  /* Enable clock of the QSPI */
-  RCC->AHB1ENR |= 0x00000022;
-  //RCC->AHB1ENR |= RCC_AHB1ENR_GPIOFEN;
-  //RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
-  
-  /*--------------------------------------------------------------------------*/
-  /*--------------------- Configuration of the I/O pins ----------------------*/
-  /*--------------------------------------------------------------------------*/
-  /* Configure alternate function selection for IO pins */
-  GPIOF->AFR[0] = 0x99000000;
-	GPIOF->AFR[1] = 0x000000AA;
-	GPIOB->AFR[0] = 0x0A000900; 
-  GPIOB->AFR[1] = 0x00000000;
-  
-  /* Configure alternate function mode for IO pins */
-  GPIOF->MODER = 0x000AA000;
-  GPIOB->MODER = 0x00002020;
-  
-  /* Configure output speed for IO pins */
-  GPIOF->OSPEEDR = 0x000FF000;
-  GPIOB->OSPEEDR = 0x00003030;
-	
-	/* Configure pins Output type to push-pull */
-  GPIOF->OTYPER = 0x00000000;
-  GPIOB->OTYPER = 0x00000000;
-  
-  /* Configure pull-up or pull-down for IO pins */
-  GPIOB->PUPDR   = 0x00000000;
-	GPIOF->PUPDR   = 0x00000000;
-  
-	/* Enable clock of the QSPI */
-  RCC->AHB3ENR |= 0x0000002;
-	
-  /* Reset QSPI peripheral */
-	RCC->AHB3RSTR |= (RCC_AHB3RSTR_QSPIRST); /* Reset */
-	RCC->AHB3RSTR &= ~(RCC_AHB3RSTR_QSPIRST); /* Release reset */
-
-  /* Enable Quad-SPI peripheral */
-	QUADSPI->CR = 0x00000001;
-	
-	/* Send RESET ENABLE command (0x66) to allow memory registers reset*/
-	QUADSPI->CCR = 0x00000166; 
-	
-	/* Send RESET command (0x99) to reset the memory registers*/
-  QUADSPI->CCR = 0x00000199;
-	
-	/* Enable write cmd : 0x06. This to allow to write to enhanced volatile
-	register to allow instructions to be writen in 4 lines*/
-	while(QUADSPI->SR & 0x20); /* Wait for busy flag to be cleared */
-	QUADSPI->CCR = 0x0106;
-		
-	/* Write to Enhanced Volatile Configuration Register of the external memory
-  (MT25QL512): Enable quad I/O command input. Write to enhanced volatile
-  configuration register cmd = 0x61, Configuration: 0x7F*/
-  while(QUADSPI->SR & 0x20); /* Wait for busy flag to be cleared */
-  QUADSPI->CCR = 0x01000161;
-
-  while(!(QUADSPI->SR & 0x04)); /* Wait for FTF flag to be set */
-  QUADSPI->DR = 0x7F;
-  while(!(QUADSPI->SR & 0x02)); /* Wait for TCF flag to be set */
-
-	/* Enable write cmd: 0x06. This is done to allow to write to volatile
-	configuration register. For more details refer to MT25QL512 datasheet. */
-  QUADSPI->CCR = ( 0x0106 | QUADSPI_CCR_IMODE );
-	
-	while(QUADSPI->SR & 0x20); /* Wait for busy flag to be cleared */
-	/* Configure the Quad-SPI in 1-0-1 mode to write to VOLATILE CONFIGURATION
-	REGISTER*/
-	QUADSPI->CCR = (0x00000081 | QUADSPI_CCR_IMODE | QUADSPI_CCR_DMODE );
-
-	while(!(QUADSPI->SR & 0x04)); /* Wait for FTF flag to be set */
-
-//	/* Write 0x83 to volatile configuration register: bit 3 = 0 to enable XIP,
-//	and bits [7:4] = 8 to set eight dummy cycles*/
-//	QUADSPI->DR = ((MEM_DUMMY_CYCLE_XIP << 4) | 0x3 );
-//	while(!(QUADSPI->SR & 0x02)); /* Wait for TCF flag to be set */
-//	
-
-//	#ifdef QSPI_DDRMODE
-	QUADSPI->CR |= QSPI_CLOCK_MODE_0; /* SSHIFT = 0 delayed sample shifting
-	disabled in DDR mode */
-//	#else
-//	QUADSPI->CR |= QSPI_CLK_PRESCALER | 0x10 ; /* 0x10: SSHIFT = 1 */
-//	#endif
-	QUADSPI->DCR = 0x00190000; /* Memory size: 512 Mb (64MB): 2^(26-1) ->
-	2^(25) -> 2^(0x19)*/
-// #endif
-}
-#endif /* DATA_IN_QSPI*/
 /**
   * @}
   */

@@ -8229,11 +8229,6 @@ Memory Map of the image
     0x0800eaf8   0x0800eaec   0x00000000   Data   RO        14042    .init_array         mc_w.l(cpp_init.o)
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800eaf8, Size: 0x00000000, Max: 0x00000004, ABSOLUTE, UNINIT)
-
-    **** No section assigned to this execution region ****
-
-
     Execution Region RW_IRAM2 (Exec base: 0x20000004, Load base: 0x0800eaf8, Size: 0x00011ce4, Max: 0x00050000, ABSOLUTE, COMPRESSED[0x00000024])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
