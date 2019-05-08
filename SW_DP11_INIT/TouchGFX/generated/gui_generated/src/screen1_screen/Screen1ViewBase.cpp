@@ -4,6 +4,7 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include "BitmapDatabase.hpp"
 
 Screen1ViewBase::Screen1ViewBase()
 {
@@ -32,6 +33,10 @@ Screen1ViewBase::Screen1ViewBase()
     box4_2.setPosition(494, 168, 146, 88);
     box4_2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 255));
 
+    scalableImage1.setBitmap(Bitmap(BITMAP_DYNAMIS_ID));
+    scalableImage1.setPosition(-13, 103, 653, 344);
+    scalableImage1.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
+
     add(box3);
     add(boxWithBorder1);
     add(textArea1);
@@ -39,6 +44,7 @@ Screen1ViewBase::Screen1ViewBase()
     add(box4);
     add(box4_1);
     add(box4_2);
+    add(scalableImage1);
 }
 
 void Screen1ViewBase::setupScreen()

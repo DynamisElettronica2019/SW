@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -34,6 +35,7 @@ protected:
     touchgfx::Box box4;
     touchgfx::Box box4_1;
     touchgfx::Box box4_2;
+    touchgfx::ScalableImage scalableImage1;
 
 private:
 

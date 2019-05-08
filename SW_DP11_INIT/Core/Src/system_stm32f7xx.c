@@ -91,7 +91,7 @@
 /************************* Miscellaneous Configuration ************************/
 /*!< Uncomment the following line if you need to use QSPI memory mounted
      on DK as data memory  */
-#define DATA_IN_QSPI
+//#define DATA_IN_QSPI
 /*!< Uncomment the following line if you need to relocate your vector Table in
      Internal SRAM. */
 /* #define VECT_TAB_SRAM */

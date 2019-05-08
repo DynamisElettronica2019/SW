@@ -145,6 +145,22 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Filename": "dynamis.png",
+            "Alpha": 255,
+            "ScalingAlgorithm": "Nearest-neighbor",
+            "Name": "scalableImage1",
+            "X": -13,
+            "Y": 103,
+            "Width": 653,
+            "Height": 344,
+            "Type": "ScalableImage",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [],
