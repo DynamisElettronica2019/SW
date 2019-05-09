@@ -77,6 +77,10 @@ void SPI_invert_colors(SPI_HandleTypeDef *hspi);
 void SPI_brightness(SPI_HandleTypeDef *hspi);
 void SPI_flip_vertical(SPI_HandleTypeDef *hspi);
 void SPI_flip_horizontal(SPI_HandleTypeDef *hspi);
+void SPI_setEXTC(SPI_HandleTypeDef *hspi);
+void SPI_setRGBIF(SPI_HandleTypeDef *hspi);
+void SPI_setPANEL(SPI_HandleTypeDef *hspi);
+void SPI_setGAMMA(SPI_HandleTypeDef *hspi);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

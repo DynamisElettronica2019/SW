@@ -31,11 +31,12 @@ protected:
     touchgfx::Box box3;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextArea textArea1;
-    touchgfx::Box box2;
+    touchgfx::ScalableImage scalableImage1;
     touchgfx::Box box4;
     touchgfx::Box box4_1;
     touchgfx::Box box4_2;
-    touchgfx::ScalableImage scalableImage1;
+    touchgfx::Box box4_1_1;
+    touchgfx::Box box4_1_1_1;
 
 private:
 

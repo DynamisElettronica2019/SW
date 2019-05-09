@@ -21,30 +21,35 @@ Screen1ViewBase::Screen1ViewBase()
     textArea1.setLinespacing(0);
     textArea1.setTypedText(TypedText(T_SINGLEUSEID1));
 
-    box2.setPosition(214, 256, 212, 164);
-    box2.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    scalableImage1.setBitmap(Bitmap(BITMAP_DYNAMIS_ID));
+    scalableImage1.setPosition(331, 303, 960, 557);
+    scalableImage1.setVisible(false);
+    scalableImage1.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
 
-    box4.setPosition(494, 0, 146, 88);
+    box4.setPosition(29, 226, 205, 98);
     box4.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
 
-    box4_1.setPosition(494, 88, 146, 88);
+    box4_1.setPosition(202, 226, 205, 98);
     box4_1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
 
-    box4_2.setPosition(494, 168, 146, 88);
+    box4_2.setPosition(407, 226, 205, 98);
     box4_2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 255));
 
-    scalableImage1.setBitmap(Bitmap(BITMAP_DYNAMIS_ID));
-    scalableImage1.setPosition(-13, 103, 653, 344);
-    scalableImage1.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
+    box4_1_1.setPosition(17, 121, 173, 95);
+    box4_1_1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 0));
+
+    box4_1_1_1.setPosition(457, 121, 173, 95);
+    box4_1_1_1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 255));
 
     add(box3);
     add(boxWithBorder1);
     add(textArea1);
-    add(box2);
+    add(scalableImage1);
     add(box4);
     add(box4_1);
     add(box4_2);
-    add(scalableImage1);
+    add(box4_1_1);
+    add(box4_1_1_1);
 }
 
 void Screen1ViewBase::setupScreen()

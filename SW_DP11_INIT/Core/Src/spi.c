@@ -52,7 +52,7 @@
 
 /* USER CODE BEGIN 0 */
 
-uint8_t spiData[4];
+uint8_t spiData[130];
 
 /* USER CODE END 0 */
 
@@ -159,18 +159,25 @@ void SPI_ltdc_init_sequence(SPI_HandleTypeDef *hspi)
 	HAL_Delay(120);
 	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_11, GPIO_PIN_SET);
 	
-	HAL_Delay(10);
-	SPI_sleep_out(hspi);
-	HAL_Delay(130);
+	SPI_setEXTC(hspi);
 	SPI_colmod(hspi);
-	//HAL_Delay(10);
-	SPI_display_ON(hspi);
-	HAL_Delay(10);
+	SPI_setRGBIF(hspi);
+	SPI_flip_horizontal(hspi);
+	SPI_setPANEL(hspi);
+	
+	HAL_Delay(5);
+	SPI_setGAMMA(hspi);
+	HAL_Delay(5);
+	
+	SPI_sleep_out(hspi);
+	
+	HAL_Delay(130);
+	
 	SPI_invert_colors(hspi);
 	SPI_brightness(hspi);
-	//SPI_flip_vertical(hspi);
-	SPI_flip_horizontal(hspi);
 
+	SPI_display_ON(hspi);	
+	
 	HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
 }
 
@@ -370,6 +377,164 @@ void SPI_flip_horizontal(SPI_HandleTypeDef *hspi)
 
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 }
+
+void SPI_setEXTC(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0xB9;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0xFF;
+	spiData[3] = 0x01;
+	
+	spiData[4] = 0x83;
+	spiData[5] = 0x01;
+
+	spiData[6] = 0x63;
+	spiData[7] = 0x01;
+	
+	HAL_SPI_Transmit(hspi, spiData, 4, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+void SPI_setRGBIF(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0xB3;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0x01;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+void SPI_setPANEL(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+	
+	spiData[0] =  0xCC;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0x03;
+	spiData[3] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 2, 5);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+void SPI_setGAMMA(SPI_HandleTypeDef *hspi)
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+//	HAL_Delay();
+
+	spiData[0] =  0xE0;
+	spiData[1] = 	0x00;
+
+	spiData[2] = 0x00;
+	spiData[3] = 0x01;
+	
+	spiData[4] = 0x4F;
+	spiData[5] = 0x01;
+	
+	spiData[6] = 0x5F;
+	spiData[7] = 0x01;
+	
+  spiData[8] = 0x72;
+	spiData[9] = 0x01;
+	
+	spiData[10] = 0x33;
+	spiData[11] = 0x01;
+	
+	spiData[12] = 0x2F;
+	spiData[13] = 0x01;
+	
+	spiData[14] = 0x80;
+	spiData[15] = 0x01;
+	
+	spiData[16] = 0x89;
+	spiData[17] = 0x01;
+	
+	spiData[18] = 0x0E;
+	spiData[19] = 0x01;
+	
+	spiData[20] = 0xD0;
+	spiData[21] = 0x01;
+	
+	spiData[22] = 0x52;
+	spiData[23] = 0x01;
+	
+	spiData[24] = 0x11;
+	spiData[25] = 0x01;
+	
+	spiData[26] = 0x14;
+	spiData[27] = 0x01;
+	
+	spiData[28] = 0x57;
+	spiData[29] = 0x01;
+
+	spiData[30] = 0x1C;
+	spiData[31] = 0x01;
+
+	spiData[32] = 0x00;
+	spiData[33] = 0x01;
+	
+	spiData[34] = 0x4F;
+	spiData[35] = 0x01;
+	
+	spiData[36] = 0x5F;
+	spiData[37] = 0x01;
+	
+	spiData[38] = 0x72;
+	spiData[39] = 0x01;
+	
+	spiData[40] = 0x33;
+	spiData[41] = 0x01;
+	
+	spiData[42] = 0x2F;
+	spiData[43] = 0x01;
+	
+	spiData[44] = 0x80;
+	spiData[45] = 0x01;
+
+	spiData[46] = 0x89;
+	spiData[47] = 0x01;
+	
+	spiData[48] = 0x0E;
+	spiData[49] = 0x01;
+	
+	spiData[50] = 0xD0;
+	spiData[51] = 0x01;
+	
+	spiData[52] = 0x52;
+	spiData[53] = 0x01;
+	
+	spiData[54] = 0x11;
+	spiData[55] = 0x01;
+	
+	spiData[56] = 0x14;
+	spiData[57] = 0x01;
+	
+	spiData[58] = 0x57;
+	spiData[59] = 0x01;
+	
+	spiData[60] = 0x1C;
+	spiData[61] = 0x01;
+
+	HAL_SPI_Transmit(hspi, spiData, 30, 100);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
 
 /* USER CODE END 1 */
 

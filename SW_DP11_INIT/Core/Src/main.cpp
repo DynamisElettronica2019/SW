@@ -146,7 +146,8 @@ int main(void)
   MX_TIM12_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-		
+	
+	QSPI_MemoryMappedMode();
 	SPI_ltdc_init_sequence(&hspi1);
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
       
