@@ -18,7 +18,9 @@ public:
     ModelListener() : model(0) {}
 
     virtual ~ModelListener() {}
-
+			
+			virtual void update() {}
+				
     /**
      * Sets the model pointer to point to the Model object. Called automatically
      * when switching screen.
