@@ -1,4 +1,3 @@
-
 #include <touchgfx/hal/Types.hpp>
 
 FONT_LOCATION_FLASH_PRAGMA

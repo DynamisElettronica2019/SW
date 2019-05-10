@@ -861,16 +861,6 @@
               <FilePath>../touchgfx/generated/gui_generated/src/endurance_screen/enduranceviewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_Roboto_Bold_20_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_roboto_bold_20_4bpp.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Font_Roboto_Bold_25_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_roboto_bold_25_4bpp.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Font_Roboto_Regular_180_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_180_4bpp.cpp</FilePath>
@@ -899,16 +889,6 @@
               <FileName>FrontendApplicationBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Kerning_Roboto_Bold_20_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_bold_20_4bpp.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Kerning_Roboto_Bold_25_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_bold_25_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_Roboto_Regular_180_4bpp.cpp</FileName>
@@ -949,16 +929,6 @@
               <FileName>SKIDPADViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/skidpad_screen/skidpadviewbase.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Table_Roboto_Bold_20_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_roboto_bold_20_4bpp.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Table_Roboto_Bold_25_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_roboto_bold_25_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_Roboto_Regular_180_4bpp.cpp</FileName>

@@ -50,7 +50,6 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndValue4;
     touchgfx::TextAreaWithOneWildcard textIndValue5;
     touchgfx::TextAreaWithOneWildcard textIndValue6;
-    touchgfx::TextAreaWithOneWildcard textIndGearValue;
     touchgfx::TextArea TEXTIndTc;
     touchgfx::TextArea TEXTIndMap;
     touchgfx::TextAreaWithOneWildcard textIndTcValue;
@@ -62,6 +61,7 @@ protected:
     touchgfx::TextArea TEXTRpmLimiter;
     touchgfx::TextAreaWithOneWildcard textRpmLimiterValue;
     touchgfx::Box boxBlack;
+    touchgfx::TextAreaWithOneWildcard textIndGearValue;
 
     /*
      * Wildcard Buffers
@@ -90,8 +90,6 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndValue5Buffer[TEXTINDVALUE5_SIZE];
     static const uint16_t TEXTINDVALUE6_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValue6Buffer[TEXTINDVALUE6_SIZE];
-    static const uint16_t TEXTINDGEARVALUE_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar textIndGearValueBuffer[TEXTINDGEARVALUE_SIZE];
     static const uint16_t TEXTINDTCVALUE_SIZE = 3;
     touchgfx::Unicode::UnicodeChar textIndTcValueBuffer[TEXTINDTCVALUE_SIZE];
     static const uint16_t TEXTINDMAPVALUE_SIZE = 3;
@@ -100,6 +98,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndAcquisitionValueBuffer[TEXTINDACQUISITIONVALUE_SIZE];
     static const uint16_t TEXTRPMLIMITERVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar textRpmLimiterValueBuffer[TEXTRPMLIMITERVALUE_SIZE];
+    static const uint16_t TEXTINDGEARVALUE_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar textIndGearValueBuffer[TEXTINDGEARVALUE_SIZE];
 
 private:
 

@@ -1,3 +1,4 @@
+
 #include <touchgfx/Font.hpp>
 
 #ifndef NO_USING_NAMESPACE_TOUCHGFX
@@ -60,3 +61,4 @@ KEEP extern const touchgfx::GlyphNode glyphs_Roboto_Regular_180_4bpp[] FONT_LOCA
     {257807,  91,  34, 174, 147,  12,  48, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     {260765,  93,  35, 174, 147,   0,  48, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
 };
+
