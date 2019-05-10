@@ -11,6 +11,7 @@
 #define TIT_LEN 7				//------------- Lunghezza massima della stringa va visualizzare come titolo
 #define START_BOARD 10	//------------- Inizio indicatori per schermata board debug !!!(messi a caso)!!!
 #define END_BOARD 20		//------------- Fine indicatori per schermata board debug		!!!(messi a caso)!!!
+
 	
 /********************DATA TYPE********************/	 // per ora vengono creati in freertos.c e dichiarati come extern dalle altre parti
 

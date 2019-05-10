@@ -26,6 +26,7 @@ protected:
 
 		touchgfx::Unicode::UnicodeChar Gear[3];
 		touchgfx::Unicode::UnicodeChar Acquisition[5];
+		int cont;
 };
 
 #endif // ENDURANCE_VIEW_HPP

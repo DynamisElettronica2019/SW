@@ -8,9 +8,66 @@
 #include <common/Partition.hpp>
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
+#include <gui/endurance_screen/ENDURANCEView.hpp>
+#include <gui/endurance_screen/ENDURANCEPresenter.hpp>
+#include <gui/skidpad_screen/SKIDPADView.hpp>
+#include <gui/skidpad_screen/SKIDPADPresenter.hpp>
+#include <gui/autocross_screen/AUTOCROSSView.hpp>
+#include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
+#include <gui/acceleration_screen/ACCELERATIONView.hpp>
+#include <gui/acceleration_screen/ACCELERATIONPresenter.hpp>
+#include <gui/settings_screen/SETTINGSView.hpp>
+#include <gui/settings_screen/SETTINGSPresenter.hpp>
+#include <gui/board_debug_screen/BOARD_DEBUGView.hpp>
+#include <gui/board_debug_screen/BOARD_DEBUGPresenter.hpp>
+#include <gui/debug_mode_screen/DEBUG_MODEView.hpp>
+#include <gui/debug_mode_screen/DEBUG_MODEPresenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 
@@ -35,8 +92,15 @@ public:
      * A list of all view types. Must end with meta::Nil.
      * @note All view types used in the application MUST be added to this list!
      */
-    typedef meta::TypeList< Screen1View,
-            meta::Nil
+    typedef meta::TypeList< ENDURANCEView,
+            meta::TypeList< SKIDPADView,
+            meta::TypeList< AUTOCROSSView,
+            meta::TypeList< ACCELERATIONView,
+            meta::TypeList< SETTINGSView,
+            meta::TypeList< BOARD_DEBUGView,
+            meta::TypeList< DEBUG_MODEView,
+            meta::TypeList< Screen1View,
+            meta::Nil > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -48,8 +112,15 @@ public:
      * A list of all presenter types. Must end with meta::Nil.
      * @note All presenter types used in the application MUST be added to this list!
      */
-    typedef meta::TypeList< Screen1Presenter,
-            meta::Nil
+    typedef meta::TypeList< ENDURANCEPresenter,
+            meta::TypeList< SKIDPADPresenter,
+            meta::TypeList< AUTOCROSSPresenter,
+            meta::TypeList< ACCELERATIONPresenter,
+            meta::TypeList< SETTINGSPresenter,
+            meta::TypeList< BOARD_DEBUGPresenter,
+            meta::TypeList< DEBUG_MODEPresenter,
+            meta::TypeList< Screen1Presenter,
+            meta::Nil > > > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -72,7 +143,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoScreen1ScreenNoTransition();
+        app.gotoENDURANCEScreenNoTransition();
     }
 protected:
     FrontendHeapBase(AbstractPartition& presenters, AbstractPartition& views, AbstractPartition& transitions, FrontendApplication& app)

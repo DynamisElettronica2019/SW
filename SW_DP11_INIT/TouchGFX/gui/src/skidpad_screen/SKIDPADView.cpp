@@ -16,6 +16,14 @@ SKIDPADView::SKIDPADView()
 void SKIDPADView::setupScreen()
 {
     SKIDPADViewBase::setupScreen();
+	
+		SkiPointer[0] = 0;
+		SkiPointer[1] = 1;
+		SkiPointer[2] = 2;
+		SkiPointer[3] = 3;
+		SkiPointer[4] = 4;
+		SkiPointer[5] = 5;
+		boxIndicatorGear.invalidate();
 }
 
 void SKIDPADView::tearDownScreen()
@@ -24,7 +32,7 @@ void SKIDPADView::tearDownScreen()
 }
 
 void SKIDPADView::refreshSkidpad()
-{
+{	
 	SKIDPADView::checkChangeScreen();
 	
 	/******************TITOLI*******************/
@@ -46,7 +54,7 @@ void SKIDPADView::refreshSkidpad()
 	if ( Indicators[SkiPointer[0]].TIPO == INT )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[SkiPointer[0]].intValore);
 	else
-		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[SkiPointer[0]].floatValore);
+		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[SkiPointer[0]].floatValore);
 	
 	if ( Indicators[SkiPointer[1]].TIPO == INT )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[SkiPointer[1]].intValore);
@@ -112,6 +120,8 @@ void SKIDPADView::refreshSkidpad()
 	textIndTcValue.invalidate();
 	textIndMapValue.invalidate();
 	
+	boxIndicatorGear.invalidate();
+
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();
 	

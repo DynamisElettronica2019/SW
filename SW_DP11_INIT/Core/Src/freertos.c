@@ -56,9 +56,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-
 #include "general.h"
-
+#include "data.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -78,6 +77,19 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+
+Indicator_Value Indicators[N_INDICATORS];	//---- Deve essere inserita una funzione dove si inizializza il vettore di indicatori
+int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
+int box_driveMode;
+int box_indicator;
+uint8_t pointer_scroll;
+int board_debug_scroll;
+extern char driveMode;
+int debug_mode_scroll_sx;
+int debug_mode_scroll_dx;
+
+//Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
+uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -496,6 +508,15 @@ void ledBlinkTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+		Indicators[0] = (Indicator_Value) {EBB, INT,"EBB", 5, 1.1, "?"};
+    Indicators[1] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "?"};
+		Indicators[2] = (Indicator_Value) {EBB, INT,"EBB", 5, 1.1, "?"};
+    Indicators[3] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "?"};
+		Indicators[4] = (Indicator_Value) {EBB, INT,"EBB", 5, 1.1, "?"};
+    Indicators[5] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "?"};
+		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "1"};
+		Indicators[MAP] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 1, 99.8, "?"};
+		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 1, 99.8, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
     osDelay(250);
   }

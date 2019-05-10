@@ -31,10 +31,20 @@ void DEBUG_MODEView::refreshDebugMode()
 	touchgfx::Unicode::strncpy( Title3sx, Indicators[debug_mode_scroll_sx - 1].NOME, TIT_LEN);		
 	touchgfx::Unicode::strncpy( Title4sx, Indicators[debug_mode_scroll_sx].NOME, TIT_LEN);
 
-	touchgfx::Unicode::strncpy( Title1sx, Indicators[debug_mode_scroll_dx - 3].NOME, TIT_LEN);	
-	touchgfx::Unicode::strncpy( Title2sx, Indicators[debug_mode_scroll_dx - 2].NOME, TIT_LEN);		
-	touchgfx::Unicode::strncpy( Title3sx, Indicators[debug_mode_scroll_dx - 1].NOME, TIT_LEN);		
-	touchgfx::Unicode::strncpy( Title4sx, Indicators[debug_mode_scroll_dx].NOME, TIT_LEN);	
+	touchgfx::Unicode::strncpy( Title1dx, Indicators[debug_mode_scroll_dx - 3].NOME, TIT_LEN);	
+	touchgfx::Unicode::strncpy( Title2dx, Indicators[debug_mode_scroll_dx - 2].NOME, TIT_LEN);		
+	touchgfx::Unicode::strncpy( Title3dx, Indicators[debug_mode_scroll_dx - 1].NOME, TIT_LEN);		
+	touchgfx::Unicode::strncpy( Title4dx, Indicators[debug_mode_scroll_dx].NOME, TIT_LEN);	
+	
+	Unicode::snprintf(textIndTitle1sxBuffer, TEXTINDTITLE1SX_SIZE, "%s", Title1sx);	
+	Unicode::snprintf(textIndTitle2sxBuffer, TEXTINDTITLE2SX_SIZE, "%s", Title2sx);	
+	Unicode::snprintf(textIndTitle3sxBuffer, TEXTINDTITLE3SX_SIZE, "%s", Title3sx);	
+	Unicode::snprintf(textIndTitle4sxBuffer, TEXTINDTITLE4SX_SIZE, "%s", Title4sx);	
+
+	Unicode::snprintf(textIndTitle1dxBuffer, TEXTINDTITLE1DX_SIZE, "%s", Title1dx);	
+	Unicode::snprintf(textIndTitle2dxBuffer, TEXTINDTITLE2DX_SIZE, "%s", Title2dx);	
+	Unicode::snprintf(textIndTitle3dxBuffer, TEXTINDTITLE3DX_SIZE, "%s", Title3dx);	
+	Unicode::snprintf(textIndTitle4dxBuffer, TEXTINDTITLE4DX_SIZE, "%s", Title4dx);	
 	
 //----- Colonna di sinistra
 	
@@ -127,4 +137,3 @@ void DEBUG_MODEView::checkChangeScreen()
 					break;
 	}		
 }
-

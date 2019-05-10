@@ -104,14 +104,15 @@ void touchgfx_init()
     HAL& hal = touchgfx_generic_init<STM32F7HAL>(dma, display, tc, dispWidth, dispHeight,(uint16_t*) 0, 
                                                0, 0);
 
-    hal.setFrameBufferStartAddress((uint16_t*)frameBuf0, bitdepth, false, false);
-
+    //hal.setFrameBufferStartAddress((uint16_t*)frameBuf0, bitdepth, false, false);
+    hal.setFrameBufferStartAddress((uint16_t*)frameBuf0);
+	
     hal.setTouchSampleRate(2);
     hal.setFingerSize(1);
 
     // By default frame rate compensation is off.
     // Enable frame rate compensation to smooth out animations in case there is periodic slow frame rates.
-    hal.setFrameRateCompensation(false);
+    hal.setFrameRateCompensation(true);
 
     // This platform can handle simultaneous DMA and TFT accesses to SDRAM, so disable lock to increase performance.
     hal.lockDMAToFrontPorch(false);

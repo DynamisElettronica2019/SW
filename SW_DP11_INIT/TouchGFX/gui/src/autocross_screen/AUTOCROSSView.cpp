@@ -16,6 +16,13 @@ AUTOCROSSView::AUTOCROSSView()
 void AUTOCROSSView::setupScreen()
 {
     AUTOCROSSViewBase::setupScreen();
+		AutPointer[0] = 0;
+		AutPointer[1] = 1;
+		AutPointer[2] = 2;
+		AutPointer[3] = 3;
+		AutPointer[4] = 4;
+		AutPointer[5] = 5;	
+		boxIndicatorGear.invalidate();
 }
 
 void AUTOCROSSView::tearDownScreen()
@@ -25,8 +32,9 @@ void AUTOCROSSView::tearDownScreen()
 
 void AUTOCROSSView::refreshAutocross()
 {
+
 	AUTOCROSSView::checkChangeScreen();
-	
+
 	/******************TITOLI*******************/
 	touchgfx::Unicode::strncpy( Title1, Indicators[AutPointer[0]].NOME, TIT_LEN);	
 	touchgfx::Unicode::strncpy( Title2, Indicators[AutPointer[1]].NOME, TIT_LEN);		
@@ -46,8 +54,8 @@ void AUTOCROSSView::refreshAutocross()
 	if ( Indicators[AutPointer[0]].TIPO == INT )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[AutPointer[0]].intValore);
 	else
-		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AutPointer[0]].floatValore);
-	
+		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AutPointer[0]].floatValore);
+
 	if ( Indicators[AutPointer[1]].TIPO == INT )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[AutPointer[1]].intValore);
 	else
@@ -98,6 +106,8 @@ void AUTOCROSSView::refreshAutocross()
 	
 	/****************REFFRESH OGGETTI*****************/
 	
+	//background.invalidate();
+
 	textIndTitle1.invalidate();
 	textIndTitle2.invalidate();
 	textIndTitle3.invalidate();
@@ -115,6 +125,8 @@ void AUTOCROSSView::refreshAutocross()
 	textIndGearValue.invalidate();
 	textIndTcValue.invalidate();
 	textIndMapValue.invalidate();
+
+	boxIndicatorGear.invalidate();
 	
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();

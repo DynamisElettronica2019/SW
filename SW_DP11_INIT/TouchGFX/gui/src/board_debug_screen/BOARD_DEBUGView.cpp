@@ -23,7 +23,7 @@ void BOARD_DEBUGView::tearDownScreen()
 void BOARD_DEBUGView::refreshBoardDebug()
 {
 	BOARD_DEBUGView::checkChangeScreen();
-	
+
 	if (board_debug_scroll == START_BOARD){
 		pointer1 = END_BOARD;
 		pointer2 = board_debug_scroll;

@@ -16,6 +16,15 @@ ACCELERATIONView::ACCELERATIONView()
 void ACCELERATIONView::setupScreen()
 {
     ACCELERATIONViewBase::setupScreen();
+		AccPointer[0] = 0;
+		AccPointer[1] = 1;
+		AccPointer[2] = 2;
+		AccPointer[3] = 3;
+		AccPointer[4] = 4;
+		AccPointer[5] = 5;
+		boxIndicatorGear.invalidate();
+		cont = 0;
+
 }
 
 void ACCELERATIONView::tearDownScreen()
@@ -25,7 +34,10 @@ void ACCELERATIONView::tearDownScreen()
 
 void ACCELERATIONView::refreshAcceleration()
 {
+	
 	ACCELERATIONView::checkChangeScreen();
+	
+	cont ++;
 	
 	/******************TITOLI*******************/
 	touchgfx::Unicode::strncpy( Title1, Indicators[AccPointer[0]].NOME, TIT_LEN);	
@@ -98,7 +110,10 @@ void ACCELERATIONView::refreshAcceleration()
 	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
 	
 	/****************REFFRESH OGGETTI*****************/
+
 	
+	//background.invalidate();
+
 	textIndTitle1.invalidate();
 	textIndTitle2.invalidate();
 	textIndTitle3.invalidate();
@@ -116,6 +131,8 @@ void ACCELERATIONView::refreshAcceleration()
 	textIndGearValue.invalidate();
 	textIndTcValue.invalidate();
 	textIndMapValue.invalidate();
+	
+	boxIndicatorGear.invalidate();
 	
 	textRpmLimiterValue.invalidate();
 	

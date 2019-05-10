@@ -8,6 +8,7 @@ extern Indicator_Value Indicators[N_INDICATORS];
 //extern Indicator_Pointer EndPointer;
 extern uint8_t EndPointer[6];
 
+
 ENDURANCEView::ENDURANCEView()
 {
 
@@ -15,7 +16,15 @@ ENDURANCEView::ENDURANCEView()
 
 void ENDURANCEView::setupScreen()
 {
+		boxIndicatorGear.invalidate();
     ENDURANCEViewBase::setupScreen();
+		EndPointer[0] = 0;
+		EndPointer[1] = 1;
+		EndPointer[2] = 2;
+		EndPointer[3] = 3;
+		EndPointer[4] = 4;
+		EndPointer[5] = 5;
+		cont = 0;
 }
 
 void ENDURANCEView::tearDownScreen()
@@ -24,7 +33,9 @@ void ENDURANCEView::tearDownScreen()
 }
 
 void ENDURANCEView::refreshEndurance()
-{
+{	
+	cont ++;
+
 	ENDURANCEView::checkChangeScreen();
 	
 	/******************TITOLI*******************/
@@ -44,7 +55,7 @@ void ENDURANCEView::refreshEndurance()
 	
 	/******************VALORI*******************/
 	if ( Indicators[EndPointer[0]].TIPO == INT )
-		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[EndPointer[0]].intValore);
+		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", cont);
 	else
 		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[EndPointer[0]].floatValore);
 	
@@ -112,9 +123,11 @@ void ENDURANCEView::refreshEndurance()
 	textIndTcValue.invalidate();
 	textIndMapValue.invalidate();
 	
+	boxIndicatorGear.invalidate();
+	
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();
-	
+
 }
 
 void ENDURANCEView::checkChangeScreen()

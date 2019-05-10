@@ -26,8 +26,6 @@ protected:
 		touchgfx::Unicode::UnicodeChar Title2dx[6];
 		touchgfx::Unicode::UnicodeChar Title3dx[6];
 		touchgfx::Unicode::UnicodeChar Title4dx[6];
-
-
 };
 
 #endif // DEBUG_MODE_VIEW_HPP

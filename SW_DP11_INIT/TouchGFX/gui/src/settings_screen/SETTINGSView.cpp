@@ -14,6 +14,7 @@ extern uint8_t EndPointer[6];
 extern uint8_t AutPointer[6];
 extern uint8_t SkiPointer[6];
 
+
 SETTINGSView::SETTINGSView()
 {
 
@@ -21,7 +22,7 @@ SETTINGSView::SETTINGSView()
 
 void SETTINGSView::setupScreen()
 {
-		schermata_settings = 0;		// appena si entra nella modalità settings la variabile viene messa a 0, verrà messa a 1 in freertos.c
+		schermata_settings = 1;		// appena si entra nella modalità settings la variabile viene messa a 0, verrà messa a 1 in freertos.c
 		box_driveMode = 0;				// viene incrementata a 1, 2, 3 e poi riportata a 0.
 		box_indicator = 0;				// viene incrementata a 1, 2, 3, 4, 5 e poi riportata a 0.
 		pointer_scroll = 0;
@@ -49,7 +50,7 @@ void SETTINGSView::refreshSettings()
 			
 			SETTINGSView::moveSelectedBox();
 			
-			switch (box_driveMode){			//drive mode tiene traccia di quale modalità è stata selezionata
+			switch (box_driveMode){
 				case 0:
 					touchgfx::Unicode::strncpy( TitleDriveMode, "ACCELERATION", 15);					
 					SETTINGSView::displayAcceleration();
@@ -67,7 +68,7 @@ void SETTINGSView::refreshSettings()
 					SETTINGSView::displaySkidpad();
 					break;
 			}
-			Unicode::snprintf(textIndDriveModeBuffer, TEXTINDDRIVEMODE_SIZE, "%s", Title1);	
+			Unicode::snprintf(textIndDriveModeBuffer, TEXTINDDRIVEMODE_SIZE, "%s", TitleDriveMode);	
 			
 			textIndTitle1.invalidate();
 			textIndTitle2.invalidate();
@@ -84,6 +85,8 @@ void SETTINGSView::refreshSettings()
 			textIndValue4.invalidate();
 			textIndValue5.invalidate();
 			textIndValue6.invalidate();
+			
+			
 					
 			break;
 	}

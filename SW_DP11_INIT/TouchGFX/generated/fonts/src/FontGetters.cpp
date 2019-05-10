@@ -6,39 +6,51 @@
 using namespace touchgfx;
 #endif
 
-// verdana_10_4bpp
-extern const touchgfx::GlyphNode glyphs_verdana_10_4bpp[];
-extern const uint8_t unicodes_verdana_10_4bpp[];
-extern const touchgfx::KerningNode kerning_verdana_10_4bpp[];
-touchgfx::InternalFlashFont& getFont_verdana_10_4bpp();
+// Roboto_Regular_25_4bpp
+extern const touchgfx::GlyphNode glyphs_Roboto_Regular_25_4bpp[];
+extern const uint8_t unicodes_Roboto_Regular_25_4bpp[];
+extern const touchgfx::KerningNode kerning_Roboto_Regular_25_4bpp[];
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_25_4bpp();
 
-touchgfx::InternalFlashFont& getFont_verdana_10_4bpp()
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_25_4bpp()
 {
-    static touchgfx::InternalFlashFont verdana_10_4bpp(glyphs_verdana_10_4bpp, 0, 10, 0, 4, 0, 0, unicodes_verdana_10_4bpp, kerning_verdana_10_4bpp, 0, 0);
-    return verdana_10_4bpp;
+    static touchgfx::InternalFlashFont Roboto_Regular_25_4bpp(glyphs_Roboto_Regular_25_4bpp, 57, 25, 5, 4, 0, 1, unicodes_Roboto_Regular_25_4bpp, kerning_Roboto_Regular_25_4bpp, 0, 0);
+    return Roboto_Regular_25_4bpp;
 }
 
-// verdana_20_4bpp
-extern const touchgfx::GlyphNode glyphs_verdana_20_4bpp[];
-extern const uint8_t unicodes_verdana_20_4bpp[];
-extern const touchgfx::KerningNode kerning_verdana_20_4bpp[];
-touchgfx::InternalFlashFont& getFont_verdana_20_4bpp();
+// Roboto_Regular_63_4bpp
+extern const touchgfx::GlyphNode glyphs_Roboto_Regular_63_4bpp[];
+extern const uint8_t unicodes_Roboto_Regular_63_4bpp[];
+extern const touchgfx::KerningNode kerning_Roboto_Regular_63_4bpp[];
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_63_4bpp();
 
-touchgfx::InternalFlashFont& getFont_verdana_20_4bpp()
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_63_4bpp()
 {
-    static touchgfx::InternalFlashFont verdana_20_4bpp(glyphs_verdana_20_4bpp, 0, 20, 0, 4, 0, 0, unicodes_verdana_20_4bpp, kerning_verdana_20_4bpp, 0, 0);
-    return verdana_20_4bpp;
+    static touchgfx::InternalFlashFont Roboto_Regular_63_4bpp(glyphs_Roboto_Regular_63_4bpp, 56, 63, 14, 4, 0, 1, unicodes_Roboto_Regular_63_4bpp, kerning_Roboto_Regular_63_4bpp, 0, 0);
+    return Roboto_Regular_63_4bpp;
 }
 
-// verdana_80_4bpp
-extern const touchgfx::GlyphNode glyphs_verdana_80_4bpp[];
-extern const uint8_t unicodes_verdana_80_4bpp[];
-extern const touchgfx::KerningNode kerning_verdana_80_4bpp[];
-touchgfx::InternalFlashFont& getFont_verdana_80_4bpp();
+// Roboto_Regular_180_4bpp
+extern const touchgfx::GlyphNode glyphs_Roboto_Regular_180_4bpp[];
+extern const uint8_t unicodes_Roboto_Regular_180_4bpp[];
+extern const touchgfx::KerningNode kerning_Roboto_Regular_180_4bpp[];
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_180_4bpp();
 
-touchgfx::InternalFlashFont& getFont_verdana_80_4bpp()
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_180_4bpp()
 {
-    static touchgfx::InternalFlashFont verdana_80_4bpp(glyphs_verdana_80_4bpp, 4, 80, 1, 4, 0, 0, unicodes_verdana_80_4bpp, kerning_verdana_80_4bpp, 0, 0);
-    return verdana_80_4bpp;
+    static touchgfx::InternalFlashFont Roboto_Regular_180_4bpp(glyphs_Roboto_Regular_180_4bpp, 52, 180, 40, 4, 0, 0, unicodes_Roboto_Regular_180_4bpp, kerning_Roboto_Regular_180_4bpp, 63, 0);
+    return Roboto_Regular_180_4bpp;
+}
+
+// Roboto_Regular_420_4bpp
+extern const touchgfx::GlyphNode glyphs_Roboto_Regular_420_4bpp[];
+extern const uint8_t unicodes_Roboto_Regular_420_4bpp[];
+extern const touchgfx::KerningNode kerning_Roboto_Regular_420_4bpp[];
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_420_4bpp();
+
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_420_4bpp()
+{
+    static touchgfx::InternalFlashFont Roboto_Regular_420_4bpp(glyphs_Roboto_Regular_420_4bpp, 9, 420, 4, 4, 0, 0, unicodes_Roboto_Regular_420_4bpp, kerning_Roboto_Regular_420_4bpp, 63, 0);
+    return Roboto_Regular_420_4bpp;
 }
 

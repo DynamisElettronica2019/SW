@@ -1,4 +1,3 @@
-
 #include <touchgfx/Font.hpp>
 
 #ifndef NO_USING_NAMESPACE_TOUCHGFX
@@ -59,38 +58,9 @@ KEEP extern const touchgfx::GlyphNode glyphs_Roboto_Regular_63_4bpp[] FONT_LOCAT
     { 31212,  89,  38,  45,  45,   0,  38, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 32067,  90,  34,  45,  45,   2,  38, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 32832,  91,  13,  61,  51,   4,  17, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 33259,  92,  25,  49,  45,   1,  26, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 33896,  93,  12,  61,  51,   0,  17, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 34262,  94,  24,  23,  45,   1,  26, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 34538,  95,  29,   5,   0,   0,  28, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 34613,  96,  14,   9,  47,   1,  19, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 34676,  97,  28,  35,  34,   3,  34, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 35166,  98,  29,  49,  48,   4,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 35901,  99,  29,  35,  34,   2,  33, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 36426, 100,  30,  49,  48,   2,  36, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 37161, 101,  30,  35,  34,   2,  33, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 37686, 102,  21,  48,  48,   1,  22, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 38214, 103,  30,  47,  34,   2,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 38919, 104,  27,  48,  48,   4,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 39591, 105,   8,  46,  46,   4,  15, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 39775, 106,  13,  59,  46,  -2,  15, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 40188, 107,  28,  48,  48,   4,  32, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 40860, 108,   7,  48,  48,   4,  15, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 41052, 109,  47,  34,  34,   4,  55, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 41868, 110,  27,  34,  34,   4,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 42344, 111,  32,  35,  34,   2,  36, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 42904, 112,  29,  47,  34,   4,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 43609, 113,  29,  47,  34,   2,  36, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 44314, 114,  17,  34,  34,   4,  21, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 44620, 115,  28,  35,  34,   2,  32, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 45110, 116,  19,  43,  42,   0,  21, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 45540, 117,  27,  34,  33,   4,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 46016, 118,  29,  33,  33,   1,  31, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 46511, 119,  45,  33,  33,   1,  47, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 47270, 120,  29,  33,  33,   1,  31, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 47765, 121,  30,  46,  33,   0,  30, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 48455, 122,  28,  33,  33,   2,  31, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 48917, 123,  20,  62,  50,   1,  21, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 49537, 125,  20,  62,  50,   0,  21, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
+    { 33259,  93,  12,  61,  51,   0,  17, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
+    { 33625,  95,  29,   5,   0,   0,  28, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
+    { 33700, 100,  30,  49,  48,   2,  36, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
+    { 34435, 105,   8,  46,  46,   4,  15, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
+    { 34619, 110,  27,  34,  34,   4,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
 };
-
