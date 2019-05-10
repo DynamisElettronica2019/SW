@@ -756,12 +756,31 @@
             "Moveable": false
           },
           {
+            "Color": {
+              "Red": 237,
+              "Green": 255,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "Name": "boxDriveMode",
+            "X": 202,
+            "Y": 346,
+            "Width": 237,
+            "Height": 31,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "TextId": "SingleUseId36",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": false,
@@ -773,25 +792,6 @@
             "Height": 33,
             "Type": "TextArea",
             "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "Alpha": 255,
-            "Name": "boxBlack",
-            "X": 0,
-            "Y": 0,
-            "Width": 640,
-            "Height": 481,
-            "Type": "Box",
-            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -1224,7 +1224,7 @@
             },
             "Name": "textIndTitle3",
             "X": 8,
-            "Y": 390,
+            "Y": 388,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -1252,7 +1252,7 @@
             },
             "Name": "textIndTitle4",
             "X": 166,
-            "Y": 390,
+            "Y": 388,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -1280,7 +1280,7 @@
             },
             "Name": "textIndTitle5",
             "X": 324,
-            "Y": 390,
+            "Y": 388,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -1308,7 +1308,7 @@
             },
             "Name": "textIndTitle6",
             "X": 482,
-            "Y": 390,
+            "Y": 388,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -1659,6 +1659,25 @@
             "Moveable": false
           },
           {
+            "Color": {
+              "Red": 249,
+              "Green": 0,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "boxDriveMode",
+            "X": 202,
+            "Y": 347,
+            "Width": 237,
+            "Height": 31,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "TextId": "SingleUseId141",
             "TextRotation": "0",
             "Color": {
@@ -1727,25 +1746,6 @@
             "Height": 65,
             "Type": "TextArea",
             "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "Alpha": 255,
-            "Name": "boxBlack",
-            "X": 0,
-            "Y": -1,
-            "Width": 640,
-            "Height": 481,
-            "Type": "Box",
-            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -2613,12 +2613,31 @@
             "Moveable": false
           },
           {
+            "Color": {
+              "Red": 0,
+              "Green": 226,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "boxDriveMode",
+            "X": 202,
+            "Y": 346,
+            "Width": 237,
+            "Height": 31,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "TextId": "SingleUseId106",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": false,
@@ -2681,25 +2700,6 @@
             "Height": 65,
             "Type": "TextArea",
             "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "Alpha": 255,
-            "Name": "boxBlack",
-            "X": 0,
-            "Y": 0,
-            "Width": 640,
-            "Height": 481,
-            "Type": "Box",
-            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -3497,6 +3497,25 @@
             "Moveable": false
           },
           {
+            "Color": {
+              "Red": 0,
+              "Green": 29,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "boxDriveMode",
+            "X": 202,
+            "Y": 346,
+            "Width": 237,
+            "Height": 31,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "TextId": "SingleUseId68",
             "TextRotation": "0",
             "Color": {
@@ -3584,25 +3603,6 @@
             "Height": 33,
             "Type": "TextArea",
             "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "Alpha": 255,
-            "Name": "boxBlack",
-            "X": 0,
-            "Y": 0,
-            "Width": 640,
-            "Height": 481,
-            "Type": "Box",
-            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,

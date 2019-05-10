@@ -54,11 +54,11 @@ protected:
     touchgfx::TextArea TEXTIndMap;
     touchgfx::TextAreaWithOneWildcard textIndTcValue;
     touchgfx::TextAreaWithOneWildcard textIndMapValue;
+    touchgfx::Box boxDriveMode;
     touchgfx::TextArea TEXTIndAcquisition;
     touchgfx::Box boxAcquisition;
     touchgfx::TextAreaWithOneWildcard textIndAcquisitionValue;
     touchgfx::TextArea TEXTSkidpad;
-    touchgfx::Box boxBlack;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
 
     /*

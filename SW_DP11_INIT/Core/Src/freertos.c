@@ -86,6 +86,8 @@ int box_indicator;
 uint8_t pointer_scroll;
 int board_debug_scroll;
 extern char driveMode;
+int debug_mode_scroll_sx;
+int debug_mode_scroll_dx;
 
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];

@@ -57,10 +57,10 @@ protected:
     touchgfx::TextArea TEXTIndAcquisition;
     touchgfx::Box boxAcquisition;
     touchgfx::TextAreaWithOneWildcard textIndAcquisitionValue;
+    touchgfx::Box boxDriveMode;
     touchgfx::TextArea TEXTAcceleration;
     touchgfx::TextArea TEXTRpmLimiter;
     touchgfx::TextAreaWithOneWildcard textRpmLimiterValue;
-    touchgfx::Box boxBlack;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
 
     /*

@@ -178,14 +178,13 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID34));
 
+    boxDriveMode.setPosition(202, 346, 237, 31);
+    boxDriveMode.setColor(touchgfx::Color::getColorFrom24BitRGB(237, 255, 0));
+
     TEXTEndurance.setPosition(227, 347, 186, 33);
-    TEXTEndurance.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    TEXTEndurance.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TEXTEndurance.setLinespacing(0);
     TEXTEndurance.setTypedText(TypedText(T_SINGLEUSEID36));
-
-    boxBlack.setPosition(0, 0, 640, 481);
-    boxBlack.setVisible(false);
-    boxBlack.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
     textIndGearValue.setXY(206, -76);
     textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -224,8 +223,8 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
+    add(boxDriveMode);
     add(TEXTEndurance);
-    add(boxBlack);
     add(textIndGearValue);
 }
 

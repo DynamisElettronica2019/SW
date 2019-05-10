@@ -57,8 +57,8 @@ protected:
     touchgfx::TextArea TEXTIndAcquisition;
     touchgfx::Box boxAcquisition;
     touchgfx::TextAreaWithOneWildcard textIndAcquisitionValue;
+    touchgfx::Box boxDriveMode;
     touchgfx::TextArea TEXTEndurance;
-    touchgfx::Box boxBlack;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
 
     /*

@@ -163,6 +163,9 @@ SKIDPADViewBase::SKIDPADViewBase()
     textIndMapValue.setWildcard(textIndMapValueBuffer);
     textIndMapValue.setTypedText(TypedText(T_SINGLEUSEID66));
 
+    boxDriveMode.setPosition(202, 346, 237, 31);
+    boxDriveMode.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 29, 255));
+
     TEXTIndAcquisition.setPosition(11, 271, 154, 31);
     TEXTIndAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTIndAcquisition.setLinespacing(0);
@@ -182,10 +185,6 @@ SKIDPADViewBase::SKIDPADViewBase()
     TEXTSkidpad.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTSkidpad.setLinespacing(0);
     TEXTSkidpad.setTypedText(TypedText(T_SINGLEUSEID71));
-
-    boxBlack.setPosition(0, 0, 640, 481);
-    boxBlack.setVisible(false);
-    boxBlack.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
     textIndGearValue.setXY(206, -76);
     textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -221,11 +220,11 @@ SKIDPADViewBase::SKIDPADViewBase()
     add(TEXTIndMap);
     add(textIndTcValue);
     add(textIndMapValue);
+    add(boxDriveMode);
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
     add(TEXTSkidpad);
-    add(boxBlack);
     add(textIndGearValue);
 }
 

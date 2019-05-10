@@ -35,14 +35,9 @@ void ENDURANCEView::tearDownScreen()
 void ENDURANCEView::refreshEndurance()
 {	
 	cont ++;
-	
-	//if ( cont >= 10 )
-	//{
 
-		ENDURANCEView::checkChangeScreen();
+	ENDURANCEView::checkChangeScreen();
 	
-	
-	//cont = 0;
 	/******************TITOLI*******************/
 	touchgfx::Unicode::strncpy( Title1, Indicators[EndPointer[0]].NOME, TIT_LEN);	
 	touchgfx::Unicode::strncpy( Title2, Indicators[EndPointer[1]].NOME, TIT_LEN);		
@@ -110,14 +105,12 @@ void ENDURANCEView::refreshEndurance()
 	
 	/****************REFFRESH OGGETTI*****************/
 	
-	//background.invalidate();
-	
-	//textIndTitle1.invalidate();
-	//textIndTitle2.invalidate();
-	//textIndTitle3.invalidate();
-	//textIndTitle4.invalidate();
-	//textIndTitle5.invalidate();
-	//textIndTitle6.invalidate();
+	textIndTitle1.invalidate();
+	textIndTitle2.invalidate();
+	textIndTitle3.invalidate();
+	textIndTitle4.invalidate();
+	textIndTitle5.invalidate();
+	textIndTitle6.invalidate();
 	
 	textIndValue1.invalidate();
 	textIndValue2.invalidate();
@@ -134,7 +127,7 @@ void ENDURANCEView::refreshEndurance()
 	
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();
-	//}
+
 }
 
 void ENDURANCEView::checkChangeScreen()
@@ -153,8 +146,6 @@ void ENDURANCEView::checkChangeScreen()
 					
 					break;
 				case ACCELERATION_MODE	:
-					boxBlack.setVisible(true);
-					boxBlack.invalidate();
 					application().gotoACCELERATIONScreenNoTransition();
 					break;
 				case AUTOX_MODE	:
