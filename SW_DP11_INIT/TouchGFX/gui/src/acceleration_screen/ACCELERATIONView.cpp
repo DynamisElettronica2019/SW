@@ -16,6 +16,7 @@ ACCELERATIONView::ACCELERATIONView()
 
 void ACCELERATIONView::setupScreen()
 {
+		boxIndicatorGear.invalidate();
     ACCELERATIONViewBase::setupScreen();
 		AccPointer[0] = 0;
 		AccPointer[1] = 1;
@@ -56,7 +57,7 @@ void ACCELERATIONView::refreshAcceleration()
 	if ( Indicators[AccPointer[0]].TIPO == INT )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", cont);
 	else
-		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AccPointer[0]].floatValore);
+		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AccPointer[0]].floatValore);
 	
 	if ( Indicators[AccPointer[1]].TIPO == INT )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[AccPointer[1]].intValore);

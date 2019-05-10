@@ -42,15 +42,15 @@ touchgfx::InternalFlashFont& getFont_Roboto_Regular_180_4bpp()
     return Roboto_Regular_180_4bpp;
 }
 
-// Roboto_Regular_420_4bpp
-extern const touchgfx::GlyphNode glyphs_Roboto_Regular_420_4bpp[];
-extern const uint8_t unicodes_Roboto_Regular_420_4bpp[];
-extern const touchgfx::KerningNode kerning_Roboto_Regular_420_4bpp[];
-touchgfx::InternalFlashFont& getFont_Roboto_Regular_420_4bpp();
+// Roboto_Regular_410_4bpp
+extern const touchgfx::GlyphNode glyphs_Roboto_Regular_410_4bpp[];
+extern const uint8_t unicodes_Roboto_Regular_410_4bpp[];
+extern const touchgfx::KerningNode kerning_Roboto_Regular_410_4bpp[];
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_410_4bpp();
 
-touchgfx::InternalFlashFont& getFont_Roboto_Regular_420_4bpp()
+touchgfx::InternalFlashFont& getFont_Roboto_Regular_410_4bpp()
 {
-    static touchgfx::InternalFlashFont Roboto_Regular_420_4bpp(glyphs_Roboto_Regular_420_4bpp, 9, 420, 4, 4, 0, 0, unicodes_Roboto_Regular_420_4bpp, kerning_Roboto_Regular_420_4bpp, 63, 0);
-    return Roboto_Regular_420_4bpp;
+    static touchgfx::InternalFlashFont Roboto_Regular_410_4bpp(glyphs_Roboto_Regular_410_4bpp, 9, 410, 4, 4, 0, 0, unicodes_Roboto_Regular_410_4bpp, kerning_Roboto_Regular_410_4bpp, 63, 0);
+    return Roboto_Regular_410_4bpp;
 }
 

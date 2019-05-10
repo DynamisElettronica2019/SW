@@ -139,13 +139,6 @@ SKIDPADViewBase::SKIDPADViewBase()
     textIndValue6.setWildcard(textIndValue6Buffer);
     textIndValue6.setTypedText(TypedText(T_SINGLEUSEID59));
 
-    textIndGearValue.setPosition(180, -90, 280, 420);
-    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    textIndGearValue.setLinespacing(0);
-    textIndGearValueBuffer[0] = 0;
-    textIndGearValue.setWildcard(textIndGearValueBuffer);
-    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID61));
-
     TEXTIndTc.setPosition(22, 170, 38, 29);
     TEXTIndTc.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTIndTc.setLinespacing(0);
@@ -194,6 +187,14 @@ SKIDPADViewBase::SKIDPADViewBase()
     boxBlack.setVisible(false);
     boxBlack.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
+    textIndGearValue.setXY(206, -76);
+    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndGearValue.setLinespacing(0);
+    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID262).getText());
+    textIndGearValue.setWildcard(textIndGearValueBuffer);
+    textIndGearValue.resizeToCurrentText();
+    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID261));
+
     add(background);
     add(boxIndicator1);
     add(boxIndicator2);
@@ -216,7 +217,6 @@ SKIDPADViewBase::SKIDPADViewBase()
     add(textIndValue4);
     add(textIndValue5);
     add(textIndValue6);
-    add(textIndGearValue);
     add(TEXTIndTc);
     add(TEXTIndMap);
     add(textIndTcValue);
@@ -226,6 +226,7 @@ SKIDPADViewBase::SKIDPADViewBase()
     add(textIndAcquisitionValue);
     add(TEXTSkidpad);
     add(boxBlack);
+    add(textIndGearValue);
 }
 
 void SKIDPADViewBase::setupScreen()

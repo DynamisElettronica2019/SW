@@ -5,7 +5,7 @@ using namespace touchgfx;
 #endif
 
 FONT_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::KerningNode kerning_Roboto_Regular_420_4bpp[] FONT_LOCATION_FLASH_ATTRIBUTE =
+KEEP extern const touchgfx::KerningNode kerning_Roboto_Regular_410_4bpp[] FONT_LOCATION_FLASH_ATTRIBUTE =
 {
     {0, 0}
 };

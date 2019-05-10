@@ -16,6 +16,7 @@ AUTOCROSSView::AUTOCROSSView()
 
 void AUTOCROSSView::setupScreen()
 {
+		boxIndicatorGear.invalidate();
     AUTOCROSSViewBase::setupScreen();
 		AutPointer[0] = 0;
 		AutPointer[1] = 1;
@@ -23,7 +24,7 @@ void AUTOCROSSView::setupScreen()
 		AutPointer[3] = 3;
 		AutPointer[4] = 4;
 		AutPointer[5] = 5;	
-		boxIndicatorGear.invalidate();
+
 }
 
 void AUTOCROSSView::tearDownScreen()
@@ -55,7 +56,7 @@ void AUTOCROSSView::refreshAutocross()
 	if ( Indicators[AutPointer[0]].TIPO == INT )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[AutPointer[0]].intValore);
 	else
-		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AutPointer[0]].floatValore);
+		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AutPointer[0]].floatValore);
 	
 	if ( Indicators[AutPointer[1]].TIPO == INT )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[AutPointer[1]].intValore);

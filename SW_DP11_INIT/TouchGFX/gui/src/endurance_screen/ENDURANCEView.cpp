@@ -16,6 +16,7 @@ ENDURANCEView::ENDURANCEView()
 
 void ENDURANCEView::setupScreen()
 {
+		boxIndicatorGear.invalidate();
     ENDURANCEViewBase::setupScreen();
 		EndPointer[0] = 0;
 		EndPointer[1] = 1;
@@ -23,7 +24,6 @@ void ENDURANCEView::setupScreen()
 		EndPointer[3] = 3;
 		EndPointer[4] = 4;
 		EndPointer[5] = 5;
-		boxIndicatorGear.invalidate();
 		cont = 0;
 }
 
@@ -62,7 +62,7 @@ void ENDURANCEView::refreshEndurance()
 	if ( Indicators[EndPointer[0]].TIPO == INT )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", cont);
 	else
-		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[EndPointer[0]].floatValore);
+		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[EndPointer[0]].floatValore);
 	
 	if ( Indicators[EndPointer[1]].TIPO == INT )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[EndPointer[1]].intValore);

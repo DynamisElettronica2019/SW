@@ -200,7 +200,7 @@
 
   <Group>
     <GroupName>Application/User/Core</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -388,7 +388,7 @@
 
   <Group>
     <GroupName>Application/User/TouchGFX/target</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -824,7 +824,7 @@
 
   <Group>
     <GroupName>Drivers/CMSIS</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -960,7 +960,7 @@
 
   <Group>
     <GroupName>Middlewares/TouchGFX</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1335,8 +1335,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../touchgfx/generated/fonts/src/font_roboto_regular_420_4bpp.cpp</PathWithFileName>
-      <FilenameWithoutPath>Font_Roboto_Regular_420_4bpp.cpp</FilenameWithoutPath>
+      <PathWithFileName>../touchgfx/generated/fonts/src/font_roboto_regular_410_4bpp.cpp</PathWithFileName>
+      <FilenameWithoutPath>Font_Roboto_Regular_410_4bpp.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1407,8 +1407,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../touchgfx/generated/fonts/src/kerning_roboto_regular_420_4bpp.cpp</PathWithFileName>
-      <FilenameWithoutPath>Kerning_Roboto_Regular_420_4bpp.cpp</FilenameWithoutPath>
+      <PathWithFileName>../touchgfx/generated/fonts/src/kerning_roboto_regular_410_4bpp.cpp</PathWithFileName>
+      <FilenameWithoutPath>Kerning_Roboto_Regular_410_4bpp.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1503,8 +1503,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../touchgfx/generated/fonts/src/table_roboto_regular_420_4bpp.cpp</PathWithFileName>
-      <FilenameWithoutPath>Table_Roboto_Regular_420_4bpp.cpp</FilenameWithoutPath>
+      <PathWithFileName>../touchgfx/generated/fonts/src/table_roboto_regular_410_4bpp.cpp</PathWithFileName>
+      <FilenameWithoutPath>Table_Roboto_Regular_410_4bpp.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
