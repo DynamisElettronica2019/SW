@@ -148,6 +148,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	
 	SPI_ltdc_init_sequence(&hspi1);
+	GPIO_encoders_init();
 	
   /* USER CODE END 2 */
 
