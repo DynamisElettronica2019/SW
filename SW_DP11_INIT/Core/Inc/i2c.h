@@ -58,6 +58,33 @@
 
 /* USER CODE BEGIN Includes */
 
+	#define controller_0 0x28
+	#define controller_1 0x29
+	 
+	#define LED_1_RED		0x0F
+	#define LED_1_GREEN		0x10
+	#define LED_1_BLUE		0x11
+
+	#define LED_2_RED		0x12
+	#define LED_2_GREEN		0x13
+	#define LED_2_BLUE		0x14
+
+	#define LED_3_RED		0x15
+	#define LED_3_GREEN		0x16
+	#define LED_3_BLUE		0x17
+
+	#define LED_4_RED		0x18
+	#define LED_4_GREEN		0x19
+	#define LED_4_BLUE		0x1A
+
+	#define LED_5_RED		0x1B
+	#define LED_5_GREEN		0x1C
+	#define LED_5_BLUE		0x1D
+
+	#define LED_6_RED		0x1E
+	#define LED_6_GREEN		0x1F
+	#define LED_6_BLUE		0x20
+	
 /* USER CODE END Includes */
 
 extern I2C_HandleTypeDef hi2c1;
@@ -78,7 +105,12 @@ void MX_I2C1_Init(void);
 	 void I2C_brightness_max (uint16_t);
 	 void I2C_controller_0_ON(void);
 	 void I2C_controller_1_ON(void);
-	 void I2C_debug_red(uint16_t);
+	 void I2C_debug_red_on(uint16_t);
+	 void I2C_debug_green_on(uint16_t);
+	 void I2C_debug_blue_on(uint16_t);
+	 void I2C_debug_red_off(uint16_t);
+	 void I2C_debug_green_off(uint16_t);
+	 void I2C_debug_blue_off(uint16_t);
 	 void I2C_rpm_update(void);
 	 
 /* USER CODE END Prototypes */

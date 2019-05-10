@@ -765,7 +765,7 @@ void rpmStripeTask(void const * argument)	//-------------------------------INSER
   {
 		xSemaphoreTake(rpmStripeSemaphoreHandle, portMAX_DELAY);
 		
-		I2C_test();
+		//I2C_test();
 		//	I2C_rpm_update();
 		
     osDelay(1);

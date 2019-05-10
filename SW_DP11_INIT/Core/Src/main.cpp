@@ -90,6 +90,7 @@
 
 char driveMode, engineMap;
 int state;
+extern int RPM; //--- per debug rpm_stripe
 
 /* USER CODE END PV */
 
@@ -151,6 +152,7 @@ int main(void)
 	
 	I2C_rpm_setup();
 	
+	HAL_TIM_Base_Start_IT(&htim7); //--- per debug rpm_stripe
   /* USER CODE END 2 */
 
 /* Initialise the graphical hardware */
@@ -265,6 +267,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
 
+	//----------------- PER DEBUGGARE LA STRISCIA LED 
+	if (htim->Instance == TIM7)
+	{
+		//I2C_test();
+		RPM = RPM + 50 ;
+		I2C_rpm_update();
+		if (RPM >= 15000)
+			RPM = 0;
+	}
+	//----------------------------------------------------------
+	
   /* USER CODE END Callback 1 */
 }
 
