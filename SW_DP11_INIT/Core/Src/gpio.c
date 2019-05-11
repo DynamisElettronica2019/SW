@@ -317,7 +317,6 @@ void GPIO_encoders_set_engineMap(void)
 
 }
 
-
 /**
 	* @brief  returns the number of positions the left encoder moved:
 	*					it reads the value of pin 1, 2 and 4 and finds the corresponding
