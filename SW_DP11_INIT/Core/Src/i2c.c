@@ -63,8 +63,9 @@ I2C_HandleTypeDef hi2c1;
 /* I2C1 init function */
 void MX_I2C1_Init(void)
 {
+
   hi2c1.Instance = I2C1;
-  hi2c1.Init.Timing = 0x00606092;
+  hi2c1.Init.Timing = 0x00C0EAFF;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
@@ -375,7 +376,8 @@ void I2C_debug_blue_off(uint16_t controller){
 }
 
 void I2C_rpm_update(void){ 
-
+	
+	RPM = RPM +500;
 	
 	if (RPM > 700){
 		i2cData[1] = 0xFF;
@@ -503,6 +505,7 @@ void I2C_rpm_update(void){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_6_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
+		RPM = 0;
 	}
 	else{
 		i2cData[1] = 0x00;

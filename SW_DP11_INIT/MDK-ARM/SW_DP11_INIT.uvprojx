@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx,QSPI_CLOCK_PRESCALER=2,QSPI_DDRMODE,QSPI_XIP_MODE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;               ../TouchGFX/target;               ../TouchGFX/generated/fonts/include;               ../TouchGFX/generated/texts/include;               ../TouchGFX/generated/images/include;               ../TouchGFX/generated/gui_generated/include;               ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;               ../Drivers/STM32F7xx_HAL_Driver/Inc;               ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;               ../Middlewares/Third_Party/FreeRTOS/Source/include;               ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;               ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;               ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;               ../Drivers/CMSIS/Include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Core/Inc;                  ../TouchGFX/target;                  ../TouchGFX/generated/fonts/include;                  ../TouchGFX/generated/texts/include;                  ../TouchGFX/generated/images/include;                  ../TouchGFX/generated/gui_generated/include;                  ../TouchGFX/gui/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;                  ../Drivers/STM32F7xx_HAL_Driver/Inc;                  ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                  ../Middlewares/Third_Party/FreeRTOS/Source/include;                  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                  ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                  ../Drivers/CMSIS/Include;   ../middlewares/st/touchgfx/touchgfx/framework/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;  ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -390,6 +390,26 @@
         <Group>
           <GroupName>Application/User/Core</GroupName>
           <Files>
+            <File>
+              <FileName>stm32756g_eval_qspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\stm32756g_eval_qspi.c</FilePath>
+            </File>
+            <File>
+              <FileName>d_rpm_limiter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_rpm_limiter.c</FilePath>
+            </File>
+            <File>
+              <FileName>d_traction_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_traction_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>d_sensors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_sensors.c</FilePath>
+            </File>
             <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
@@ -459,26 +479,6 @@
               <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32756g_eval_qspi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\stm32756g_eval_qspi.c</FilePath>
-            </File>
-            <File>
-              <FileName>d_rpm_limiter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\d_rpm_limiter.c</FilePath>
-            </File>
-            <File>
-              <FileName>d_traction_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\d_traction_control.c</FilePath>
-            </File>
-            <File>
-              <FileName>d_sensors.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\d_sensors.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -734,6 +734,11 @@
               <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
               <FileName>OSWrappers.cpp</FileName>

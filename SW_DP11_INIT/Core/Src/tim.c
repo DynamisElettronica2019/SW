@@ -51,7 +51,29 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
-TIM_HandleTypeDef htim4;
+
+#include "general.h"
+#include "cmsis_os.h"
+
+extern osSemaphoreId startButtonSemaphoreHandle;
+extern osSemaphoreId rpmStripeSemaphoreHandle;
+extern osSemaphoreId sensorsSemaphoreHandle;
+extern osSemaphoreId settingsModeSemaphoreHandle;
+extern osSemaphoreId boardDebugModeSemaphoreHandle;
+extern osSemaphoreId debugModeSemaphoreHandle;
+extern osSemaphoreId enduranceModeSemaphoreHandle;
+extern osSemaphoreId accelerationModeSemaphoreHandle;
+extern osSemaphoreId autocrossModeSemaphoreHandle;
+extern osSemaphoreId skidpadModeSemaphoreHandle;
+
+extern char driveMode;
+	
+int timerSensors = 0;
+int timerStartButton = 0;
+int timerRpmStripe = 0;
+int timerDriveMode = 0;
+int timerMapTractionRpm = 0;
+
 /* USER CODE END 0 */
 
 TIM_HandleTypeDef htim4;
@@ -81,7 +103,7 @@ void MX_TIM4_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 200;
+  sConfigOC.Pulse = 50;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -99,7 +121,7 @@ void MX_TIM7_Init(void)
   htim7.Instance = TIM7;
   htim7.Init.Prescaler = 9999;
   htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 10;
+  htim7.Init.Period = 5-1;
   htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
   {
@@ -320,6 +342,86 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+
+void TIM_MapTractionRpm_send (){
+	
+	// invio su can dei valori di:
+	//	-mappa motore
+	//	-traction
+	//	-rpm_limiter (se necessario)
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+		
+	if (htim->Instance == TIM7) {		//----------------- Un led di debug messo anche nel controllo della striscia led perchè è a 1 HZ ----------	
+		
+		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		
+		HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
+		
+		timerSensors = timerSensors + 1;
+		timerStartButton = timerStartButton + 1;
+		timerRpmStripe = timerRpmStripe + 1;
+		timerDriveMode = timerDriveMode + 1;
+		timerMapTractionRpm = timerMapTractionRpm + 1;
+		
+		if (  timerSensors >= SENSORS_TIME ){
+			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
+			timerSensors = 0;
+		}
+		if ( timerStartButton >= START_BUTTON_TIME){
+			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
+			timerStartButton = 0;
+		}
+		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
+			HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
+			timerRpmStripe = 0;
+		}
+		if ( timerMapTractionRpm >= MAP_TRACTION_RPM_TIME ){
+			TIM_MapTractionRpm_send();
+			timerMapTractionRpm = 0;
+		}
+		
+		if ( timerDriveMode >= DRIVE_MODE_TIME ){
+			switch ( driveMode ){
+				case SETTINGS_MODE	:
+					xSemaphoreGiveFromISR( settingsModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case BOARD_DEBUG_MODE	:
+					xSemaphoreGiveFromISR( boardDebugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case DEBUG_MODE	:
+					xSemaphoreGiveFromISR( debugModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case ENDURANCE_MODE	:
+					xSemaphoreGiveFromISR( enduranceModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case ACCELERATION_MODE	:
+					xSemaphoreGiveFromISR( accelerationModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case AUTOX_MODE	:
+					xSemaphoreGiveFromISR( autocrossModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+				case SKIDPAD_MODE	:
+					xSemaphoreGiveFromISR( skidpadModeSemaphoreHandle, &xHigherPriorityTaskWoken );
+					break;
+			}
+			timerDriveMode = 0;
+		}
+		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+  }
+	
+  /* USER CODE END Callback 1 */
+}
 
 /* USER CODE END 1 */
 

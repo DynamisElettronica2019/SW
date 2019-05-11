@@ -92,6 +92,8 @@ STM32F7TouchController tc;
 STM32F7Instrumentation mcuInstr;
 
 static LCD16bpp display;
+static uint16_t bitdepth = 16;
+
 namespace touchgfx
 {
 void touchgfx_init()
@@ -102,15 +104,14 @@ void touchgfx_init()
     HAL& hal = touchgfx_generic_init<STM32F7HAL>(dma, display, tc, dispWidth, dispHeight,(uint16_t*) 0, 
                                                0, 0);
 
-    //hal.setFrameBufferStartAddress((uint16_t*)frameBuf0, bitdepth, false, false);
-    hal.setFrameBufferStartAddress((uint16_t*)frameBuf0);
-	
+    hal.setFrameBufferStartAddress((uint16_t*)frameBuf0, bitdepth ,true , true);
+
     hal.setTouchSampleRate(2);
     hal.setFingerSize(1);
 
     // By default frame rate compensation is off.
     // Enable frame rate compensation to smooth out animations in case there is periodic slow frame rates.
-    hal.setFrameRateCompensation(true);
+    hal.setFrameRateCompensation(false);
 
     // This platform can handle simultaneous DMA and TFT accesses to SDRAM, so disable lock to increase performance.
     hal.lockDMAToFrontPorch(false);
@@ -120,13 +121,13 @@ void touchgfx_init()
     //Set MCU instrumentation and Load calculation
     hal.setMCUInstrumentation(&mcuInstr);
     hal.enableMCULoadCalculation(true);
+	  HAL::getInstance()->setDisplayOrientation(ORIENTATION_LANDSCAPE); 
 }
 }
 
 void GRAPHICS_Init()
 {
    touchgfx::touchgfx_init();
-	 HAL::getInstance()->setDisplayOrientation(ORIENTATION_LANDSCAPE);
 }
 
 void GRAPHICS_MainTask(void)

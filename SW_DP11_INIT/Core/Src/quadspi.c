@@ -75,6 +75,7 @@ void MX_QUADSPI_Init(void)
   {
     Error_Handler();
   }
+
 }
 
 void HAL_QSPI_MspInit(QSPI_HandleTypeDef* qspiHandle)

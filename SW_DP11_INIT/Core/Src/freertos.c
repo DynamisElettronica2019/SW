@@ -55,8 +55,7 @@
 #include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
-
-/* USER CODE BEGIN Includes */ 
+/* USER CODE BEGIN Includes */     
 
 #include "general.h"
 #include "data.h"
@@ -66,6 +65,7 @@
 #include "i2c.h"
 #include "adc.h"
 #include "d_sensors.h"
+#include "tim.h"
 
 
 /* USER CODE END Includes */
@@ -367,6 +367,9 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+	
+	HAL_TIM_Base_Start_IT(&htim7);
+	
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the thread(s) */
@@ -536,7 +539,8 @@ void ledBlinkTask(void const * argument)
 		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"", 0, 0, "1"};
 		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
-		I2C_rpm_update();
+		//I2C_rpm_update();
+		canSendDebug();
     osDelay(250);
   }
   /* USER CODE END ledBlinkTask */
@@ -606,7 +610,7 @@ void downShiftTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_modeSelectorTask */
-void modeSelectorTask(void const * argument)	
+void modeSelectorTask(void const * argument)
 {
   /* USER CODE BEGIN modeSelectorTask */
  char old_driveMode;
@@ -879,16 +883,17 @@ void aux3ButtonTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_rpmStripeTask */
-void rpmStripeTask(void const * argument)	//-------------------------------INSERIRE LA CHIAMATA ALLA TASK----------------------------
+void rpmStripeTask(void const * argument)
 {
   /* USER CODE BEGIN rpmStripeTask */
+
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(rpmStripeSemaphoreHandle, portMAX_DELAY);
 		
-		I2C_test();
-		//	I2C_rpm_update();
+		//I2C_test();
+		I2C_rpm_update();
 		
     osDelay(1);
 	
@@ -903,7 +908,7 @@ void rpmStripeTask(void const * argument)	//-------------------------------INSER
 * @retval None
 */
 /* USER CODE END Header_sensorsTask */
-void sensorsTask(void const * argument)	//------------------- BISOGNA INSERIRE LA CHIAMATA ALLA TASK-----------------
+void sensorsTask(void const * argument)
 {
   /* USER CODE BEGIN sensorsTask */
   /* Infinite loop */
