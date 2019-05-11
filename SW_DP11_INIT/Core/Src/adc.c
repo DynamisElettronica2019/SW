@@ -52,6 +52,8 @@
 
 /* USER CODE BEGIN 0 */
 
+uint32_t ADC_BUF[3];
+	
 /* USER CODE END 0 */
 
 ADC_HandleTypeDef hadc1;
@@ -189,6 +191,35 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+
+void ADC_read(void)	{ //---------------------INTERROMPERE IL BLINK DELLA_BLINK TASK---------------------------
+	
+	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_BUF,3);
+	
+	if (  ADC_BUF[0] > 1250 )	{				//temperatura circa 1 V
+		HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_SET);
+	}
+	else	{
+		HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_RESET);
+	}
+	
+	if (  ADC_BUF[1] > 1250 )	{				// corrente circa 1 V
+		HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
+	}
+	else	{
+		HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
+	}
+	
+	if (  ADC_BUF[2] > 3700 )	{				// clutch circa 3 V
+		HAL_GPIO_WritePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin, GPIO_PIN_SET);
+	}
+	else	{
+		HAL_GPIO_WritePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin, GPIO_PIN_RESET);
+	}
+	
+	HAL_ADC_Stop_DMA (&hadc1);
+	return ;
+}
 
 /* USER CODE END 1 */
 

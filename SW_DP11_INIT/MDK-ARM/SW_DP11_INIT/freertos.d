@@ -62,3 +62,5 @@ sw_dp11_init\freertos.o: ../Core/Inc/gpio.h
 sw_dp11_init\freertos.o: ../Core/Inc/d_traction_control.h
 sw_dp11_init\freertos.o: ../Core/Inc/d_rpm_limiter.h
 sw_dp11_init\freertos.o: ../Core/Inc/i2c.h
+sw_dp11_init\freertos.o: ../Core/Inc/adc.h
+sw_dp11_init\freertos.o: ../Core/Inc/d_sensors.h

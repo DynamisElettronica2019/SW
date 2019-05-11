@@ -17,6 +17,7 @@
 "sw_dp11_init\stm32756g_eval_qspi.o"
 "sw_dp11_init\d_rpm_limiter.o"
 "sw_dp11_init\d_traction_control.o"
+"sw_dp11_init\d_sensors.o"
 "sw_dp11_init\boardconfiguration.o"
 "sw_dp11_init\gpio_1.o"
 "sw_dp11_init\stm32f7dma.o"

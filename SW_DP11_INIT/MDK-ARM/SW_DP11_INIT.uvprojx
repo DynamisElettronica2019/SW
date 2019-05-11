@@ -475,6 +475,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\Src\d_traction_control.c</FilePath>
             </File>
+            <File>
+              <FileName>d_sensors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_sensors.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

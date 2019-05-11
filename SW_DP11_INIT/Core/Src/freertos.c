@@ -64,6 +64,9 @@
 #include "d_traction_control.h"
 #include "d_rpm_limiter.h"
 #include "i2c.h"
+#include "adc.h"
+#include "d_sensors.h"
+
 
 /* USER CODE END Includes */
 
@@ -86,22 +89,25 @@
 /* USER CODE BEGIN Variables */
 
 Indicator_Value Indicators[N_INDICATORS];	//---- Deve essere inserita una funzione dove si inizializza il vettore di indicatori
+
 int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
 int box_driveMode;
 int box_indicator;
-uint8_t pointer_scroll;
-int board_debug_scroll;
-extern char driveMode;
-int debug_mode_scroll_sx;
-int debug_mode_scroll_dx;
 
-//Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
-uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 extern char driveMode, engineMap;
 extern char leftPosition, rightPosition;
 extern int state;
 
-uint8_t EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
+int timerClutch = 0;
+int timerTempCurr = 0;
+
+int debug_mode_scroll_sx;
+int debug_mode_scroll_dx;
+int board_debug_scroll;
+uint8_t pointer_scroll;
+
+//Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
+uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 
 
 /* USER CODE END Variables */
@@ -897,14 +903,29 @@ void rpmStripeTask(void const * argument)	//-------------------------------INSER
 * @retval None
 */
 /* USER CODE END Header_sensorsTask */
-void sensorsTask(void const * argument)
+void sensorsTask(void const * argument)	//------------------- BISOGNA INSERIRE LA CHIAMATA ALLA TASK-----------------
 {
   /* USER CODE BEGIN sensorsTask */
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(sensorsSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+		
+		timerClutch = timerClutch + 1;
+		timerTempCurr = timerTempCurr + 1;
+		
+		ADC_read();
+		
+		if (timerClutch == 2){
+			dSensors_Clutch_send();		// oppure invio diretto su CAN
+			dSensors_update();
+			timerClutch = 0;
+		}
+		if (timerTempCurr == 200){
+			dSensors_Sensors_send();	// oppure invio diretto su CAN
+			timerTempCurr = 0;
+		}
+    //osDelay(1);
   }
   /* USER CODE END sensorsTask */
 }
