@@ -80,6 +80,8 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
+uint8_t EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
+
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 osThreadId ledBlink_TaskHandle;
@@ -950,20 +952,25 @@ void debugFreeRTOSTask(void const * argument)
 void aux1Task(void const * argument)
 {
   /* USER CODE BEGIN aux1Task */
-	uint8_t indirizzo = 10;
+	
+	//uint8_t indirizzo = 11;
+	
   /* Infinite loop */
   for(;;)
   {
 		//xSemaphoreTake(aux1SemaphoreHandle, portMAX_DELAY);
-		I2C_eeprom_write (indirizzo , 0);			// mando il valore 10 nell'inidirizzo 0 della eeprom
+		
+		/*----------------------- DEBUG EEORIM
 		vTaskDelay(500);
-		if ( 10 == I2C_eeprom_read (0)){			// se leggo il valore 10 nell'indirizzo 0 della eeprom
+		I2C_eeprom_write (indirizzo , 1);			// mando il valore 10 nell'inidirizzo 0 della eeprom
+		vTaskDelay(500);
+		if ( 11 == I2C_eeprom_read (1)){			// se leggo il valore 10 nell'indirizzo 0 della eeprom
 			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
 		}
 		else{
 			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
 		}
-		
+		-------------------------------------- */
     osDelay(1);
   }
   /* USER CODE END aux1Task */

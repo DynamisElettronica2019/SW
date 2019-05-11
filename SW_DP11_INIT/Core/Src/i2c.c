@@ -52,6 +52,8 @@
 
 /* USER CODE BEGIN 0 */
 
+extern uint8_t EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
+
 /* USER CODE END 0 */
 
 I2C_HandleTypeDef hi2c1;
@@ -170,6 +172,100 @@ uint8_t I2C_eeprom_read (uint16_t memAddress) {
 	return indicatore;
 }
 
+void I2C_save_endPointers(void){
+	I2C_eeprom_write (EndPointer[0], End_0);
+	I2C_eeprom_write (EndPointer[1], End_1);
+	I2C_eeprom_write (EndPointer[2], End_2);
+	I2C_eeprom_write (EndPointer[3], End_3);
+	I2C_eeprom_write (EndPointer[4], End_4);
+	I2C_eeprom_write (EndPointer[5], End_5);
+}
+
+void I2C_save_accPointers(void){
+	I2C_eeprom_write (AccPointer[0], Acc_0);
+	I2C_eeprom_write (AccPointer[1], Acc_1);
+	I2C_eeprom_write (AccPointer[2], Acc_2);
+	I2C_eeprom_write (AccPointer[3], Acc_3);
+	I2C_eeprom_write (AccPointer[4], Acc_4);
+	I2C_eeprom_write (AccPointer[5], Acc_5);
+}
+
+void I2C_save_autPointers(void){
+	I2C_eeprom_write (AutPointer[0], Aut_0);
+	I2C_eeprom_write (AutPointer[1], Aut_1);
+	I2C_eeprom_write (AutPointer[2], Aut_2);
+	I2C_eeprom_write (AutPointer[3], Aut_3);
+	I2C_eeprom_write (AutPointer[4], Aut_4);
+	I2C_eeprom_write (AutPointer[5], Aut_5);
+}
+
+void I2C_save_skiPointers(void){
+	I2C_eeprom_write (SkiPointer[0], Ski_0);
+	I2C_eeprom_write (SkiPointer[1], Ski_1);
+	I2C_eeprom_write (SkiPointer[2], Ski_2);
+	I2C_eeprom_write (SkiPointer[3], Ski_3);
+	I2C_eeprom_write (SkiPointer[4], Ski_4);
+	I2C_eeprom_write (SkiPointer[5], Ski_5);
+}
+
+void I2C_get_endPointers(void){
+	EndPointer[0] = I2C_eeprom_read (End_0);
+	EndPointer[1] = I2C_eeprom_read (End_1);
+	EndPointer[2] = I2C_eeprom_read (End_2);
+	EndPointer[3] = I2C_eeprom_read (End_3);
+	EndPointer[4] = I2C_eeprom_read (End_4);
+	EndPointer[5] = I2C_eeprom_read (End_5);
+}
+
+void I2C_get_accPointers(void){
+	AccPointer[0] = I2C_eeprom_read (Acc_0);
+	AccPointer[1] = I2C_eeprom_read (Acc_1);
+	AccPointer[2] = I2C_eeprom_read (Acc_2);
+	AccPointer[3] = I2C_eeprom_read (Acc_3);
+	AccPointer[4] = I2C_eeprom_read (Acc_4);
+	AccPointer[5] = I2C_eeprom_read (Acc_5);
+}
+
+void I2C_get_autPointers(void){
+	AutPointer[0] = I2C_eeprom_read (Aut_0);
+	AutPointer[1] = I2C_eeprom_read (Aut_1);
+	AutPointer[2] = I2C_eeprom_read (Aut_2);
+	AutPointer[3] = I2C_eeprom_read (Aut_3);
+	AutPointer[4] = I2C_eeprom_read (Aut_4);
+	AutPointer[5] = I2C_eeprom_read (Aut_5);
+}
+
+void I2C_get_skiPointers(void){
+	SkiPointer[0] = I2C_eeprom_read (Ski_0);
+	SkiPointer[1] = I2C_eeprom_read (Ski_1);
+	SkiPointer[2] = I2C_eeprom_read (Ski_2);
+	SkiPointer[3] = I2C_eeprom_read (Ski_3);
+	SkiPointer[4] = I2C_eeprom_read (Ski_4);
+	SkiPointer[5] = I2C_eeprom_read (Ski_5);
+}
+
+void I2C_getPointers(void){
+	uint8_t flag;
+	int i;
+	
+	flag = I2C_eeprom_read (FirstOn);
+	
+	if ( flag == 0 ){
+		I2C_eeprom_write (1, FirstOn);
+		for (i = 0; i < N_POINTERS; i++){
+			EndPointer[i] = I2C_eeprom_read (Def_0 + i);
+			AccPointer[i] = I2C_eeprom_read (Def_0 + i);
+			AutPointer[i] = I2C_eeprom_read (Def_0 + i);
+			SkiPointer[i] = I2C_eeprom_read (Def_0 + i);
+		}
+	}
+	else{
+		I2C_get_endPointers();
+		I2C_get_accPointers();
+		I2C_get_autPointers();
+		I2C_get_skiPointers();
+	}		
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
