@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat May 11 13:01:16 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat May 11 14:06:04 2019
 <BR><P>
 <H3>Maximum Stack Usage =        824 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1068,8 +1068,8 @@ Global Symbols
 
 <P><STRONG><a name="[217]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&)
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ledBlinkTask
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_ConfigLayer
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LockFreeDMA_Queue::pushCopyOf(const touchgfx::BlitOp&)
 </UL>
@@ -3526,7 +3526,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 </UL>
-<P><STRONG><a name="[f8]"></a>ENDURANCEView::checkChangeScreen()</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, enduranceview.o(i._ZN13ENDURANCEView17checkChangeScreenEv))
+<P><STRONG><a name="[f8]"></a>ENDURANCEView::checkChangeScreen()</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, enduranceview.o(i._ZN13ENDURANCEView17checkChangeScreenEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = ENDURANCEView::checkChangeScreen() &rArr; FrontendApplicationBase::gotoACCELERATIONScreenNoTransition() &rArr; touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplicationBase::gotoACCELERATIONScreenNoTransition()
