@@ -51,6 +51,8 @@
 #include "gpio.h"
 /* USER CODE BEGIN 0 */
 
+#include "general.h"
+
 /* USER CODE END 0 */
 
 /*----------------------------------------------------------------------------*/
@@ -203,6 +205,172 @@ void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 2 */
+
+/*********** SELECTORS AND ENCODERS *******************************************/
+
+extern char driveMode, engineMap;
+extern char leftPosition, rightPosition;
+encoder_position modeSelector, mapSelector;
+encoder_position leftEncoder, rightEncoder;
+
+/************ TRUTH TABLE **************
+----------------------------------------
+|SWITCH POS | CODE POS | 1 | 2 | 4 | 8 |
+----------------------------------------
+|	  	1	    |		 0	   | 0 | 0 | 0 | 0 |
+|  		2	    |	 	 1	   | 1 | 0 | 0 | 0 |
+|	  	3	    |	 	 2	   | 0 | 1 | 0 | 0 |
+|	  	4	    |    3	   | 1 | 1 | 0 | 0 |
+|	  	5	    |	 	 4	   | 0 | 0 | 1 | 0 |
+|	  	6	    |	 	 5	   | 1 | 0 | 1 | 0 |
+|	  	7	    |	 	 6	   | 0 | 1 | 1 | 0 |
+|	  	8	    |	 	 7	   | 1 | 1 | 1 | 0 |
+----------------------------------------
+*/
+
+/**
+  * @brief  write the byte corresponding to the position of the 
+	*					encoder that was moved. 
+  * @param  value of pin1 of the encoder
+  * @param  value of pin2 of the encoder
+  * @param  value of pin3 of the encoder 
+  * @retval new position
+  */
+
+char GPIO_encoders_find_new_position(char pin1, char pin2, char pin4)
+{
+	char new_position;
+	new_position = pin1 | (pin2 << 1) | (pin4 << 2);
+	return new_position;
+}
+
+/**
+  * @brief  initialization of the right and left encoders. 
+	*					it sets the position in which the encoders are at power on 
+	*					as the references: left and wight encoders are relative and 
+	*					not absolute.
+  */
+
+void GPIO_encoders_init(void)
+{
+	leftEncoder.pin1 = HAL_GPIO_ReadPin(ENC_LEFT_1_INT_GPIO_Port, ENC_LEFT_1_INT_Pin);
+	leftEncoder.pin2 = HAL_GPIO_ReadPin(ENC_LEFT_2_GPIO_Port, ENC_LEFT_2_Pin);
+	leftEncoder.pin4 = HAL_GPIO_ReadPin(ENC_LEFT_4_GPIO_Port, ENC_LEFT_4_Pin);
+	
+	leftPosition = GPIO_encoders_find_new_position(leftEncoder.pin1, leftEncoder.pin2, leftEncoder.pin4);
+
+	rightEncoder.pin1 = HAL_GPIO_ReadPin(ENC_RIGHT_1_INT_GPIO_Port, ENC_RIGHT_1_INT_Pin);
+	rightEncoder.pin2 = HAL_GPIO_ReadPin(ENC_RIGHT_2_GPIO_Port, ENC_RIGHT_2_Pin);
+	rightEncoder.pin4 = HAL_GPIO_ReadPin(ENC_RIGHT_4_GPIO_Port, ENC_RIGHT_4_Pin);
+
+	rightPosition = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
+}
+
+/**
+  * @brief  finds the new position of the mode selector encoder by 
+	*					reading the value of pin1, pin2 and pin4. it forms the byte
+	*					and sets the corresponding driving mode. (ABSOLUTE ENCODER)
+  */
+
+void GPIO_encoders_set_driveMode(void)
+{
+	char new_mode;
+	modeSelector.pin1 = HAL_GPIO_ReadPin(SEL_MODE_1_INT_GPIO_Port, SEL_MODE_1_INT_Pin);
+	modeSelector.pin2 = HAL_GPIO_ReadPin(SEL_MODE_2_GPIO_Port, SEL_MODE_2_Pin);
+	modeSelector.pin4 = HAL_GPIO_ReadPin(SEL_MODE_4_GPIO_Port, SEL_MODE_4_Pin);
+	
+	new_mode = GPIO_encoders_find_new_position(modeSelector.pin1, modeSelector.pin2, modeSelector.pin4);
+	
+	if( new_mode == EMPTY_POSITION ) new_mode = ENDURANCE_MODE;
+	if( driveMode != new_mode )
+	{
+		driveMode = new_mode;
+		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+	}
+	
+	HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
+	}
+
+/**
+  * @brief  finds the new position of the map selector encoder by 
+	*					reading the value of pin 1, pin2 and pin4. it forms the byte
+	*					and sets the corresponding engine map. (ABSOLUTE ENCODER)
+  */
+
+void GPIO_encoders_set_engineMap(void)
+{	
+	char new_map;
+	mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
+	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
+	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
+
+	new_map = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
+	
+	// a Nico non piace il % :(
+	if(new_map == 0 || new_map == 2 || new_map == 4 || new_map == 6) new_map = MAP_1;
+	else new_map = MAP_2;
+	if(engineMap != new_map)
+	{
+		engineMap = new_map;
+		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+	}
+
+}
+
+
+/**
+	* @brief  returns the number of positions the left encoder moved:
+	*					it reads the value of pin 1, 2 and 4 and finds the corresponding
+	*					byte. by doing the deifference between the current 
+	*					position and the previous -> RELATIVE ENCODER
+  * @retval movement
+  */
+
+int GPIO_encoders_left_encoder_movement(void)
+{	
+	char new_pos;
+	int movement;
+	leftEncoder.pin1 = HAL_GPIO_ReadPin(ENC_LEFT_1_INT_GPIO_Port, ENC_LEFT_1_INT_Pin);
+	leftEncoder.pin2 = HAL_GPIO_ReadPin(ENC_LEFT_2_GPIO_Port, ENC_LEFT_2_Pin);
+	leftEncoder.pin4 = HAL_GPIO_ReadPin(ENC_LEFT_4_GPIO_Port, ENC_LEFT_4_Pin);
+
+	new_pos = GPIO_encoders_find_new_position(leftEncoder.pin1, leftEncoder.pin2, leftEncoder.pin4);
+
+	HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
+	
+	movement = new_pos - leftPosition; // magari segni invertiti
+	leftPosition = new_pos;
+
+	return movement;
+}
+
+/**
+	* @brief  returns the number of positions the right encoder moved:
+	*					it reads the value of pin 1, 2 and 4 and finds the corresponding
+	*					byte. by doing the deifference between the current 
+	*					position and the previous -> RELATIVE ENCODER
+  * @retval movement
+  */
+
+int GPIO_encoders_right_encoder_movement(void)
+{	
+	char new_pos;
+	int movement;
+	rightEncoder.pin1 = HAL_GPIO_ReadPin(ENC_RIGHT_1_INT_GPIO_Port, ENC_RIGHT_1_INT_Pin);
+	rightEncoder.pin2 = HAL_GPIO_ReadPin(ENC_RIGHT_2_GPIO_Port, ENC_RIGHT_2_Pin);
+	rightEncoder.pin4 = HAL_GPIO_ReadPin(ENC_RIGHT_4_GPIO_Port, ENC_RIGHT_4_Pin);
+
+	new_pos = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
+
+	HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+
+	movement = new_pos - rightPosition; // magari segni invertiti
+	rightPosition = new_pos;
+
+	return movement;
+}
+
+/******************************************************************************/
 
 /* USER CODE END 2 */
 

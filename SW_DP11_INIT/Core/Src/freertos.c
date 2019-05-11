@@ -55,9 +55,15 @@
 #include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
+
 /* USER CODE BEGIN Includes */     
 #include "general.h"
 #include "data.h"
+#include "gpio.h"
+
+#include "d_traction_control.h"
+#include "d_rpm_limiter.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,6 +96,9 @@ int debug_mode_scroll_dx;
 
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
+extern char driveMode, engineMap;
+extern char leftPosition, rightPosition;
+extern int state;
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -515,7 +524,6 @@ void ledBlinkTask(void const * argument)
 		Indicators[4] = (Indicator_Value) {EBB, INT,"EBB", 5, 1.1, "?"};
     Indicators[5] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "?"};
 		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "1"};
-		Indicators[MAP] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 1, 99.8, "?"};
 		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 1, 99.8, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
     osDelay(250);
@@ -590,12 +598,44 @@ void downShiftTask(void const * argument)
 void modeSelectorTask(void const * argument)
 {
   /* USER CODE BEGIN modeSelectorTask */
+ char old_driveMode;
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
-  }
+		vTaskDelay(15/portTICK_PERIOD_MS);
+		old_driveMode = driveMode;
+		GPIO_encoders_set_driveMode();
+		if (old_driveMode == SETTINGS_MODE)
+		{
+			// save settings on eeprom
+		}
+		switch (driveMode)
+		{
+			case AUTOX_MODE:
+					state = AUTOX_MODE_START;
+				break;
+			case ACCELERATION_MODE:
+					state = ACCELERATION_MODE_START;
+				break;
+			case ENDURANCE_MODE:
+					state = ENDURANCE_MODE_START;
+				break;
+			case SKIDPAD_MODE:
+					state = SKIDPAD_MODE_START;
+				break;
+			case DEBUG_MODE:
+					state = DEBUG_MODE_DEFAULT;
+				break;
+			case BOARD_DEBUG_MODE:
+					state = BOARD_DEBUG_MODE_DEFAULT;
+				break;
+			case SETTINGS_MODE:
+					state = SETTINGS_MODE_DEFAULT;
+				break;
+		}
+		osDelay(1);
+  }	
   /* USER CODE END modeSelectorTask */
 }
 
@@ -613,6 +653,13 @@ void mapSelectorTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(mapSelectorSemaphoreHandle, portMAX_DELAY);
+		vTaskDelay(15/portTICK_PERIOD_MS);
+		GPIO_encoders_set_engineMap();
+		
+	 Indicators[MAP].intValore = engineMap;
+		
+		//invio su can della mappa - polling ? appena si accende efi ? 
+		
     osDelay(1);
   }
   /* USER CODE END mapSelectorTask */
@@ -628,10 +675,33 @@ void mapSelectorTask(void const * argument)
 void leftEncoderTask(void const * argument)
 {
   /* USER CODE BEGIN leftEncoderTask */
+  int movement = 0;
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
+		movement = GPIO_encoders_left_encoder_movement();
+		leftPosition = leftPosition + movement; 
+		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
+		// la posizione relativa o assoluta
+		switch(driveMode)
+		{
+			case AUTOX_MODE:
+			case ACCELERATION_MODE:
+			case ENDURANCE_MODE:
+			case SKIDPAD_MODE:
+				d_traction_control_handle(movement);
+				break;
+			case BOARD_DEBUG_MODE:
+			case SETTINGS_MODE:
+				// scorri il menu - AGGIORNIAMO MATRICE GLOBALE
+				break;
+			case DEBUG_MODE:
+				// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE 
+				break;
+			default: 
+				break;
+		}
     osDelay(1);
   }
   /* USER CODE END leftEncoderTask */
@@ -647,10 +717,31 @@ void leftEncoderTask(void const * argument)
 void rightEncoderTask(void const * argument)
 {
   /* USER CODE BEGIN rightEncoderTask */
+  int movement = 0;
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
+		movement = GPIO_encoders_right_encoder_movement();
+	  rightPosition = rightPosition + movement;
+		switch(driveMode)
+		{
+			case AUTOX_MODE:
+			case ACCELERATION_MODE:
+				d_rpm_limiter_handle(movement);
+				break;
+			case BOARD_DEBUG_MODE:
+				// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
+				break;
+			case DEBUG_MODE:
+				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
+				break;
+			case SETTINGS_MODE:
+				// scorri le finestrelle - AGGIORNARE LA MATRICE GLOBALE
+				break;
+			default: 
+				break;
+		}
     osDelay(1);
   }
   /* USER CODE END rightEncoderTask */
@@ -818,11 +909,20 @@ void sensorsTask(void const * argument)
 void accelerationModeTask(void const * argument)
 {
   /* USER CODE BEGIN accelerationModeTask */
-  /* Infinite loop */
+ /* Infinite loop */
   for(;;)
-  {
+  {	
 		xSemaphoreTake(accelerationModeSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    switch(state)
+		{
+			case ACCELERATION_MODE_START:
+				// invio messaggio can per avvisare gcu
+				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
+				break;
+			case ACCELERATION_MODE_DEFAULT:
+				break;
+		}
+		osDelay(1);
   }
   /* USER CODE END accelerationModeTask */
 }
@@ -837,11 +937,20 @@ void accelerationModeTask(void const * argument)
 void autocrossModeTask(void const * argument)
 {
   /* USER CODE BEGIN autocrossModeTask */
-  /* Infinite loop */
+   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(autocrossModeSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    switch(state)
+		{
+			case AUTOX_MODE_START:
+				// invio messaggio can per avvisare gcu
+				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
+				break;
+			case AUTOX_MODE_DEFAULT:
+				break;
+		}
+		osDelay(1);
   }
   /* USER CODE END autocrossModeTask */
 }
@@ -857,10 +966,19 @@ void enduranceModeTask(void const * argument)
 {
   /* USER CODE BEGIN enduranceModeTask */
   /* Infinite loop */
-  for(;;)
+   for(;;)
   {
 		xSemaphoreTake(enduranceModeSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    switch(state)
+		{
+			case ENDURANCE_MODE_START:
+				// invio messaggio can per avvisare gcu
+				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
+				break;
+			case ENDURANCE_MODE_DEFAULT:
+				break;
+		}
+		osDelay(1);
   }
   /* USER CODE END enduranceModeTask */
 }
@@ -875,11 +993,20 @@ void enduranceModeTask(void const * argument)
 void skidpadModeTask(void const * argument)
 {
   /* USER CODE BEGIN skidpadModeTask */
-  /* Infinite loop */
-  for(;;)
-  {
+ /* Infinite loop */
+ for(;;)
+ {
 		xSemaphoreTake(skidpadModeSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+		switch(state)
+		{
+			case SKIDPAD_MODE_START:
+				// invio messaggio can per avvisare gcu
+				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
+				break;
+			case SKIDPAD_MODE_DEFAULT:
+				break;
+		}
+		osDelay(1);
   }
   /* USER CODE END skidpadModeTask */
 }
@@ -898,7 +1025,12 @@ void settingsModeTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(settingsModeSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    switch(state)
+		{
+			case SETTINGS_MODE_DEFAULT:
+				break;
+		}
+		osDelay(1);
   }
   /* USER CODE END settingsModeTask */
 }
@@ -916,8 +1048,13 @@ void debugModeTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		xSemaphoreTake(debugModeSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+			xSemaphoreTake(debugModeSemaphoreHandle, portMAX_DELAY);
+    switch(state)
+		{
+			case DEBUG_MODE_DEFAULT:
+				break;
+		}
+		osDelay(1);
   }
   /* USER CODE END debugModeTask */
 }
@@ -932,11 +1069,16 @@ void debugModeTask(void const * argument)
 void boardDebugModeTask(void const * argument)
 {
   /* USER CODE BEGIN boardDebugModeTask */
-  /* Infinite loop */
+   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(boardDebugModeSemaphoreHandle, portMAX_DELAY);
-    osDelay(1);
+    switch(state)
+		{
+			case BOARD_DEBUG_MODE_DEFAULT:
+				break;
+		}
+		osDelay(1);
   }
   /* USER CODE END boardDebugModeTask */
 }

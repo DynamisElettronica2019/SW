@@ -68,6 +68,23 @@
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+ 
+/***************** SELECTORS AND ENCODERS *************************************/
+
+typedef struct encoder_position
+{
+	char pin1;
+	char pin2;
+	char pin4;
+} encoder_position;
+
+void GPIO_encoders_init(void);
+void GPIO_encoders_set_driveMode(void);
+void GPIO_encoders_set_engineMap(void);
+int GPIO_encoders_left_encoder_movement(void);
+int GPIO_encoders_right_encoder_movement(void);
+
+/******************************************************************************/
 
 /* USER CODE END Prototypes */
 

@@ -89,6 +89,7 @@
 
 int i = 0;
 char driveMode, engineMap;
+char leftPosition, rightPosition;
 int state;
 
 /* USER CODE END PV */
@@ -150,8 +151,11 @@ int main(void)
 	
 	QSPI_MemoryMappedMode();
 	SPI_ltdc_init_sequence(&hspi1);
+	GPIO_encoders_init();
+	GPIO_encoders_set_driveMode();
+	GPIO_encoders_set_engineMap();
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-	
+
 	HAL_TIM_Base_Start_IT(&htim7);
       
   /* USER CODE END 2 */
@@ -266,36 +270,36 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-	
-	if (htim->Instance == TIM7) {
-    i++;
-		if ( i > 2000 ){
-			i = 0;
-			switch ( driveMode ){
-				case SKIDPAD_MODE	:
-					driveMode = SETTINGS_MODE;
-					break;
-				case AUTOX_MODE	:
-					driveMode = SKIDPAD_MODE;
-					break;
-				case ACCELERATION_MODE	:
-					driveMode = AUTOX_MODE;
-					break;
-				case ENDURANCE_MODE	:
-					driveMode = ACCELERATION_MODE;
-					break;
-				case DEBUG_MODE	:
-					driveMode = ENDURANCE_MODE;
-					break;
-				case BOARD_DEBUG_MODE	:
-					driveMode = DEBUG_MODE;
-					break;
-				case SETTINGS_MODE	:
-					driveMode = BOARD_DEBUG_MODE;
-					break;
-			}	
-		}
-  }
+//	
+//	if (htim->Instance == TIM7) {
+//    i++;
+//		if ( i > 2000 ){
+//			i = 0;
+//			switch ( driveMode ){
+//				case SKIDPAD_MODE	:
+//					driveMode = SETTINGS_MODE;
+//					break;
+//				case AUTOX_MODE	:
+//					driveMode = SKIDPAD_MODE;
+//					break;
+//				case ACCELERATION_MODE	:
+//					driveMode = AUTOX_MODE;
+//					break;
+//				case ENDURANCE_MODE	:
+//					driveMode = ACCELERATION_MODE;
+//					break;
+//				case DEBUG_MODE	:
+//					driveMode = ENDURANCE_MODE;
+//					break;
+//				case BOARD_DEBUG_MODE	:
+//					driveMode = DEBUG_MODE;
+//					break;
+//				case SETTINGS_MODE	:
+//					driveMode = BOARD_DEBUG_MODE;
+//					break;
+//			}	
+//		}
+//  }
 	
   /* USER CODE END Callback 1 */
 }

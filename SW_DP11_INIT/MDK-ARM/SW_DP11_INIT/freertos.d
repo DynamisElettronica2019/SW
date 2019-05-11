@@ -58,3 +58,6 @@ sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semp
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 sw_dp11_init\freertos.o: ../Core/Inc/general.h
 sw_dp11_init\freertos.o: ../Core/Inc/data.h
+sw_dp11_init\freertos.o: ../Core/Inc/gpio.h
+sw_dp11_init\freertos.o: ../Core/Inc/d_traction_control.h
+sw_dp11_init\freertos.o: ../Core/Inc/d_rpm_limiter.h
