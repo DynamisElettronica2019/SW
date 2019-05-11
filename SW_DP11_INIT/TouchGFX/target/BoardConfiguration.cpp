@@ -92,8 +92,6 @@ STM32F7TouchController tc;
 STM32F7Instrumentation mcuInstr;
 
 static LCD16bpp display;
-static uint16_t bitdepth = 16;
-
 namespace touchgfx
 {
 void touchgfx_init()

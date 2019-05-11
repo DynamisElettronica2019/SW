@@ -58,33 +58,76 @@
 
 /* USER CODE BEGIN Includes */
 
-	#define controller_0 0x28
-	#define controller_1 0x29
-	 
-	#define LED_1_RED		0x0F
-	#define LED_1_GREEN		0x10
-	#define LED_1_BLUE		0x11
+#define controller_0 		0x28
+#define controller_1 		0x29
+ 
+#define LED_1_RED				0x0F
+#define LED_1_GREEN			0x10
+#define LED_1_BLUE			0x11
 
-	#define LED_2_RED		0x12
-	#define LED_2_GREEN		0x13
-	#define LED_2_BLUE		0x14
+#define LED_2_RED				0x12
+#define LED_2_GREEN			0x13
+#define LED_2_BLUE			0x14
 
-	#define LED_3_RED		0x15
-	#define LED_3_GREEN		0x16
-	#define LED_3_BLUE		0x17
-
-	#define LED_4_RED		0x18
-	#define LED_4_GREEN		0x19
-	#define LED_4_BLUE		0x1A
-
-	#define LED_5_RED		0x1B
-	#define LED_5_GREEN		0x1C
-	#define LED_5_BLUE		0x1D
-
-	#define LED_6_RED		0x1E
-	#define LED_6_GREEN		0x1F
-	#define LED_6_BLUE		0x20
+#define LED_3_RED				0x15
+#define LED_3_GREEN			0x16
+#define LED_3_BLUE			0x17
 	
+#define LED_4_RED				0x18
+#define LED_4_GREEN			0x19
+#define LED_4_BLUE			0x1A
+
+#define LED_5_RED				0x1B
+#define LED_5_GREEN			0x1C
+#define LED_5_BLUE			0x1D
+
+#define LED_6_RED				0x1E
+#define LED_6_GREEN			0x1F
+#define LED_6_BLUE			0x20
+
+
+#define EEPROM_ADDRESS 	0xA0
+
+#define FirstOn 				0	 
+	 
+#define End_0						10
+#define End_1						11
+#define End_2						12
+#define End_3						13
+#define End_4						14
+#define End_5						15
+
+#define Acc_0						20
+#define Acc_1 					21
+#define Acc_2 					22 
+#define Acc_3 					23
+#define Acc_4 					24
+#define Acc_5 					25
+
+#define Aut_0 					30
+#define Aut_1					  31
+#define Aut_2				   	32
+#define Aut_3 					33
+#define Aut_4 					34
+#define Aut_5 					35
+
+#define Ski_0 					40
+#define Ski_1 					41
+#define Ski_2 					42
+#define Ski_3 					43
+#define Ski_4 					44
+#define Ski_5 					45
+#define Ski_6 					46
+
+#define Def_0 					50
+#define Def_1 					51
+#define Def_2 					52
+#define Def_3 					53
+#define Def_4 					54
+#define Def_5 					55
+ 	 
+#define N_POINTERS 			6
+	 
 /* USER CODE END Includes */
 
 extern I2C_HandleTypeDef hi2c1;
@@ -100,19 +143,34 @@ void MX_I2C1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
-	 void I2C_rpm_setup(void);
-	 void I2C_test(void);
-	 void I2C_brightness_max (uint16_t);
-	 void I2C_controller_0_ON(void);
-	 void I2C_controller_1_ON(void);
-	 void I2C_debug_red_on(uint16_t);
-	 void I2C_debug_green_on(uint16_t);
-	 void I2C_debug_blue_on(uint16_t);
-	 void I2C_debug_red_off(uint16_t);
-	 void I2C_debug_green_off(uint16_t);
-	 void I2C_debug_blue_off(uint16_t);
-	 void I2C_rpm_update(void);
-	 
+void I2C_rpm_setup(void);
+void I2C_test(void);
+void I2C_brightness_max (uint16_t);
+void I2C_controller_0_ON(void);
+void I2C_controller_1_ON(void);
+void I2C_debug_red_on(uint16_t);
+void I2C_debug_green_on(uint16_t);
+void I2C_debug_blue_on(uint16_t);
+void I2C_debug_red_off(uint16_t);
+void I2C_debug_green_off(uint16_t);
+void I2C_debug_blue_off(uint16_t);
+void I2C_rpm_update(void);
+ 
+void I2C_eeprom_write(uint8_t , uint16_t);	//si passa l'indice dell'inidicatore e l'indirizzo della memmoria
+uint8_t I2C_eeprom_read(uint16_t);		 			// ritorna l'indice dell'indicatore da visualizzare
+
+void I2C_save_endPointers(void);
+void I2C_save_accPointers(void);
+void I2C_save_autPointers(void);
+void I2C_save_skiPointers(void);
+
+void I2C_get_endPointers(void);
+void I2C_get_accPointers(void);
+void I2C_get_autPointers(void);
+void I2C_get_skiPointers(void);
+
+void I2C_getPointers(void);
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -153,17 +153,16 @@ int main(void)
 	QSPI_MemoryMappedMode();
 	
 	SPI_ltdc_init_sequence(&hspi1);
+	
+	I2C_rpm_setup();
+	I2C_getPointers();
 
 	GPIO_encoders_init();
 	GPIO_encoders_set_driveMode();
 	GPIO_encoders_set_engineMap();
-	
-	I2C_rpm_setup();
-		
+
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-
 	HAL_TIM_Base_Start_IT(&htim7);
-
 	
   /* USER CODE END 2 */
 

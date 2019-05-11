@@ -10,14 +10,14 @@
 
 /********************DEFINES********************/
 
-#define SETTINGS_MODE				7
-#define BOARD_DEBUG_MODE		1
-#define DEBUG_MODE					0
-#define ENDURANCE_MODE			6
-#define ACCELERATION_MODE		5
-#define AUTOX_MODE					4
+#define BOARD_DEBUG_MODE		0
+#define DEBUG_MODE					1
+#define SETTINGS_MODE				2
 #define SKIDPAD_MODE				3
-#define EMPTY_POSITION			2
+#define AUTOX_MODE					4
+#define ACCELERATION_MODE		5
+#define ENDURANCE_MODE			6
+#define EMPTY_POSITION			7
 	 
 #define MAP_1								1
 #define MAP_2								2
