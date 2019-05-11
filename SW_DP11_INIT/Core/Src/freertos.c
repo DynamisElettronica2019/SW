@@ -56,13 +56,14 @@
 
 /* Private includes ----------------------------------------------------------*/
 
-/* USER CODE BEGIN Includes */     
+/* USER CODE BEGIN Includes */ 
+
 #include "general.h"
 #include "data.h"
 #include "gpio.h"
-
 #include "d_traction_control.h"
 #include "d_rpm_limiter.h"
+#include "i2c.h"
 
 /* USER CODE END Includes */
 
@@ -526,6 +527,7 @@ void ledBlinkTask(void const * argument)
 		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"", 0, 0, "1"};
 		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
+		I2C_rpm_update();
     osDelay(250);
   }
   /* USER CODE END ledBlinkTask */
@@ -656,7 +658,7 @@ void mapSelectorTask(void const * argument)
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_encoders_set_engineMap();
 		
-	 Indicators[MAP].intValore = engineMap;
+	  Indicators[MAP].intValore = engineMap;
 		
 		//invio su can della mappa - polling ? appena si accende efi ? 
 		
@@ -868,14 +870,19 @@ void aux3ButtonTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_rpmStripeTask */
-void rpmStripeTask(void const * argument)
+void rpmStripeTask(void const * argument)	//-------------------------------INSERIRE LA CHIAMATA ALLA TASK----------------------------
 {
   /* USER CODE BEGIN rpmStripeTask */
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(rpmStripeSemaphoreHandle, portMAX_DELAY);
+		
+		I2C_test();
+		//	I2C_rpm_update();
+		
     osDelay(1);
+	
   }
   /* USER CODE END rpmStripeTask */
 }
