@@ -77,7 +77,7 @@
         <tvExpOptDlg>0</tvExpOptDlg>
         <IsCurrentTarget>1</IsCurrentTarget>
       </OPTFL>
-      <CpuCode>0</CpuCode>
+      <CpuCode>18</CpuCode>
       <DebugOpt>
         <uSim>0</uSim>
         <uTrg>1</uTrg>
@@ -200,7 +200,7 @@
 
   <Group>
     <GroupName>Application/User/Core</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -412,7 +412,7 @@
 
   <Group>
     <GroupName>Application/User/TouchGFX/target</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1371,6 +1371,18 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
+      <PathWithFileName>../touchgfx/generated/fonts/src/font_roboto_regular_45_4bpp.cpp</PathWithFileName>
+      <FilenameWithoutPath>Font_Roboto_Regular_45_4bpp.cpp</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>9</GroupNumber>
+      <FileNumber>95</FileNumber>
+      <FileType>8</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
       <PathWithFileName>../touchgfx/generated/fonts/src/font_roboto_regular_63_4bpp.cpp</PathWithFileName>
       <FilenameWithoutPath>Font_Roboto_Regular_63_4bpp.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
@@ -1378,7 +1390,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>95</FileNumber>
+      <FileNumber>96</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1390,7 +1402,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>96</FileNumber>
+      <FileNumber>97</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1402,7 +1414,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>97</FileNumber>
+      <FileNumber>98</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1414,7 +1426,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>98</FileNumber>
+      <FileNumber>99</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1426,7 +1438,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>99</FileNumber>
+      <FileNumber>100</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1438,7 +1450,19 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>100</FileNumber>
+      <FileNumber>101</FileNumber>
+      <FileType>8</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>../touchgfx/generated/fonts/src/kerning_roboto_regular_45_4bpp.cpp</PathWithFileName>
+      <FilenameWithoutPath>Kerning_Roboto_Regular_45_4bpp.cpp</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>9</GroupNumber>
+      <FileNumber>102</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1450,7 +1474,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>101</FileNumber>
+      <FileNumber>103</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1462,7 +1486,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>102</FileNumber>
+      <FileNumber>104</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1474,7 +1498,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>103</FileNumber>
+      <FileNumber>105</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1486,7 +1510,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>104</FileNumber>
+      <FileNumber>106</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1498,7 +1522,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>105</FileNumber>
+      <FileNumber>107</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1510,7 +1534,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>106</FileNumber>
+      <FileNumber>108</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1522,7 +1546,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>107</FileNumber>
+      <FileNumber>109</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1534,7 +1558,19 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>108</FileNumber>
+      <FileNumber>110</FileNumber>
+      <FileType>8</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>../touchgfx/generated/fonts/src/table_roboto_regular_45_4bpp.cpp</PathWithFileName>
+      <FilenameWithoutPath>Table_Roboto_Regular_45_4bpp.cpp</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>9</GroupNumber>
+      <FileNumber>111</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1546,7 +1582,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>109</FileNumber>
+      <FileNumber>112</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -1558,7 +1594,7 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>110</FileNumber>
+      <FileNumber>113</FileNumber>
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>

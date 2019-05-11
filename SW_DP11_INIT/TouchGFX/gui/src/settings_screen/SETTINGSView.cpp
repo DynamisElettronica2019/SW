@@ -22,7 +22,7 @@ SETTINGSView::SETTINGSView()
 
 void SETTINGSView::setupScreen()
 {
-		schermata_settings = 1;		// appena si entra nella modalità settings la variabile viene messa a 0, verrà messa a 1 in freertos.c
+		schermata_settings = 0;		// appena si entra nella modalità settings la variabile viene messa a 0, verrà messa a 1 in freertos.c
 		box_driveMode = 0;				// viene incrementata a 1, 2, 3 e poi riportata a 0.
 		box_indicator = 0;				// viene incrementata a 1, 2, 3, 4, 5 e poi riportata a 0.
 		pointer_scroll = 0;

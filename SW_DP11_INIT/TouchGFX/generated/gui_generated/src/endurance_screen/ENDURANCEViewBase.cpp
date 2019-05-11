@@ -178,19 +178,18 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID34));
 
+    box1.setPosition(180, 347, 280, 28);
+    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
+
     TEXTEndurance.setPosition(227, 347, 186, 33);
-    TEXTEndurance.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    TEXTEndurance.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TEXTEndurance.setLinespacing(0);
     TEXTEndurance.setTypedText(TypedText(T_SINGLEUSEID36));
 
-    boxBlack.setPosition(0, 0, 640, 481);
-    boxBlack.setVisible(false);
-    boxBlack.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-
-    textIndGearValue.setXY(202, -76);
+    textIndGearValue.setXY(202, -88);
     textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndGearValue.setLinespacing(0);
-    textIndGearValueBuffer[0] = 0;
+    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID255).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);
     textIndGearValue.resizeToCurrentText();
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID250));
@@ -224,8 +223,8 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
+    add(box1);
     add(TEXTEndurance);
-    add(boxBlack);
     add(textIndGearValue);
 }
 

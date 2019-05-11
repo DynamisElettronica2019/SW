@@ -19,16 +19,16 @@ public:
     void gotoENDURANCEScreenNoTransition();
 
 
-    // SKIDPAD
-    void gotoSKIDPADScreenNoTransition();
+    // ACCELERATION
+    void gotoACCELERATIONScreenNoTransition();
 
 
     // AUTOCROSS
     void gotoAUTOCROSSScreenNoTransition();
 
 
-    // ACCELERATION
-    void gotoACCELERATIONScreenNoTransition();
+    // SKIDPAD
+    void gotoSKIDPADScreenNoTransition();
 
 
     // SETTINGS
@@ -51,16 +51,16 @@ protected:
     void gotoENDURANCEScreenNoTransitionImpl();
 
 
-    // SKIDPAD
-    void gotoSKIDPADScreenNoTransitionImpl();
+    // ACCELERATION
+    void gotoACCELERATIONScreenNoTransitionImpl();
 
 
     // AUTOCROSS
     void gotoAUTOCROSSScreenNoTransitionImpl();
 
 
-    // ACCELERATION
-    void gotoACCELERATIONScreenNoTransitionImpl();
+    // SKIDPAD
+    void gotoSKIDPADScreenNoTransitionImpl();
 
 
     // SETTINGS

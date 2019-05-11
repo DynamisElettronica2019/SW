@@ -53,6 +53,7 @@ sw_dp11_init\debug_modeviewbase.o: ../TouchGFX/gui/include/gui/model/ModelListen
 sw_dp11_init\debug_modeviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp
 sw_dp11_init\debug_modeviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 sw_dp11_init\debug_modeviewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\debug_modeviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp
 sw_dp11_init\debug_modeviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp
 sw_dp11_init\debug_modeviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp
 sw_dp11_init\debug_modeviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/transforms/DisplayTransformation.hpp

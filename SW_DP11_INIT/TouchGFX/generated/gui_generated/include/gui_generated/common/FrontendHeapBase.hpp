@@ -56,12 +56,12 @@
 
 #include <gui/endurance_screen/ENDURANCEView.hpp>
 #include <gui/endurance_screen/ENDURANCEPresenter.hpp>
-#include <gui/skidpad_screen/SKIDPADView.hpp>
-#include <gui/skidpad_screen/SKIDPADPresenter.hpp>
-#include <gui/autocross_screen/AUTOCROSSView.hpp>
-#include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
 #include <gui/acceleration_screen/ACCELERATIONView.hpp>
 #include <gui/acceleration_screen/ACCELERATIONPresenter.hpp>
+#include <gui/autocross_screen/AUTOCROSSView.hpp>
+#include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
+#include <gui/skidpad_screen/SKIDPADView.hpp>
+#include <gui/skidpad_screen/SKIDPADPresenter.hpp>
 #include <gui/settings_screen/SETTINGSView.hpp>
 #include <gui/settings_screen/SETTINGSPresenter.hpp>
 #include <gui/board_debug_screen/BOARD_DEBUGView.hpp>
@@ -93,9 +93,9 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef meta::TypeList< ENDURANCEView,
-            meta::TypeList< SKIDPADView,
-            meta::TypeList< AUTOCROSSView,
             meta::TypeList< ACCELERATIONView,
+            meta::TypeList< AUTOCROSSView,
+            meta::TypeList< SKIDPADView,
             meta::TypeList< SETTINGSView,
             meta::TypeList< BOARD_DEBUGView,
             meta::TypeList< DEBUG_MODEView,
@@ -113,9 +113,9 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef meta::TypeList< ENDURANCEPresenter,
-            meta::TypeList< SKIDPADPresenter,
-            meta::TypeList< AUTOCROSSPresenter,
             meta::TypeList< ACCELERATIONPresenter,
+            meta::TypeList< AUTOCROSSPresenter,
+            meta::TypeList< SKIDPADPresenter,
             meta::TypeList< SETTINGSPresenter,
             meta::TypeList< BOARD_DEBUGPresenter,
             meta::TypeList< DEBUG_MODEPresenter,

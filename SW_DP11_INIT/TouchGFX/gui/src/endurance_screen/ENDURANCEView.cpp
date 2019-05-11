@@ -55,7 +55,7 @@ void ENDURANCEView::refreshEndurance()
 	
 	/******************VALORI*******************/
 	if ( Indicators[EndPointer[0]].TIPO == INT )
-		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", cont);
+		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[EndPointer[0]].intValore);
 	else
 		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[EndPointer[0]].floatValore);
 	

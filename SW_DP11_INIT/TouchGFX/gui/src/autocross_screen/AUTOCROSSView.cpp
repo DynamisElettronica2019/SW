@@ -54,7 +54,7 @@ void AUTOCROSSView::refreshAutocross()
 	if ( Indicators[AutPointer[0]].TIPO == INT )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[AutPointer[0]].intValore);
 	else
-		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AutPointer[0]].floatValore);
+		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AutPointer[0]].floatValore);
 
 	if ( Indicators[AutPointer[1]].TIPO == INT )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[AutPointer[1]].intValore);

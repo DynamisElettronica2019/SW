@@ -886,6 +886,11 @@
               <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_420_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_Roboto_Regular_45_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_45_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Font_Roboto_Regular_63_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_63_4bpp.cpp</FilePath>
@@ -914,6 +919,11 @@
               <FileName>Kerning_Roboto_Regular_420_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_420_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_Roboto_Regular_45_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_45_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_Roboto_Regular_63_4bpp.cpp</FileName>
@@ -954,6 +964,11 @@
               <FileName>Table_Roboto_Regular_420_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_420_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_Roboto_Regular_45_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_45_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_Roboto_Regular_63_4bpp.cpp</FileName>

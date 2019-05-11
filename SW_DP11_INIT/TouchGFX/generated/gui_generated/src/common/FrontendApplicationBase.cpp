@@ -9,12 +9,12 @@
 #include <touchgfx/Texts.hpp>
 #include <gui/endurance_screen/ENDURANCEView.hpp>
 #include <gui/endurance_screen/ENDURANCEPresenter.hpp>
-#include <gui/skidpad_screen/SKIDPADView.hpp>
-#include <gui/skidpad_screen/SKIDPADPresenter.hpp>
-#include <gui/autocross_screen/AUTOCROSSView.hpp>
-#include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
 #include <gui/acceleration_screen/ACCELERATIONView.hpp>
 #include <gui/acceleration_screen/ACCELERATIONPresenter.hpp>
+#include <gui/autocross_screen/AUTOCROSSView.hpp>
+#include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
+#include <gui/skidpad_screen/SKIDPADView.hpp>
+#include <gui/skidpad_screen/SKIDPADPresenter.hpp>
 #include <gui/settings_screen/SETTINGSView.hpp>
 #include <gui/settings_screen/SETTINGSPresenter.hpp>
 #include <gui/board_debug_screen/BOARD_DEBUGView.hpp>
@@ -52,17 +52,17 @@ void FrontendApplicationBase::gotoENDURANCEScreenNoTransitionImpl()
     makeTransition<ENDURANCEView, ENDURANCEPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// SKIDPAD
+// ACCELERATION
 
-void FrontendApplicationBase::gotoSKIDPADScreenNoTransition()
+void FrontendApplicationBase::gotoACCELERATIONScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSKIDPADScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoACCELERATIONScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoSKIDPADScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoACCELERATIONScreenNoTransitionImpl()
 {
-    makeTransition<SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    makeTransition<ACCELERATIONView, ACCELERATIONPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // AUTOCROSS
@@ -78,17 +78,17 @@ void FrontendApplicationBase::gotoAUTOCROSSScreenNoTransitionImpl()
     makeTransition<AUTOCROSSView, AUTOCROSSPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// ACCELERATION
+// SKIDPAD
 
-void FrontendApplicationBase::gotoACCELERATIONScreenNoTransition()
+void FrontendApplicationBase::gotoSKIDPADScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoACCELERATIONScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSKIDPADScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoACCELERATIONScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoSKIDPADScreenNoTransitionImpl()
 {
-    makeTransition<ACCELERATIONView, ACCELERATIONPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    makeTransition<SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // SETTINGS

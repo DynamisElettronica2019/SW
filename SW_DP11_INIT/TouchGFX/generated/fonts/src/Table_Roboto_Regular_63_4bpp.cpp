@@ -60,9 +60,6 @@ KEEP extern const touchgfx::GlyphNode glyphs_Roboto_Regular_63_4bpp[] FONT_LOCAT
     { 32067,  90,  34,  45,  45,   2,  38, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 32832,  91,  13,  61,  51,   4,  17, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 33259,  93,  12,  61,  51,   0,  17, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 33625,  95,  29,   5,   0,   0,  28, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 33700, 100,  30,  49,  48,   2,  36, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 34435, 105,   8,  46,  46,   4,  15, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 34619, 110,  27,  34,  34,   4,  35, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
+    { 33625,  95,  29,   5,   0,   0,  28, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
 };
 

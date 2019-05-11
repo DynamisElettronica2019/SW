@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/debug_mode_screen/DEBUG_MODEPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
@@ -29,9 +30,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box background;
-    touchgfx::Box box1;
-    touchgfx::Box box2;
-    touchgfx::Box box3;
+    touchgfx::BoxWithBorder boxIndCurrent;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextAreaWithOneWildcard textIndTitle1sx;
@@ -56,6 +55,10 @@ protected:
     touchgfx::PainterRGB565 line1_1_1Painter;
     touchgfx::Line line1_1_2;
     touchgfx::PainterRGB565 line1_1_2Painter;
+    touchgfx::TextAreaWithOneWildcard textIndTitle5sx;
+    touchgfx::TextAreaWithOneWildcard textIndValue5sx;
+    touchgfx::TextAreaWithOneWildcard textIndTitle5dx;
+    touchgfx::TextAreaWithOneWildcard textIndValue5dx;
 
     /*
      * Wildcard Buffers
@@ -92,6 +95,14 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndValue3dxBuffer[TEXTINDVALUE3DX_SIZE];
     static const uint16_t TEXTINDVALUE4DX_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValue4dxBuffer[TEXTINDVALUE4DX_SIZE];
+    static const uint16_t TEXTINDTITLE5SX_SIZE = 7;
+    touchgfx::Unicode::UnicodeChar textIndTitle5sxBuffer[TEXTINDTITLE5SX_SIZE];
+    static const uint16_t TEXTINDVALUE5SX_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValue5sxBuffer[TEXTINDVALUE5SX_SIZE];
+    static const uint16_t TEXTINDTITLE5DX_SIZE = 7;
+    touchgfx::Unicode::UnicodeChar textIndTitle5dxBuffer[TEXTINDTITLE5DX_SIZE];
+    static const uint16_t TEXTINDVALUE5DX_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValue5dxBuffer[TEXTINDVALUE5DX_SIZE];
 
 private:
 

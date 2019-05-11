@@ -178,6 +178,9 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID104));
 
+    box1.setPosition(180, 347, 280, 28);
+    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(67, 0, 255));
+
     TEXTAutocross.setPosition(227, 347, 186, 33);
     TEXTAutocross.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTAutocross.setLinespacing(0);
@@ -195,14 +198,10 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     textRpmLimiterValue.setWildcard(textRpmLimiterValueBuffer);
     textRpmLimiterValue.setTypedText(TypedText(T_SINGLEUSEID143));
 
-    boxBlack.setPosition(0, 0, 640, 481);
-    boxBlack.setVisible(false);
-    boxBlack.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-
-    textIndGearValue.setXY(202, -76);
+    textIndGearValue.setXY(202, -88);
     textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndGearValue.setLinespacing(0);
-    textIndGearValueBuffer[0] = 0;
+    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID256).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);
     textIndGearValue.resizeToCurrentText();
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID252));
@@ -236,10 +235,10 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
+    add(box1);
     add(TEXTAutocross);
     add(TEXTRpmLimiter);
     add(textRpmLimiterValue);
-    add(boxBlack);
     add(textIndGearValue);
 }
 

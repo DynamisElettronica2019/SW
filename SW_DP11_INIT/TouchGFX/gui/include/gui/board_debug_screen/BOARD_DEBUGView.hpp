@@ -20,9 +20,13 @@ protected:
 		touchgfx::Unicode::UnicodeChar Title1[6];
 		touchgfx::Unicode::UnicodeChar Title2[6];
 		touchgfx::Unicode::UnicodeChar Title3[6];
+		touchgfx::Unicode::UnicodeChar Title4[6];
+		touchgfx::Unicode::UnicodeChar Title5[6];
 		uint8_t pointer1;
 		uint8_t pointer2;
 		uint8_t pointer3;
+		uint8_t pointer4;
+		uint8_t pointer5;
 };
 
 #endif // BOARD_DEBUG_VIEW_HPP

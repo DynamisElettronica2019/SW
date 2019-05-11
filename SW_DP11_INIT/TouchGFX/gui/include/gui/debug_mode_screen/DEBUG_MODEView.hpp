@@ -7,6 +7,7 @@
 #include <general.h>
 #include <data.h>
 
+#define N_DEBUG_MODE_VALUES 5
 class DEBUG_MODEView : public DEBUG_MODEViewBase
 {
 public:
@@ -21,11 +22,13 @@ protected:
 		touchgfx::Unicode::UnicodeChar Title2sx[6];
 		touchgfx::Unicode::UnicodeChar Title3sx[6];
 		touchgfx::Unicode::UnicodeChar Title4sx[6];
+		touchgfx::Unicode::UnicodeChar Title5sx[6];
 
 		touchgfx::Unicode::UnicodeChar Title1dx[6];
 		touchgfx::Unicode::UnicodeChar Title2dx[6];
 		touchgfx::Unicode::UnicodeChar Title3dx[6];
 		touchgfx::Unicode::UnicodeChar Title4dx[6];
+		touchgfx::Unicode::UnicodeChar Title5dx[6];
 };
 
 #endif // DEBUG_MODE_VIEW_HPP

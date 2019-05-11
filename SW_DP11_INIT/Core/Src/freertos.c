@@ -517,14 +517,14 @@ void ledBlinkTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		Indicators[0] = (Indicator_Value) {EBB, INT,"EBB", 5, 1.1, "?"};
-    Indicators[1] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "?"};
-		Indicators[2] = (Indicator_Value) {EBB, INT,"EBB", 5, 1.1, "?"};
-    Indicators[3] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "?"};
-		Indicators[4] = (Indicator_Value) {EBB, INT,"EBB", 5, 1.1, "?"};
-    Indicators[5] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "?"};
-		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 99.8, "1"};
-		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 1, 99.8, "?"};
+		Indicators[0] = (Indicator_Value) {OIL_PRESS, FLOAT,"POIL", 5, 3.5, "?"};
+    Indicators[1] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 96.8, "?"};
+		Indicators[2] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", 0, 85.7, "?"};
+    Indicators[3] = (Indicator_Value) {TPS, INT,"TPS", 75, 0, "?"};
+		Indicators[4] = (Indicator_Value) {VBAT, FLOAT,"VBAT", 5, 12.1, "?"};
+    Indicators[5] = (Indicator_Value) {FUEL_PUMP, INT,"FUEL", 80, 0, "?"};
+		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"", 0, 0, "1"};
+		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
     osDelay(250);
   }
@@ -603,7 +603,7 @@ void modeSelectorTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
-		vTaskDelay(15/portTICK_PERIOD_MS);
+		vTaskDelay(50/portTICK_PERIOD_MS);
 		old_driveMode = driveMode;
 		GPIO_encoders_set_driveMode();
 		if (old_driveMode == SETTINGS_MODE)
@@ -653,7 +653,7 @@ void mapSelectorTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(mapSelectorSemaphoreHandle, portMAX_DELAY);
-		vTaskDelay(15/portTICK_PERIOD_MS);
+		vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_encoders_set_engineMap();
 		
 	 Indicators[MAP].intValore = engineMap;
