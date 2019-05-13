@@ -66,7 +66,7 @@
 #include "adc.h"
 #include "d_sensors.h"
 #include "tim.h"
-
+#include "can.h"
 
 /* USER CODE END Includes */
 

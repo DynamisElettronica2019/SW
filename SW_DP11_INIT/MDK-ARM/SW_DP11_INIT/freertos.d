@@ -65,3 +65,4 @@ sw_dp11_init\freertos.o: ../Core/Inc/i2c.h
 sw_dp11_init\freertos.o: ../Core/Inc/adc.h
 sw_dp11_init\freertos.o: ../Core/Inc/d_sensors.h
 sw_dp11_init\freertos.o: ../Core/Inc/tim.h
+sw_dp11_init\freertos.o: ../Core/Inc/can.h

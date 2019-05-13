@@ -351,7 +351,7 @@ void TIM_MapTractionRpm_send (){
 	//	-rpm_limiter (se necessario)
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+void TIM_callback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
 

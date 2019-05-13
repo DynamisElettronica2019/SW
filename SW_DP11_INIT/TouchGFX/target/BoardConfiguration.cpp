@@ -121,13 +121,13 @@ void touchgfx_init()
     //Set MCU instrumentation and Load calculation
     hal.setMCUInstrumentation(&mcuInstr);
     hal.enableMCULoadCalculation(true);
-	  HAL::getInstance()->setDisplayOrientation(ORIENTATION_LANDSCAPE); 
 }
 }
 
 void GRAPHICS_Init()
 {
    touchgfx::touchgfx_init();
+	 HAL::getInstance()->setDisplayOrientation(ORIENTATION_LANDSCAPE);
 }
 
 void GRAPHICS_MainTask(void)

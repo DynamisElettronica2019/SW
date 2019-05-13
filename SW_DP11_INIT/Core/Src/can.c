@@ -51,6 +51,7 @@
 #include "can.h"
 
 /* USER CODE BEGIN 0 */
+#include "data.h"
 
 CAN_TxHeaderTypeDef packetHeader;
 CAN_FilterTypeDef canFilterConfigHeader;
@@ -61,6 +62,8 @@ uint32_t packetMailbox;
 uint8_t dataPacket[8];
 uint8_t canReceivedMessageData0[8];
 CAN_RxHeaderTypeDef canReceivedMessageHeader0;
+
+extern Indicator_Value Indicators[N_INDICATORS];
 
 /* USER CODE END 0 */
 
@@ -201,6 +204,7 @@ extern void canSendDebug(void)
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
   HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &canReceivedMessageHeader0, canReceivedMessageData0);
+	Indicators[MAP].intValore = 4;
 	return;
 }
 
