@@ -50,6 +50,10 @@ typedef struct {
 //        Indicator_Value *BOX[6];
 //} Indicator_Pointer;
 
+typedef struct {
+        uint32_t ID;
+				uint8_t  can_data[8];	//per gli indicatori tipo la marcia che posso contenre una lettera (come la N)
+} can_packet_type;
 	 
 
 #ifdef __cplusplus

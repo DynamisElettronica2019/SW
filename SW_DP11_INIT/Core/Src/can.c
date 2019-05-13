@@ -52,6 +52,7 @@
 
 /* USER CODE BEGIN 0 */
 #include "data.h"
+#include "cmsis_os.h"
 
 CAN_TxHeaderTypeDef packetHeader;
 CAN_FilterTypeDef canFilterConfigHeader;
@@ -62,6 +63,12 @@ uint32_t packetMailbox;
 uint8_t dataPacket[8];
 uint8_t canReceivedMessageData0[8];
 CAN_RxHeaderTypeDef canReceivedMessageHeader0;
+
+extern BaseType_t xHigherPriorityTaskWoken;
+
+extern osSemaphoreId canSemaphoreHandle;
+extern osMessageQId canDataQueueHandle;
+extern osMessageQId canIDQueueHandle;
 
 extern Indicator_Value Indicators[N_INDICATORS];
 
@@ -155,9 +162,9 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 
 /* USER CODE BEGIN 1 */
 
-extern void canStart(void)
+extern void CAN_Start(void)
 {
-	canFilterConfig();
+	CAN_filterConfig();
 	HAL_CAN_ActivateNotification(&hcan1, CAN_IT_TX_MAILBOX_EMPTY);
 	HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
   HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO1_MSG_PENDING);
@@ -165,7 +172,7 @@ extern void canStart(void)
 	return;
 }
 
-static void canFilterConfig(void)
+static void CAN_filterConfig(void)
 {
 	canFilterConfigHeader.FilterBank = 0;
   canFilterConfigHeader.FilterMode = CAN_FILTERMODE_IDMASK;
@@ -182,7 +189,7 @@ static void canFilterConfig(void)
 }
 
 
-extern void canSendDebug(void)
+extern void CAN_sendDebug(void)
 {
 	packetHeader.StdId = 0x1A4;
 	packetHeader.RTR = CAN_RTR_DATA;
@@ -203,8 +210,17 @@ extern void canSendDebug(void)
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
+	int i;
+	can_packet_type can_packet;
   HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &canReceivedMessageHeader0, canReceivedMessageData0);
-	Indicators[MAP].intValore = 4;
+	can_packet.ID = canReceivedMessageHeader0.StdId;
+	for(i=0;i<8;i++)
+	{
+		can_packet.can_data[i] = canReceivedMessageData0[i];
+	}
+	xQueueSendFromISR(canIDQueueHandle, (void *)&can_packet, &xHigherPriorityTaskWoken);
+	
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 	return;
 }
 

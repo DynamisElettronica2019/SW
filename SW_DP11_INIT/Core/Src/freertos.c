@@ -106,6 +106,8 @@ int debug_mode_scroll_dx;
 int board_debug_scroll;
 uint8_t pointer_scroll;
 
+extern BaseType_t xHigherPriorityTaskWoken;
+
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 
@@ -138,7 +140,8 @@ osThreadId boardDebug_TaskHandle;
 osThreadId debugFrtos_taskHandle;
 osThreadId aux1_TaskHandle;
 osThreadId aux2_TaskHandle;
-osMessageQId canQueueHandle;
+osMessageQId canDataQueueHandle;
+osMessageQId canIDQueueHandle;
 osSemaphoreId canSemaphoreHandle;
 osSemaphoreId upShiftSemaphoreHandle;
 osSemaphoreId downShiftSemaphoreHandle;
@@ -486,9 +489,13 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_THREADS */
 
   /* Create the queue(s) */
-  /* definition and creation of canQueue */
-  osMessageQDef(canQueue, 5, uint16_t);
-  canQueueHandle = osMessageCreate(osMessageQ(canQueue), NULL);
+  /* definition and creation of canDataQueue */
+  osMessageQDef(canDataQueue, 8, uint8_t);
+  canDataQueueHandle = osMessageCreate(osMessageQ(canDataQueue), NULL);
+
+  /* definition and creation of canIDQueue */
+  osMessageQDef(canIDQueue, 1, uint32_t);
+  canIDQueueHandle = osMessageCreate(osMessageQ(canIDQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -540,7 +547,7 @@ void ledBlinkTask(void const * argument)
 		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
 		//I2C_rpm_update();
-		canSendDebug();
+		CAN_sendDebug();
     osDelay(250);
   }
   /* USER CODE END ledBlinkTask */
@@ -556,10 +563,16 @@ void ledBlinkTask(void const * argument)
 void canTask(void const * argument)
 {
   /* USER CODE BEGIN canTask */
+	
+	can_packet_type can_packetRX;
   /* Infinite loop */
   for(;;)
   {
-		xSemaphoreTake(canSemaphoreHandle, portMAX_DELAY);
+		xQueueReceive(canIDQueueHandle, &can_packetRX, portMAX_DELAY);
+		if (can_packetRX.ID == 0x1B4)
+			Indicators[MAP].intValore = can_packetRX.can_data[7];
+		else 
+			Indicators[MAP].intValore = 3;
     osDelay(1);
   }
   /* USER CODE END canTask */

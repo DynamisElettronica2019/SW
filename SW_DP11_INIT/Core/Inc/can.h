@@ -70,8 +70,9 @@ void MX_CAN1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 	 
-static void canFilterConfig(void);
-void canStart(void);
+static void CAN_filterConfig(void);
+void CAN_Start(void);
+void CAN_sendDebug(void);
 
 /* USER CODE END Prototypes */
 
