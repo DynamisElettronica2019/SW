@@ -157,9 +157,9 @@ int main(void)
 	I2C_rpm_setup();
 	I2C_getPointers();
 
-	GPIO_encoders_init();
+	//GPIO_encoders_init();
 	GPIO_encoders_set_driveMode();
-	//GPIO_encoders_set_engineMap();
+	GPIO_encoders_set_engineMap();
 
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
 	HAL_TIM_Base_Start_IT(&htim7);

@@ -29,13 +29,15 @@ Project File Date:  05/13/2019
 *** Warning: Using Microlib and C++ file(s) might cause the linker to fail !
   
 Build target 'SW_DP11_INIT'
-compiling freertos.c...
-../Core/Src/freertos.c(833): warning:  #514-D: pointless comparison of unsigned integer with a negative constant
-  				if (pointer_scroll <= -1)
-../Core/Src/freertos.c: 1 warning, 0 errors
+compiling stm32f7xx_it.c...
+compiling main.cpp...
+compiling gpio.c...
+../Core/Src/gpio.c(302): warning:  #177-D: variable "new_map"  was declared but never referenced
+  	char new_map;
+../Core/Src/gpio.c: 1 warning, 0 errors
 linking...
 SW_DP11_INIT\SW_DP11_INIT.sct(18): warning: L6314W: No section matches pattern *.o(ExtFlashSection).
-Program Size: Code=97764 RO-data=599772 RW-data=724 ZI-data=85304  
+Program Size: Code=97576 RO-data=599772 RW-data=724 ZI-data=85304  
 Finished: 0 information, 1 warning and 0 error messages.
 FromELF: creating hex file...
 "SW_DP11_INIT\SW_DP11_INIT.axf" - 0 Error(s), 2 Warning(s).
@@ -61,7 +63,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.1.2
-Build Time Elapsed:  00:00:11
+Build Time Elapsed:  00:00:21
 </pre>
 </body>
 </html>
