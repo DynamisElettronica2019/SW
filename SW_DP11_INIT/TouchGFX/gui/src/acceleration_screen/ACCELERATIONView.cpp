@@ -15,7 +15,7 @@ ACCELERATIONView::ACCELERATIONView()
 
 void ACCELERATIONView::setupScreen()
 {
-    ACCELERATIONViewBase::setupScreen();
+		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);	
 		AccPointer[0] = 0;
 		AccPointer[1] = 1;
 		AccPointer[2] = 2;
@@ -24,7 +24,7 @@ void ACCELERATIONView::setupScreen()
 		AccPointer[5] = 5;
 		boxIndicatorGear.invalidate();
 		cont = 0;
-
+    ACCELERATIONViewBase::setupScreen();
 }
 
 void ACCELERATIONView::tearDownScreen()
@@ -55,35 +55,53 @@ void ACCELERATIONView::refreshAcceleration()
 	Unicode::snprintf(textIndTitle6Buffer, TEXTINDTITLE6_SIZE, "%s", Title6);
 	
 	/******************VALORI*******************/
-	if ( Indicators[AccPointer[0]].TIPO == INT )
-		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[AccPointer[0]].intValore);
+	if (	Indicators[AccPointer[0]].intValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AccPointer[0]].floatValore);
+		if ( Indicators[AccPointer[0]].TIPO == INT )
+			Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[AccPointer[0]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AccPointer[0]].floatValore);
+		
+	if (	Indicators[AccPointer[1]].intValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[AccPointer[1]].TIPO == INT )
+			Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[AccPointer[1]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%.1f", Indicators[AccPointer[1]].floatValore);
 	
-	if ( Indicators[AccPointer[1]].TIPO == INT )
-		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[AccPointer[1]].intValore);
+	if (	Indicators[AccPointer[2]].intValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%.1f", Indicators[AccPointer[1]].floatValore);
+		if ( Indicators[AccPointer[2]].TIPO == INT )
+			Unicode::snprintf(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%d", Indicators[AccPointer[2]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%.1f", Indicators[AccPointer[2]].floatValore);
 	
-	if ( Indicators[AccPointer[2]].TIPO == INT )
-		Unicode::snprintf(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%d", Indicators[AccPointer[2]].intValore);
+	if (	Indicators[AccPointer[3]].intValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%.1f", Indicators[AccPointer[2]].floatValore);
-	
-	if ( Indicators[AccPointer[3]].TIPO == INT )
-		Unicode::snprintf(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%d", Indicators[AccPointer[3]].intValore);
+		if ( Indicators[AccPointer[3]].TIPO == INT )
+			Unicode::snprintf(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%d", Indicators[AccPointer[3]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%.1f", Indicators[AccPointer[3]].floatValore);
+
+	if (	Indicators[AccPointer[4]].intValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue5Buffer, TEXTINDVALUE4_SIZE, "%s", Empty);	
+	else		
+		if ( Indicators[AccPointer[4]].TIPO == INT )
+			Unicode::snprintf(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%d", Indicators[AccPointer[4]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%.1f", Indicators[AccPointer[4]].floatValore);
+
+	if (	Indicators[AccPointer[5]].intValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%.1f", Indicators[AccPointer[3]].floatValore);
-	
-	if ( Indicators[AccPointer[4]].TIPO == INT )
-		Unicode::snprintf(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%d", Indicators[AccPointer[4]].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%.1f", Indicators[AccPointer[4]].floatValore);
-	
-	if ( Indicators[AccPointer[5]].TIPO == INT )
-		Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%d", Indicators[AccPointer[5]].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[AccPointer[5]].floatValore);
+		if ( Indicators[AccPointer[5]].TIPO == INT )
+			Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE5_SIZE, "%d", Indicators[AccPointer[5]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[AccPointer[5]].floatValore);
 	
 	/****************GEAR-TC-MAP*****************/
 	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR_MOTOR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 

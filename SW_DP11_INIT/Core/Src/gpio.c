@@ -304,21 +304,21 @@ void GPIO_encoders_set_engineMap(void)
 	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
 	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
 
-	leftPosition = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
+//	leftPosition = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
 
 //	rightPosition = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
 
 	
-//	new_map = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
-//	
-//	// a Nico non piace il % :(
-//	if(new_map == 0 || new_map == 2 || new_map == 4 || new_map == 6) new_map = MAP_1;
-//	else new_map = MAP_2;
-//	if(engineMap != new_map)
-//	{
-//		engineMap = new_map;
-//		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
-//	}
+	new_map = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
+	
+	// a Nico non piace il % :(
+	if(new_map == 0 || new_map == 2 || new_map == 4 || new_map == 6) new_map = MAP_1;
+	else new_map = MAP_2;
+	if(engineMap != new_map)
+	{
+		engineMap = new_map;
+		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+	}
 
 }
 

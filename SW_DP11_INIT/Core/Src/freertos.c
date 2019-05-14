@@ -104,7 +104,8 @@ int timerTempCurr = 0;
 int debug_mode_scroll_sx;
 int debug_mode_scroll_dx;
 int board_debug_scroll;
-uint8_t pointer_scroll;
+int pointer_scroll;
+int change_pointer;
 
 extern BaseType_t xHigherPriorityTaskWoken;
 
@@ -537,12 +538,20 @@ void ledBlinkTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		Indicators[0] = (Indicator_Value) {OIL_PRESS, FLOAT,"POIL", 5, 3.5, "?"};
-    Indicators[1] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 96.8, "?"};
-		Indicators[2] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", 0, 85.7, "?"};
-    Indicators[3] = (Indicator_Value) {TPS, INT,"TPS", 75, 0, "?"};
-		Indicators[4] = (Indicator_Value) {VBAT, FLOAT,"VBAT", 5, 12.1, "?"};
-    Indicators[5] = (Indicator_Value) {FUEL_PUMP, INT,"FUEL", 80, 0, "?"};
+//		Indicators[0] = (Indicator_Value) {OIL_PRESS, FLOAT,"POIL", 5, 3.5, "?"};
+//    Indicators[1] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 96.8, "?"};
+//		Indicators[2] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", 0, 85.7, "?"};
+//    Indicators[3] = (Indicator_Value) {TPS, INT,"TPS", 75, 0, "?"};
+//		Indicators[4] = (Indicator_Value) {VBAT, FLOAT,"VBAT", 5, 12.1, "?"};
+//    Indicators[5] = (Indicator_Value) {FUEL_PUMP, INT,"FUEL", 80, 0, "?"};
+		
+		Indicators[0] = (Indicator_Value) {0, FLOAT,"POIL", DEF_VALUE, 3.5, "?"};
+    Indicators[1] = (Indicator_Value) {1, FLOAT,"TH2O", DEF_VALUE, 96.8, "?"};
+		Indicators[2] = (Indicator_Value) {2, FLOAT,"TOIL_I", DEF_VALUE, 85.7, "?"};
+    Indicators[3] = (Indicator_Value) {3, FLOAT,"TPS", DEF_VALUE, 75.0, "?"};
+		Indicators[4] = (Indicator_Value) {4, FLOAT,"VBAT", DEF_VALUE, 12.1, "?"};
+    Indicators[5] = (Indicator_Value) {5, FLOAT,"FUEL", DEF_VALUE, 80.3, "?"};
+		
 		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"", 0, 0, "1"};
 		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
@@ -710,9 +719,10 @@ void leftEncoderTask(void const * argument)
 		// comunque non è meglio avere delle funzioni che contengono cosa bisogna fare in ogni modalità se si
 		// gira l'encoder ? Così evitiamo di avere una task mega lunga
 		xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
+		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_encoders_left_encoder_movement();
 		leftPosition = leftPosition + movement; 
-		Indicators[MAP].intValore = leftPosition;
+		//Indicators[MAP].intValore = leftPosition;
 		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
 		// la posizione relativa o assoluta
 		
@@ -736,7 +746,8 @@ void leftEncoderTask(void const * argument)
 				break;
 			case SETTINGS_MODE:
 				// non ho capito cosa usi per fare lo switch case all'interno della modalità settings quindi te l'ho lasciato commentato :D
-			/*case 0: 
+			switch (schermata_settings){
+			case 0: 
 						if (movement == 1)
 							box_driveMode = box_driveMode + 1;
 						if (movement == -1)
@@ -750,14 +761,14 @@ void leftEncoderTask(void const * argument)
 						pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
 						if (movement == 1)
 							box_indicator = box_indicator + 1;
-						if (movement = -1)
+						if (movement == -1)
 							box_indicator = box_indicator - 1;
 						if (box_indicator >= 6)
 							box_indicator = 0;
 						if (box_indicator <= -1)
 							box_indicator = 5;
-					}
-					break;*/
+					break;
+				}
 			case DEBUG_MODE:
 					// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE
 				if (movement == 1)
@@ -792,9 +803,10 @@ void rightEncoderTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
+		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_encoders_right_encoder_movement();
 	  rightPosition = rightPosition + movement;
-		Indicators[MAP].intValore = rightPosition;
+		//Indicators[MAP].intValore = rightPosition;
 		
 		switch(driveMode)
 		{
@@ -825,7 +837,8 @@ void rightEncoderTask(void const * argument)
 					debug_mode_scroll_dx = N_INDICATORS - 1;
 				break;
 			case SETTINGS_MODE:
-				// scorri le finestrelle 
+				// scorri le finestrelle
+				change_pointer = 1; 
 				if (movement == 1)
 					pointer_scroll = pointer_scroll + 1;
 				if (movement == -1)

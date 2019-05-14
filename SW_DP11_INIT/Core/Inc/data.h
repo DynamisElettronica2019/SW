@@ -11,8 +11,10 @@
 #define TIT_LEN 7				//------------- Lunghezza massima della stringa va visualizzare come titolo
 #define START_BOARD 10	//------------- Inizio indicatori per schermata board debug !!!(messi a caso)!!!
 #define END_BOARD 20		//------------- Fine indicatori per schermata board debug		!!!(messi a caso)!!!
-
-	
+	 
+#define DEF_VALUE 9999  //------------- Valore con cui si inizializza la matrice di dati per capire se sono arrivati dati nuovi dal CAN o no
+#define DEF_SIMBOL "?"  
+	 
 /********************DATA TYPE********************/	 // per ora vengono creati in freertos.c e dichiarati come extern dalle altre parti
 
 typedef enum {
