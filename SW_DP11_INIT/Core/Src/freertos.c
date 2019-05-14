@@ -569,10 +569,10 @@ void canTask(void const * argument)
   for(;;)
   {
 		xQueueReceive(canIDQueueHandle, &can_packetRX, portMAX_DELAY);
-		if (can_packetRX.ID == 0x1B4)
-			Indicators[MAP].intValore = can_packetRX.can_data[7];
-		else 
-			Indicators[MAP].intValore = 3;
+//		if (can_packetRX.ID == 0x1B4)
+//			Indicators[MAP].intValore = can_packetRX.can_data[7];
+//		else 
+//			Indicators[MAP].intValore = 3;
     osDelay(1);
   }
   /* USER CODE END canTask */
@@ -707,12 +707,16 @@ void leftEncoderTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+		// comunque non è meglio avere delle funzioni che contengono cosa bisogna fare in ogni modalità se si
+		// gira l'encoder ? Così evitiamo di avere una task mega lunga
 		xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
 		movement = GPIO_encoders_left_encoder_movement();
 		leftPosition = leftPosition + movement; 
+		Indicators[MAP].intValore = leftPosition;
 		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
 		// la posizione relativa o assoluta
-		switch(driveMode)
+		
+			switch(driveMode)
 		{
 			case AUTOX_MODE:
 			case ACCELERATION_MODE:
@@ -721,11 +725,49 @@ void leftEncoderTask(void const * argument)
 				d_traction_control_handle(movement);
 				break;
 			case BOARD_DEBUG_MODE:
-			case SETTINGS_MODE:
-				// scorri il menu - AGGIORNIAMO MATRICE GLOBALE
+				if (movement == 1)
+					board_debug_scroll = board_debug_scroll + 1;
+				if (movement == -1)
+					board_debug_scroll = board_debug_scroll - 1;
+				if (board_debug_scroll > END_BOARD)
+					board_debug_scroll = START_BOARD;
+				if (board_debug_scroll < START_BOARD)
+					board_debug_scroll = END_BOARD;
 				break;
+			case SETTINGS_MODE:
+				// non ho capito cosa usi per fare lo switch case all'interno della modalità settings quindi te l'ho lasciato commentato :D
+			/*case 0: 
+						if (movement == 1)
+							box_driveMode = box_driveMode + 1;
+						if (movement == -1)
+							box_driveMode = box_driveMode - 1;
+						if (box_driveMode >= 4 )
+							box_driveMode = 0;
+						if (box_driveMode <= -1 )
+							box_driveMode = 3;
+						break;
+			case 1:
+						pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
+						if (movement == 1)
+							box_indicator = box_indicator + 1;
+						if (movement = -1)
+							box_indicator = box_indicator - 1;
+						if (box_indicator >= 6)
+							box_indicator = 0;
+						if (box_indicator <= -1)
+							box_indicator = 5;
+					}
+					break;*/
 			case DEBUG_MODE:
-				// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE 
+					// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE
+				if (movement == 1)
+						debug_mode_scroll_sx = debug_mode_scroll_sx + 1;
+				if (movement == -1)
+						debug_mode_scroll_sx = debug_mode_scroll_sx - 1;
+				if (debug_mode_scroll_sx < 3 )
+					debug_mode_scroll_sx = 3;
+				if (debug_mode_scroll_sx >= N_INDICATORS)
+					debug_mode_scroll_sx = N_INDICATORS - 1;
 				break;
 			default: 
 				break;
@@ -752,6 +794,8 @@ void rightEncoderTask(void const * argument)
 		xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
 		movement = GPIO_encoders_right_encoder_movement();
 	  rightPosition = rightPosition + movement;
+		Indicators[MAP].intValore = rightPosition;
+		
 		switch(driveMode)
 		{
 			case AUTOX_MODE:
@@ -760,18 +804,42 @@ void rightEncoderTask(void const * argument)
 				break;
 			case BOARD_DEBUG_MODE:
 				// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
+				if (movement == 1)
+					board_debug_scroll = board_debug_scroll + 1;
+				if (movement == -1)
+					board_debug_scroll = board_debug_scroll - 1;
+				if (board_debug_scroll > END_BOARD)
+					board_debug_scroll = START_BOARD;
+				if (board_debug_scroll < START_BOARD)
+					board_debug_scroll = END_BOARD;
 				break;
 			case DEBUG_MODE:
 				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
+				if (movement == 1)
+						debug_mode_scroll_dx = debug_mode_scroll_dx + 1;
+				if (movement == -1)
+						debug_mode_scroll_dx = debug_mode_scroll_dx - 1;
+				if (debug_mode_scroll_dx < 3 )
+					debug_mode_scroll_dx = 3;
+				if (debug_mode_scroll_dx >= N_INDICATORS)
+					debug_mode_scroll_dx = N_INDICATORS - 1;
 				break;
 			case SETTINGS_MODE:
-				// scorri le finestrelle - AGGIORNARE LA MATRICE GLOBALE
+				// scorri le finestrelle 
+				if (movement == 1)
+					pointer_scroll = pointer_scroll + 1;
+				if (movement == -1)
+					pointer_scroll = pointer_scroll - 1;
+				if (pointer_scroll <= -1)
+					pointer_scroll = N_INDICATORS - 1;
+				if (pointer_scroll >= N_INDICATORS)
+					pointer_scroll = 0;
 				break;
 			default: 
 				break;
 		}
     osDelay(1);
-  }
+	}
   /* USER CODE END rightEncoderTask */
 }
 

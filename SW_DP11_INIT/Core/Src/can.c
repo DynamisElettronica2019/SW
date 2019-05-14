@@ -210,17 +210,17 @@ extern void CAN_sendDebug(void)
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-	int i;
-	can_packet_type can_packet;
+//	int i;
+//	can_packet_type can_packet;
   HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &canReceivedMessageHeader0, canReceivedMessageData0);
-	can_packet.ID = canReceivedMessageHeader0.StdId;
-	for(i=0;i<8;i++)
-	{
-		can_packet.can_data[i] = canReceivedMessageData0[i];
-	}
-	xQueueSendFromISR(canIDQueueHandle, (void *)&can_packet, &xHigherPriorityTaskWoken);
-	
-	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+//	can_packet.ID = canReceivedMessageHeader0.StdId;
+//	for(i=0;i<8;i++)
+//	{
+//		can_packet.can_data[i] = canReceivedMessageData0[i];
+//	}
+//	xQueueSendFromISR(canIDQueueHandle, (void *)&can_packet, &xHigherPriorityTaskWoken);
+
+//	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 	return;
 }
 
