@@ -91,7 +91,6 @@
 int i = 0;
 char driveMode, engineMap;
 char leftPosition, rightPosition;
-float clutchValue = 0;
 int state;
 
 /* USER CODE END PV */

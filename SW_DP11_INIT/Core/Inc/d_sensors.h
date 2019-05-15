@@ -8,15 +8,18 @@ extern "C" {
 	
 #include "main.h"
 #include "adc.h"
+#include "data.h"
 	
-#define VDD 3.3
-#define LEVEL 4095
+#define CLUTCH_MAX_VALUE 4000
+#define CLUTCH_MIN_VALUE 0
 
 	void dSensors_Clutch_send(void);	//in caso di invio diretto dalla task è inutile
 
 	void dSensors_Sensors_send(void);	//in caso di invio diretto dalla task è inutile	
 	
 	void dSensors_update(void);
+	
+	void dSensors_CLUTCH(int);
 	
 #ifdef __cplusplus
 }

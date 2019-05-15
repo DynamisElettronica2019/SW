@@ -55,7 +55,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "d_sensors.h"
+	 
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -63,6 +64,10 @@
 extern ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN Private defines */
+
+#define TEMP_ADC 		0
+#define CLUTCH_ADC 	1
+#define CURR_ADC 		2
 	 
 /* USER CODE END Private defines */
 

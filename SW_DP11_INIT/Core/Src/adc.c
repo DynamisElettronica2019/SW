@@ -51,14 +51,10 @@
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
-#include "data.h"
 
 uint32_t ADC_BUF[3];
 
-
-extern Indicator_Value Indicators[N_INDICATORS];	
-extern int timer;
-extern float clutchValue;
+float oldClutchValue = 0;
 	
 /* USER CODE END 0 */
 
@@ -203,35 +199,10 @@ void ADC_read(void)	{ //---------------------INTERROMPERE IL BLINK DELLA_BLINK T
 	
 	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_BUF,3);
 	
-	Indicators[0] = (Indicator_Value) {0, INT,"TIM", DEF_VALUE, 4, "?"};			
-	Indicators[0].intValore = timer;
+	dSensors_CLUTCH( ADC_BUF[CLUTCH_ADC] );
 	
-	if (  ADC_BUF[0] > 1250 )	{				//temperatura circa 1 V
-		HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_SET);
-	}
-	else	{
-		HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_RESET);
-	}
-	
-	clutchValue = ADC_BUF[1];
-//	clutchValue = (oldClutch/4095*100*0.2)+clutchValue/4095*100*0.8;
-//	oldClutch = clutchValue;
-	
-	if (  ADC_BUF[1] > 1250 )	{				// corrente circa 1 V
-		HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
-	}
-	else	{
-		HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
-	}
-	
-	if (  ADC_BUF[2] > 3700 )	{				// clutch circa 3 V
-		HAL_GPIO_WritePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin, GPIO_PIN_SET);
-	}
-	else	{
-		HAL_GPIO_WritePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin, GPIO_PIN_RESET);
-	}
-
 	HAL_ADC_Stop_DMA (&hadc1);
+	
 	return ;
 }
 
