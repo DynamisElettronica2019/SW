@@ -157,7 +157,7 @@ int main(void)
 	I2C_rpm_setup();
 	I2C_getPointers();
 
-	//GPIO_encoders_init();
+	GPIO_encoders_init();
 	GPIO_encoders_set_driveMode();
 	GPIO_encoders_set_engineMap();
 

@@ -5,6 +5,9 @@
 #ifdef __cplusplus
  extern "C" {
 #endif
+
+#include "main.h"
+	 
 /********************DEFINES********************/
 	 
 #define N_INDICATORS 50	//------------- Da decidere quali indicatori utilizzare
@@ -53,10 +56,10 @@ typedef struct {
 //} Indicator_Pointer;
 
 typedef struct {
-        uint32_t ID;
-				uint8_t  can_data[8];	//per gli indicatori tipo la marcia che posso contenre una lettera (come la N)
-} can_packet_type;
-	 
+	CAN_RxHeaderTypeDef CAN_RxPacket_Header;
+	uint8_t CAN_RxPacket_Data[8];
+} CAN_RxPacketTypeDef;
+
 
 #ifdef __cplusplus
 }

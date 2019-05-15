@@ -141,8 +141,7 @@ osThreadId boardDebug_TaskHandle;
 osThreadId debugFrtos_taskHandle;
 osThreadId aux1_TaskHandle;
 osThreadId aux2_TaskHandle;
-osMessageQId canDataQueueHandle;
-osMessageQId canIDQueueHandle;
+osMessageQId canQueueHandle;
 osSemaphoreId canSemaphoreHandle;
 osSemaphoreId upShiftSemaphoreHandle;
 osSemaphoreId downShiftSemaphoreHandle;
@@ -490,13 +489,9 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_THREADS */
 
   /* Create the queue(s) */
-  /* definition and creation of canDataQueue */
-  osMessageQDef(canDataQueue, 8, uint8_t);
-  canDataQueueHandle = osMessageCreate(osMessageQ(canDataQueue), NULL);
-
-  /* definition and creation of canIDQueue */
-  osMessageQDef(canIDQueue, 1, uint32_t);
-  canIDQueueHandle = osMessageCreate(osMessageQ(canIDQueue), NULL);
+  /* definition and creation of canQueue */
+  osMessageQDef(canQueue, 8, CAN_RxPacketTypeDef);
+  canQueueHandle = osMessageCreate(osMessageQ(canQueue), NULL);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -572,16 +567,19 @@ void ledBlinkTask(void const * argument)
 void canTask(void const * argument)
 {
   /* USER CODE BEGIN canTask */
-	
-	can_packet_type can_packetRX;
+	CAN_RxPacketTypeDef canMessageRX;
   /* Infinite loop */
   for(;;)
   {
-		xQueueReceive(canIDQueueHandle, &can_packetRX, portMAX_DELAY);
-//		if (can_packetRX.ID == 0x1B4)
-//			Indicators[MAP].intValore = can_packetRX.can_data[7];
-//		else 
-//			Indicators[MAP].intValore = 3;
+		if(xQueueReceive(canQueueHandle, &canMessageRX, portMAX_DELAY))
+		{
+			if( canMessageRX.CAN_RxPacket_Header.StdId == 0x1F4)		
+				Indicators[MAP].intValore = canMessageRX.CAN_RxPacket_Data[3];	
+		  else if( canMessageRX.CAN_RxPacket_Header.StdId == 0x234)		
+				Indicators[MAP].intValore = canMessageRX.CAN_RxPacket_Data[5];	
+			else 
+				Indicators[MAP].intValore = 4;	
+		}
     osDelay(1);
   }
   /* USER CODE END canTask */
@@ -726,7 +724,7 @@ void leftEncoderTask(void const * argument)
 		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
 		// la posizione relativa o assoluta
 		
-			switch(driveMode)
+		switch(driveMode)
 		{
 			case AUTOX_MODE:
 			case ACCELERATION_MODE:

@@ -59,18 +59,14 @@ CAN_FilterTypeDef canFilterConfigHeader;
 HAL_StatusTypeDef filterInitReturn;
 HAL_StatusTypeDef canStartReturn;
 HAL_StatusTypeDef canSendReturn;
+
 uint32_t packetMailbox;
 uint8_t dataPacket[8];
-uint8_t canReceivedMessageData0[8];
-CAN_RxHeaderTypeDef canReceivedMessageHeader0;
+CAN_RxPacketTypeDef canReceivedMessage;
 
 extern BaseType_t xHigherPriorityTaskWoken;
 
-extern osSemaphoreId canSemaphoreHandle;
-extern osMessageQId canDataQueueHandle;
-extern osMessageQId canIDQueueHandle;
-
-extern Indicator_Value Indicators[N_INDICATORS];
+extern osMessageQId canQueueHandle;
 
 /* USER CODE END 0 */
 
@@ -209,19 +205,12 @@ extern void CAN_sendDebug(void)
 }
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
-{
-//	int i;
-//	can_packet_type can_packet;
-  HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &canReceivedMessageHeader0, canReceivedMessageData0);
-//	can_packet.ID = canReceivedMessageHeader0.StdId;
-//	for(i=0;i<8;i++)
-//	{
-//		can_packet.can_data[i] = canReceivedMessageData0[i];
-//	}
-//	xQueueSendFromISR(canIDQueueHandle, (void *)&can_packet, &xHigherPriorityTaskWoken);
+{	
+	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &(canReceivedMessage.CAN_RxPacket_Header), canReceivedMessage.CAN_RxPacket_Data); 
 
-//	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-	return;
+  xQueueSendFromISR( canQueueHandle, &canReceivedMessage, &xHigherPriorityTaskWoken );
+
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 /* USER CODE END 1 */
