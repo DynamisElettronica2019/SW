@@ -97,6 +97,7 @@ int box_indicator;
 extern char driveMode, engineMap;
 extern char leftPosition, rightPosition;
 extern int state;
+extern float clutchValue;
 
 int timerClutch = 0;
 int timerTempCurr = 0;
@@ -540,8 +541,8 @@ void ledBlinkTask(void const * argument)
 //		Indicators[4] = (Indicator_Value) {VBAT, FLOAT,"VBAT", 5, 12.1, "?"};
 //    Indicators[5] = (Indicator_Value) {FUEL_PUMP, INT,"FUEL", 80, 0, "?"};
 		
-		Indicators[0] = (Indicator_Value) {0, FLOAT,"POIL", DEF_VALUE, 3.5, "?"};
-    Indicators[1] = (Indicator_Value) {1, FLOAT,"TH2O", DEF_VALUE, 96.8, "?"};
+	//	Indicators[0] = (Indicator_Value) {0, FLOAT,"POIL", DEF_VALUE, 3.5, "?"};
+  //  Indicators[1] = (Indicator_Value) {1, FLOAT,"TH2O", DEF_VALUE, 96.8, "?"};
 		Indicators[2] = (Indicator_Value) {2, FLOAT,"TOIL_I", DEF_VALUE, 85.7, "?"};
     Indicators[3] = (Indicator_Value) {3, FLOAT,"TPS", DEF_VALUE, 75.0, "?"};
 		Indicators[4] = (Indicator_Value) {4, FLOAT,"VBAT", DEF_VALUE, 12.1, "?"};
@@ -574,11 +575,11 @@ void canTask(void const * argument)
 		if(xQueueReceive(canQueueHandle, &canMessageRX, portMAX_DELAY))
 		{
 			if( canMessageRX.CAN_RxPacket_Header.StdId == 0x1F4)		
-				Indicators[MAP].intValore = canMessageRX.CAN_RxPacket_Data[3];	
+				Indicators[TRACTION_CONTROL].intValore = canMessageRX.CAN_RxPacket_Data[4];	
 		  else if( canMessageRX.CAN_RxPacket_Header.StdId == 0x234)		
-				Indicators[MAP].intValore = canMessageRX.CAN_RxPacket_Data[5];	
+				Indicators[TRACTION_CONTROL].intValore = canMessageRX.CAN_RxPacket_Data[3];	
 			else 
-				Indicators[MAP].intValore = 4;	
+				Indicators[TRACTION_CONTROL].intValore = 4;	
 		}
     osDelay(1);
   }
@@ -974,6 +975,8 @@ void aux3ButtonTask(void const * argument)
 * @param argument: Not used
 * @retval None
 */
+
+extern int timer;
 /* USER CODE END Header_rpmStripeTask */
 void rpmStripeTask(void const * argument)
 {
@@ -986,7 +989,7 @@ void rpmStripeTask(void const * argument)
 		
 		//I2C_test();
 		I2C_rpm_update();
-		
+
     osDelay(1);
 	
   }
@@ -1013,12 +1016,14 @@ void sensorsTask(void const * argument)
 		
 		ADC_read();
 		
-		if (timerClutch == 2){
+		if (timerClutch >= 2){
 			dSensors_Clutch_send();		// oppure invio diretto su CAN
 			dSensors_update();
+			Indicators[1] = (Indicator_Value) {0, FLOAT,"CLUTCH", DEF_VALUE, 100, "?"};			
+			Indicators[1].floatValore = clutchValue;	
 			timerClutch = 0;
 		}
-		if (timerTempCurr == 200){
+		if (timerTempCurr >= 200){
 			dSensors_Sensors_send();	// oppure invio diretto su CAN
 			timerTempCurr = 0;
 		}

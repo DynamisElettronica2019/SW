@@ -377,7 +377,7 @@ void I2C_debug_blue_off(uint16_t controller){
 
 void I2C_rpm_update(void){ 
 	
-	RPM = RPM +500;
+	RPM = RPM + 500;
 	
 	if (RPM > 700){
 		i2cData[1] = 0xFF;

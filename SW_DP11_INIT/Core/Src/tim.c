@@ -54,6 +54,7 @@
 
 #include "general.h"
 #include "cmsis_os.h"
+#include "data.h"
 
 extern osSemaphoreId startButtonSemaphoreHandle;
 extern osSemaphoreId rpmStripeSemaphoreHandle;
@@ -73,6 +74,9 @@ int timerStartButton = 0;
 int timerRpmStripe = 0;
 int timerDriveMode = 0;
 int timerMapTractionRpm = 0;
+int timer = 0;
+
+extern Indicator_Value Indicators[N_INDICATORS];	
 
 /* USER CODE END 0 */
 
@@ -121,7 +125,7 @@ void MX_TIM7_Init(void)
   htim7.Instance = TIM7;
   htim7.Init.Prescaler = 9999;
   htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 5-1;
+  htim7.Init.Period = 9-1;
   htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
   {
@@ -366,25 +370,26 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 		
 		HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
-		
 		timerSensors = timerSensors + 1;
 		timerStartButton = timerStartButton + 1;
 		timerRpmStripe = timerRpmStripe + 1;
 		timerDriveMode = timerDriveMode + 1;
 		timerMapTractionRpm = timerMapTractionRpm + 1;
-		
+
+	
 		if (  timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerSensors = 0;
+			timer ++;		
 		}
 		if ( timerStartButton >= START_BUTTON_TIME){
-			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
+			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );	
 			timerStartButton = 0;
 		}
 		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
 			HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
-			timerRpmStripe = 0;
+			timerRpmStripe = 0;	
 		}
 		if ( timerMapTractionRpm >= MAP_TRACTION_RPM_TIME ){
 			TIM_MapTractionRpm_send();

@@ -91,6 +91,7 @@
 int i = 0;
 char driveMode, engineMap;
 char leftPosition, rightPosition;
+float clutchValue = 0;
 int state;
 
 /* USER CODE END PV */
@@ -278,7 +279,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-	
+
 	TIM_callback(htim);
 
   /* USER CODE END Callback 1 */
