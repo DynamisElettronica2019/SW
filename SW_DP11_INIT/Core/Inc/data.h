@@ -22,20 +22,18 @@
 
 typedef enum {
         /* car parameters */
-        EBB, TH2O, OIL_PRESS, TPS, VBAT, RPM, Adc, TRACTION_CONTROL, 
+        TH2O, OIL_PRESS, TPS, VBAT, RPM, Adc, TRACTION_CONTROL, GEAR,
 				CLUTCH_POSITION, OIL_TEMP_IN, OIL_TEMP_OUT, CLUTCH_FEEDBACK, ACQ,
-        EFI_STATUS, TRIM1, TRIM2, EFI_CRASH_COUNTER, TH2O_SX_IN, TH2O_SX_OUT,
-        TH2O_DX_IN, TH2O_DX_OUT, EBB_STATE, EFI_SLIP, LAUNCH_CONTROL, RPM_LIM,
-        FUEL_PRESS, EBB_MOTOR_CURRENT, GCU_TEMP, FB_CODE, FB_VAL, MAP,
-        /* settings */
-        S_DASH_TOP_L, S_DASH_TOP_R, S_DASH_BOTTOM_L, S_DASH_BOTTOM_R,
-        S_BYPASS_GEARS, S_INVERT_COLORS,
+        EFI_STATUS, TH2O_SX_IN, TH2O_SX_OUT,
+        TH2O_DX_IN, TH2O_DX_OUT, EFI_SLIP, LAUNCH_CONTROL, RPM_LIM, FUEL_LEVEL,
+        FUEL_PRESS, MAP, TH2O_ENGINE, VH_SPEED,
         /* boards */
-        EBB_BOARD, GCU_BOARD, SW_BOARD, DCU_BOARD,
+        GCU_BOARD, SW_BOARD, DCU_BOARD, XBEE,
         DAU_FL_BOARD, DAU_FR_BOARD, DAU_R_BOARD,
         /* sensors */
-        FUEL_PUMP, H2O_PUMP, H2O_FANS, CLUTCH, DRS_CURR,
-        GEAR_MOTOR
+        FUEL_PUMP, H2O_PUMP, H2O_FAN_DX, H2O_FAN_SX, CLUTCH_CURR, GEAR_CURR,
+				B3_3, B12_0
+    
 } Indicator_ID;
 
 typedef enum { 
@@ -48,6 +46,7 @@ typedef struct {
         char NOME[TIT_LEN];
         int intValore;
         float floatValore;
+				float floatValore2; // per corrente e temperatura
 				char	charValore[2];	//per gli indicatori tipo la marcia che posso contenre una lettera (come la N)
 } Indicator_Value;
 

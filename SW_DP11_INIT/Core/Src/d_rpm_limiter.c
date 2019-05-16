@@ -10,18 +10,8 @@
   */
 
 #include "d_rpm_limiter.h"
-//#include "can.h"
 
 int d_rpmLimiterValue;
-
-/**
-  * @brief  send on can the new value of rpm limiter
-  */
-	
-void d_rpm_limiter_propagateValue(void)
-{
-	//send value on can d_rpmLimiterValue
-}
 
 /**
   * @brief  computation of the new value of RPM and check if it is feasible 
@@ -42,16 +32,4 @@ void d_rpm_limiter_setValue(int movement)
 	}
 	
 	d_rpmLimiterValue = value;
-}
-
-
-/**
-  * @brief  compute the new value of RPM limiter and send it on CAN
-  * @param  movements done with right encoder 
-  */
-
-void d_rpm_limiter_handle(int movement)
-{
-	d_rpm_limiter_setValue(movement);	
-	d_rpm_limiter_propagateValue();	
 }

@@ -55,6 +55,7 @@
 #include "general.h"
 #include "cmsis_os.h"
 #include "data.h"
+#include "can.h"
 
 extern osSemaphoreId startButtonSemaphoreHandle;
 extern osSemaphoreId rpmStripeSemaphoreHandle;
@@ -73,8 +74,10 @@ int timerSensors = 0;
 int timerStartButton = 0;
 int timerRpmStripe = 0;
 int timerDriveMode = 0;
-int timerMapTractionRpm = 0;
+int timerTractionRpm = 0;
 int timer = 0;
+
+extern int d_tractionValue, d_rpmLimiterValue;
 
 extern Indicator_Value Indicators[N_INDICATORS];	
 
@@ -347,12 +350,8 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 
 /* USER CODE BEGIN 1 */
 
-void TIM_MapTractionRpm_send (){
-	
-	// invio su can dei valori di:
-	//	-mappa motore
-	//	-traction
-	//	-rpm_limiter (se necessario)
+void TIM_tractionRpm_send(void){
+	CAN_send(SW_TRACTION_LIMITER_GCU_ID, d_tractionValue, d_rpmLimiterValue, EMPTY, EMPTY, 2);
 }
 
 void TIM_callback(TIM_HandleTypeDef *htim)
@@ -374,7 +373,7 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerStartButton = timerStartButton + 1;
 		timerRpmStripe = timerRpmStripe + 1;
 		timerDriveMode = timerDriveMode + 1;
-		timerMapTractionRpm = timerMapTractionRpm + 1;
+		timerTractionRpm = timerTractionRpm + 1;
 
 	
 		if (  timerSensors >= SENSORS_TIME ){
@@ -391,9 +390,9 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerRpmStripe = 0;	
 		}
-		if ( timerMapTractionRpm >= MAP_TRACTION_RPM_TIME ){
-			TIM_MapTractionRpm_send();
-			timerMapTractionRpm = 0;
+		if ( timerTractionRpm >= TRACTION_RPM_TIME ){
+			TIM_tractionRpm_send();
+			timerTractionRpm = 0;
 		}
 		
 		if ( timerDriveMode >= DRIVE_MODE_TIME ){

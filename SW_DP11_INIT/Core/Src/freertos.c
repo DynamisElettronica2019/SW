@@ -53,6 +53,7 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
+#include "id_can.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
@@ -495,6 +496,15 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+	Indicators[OIL_PRESS] = (Indicator_Value) {0, FLOAT,"POIL", DEF_VALUE, 3.5, 0,"?"};
+  Indicators[TH2O] = (Indicator_Value) {1, FLOAT,"TH2O", DEF_VALUE, 96.8, 0,"?"};
+  Indicators[OIL_TEMP_IN] = (Indicator_Value) {2, FLOAT,"TOIL_I", DEF_VALUE, 85.7, 0,"?"};
+  Indicators[TPS] = (Indicator_Value) {3, FLOAT,"TPS", DEF_VALUE, 75.0, 0,"?"};
+  Indicators[VBAT] = (Indicator_Value) {4, FLOAT,"VBAT", DEF_VALUE, 12.1, 0,"?"};
+  Indicators[FUEL_LEVEL] = (Indicator_Value) {5, FLOAT,"FUEL", DEF_VALUE, 80.3, 0,"?"};
+		
+  Indicators[GEAR] = (Indicator_Value) {TH2O, FLOAT,"", 0, 0, 0,"1"};
+	Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, 0,"?"};
   /* USER CODE END RTOS_QUEUES */
 }
 
@@ -526,6 +536,7 @@ void StartDefaultTask(void const * argument)
 * @param argument: Not used
 * @retval None
 */
+
 /* USER CODE END Header_ledBlinkTask */
 void ledBlinkTask(void const * argument)
 {
@@ -533,25 +544,10 @@ void ledBlinkTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-//		Indicators[0] = (Indicator_Value) {OIL_PRESS, FLOAT,"POIL", 5, 3.5, "?"};
-//    Indicators[1] = (Indicator_Value) {TH2O, FLOAT,"TH2O", 5, 96.8, "?"};
-//		Indicators[2] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", 0, 85.7, "?"};
-//    Indicators[3] = (Indicator_Value) {TPS, INT,"TPS", 75, 0, "?"};
-//		Indicators[4] = (Indicator_Value) {VBAT, FLOAT,"VBAT", 5, 12.1, "?"};
-//    Indicators[5] = (Indicator_Value) {FUEL_PUMP, INT,"FUEL", 80, 0, "?"};
-		
-		Indicators[0] = (Indicator_Value) {0, FLOAT,"POIL", DEF_VALUE, 3.5, "?"};
-    Indicators[1] = (Indicator_Value) {1, FLOAT,"TH2O", DEF_VALUE, 96.8, "?"};
-		Indicators[2] = (Indicator_Value) {2, FLOAT,"TOIL_I", DEF_VALUE, 85.7, "?"};
-    Indicators[3] = (Indicator_Value) {3, FLOAT,"TPS", DEF_VALUE, 75.0, "?"};
-		Indicators[4] = (Indicator_Value) {4, FLOAT,"VBAT", DEF_VALUE, 12.1, "?"};
-    Indicators[5] = (Indicator_Value) {5, FLOAT,"FUEL", DEF_VALUE, 80.3, "?"};
-		
-		Indicators[GEAR_MOTOR] = (Indicator_Value) {TH2O, FLOAT,"", 0, 0, "1"};
-		Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, "?"};
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
-		//I2C_rpm_update();
-		CAN_sendDebug();
+				
+		dSensors_Sensors_send();
+		
     osDelay(250);
   }
   /* USER CODE END ledBlinkTask */
@@ -563,22 +559,27 @@ void ledBlinkTask(void const * argument)
 * @param argument: Not used
 * @retval None
 */
+
+#define NUCLEO 0x1F4
+#define CAN_DEBUGGER 0x234
+
 /* USER CODE END Header_canTask */
 void canTask(void const * argument)
 {
   /* USER CODE BEGIN canTask */
 	CAN_RxPacketTypeDef canMessageRX;
+	int dataLen;
+	uint16_t firstInt, secondInt, thirdInt, fourthInt;
   /* Infinite loop */
   for(;;)
   {
 		if(xQueueReceive(canQueueHandle, &canMessageRX, portMAX_DELAY))
 		{
-			if( canMessageRX.CAN_RxPacket_Header.StdId == 0x1F4)		
-				Indicators[TRACTION_CONTROL].intValore = canMessageRX.CAN_RxPacket_Data[4];	
-		  else if( canMessageRX.CAN_RxPacket_Header.StdId == 0x234)		
-				Indicators[TRACTION_CONTROL].intValore = canMessageRX.CAN_RxPacket_Data[3];	
-			else 
-				Indicators[TRACTION_CONTROL].intValore = 4;	
+			firstInt 	= (unsigned int) ((canMessageRX.CAN_RxPacket_Data[0] << 8) | (canMessageRX.CAN_RxPacket_Data[1] & 0xFF));
+			secondInt = (unsigned int) ((canMessageRX.CAN_RxPacket_Data[2] << 8) | (canMessageRX.CAN_RxPacket_Data[3] & 0xFF));
+			thirdInt 	= (unsigned int) ((canMessageRX.CAN_RxPacket_Data[4] << 8) | (canMessageRX.CAN_RxPacket_Data[5] & 0xFF));
+			fourthInt = (unsigned int) ((canMessageRX.CAN_RxPacket_Data[6] << 8) | (canMessageRX.CAN_RxPacket_Data[7] & 0xFF));
+			CAN_receive(canMessageRX.CAN_RxPacket_Header.StdId, firstInt, secondInt, thirdInt, fourthInt);
 		}
     osDelay(1);
   }
@@ -599,6 +600,7 @@ void upShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(upShiftSemaphoreHandle, portMAX_DELAY);
+		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_UP, EMPTY, EMPTY, EMPTY, 1);
     osDelay(1);
   }
   /* USER CODE END upShiftTask */
@@ -618,6 +620,7 @@ void downShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(downShiftSemaphoreHandle, portMAX_DELAY);
+		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_DOWN, EMPTY, EMPTY, EMPTY, 1);
     osDelay(1);
   }
   /* USER CODE END downShiftTask */
@@ -730,7 +733,7 @@ void leftEncoderTask(void const * argument)
 			case ACCELERATION_MODE:
 			case ENDURANCE_MODE:
 			case SKIDPAD_MODE:
-				d_traction_control_handle(movement);
+				d_traction_control_setValue(movement);
 				break;
 			case BOARD_DEBUG_MODE:
 				if (movement == 1)
@@ -743,29 +746,28 @@ void leftEncoderTask(void const * argument)
 					board_debug_scroll = END_BOARD;
 				break;
 			case SETTINGS_MODE:
-				// non ho capito cosa usi per fare lo switch case all'interno della modalità settings quindi te l'ho lasciato commentato :D
-			switch (schermata_settings){
-			case 0: 
-						if (movement == 1)
-							box_driveMode = box_driveMode + 1;
-						if (movement == -1)
-							box_driveMode = box_driveMode - 1;
-						if (box_driveMode >= 4 )
-							box_driveMode = 0;
-						if (box_driveMode <= -1 )
-							box_driveMode = 3;
+				switch (schermata_settings){
+				case 0: 
+							if (movement == 1)
+								box_driveMode = box_driveMode + 1;
+							if (movement == -1)
+								box_driveMode = box_driveMode - 1;
+							if (box_driveMode >= 4 )
+								box_driveMode = 0;
+							if (box_driveMode <= -1 )
+								box_driveMode = 3;
+							break;
+				case 1:
+							pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
+							if (movement == 1)
+								box_indicator = box_indicator + 1;
+							if (movement == -1)
+								box_indicator = box_indicator - 1;
+							if (box_indicator >= 6)
+								box_indicator = 0;
+							if (box_indicator <= -1)
+								box_indicator = 5;
 						break;
-			case 1:
-						pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
-						if (movement == 1)
-							box_indicator = box_indicator + 1;
-						if (movement == -1)
-							box_indicator = box_indicator - 1;
-						if (box_indicator >= 6)
-							box_indicator = 0;
-						if (box_indicator <= -1)
-							box_indicator = 5;
-					break;
 				}
 			case DEBUG_MODE:
 					// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE
@@ -810,7 +812,7 @@ void rightEncoderTask(void const * argument)
 		{
 			case AUTOX_MODE:
 			case ACCELERATION_MODE:
-				d_rpm_limiter_handle(movement);
+				d_rpm_limiter_setValue(movement);
 				break;
 			case BOARD_DEBUG_MODE:
 				// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
@@ -868,6 +870,7 @@ void startButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(startButtonSemaphoreHandle, portMAX_DELAY);
+		CAN_send(SW_FIRE_GCU_ID, TRUE, EMPTY, EMPTY, EMPTY, 1);
     osDelay(1);
   }
   /* USER CODE END startButtonTask */
@@ -906,6 +909,17 @@ void okButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
+		
+		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY )
+			CAN_send(SW_OK_BUTTON_GCU_ID, ACCELERATION_READY, EMPTY, EMPTY, EMPTY, 1);
+		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_STEADY )
+			CAN_send(SW_OK_BUTTON_GCU_ID, ACCELERATION_STEADY, EMPTY, EMPTY, EMPTY, 1);
+		
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY )
+			CAN_send(SW_OK_BUTTON_GCU_ID, AUTOX_READY, EMPTY, EMPTY, EMPTY, 1);
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_STEADY ) // chiedere se controlliamo anche tps 
+			CAN_send(SW_OK_BUTTON_GCU_ID, AUTOX_STEADY, EMPTY, EMPTY, EMPTY, 1);
+		
     osDelay(1);
   }
   /* USER CODE END okButtonTask */
@@ -921,10 +935,18 @@ void okButtonTask(void const * argument)
 void aux1ButtonTask(void const * argument)
 {
   /* USER CODE BEGIN aux1ButtonTask */
+	int startAcq;
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(aux1ButtonSemaphoreHandle, portMAX_DELAY);
+		
+		//NB: startAcq va preso dalla matrice globale!!!!
+		if( startAcq == TRUE ) 
+			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, FALSE, EMPTY, EMPTY, 2);
+		else if ( startAcq == FALSE ) 
+			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, TRUE, EMPTY, EMPTY, 2);
+		
     osDelay(1);
   }
   /* USER CODE END aux1ButtonTask */
@@ -1015,16 +1037,14 @@ void sensorsTask(void const * argument)
 		
 		ADC_read();
 		
-		if (timerClutch >= 2){
-			dSensors_Clutch_send();		// oppure invio diretto su CAN
-			timerClutch = 0;
-		}
-		if (timerTempCurr >= 200){
+	  dSensors_Clutch_send();		// oppure invio diretto su CAN
+		
+		if (timerTempCurr >= SENSORS_SEND_TIME){
 			dSensors_Sensors_send();	// oppure invio diretto su CAN
 			dSensors_update();
 			timerTempCurr = 0;
 		}
-    //osDelay(1);
+    osDelay(1);
   }
   /* USER CODE END sensorsTask */
 }
@@ -1046,9 +1066,18 @@ void accelerationModeTask(void const * argument)
     switch(state)
 		{
 			case ACCELERATION_MODE_START:
-				// invio messaggio can per avvisare gcu
-				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
 				break;
+			case ACCELERATION_MODE_FEEDBACK:
+				state = ACCELERATION_MODE_READY;
+				break;
+			case ACCELERATION_MODE_READY:
+				// stampa a schermo mex READY ?
+				break;
+			case ACCELERATION_MODE_STEADY:
+				// stampa a schermo mex STEADY ?
+				break;
+			case ACCELERATION_MODE_GO:
+				// stampa a schermo mex GO - per un tot di sec? 
 			case ACCELERATION_MODE_DEFAULT:
 				break;
 		}
@@ -1074,9 +1103,18 @@ void autocrossModeTask(void const * argument)
     switch(state)
 		{
 			case AUTOX_MODE_START:
-				// invio messaggio can per avvisare gcu
-				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
 				break;
+			case AUTOX_MODE_FEEDBACK:
+				state = AUTOX_MODE_READY;
+				break;
+			case AUTOX_MODE_READY:
+				// stampa a schermo mex READY ?
+				break;
+			case AUTOX_MODE_STEADY:
+				// stampa a schermo mex STEADY ?
+				break;
+			case AUTOX_MODE_GO:
+				// stampa a schermo mex GO ? 
 			case AUTOX_MODE_DEFAULT:
 				break;
 		}
@@ -1102,10 +1140,12 @@ void enduranceModeTask(void const * argument)
     switch(state)
 		{
 			case ENDURANCE_MODE_START:
-				// invio messaggio can per avvisare gcu
-				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
+				break;
+			case ENDURANCE_MODE_FEEDBACK:
+				state = ENDURANCE_MODE_DEFAULT;
 				break;
 			case ENDURANCE_MODE_DEFAULT:
+				//modifichiamo la variabile da vedere a volante
 				break;
 		}
 		osDelay(1);
@@ -1130,8 +1170,9 @@ void skidpadModeTask(void const * argument)
 		switch(state)
 		{
 			case SKIDPAD_MODE_START:
-				// invio messaggio can per avvisare gcu
-				// QUANDO RITORNA IL MESSAGGIO CAN, AGGIORNIAMO LO STATO
+				break;
+			case SKIDPAD_MODE_FEEDBACK:
+				state = SKIDPAD_MODE_DEFAULT;
 				break;
 			case SKIDPAD_MODE_DEFAULT:
 				break;

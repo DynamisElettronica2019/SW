@@ -16,12 +16,12 @@ ACCELERATIONView::ACCELERATIONView()
 void ACCELERATIONView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);	
-		AccPointer[0] = 0;
-		AccPointer[1] = 1;
-		AccPointer[2] = 2;
-		AccPointer[3] = 3;
-		AccPointer[4] = 4;
-		AccPointer[5] = 5;
+    AccPointer[0] = OIL_PRESS;
+		AccPointer[1] = TH2O;
+		AccPointer[2] = OIL_TEMP_IN;
+		AccPointer[3] = TPS;
+		AccPointer[4] = VBAT;
+		AccPointer[5] = FUEL_LEVEL;
 		boxIndicatorGear.invalidate();
 		cont = 0;
     ACCELERATIONViewBase::setupScreen();
@@ -104,7 +104,7 @@ void ACCELERATIONView::refreshAcceleration()
 			Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[AccPointer[5]].floatValore);
 	
 	/****************GEAR-TC-MAP*****************/
-	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR_MOTOR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
+	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
 																																						//-- comando strcpy altrimenti si hanno problemi di allocazione di memoria
 	
 	Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", Gear);

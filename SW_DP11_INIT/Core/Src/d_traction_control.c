@@ -11,18 +11,8 @@
   */
 
 #include "d_traction_control.h"
-//#include "can.h"
 
 int d_tractionValue;
-
-/**
-  * @brief  send on can the new value of traction control
-  */
-	
-void d_traction_control_propagateValue(void)
-{
-	//send value on can d_tractionValue
-}
 
 /**
   * @brief  computation of the new value of traction and check if it is feasible 
@@ -45,15 +35,4 @@ void d_traction_control_setValue(int movement)
 	d_tractionValue = value;
 }
 
-
-/**
-  * @brief  compute the new value of traction control and send it on CAN
-  * @param  movements done with left encoder 
-  */
-
-void d_traction_control_handle(int movement)
-{
-	d_traction_control_setValue(movement);	
-	d_traction_control_propagateValue();	
-}
 

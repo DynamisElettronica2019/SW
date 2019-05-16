@@ -1,6 +1,9 @@
 
 #include "d_sensors.h"
+#include "general.h"
+#include "can.h"
 
+extern char driveMode, engineMap;
 extern uint32_t ADC_BUF[3];
 extern Indicator_Value Indicators[N_INDICATORS];
 int clutchValue = 0;
@@ -13,14 +16,13 @@ void dSensors_update(void)	{	// da definire come vanno riscalati i valori
 }
 
 void dSensors_Clutch_send(void)	{
-	
-	// invio su can di clutchValue
+	CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
 	return ;
 }
 
 void dSensors_Sensors_send(void)	{
-	
-	// invio su can dei sensori
+	/* manca la conversione della temp e corrente */
+	CAN_send(SW_DEBUG_ID, 10, 35, EMPTY, EMPTY, 2);
 	return ;
 }
 

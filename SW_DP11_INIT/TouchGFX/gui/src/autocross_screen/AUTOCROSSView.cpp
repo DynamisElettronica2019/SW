@@ -16,12 +16,13 @@ AUTOCROSSView::AUTOCROSSView()
 void AUTOCROSSView::setupScreen()
 {
     AUTOCROSSViewBase::setupScreen();
-		AutPointer[0] = 0;
-		AutPointer[1] = 1;
-		AutPointer[2] = 2;
-		AutPointer[3] = 3;
-		AutPointer[4] = 4;
-		AutPointer[5] = 5;	
+		AutPointer[0] = OIL_PRESS;
+		AutPointer[1] = TH2O;
+		AutPointer[2] = OIL_TEMP_IN;
+		AutPointer[3] = TPS;
+		AutPointer[4] = VBAT;
+		AutPointer[5] = FUEL_LEVEL;
+	
 		boxIndicatorGear.invalidate();
 }
 
@@ -82,7 +83,7 @@ void AUTOCROSSView::refreshAutocross()
 		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[AutPointer[5]].floatValore);
 	
 	/****************GEAR-TC-MAP*****************/
-	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR_MOTOR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
+	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
 																																						//-- comando strcpy altrimenti si hanno problemi di allocazione di memoria
 	Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", Gear);
 	Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%d", Indicators[TRACTION_CONTROL].intValore);

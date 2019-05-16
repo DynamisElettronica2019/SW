@@ -42,6 +42,7 @@ sw_dp11_init\can.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h
 sw_dp11_init\can.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h
 sw_dp11_init\can.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\can.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
+sw_dp11_init\can.o: ../Core/Inc/id_can.h
 sw_dp11_init\can.o: ../Core/Inc/data.h
 sw_dp11_init\can.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sw_dp11_init\can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

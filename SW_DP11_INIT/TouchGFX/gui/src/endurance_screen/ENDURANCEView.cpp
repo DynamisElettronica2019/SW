@@ -18,12 +18,12 @@ void ENDURANCEView::setupScreen()
 {
 		boxIndicatorGear.invalidate();
     ENDURANCEViewBase::setupScreen();
-		EndPointer[0] = 0;
-		EndPointer[1] = 1;
-		EndPointer[2] = 2;
-		EndPointer[3] = 3;
-		EndPointer[4] = 4;
-		EndPointer[5] = 5;
+		EndPointer[0] = OIL_PRESS;
+		EndPointer[1] = TH2O;
+		EndPointer[2] = OIL_TEMP_IN;
+		EndPointer[3] = TPS;
+		EndPointer[4] = VBAT;
+		EndPointer[5] = FUEL_LEVEL;
 		cont = 0;
 }
 
@@ -85,7 +85,7 @@ void ENDURANCEView::refreshEndurance()
 		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[EndPointer[5]].floatValore);
 	
 	/****************GEAR-TC-MAP*****************/
-	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR_MOTOR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
+	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
 																																						//-- comando strcpy altrimenti si hanno problemi di allocazione di memoria
 	Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", Gear);
 	Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%d", Indicators[TRACTION_CONTROL].intValore);

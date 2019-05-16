@@ -62,11 +62,15 @@ HAL_StatusTypeDef canSendReturn;
 
 uint32_t packetMailbox;
 uint8_t dataPacket[8];
+
 CAN_RxPacketTypeDef canReceivedMessage;
+CAN_TxHeaderTypeDef header;
 
 extern BaseType_t xHigherPriorityTaskWoken;
 
 extern osMessageQId canQueueHandle;
+
+extern Indicator_Value Indicators[N_INDICATORS];	
 
 /* USER CODE END 0 */
 
@@ -185,25 +189,6 @@ static void CAN_filterConfig(void)
 }
 
 
-extern void CAN_sendDebug(void)
-{
-	packetHeader.StdId = 0x1A4;
-	packetHeader.RTR = CAN_RTR_DATA;
-	packetHeader.IDE = CAN_ID_STD;
-	packetHeader.DLC = 8;
-	packetHeader.TransmitGlobalTime = DISABLE;
-	dataPacket[0] = 5;
-	dataPacket[1] = 4;
-	dataPacket[2] = 3;
-	dataPacket[3] = 7;
-	dataPacket[4] = 9;
-	dataPacket[5] = 0;
-	dataPacket[6] = 1;
-	dataPacket[7] = 8;
-	canSendReturn = HAL_CAN_AddTxMessage(&hcan1, &packetHeader, dataPacket, &packetMailbox);
-	return;
-}
-
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {	
 	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &(canReceivedMessage.CAN_RxPacket_Header), canReceivedMessage.CAN_RxPacket_Data); 
@@ -212,6 +197,161 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
+
+void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt)
+{
+	switch(ID)
+	{
+		case EFI_GEAR_RPM_TPS_PH2O_ID:
+          // first int = gear -> aggiornare matrice globale 
+					Indicators[GEAR].intValore = firstInt;
+          // second int = gear -> aggiornare matrice globale
+					Indicators[ACQ].intValore = secondInt;
+					// THIRD int = TPS -> aggiornare matrice globale
+					Indicators[TPS].intValore = thirdInt;
+					// fourthint = ph20 (apps)
+           break;
+       case EFI_WATER_TEMPERATURE_ID:
+         // aggiornare matrice globale
+					//	dd_Indicator_setFloatValueP(&ind_th2o_sx_in.base, dEfiSense_calculateWaterTemperature(firstInt));
+					Indicators[TH2O_SX_IN].intValore = firstInt;
+        //   dd_Indicator_setFloatValueP(&ind_th2o_sx_out.base, dEfiSense_calculateWaterTemperature(secondInt));
+					Indicators[TH2O_SX_OUT].intValore = secondInt;
+        //   dd_Indicator_setFloatValueP(&ind_th2o_dx_in.base, dEfiSense_calculateWaterTemperature(thirdInt));
+					Indicators[TH2O_DX_IN].intValore = thirdInt;
+        //   dd_Indicator_setFloatValueP(&ind_th2o_dx_out.base, dEfiSense_calculateWaterTemperature(fourthInt));*/
+					Indicators[TH2O_DX_OUT].intValore = fourthInt;
+           break;
+        case EFI_OIL_T_ENGINE_BAT_ID:
+					// t oil in
+					Indicators[OIL_TEMP_IN].intValore = firstInt;
+					// t oil out
+					Indicators[TH2O_SX_OUT].intValore = secondInt;
+					// t h2o engine
+					Indicators[TH2O_ENGINE].intValore = thirdInt;
+					// v bat
+					Indicators[VBAT].intValore = fourthInt;
+           break;
+       case EFI_TRACTION_CONTROL_ID:
+					// first int -> speed - se stiamo andando, disattiviamo encoders -> ???
+					Indicators[VH_SPEED].intValore = firstInt;
+					// third int -> slip 
+					Indicators[EFI_SLIP].intValore = thirdInt;
+            break;
+       case EFI_MANUAL_LIMITER_FAN_H2O_PIT_LANE_ID:
+				 // first int -> manual limiter active ?
+				 // ??
+            break;
+       case EFI_PRESSURES_LAMBDA_SMOT_ID:
+				 // first int fuel press
+					Indicators[FUEL_PRESS].intValore = firstInt;
+				 // second int oil press
+					Indicators[OIL_PRESS].intValore = secondInt;
+					break;
+			 case EFI_LOIL_EXHAUST_ID:
+				 // first int level fuel
+					Indicators[FUEL_LEVEL].intValore = firstInt;
+			   // ??
+					break;
+       case GCU_CLUTCH_MODE_MAP_SW_ID:
+				 // clutch feedback
+					Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
+			   // mode feedback
+				 // map feedback
+           break;
+			 case GCU_TRACTION_LIMITER_AUTOG_SW_ID:
+				 // tc feedback
+					Indicators[TRACTION_CONTROL].intValore = firstInt;
+			   // rpmlim feedback
+					Indicators[RPM_LIM].intValore = secondInt;
+				 // autogearshift feedback
+           break;
+       case DCU_ACQUISITION_SW_ID:
+           // aggiornare la matrice globale
+					 Indicators[ACQ].intValore = firstInt;
+           break;
+			 // DAU ci interessa qualcosa oltre a  t e i ???
+       case DAU_FR_DEBUG_ID:
+         // t 
+					Indicators[DAU_FR_BOARD].floatValore = firstInt;
+				 // i 
+					Indicators[DAU_FR_BOARD].floatValore2 = secondInt;
+           break;
+         // t 
+					Indicators[DAU_FL_BOARD].floatValore = thirdInt;
+				 // i 
+					Indicators[DAU_FL_BOARD].floatValore2 = fourthInt; 
+           break;
+       case DAU_REAR_DEBUG_ID:
+         // t 
+					Indicators[DAU_R_BOARD].floatValore = firstInt;
+				 // i 
+					Indicators[DAU_R_BOARD].floatValore2 = secondInt;
+					break;
+       case GCU_DEBUG_1_ID:
+         // gcu t 
+					Indicators[GCU_BOARD].floatValore = firstInt;
+				 // gcu i 
+					Indicators[GCU_BOARD].floatValore2 = secondInt;
+					// h2o pump curr
+					Indicators[H2O_PUMP].intValore = thirdInt;
+          // fuel_pump curr
+					Indicators[FUEL_PUMP].intValore = fourthInt;
+           break;
+       case GCU_DEBUG_2_ID:
+          // gear_motor curr
+					Indicators[GEAR_CURR].intValore = firstInt;
+           //clutch curr
+			 		Indicators[CLUTCH_CURR].intValore = secondInt;
+           //H2O_fans sx
+			 		Indicators[H2O_FAN_SX].intValore = thirdInt;
+           //H2O_fans dx
+			 		Indicators[H2O_FAN_DX].intValore = fourthInt;
+           break;
+       case DCU_DEBUG_1_ID:
+         // dcu t 
+					Indicators[DCU_BOARD].floatValore = firstInt;
+				 // dcu i 
+					Indicators[DCU_BOARD].floatValore2 = secondInt;
+					// xbee i
+					Indicators[DCU_BOARD].floatValore2 = thirdInt;
+					// 3.3 i
+					Indicators[B3_3].floatValore2 = fourthInt;
+           break;
+			 case DCU_DEBUG_2_ID:
+          // 12 V vol
+					Indicators[B12_0].floatValore = firstInt;
+          // 5 v volt
+					Indicators[B12_0].floatValore = secondInt;
+					// 3.3 volt
+					Indicators[B3_3].floatValore = thirdInt;
+           break;
+       default:
+           break;
+	}
+}
+
+void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt, uint8_t dlc_value)
+{
+	uint32_t mailbox;
+	
+	header.StdId = ID;
+	header.RTR = CAN_RTR_DATA;
+	header.IDE = CAN_ID_STD;
+	header.DLC = dlc_value*2;
+	
+	dataPacket[0] = (uint8_t)((firstInt >> 8) & 0x00FF);
+  dataPacket[1] = (uint8_t)(firstInt & 0x00FF);
+  dataPacket[2] = (uint8_t)((secondInt >> 8) & 0x00FF);
+  dataPacket[3] = (uint8_t)(secondInt & 0x00FF);
+	dataPacket[4] = (uint8_t)((thirdInt >> 8) & 0x00FF);
+  dataPacket[5] = (uint8_t)(thirdInt & 0x00FF);
+  dataPacket[6] = (uint8_t)((fourthInt >> 8) & 0x00FF);
+  dataPacket[7] = (uint8_t)(fourthInt & 0x00FF);
+	
+  HAL_CAN_AddTxMessage(&hcan1, &header, dataPacket, &mailbox);
+}
+
 
 /* USER CODE END 1 */
 

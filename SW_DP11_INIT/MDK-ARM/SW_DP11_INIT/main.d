@@ -61,6 +61,7 @@ sw_dp11_init\main.o: ../Core/Inc/d_sensors.h
 sw_dp11_init\main.o: ../Core/Inc/adc.h
 sw_dp11_init\main.o: ../Core/Inc/data.h
 sw_dp11_init\main.o: ../Core/Inc/can.h
+sw_dp11_init\main.o: ../Core/Inc/id_can.h
 sw_dp11_init\main.o: ../Core/Inc/crc.h
 sw_dp11_init\main.o: ../Core/Inc/dma.h
 sw_dp11_init\main.o: ../Core/Inc/i2c.h

@@ -55,9 +55,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+	 
 /* USER CODE BEGIN Includes */
-
+#include "id_can.h"
 /* USER CODE END Includes */
 
 extern CAN_HandleTypeDef hcan1;
@@ -72,8 +72,8 @@ void MX_CAN1_Init(void);
 	 
 static void CAN_filterConfig(void);
 void CAN_Start(void);
-void CAN_sendDebug(void);
-
+void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt, uint8_t dlc_value);
+void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
