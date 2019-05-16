@@ -56,7 +56,6 @@ sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/time
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-sw_dp11_init\freertos.o: ../Core/Inc/id_can.h
 sw_dp11_init\freertos.o: ../Core/Inc/general.h
 sw_dp11_init\freertos.o: ../Core/Inc/data.h
 sw_dp11_init\freertos.o: ../Core/Inc/gpio.h
@@ -68,3 +67,4 @@ sw_dp11_init\freertos.o: ../Core/Inc/d_sensors.h
 sw_dp11_init\freertos.o: ../Core/Inc/adc.h
 sw_dp11_init\freertos.o: ../Core/Inc/tim.h
 sw_dp11_init\freertos.o: ../Core/Inc/can.h
+sw_dp11_init\freertos.o: ../Core/Inc/id_can.h

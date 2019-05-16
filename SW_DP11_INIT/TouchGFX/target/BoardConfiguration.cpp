@@ -127,7 +127,7 @@ void touchgfx_init()
 void GRAPHICS_Init()
 {
    touchgfx::touchgfx_init();
-   HAL::getInstance()->setDisplayOrientation(ORIENTATION_LANDSCAPE);
+	 HAL::getInstance()->setDisplayOrientation(ORIENTATION_LANDSCAPE);
 }
 
 void GRAPHICS_MainTask(void)

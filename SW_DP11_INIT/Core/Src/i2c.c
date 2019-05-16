@@ -51,10 +51,11 @@
 #include "i2c.h"
 
 /* USER CODE BEGIN 0 */
+#include "data.h"
 
-int RPM = 0;		//RPM = *indirizzo_della_matrice_degli_rpm;
 uint8_t i2cData[2];
 extern uint8_t EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
+extern Indicator_Value Indicators[N_INDICATORS];
 
 /* USER CODE END 0 */
 
@@ -158,6 +159,15 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 
 
 /**************** RPM STRIPE *****************/
+
+void I2C_setRPM(int rpm_value)
+{
+	if (rpm_value < RPM_STRIPE_OFFSET)
+     rpm_value = RPM_STRIPE_OFFSET;
+	else if ( rpm_value > RPM_STRIPE_MAX)
+     rpm_value = RPM_STRIPE_MAX;
+	Indicators[RPM].intValore = rpm_value;
+}
 
 void I2C_brightness_max (uint16_t controller){
 
@@ -376,10 +386,9 @@ void I2C_debug_blue_off(uint16_t controller){
 }
 
 void I2C_rpm_update(void){ 
-	
-	RPM = RPM + 500;
-	
-	if (RPM > 700){
+	int rpm_value;
+	rpm_value = Indicators[RPM].intValore;
+	if (rpm_value > 700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_1_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -390,7 +399,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 1700){
+	if (rpm_value > 1700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_2_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -401,7 +410,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 2700){
+	if (rpm_value > 2700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_3_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -412,7 +421,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 3700){
+	if (rpm_value > 3700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_4_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -423,7 +432,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 4700){
+	if (rpm_value > 4700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_5_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -434,7 +443,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 5700){
+	if (rpm_value > 5700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_6_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -446,7 +455,7 @@ void I2C_rpm_update(void){
 	}
 	
 	
-	if (RPM > 6700){
+	if (rpm_value > 6700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_1_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -457,7 +466,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 7700){
+	if (rpm_value > 7700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_2_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -468,7 +477,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 8700){
+	if (rpm_value > 8700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_3_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -479,7 +488,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 9700){
+	if (rpm_value > 9700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_4_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -490,7 +499,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 10700){
+	if (rpm_value > 10700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_5_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -501,11 +510,10 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (RPM > 11700){
+	if (rpm_value > 11700){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_6_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
-		RPM = 0;
 	}
 	else{
 		i2cData[1] = 0x00;

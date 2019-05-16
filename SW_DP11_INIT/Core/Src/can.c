@@ -53,6 +53,8 @@
 /* USER CODE BEGIN 0 */
 #include "data.h"
 #include "cmsis_os.h"
+#include "i2c.h"
+#include "d_efiSense.h"
 
 CAN_TxHeaderTypeDef packetHeader;
 CAN_FilterTypeDef canFilterConfigHeader;
@@ -202,130 +204,119 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 {
 	switch(ID)
 	{
-		case EFI_GEAR_RPM_TPS_PH2O_ID:
-          // first int = gear -> aggiornare matrice globale 
-					Indicators[GEAR].intValore = firstInt;
-          // second int = gear -> aggiornare matrice globale
-					Indicators[ACQ].intValore = secondInt;
-					// THIRD int = TPS -> aggiornare matrice globale
-					Indicators[TPS].intValore = thirdInt;
-					// fourthint = ph20 (apps)
-           break;
-       case EFI_WATER_TEMPERATURE_ID:
-         // aggiornare matrice globale
-					//	dd_Indicator_setFloatValueP(&ind_th2o_sx_in.base, dEfiSense_calculateWaterTemperature(firstInt));
-					Indicators[TH2O_SX_IN].intValore = firstInt;
-        //   dd_Indicator_setFloatValueP(&ind_th2o_sx_out.base, dEfiSense_calculateWaterTemperature(secondInt));
-					Indicators[TH2O_SX_OUT].intValore = secondInt;
-        //   dd_Indicator_setFloatValueP(&ind_th2o_dx_in.base, dEfiSense_calculateWaterTemperature(thirdInt));
-					Indicators[TH2O_DX_IN].intValore = thirdInt;
-        //   dd_Indicator_setFloatValueP(&ind_th2o_dx_out.base, dEfiSense_calculateWaterTemperature(fourthInt));*/
-					Indicators[TH2O_DX_OUT].intValore = fourthInt;
-           break;
-        case EFI_OIL_T_ENGINE_BAT_ID:
-					// t oil in
-					Indicators[OIL_TEMP_IN].intValore = firstInt;
-					// t oil out
-					Indicators[TH2O_SX_OUT].intValore = secondInt;
-					// t h2o engine
-					Indicators[TH2O_ENGINE].intValore = thirdInt;
-					// v bat
-					Indicators[VBAT].intValore = fourthInt;
-           break;
-       case EFI_TRACTION_CONTROL_ID:
-					// first int -> speed - se stiamo andando, disattiviamo encoders -> ???
-					Indicators[VH_SPEED].intValore = firstInt;
-					// third int -> slip 
-					Indicators[EFI_SLIP].intValore = thirdInt;
-            break;
-       case EFI_MANUAL_LIMITER_FAN_H2O_PIT_LANE_ID:
-				 // first int -> manual limiter active ?
-				 // ??
-            break;
-       case EFI_PRESSURES_LAMBDA_SMOT_ID:
-				 // first int fuel press
-					Indicators[FUEL_PRESS].intValore = firstInt;
-				 // second int oil press
-					Indicators[OIL_PRESS].intValore = secondInt;
-					break;
-			 case EFI_LOIL_EXHAUST_ID:
-				 // first int level fuel
-					Indicators[FUEL_LEVEL].intValore = firstInt;
-			   // ??
-					break;
-       case GCU_CLUTCH_MODE_MAP_SW_ID:
-				 // clutch feedback
-					Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
-			   // mode feedback
-				 // map feedback
-           break;
-			 case GCU_TRACTION_LIMITER_AUTOG_SW_ID:
-				 // tc feedback
-					Indicators[TRACTION_CONTROL].intValore = firstInt;
-			   // rpmlim feedback
-					Indicators[RPM_LIM].intValore = secondInt;
-				 // autogearshift feedback
-           break;
-       case DCU_ACQUISITION_SW_ID:
-           // aggiornare la matrice globale
-					 Indicators[ACQ].intValore = firstInt;
-           break;
-			 // DAU ci interessa qualcosa oltre a  t e i ???
-       case DAU_FR_DEBUG_ID:
-         // t 
-					Indicators[DAU_FR_BOARD].floatValore = firstInt;
-				 // i 
-					Indicators[DAU_FR_BOARD].floatValore2 = secondInt;
-           break;
-         // t 
-					Indicators[DAU_FL_BOARD].floatValore = thirdInt;
-				 // i 
-					Indicators[DAU_FL_BOARD].floatValore2 = fourthInt; 
-           break;
-       case DAU_REAR_DEBUG_ID:
-         // t 
-					Indicators[DAU_R_BOARD].floatValore = firstInt;
-				 // i 
-					Indicators[DAU_R_BOARD].floatValore2 = secondInt;
-					break;
-       case GCU_DEBUG_1_ID:
-         // gcu t 
-					Indicators[GCU_BOARD].floatValore = firstInt;
-				 // gcu i 
-					Indicators[GCU_BOARD].floatValore2 = secondInt;
-					// h2o pump curr
-					Indicators[H2O_PUMP].intValore = thirdInt;
-          // fuel_pump curr
-					Indicators[FUEL_PUMP].intValore = fourthInt;
-           break;
-       case GCU_DEBUG_2_ID:
-          // gear_motor curr
-					Indicators[GEAR_CURR].intValore = firstInt;
-           //clutch curr
-			 		Indicators[CLUTCH_CURR].intValore = secondInt;
-           //H2O_fans sx
-			 		Indicators[H2O_FAN_SX].intValore = thirdInt;
-           //H2O_fans dx
-			 		Indicators[H2O_FAN_DX].intValore = fourthInt;
-           break;
-       case DCU_DEBUG_1_ID:
-         // dcu t 
-					Indicators[DCU_BOARD].floatValore = firstInt;
-				 // dcu i 
-					Indicators[DCU_BOARD].floatValore2 = secondInt;
-					// xbee i
-					Indicators[DCU_BOARD].floatValore2 = thirdInt;
-					// 3.3 i
-					Indicators[B3_3].floatValore2 = fourthInt;
-           break;
-			 case DCU_DEBUG_2_ID:
-          // 12 V vol
-					Indicators[B12_0].floatValore = firstInt;
-          // 5 v volt
-					Indicators[B12_0].floatValore = secondInt;
-					// 3.3 volt
-					Indicators[B3_3].floatValore = thirdInt;
-           break;
+	   case EFI_GEAR_RPM_TPS_PH2O_ID:
+				Indicators[GEAR].intValore = firstInt;
+				I2C_setRPM(secondInt);
+				dEfiSense_calculateTPS(TPS,thirdInt);
+				Indicators[PH2O].intValore = fourthInt; // manca la conversione
+				break;
+		 case EFI_WATER_TEMPERATURE_ID:
+				dEfiSense_calculateWaterTemperature(TH2O_SX_IN, firstInt);
+				dEfiSense_calculateWaterTemperature(TH2O_SX_OUT, secondInt);
+				dEfiSense_calculateWaterTemperature(TH2O_DX_IN, thirdInt);
+				dEfiSense_calculateWaterTemperature(TH2O_DX_OUT, fourthInt);
+				break;
+			case EFI_OIL_T_ENGINE_BAT_ID:
+				dEfiSense_calculateOilInTemperature(OIL_TEMP_IN, firstInt);
+				dEfiSense_calculateOilOutTemperature(OIL_TEMP_OUT, secondInt);
+				dEfiSense_calculateTemperature(TH2O_ENGINE, thirdInt);
+				dEfiSense_calculateVoltage(VBAT, fourthInt);
+				break;
+      case EFI_TRACTION_CONTROL_ID:
+				dEfiSense_calculateSpeed(VH_SPEED, firstInt);
+				Indicators[EFI_SLIP_TARGET].intValore = secondInt; // manca la conversione
+			  dEfiSense_calculateSlip(EFI_SLIP, thirdInt);
+        break;
+//      case EFI_MANUAL_LIMITER_FAN_H2O_PIT_LANE_ID:
+//			  Indicators[MAN_LIM_ACT].intValore = firstInt;	// manca la conversione
+//			  Indicators[FAN].intValore = secondInt;
+//				Indicators[H2OPUMP_DC].intValore = thirdInt;
+//				Indicators[PIT_LANE_ACT].intValore = fourthInt;
+//        break;
+//       case EFI_PRESSURES_LAMBDA_SMOT_ID:
+//					Indicators[FUEL_PRESS].intValore = firstInt;
+//					Indicators[OIL_PRESS].intValore = secondInt;
+//					Indicators[LAMBDA].intValore = thirdInt;
+//					Indicators[FLAG_SMOT].intValore = fourthInt;
+//					break;
+//			 case EFI_LOIL_EXHAUST_ID:
+//					Indicators[FUEL_LEVEL].intValore = firstInt;
+//					Indicators[T_SCARICO_1].intValore = secondInt;
+//					Indicators[T_SCARICO_2].intValore = thirdInt;
+//					break;
+//       case GCU_CLUTCH_MODE_MAP_SW_ID:
+//				 // clutch feedback
+//					Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
+//			   // mode feedback
+//				 // map feedback
+//           break;
+//			 case GCU_TRACTION_LIMITER_AUTOG_SW_ID:
+//				 // tc feedback
+//					Indicators[TRACTION_CONTROL].intValore = firstInt;
+//			   // rpmlim feedback
+//					Indicators[RPM_LIM].intValore = secondInt;
+//				 // autogearshift feedback
+//           break;
+//       case DCU_ACQUISITION_SW_ID:
+//           // aggiornare la matrice globale
+//					 Indicators[ACQ].intValore = firstInt;
+//           break;
+//			 // DAU ci interessa qualcosa oltre a  t e i ???
+//       case DAU_FR_DEBUG_ID:
+//         // t 
+//					Indicators[DAU_FR_BOARD].floatValore = firstInt;
+//				 // i 
+//					Indicators[DAU_FR_BOARD].floatValore2 = secondInt;
+//           break;
+//         // t 
+//					Indicators[DAU_FL_BOARD].floatValore = thirdInt;
+//				 // i 
+//					Indicators[DAU_FL_BOARD].floatValore2 = fourthInt; 
+//           break;
+//       case DAU_REAR_DEBUG_ID:
+//         // t 
+//					Indicators[DAU_R_BOARD].floatValore = firstInt;
+//				 // i 
+//					Indicators[DAU_R_BOARD].floatValore2 = secondInt;
+//					break;
+//       case GCU_DEBUG_1_ID:
+//         // gcu t 
+//					Indicators[GCU_BOARD].floatValore = firstInt;
+//				 // gcu i 
+//					Indicators[GCU_BOARD].floatValore2 = secondInt;
+//					// h2o pump curr
+//					Indicators[H2O_PUMP].intValore = thirdInt;
+//          // fuel_pump curr
+//					Indicators[FUEL_PUMP].intValore = fourthInt;
+//           break;
+//       case GCU_DEBUG_2_ID:
+//          // gear_motor curr
+//					Indicators[GEAR_CURR].intValore = firstInt;
+//           //clutch curr
+//			 		Indicators[CLUTCH_CURR].intValore = secondInt;
+//           //H2O_fans sx
+//			 		Indicators[H2O_FAN_SX].intValore = thirdInt;
+//           //H2O_fans dx
+//			 		Indicators[H2O_FAN_DX].intValore = fourthInt;
+//           break;
+//       case DCU_DEBUG_1_ID:
+//         // dcu t 
+//					Indicators[DCU_BOARD].floatValore = firstInt;
+//				 // dcu i 
+//					Indicators[DCU_BOARD].floatValore2 = secondInt;
+//					// xbee i
+//					Indicators[DCU_BOARD].floatValore2 = thirdInt;
+//					// 3.3 i
+//					Indicators[B3_3].floatValore2 = fourthInt;
+//           break;
+//			 case DCU_DEBUG_2_ID:
+//          // 12 V vol
+//					Indicators[B12_0].floatValore = firstInt;
+//          // 5 v volt
+//					Indicators[B12_0].floatValore = secondInt;
+//					// 3.3 volt
+//					Indicators[B3_3].floatValore = thirdInt;
+//           break;
        default:
            break;
 	}

@@ -13,9 +13,9 @@
 
 
 /************************ GCU *****************************/
-#define GCU_TRACTION_LIMITER_LOIL_EFI_ID		0x500
-#define GCU_CLUTCH_MODE_MAP_SW_ID						0x310
-#define GCU_TRACTION_LIMITER_AUTOG_SW_ID		0x311
+#define GCU_TRACTION_LIMITER_LOIL_EFI_ID						0x500
+#define GCU_CLUTCH_MODE_MAP_SW_ID										0x310
+#define GCU_TRACTION_LIMITER_AUTOG_ACC_SW_ID				0x311
 
 
 /********************* STEERING WHEEL *********************/

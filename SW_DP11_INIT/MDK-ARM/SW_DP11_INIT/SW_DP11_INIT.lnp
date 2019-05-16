@@ -4,6 +4,7 @@
 "sw_dp11_init\d_rpm_limiter.o"
 "sw_dp11_init\d_traction_control.o"
 "sw_dp11_init\d_sensors.o"
+"sw_dp11_init\d_efisense.o"
 "sw_dp11_init\main.o"
 "sw_dp11_init\gpio.o"
 "sw_dp11_init\adc.o"

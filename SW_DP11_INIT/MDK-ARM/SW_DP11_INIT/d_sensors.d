@@ -43,8 +43,8 @@ sw_dp11_init\d_sensors.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.
 sw_dp11_init\d_sensors.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\d_sensors.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 sw_dp11_init\d_sensors.o: ../Core/Inc/adc.h
-sw_dp11_init\d_sensors.o: ../Core/Inc/d_sensors.h
 sw_dp11_init\d_sensors.o: ../Core/Inc/data.h
+sw_dp11_init\d_sensors.o: ../Core/Inc/d_sensors.h
 sw_dp11_init\d_sensors.o: ../Core/Inc/general.h
 sw_dp11_init\d_sensors.o: ../Core/Inc/can.h
 sw_dp11_init\d_sensors.o: ../Core/Inc/id_can.h

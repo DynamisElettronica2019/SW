@@ -53,7 +53,6 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
-#include "id_can.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
@@ -496,15 +495,15 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
-	Indicators[OIL_PRESS] = (Indicator_Value) {0, FLOAT,"POIL", DEF_VALUE, 3.5, 0,"?"};
-  Indicators[TH2O] = (Indicator_Value) {1, FLOAT,"TH2O", DEF_VALUE, 96.8, 0,"?"};
-  Indicators[OIL_TEMP_IN] = (Indicator_Value) {2, FLOAT,"TOIL_I", DEF_VALUE, 85.7, 0,"?"};
-  Indicators[TPS] = (Indicator_Value) {3, FLOAT,"TPS", DEF_VALUE, 75.0, 0,"?"};
-  Indicators[VBAT] = (Indicator_Value) {4, FLOAT,"VBAT", DEF_VALUE, 12.1, 0,"?"};
-  Indicators[FUEL_LEVEL] = (Indicator_Value) {5, FLOAT,"FUEL", DEF_VALUE, 80.3, 0,"?"};
+	Indicators[OIL_PRESS] = (Indicator_Value) {OIL_PRESS, INT,"POIL", DEF_VALUE, 3.5, 0,"?"};
+  Indicators[TH2O] = (Indicator_Value) {TH2O, FLOAT, "TH2O", DEF_VALUE, 96.8, 0,"?"};
+  Indicators[OIL_TEMP_IN] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, 85.7, 0,"?"};
+  Indicators[TPS] = (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE, 75.0, 0,"?"};
+  Indicators[VBAT] = (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, 12.1, 0,"?"};
+  Indicators[FUEL_LEVEL] = (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, 80.3, 0,"?"};
 		
-  Indicators[GEAR] = (Indicator_Value) {TH2O, FLOAT,"", 0, 0, 0,"1"};
-	Indicators[TRACTION_CONTROL] = (Indicator_Value) {TH2O, FLOAT,"T", 6, 0, 0,"?"};
+  Indicators[GEAR] = (Indicator_Value) {GEAR, INT,"", 0, 0, 0,"1"};
+	Indicators[TRACTION_CONTROL] = (Indicator_Value) {TRACTION_CONTROL, INT,"T", 6, 0, 0,"?"};
   /* USER CODE END RTOS_QUEUES */
 }
 
@@ -568,7 +567,6 @@ void canTask(void const * argument)
 {
   /* USER CODE BEGIN canTask */
 	CAN_RxPacketTypeDef canMessageRX;
-	int dataLen;
 	uint16_t firstInt, secondInt, thirdInt, fourthInt;
   /* Infinite loop */
   for(;;)
@@ -1044,6 +1042,7 @@ void sensorsTask(void const * argument)
 			dSensors_update();
 			timerTempCurr = 0;
 		}
+		
     osDelay(1);
   }
   /* USER CODE END sensorsTask */

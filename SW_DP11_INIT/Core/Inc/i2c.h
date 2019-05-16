@@ -58,6 +58,10 @@
 
 /* USER CODE BEGIN Includes */
 
+#define RPM_STRIPE_MAX      12000
+#define RPM_STRIPE_OFFSET 	0
+	 
+
 #define controller_0 		0x28
 #define controller_1 		0x29
  
@@ -143,6 +147,7 @@ void MX_I2C1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
+void I2C_setRPM(int rpm_value);
 void I2C_rpm_setup(void);
 void I2C_test(void);
 void I2C_brightness_max (uint16_t);

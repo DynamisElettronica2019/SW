@@ -26,16 +26,22 @@ void dSensors_Sensors_send(void)	{
 	return ;
 }
 
-void dSensors_CLUTCH(int clutchAnalog)	{
+void dSensors_CLUTCH(uint16_t clutchAnalog)	{
+	float aux;
+	uint16_t channel_2;
+//	if (clutchAnalog >= CLUTCH_MAX_VALUE)
+//		clutchValue = CLUTCH_MAX_VALUE;
+//	else if (clutchAnalog <= CLUTCH_MIN_VALUE)
+//		clutchValue = CLUTCH_MIN_VALUE;
+//	else
+//		clutchValue = (int) (clutchAnalog * 0.8 ) + (clutchValue * 0.2);
+//	
+//	clutchValue = (int) (clutchValue / CLUTCH_MAX_VALUE * 100);
 	
-	if (clutchAnalog >= CLUTCH_MAX_VALUE)
-		clutchValue = CLUTCH_MAX_VALUE;
-	else if (clutchAnalog <= CLUTCH_MIN_VALUE)
-		clutchValue = CLUTCH_MIN_VALUE;
-	else
-		clutchValue = (int) (clutchAnalog * 0.8 ) + (clutchValue * 0.2);
-	
-	clutchValue = (int) (clutchValue / CLUTCH_MAX_VALUE * 100);
+	aux = clutchAnalog/4095.0*100.0;
+	channel_2 = (uint16_t)aux;
+	Indicators[TH2O].floatValore = aux; 
+	clutchValue = (uint16_t)aux;
 	
 	return ;
 }

@@ -55,10 +55,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "d_sensors.h"
-	 
-/* USER CODE BEGIN Includes */
 
+/* USER CODE BEGIN Includes */
+#include "data.h"
+#include "d_sensors.h"
 /* USER CODE END Includes */
 
 extern ADC_HandleTypeDef hadc1;

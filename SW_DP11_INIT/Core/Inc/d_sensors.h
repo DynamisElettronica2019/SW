@@ -19,7 +19,7 @@ extern "C" {
 	
 	void dSensors_update(void);
 	
-	void dSensors_CLUTCH(int);
+	void dSensors_CLUTCH(uint16_t);
 	
 #ifdef __cplusplus
 }
