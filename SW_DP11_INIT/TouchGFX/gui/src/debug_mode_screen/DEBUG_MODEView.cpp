@@ -128,7 +128,7 @@ void DEBUG_MODEView::refreshDebugMode()
 
 void DEBUG_MODEView::checkChangeScreen()
 {
-	switch ( driveMode ){
+	switch ( Indicators[DRIVE_MODE].intValore ){
 				case SETTINGS_MODE	:
 					application().gotoSETTINGSScreenNoTransition();
 					break;

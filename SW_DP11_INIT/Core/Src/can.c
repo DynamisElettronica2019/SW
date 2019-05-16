@@ -55,6 +55,7 @@
 #include "cmsis_os.h"
 #include "i2c.h"
 #include "d_efiSense.h"
+#include "general.h"
 
 CAN_TxHeaderTypeDef packetHeader;
 CAN_FilterTypeDef canFilterConfigHeader;
@@ -73,6 +74,7 @@ extern BaseType_t xHigherPriorityTaskWoken;
 extern osMessageQId canQueueHandle;
 
 extern Indicator_Value Indicators[N_INDICATORS];	
+extern char state;
 
 /* USER CODE END 0 */
 
@@ -216,109 +218,85 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				dEfiSense_calculateWaterTemperature(TH2O_DX_IN, thirdInt);
 				dEfiSense_calculateWaterTemperature(TH2O_DX_OUT, fourthInt);
 				break;
-			case EFI_OIL_T_ENGINE_BAT_ID:
+		case EFI_OIL_T_ENGINE_BAT_ID:
 				dEfiSense_calculateOilInTemperature(OIL_TEMP_IN, firstInt);
 				dEfiSense_calculateOilOutTemperature(OIL_TEMP_OUT, secondInt);
 				dEfiSense_calculateTemperature(TH2O_ENGINE, thirdInt);
 				dEfiSense_calculateVoltage(VBAT, fourthInt);
 				break;
-      case EFI_TRACTION_CONTROL_ID:
+     case EFI_TRACTION_CONTROL_ID:
 				dEfiSense_calculateSpeed(VH_SPEED, firstInt);
 				Indicators[EFI_SLIP_TARGET].intValore = secondInt; // manca la conversione
 			  dEfiSense_calculateSlip(EFI_SLIP, thirdInt);
         break;
-//      case EFI_MANUAL_LIMITER_FAN_H2O_PIT_LANE_ID:
-//			  Indicators[MAN_LIM_ACT].intValore = firstInt;	// manca la conversione
-//			  Indicators[FAN].intValore = secondInt;
-//				Indicators[H2OPUMP_DC].intValore = thirdInt;
-//				Indicators[PIT_LANE_ACT].intValore = fourthInt;
-//        break;
-//       case EFI_PRESSURES_LAMBDA_SMOT_ID:
-//					Indicators[FUEL_PRESS].intValore = firstInt;
-//					Indicators[OIL_PRESS].intValore = secondInt;
-//					Indicators[LAMBDA].intValore = thirdInt;
-//					Indicators[FLAG_SMOT].intValore = fourthInt;
-//					break;
-//			 case EFI_LOIL_EXHAUST_ID:
-//					Indicators[FUEL_LEVEL].intValore = firstInt;
-//					Indicators[T_SCARICO_1].intValore = secondInt;
-//					Indicators[T_SCARICO_2].intValore = thirdInt;
-//					break;
-//       case GCU_CLUTCH_MODE_MAP_SW_ID:
-//				 // clutch feedback
-//					Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
-//			   // mode feedback
-//				 // map feedback
-//           break;
-//			 case GCU_TRACTION_LIMITER_AUTOG_SW_ID:
-//				 // tc feedback
-//					Indicators[TRACTION_CONTROL].intValore = firstInt;
-//			   // rpmlim feedback
-//					Indicators[RPM_LIM].intValore = secondInt;
-//				 // autogearshift feedback
-//           break;
-//       case DCU_ACQUISITION_SW_ID:
-//           // aggiornare la matrice globale
-//					 Indicators[ACQ].intValore = firstInt;
-//           break;
-//			 // DAU ci interessa qualcosa oltre a  t e i ???
-//       case DAU_FR_DEBUG_ID:
-//         // t 
-//					Indicators[DAU_FR_BOARD].floatValore = firstInt;
-//				 // i 
-//					Indicators[DAU_FR_BOARD].floatValore2 = secondInt;
-//           break;
-//         // t 
-//					Indicators[DAU_FL_BOARD].floatValore = thirdInt;
-//				 // i 
-//					Indicators[DAU_FL_BOARD].floatValore2 = fourthInt; 
-//           break;
-//       case DAU_REAR_DEBUG_ID:
-//         // t 
-//					Indicators[DAU_R_BOARD].floatValore = firstInt;
-//				 // i 
-//					Indicators[DAU_R_BOARD].floatValore2 = secondInt;
-//					break;
-//       case GCU_DEBUG_1_ID:
-//         // gcu t 
-//					Indicators[GCU_BOARD].floatValore = firstInt;
-//				 // gcu i 
-//					Indicators[GCU_BOARD].floatValore2 = secondInt;
-//					// h2o pump curr
-//					Indicators[H2O_PUMP].intValore = thirdInt;
-//          // fuel_pump curr
-//					Indicators[FUEL_PUMP].intValore = fourthInt;
-//           break;
-//       case GCU_DEBUG_2_ID:
-//          // gear_motor curr
-//					Indicators[GEAR_CURR].intValore = firstInt;
-//           //clutch curr
-//			 		Indicators[CLUTCH_CURR].intValore = secondInt;
-//           //H2O_fans sx
-//			 		Indicators[H2O_FAN_SX].intValore = thirdInt;
-//           //H2O_fans dx
-//			 		Indicators[H2O_FAN_DX].intValore = fourthInt;
-//           break;
-//       case DCU_DEBUG_1_ID:
-//         // dcu t 
-//					Indicators[DCU_BOARD].floatValore = firstInt;
-//				 // dcu i 
-//					Indicators[DCU_BOARD].floatValore2 = secondInt;
-//					// xbee i
-//					Indicators[DCU_BOARD].floatValore2 = thirdInt;
-//					// 3.3 i
-//					Indicators[B3_3].floatValore2 = fourthInt;
-//           break;
-//			 case DCU_DEBUG_2_ID:
-//          // 12 V vol
-//					Indicators[B12_0].floatValore = firstInt;
-//          // 5 v volt
-//					Indicators[B12_0].floatValore = secondInt;
-//					// 3.3 volt
-//					Indicators[B3_3].floatValore = thirdInt;
-//           break;
-       default:
-           break;
+     case EFI_MANUAL_LIMITER_FAN_H2O_PIT_LANE_ID:
+			  Indicators[MAN_LIM_ACT].intValore = firstInt;	// manca la conversione
+			  Indicators[FAN].intValore = secondInt; // manca la conversione
+				Indicators[H2OPUMP_DC].intValore = thirdInt; // manca la conversione
+				Indicators[PIT_LANE_ACT].intValore = fourthInt; // manca la conversione
+        break;
+     case EFI_PRESSURES_LAMBDA_SMOT_ID:
+				dEfiSense_calculatePressure(FUEL_PRESS, firstInt);
+				dEfiSense_calculatePressure(OIL_PRESS, secondInt);
+				Indicators[LAMBDA].intValore = thirdInt; // manca la conversione
+				Indicators[FLAG_SMOT].intValore = fourthInt; // manca la conversione
+				break;
+		 case EFI_LOIL_EXHAUST_ID:
+			  Indicators[FUEL_LEVEL].intValore = firstInt; // manca la conversione
+				Indicators[T_SCARICO_1].intValore = secondInt; // manca la conversione
+				Indicators[T_SCARICO_2].intValore = thirdInt; // manca la conversione
+				break;
+     case GCU_CLUTCH_MODE_MAP_SW_ID:
+				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
+				CAN_changeState(secondInt);
+				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
+        break;
+		 case GCU_TRACTION_LIMITER_AUTOG_ACC_SW_ID:
+				Indicators[TRACTION_CONTROL].intValore = firstInt;
+				Indicators[RPM_LIM].intValore = secondInt;
+			  // autogearshift feedback
+        break;
+     case DCU_ACQUISITION_SW_ID:
+				Indicators[ACQ].intValore = firstInt;
+        break;
+			// DAU ci interessa qualcosa oltre a  t e i ???
+     case DAU_FR_DEBUG_ID:
+				Indicators[DAU_FR_BOARD].intValore = firstInt;
+				Indicators[DAU_FR_BOARD].intValore2 = secondInt;
+        break;
+	   case DAU_FL_DEBUG_ID:
+			  Indicators[DAU_FL_BOARD].intValore = thirdInt;
+			  Indicators[DAU_FL_BOARD].intValore2 = fourthInt; 
+        break;
+     case DAU_REAR_DEBUG_ID:
+				Indicators[DAU_R_BOARD].intValore = firstInt;
+				Indicators[DAU_R_BOARD].intValore2 = secondInt;
+				break;
+     case GCU_DEBUG_1_ID:
+				Indicators[GCU_BOARD].intValore = firstInt;
+				Indicators[GCU_BOARD].intValore2 = secondInt;
+				Indicators[H2O_PUMP].intValore2 = thirdInt;
+        Indicators[FUEL_PUMP].intValore2 = fourthInt;
+        break;
+     case GCU_DEBUG_2_ID:
+        Indicators[GEAR_CURR].intValore2 = firstInt;
+        Indicators[CLUTCH_CURR].intValore2 = secondInt;
+        Indicators[H2O_FAN_SX].intValore2 = thirdInt;
+        Indicators[H2O_FAN_DX].intValore2 = fourthInt;
+        break;
+     case DCU_DEBUG_1_ID:
+        Indicators[DCU_BOARD].intValore = firstInt;
+				Indicators[DCU_BOARD].intValore2 = secondInt;
+				Indicators[XBEE].intValore2 = thirdInt;
+			  Indicators[DCU_3V3].intValore2 = fourthInt;
+        break;
+		 case DCU_DEBUG_2_ID:
+        Indicators[DCU_12V].intValore = firstInt;
+        Indicators[DCU_5V].intValore = secondInt;
+				Indicators[DCU_3V3].intValore = thirdInt;
+        break;
+     default:
+        break;
 	}
 }
 
@@ -342,6 +320,34 @@ void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, 
 	
   HAL_CAN_AddTxMessage(&hcan1, &header, dataPacket, &mailbox);
 }
+
+void CAN_changeState(int mode_feedback)
+{
+	switch (mode_feedback)
+	{
+		case ENDURANCE_MODE:
+			if(state == ENDURANCE_MODE_START)
+					state = ENDURANCE_MODE_FEEDBACK;
+			break;
+		case SKIDPAD_MODE:
+			if(state == SKIDPAD_MODE_START)
+					state = SKIDPAD_MODE_FEEDBACK;
+			break;
+		case ACCELERATION_MODE:
+			if(state == ACCELERATION_MODE_START)
+					state = ACCELERATION_MODE_FEEDBACK;
+			break;
+		case AUTOX_MODE:
+			if(state == AUTOX_MODE_START)
+					state = AUTOX_MODE_FEEDBACK;
+			break;
+	  default:
+			break;
+	}
+	Indicators[DRIVE_MODE].intValore = mode_feedback;
+}
+
+//void CAN_setGear
 
 
 /* USER CODE END 1 */

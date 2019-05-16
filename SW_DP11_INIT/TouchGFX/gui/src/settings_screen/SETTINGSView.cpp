@@ -99,7 +99,7 @@ void SETTINGSView::refreshSettings()
 }
 void SETTINGSView::checkChangeScreen()
 {
-	switch ( driveMode ){
+	switch ( Indicators[DRIVE_MODE].intValore ){
 				case SETTINGS_MODE	:
 					
 					break;

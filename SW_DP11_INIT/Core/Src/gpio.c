@@ -52,6 +52,7 @@
 /* USER CODE BEGIN 0 */
 
 #include "general.h"
+#include "data.h"
 
 /* USER CODE END 0 */
 
@@ -59,6 +60,8 @@
 /* Configure GPIO                                                             */
 /*----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
+
+extern Indicator_Value Indicators[N_INDICATORS];
 
 /* USER CODE END 1 */
 
@@ -264,6 +267,12 @@ void GPIO_encoders_init(void)
 	rightEncoder.pin4 = HAL_GPIO_ReadPin(ENC_RIGHT_4_GPIO_Port, ENC_RIGHT_4_Pin);
 
 	rightPosition = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
+	
+	GPIO_encoders_set_driveMode();
+	GPIO_encoders_set_engineMap();
+	
+	Indicators[DRIVE_MODE].intValore = driveMode;
+	Indicators[MAP].intValore = engineMap;
 }
 
 /**
@@ -304,11 +313,6 @@ void GPIO_encoders_set_engineMap(void)
 	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
 	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
 
-//	leftPosition = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
-
-//	rightPosition = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
-
-	
 	new_map = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
 	
 	// a Nico non piace il % :(
@@ -344,13 +348,6 @@ int GPIO_encoders_left_encoder_movement(void)
 	
 	movement = new_pos - leftPosition; // magari segni invertiti
 
-//	mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
-//	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
-//	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
-
-//	new_pos = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
-//  movement = new_pos - leftPosition; // magari segni invertiti
-
 	return movement;
 }
 
@@ -376,13 +373,6 @@ int GPIO_encoders_right_encoder_movement(void)
 
 	movement = new_pos - rightPosition; // magari segni invertiti
 	rightPosition = new_pos;
-	
-//	mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
-//	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
-//	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
-
-//	new_pos = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
-//  movement = new_pos - rightPosition; // magari segni invertiti
 
 	return movement;
 }

@@ -67,7 +67,7 @@
 
 /*******************TIMINGS****************************************************/
 
-#define SENSORS_TIME						10
+#define SENSORS_TIME						100
 #define SENSORS_SEND_TIME				100
 #define START_BUTTON_TIME				40
 #define RPM_STRIPE_TIME					1000

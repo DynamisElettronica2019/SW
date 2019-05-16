@@ -42,3 +42,9 @@ void dEfiSense_calculateSlip(Indicator_ID id, unsigned int value)
 {
      Indicators[id].floatValore = ((int) ((value * EFI_SENSE_SLIP) * 100)) / 100.0;
 }
+
+void dEfiSense_calculatePressure(Indicator_ID id, unsigned int value)
+{ //Value is Pressure in millibars
+   Indicators[id].floatValore = (value / 10) / 100.0;
+}
+

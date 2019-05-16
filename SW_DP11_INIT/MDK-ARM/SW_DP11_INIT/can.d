@@ -61,3 +61,4 @@ sw_dp11_init\can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sw_dp11_init\can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 sw_dp11_init\can.o: ../Core/Inc/i2c.h
 sw_dp11_init\can.o: ../Core/Inc/d_efiSense.h
+sw_dp11_init\can.o: ../Core/Inc/general.h

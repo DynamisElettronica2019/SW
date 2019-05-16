@@ -501,7 +501,7 @@ void MX_FREERTOS_Init(void) {
   Indicators[TPS] = (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE, 75.0, 0,"?"};
   Indicators[VBAT] = (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, 12.1, 0,"?"};
   Indicators[FUEL_LEVEL] = (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, 80.3, 0,"?"};
-		
+  Indicators[MAP] = (Indicator_Value) {MAP, INT, "MAP", 0, 80.3, 0,"?"};
   Indicators[GEAR] = (Indicator_Value) {GEAR, INT,"", 0, 0, 0,"1"};
 	Indicators[TRACTION_CONTROL] = (Indicator_Value) {TRACTION_CONTROL, INT,"T", 6, 0, 0,"?"};
   /* USER CODE END RTOS_QUEUES */
@@ -690,9 +690,8 @@ void mapSelectorTask(void const * argument)
   {
 		xSemaphoreTake(mapSelectorSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
-		GPIO_encoders_set_engineMap();
 		
-	  Indicators[MAP].intValore = engineMap;
+		GPIO_encoders_set_engineMap();
 		
 		//invio su can della mappa - polling ? appena si accende efi ? 
 		
@@ -938,8 +937,7 @@ void aux1ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux1ButtonSemaphoreHandle, portMAX_DELAY);
-		
-		//NB: startAcq va preso dalla matrice globale!!!!
+		startAcq = Indicators[ACQ].intValore;
 		if( startAcq == TRUE ) 
 			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, FALSE, EMPTY, EMPTY, 2);
 		else if ( startAcq == FALSE ) 
@@ -1015,6 +1013,7 @@ void rpmStripeTask(void const * argument)
   /* USER CODE END rpmStripeTask */
 }
 
+	int clutch_ramp = 0;
 /* USER CODE BEGIN Header_sensorsTask */
 /**
 * @brief Function implementing the sensors_Task thread.
@@ -1025,6 +1024,7 @@ void rpmStripeTask(void const * argument)
 void sensorsTask(void const * argument)
 {
   /* USER CODE BEGIN sensorsTask */
+
   /* Infinite loop */
   for(;;)
   {
@@ -1033,7 +1033,11 @@ void sensorsTask(void const * argument)
 		timerClutch = timerClutch + 1;
 		timerTempCurr = timerTempCurr + 1;
 		
-		ADC_read();
+		clutch_ramp = clutch_ramp + 1;
+		
+		if(clutch_ramp >= 100)
+			clutch_ramp = 0;
+		// ADC_read();
 		
 	  dSensors_Clutch_send();		// oppure invio diretto su CAN
 		
@@ -1144,7 +1148,6 @@ void enduranceModeTask(void const * argument)
 				state = ENDURANCE_MODE_DEFAULT;
 				break;
 			case ENDURANCE_MODE_DEFAULT:
-				//modifichiamo la variabile da vedere a volante
 				break;
 		}
 		osDelay(1);

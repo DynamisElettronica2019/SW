@@ -10,6 +10,9 @@
   */
 
 #include "d_rpm_limiter.h"
+#include "data.h"
+
+extern Indicator_Value Indicators[N_INDICATORS];
 
 int d_rpmLimiterValue;
 
@@ -21,8 +24,7 @@ int d_rpmLimiterValue;
 void d_rpm_limiter_setValue(int movement)
 {
 	int value;
-	// value = rpm limiter value dalla matrice globale perchè
-	// è aggiornato dal mex can
+	value = Indicators[RPM_LIM].intValore;
 	value = value + movement; //forse con -
 	
 	if(value > RPM_LIMITER_MAX_VALUE){
@@ -30,6 +32,6 @@ void d_rpm_limiter_setValue(int movement)
   } else if(value < RPM_LIMITER_MIN_VALUE){
     value = RPM_LIMITER_MIN_VALUE;
 	}
-	
+
 	d_rpmLimiterValue = value;
 }

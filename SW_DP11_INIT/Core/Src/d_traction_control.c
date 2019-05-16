@@ -11,6 +11,9 @@
   */
 
 #include "d_traction_control.h"
+#include "data.h"
+
+extern Indicator_Value Indicators[N_INDICATORS];
 
 int d_tractionValue;
 
@@ -22,8 +25,7 @@ int d_tractionValue;
 void d_traction_control_setValue(int movement)
 {
 	int value;
-	// value = traction control value dalla matrice globale perchè
-	// è aggiornato dal mex can
+	value = Indicators[TRACTION_CONTROL].intValore;
 	value = value + movement; //forse con -
 	
 	if(value > TRACTION_MAX_VALUE){

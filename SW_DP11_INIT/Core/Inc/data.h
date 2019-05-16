@@ -28,12 +28,13 @@ typedef enum {
         TH2O_DX_IN, TH2O_DX_OUT, EFI_SLIP, LAUNCH_CONTROL, RPM_LIM, FUEL_LEVEL,
         FUEL_PRESS, MAP, TH2O_ENGINE, VH_SPEED, PH2O, EFI_SLIP_TARGET, MAN_LIM_ACT,
 				FAN, H2OPUMP_DC, PIT_LANE_ACT, FLAG_SMOT, LAMBDA, T_SCARICO_1, T_SCARICO_2,
+				DRIVE_MODE,
         /* boards */
         GCU_BOARD, SW_BOARD, DCU_BOARD, XBEE,
         DAU_FL_BOARD, DAU_FR_BOARD, DAU_R_BOARD,
         /* sensors */
         FUEL_PUMP, H2O_PUMP, H2O_FAN_DX, H2O_FAN_SX, CLUTCH_CURR, GEAR_CURR,
-				B3_3, B12_0
+				DCU_3V3, DCU_5V, DCU_12V
     
 } Indicator_ID;
 
@@ -47,7 +48,7 @@ typedef struct {
         char NOME[TIT_LEN];
         int intValore;
         float floatValore;
-				float floatValore2; // per corrente e temperatura
+				int intValore2; // per corrente e temperatura
 				char	charValore[2];	//per gli indicatori tipo la marcia che posso contenre una lettera (come la N)
 } Indicator_Value;
 

@@ -28,6 +28,7 @@ void dEfiSense_calculateTemperature(Indicator_ID id, unsigned int value);
 void dEfiSense_calculateVoltage(Indicator_ID id, unsigned int value);
 void dEfiSense_calculateSpeed(Indicator_ID id, unsigned int value);
 void dEfiSense_calculateSlip(Indicator_ID id, unsigned int value);
+void dEfiSense_calculatePressure(Indicator_ID id, unsigned int value);
 
 #ifdef __cplusplus
 }

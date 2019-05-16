@@ -15,8 +15,10 @@ void dSensors_update(void)	{	// da definire come vanno riscalati i valori
 	return ;
 }
 
+extern int clutch_ramp;
+
 void dSensors_Clutch_send(void)	{
-	CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
+	CAN_send(0x190, clutch_ramp, driveMode, engineMap, EMPTY, 3);
 	return ;
 }
 

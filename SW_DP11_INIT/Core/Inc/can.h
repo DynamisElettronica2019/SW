@@ -75,6 +75,7 @@ static void CAN_filterConfig(void);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt);
 void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt, uint8_t dlc_value);
+void CAN_changeState(int mode_feedback);
 
 /* USER CODE END Prototypes */
 
