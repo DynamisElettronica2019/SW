@@ -62,3 +62,4 @@ sw_dp11_init\can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_gro
 sw_dp11_init\can.o: ../Core/Inc/i2c.h
 sw_dp11_init\can.o: ../Core/Inc/d_efiSense.h
 sw_dp11_init\can.o: ../Core/Inc/general.h
+sw_dp11_init\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
