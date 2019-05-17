@@ -178,8 +178,8 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID104));
 
-    box1.setPosition(180, 347, 280, 28);
-    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(67, 0, 255));
+    boxText.setPosition(180, 347, 280, 28);
+    boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(67, 0, 255));
 
     TEXTAutocross.setPosition(227, 347, 186, 33);
     TEXTAutocross.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -198,13 +198,20 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     textRpmLimiterValue.setWildcard(textRpmLimiterValueBuffer);
     textRpmLimiterValue.setTypedText(TypedText(T_SINGLEUSEID143));
 
-    textIndGearValue.setXY(202, -88);
+    textIndGearValue.setPosition(156, -90, 329, 504);
     textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndGearValue.setLinespacing(0);
-    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID256).getText());
+    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID280).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);
-    textIndGearValue.resizeToCurrentText();
-    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID252));
+    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID279));
+
+    boxEntry.setPosition(81, 130, 470, 109);
+    boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(67, 0, 255));
+
+    TEXTAutocrossEntry.setPosition(99, 146, 434, 78);
+    TEXTAutocrossEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    TEXTAutocrossEntry.setLinespacing(0);
+    TEXTAutocrossEntry.setTypedText(TypedText(T_SINGLEUSEID274));
 
     add(background);
     add(boxIndicator1);
@@ -235,11 +242,13 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
-    add(box1);
+    add(boxText);
     add(TEXTAutocross);
     add(TEXTRpmLimiter);
     add(textRpmLimiterValue);
     add(textIndGearValue);
+    add(boxEntry);
+    add(TEXTAutocrossEntry);
 }
 
 void AUTOCROSSViewBase::setupScreen()

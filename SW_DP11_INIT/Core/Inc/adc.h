@@ -75,7 +75,7 @@ void MX_ADC1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
-	void ADC_read(void);
+void ADC_read(void);
 
 /* USER CODE END Prototypes */
 

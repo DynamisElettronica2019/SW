@@ -15,14 +15,15 @@ SKIDPADView::SKIDPADView()
 
 void SKIDPADView::setupScreen()
 {
-    SKIDPADViewBase::setupScreen();
 	  SkiPointer[0] = OIL_PRESS;
 		SkiPointer[1] = TH2O;
 		SkiPointer[2] = OIL_TEMP_IN;
 		SkiPointer[3] = TPS;
 		SkiPointer[4] = VBAT;
 		SkiPointer[5] = FUEL_LEVEL;
-		boxIndicatorGear.invalidate();
+		screenEntry = 0;
+		textIndGearValue.setVisible(false);
+		SKIDPADViewBase::setupScreen();
 }
 
 void SKIDPADView::tearDownScreen()
@@ -32,6 +33,9 @@ void SKIDPADView::tearDownScreen()
 
 void SKIDPADView::refreshSkidpad()
 {	
+	screenEntry ++;
+	SKIDPADView::screenEntryPopup();	
+	
 	SKIDPADView::checkChangeScreen();
 	
 	/******************TITOLI*******************/
@@ -152,3 +156,21 @@ void SKIDPADView::checkChangeScreen()
 					break;
 	}	
 }
+void SKIDPADView::screenEntryPopup()
+{
+	if (screenEntry >= POPUP_TIME) {
+		boxEntry.setVisible(false);
+		TEXTSkidpadEntry.setVisible(false);
+		boxEntry.invalidate();
+		TEXTSkidpadEntry.invalidate();
+		background.invalidate();
+		textIndGearValue.setVisible(true);
+		boxIndicatorGear.invalidate();
+	}
+	else{
+		textIndGearValue.setVisible(false);
+		boxIndicatorGear.invalidate();
+		textIndGearValue.invalidate();
+	}
+}
+

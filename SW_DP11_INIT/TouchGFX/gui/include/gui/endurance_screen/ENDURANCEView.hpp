@@ -16,6 +16,7 @@ public:
     virtual void tearDownScreen();
 		virtual void refreshEndurance();
 		virtual void checkChangeScreen();
+		virtual void screenEntryPopup();
 protected:
 		touchgfx::Unicode::UnicodeChar Title1[6];
 		touchgfx::Unicode::UnicodeChar Title2[6];
@@ -27,6 +28,7 @@ protected:
 		touchgfx::Unicode::UnicodeChar Gear[3];
 		touchgfx::Unicode::UnicodeChar Acquisition[5];
 		int cont;
+		int screenEntry;
 };
 
 #endif // ENDURANCE_VIEW_HPP

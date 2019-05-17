@@ -178,21 +178,28 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID34));
 
-    box1.setPosition(180, 347, 280, 28);
-    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
+    boxText.setPosition(180, 347, 280, 28);
+    boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
+
+    textIndGearValue.setPosition(156, -90, 329, 504);
+    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndGearValue.setLinespacing(0);
+    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID278).getText());
+    textIndGearValue.setWildcard(textIndGearValueBuffer);
+    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID277));
 
     TEXTEndurance.setPosition(227, 347, 186, 33);
     TEXTEndurance.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TEXTEndurance.setLinespacing(0);
     TEXTEndurance.setTypedText(TypedText(T_SINGLEUSEID36));
 
-    textIndGearValue.setXY(202, -88);
-    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    textIndGearValue.setLinespacing(0);
-    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID255).getText());
-    textIndGearValue.setWildcard(textIndGearValueBuffer);
-    textIndGearValue.resizeToCurrentText();
-    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID250));
+    boxEntry.setPosition(81, 130, 470, 109);
+    boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
+
+    TEXTEnduranceEntry.setPosition(99, 146, 434, 78);
+    TEXTEnduranceEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    TEXTEnduranceEntry.setLinespacing(0);
+    TEXTEnduranceEntry.setTypedText(TypedText(T_SINGLEUSEID273));
 
     add(background);
     add(boxIndicator1);
@@ -223,9 +230,11 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
-    add(box1);
-    add(TEXTEndurance);
+    add(boxText);
     add(textIndGearValue);
+    add(TEXTEndurance);
+    add(boxEntry);
+    add(TEXTEnduranceEntry);
 }
 
 void ENDURANCEViewBase::setupScreen()

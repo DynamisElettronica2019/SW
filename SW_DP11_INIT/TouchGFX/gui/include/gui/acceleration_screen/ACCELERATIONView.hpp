@@ -16,8 +16,13 @@ public:
     virtual void tearDownScreen();
 		virtual void refreshAcceleration();
 		virtual void checkChangeScreen();
+		virtual void screenEntryPopup();
+		virtual void screenCheckMessage();
 protected:
 		touchgfx::Unicode::UnicodeChar Empty[6];
+		touchgfx::Unicode::UnicodeChar Ready[9];
+		touchgfx::Unicode::UnicodeChar Steady[9];
+		touchgfx::Unicode::UnicodeChar Go[9];
 
 		touchgfx::Unicode::UnicodeChar Title1[6];
 		touchgfx::Unicode::UnicodeChar Title2[6];

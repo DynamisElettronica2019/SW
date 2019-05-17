@@ -52,10 +52,8 @@
 
 /* USER CODE BEGIN 0 */
 
-uint32_t ADC_BUF[3];
+int ADC_BUF[3];
 
-float oldClutchValue = 0;
-	
 /* USER CODE END 0 */
 
 ADC_HandleTypeDef hadc1;
@@ -72,14 +70,14 @@ void MX_ADC1_Init(void)
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
-  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.NbrOfConversion = 3;
   hadc1.Init.DMAContinuousRequests = ENABLE;
-  hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
@@ -144,7 +142,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     hdma_adc1.Init.MemInc = DMA_MINC_ENABLE;
     hdma_adc1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
     hdma_adc1.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-    hdma_adc1.Init.Mode = DMA_NORMAL;
+    hdma_adc1.Init.Mode = DMA_CIRCULAR;
     hdma_adc1.Init.Priority = DMA_PRIORITY_LOW;
     hdma_adc1.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
     if (HAL_DMA_Init(&hdma_adc1) != HAL_OK)
@@ -193,41 +191,16 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 } 
 
 /* USER CODE BEGIN 1 */
-uint32_t channel_0 = 0, channel_1 = 0;
-uint16_t channel_2;
-extern Indicator_Value Indicators[N_INDICATORS];
 
-void ADC_read(void)	{ 
-
-HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_BUF,3);
+void ADC_read(void)	{ // nulla
 	
-	if (ADC_BUF[0] > 1250) HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_SET);
-	else HAL_GPIO_WritePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin, GPIO_PIN_RESET);
-	
-	channel_1 = ADC_BUF[1];
-	
-	if (ADC_BUF[1] > 1250) HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
-	else HAL_GPIO_WritePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
-	
-	if (ADC_BUF[2] > 3700) HAL_GPIO_WritePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin, GPIO_PIN_SET);
-	else HAL_GPIO_WritePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin, GPIO_PIN_RESET);
-	
-	HAL_ADC_Stop_DMA (&hadc1);
-	
-  dSensors_CLUTCH(channel_1);
-	
+	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_BUF,3);
 	return ;
-//	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_BUF,3);
-//	
-//	channel_0 = ADC_BUF[0];
-//	channel_1 = ADC_BUF[1];
-//	channel_2 = ADC_BUF[2];
-//	
-//	HAL_ADC_Stop_DMA (&hadc1);
-//	channel_1 = (((float)channel_1)/4095)*100.0;
-//	Indicators[TH2O].floatValore = channel_2; 
-//	Indicators[FUEL_LEVEL].floatValore = channel_0; 
+}
 
+void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef * hadc){
+		dSensors_CLUTCH(ADC_BUF[CLUTCH_ADC]);
+		HAL_ADC_Stop_DMA (&hadc1);
 }
 
 /* USER CODE END 1 */

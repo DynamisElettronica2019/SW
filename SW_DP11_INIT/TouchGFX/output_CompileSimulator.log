@@ -1,16 +1,21 @@
 Converting images
 Compiling gui/src/settings_screen/SETTINGSView.cpp
+Compiling gui/src/board_debug_screen/BOARD_DEBUGView.cpp
+Compiling gui/src/skidpad_screen/SKIDPADView.cpp
+Compiling gui/src/skidpad_screen/SKIDPADPresenter.cpp
+Compiling gui/src/endurance_screen/ENDURANCEPresenter.cpp
+Compiling gui/src/endurance_screen/ENDURANCEView.cpp
+Compiling gui/src/autocross_screen/AUTOCROSSPresenter.cpp
+Compiling gui/src/autocross_screen/AUTOCROSSView.cpp
 Compiling gui/src/acceleration_screen/ACCELERATIONView.cpp
 Compiling gui/src/acceleration_screen/ACCELERATIONPresenter.cpp
-Compiling generated/gui_generated/src/common/FrontendApplicationBase.cpp
-Compiling simulator/main.cpp
-In file included from gui/src/acceleration_screen/ACCELERATIONView.cpp:1:0:
-gui/include/gui/acceleration_screen/ACCELERATIONView.hpp:7:21: fatal error: general.h: No such file or directory
+In file included from gui/src/skidpad_screen/SKIDPADView.cpp:1:0:
+gui/include/gui/skidpad_screen/SKIDPADView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
                      ^
 compilation terminated.
-In file included from gui/src/acceleration_screen/ACCELERATIONPresenter.cpp:1:0:
-gui/include/gui/acceleration_screen/ACCELERATIONView.hpp:7:21: fatal error: general.h: No such file or directory
+In file included from gui/src/skidpad_screen/SKIDPADPresenter.cpp:1:0:
+gui/include/gui/skidpad_screen/SKIDPADView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
                      ^
 compilation terminated.
@@ -19,32 +24,62 @@ gui/include/gui/settings_screen/SETTINGSView.hpp:7:21: fatal error: general.h: N
  #include <general.h>
                      ^
 compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONView.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONView.o] Error 1
+In file included from gui/src/endurance_screen/ENDURANCEPresenter.cpp:1:0:
+gui/include/gui/endurance_screen/ENDURANCEView.hpp:7:21: fatal error: general.h: No such file or directory
+ #include <general.h>
+                     ^
+compilation terminated.
+In file included from gui/src/autocross_screen/AUTOCROSSView.cpp:1:0:
+gui/include/gui/autocross_screen/AUTOCROSSView.hpp:7:21: fatal error: general.h: No such file or directory
+ #include <general.h>
+                     ^
+compilation terminated.
+In file included from gui/src/board_debug_screen/BOARD_DEBUGView.cpp:1:0:
+gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp:7:21: fatal error: general.h: No such file or directory
+ #include <general.h>
+                     ^
+compilation terminated.
+In file included from gui/src/acceleration_screen/ACCELERATIONView.cpp:1:0:
+gui/include/gui/acceleration_screen/ACCELERATIONView.hpp:7:21: fatal error: general.h: No such file or directory
+ #include <general.h>
+                     ^
+compilation terminated.
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADView.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADView.o] Error 1
 make[2]: *** Waiting for unfinished jobs....
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONPresenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONPresenter.o] Error 1
+In file included from gui/src/autocross_screen/AUTOCROSSPresenter.cpp:1:0:
+gui/include/gui/autocross_screen/AUTOCROSSView.hpp:7:21: fatal error: general.h: No such file or directory
+ #include <general.h>
+                     ^
+compilation terminated.
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADPresenter.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADPresenter.o] Error 1
 simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSView.o' failed
 make[2]: *** [build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSView.o] Error 1
-In file included from generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp:57:0,
-                 from gui/include/gui/common/FrontendHeap.hpp:4,
-                 from generated/gui_generated/src/common/FrontendApplicationBase.cpp:6:
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEPresenter.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEPresenter.o] Error 1
+In file included from gui/src/endurance_screen/ENDURANCEView.cpp:1:0:
 gui/include/gui/endurance_screen/ENDURANCEView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
                      ^
 compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.o] Error 1
-In file included from generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp:57:0,
-                 from gui/include/gui/common/FrontendHeap.hpp:4,
-                 from ../Middlewares/ST/TouchGFX/touchgfx///framework/include/common/TouchGFXInit.hpp:25,
-                 from simulator/main.cpp:3:
-gui/include/gui/endurance_screen/ENDURANCEView.hpp:7:21: fatal error: general.h: No such file or directory
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/board_debug_screen/BOARD_DEBUGView.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/board_debug_screen/BOARD_DEBUGView.o] Error 1
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/autocross_screen/AUTOCROSSView.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/autocross_screen/AUTOCROSSView.o] Error 1
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONView.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONView.o] Error 1
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/autocross_screen/AUTOCROSSPresenter.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/autocross_screen/AUTOCROSSPresenter.o] Error 1
+In file included from gui/src/acceleration_screen/ACCELERATIONPresenter.cpp:1:0:
+gui/include/gui/acceleration_screen/ACCELERATIONView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
                      ^
 compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/simulator/main.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/simulator/main.o] Error 1
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEView.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEView.o] Error 1
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONPresenter.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/acceleration_screen/ACCELERATIONPresenter.o] Error 1
 simulator/gcc/Makefile:182: recipe for target 'generate_assets' failed
 make[1]: *** [generate_assets] Error 2
 simulator/gcc/Makefile:40: recipe for target 'all' failed

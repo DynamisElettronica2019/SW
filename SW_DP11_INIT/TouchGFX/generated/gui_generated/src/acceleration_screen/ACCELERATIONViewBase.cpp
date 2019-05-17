@@ -178,8 +178,8 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID139));
 
-    box1.setPosition(180, 347, 280, 28);
-    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 0, 255));
+    boxText.setPosition(180, 347, 280, 28);
+    boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 0, 255));
 
     TEXTAcceleration.setPosition(227, 347, 186, 33);
     TEXTAcceleration.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -198,13 +198,34 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textRpmLimiterValue.setWildcard(textRpmLimiterValueBuffer);
     textRpmLimiterValue.setTypedText(TypedText(T_SINGLEUSEID146));
 
-    textIndGearValue.setXY(202, -88);
+    textIndGearValue.setPosition(156, -90, 329, 504);
     textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndGearValue.setLinespacing(0);
     Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID254).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);
-    textIndGearValue.resizeToCurrentText();
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID253));
+
+    boxEntry.setPosition(81, 130, 470, 109);
+    boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 0, 255));
+    boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(211, 0, 255));
+    boxEntry.setBorderSize(5);
+
+    TEXTAccelerationEntry.setPosition(76, 146, 469, 76);
+    TEXTAccelerationEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    TEXTAccelerationEntry.setLinespacing(0);
+    TEXTAccelerationEntry.setTypedText(TypedText(T_SINGLEUSEID272));
+
+    boxMessage.setPosition(120, 225, 400, 125);
+    boxMessage.setVisible(false);
+    boxMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+
+    textMessage.setPosition(120, 250, 400, 76);
+    textMessage.setVisible(false);
+    textMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textMessage.setLinespacing(0);
+    textMessageBuffer[0] = 0;
+    textMessage.setWildcard(textMessageBuffer);
+    textMessage.setTypedText(TypedText(T_SINGLEUSEID276));
 
     add(background);
     add(boxIndicator1);
@@ -235,11 +256,15 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
-    add(box1);
+    add(boxText);
     add(TEXTAcceleration);
     add(TEXTRpmLimiter);
     add(textRpmLimiterValue);
     add(textIndGearValue);
+    add(boxEntry);
+    add(TEXTAccelerationEntry);
+    add(boxMessage);
+    add(textMessage);
 }
 
 void ACCELERATIONViewBase::setupScreen()

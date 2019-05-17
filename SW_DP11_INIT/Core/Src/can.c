@@ -56,6 +56,7 @@
 #include "i2c.h"
 #include "d_efiSense.h"
 #include "general.h"
+#include "string.h"
 
 CAN_TxHeaderTypeDef packetHeader;
 CAN_FilterTypeDef canFilterConfigHeader;
@@ -207,7 +208,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 	switch(ID)
 	{
 	   case EFI_GEAR_RPM_TPS_PH2O_ID:
-				Indicators[GEAR].intValore = firstInt;
+				CAN_setGear(firstInt);
 				I2C_setRPM(secondInt);
 				dEfiSense_calculateTPS(TPS,thirdInt);
 				Indicators[PH2O].intValore = fourthInt; // manca la conversione
@@ -347,7 +348,32 @@ void CAN_changeState(int mode_feedback)
 	Indicators[DRIVE_MODE].intValore = mode_feedback;
 }
 
-//void CAN_setGear
+void CAN_setGear (int newGear)
+{
+	switch (newGear){
+		case 0:
+			strcpy ( Indicators[GEAR].charValore, "N");
+			break;
+		case 1:
+			strcpy ( Indicators[GEAR].charValore, "1");
+			break;
+		case 2:
+			strcpy ( Indicators[GEAR].charValore, "2");
+			break;
+		case 3:
+			strcpy ( Indicators[GEAR].charValore, "3");
+			break;
+		case 4:
+			strcpy ( Indicators[GEAR].charValore, "4");
+			break;
+		case 5:
+			strcpy ( Indicators[GEAR].charValore, "5");
+			break;
+		default:
+			strcpy ( Indicators[GEAR].charValore, "N");	//--------da eliminare/modificare
+			break;
+	}
+}
 
 
 /* USER CODE END 1 */

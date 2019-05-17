@@ -495,8 +495,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
-	Indicators[OIL_PRESS] = (Indicator_Value) {OIL_PRESS, INT,"POIL", DEF_VALUE, 3.5, 0,"?"};
-  Indicators[TH2O] = (Indicator_Value) {TH2O, FLOAT, "TH2O", DEF_VALUE, 96.8, 0,"?"};
+	Indicators[OIL_PRESS] = (Indicator_Value) {OIL_PRESS, FLOAT, "POIL", DEF_VALUE, 3.5, 0,"?"};
+  Indicators[TH2O] = (Indicator_Value) {TH2O, INT, "TH2O", DEF_VALUE, 96.8, 0,"?"};
   Indicators[OIL_TEMP_IN] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, 85.7, 0,"?"};
   Indicators[TPS] = (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE, 75.0, 0,"?"};
   Indicators[VBAT] = (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, 12.1, 0,"?"};
@@ -1013,7 +1013,6 @@ void rpmStripeTask(void const * argument)
   /* USER CODE END rpmStripeTask */
 }
 
-	int clutch_ramp = 0;
 /* USER CODE BEGIN Header_sensorsTask */
 /**
 * @brief Function implementing the sensors_Task thread.
@@ -1033,11 +1032,11 @@ void sensorsTask(void const * argument)
 		timerClutch = timerClutch + 1;
 		timerTempCurr = timerTempCurr + 1;
 		
-		clutch_ramp = clutch_ramp + 1;
+		//clutch_ramp = clutch_ramp + 1;
 		
-		if(clutch_ramp >= 100)
-			clutch_ramp = 0;
-		// ADC_read();
+		//if(clutch_ramp >= 100)
+			//clutch_ramp = 0;
+		ADC_read();
 		
 	  dSensors_Clutch_send();		// oppure invio diretto su CAN
 		

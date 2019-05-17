@@ -57,11 +57,15 @@ protected:
     touchgfx::TextArea TEXTIndAcquisition;
     touchgfx::Box boxAcquisition;
     touchgfx::TextAreaWithOneWildcard textIndAcquisitionValue;
-    touchgfx::Box box1;
+    touchgfx::Box boxText;
     touchgfx::TextArea TEXTAcceleration;
     touchgfx::TextArea TEXTRpmLimiter;
     touchgfx::TextAreaWithOneWildcard textRpmLimiterValue;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
+    touchgfx::BoxWithBorder boxEntry;
+    touchgfx::TextArea TEXTAccelerationEntry;
+    touchgfx::Box boxMessage;
+    touchgfx::TextAreaWithOneWildcard textMessage;
 
     /*
      * Wildcard Buffers
@@ -100,6 +104,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textRpmLimiterValueBuffer[TEXTRPMLIMITERVALUE_SIZE];
     static const uint16_t TEXTINDGEARVALUE_SIZE = 3;
     touchgfx::Unicode::UnicodeChar textIndGearValueBuffer[TEXTINDGEARVALUE_SIZE];
+    static const uint16_t TEXTMESSAGE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textMessageBuffer[TEXTMESSAGE_SIZE];
 
 private:
 

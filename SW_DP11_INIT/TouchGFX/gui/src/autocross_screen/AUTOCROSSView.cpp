@@ -14,16 +14,16 @@ AUTOCROSSView::AUTOCROSSView()
 }
 
 void AUTOCROSSView::setupScreen()
-{
-    AUTOCROSSViewBase::setupScreen();
+{ 
 		AutPointer[0] = OIL_PRESS;
 		AutPointer[1] = TH2O;
 		AutPointer[2] = OIL_TEMP_IN;
 		AutPointer[3] = TPS;
 		AutPointer[4] = VBAT;
 		AutPointer[5] = FUEL_LEVEL;
-	
-		boxIndicatorGear.invalidate();
+		screenEntry = 0;
+		textIndGearValue.setVisible(false);
+		AUTOCROSSViewBase::setupScreen();
 }
 
 void AUTOCROSSView::tearDownScreen()
@@ -33,7 +33,9 @@ void AUTOCROSSView::tearDownScreen()
 
 void AUTOCROSSView::refreshAutocross()
 {
-
+	screenEntry ++;
+	AUTOCROSSView::screenEntryPopup();	
+	
 	AUTOCROSSView::checkChangeScreen();
 
 	/******************TITOLI*******************/
@@ -159,4 +161,22 @@ void AUTOCROSSView::checkChangeScreen()
 					application().gotoSKIDPADScreenNoTransition();
 					break;
 	}		
+}
+
+void AUTOCROSSView::screenEntryPopup()
+{
+	if (screenEntry >= POPUP_TIME) {
+		boxEntry.setVisible(false);
+		TEXTAutocrossEntry.setVisible(false);
+		boxEntry.invalidate();
+		TEXTAutocrossEntry.invalidate();
+		background.invalidate();
+		textIndGearValue.setVisible(true);
+		boxIndicatorGear.invalidate();
+	}
+	else{
+		textIndGearValue.setVisible(false);
+		boxIndicatorGear.invalidate();
+		textIndGearValue.invalidate();
+	}
 }

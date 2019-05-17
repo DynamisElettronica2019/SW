@@ -7,6 +7,10 @@
  extern "C" {
 #endif
 
+	 
+#define POPUP_TIME              30
+	 
+	 
 
 #define TRUE 										1
 #define FALSE 									0
@@ -67,12 +71,12 @@
 
 /*******************TIMINGS****************************************************/
 
-#define SENSORS_TIME						100
-#define SENSORS_SEND_TIME				100
-#define START_BUTTON_TIME				40
-#define RPM_STRIPE_TIME					1000
-#define DRIVE_MODE_TIME					10		//---- valore da definire
-#define TRACTION_RPM_TIME 			100		
+#define SENSORS_TIME									10		// 100Hz
+#define SENSORS_SEND_TIME							100		// 10HZ
+#define START_BUTTON_TIME							40		// 25HZ
+#define RPM_STRIPE_TIME								1000	// 1HZ
+#define DRIVE_MODE_TIME								10		//---- valore da definire
+#define TRACTION_RPM_TIME 						100		// 10HZ
 
 
 #define DEBUG_MODE_DEFAULT						0

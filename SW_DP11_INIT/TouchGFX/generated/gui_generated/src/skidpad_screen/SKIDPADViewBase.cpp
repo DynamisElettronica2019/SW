@@ -178,21 +178,28 @@ SKIDPADViewBase::SKIDPADViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID69));
 
-    box1.setPosition(180, 347, 280, 28);
-    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 200, 255));
+    boxText.setPosition(180, 347, 280, 28);
+    boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 200, 255));
 
     TEXTSkidpad.setPosition(227, 347, 186, 33);
     TEXTSkidpad.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TEXTSkidpad.setLinespacing(0);
     TEXTSkidpad.setTypedText(TypedText(T_SINGLEUSEID71));
 
-    textIndGearValue.setXY(202, -88);
+    textIndGearValue.setPosition(156, -90, 329, 504);
     textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndGearValue.setLinespacing(0);
-    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID257).getText());
+    Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID282).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);
-    textIndGearValue.resizeToCurrentText();
-    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID251));
+    textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID281));
+
+    boxEntry.setPosition(81, 130, 470, 109);
+    boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 200, 255));
+
+    TEXTSkidpadEntry.setPosition(99, 146, 434, 78);
+    TEXTSkidpadEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    TEXTSkidpadEntry.setLinespacing(0);
+    TEXTSkidpadEntry.setTypedText(TypedText(T_SINGLEUSEID275));
 
     add(background);
     add(boxIndicator1);
@@ -223,9 +230,11 @@ SKIDPADViewBase::SKIDPADViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
-    add(box1);
+    add(boxText);
     add(TEXTSkidpad);
     add(textIndGearValue);
+    add(boxEntry);
+    add(TEXTSkidpadEntry);
 }
 
 void SKIDPADViewBase::setupScreen()

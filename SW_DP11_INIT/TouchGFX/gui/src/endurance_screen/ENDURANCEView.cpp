@@ -8,7 +8,6 @@ extern Indicator_Value Indicators[N_INDICATORS];
 //extern Indicator_Pointer EndPointer;
 extern uint8_t EndPointer[6];
 
-
 ENDURANCEView::ENDURANCEView()
 {
 
@@ -16,8 +15,6 @@ ENDURANCEView::ENDURANCEView()
 
 void ENDURANCEView::setupScreen()
 {
-		boxIndicatorGear.invalidate();
-    ENDURANCEViewBase::setupScreen();
 		EndPointer[0] = OIL_PRESS;
 		EndPointer[1] = TH2O;
 		EndPointer[2] = OIL_TEMP_IN;
@@ -25,6 +22,9 @@ void ENDURANCEView::setupScreen()
 		EndPointer[4] = VBAT;
 		EndPointer[5] = FUEL_LEVEL;
 		cont = 0;
+		screenEntry = 0;
+		textIndGearValue.setVisible(false);
+		ENDURANCEViewBase::setupScreen();
 }
 
 void ENDURANCEView::tearDownScreen()
@@ -35,7 +35,9 @@ void ENDURANCEView::tearDownScreen()
 void ENDURANCEView::refreshEndurance()
 {	
 	cont ++;
-
+	screenEntry ++;
+	ENDURANCEView::screenEntryPopup();	
+	
 	ENDURANCEView::checkChangeScreen();
 	
 	/******************TITOLI*******************/
@@ -156,3 +158,22 @@ void ENDURANCEView::checkChangeScreen()
 					break;
 	}	
 }
+
+void ENDURANCEView::screenEntryPopup()
+{
+	if (screenEntry >= POPUP_TIME) {
+		boxEntry.setVisible(false);
+		TEXTEnduranceEntry.setVisible(false);
+		boxEntry.invalidate();
+		TEXTEnduranceEntry.invalidate();
+		background.invalidate();
+		textIndGearValue.setVisible(true);
+		boxIndicatorGear.invalidate();
+	}
+	else{
+		textIndGearValue.setVisible(false);
+		boxIndicatorGear.invalidate();
+		textIndGearValue.invalidate();
+	}
+}
+

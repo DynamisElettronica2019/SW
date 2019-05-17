@@ -57,9 +57,11 @@ protected:
     touchgfx::TextArea TEXTIndAcquisition;
     touchgfx::Box boxAcquisition;
     touchgfx::TextAreaWithOneWildcard textIndAcquisitionValue;
-    touchgfx::Box box1;
+    touchgfx::Box boxText;
     touchgfx::TextArea TEXTSkidpad;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
+    touchgfx::Box boxEntry;
+    touchgfx::TextArea TEXTSkidpadEntry;
 
     /*
      * Wildcard Buffers

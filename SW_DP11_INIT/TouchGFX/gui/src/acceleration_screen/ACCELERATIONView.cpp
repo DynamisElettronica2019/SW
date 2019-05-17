@@ -3,10 +3,13 @@
 #include <string.h>
 #include <touchgfx/Color.hpp>
 
+
+extern int state;
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
 //extern Indicator_Pointer AccPointer;
 extern uint8_t AccPointer[6];
+int screenEntry;
 
 ACCELERATIONView::ACCELERATIONView()
 {
@@ -15,15 +18,20 @@ ACCELERATIONView::ACCELERATIONView()
 
 void ACCELERATIONView::setupScreen()
 {
-		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);	
+		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
+		touchgfx::Unicode::strncpy( Ready, "READY", 9);	
+		touchgfx::Unicode::strncpy( Steady, "STEADY", 9);
+		touchgfx::Unicode::strncpy( Go, "GO", 9);
     AccPointer[0] = OIL_PRESS;
 		AccPointer[1] = TH2O;
 		AccPointer[2] = OIL_TEMP_IN;
 		AccPointer[3] = TPS;
 		AccPointer[4] = VBAT;
 		AccPointer[5] = FUEL_LEVEL;
-		boxIndicatorGear.invalidate();
 		cont = 0;
+		screenEntry = 0;
+		textIndGearValue.setVisible(false);
+		textIndGearValue.invalidate();
     ACCELERATIONViewBase::setupScreen();
 }
 
@@ -34,7 +42,8 @@ void ACCELERATIONView::tearDownScreen()
 
 void ACCELERATIONView::refreshAcceleration()
 {
-	
+	screenEntry ++;
+	ACCELERATIONView::screenEntryPopup();	
 	ACCELERATIONView::checkChangeScreen();
 	
 	cont ++;
@@ -186,3 +195,62 @@ void ACCELERATIONView::checkChangeScreen()
 	}		
 }
 
+void ACCELERATIONView::screenEntryPopup()
+{
+	if (screenEntry >= POPUP_TIME) {
+		boxEntry.setVisible(false);
+		TEXTAccelerationEntry.setVisible(false);
+		boxEntry.invalidate();
+		TEXTAccelerationEntry.invalidate();
+		background.invalidate();
+		textIndGearValue.setVisible(true);
+		boxIndicatorGear.invalidate();
+		textIndGearValue.invalidate();
+	}
+	else{
+		textIndGearValue.setVisible(false);
+		boxIndicatorGear.invalidate();
+		textIndGearValue.invalidate();
+	}
+}
+
+void ACCELERATIONView::screenCheckMessage()
+{
+	boxMessage.invalidate();
+	textMessage.invalidate();
+	switch(state)
+	{
+			case ACCELERATION_MODE_START:
+				boxMessage.setVisible(false);
+				textMessage.setVisible(false);
+				break;
+			case ACCELERATION_MODE_FEEDBACK:
+				boxMessage.setVisible(false);
+				textMessage.setVisible(false);
+				break;
+			case ACCELERATION_MODE_READY:
+				// stampa a schermo mex READY ?
+				boxMessage.setVisible(true);
+				textMessage.setVisible(true);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
+				break;
+			case ACCELERATION_MODE_STEADY:
+				// stampa a schermo mex STEADY ?
+				boxMessage.setVisible(true);
+				textMessage.setVisible(true);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Steady);
+				break;
+			case ACCELERATION_MODE_GO:
+				// stampa a schermo mex GO - per un tot di sec?
+				boxMessage.setVisible(true);
+				textMessage.setVisible(true);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+			case ACCELERATION_MODE_DEFAULT:
+				boxMessage.setVisible(false);
+				textMessage.setVisible(false);
+				break;
+	}
+	boxMessage.invalidate();
+	textMessage.invalidate();
+	background.invalidate();
+}

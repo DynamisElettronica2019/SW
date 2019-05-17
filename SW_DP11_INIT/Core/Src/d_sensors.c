@@ -4,21 +4,21 @@
 #include "can.h"
 
 extern char driveMode, engineMap;
-extern uint32_t ADC_BUF[3];
+
 extern Indicator_Value Indicators[N_INDICATORS];
+int clutchOld = 0;
 int clutchValue = 0;
 
-void dSensors_update(void)	{	// da definire come vanno riscalati i valori
-	
+void dSensors_update(void)	{	// da definire come vanno riscalati i valori	
 	//*indizzo_nella_matrice = (float) (ADC_BUF[0] * VDD ) / LEVEL ;
 	//*indizzo_nella_matrice = (float) ((((ADC_BUF[2] * VDD ) / LEVEL )*0.8) + (*indirizzo_nella_matrice * 0.2));
 	return ;
 }
 
-extern int clutch_ramp;
+//extern int clutch_ramp;
 
 void dSensors_Clutch_send(void)	{
-	CAN_send(0x190, clutch_ramp, driveMode, engineMap, EMPTY, 3);
+	CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
 	return ;
 }
 
@@ -28,22 +28,18 @@ void dSensors_Sensors_send(void)	{
 	return ;
 }
 
-void dSensors_CLUTCH(uint16_t clutchAnalog)	{
-	float aux;
-	uint16_t channel_2;
-//	if (clutchAnalog >= CLUTCH_MAX_VALUE)
-//		clutchValue = CLUTCH_MAX_VALUE;
-//	else if (clutchAnalog <= CLUTCH_MIN_VALUE)
-//		clutchValue = CLUTCH_MIN_VALUE;
-//	else
-//		clutchValue = (int) (clutchAnalog * 0.8 ) + (clutchValue * 0.2);
-//	
-//	clutchValue = (int) (clutchValue / CLUTCH_MAX_VALUE * 100);
+void dSensors_CLUTCH(int clutchAnalog)	{
+
+	if (clutchAnalog >= CLUTCH_MAX_VALUE)
+		clutchOld= CLUTCH_MAX_VALUE;
+	else if (clutchAnalog <= CLUTCH_MIN_VALUE)
+		clutchOld = CLUTCH_MIN_VALUE;
+	else
+		clutchOld = (int) (clutchAnalog * 0.8 ) + (clutchOld * 0.2);
 	
-	aux = clutchAnalog/4095.0*100.0;
-	channel_2 = (uint16_t)aux;
-	Indicators[TH2O].floatValore = aux; 
-	clutchValue = (uint16_t)aux;
+	clutchValue = (int) (clutchOld * 100 / CLUTCH_MAX_VALUE ) ;
+	
+	Indicators[TH2O].intValore = clutchValue; 
 	
 	return ;
 }
