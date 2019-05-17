@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
-
   <SchemaVersion>2.1</SchemaVersion>
-
   <Header>### uVision Project, (C) Keil Software</Header>
-
   <Targets>
     <Target>
       <TargetName>SW_DP11_INIT</TargetName>
@@ -336,7 +333,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx,QSPI_CLOCK_PRESCALER=2,QSPI_DDRMODE,QSPI_XIP_MODE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;                           ../TouchGFX/target;                           ../TouchGFX/generated/fonts/include;                           ../TouchGFX/generated/texts/include;                           ../TouchGFX/generated/images/include;                           ../TouchGFX/generated/gui_generated/include;                           ../TouchGFX/gui/include;      ../middlewares/st/touchgfx/touchgfx/framework/include;                           ../Drivers/STM32F7xx_HAL_Driver/Inc;                           ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                           ../Middlewares/Third_Party/FreeRTOS/Source/include;                           ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                           ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                           ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                           ../Drivers/CMSIS/Include;      ../middlewares/st/touchgfx/touchgfx/framework/include;      ../middlewares/st/touchgfx/touchgfx/framework/include;      ../middlewares/st/touchgfx/touchgfx/framework/include;      ../middlewares/st/touchgfx/touchgfx/framework/include;      ../middlewares/st/touchgfx/touchgfx/framework/include;      ../middlewares/st/touchgfx/touchgfx/framework/include;      ../middlewares/st/touchgfx/touchgfx/framework/include;     ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Core/Inc;                           ../TouchGFX/target;                           ../TouchGFX/generated/fonts/include;                           ../TouchGFX/generated/texts/include;                           ../TouchGFX/generated/images/include;                           ../TouchGFX/generated/gui_generated/include;                           ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;                           ../Drivers/STM32F7xx_HAL_Driver/Inc;                           ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                           ../Middlewares/Third_Party/FreeRTOS/Source/include;                           ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                           ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                           ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                           ../Drivers/CMSIS/Include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -741,11 +738,6 @@
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappers.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
@@ -1008,18 +1000,16 @@
       </Groups>
     </Target>
   </Targets>
-
   <RTE>
-    <apis/>
+    <apis></apis>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"></package>
         <targetInfos>
-          <targetInfo name="SW_DP11_INIT"/>
+          <targetInfo name="SW_DP11_INIT"></targetInfo>
         </targetInfos>
       </component>
     </components>
-    <files/>
+    <files></files>
   </RTE>
-
 </Project>
