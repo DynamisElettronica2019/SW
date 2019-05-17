@@ -19,6 +19,7 @@
 "sw_dp11_init\stm32f7xx_it.o"
 "sw_dp11_init\stm32f7xx_hal_msp.o"
 "sw_dp11_init\stm32f7xx_hal_timebase_tim.o"
+"sw_dp11_init\d_gears.o"
 "sw_dp11_init\boardconfiguration.o"
 "sw_dp11_init\gpio_1.o"
 "sw_dp11_init\stm32f7dma.o"

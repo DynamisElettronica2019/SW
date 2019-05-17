@@ -59,8 +59,9 @@
 /* USER CODE BEGIN Includes */
 
 #define RPM_STRIPE_MAX      12000
-#define RPM_STRIPE_OFFSET 	0
-	 
+#define RPM_STRIPE_MIN 			3000
+#define RPM_STRIPE_OFFSET 	(RPM_STRIPE_MAX/RPM_STRIPE_MIN)
+
 
 #define controller_0 		0x28
 #define controller_1 		0x29

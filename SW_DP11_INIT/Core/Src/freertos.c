@@ -57,16 +57,19 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
 
-#include "general.h"
-#include "data.h"
 #include "gpio.h"
-#include "d_traction_control.h"
-#include "d_rpm_limiter.h"
 #include "i2c.h"
 #include "adc.h"
-#include "d_sensors.h"
 #include "tim.h"
 #include "can.h"
+
+#include "general.h"
+#include "data.h"
+
+#include "d_gears.h"
+#include "d_rpm_limiter.h"
+#include "d_sensors.h"
+#include "d_traction_control.h"
 
 /* USER CODE END Includes */
 
@@ -495,12 +498,12 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
-	Indicators[OIL_PRESS] = (Indicator_Value) {OIL_PRESS, FLOAT, "POIL", DEF_VALUE, 3.5, 0,"?"};
-  Indicators[TH2O] = (Indicator_Value) {TH2O, INT, "TH2O", DEF_VALUE, 96.8, 0,"?"};
-  Indicators[OIL_TEMP_IN] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, 85.7, 0,"?"};
-  Indicators[TPS] = (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE, 75.0, 0,"?"};
-  Indicators[VBAT] = (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, 12.1, 0,"?"};
-  Indicators[FUEL_LEVEL] = (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, 80.3, 0,"?"};
+	Indicators[OIL_PRESS] = (Indicator_Value) {OIL_PRESS, FLOAT, "POIL", DEF_VALUE,DEF_VALUE , 0,"?"};
+  Indicators[TH2O] = (Indicator_Value) {TH2O, INT, "TH2O", DEF_VALUE, DEF_VALUE, 0,"?"};
+  Indicators[OIL_TEMP_IN] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, DEF_VALUE, 0,"?"};
+  Indicators[TPS] = (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE,DEF_VALUE, 0,"?"};
+  Indicators[VBAT] = (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, DEF_VALUE, 0,"?"};
+  Indicators[FUEL_LEVEL] = (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, DEF_VALUE, 0,"?"};
   Indicators[MAP] = (Indicator_Value) {MAP, INT, "MAP", 0, 80.3, 0,"?"};
   Indicators[GEAR] = (Indicator_Value) {GEAR, INT,"", 0, 0, 0,"1"};
 	Indicators[TRACTION_CONTROL] = (Indicator_Value) {TRACTION_CONTROL, INT,"T", 6, 0, 0,"?"};
@@ -546,6 +549,8 @@ void ledBlinkTask(void const * argument)
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
 				
 		dSensors_Sensors_send();
+		
+		Indicators[TRACTION_CONTROL].intValore = state;
 		
     osDelay(250);
   }
@@ -598,7 +603,7 @@ void upShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(upShiftSemaphoreHandle, portMAX_DELAY);
-		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_UP, EMPTY, EMPTY, EMPTY, 1);
+			// dGears_upShift();
     osDelay(1);
   }
   /* USER CODE END upShiftTask */
@@ -618,7 +623,7 @@ void downShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(downShiftSemaphoreHandle, portMAX_DELAY);
-		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_DOWN, EMPTY, EMPTY, EMPTY, 1);
+		// dGears_downShift();
     osDelay(1);
   }
   /* USER CODE END downShiftTask */
@@ -887,6 +892,7 @@ void neutralButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(neutralButtonSemaphoreHandle, portMAX_DELAY);
+		// dGear_setNeutral();
     osDelay(1);
   }
   /* USER CODE END neutralButtonTask */
@@ -907,15 +913,19 @@ void okButtonTask(void const * argument)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
 		
+		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT )
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
 		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY )
-			CAN_send(SW_OK_BUTTON_GCU_ID, ACCELERATION_READY, EMPTY, EMPTY, EMPTY, 1);
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_STEADY, EMPTY, EMPTY, EMPTY, 1);
 		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_STEADY )
-			CAN_send(SW_OK_BUTTON_GCU_ID, ACCELERATION_STEADY, EMPTY, EMPTY, EMPTY, 1);
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
 		
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT )
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
 		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY )
-			CAN_send(SW_OK_BUTTON_GCU_ID, AUTOX_READY, EMPTY, EMPTY, EMPTY, 1);
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_STEADY ) // chiedere se controlliamo anche tps 
-			CAN_send(SW_OK_BUTTON_GCU_ID, AUTOX_STEADY, EMPTY, EMPTY, EMPTY, 1);
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_STEADY, EMPTY, EMPTY, EMPTY, 1);
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_STEADY ) 
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
 		
     osDelay(1);
   }
@@ -1004,11 +1014,9 @@ void rpmStripeTask(void const * argument)
   {
 		xSemaphoreTake(rpmStripeSemaphoreHandle, portMAX_DELAY);
 		
-		//I2C_test();
 		I2C_rpm_update();
 
     osDelay(1);
-	
   }
   /* USER CODE END rpmStripeTask */
 }
@@ -1032,16 +1040,12 @@ void sensorsTask(void const * argument)
 		timerClutch = timerClutch + 1;
 		timerTempCurr = timerTempCurr + 1;
 		
-		//clutch_ramp = clutch_ramp + 1;
-		
-		//if(clutch_ramp >= 100)
-			//clutch_ramp = 0;
 		ADC_read();
 		
-	  dSensors_Clutch_send();		// oppure invio diretto su CAN
+	  dSensors_Clutch_send();	
 		
 		if (timerTempCurr >= SENSORS_SEND_TIME){
-			dSensors_Sensors_send();	// oppure invio diretto su CAN
+			dSensors_Sensors_send();	
 			dSensors_update();
 			timerTempCurr = 0;
 		}
@@ -1070,7 +1074,7 @@ void accelerationModeTask(void const * argument)
 			case ACCELERATION_MODE_START:
 				break;
 			case ACCELERATION_MODE_FEEDBACK:
-				state = ACCELERATION_MODE_READY;
+				state = ACCELERATION_MODE_DEFAULT;
 				break;
 			case ACCELERATION_MODE_READY:
 				// stampa a schermo mex READY ?

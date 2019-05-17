@@ -1,4 +1,13 @@
 
+/**
+  ******************************************************************************
+  * @file    d_efiSense.c
+  ******************************************************************************
+  * Conversion of all data arriving on CANbus sent by EFI
+	* in order to show a correct and meaningful data on the display.
+  ******************************************************************************
+  */
+
 #include "d_efiSense.h"
 
 extern Indicator_Value Indicators[N_INDICATORS];

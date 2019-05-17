@@ -485,6 +485,11 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
             </File>
+            <File>
+              <FileName>d_gears.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_gears.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

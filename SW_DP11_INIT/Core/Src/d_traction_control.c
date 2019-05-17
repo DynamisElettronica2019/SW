@@ -3,9 +3,8 @@
   ******************************************************************************
   * @file    d_traction_control.c
   ******************************************************************************
-  * Computation of the new traction control value and propagation of the
-	*	updated value on CANbus. The traction value is sent when the driving
-	* mode is among ENDURANCE, ACCELERATION, AUTOCROSS and SKIDPAD.
+  * Computation of the new traction control value. The value is sent each 10ms
+	* together with RPM_LIMITER. See TIM file for more info.
 	* Traction MAX and MIN values are decided together with GCU and EFI. 
   ******************************************************************************
   */

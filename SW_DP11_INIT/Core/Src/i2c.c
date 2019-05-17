@@ -162,8 +162,8 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 
 void I2C_setRPM(int rpm_value)
 {
-	if (rpm_value < RPM_STRIPE_OFFSET)
-     rpm_value = RPM_STRIPE_OFFSET;
+	if (rpm_value < RPM_STRIPE_MIN)
+     rpm_value = RPM_STRIPE_MIN;
 	else if ( rpm_value > RPM_STRIPE_MAX)
      rpm_value = RPM_STRIPE_MAX;
 	Indicators[RPM].intValore = rpm_value;
@@ -388,7 +388,7 @@ void I2C_debug_blue_off(uint16_t controller){
 void I2C_rpm_update(void){ 
 	int rpm_value;
 	rpm_value = Indicators[RPM].intValore;
-	if (rpm_value > 700){
+	if (rpm_value > RPM_STRIPE_MIN){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_1_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -399,7 +399,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 1700){
+	if (rpm_value > RPM_STRIPE_MIN+RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_2_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -410,7 +410,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 2700){
+	if (rpm_value > RPM_STRIPE_MIN+2*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_3_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -421,7 +421,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 3700){
+	if (rpm_value > RPM_STRIPE_MIN+3*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_4_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -432,7 +432,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 4700){
+	if (rpm_value > RPM_STRIPE_MIN+4*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_5_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -443,7 +443,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 5700){
+	if (rpm_value > RPM_STRIPE_MIN+5*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_6_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
@@ -455,7 +455,7 @@ void I2C_rpm_update(void){
 	}
 	
 	
-	if (rpm_value > 6700){
+	if (rpm_value > RPM_STRIPE_MIN+6*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_1_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -466,7 +466,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 7700){
+	if (rpm_value > RPM_STRIPE_MIN+7*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_2_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -477,7 +477,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 8700){
+	if (rpm_value > RPM_STRIPE_MIN+8*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_3_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -488,7 +488,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 9700){
+	if (rpm_value > RPM_STRIPE_MIN+9*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_4_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -499,7 +499,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 10700){
+	if (rpm_value > RPM_STRIPE_MIN+10*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_5_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
@@ -510,7 +510,7 @@ void I2C_rpm_update(void){
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
-	if (rpm_value > 11700){
+	if (rpm_value > RPM_STRIPE_MIN+11*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_6_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);

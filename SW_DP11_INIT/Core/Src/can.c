@@ -56,7 +56,7 @@
 #include "i2c.h"
 #include "d_efiSense.h"
 #include "general.h"
-#include "string.h"
+#include "d_gears.h"
 
 CAN_TxHeaderTypeDef packetHeader;
 CAN_FilterTypeDef canFilterConfigHeader;
@@ -208,7 +208,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 	switch(ID)
 	{
 	   case EFI_GEAR_RPM_TPS_PH2O_ID:
-				CAN_setGear(firstInt);
+				dGears_setGear(firstInt);
 				I2C_setRPM(secondInt);
 				dEfiSense_calculateTPS(TPS,thirdInt);
 				Indicators[PH2O].intValore = fourthInt; // manca la conversione
@@ -253,9 +253,10 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
         break;
 		 case GCU_TRACTION_LIMITER_AUTOG_ACC_SW_ID:
-				Indicators[TRACTION_CONTROL].intValore = firstInt;
+				//Indicators[TRACTION_CONTROL].intValore = firstInt;
 				Indicators[RPM_LIM].intValore = secondInt;
 			  // autogearshift feedback
+				CAN_changeRoutineState(fourthInt);
         break;
      case DCU_ACQUISITION_SW_ID:
 				Indicators[ACQ].intValore = firstInt;
@@ -303,7 +304,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 
 void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt, uint8_t dlc_value)
 {
-	uint32_t mailbox;
+	uint32_t mailbox; 	// mailbox da discutere con gli altri
 	
 	header.StdId = ID;
 	header.RTR = CAN_RTR_DATA;
@@ -348,32 +349,50 @@ void CAN_changeState(int mode_feedback)
 	Indicators[DRIVE_MODE].intValore = mode_feedback;
 }
 
-void CAN_setGear (int newGear)
+
+void CAN_changeRoutineState(int routine_state)
 {
-	switch (newGear){
-		case 0:
-			strcpy ( Indicators[GEAR].charValore, "N");
-			break;
-		case 1:
-			strcpy ( Indicators[GEAR].charValore, "1");
-			break;
-		case 2:
-			strcpy ( Indicators[GEAR].charValore, "2");
-			break;
-		case 3:
-			strcpy ( Indicators[GEAR].charValore, "3");
-			break;
-		case 4:
-			strcpy ( Indicators[GEAR].charValore, "4");
-			break;
-		case 5:
-			strcpy ( Indicators[GEAR].charValore, "5");
-			break;
-		default:
-			strcpy ( Indicators[GEAR].charValore, "N");	//--------da eliminare/modificare
-			break;
+	if(Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE)
+	{
+		switch(routine_state)
+		{
+			case COMMAND_READY:
+				state = ACCELERATION_MODE_READY;
+				break;
+			case COMMAND_STEADY:
+				state = ACCELERATION_MODE_STEADY;
+				break;
+			case COMMAND_GO:
+				state = ACCELERATION_MODE_GO;
+				break;
+			case COMMAND_STOP:
+				state = ACCELERATION_MODE_DEFAULT;
+				break;
+			default:
+				break;
+		}
+	}
+	
+	if(Indicators[DRIVE_MODE].intValore == AUTOX_MODE)
+	{
+		switch(routine_state)
+		{
+			case COMMAND_READY:
+				state = AUTOX_MODE_READY;
+				break;
+			case COMMAND_STEADY:
+				state = AUTOX_MODE_STEADY;
+				break;
+			case COMMAND_GO:
+				state = AUTOX_MODE_GO;
+				break;
+			case COMMAND_STOP:
+				state = AUTOX_MODE_DEFAULT; // ??
+				break;
+		}
 	}
 }
+
 
 
 /* USER CODE END 1 */

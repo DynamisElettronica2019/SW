@@ -57,6 +57,7 @@
 #include "data.h"
 #include "can.h"
 
+extern osSemaphoreId okButtonSemaphoreHandle;
 extern osSemaphoreId startButtonSemaphoreHandle;
 extern osSemaphoreId rpmStripeSemaphoreHandle;
 extern osSemaphoreId sensorsSemaphoreHandle;
@@ -76,6 +77,7 @@ int timerRpmStripe = 0;
 int timerDriveMode = 0;
 int timerTractionRpm = 0;
 int timer = 0;
+int timer_ok_button = 0;
 
 extern int d_tractionValue, d_rpmLimiterValue;
 
@@ -386,8 +388,14 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			timerStartButton = 0;
 		}
 		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
+			timer_ok_button ++;
 			HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
+			if(timer_ok_button == 5)
+			{
+				//	xSemaphoreGiveFromISR( okButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
+				  timer_ok_button = 0;
+			}
 			timerRpmStripe = 0;	
 		}
 		if ( timerTractionRpm >= TRACTION_RPM_TIME ){
