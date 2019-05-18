@@ -23,7 +23,8 @@ void ENDURANCEView::setupScreen()
 		EndPointer[5] = FUEL_LEVEL;
 		cont = 0;
 		screenEntry = 0;
-		textIndGearValue.setVisible(false);
+		textIndGearValue.setVisible(true);
+//		textIndGearValue.setVisible(false);
 		ENDURANCEViewBase::setupScreen();
 }
 
@@ -121,6 +122,8 @@ void ENDURANCEView::refreshEndurance()
 	textIndValue5.invalidate();
 	textIndValue6.invalidate();
 	
+
+	
 	textIndGearValue.invalidate();
 	textIndTcValue.invalidate();
 	textIndMapValue.invalidate();
@@ -168,12 +171,12 @@ void ENDURANCEView::screenEntryPopup()
 		TEXTEnduranceEntry.invalidate();
 		background.invalidate();
 		textIndGearValue.setVisible(true);
-		boxIndicatorGear.invalidate();
+	  boxIndicatorGear.invalidate();
 	}
 	else{
-		textIndGearValue.setVisible(false);
-		boxIndicatorGear.invalidate();
-		textIndGearValue.invalidate();
+//		textIndGearValue.setVisible(false);
+//		boxIndicatorGear.invalidate();
+//		textIndGearValue.invalidate();
 	}
 }
 

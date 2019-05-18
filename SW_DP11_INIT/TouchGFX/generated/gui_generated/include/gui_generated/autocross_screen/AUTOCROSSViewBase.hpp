@@ -62,7 +62,7 @@ protected:
     touchgfx::TextArea TEXTRpmLimiter;
     touchgfx::TextAreaWithOneWildcard textRpmLimiterValue;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
-    touchgfx::Box boxEntry;
+    touchgfx::BoxWithBorder boxEntry;
     touchgfx::TextArea TEXTAutocrossEntry;
 
     /*

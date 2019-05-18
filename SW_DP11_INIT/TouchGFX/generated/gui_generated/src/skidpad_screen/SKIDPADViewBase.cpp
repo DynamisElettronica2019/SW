@@ -193,10 +193,12 @@ SKIDPADViewBase::SKIDPADViewBase()
     textIndGearValue.setWildcard(textIndGearValueBuffer);
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID281));
 
-    boxEntry.setPosition(81, 130, 470, 109);
+    boxEntry.setPosition(8, 277, 621, 104);
     boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 200, 255));
+    boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxEntry.setBorderSize(5);
 
-    TEXTSkidpadEntry.setPosition(99, 146, 434, 78);
+    TEXTSkidpadEntry.setXY(166, 283);
     TEXTSkidpadEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TEXTSkidpadEntry.setLinespacing(0);
     TEXTSkidpadEntry.setTypedText(TypedText(T_SINGLEUSEID275));

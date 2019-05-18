@@ -19,9 +19,6 @@ ACCELERATIONView::ACCELERATIONView()
 void ACCELERATIONView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
-		touchgfx::Unicode::strncpy( Ready, "READY", 9);	
-		touchgfx::Unicode::strncpy( Steady, "STEADY", 9);
-		touchgfx::Unicode::strncpy( Go, "GO", 9);
     AccPointer[0] = OIL_PRESS;
 		AccPointer[1] = TH2O;
 		AccPointer[2] = OIL_TEMP_IN;
@@ -30,7 +27,7 @@ void ACCELERATIONView::setupScreen()
 		AccPointer[5] = FUEL_LEVEL;
 		cont = 0;
 		screenEntry = 0;
-		textIndGearValue.setVisible(false);
+//		textIndGearValue.setVisible(false);
 		textIndGearValue.invalidate();
     ACCELERATIONViewBase::setupScreen();
 }
@@ -44,8 +41,8 @@ void ACCELERATIONView::refreshAcceleration()
 {
 	screenEntry ++;
 	ACCELERATIONView::screenEntryPopup();	
-	ACCELERATIONView::screenCheckMessage();
 	ACCELERATIONView::checkChangeScreen();
+	ACCELERATIONView::screenCheckMessage();
 	
 	cont ++;
 	
@@ -65,7 +62,7 @@ void ACCELERATIONView::refreshAcceleration()
 	Unicode::snprintf(textIndTitle6Buffer, TEXTINDTITLE6_SIZE, "%s", Title6);
 	
 	/******************VALORI*******************/
-	if (	Indicators[AccPointer[0]].intValore == DEF_VALUE && Indicators[AccPointer[0]].floatValore == DEF_VALUE )
+	if (	Indicators[AccPointer[0]].intValore == DEF_VALUE )
 		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%s", Empty);	
 	else
 		if ( Indicators[AccPointer[0]].TIPO == INT )
@@ -73,7 +70,7 @@ void ACCELERATIONView::refreshAcceleration()
 		else
 			Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[AccPointer[0]].floatValore);
 		
-	if (	Indicators[AccPointer[1]].intValore == DEF_VALUE && Indicators[AccPointer[1]].floatValore == DEF_VALUE)
+	if (	Indicators[AccPointer[1]].intValore == DEF_VALUE )
 		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%s", Empty);	
 	else
 		if ( Indicators[AccPointer[1]].TIPO == INT )
@@ -81,7 +78,7 @@ void ACCELERATIONView::refreshAcceleration()
 		else
 			Unicode::snprintfFloat(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%.1f", Indicators[AccPointer[1]].floatValore);
 	
-	if (	Indicators[AccPointer[2]].intValore == DEF_VALUE && Indicators[AccPointer[2]].floatValore == DEF_VALUE)
+	if (	Indicators[AccPointer[2]].intValore == DEF_VALUE )
 		Unicode::snprintf(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%s", Empty);	
 	else
 		if ( Indicators[AccPointer[2]].TIPO == INT )
@@ -89,7 +86,7 @@ void ACCELERATIONView::refreshAcceleration()
 		else
 			Unicode::snprintfFloat(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%.1f", Indicators[AccPointer[2]].floatValore);
 	
-	if (	Indicators[AccPointer[3]].intValore == DEF_VALUE && Indicators[AccPointer[3]].floatValore == DEF_VALUE)
+	if (	Indicators[AccPointer[3]].intValore == DEF_VALUE )
 		Unicode::snprintf(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%s", Empty);	
 	else
 		if ( Indicators[AccPointer[3]].TIPO == INT )
@@ -97,7 +94,7 @@ void ACCELERATIONView::refreshAcceleration()
 		else
 			Unicode::snprintfFloat(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%.1f", Indicators[AccPointer[3]].floatValore);
 
-	if (	Indicators[AccPointer[4]].intValore == DEF_VALUE && Indicators[AccPointer[4]].floatValore == DEF_VALUE)
+	if (	Indicators[AccPointer[4]].intValore == DEF_VALUE )
 		Unicode::snprintf(textIndValue5Buffer, TEXTINDVALUE4_SIZE, "%s", Empty);	
 	else		
 		if ( Indicators[AccPointer[4]].TIPO == INT )
@@ -105,7 +102,7 @@ void ACCELERATIONView::refreshAcceleration()
 		else
 			Unicode::snprintfFloat(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%.1f", Indicators[AccPointer[4]].floatValore);
 
-	if (	Indicators[AccPointer[5]].intValore == DEF_VALUE && Indicators[AccPointer[5]].floatValore == DEF_VALUE)
+	if (	Indicators[AccPointer[5]].intValore == DEF_VALUE )
 		Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%s", Empty);	
 	else
 		if ( Indicators[AccPointer[5]].TIPO == INT )
@@ -209,9 +206,9 @@ void ACCELERATIONView::screenEntryPopup()
 		textIndGearValue.invalidate();
 	}
 	else{
-		textIndGearValue.setVisible(false);
-		boxIndicatorGear.invalidate();
-		textIndGearValue.invalidate();
+//		textIndGearValue.setVisible(false);
+//		boxIndicatorGear.invalidate();
+//		textIndGearValue.invalidate();
 	}
 }
 
@@ -222,34 +219,46 @@ void ACCELERATIONView::screenCheckMessage()
 	switch(state)
 	{
 			case ACCELERATION_MODE_START:
-				boxMessage.setVisible(false);
-				textMessage.setVisible(false);
+				touchgfx::Unicode::strncpy( Go, "START", 9);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+				boxMessage.setVisible(true);
+				textMessage.setVisible(true);
 				break;
 			case ACCELERATION_MODE_FEEDBACK:
-				boxMessage.setVisible(false);
-				textMessage.setVisible(false);
+				touchgfx::Unicode::strncpy( Go, "FB", 9);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+				boxMessage.setVisible(true);
+				textMessage.setVisible(true);
 				break;
 			case ACCELERATION_MODE_READY:
-				// stampa a schermo mex READY 
-				boxMessage.setVisible(true);
-				textMessage.setVisible(true);
+				// stampa a schermo mex READY ?
+				touchgfx::Unicode::strncpy( Ready, "READY", 9);	
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
-				break;
-			case ACCELERATION_MODE_STEADY:
-				// stampa a schermo mex STEADY 
 				boxMessage.setVisible(true);
 				textMessage.setVisible(true);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Steady);
+				boxMessage.invalidate();
+				textMessage.invalidate();
+				background.invalidate();
 				break;
 			case ACCELERATION_MODE_GO:
-				// stampa a schermo mex GO - per un tot di sec
+				// stampa a schermo mex GO - per un tot di sec?7		
+				touchgfx::Unicode::strncpy( Go, "GOOO", 9);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
 				boxMessage.setVisible(true);
 				textMessage.setVisible(true);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
 			case ACCELERATION_MODE_DEFAULT:
+				touchgfx::Unicode::strncpy( Go, "DEF", 9);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
 				boxMessage.setVisible(false);
 				textMessage.setVisible(false);
 				break;
+			default:
+				touchgfx::Unicode::strncpy( Go, "BREAK", 9);
+				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+				boxMessage.setVisible(true);
+				textMessage.setVisible(true);
+				break;
+				
 	}
 	boxMessage.invalidate();
 	textMessage.invalidate();

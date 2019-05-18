@@ -22,7 +22,7 @@ void SKIDPADView::setupScreen()
 		SkiPointer[4] = VBAT;
 		SkiPointer[5] = FUEL_LEVEL;
 		screenEntry = 0;
-		textIndGearValue.setVisible(false);
+		//textIndGearValue.setVisible(false);
 		SKIDPADViewBase::setupScreen();
 }
 
@@ -168,9 +168,9 @@ void SKIDPADView::screenEntryPopup()
 		boxIndicatorGear.invalidate();
 	}
 	else{
-		textIndGearValue.setVisible(false);
-		boxIndicatorGear.invalidate();
-		textIndGearValue.invalidate();
+//		textIndGearValue.setVisible(false);
+//		boxIndicatorGear.invalidate();
+//		textIndGearValue.invalidate();
 	}
 }
 

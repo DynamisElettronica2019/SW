@@ -110,6 +110,8 @@ int board_debug_scroll;
 int pointer_scroll;
 int change_pointer;
 
+int commandSent = 0;
+
 extern BaseType_t xHigherPriorityTaskWoken;
 
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
@@ -913,20 +915,23 @@ void okButtonTask(void const * argument)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
 		
-		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT )
+		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT ){
 			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
-		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY )
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_STEADY, EMPTY, EMPTY, EMPTY, 1);
-		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_STEADY )
+			commandSent = 1;
+		}
+		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY ){
 			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
-		
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT )
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY )
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_STEADY, EMPTY, EMPTY, EMPTY, 1);
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_STEADY ) 
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
-		
+			commandSent = 1;
+		}
+//		
+//		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
+//			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
+//			commandSent = 1;
+//		}
+//		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
+//			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
+//			commandSent = 1;
+//		}
     osDelay(1);
   }
   /* USER CODE END okButtonTask */
@@ -1079,9 +1084,6 @@ void accelerationModeTask(void const * argument)
 			case ACCELERATION_MODE_READY:
 				// stampa a schermo mex READY ?
 				break;
-			case ACCELERATION_MODE_STEADY:
-				// stampa a schermo mex STEADY ?
-				break;
 			case ACCELERATION_MODE_GO:
 				// stampa a schermo mex GO - per un tot di sec? 
 			case ACCELERATION_MODE_DEFAULT:
@@ -1111,13 +1113,10 @@ void autocrossModeTask(void const * argument)
 			case AUTOX_MODE_START:
 				break;
 			case AUTOX_MODE_FEEDBACK:
-				state = AUTOX_MODE_READY;
+				state = AUTOX_MODE_DEFAULT;
 				break;
 			case AUTOX_MODE_READY:
 				// stampa a schermo mex READY ?
-				break;
-			case AUTOX_MODE_STEADY:
-				// stampa a schermo mex STEADY ?
 				break;
 			case AUTOX_MODE_GO:
 				// stampa a schermo mex GO ? 
@@ -1224,7 +1223,7 @@ void debugModeTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-			xSemaphoreTake(debugModeSemaphoreHandle, portMAX_DELAY);
+		xSemaphoreTake(debugModeSemaphoreHandle, portMAX_DELAY);
     switch(state)
 		{
 			case DEBUG_MODE_DEFAULT:

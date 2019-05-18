@@ -193,10 +193,12 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     TEXTEndurance.setLinespacing(0);
     TEXTEndurance.setTypedText(TypedText(T_SINGLEUSEID36));
 
-    boxEntry.setPosition(81, 130, 470, 109);
+    boxEntry.setPosition(8, 279, 621, 104);
     boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
+    boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxEntry.setBorderSize(5);
 
-    TEXTEnduranceEntry.setPosition(99, 146, 434, 78);
+    TEXTEnduranceEntry.setXY(78, 283);
     TEXTEnduranceEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TEXTEnduranceEntry.setLinespacing(0);
     TEXTEnduranceEntry.setTypedText(TypedText(T_SINGLEUSEID273));

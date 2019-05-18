@@ -22,7 +22,7 @@ void AUTOCROSSView::setupScreen()
 		AutPointer[4] = VBAT;
 		AutPointer[5] = FUEL_LEVEL;
 		screenEntry = 0;
-		textIndGearValue.setVisible(false);
+		//textIndGearValue.setVisible(false);
 		AUTOCROSSViewBase::setupScreen();
 }
 
@@ -175,8 +175,8 @@ void AUTOCROSSView::screenEntryPopup()
 		boxIndicatorGear.invalidate();
 	}
 	else{
-		textIndGearValue.setVisible(false);
-		boxIndicatorGear.invalidate();
-		textIndGearValue.invalidate();
+//		textIndGearValue.setVisible(false);
+//		boxIndicatorGear.invalidate();
+//		textIndGearValue.invalidate();
 	}
 }

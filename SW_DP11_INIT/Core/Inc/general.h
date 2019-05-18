@@ -34,14 +34,12 @@
 #define AUTOX_MODE_FEEDBACK							1
 #define AUTOX_MODE_START								2
 #define AUTOX_MODE_READY								3
-#define AUTOX_MODE_STEADY 							4
 #define AUTOX_MODE_GO 									5
 
 #define ACCELERATION_MODE_DEFAULT				0
 #define ACCELERATION_MODE_FEEDBACK	 	  1
 #define ACCELERATION_MODE_START					2
 #define ACCELERATION_MODE_READY					3
-#define ACCELERATION_MODE_STEADY 				4
 #define ACCELERATION_MODE_GO 						5
 
 #define ENDURANCE_MODE_DEFAULT					0
@@ -66,10 +64,9 @@
 	 
 /****************** COMMANDS ***********************/
 	
-#define COMMAND_READY	 									0
-#define COMMAND_STEADY									1
-#define COMMAND_GO			 								2
-#define COMMAND_STOP	 									3
+#define COMMAND_READY	 									1// - TIRA LA FRIZIONE
+#define COMMAND_GO			 								3// PARTIAMO
+#define COMMAND_STOP	 									4
 	 
 #define DCU_ACQUISITION_CODE   				  0
 #define DCU_SAVE_LINEAR_CODE						1

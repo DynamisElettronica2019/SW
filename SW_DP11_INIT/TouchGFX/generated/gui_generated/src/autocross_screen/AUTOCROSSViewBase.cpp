@@ -205,10 +205,12 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     textIndGearValue.setWildcard(textIndGearValueBuffer);
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID279));
 
-    boxEntry.setPosition(81, 130, 470, 109);
+    boxEntry.setPosition(8, 277, 621, 104);
     boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(67, 0, 255));
+    boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxEntry.setBorderSize(5);
 
-    TEXTAutocrossEntry.setPosition(99, 146, 434, 78);
+    TEXTAutocrossEntry.setXY(102, 281);
     TEXTAutocrossEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTAutocrossEntry.setLinespacing(0);
     TEXTAutocrossEntry.setTypedText(TypedText(T_SINGLEUSEID274));

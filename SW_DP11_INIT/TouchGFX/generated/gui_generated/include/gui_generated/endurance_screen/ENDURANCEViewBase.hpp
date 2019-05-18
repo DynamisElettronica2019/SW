@@ -60,7 +60,7 @@ protected:
     touchgfx::Box boxText;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
     touchgfx::TextArea TEXTEndurance;
-    touchgfx::Box boxEntry;
+    touchgfx::BoxWithBorder boxEntry;
     touchgfx::TextArea TEXTEnduranceEntry;
 
     /*

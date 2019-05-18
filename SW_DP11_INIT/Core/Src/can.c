@@ -75,7 +75,8 @@ extern BaseType_t xHigherPriorityTaskWoken;
 extern osMessageQId canQueueHandle;
 
 extern Indicator_Value Indicators[N_INDICATORS];	
-extern char state;
+extern char state, driveMode;
+extern int commandSent;
 
 /* USER CODE END 0 */
 
@@ -346,24 +347,24 @@ void CAN_changeState(int mode_feedback)
 	  default:
 			break;
 	}
+	
 	Indicators[DRIVE_MODE].intValore = mode_feedback;
 }
 
 
-void CAN_changeRoutineState(int routine_state)
+void CAN_changeRoutineState(int command_feedback)
 {
-	if(Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE)
+	if(Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE && commandSent == 1)
 	{
-		switch(routine_state)
+		switch(command_feedback)
 		{
 			case COMMAND_READY:
-				state = ACCELERATION_MODE_READY;
-				break;
-			case COMMAND_STEADY:
-				state = ACCELERATION_MODE_STEADY;
+				if(state == ACCELERATION_MODE_DEFAULT)
+					state = ACCELERATION_MODE_READY;
 				break;
 			case COMMAND_GO:
-				state = ACCELERATION_MODE_GO;
+				if(state == ACCELERATION_MODE_READY)
+					state = ACCELERATION_MODE_GO;
 				break;
 			case COMMAND_STOP:
 				state = ACCELERATION_MODE_DEFAULT;
@@ -371,25 +372,24 @@ void CAN_changeRoutineState(int routine_state)
 			default:
 				break;
 		}
+		commandSent = 0;
 	}
 	
-	if(Indicators[DRIVE_MODE].intValore == AUTOX_MODE)
+	if(Indicators[DRIVE_MODE].intValore == AUTOX_MODE && commandSent == 1)
 	{
-		switch(routine_state)
+		switch(command_feedback)
 		{
 			case COMMAND_READY:
 				state = AUTOX_MODE_READY;
-				break;
-			case COMMAND_STEADY:
-				state = AUTOX_MODE_STEADY;
 				break;
 			case COMMAND_GO:
 				state = AUTOX_MODE_GO;
 				break;
 			case COMMAND_STOP:
-				state = AUTOX_MODE_DEFAULT; // ??
+				state = AUTOX_MODE_DEFAULT; 
 				break;
 		}
+		commandSent = 0;
 	}
 }
 

@@ -64,7 +64,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
     touchgfx::BoxWithBorder boxEntry;
     touchgfx::TextArea TEXTAccelerationEntry;
-    touchgfx::Box boxMessage;
+    touchgfx::BoxWithBorder boxMessage;
     touchgfx::TextAreaWithOneWildcard textMessage;
 
     /*

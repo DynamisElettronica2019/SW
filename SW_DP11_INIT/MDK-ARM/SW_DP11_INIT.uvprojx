@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx,QSPI_CLOCK_PRESCALER=2,QSPI_DDRMODE,QSPI_XIP_MODE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;                           ../TouchGFX/target;                           ../TouchGFX/generated/fonts/include;                           ../TouchGFX/generated/texts/include;                           ../TouchGFX/generated/images/include;                           ../TouchGFX/generated/gui_generated/include;                           ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;                           ../Drivers/STM32F7xx_HAL_Driver/Inc;                           ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                           ../Middlewares/Third_Party/FreeRTOS/Source/include;                           ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                           ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                           ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                           ../Drivers/CMSIS/Include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Core/Inc;                            ../TouchGFX/target;                            ../TouchGFX/generated/fonts/include;                            ../TouchGFX/generated/texts/include;                            ../TouchGFX/generated/images/include;                            ../TouchGFX/generated/gui_generated/include;                            ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;                            ../Drivers/STM32F7xx_HAL_Driver/Inc;                            ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                            ../Middlewares/Third_Party/FreeRTOS/Source/include;                            ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                            ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                            ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                            ../Drivers/CMSIS/Include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -416,6 +416,11 @@
               <FilePath>..\Core\Src\d_efiSense.c</FilePath>
             </File>
             <File>
+              <FileName>d_gears.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_gears.c</FilePath>
+            </File>
+            <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../Core/Src/main.cpp</FilePath>
@@ -484,11 +489,6 @@
               <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>d_gears.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\d_gears.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -886,6 +886,11 @@
               <FilePath>../touchgfx/generated/gui_generated/src/endurance_screen/enduranceviewbase.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_Roboto_Black_90_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_black_90_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Font_Roboto_Regular_180_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_180_4bpp.cpp</FilePath>
@@ -911,6 +916,11 @@
               <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_63_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_Roboto_Regular_80_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_80_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>FontGetters.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/fontgetters.cpp</FilePath>
@@ -919,6 +929,11 @@
               <FileName>FrontendApplicationBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_Roboto_Black_90_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_black_90_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_Roboto_Regular_180_4bpp.cpp</FileName>
@@ -946,6 +961,11 @@
               <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_63_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Kerning_Roboto_Regular_80_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_80_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>LanguageGb.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/texts/src/languagegb.cpp</FilePath>
@@ -964,6 +984,11 @@
               <FileName>SKIDPADViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/skidpad_screen/skidpadviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_Roboto_Black_90_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_black_90_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_Roboto_Regular_180_4bpp.cpp</FileName>
@@ -989,6 +1014,11 @@
               <FileName>Table_Roboto_Regular_63_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_63_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_Roboto_Regular_80_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_80_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Texts.cpp</FileName>

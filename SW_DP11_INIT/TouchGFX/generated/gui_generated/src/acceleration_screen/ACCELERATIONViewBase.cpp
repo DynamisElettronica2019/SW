@@ -179,7 +179,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID139));
 
     boxText.setPosition(180, 347, 280, 28);
-    boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 0, 255));
+    boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 117));
 
     TEXTAcceleration.setPosition(227, 347, 186, 33);
     TEXTAcceleration.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -205,25 +205,25 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textIndGearValue.setWildcard(textIndGearValueBuffer);
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID253));
 
-    boxEntry.setPosition(81, 130, 470, 109);
-    boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(211, 0, 255));
-    boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(211, 0, 255));
+    boxEntry.setPosition(8, 277, 621, 104);
+    boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 117));
+    boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxEntry.setBorderSize(5);
 
-    TEXTAccelerationEntry.setPosition(76, 146, 469, 76);
+    TEXTAccelerationEntry.setXY(41, 279);
     TEXTAccelerationEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTAccelerationEntry.setLinespacing(0);
     TEXTAccelerationEntry.setTypedText(TypedText(T_SINGLEUSEID272));
 
-    boxMessage.setPosition(120, 225, 400, 125);
-    boxMessage.setVisible(false);
+    boxMessage.setPosition(165, 197, 309, 132);
     boxMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    boxMessage.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxMessage.setBorderSize(5);
 
-    textMessage.setPosition(120, 250, 400, 76);
-    textMessage.setVisible(false);
+    textMessage.setPosition(170, 209, 301, 109);
     textMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textMessage.setLinespacing(0);
-    textMessageBuffer[0] = 0;
+    Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", TypedText(T_SINGLEUSEID283).getText());
     textMessage.setWildcard(textMessageBuffer);
     textMessage.setTypedText(TypedText(T_SINGLEUSEID276));
 
