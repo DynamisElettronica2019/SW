@@ -31,6 +31,8 @@ private:
     Screen1Presenter();
 
     Screen1View& view;
+
+		virtual void update();
 };
 
 

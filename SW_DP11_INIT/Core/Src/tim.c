@@ -363,9 +363,6 @@ void TIM_tractionRpm_send(void){
 	CAN_send(SW_TRACTION_LIMITER_GCU_ID, d_tractionValue, d_rpmLimiterValue, EMPTY, EMPTY, 2);
 }
 
-extern int commandSent;
-extern int state;
-
 void TIM_callback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
@@ -376,7 +373,7 @@ void TIM_callback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
 		
-	if (htim->Instance == TIM7) {		//----------------- Un led di debug messo anche nel controllo della striscia led perchè è a 1 HZ ----------	
+	if (htim->Instance == TIM7) {	
 		
 		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 		
@@ -386,12 +383,11 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerRpmStripe = timerRpmStripe + 1;
 		timerDriveMode = timerDriveMode + 1;
 		timerTractionRpm = timerTractionRpm + 1;
-
 	
 		if (  timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerSensors = 0;
-			timer ++;		
+			timer ++;	
 		}
 		if ( timerStartButton >= START_BUTTON_TIME){
 			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );	
@@ -401,10 +397,10 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			timer_ok_button ++;
 			HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
-			if(timer_ok_button == 50)
+			if(timer_ok_button >= 50)
 			{
 					xSemaphoreGiveFromISR( okButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
-					timer_ok_button = 0;		  
+					timer_ok_button = 0;
 			}
 			timerRpmStripe = 0;	
 		}

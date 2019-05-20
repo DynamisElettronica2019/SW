@@ -42,6 +42,10 @@ public:
     // DEBUG_MODE
     void gotoDEBUG_MODEScreenNoTransition();
 
+
+    // Screen1
+    void gotoScreen1ScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -73,6 +77,10 @@ protected:
 
     // DEBUG_MODE
     void gotoDEBUG_MODEScreenNoTransitionImpl();
+
+
+    // Screen1
+    void gotoScreen1ScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

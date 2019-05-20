@@ -326,6 +326,7 @@ void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, 
 
 void CAN_changeState(int mode_feedback)
 {
+	//mode_feedback = driveMode;
 	switch (mode_feedback)
 	{
 		case ENDURANCE_MODE:
@@ -348,26 +349,27 @@ void CAN_changeState(int mode_feedback)
 			break;
 	}
 	
-	Indicators[DRIVE_MODE].intValore = mode_feedback;
+	//Indicators[DRIVE_MODE].intValore = driveMode;
+  Indicators[DRIVE_MODE].intValore = mode_feedback;
 }
-
 
 void CAN_changeRoutineState(int command_feedback)
 {
-	if(Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE && commandSent == 1)
+	if(Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE)
 	{
 		switch(command_feedback)
 		{
 			case COMMAND_READY:
-				if(state == ACCELERATION_MODE_DEFAULT)
+				if(state == ACCELERATION_MODE_DEFAULT && commandSent == 1)
 					state = ACCELERATION_MODE_READY;
 				break;
 			case COMMAND_GO:
-				if(state == ACCELERATION_MODE_READY)
+				if(state == ACCELERATION_MODE_READY && commandSent == 1)
 					state = ACCELERATION_MODE_GO;
 				break;
 			case COMMAND_STOP:
-				state = ACCELERATION_MODE_DEFAULT;
+				if(state == ACCELERATION_MODE_READY || state == ACCELERATION_MODE_GO)
+					state = ACCELERATION_MODE_DEFAULT;
 				break;
 			default:
 				break;
@@ -375,18 +377,21 @@ void CAN_changeRoutineState(int command_feedback)
 		commandSent = 0;
 	}
 	
-	if(Indicators[DRIVE_MODE].intValore == AUTOX_MODE && commandSent == 1)
+	if(Indicators[DRIVE_MODE].intValore == AUTOX_MODE)
 	{
 		switch(command_feedback)
 		{
 			case COMMAND_READY:
-				state = AUTOX_MODE_READY;
+				if(state == AUTOX_MODE_DEFAULT && commandSent == 1)
+					state = AUTOX_MODE_READY;
 				break;
 			case COMMAND_GO:
-				state = AUTOX_MODE_GO;
+				if(state == AUTOX_MODE_READY && commandSent == 1)
+					state = AUTOX_MODE_GO;
 				break;
 			case COMMAND_STOP:
-				state = AUTOX_MODE_DEFAULT; 
+				if(state == AUTOX_MODE_READY || state == AUTOX_MODE_GO)
+					state = AUTOX_MODE_DEFAULT; 
 				break;
 		}
 		commandSent = 0;

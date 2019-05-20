@@ -171,7 +171,7 @@ SKIDPADViewBase::SKIDPADViewBase()
     boxAcquisition.setPosition(25, 305, 125, 53);
     boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
 
-    textIndAcquisitionValue.setPosition(30, 295, 115, 63);
+    textIndAcquisitionValue.setPosition(30, 290, 115, 63);
     textIndAcquisitionValue.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textIndAcquisitionValue.setLinespacing(0);
     Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID70).getText());

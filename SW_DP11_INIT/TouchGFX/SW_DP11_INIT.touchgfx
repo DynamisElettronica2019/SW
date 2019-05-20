@@ -745,7 +745,7 @@
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
-            "Y": 295,
+            "Y": 290,
             "Width": 115,
             "Height": 63,
             "Type": "TextArea",
@@ -1696,7 +1696,7 @@
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
-            "Y": 295,
+            "Y": 291,
             "Width": 115,
             "Height": 63,
             "Type": "TextArea",
@@ -1886,13 +1886,13 @@
               "Green": 0,
               "Blue": 0
             },
-            "BorderSize": 5,
+            "BorderSize": 7,
             "Alpha": 255,
             "Name": "boxMessage",
-            "X": 165,
-            "Y": 197,
-            "Width": 309,
-            "Height": 132,
+            "X": 139,
+            "Y": 178,
+            "Width": 361,
+            "Height": 157,
             "Type": "BoxWithBorder",
             "Visible": true,
             "Draggable": false,
@@ -1917,10 +1917,10 @@
               "BufferSize": 10
             },
             "Name": "textMessage",
-            "X": 170,
-            "Y": 209,
-            "Width": 301,
-            "Height": 109,
+            "X": 148,
+            "Y": 197,
+            "Width": 347,
+            "Height": 110,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -2751,7 +2751,7 @@
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
-            "Y": 295,
+            "Y": 290,
             "Width": 115,
             "Height": 63,
             "Type": "TextArea",
@@ -2923,6 +2923,59 @@
             "Y": 281,
             "Width": 445,
             "Height": 96,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 7,
+            "Alpha": 255,
+            "Name": "boxMessage",
+            "X": 139,
+            "Y": 178,
+            "Width": 361,
+            "Height": 157,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId284",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId285",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textMessage",
+            "X": 148,
+            "Y": 197,
+            "Width": 347,
+            "Height": 110,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -3753,7 +3806,7 @@
             },
             "Name": "textIndAcquisitionValue",
             "X": 30,
-            "Y": 295,
+            "Y": 290,
             "Width": 115,
             "Height": 63,
             "Type": "TextArea",
@@ -6199,8 +6252,70 @@
         "CanvasBufferSize": 9600
       },
       {
-        "Components": [],
-        "Interactions": [],
+        "Components": [
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "Name": "box1",
+            "X": 0,
+            "Y": 0,
+            "Width": 640,
+            "Height": 480,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "dynamis_380.png",
+            "Alpha": 255,
+            "Name": "dynamis_scritta",
+            "X": 130,
+            "Y": 331,
+            "Width": 380,
+            "Height": 110,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Filename": "logo_300.png",
+            "Alpha": 255,
+            "ScalingAlgorithm": "Nearest-neighbor",
+            "Name": "scalableImage2",
+            "X": 170,
+            "Y": 24,
+            "Width": 300,
+            "Height": 300,
+            "Type": "ScalableImage",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionNone"
+            }
+          }
+        ],
         "Name": "Screen1",
         "OverrideDefaultBufferSize": false,
         "CanvasBufferSize": 0
@@ -7217,10 +7332,6 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId276",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId277",
         "IsResource": false
       },
@@ -7245,7 +7356,19 @@
         "IsResource": false
       },
       {
+        "TextEntryId": "SingleUseId276",
+        "IsResource": false
+      },
+      {
         "TextEntryId": "SingleUseId283",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId284",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId285",
         "IsResource": false
       }
     ],
@@ -7255,7 +7378,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "ENDURANCE",
+    "StartupScreenName": "Screen1",
     "SelectedStartupLanguage": "GB",
     "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/TouchGFX/touchgfx/",

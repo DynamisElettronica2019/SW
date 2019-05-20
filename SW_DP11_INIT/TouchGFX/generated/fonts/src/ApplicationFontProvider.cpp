@@ -14,7 +14,7 @@ extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_420_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_180_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_45_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_80_4bpp();
-extern touchgfx::InternalFlashFont& getFont_Roboto_Black_90_4bpp();
+extern touchgfx::InternalFlashFont& getFont_Roboto_Black_100_4bpp();
 
 touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId fontId)
 {
@@ -33,7 +33,7 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId fontId)
     case Typography::MEDIUM_LARGE:
         return &(getFont_Roboto_Regular_80_4bpp());
     case Typography::BOLD:
-        return &(getFont_Roboto_Black_90_4bpp());
+        return &(getFont_Roboto_Black_100_4bpp());
     default:
         return 0;
     }

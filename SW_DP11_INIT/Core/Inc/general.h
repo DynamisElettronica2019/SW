@@ -64,9 +64,9 @@
 	 
 /****************** COMMANDS ***********************/
 	
+#define COMMAND_STOP	 									0
 #define COMMAND_READY	 									1// - TIRA LA FRIZIONE
-#define COMMAND_GO			 								3// PARTIAMO
-#define COMMAND_STOP	 									4
+#define COMMAND_GO			 								2// PARTIAMO
 	 
 #define DCU_ACQUISITION_CODE   				  0
 #define DCU_SAVE_LINEAR_CODE						1

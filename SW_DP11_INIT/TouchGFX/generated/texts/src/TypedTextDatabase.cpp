@@ -15,7 +15,7 @@ extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_420_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_180_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_45_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_80_4bpp();
-extern touchgfx::InternalFlashFont& getFont_Roboto_Black_90_4bpp();
+extern touchgfx::InternalFlashFont& getFont_Roboto_Black_100_4bpp();
 
 const touchgfx::Font* const _fonts[] =
 {
@@ -25,7 +25,7 @@ const touchgfx::Font* const _fonts[] =
     &(getFont_Roboto_Regular_180_4bpp()),
     &(getFont_Roboto_Regular_45_4bpp()),
     &(getFont_Roboto_Regular_80_4bpp()),
-    &(getFont_Roboto_Black_90_4bpp())
+    &(getFont_Roboto_Black_100_4bpp())
 };
 
 TEXT_LOCATION_FLASH_PRAGMA
@@ -283,13 +283,15 @@ const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCAT
     { 5, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 6, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 6, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 6, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 6, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
 };
 

@@ -64,6 +64,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
     touchgfx::BoxWithBorder boxEntry;
     touchgfx::TextArea TEXTAutocrossEntry;
+    touchgfx::BoxWithBorder boxMessage;
+    touchgfx::TextAreaWithOneWildcard textMessage;
 
     /*
      * Wildcard Buffers
@@ -102,6 +104,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textRpmLimiterValueBuffer[TEXTRPMLIMITERVALUE_SIZE];
     static const uint16_t TEXTINDGEARVALUE_SIZE = 3;
     touchgfx::Unicode::UnicodeChar textIndGearValueBuffer[TEXTINDGEARVALUE_SIZE];
+    static const uint16_t TEXTMESSAGE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textMessageBuffer[TEXTMESSAGE_SIZE];
 
 private:
 

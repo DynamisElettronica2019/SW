@@ -50,3 +50,10 @@ sw_dp11_init\screen1viewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\screen1viewbase.o: ../TouchGFX/gui/include/gui/model/Model.hpp
 sw_dp11_init\screen1viewbase.o: ../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp
 sw_dp11_init\screen1viewbase.o: ../TouchGFX/gui/include/gui/model/ModelListener.hpp
+sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp
+sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
+sw_dp11_init\screen1viewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Image.hpp
+sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp
+sw_dp11_init\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp
+sw_dp11_init\screen1viewbase.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp

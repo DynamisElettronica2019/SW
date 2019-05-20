@@ -881,14 +881,19 @@
               <FilePath>../touchgfx/generated/gui_generated/src/debug_mode_screen/debug_modeviewbase.cpp</FilePath>
             </File>
             <File>
+              <FileName>dynamis_380.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/dynamis_380.cpp</FilePath>
+            </File>
+            <File>
               <FileName>ENDURANCEViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/endurance_screen/enduranceviewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_Roboto_Black_90_4bpp.cpp</FileName>
+              <FileName>Font_Roboto_Black_100_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_roboto_black_90_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_black_100_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Font_Roboto_Regular_180_4bpp.cpp</FileName>
@@ -931,9 +936,9 @@
               <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Kerning_Roboto_Black_90_4bpp.cpp</FileName>
+              <FileName>Kerning_Roboto_Black_100_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_black_90_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_black_100_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_Roboto_Regular_180_4bpp.cpp</FileName>
@@ -971,6 +976,16 @@
               <FilePath>../touchgfx/generated/texts/src/languagegb.cpp</FilePath>
             </File>
             <File>
+              <FileName>logo_200.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/logo_200.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>logo_300.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/logo_300.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Screen1ViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
@@ -986,9 +1001,9 @@
               <FilePath>../touchgfx/generated/gui_generated/src/skidpad_screen/skidpadviewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Table_Roboto_Black_90_4bpp.cpp</FileName>
+              <FileName>Table_Roboto_Black_100_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_roboto_black_90_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_black_100_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_Roboto_Regular_180_4bpp.cpp</FileName>

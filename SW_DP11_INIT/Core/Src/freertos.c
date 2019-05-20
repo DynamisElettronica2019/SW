@@ -677,6 +677,7 @@ void modeSelectorTask(void const * argument)
 					state = SETTINGS_MODE_DEFAULT;
 				break;
 		}
+		//Indicators[DRIVE_MODE].intValore = driveMode;
 		osDelay(1);
   }	
   /* USER CODE END modeSelectorTask */
@@ -923,15 +924,15 @@ void okButtonTask(void const * argument)
 			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
 			commandSent = 1;
 		}
-//		
-//		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
-//			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
-//			commandSent = 1;
-//		}
-//		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
-//			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
-//			commandSent = 1;
-//		}
+		
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
+			commandSent = 1;
+		}
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
+			commandSent = 1;
+		}
     osDelay(1);
   }
   /* USER CODE END okButtonTask */

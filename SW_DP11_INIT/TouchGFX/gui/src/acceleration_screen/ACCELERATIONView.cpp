@@ -218,27 +218,12 @@ void ACCELERATIONView::screenCheckMessage()
 	textMessage.invalidate();
 	switch(state)
 	{
-			case ACCELERATION_MODE_START:
-				touchgfx::Unicode::strncpy( Go, "START", 9);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
-				boxMessage.setVisible(true);
-				textMessage.setVisible(true);
-				break;
-			case ACCELERATION_MODE_FEEDBACK:
-				touchgfx::Unicode::strncpy( Go, "FB", 9);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
-				boxMessage.setVisible(true);
-				textMessage.setVisible(true);
-				break;
 			case ACCELERATION_MODE_READY:
 				// stampa a schermo mex READY ?
 				touchgfx::Unicode::strncpy( Ready, "READY", 9);	
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
 				boxMessage.setVisible(true);
 				textMessage.setVisible(true);
-				boxMessage.invalidate();
-				textMessage.invalidate();
-				background.invalidate();
 				break;
 			case ACCELERATION_MODE_GO:
 				// stampa a schermo mex GO - per un tot di sec?7		
@@ -246,20 +231,12 @@ void ACCELERATIONView::screenCheckMessage()
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
 				boxMessage.setVisible(true);
 				textMessage.setVisible(true);
-			case ACCELERATION_MODE_DEFAULT:
-				touchgfx::Unicode::strncpy( Go, "DEF", 9);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+			default:
 				boxMessage.setVisible(false);
 				textMessage.setVisible(false);
 				break;
-			default:
-				touchgfx::Unicode::strncpy( Go, "BREAK", 9);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
-				boxMessage.setVisible(true);
-				textMessage.setVisible(true);
-				break;
-				
 	}
+	
 	boxMessage.invalidate();
 	textMessage.invalidate();
 	background.invalidate();

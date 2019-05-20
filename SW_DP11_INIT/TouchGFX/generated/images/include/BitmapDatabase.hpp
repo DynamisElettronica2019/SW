@@ -6,6 +6,9 @@
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 
+const uint16_t BITMAP_DYNAMIS_380_ID = 0; // Size: 380x110 pixels
+const uint16_t BITMAP_LOGO_200_ID = 1; // Size: 200x200 pixels
+const uint16_t BITMAP_LOGO_300_ID = 2; // Size: 300x300 pixels
 
 namespace BitmapDatabase
 {

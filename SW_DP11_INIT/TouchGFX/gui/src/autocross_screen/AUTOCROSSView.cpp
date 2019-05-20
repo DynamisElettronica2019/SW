@@ -7,6 +7,7 @@ extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
 //extern Indicator_Pointer AutPointer;
 extern uint8_t AutPointer[6];
+extern char state;
 
 AUTOCROSSView::AUTOCROSSView()
 {
@@ -37,7 +38,7 @@ void AUTOCROSSView::refreshAutocross()
 	AUTOCROSSView::screenEntryPopup();	
 	
 	AUTOCROSSView::checkChangeScreen();
-
+	AUTOCROSSView::screenCheckMessage();
 	/******************TITOLI*******************/
 	touchgfx::Unicode::strncpy( Title1, Indicators[AutPointer[0]].NOME, TIT_LEN);	
 	touchgfx::Unicode::strncpy( Title2, Indicators[AutPointer[1]].NOME, TIT_LEN);		
@@ -179,4 +180,37 @@ void AUTOCROSSView::screenEntryPopup()
 //		boxIndicatorGear.invalidate();
 //		textIndGearValue.invalidate();
 	}
+}
+
+
+
+void AUTOCROSSView::screenCheckMessage()
+{
+	boxMessage.invalidate();
+	textMessage.invalidate();
+
+	switch(state)
+	{
+//			case AUTOX_MODE_READY:
+//				// stampa a schermo mex READY ?
+//				touchgfx::Unicode::strncpy( Ready, "READY", 9);	
+//				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
+//				boxMessage.setVisible(true);
+//				textMessage.setVisible(true);
+//				break;
+//			case AUTOX_MODE_GO:
+//				// stampa a schermo mex GO - per un tot di sec?7		
+//				touchgfx::Unicode::strncpy( Go, "GOOO", 9);
+//				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+//				boxMessage.setVisible(true);
+//				textMessage.setVisible(true);
+			default:
+				boxMessage.setVisible(false);
+				textMessage.setVisible(false);
+				break;
+	}
+	
+	boxMessage.invalidate();
+	textMessage.invalidate();
+	background.invalidate();
 }

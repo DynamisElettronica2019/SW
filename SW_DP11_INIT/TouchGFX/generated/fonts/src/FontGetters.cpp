@@ -6,16 +6,16 @@
 using namespace touchgfx;
 #endif
 
-// Roboto_Black_90_4bpp
-extern const touchgfx::GlyphNode glyphs_Roboto_Black_90_4bpp[];
-extern const uint8_t unicodes_Roboto_Black_90_4bpp[];
-extern const touchgfx::KerningNode kerning_Roboto_Black_90_4bpp[];
-touchgfx::InternalFlashFont& getFont_Roboto_Black_90_4bpp();
+// Roboto_Black_100_4bpp
+extern const touchgfx::GlyphNode glyphs_Roboto_Black_100_4bpp[];
+extern const uint8_t unicodes_Roboto_Black_100_4bpp[];
+extern const touchgfx::KerningNode kerning_Roboto_Black_100_4bpp[];
+touchgfx::InternalFlashFont& getFont_Roboto_Black_100_4bpp();
 
-touchgfx::InternalFlashFont& getFont_Roboto_Black_90_4bpp()
+touchgfx::InternalFlashFont& getFont_Roboto_Black_100_4bpp()
 {
-    static touchgfx::InternalFlashFont Roboto_Black_90_4bpp(glyphs_Roboto_Black_90_4bpp, 52, 90, 20, 4, 2, 1, unicodes_Roboto_Black_90_4bpp, kerning_Roboto_Black_90_4bpp, 63, 0);
-    return Roboto_Black_90_4bpp;
+    static touchgfx::InternalFlashFont Roboto_Black_100_4bpp(glyphs_Roboto_Black_100_4bpp, 52, 100, 22, 4, 2, 1, unicodes_Roboto_Black_100_4bpp, kerning_Roboto_Black_100_4bpp, 63, 0);
+    return Roboto_Black_100_4bpp;
 }
 
 // Roboto_Regular_25_4bpp

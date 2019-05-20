@@ -7,6 +7,9 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -20,6 +23,13 @@ protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(Application::getInstance());
     }
+
+    /*
+     * Member Declarations
+     */
+    touchgfx::Box box1;
+    touchgfx::Image dynamis_scritta;
+    touchgfx::ScalableImage scalableImage2;
 
 private:
 

@@ -171,7 +171,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     boxAcquisition.setPosition(25, 305, 125, 53);
     boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
 
-    textIndAcquisitionValue.setPosition(30, 295, 115, 63);
+    textIndAcquisitionValue.setPosition(30, 291, 115, 63);
     textIndAcquisitionValue.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textIndAcquisitionValue.setLinespacing(0);
     Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID140).getText());
@@ -215,12 +215,12 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     TEXTAccelerationEntry.setLinespacing(0);
     TEXTAccelerationEntry.setTypedText(TypedText(T_SINGLEUSEID272));
 
-    boxMessage.setPosition(165, 197, 309, 132);
+    boxMessage.setPosition(139, 178, 361, 157);
     boxMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxMessage.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    boxMessage.setBorderSize(5);
+    boxMessage.setBorderSize(7);
 
-    textMessage.setPosition(170, 209, 301, 109);
+    textMessage.setPosition(148, 197, 347, 110);
     textMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textMessage.setLinespacing(0);
     Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", TypedText(T_SINGLEUSEID283).getText());

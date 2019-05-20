@@ -15,3 +15,9 @@ void Screen1Presenter::deactivate()
 {
 
 }
+
+
+void Screen1Presenter::update()
+{
+	view.refreshScreen1();
+}

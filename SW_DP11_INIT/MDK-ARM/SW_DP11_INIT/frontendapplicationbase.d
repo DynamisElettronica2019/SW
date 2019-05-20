@@ -146,4 +146,6 @@ sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/debug_mode_s
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp
+sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Image.hpp
+sw_dp11_init\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
