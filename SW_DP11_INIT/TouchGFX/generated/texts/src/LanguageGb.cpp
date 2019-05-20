@@ -52,9 +52,17 @@ TEXT_LOCATION_FLASH_PRAGMA
 KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId274_Gb[10] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x41, 0x55, 0x54, 0x4f, 0x43, 0x52, 0x4f, 0x53, 0x53, 0x0 };
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId285_Gb[6] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x52, 0x45, 0x41, 0x44, 0x59, 0x0 };
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId293_Gb[7] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x69, 0x6e, 0x64, 0x5f, 0x38, 0xa, 0x0 };
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId299_Gb[6] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x69, 0x6e, 0x64, 0x5f, 0x37, 0x0 };
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId303_Gb[6] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x69, 0x6e, 0x64, 0x5f, 0x38, 0x0 };
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId311_Gb[8] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x69, 0x6e, 0x64, 0x5f, 0x36, 0xa, 0xa, 0x0 };
 
 TEXT_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[262] TEXT_LOCATION_FLASH_ATTRIBUTE =
+KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[292] TEXT_LOCATION_FLASH_ATTRIBUTE =
 {
     T_SingleUseId9_Gb,
     T_SingleUseId73_Gb,
@@ -317,6 +325,36 @@ KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[262] TEXT_LOCATI
     T_SingleUseId9_Gb,
     T_SingleUseId285_Gb,
     T_SingleUseId9_Gb,
-    T_SingleUseId285_Gb
+    T_SingleUseId285_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId83_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId299_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId293_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId299_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId83_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId303_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId311_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId95_Gb
 };
 

@@ -8,7 +8,6 @@ using namespace touchgfx;
 FONT_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_Roboto_Regular_45_4bpp[] FONT_LOCATION_FLASH_ATTRIBUTE =
 {
-    {     0,   2,   0,   0,   0,   0,   0, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     {     0,  42,  19,  19,  32,   0,  19, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     {   190,  43,  23,  24,  27,   1,  26, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     {   478,  44,   7,  12,   5,   0,   9, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
@@ -59,10 +58,6 @@ KEEP extern const touchgfx::GlyphNode glyphs_Roboto_Regular_45_4bpp[] FONT_LOCAT
     { 16030,  89,  27,  32,  32,   0,  27, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 16478,  90,  25,  32,  32,   1,  27, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     { 16894,  91,   9,  43,  36,   3,  12, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 17109,  93,   9,  43,  36,   0,  12, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 17324,  95,  21,   4,   1,   0,  20, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 17368, 100,  21,  34,  34,   2,  25, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 17742, 105,   5,  32,  32,   3,  11, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    { 17838, 110,  19,  24,  24,   3,  25, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
+    { 17109,  93,   9,  43,  36,   0,  12, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
 };
 

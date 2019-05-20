@@ -164,10 +164,10 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndTitleCurrent.setWildcard(textIndTitleCurrentBuffer);
     textIndTitleCurrent.setTypedText(TypedText(T_SINGLEUSEID182));
 
-    boxModeSelected.setPosition(10, 33, 476, 75);
+    boxModeSelected.setPosition(10, 57, 460, 83);
     boxModeSelected.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    boxModeSelected.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    boxModeSelected.setBorderSize(3);
+    boxModeSelected.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxModeSelected.setBorderSize(6);
 
     textACCELERATION.setPosition(20, 36, 450, 75);
     textACCELERATION.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
