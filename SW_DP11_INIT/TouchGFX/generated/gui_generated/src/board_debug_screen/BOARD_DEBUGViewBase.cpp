@@ -180,6 +180,27 @@ BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
     textIndValueCurr6.setWildcard(textIndValueCurr6Buffer);
     textIndValueCurr6.setTypedText(TypedText(T_SINGLEUSEID314));
 
+    textIndTitle7.setPosition(0, 450, 166, 55);
+    textIndTitle7.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndTitle7.setLinespacing(0);
+    Unicode::snprintf(textIndTitle7Buffer, TEXTINDTITLE7_SIZE, "%s", TypedText(T_SINGLEUSEID317).getText());
+    textIndTitle7.setWildcard(textIndTitle7Buffer);
+    textIndTitle7.setTypedText(TypedText(T_SINGLEUSEID316));
+
+    textIndValueTemp7.setPosition(250, 450, 140, 55);
+    textIndValueTemp7.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndValueTemp7.setLinespacing(0);
+    Unicode::snprintf(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%s", TypedText(T_SINGLEUSEID319).getText());
+    textIndValueTemp7.setWildcard(textIndValueTemp7Buffer);
+    textIndValueTemp7.setTypedText(TypedText(T_SINGLEUSEID318));
+
+    textIndValueCurr7.setPosition(460, 450, 140, 55);
+    textIndValueCurr7.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndValueCurr7.setLinespacing(0);
+    Unicode::snprintf(textIndValueCurr7Buffer, TEXTINDVALUECURR7_SIZE, "%s", TypedText(T_SINGLEUSEID321).getText());
+    textIndValueCurr7.setWildcard(textIndValueCurr7Buffer);
+    textIndValueCurr7.setTypedText(TypedText(T_SINGLEUSEID320));
+
     add(background);
     add(textACCELERATION);
     add(textENDURANCE);
@@ -205,6 +226,9 @@ BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
     add(textIndTitle6);
     add(textIndValueTemp6);
     add(textIndValueCurr6);
+    add(textIndTitle7);
+    add(textIndValueTemp7);
+    add(textIndValueCurr7);
 }
 
 void BOARD_DEBUGViewBase::setupScreen()

@@ -3,9 +3,9 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon May 20 19:17:08 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue May 21 19:15:40 2019
 <BR><P>
-<H3>Maximum Stack Usage =       1072 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =       1408 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 <P>
@@ -3103,13 +3103,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2dc]"></a>MX_FREERTOS_Init</STRONG> (Thumb, 1236 bytes, Stack size 912 bytes, freertos.o(i.MX_FREERTOS_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1072<LI>Call Chain = MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[2dc]"></a>MX_FREERTOS_Init</STRONG> (Thumb, 1702 bytes, Stack size 1248 bytes, freertos.o(i.MX_FREERTOS_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
-<LI><a href="#[2dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<BR>[Calls]<UL><LI><a href="#[2dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 <LI><a href="#[2df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
 <LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
 <LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
@@ -3805,7 +3805,7 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[480]"></a>Screen1View::~Screen1View__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, screen1view.o(i._ZN11Screen1ViewD1Ev), UNUSED)
 
-<P><STRONG><a name="[32c]"></a>FrontendHeap::FrontendHeap()</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, boardconfiguration.o(i._ZN12FrontendHeapC1Ev))
+<P><STRONG><a name="[32c]"></a>FrontendHeap::FrontendHeap()</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, boardconfiguration.o(i._ZN12FrontendHeapC1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = FrontendHeap::FrontendHeap() &rArr; FrontendApplication::FrontendApplication(Model&, FrontendHeap&) &rArr; FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&) &rArr; touchgfx::Application::Application() &rArr; touchgfx::Screen::draw() &rArr; touchgfx::Rect::Rect(short, short, short, short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::AbstractPartition::AbstractPartition__sub_object()
@@ -4099,7 +4099,7 @@ Global Symbols
 <P><STRONG><a name="[10b]"></a>DEBUG_MODEView::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView14tearDownScreenEv))
 <BR>[Address Reference Count : 1]<UL><LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 </UL>
-<P><STRONG><a name="[10c]"></a>DEBUG_MODEView::refreshDebugMode()</STRONG> (Thumb, 1152 bytes, Stack size 80 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView16refreshDebugModeEv))
+<P><STRONG><a name="[10c]"></a>DEBUG_MODEView::refreshDebugMode()</STRONG> (Thumb, 1816 bytes, Stack size 80 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView16refreshDebugModeEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 640<LI>Call Chain = DEBUG_MODEView::refreshDebugMode() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4167,8 +4167,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 </UL>
-<P><STRONG><a name="[111]"></a>BOARD_DEBUGView::refreshBoardDebug()</STRONG> (Thumb, 348 bytes, Stack size 32 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView17refreshBoardDebugEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 456<LI>Call Chain = BOARD_DEBUGView::refreshBoardDebug() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<P><STRONG><a name="[111]"></a>BOARD_DEBUGView::refreshBoardDebug()</STRONG> (Thumb, 852 bytes, Stack size 48 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView17refreshBoardDebugEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 472<LI>Call Chain = BOARD_DEBUGView::refreshBoardDebug() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -4178,7 +4178,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 </UL>
 <P><STRONG><a name="[339]"></a>BOARD_DEBUGView::BOARD_DEBUGView()</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, board_debugview.o(i._ZN15BOARD_DEBUGViewC1Ev))
-<BR><BR>[Stack]<UL><LI>Max Depth = 584<LI>Call Chain = BOARD_DEBUGView::BOARD_DEBUGView() &rArr; BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR><BR>[Stack]<UL><LI>Max Depth = 592<LI>Call Chain = BOARD_DEBUGView::BOARD_DEBUGView() &rArr; BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[33a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 </UL>
@@ -4609,8 +4609,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 </UL>
-<P><STRONG><a name="[33a]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()</STRONG> (Thumb, 2580 bytes, Stack size 152 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev))
-<BR><BR>[Stack]<UL><LI>Max Depth = 576<LI>Call Chain = BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<P><STRONG><a name="[33a]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()</STRONG> (Thumb, 2916 bytes, Stack size 160 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev))
+<BR><BR>[Stack]<UL><LI>Max Depth = 584<LI>Call Chain = BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
 <LI><a href="#[31f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
@@ -4635,7 +4635,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::BOARD_DEBUGView()
 </UL>
 
-<P><STRONG><a name="[4a5]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 152 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev), UNUSED)
+<P><STRONG><a name="[4a5]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 160 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev), UNUSED)
 
 <P><STRONG><a name="[13f]"></a>BOARD_DEBUGViewBase::~BOARD_DEBUGViewBase()</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseD1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = BOARD_DEBUGViewBase::~BOARD_DEBUGViewBase()
@@ -4930,7 +4930,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> frontendapplicationbase.o(.constdata)
 </UL>
 <P><STRONG><a name="[af]"></a>FrontendApplicationBase::gotoBOARD_DEBUGScreenNoTransitionImpl()</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase37gotoBOARD_DEBUGScreenNoTransitionImplEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = FrontendApplicationBase::gotoBOARD_DEBUGScreenNoTransitionImpl() &rArr; T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; BOARD_DEBUGView::BOARD_DEBUGView() &rArr; BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR><BR>[Stack]<UL><LI>Max Depth = 632<LI>Call Chain = FrontendApplicationBase::gotoBOARD_DEBUGScreenNoTransitionImpl() &rArr; T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; BOARD_DEBUGView::BOARD_DEBUGView() &rArr; BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)
 </UL>
@@ -5067,8 +5067,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> frontendapplicationbase.o(.constdata__ZTVN8touchgfx12NoTransitionE)
 </UL>
 <P><STRONG><a name="[320]"></a>touchgfx::Application::getInstance()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx11Application11getInstanceEv))
-<BR><BR>[Called By]<UL><LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::tick()
+<BR><BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::tick()
+<LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
 <LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)
 <LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::prepareTransition(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::Transition**)
@@ -5453,8 +5453,8 @@ Global Symbols
 <P><STRONG><a name="[305]"></a>touchgfx::touchgfx_init()</STRONG> (Thumb, 108 bytes, Stack size 40 bytes, boardconfiguration.o(i._ZN8touchgfx13touchgfx_initEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = touchgfx::touchgfx_init() &rArr; touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned) &rArr; touchgfx::HAL::initialize() &rArr; touchgfx::OSWrappers::initialize() &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
-<LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::STM32F7Instrumentation::init()
+<BR>[Calls]<UL><LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::STM32F7Instrumentation::init()
+<LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_Init()
 </UL>
@@ -5880,8 +5880,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = touchgfx::HAL::lockFrameBuffer() &rArr; touchgfx::OSWrappers::takeFrameBufferSemaphore() &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::takeFrameBufferSemaphore()
-<LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::getClientFrameBuffer()
 <LI><a href="#[39e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::DMA_Interface::isDmaQueueEmpty()
+<LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::getClientFrameBuffer()
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 <LI> hal.o(.constdata__ZTVN8touchgfx3HALE)
@@ -6378,7 +6378,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[347]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[338]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[33a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[334]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
@@ -6386,6 +6385,7 @@ Global Symbols
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
 <LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
 <LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 </UL>
@@ -6527,53 +6527,53 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e8]"></a>touchgfx::Screen::handleKeyEvent(unsigned char)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen14handleKeyEventEh))
-<BR>[Address Reference Count : 17]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
+<BR>[Address Reference Count : 17]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[ee]"></a>touchgfx::Screen::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, screen1view.o(i._ZN8touchgfx6Screen14tearDownScreenEv))
 <BR>[Address Reference Count : 10]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[e2]"></a>touchgfx::Screen::afterTransition()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen15afterTransitionEv))
-<BR>[Address Reference Count : 17]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
+<BR>[Address Reference Count : 17]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[e5]"></a>touchgfx::Screen::handleDragEvent(const touchgfx::DragEvent&)</STRONG> (Thumb, 184 bytes, Stack size 72 bytes, screen.o(i._ZN8touchgfx6Screen15handleDragEventERKNS_9DragEventE))
@@ -6583,41 +6583,41 @@ Global Symbols
 <LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::intersect(short, short) const
 <LI><a href="#[3de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ClickEvent::ClickEvent(touchgfx::ClickEvent::ClickEventType, short, short, short)
 </UL>
-<BR>[Address Reference Count : 17]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
+<BR>[Address Reference Count : 17]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[e7]"></a>touchgfx::Screen::handleTickEvent()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen15handleTickEventEv))
-<BR>[Address Reference Count : 17]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
+<BR>[Address Reference Count : 17]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[e4]"></a>touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&)</STRONG> (Thumb, 420 bytes, Stack size 144 bytes, screen.o(i._ZN8touchgfx6Screen16handleClickEventERKNS_10ClickEventE))
@@ -6630,22 +6630,22 @@ Global Symbols
 <LI><a href="#[3de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ClickEvent::ClickEvent(touchgfx::ClickEvent::ClickEventType, short, short, short)
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Address Reference Count : 17]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
+<BR>[Address Reference Count : 17]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[e6]"></a>touchgfx::Screen::handleGestureEvent(const touchgfx::GestureEvent&)</STRONG> (Thumb, 82 bytes, Stack size 32 bytes, screen.o(i._ZN8touchgfx6Screen18handleGestureEventERKNS_12GestureEventE))
@@ -6653,22 +6653,22 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::getAbsoluteRect() const
 </UL>
-<BR>[Address Reference Count : 17]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
+<BR>[Address Reference Count : 17]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[342]"></a>touchgfx::Screen::add(touchgfx::Drawable&)</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx6Screen3addERNS_8DrawableE))
@@ -6692,22 +6692,22 @@ Global Symbols
 <LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Container::draw(const touchgfx::Rect&) const
 <LI><a href="#[3df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::startSMOC(touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 17]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
+<BR>[Address Reference Count : 17]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
+<LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[379]"></a>touchgfx::Screen::draw()</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, screen.o(i._ZN8touchgfx6Screen4drawEv))
@@ -6794,9 +6794,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3f6]"></a>touchgfx::memset(void*, unsigned char, unsigned)</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, utils.o(i._ZN8touchgfx6memsetEPvhj))
-<BR><BR>[Called By]<UL><LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
-<LI><a href="#[40c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Scanline::addSpan(int, int, unsigned, unsigned)
+<BR><BR>[Called By]<UL><LI><a href="#[40c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Scanline::addSpan(int, int, unsigned, unsigned)
 <LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)
+<LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
 </UL>
 
 <P><STRONG><a name="[3e4]"></a>touchgfx::muldiv(int, int, int, int&)</STRONG> (Thumb, 112 bytes, Stack size 20 bytes, utils.o(i._ZN8touchgfx6muldivEiiiRi))
@@ -6953,8 +6953,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strlen(const unsigned short*)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
-<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)
+<BR>[Called By]<UL><LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)
+<LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
 </UL>
 
 <P><STRONG><a name="[31e]"></a>touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float)</STRONG> (Thumb, 16 bytes, Stack size 24 bytes, accelerationview.o(i._ZN8touchgfx7Unicode13snprintfFloatEPttPKcf))
@@ -6963,13 +6963,13 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[3f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 </UL>
 
@@ -6977,8 +6977,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 536<LI>Call Chain = touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
-<LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
 <LI><a href="#[3f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strlen(const char*)
+<LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[31e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float)
 </UL>
@@ -6986,10 +6986,10 @@ Global Symbols
 <P><STRONG><a name="[3f5]"></a>touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)</STRONG> (Thumb, 646 bytes, Stack size 328 bytes, unicode.o(i._ZN8touchgfx7Unicode14snprintfFloatsEPttPKtPKf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::parseFlagsAndPrecision(const unsigned short*&, unsigned short&, bool&, bool&, bool&, bool&, int&, bool&, int&)
-<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::composeString(const unsigned short*&, unsigned short, const unsigned short*, bool, bool, int, bool, int, bool, int&, unsigned short, unsigned short*)
-<LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::memset(void*, unsigned char, unsigned)
+<BR>[Calls]<UL><LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::memset(void*, unsigned char, unsigned)
 <LI><a href="#[3f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int)
+<LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::parseFlagsAndPrecision(const unsigned short*&, unsigned short&, bool&, bool&, bool&, bool&, int&, bool&, int&)
+<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::composeString(const unsigned short*&, unsigned short, const unsigned short*, bool, bool, int, bool, int, bool, int&, unsigned short, unsigned short*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*)
 </UL>
@@ -6999,8 +6999,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::atoi(const unsigned short*)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
-<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)
+<BR>[Called By]<UL><LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)
+<LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
 </UL>
 
 <P><STRONG><a name="[3f9]"></a>touchgfx::Unicode::atoi(const unsigned short*)</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, unicode.o(i._ZN8touchgfx7Unicode4atoiEPKt))
@@ -7012,8 +7012,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
-<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)
+<BR>[Called By]<UL><LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)
+<LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*)
 </UL>
 
 <P><STRONG><a name="[3fa]"></a>touchgfx::Unicode::utoa(unsigned, unsigned short*, unsigned short, int)</STRONG> (Thumb, 72 bytes, Stack size 52 bytes, unicode.o(i._ZN8touchgfx7Unicode4utoaEjPtti))
@@ -7040,7 +7040,6 @@ Global Symbols
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenCheckMessage()
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::setupScreen()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
@@ -7049,6 +7048,7 @@ Global Symbols
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list)
 <LI><a href="#[3fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::utoa(unsigned, unsigned short*, unsigned short, int)
@@ -7063,7 +7063,6 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[347]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenCheckMessage()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[338]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[33a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
@@ -7077,6 +7076,7 @@ Global Symbols
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
 <LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 </UL>
@@ -7094,11 +7094,11 @@ Global Symbols
 <P><STRONG><a name="[3fc]"></a>touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list)</STRONG> (Thumb, 588 bytes, Stack size 192 bytes, unicode.o(i._ZN8touchgfx7Unicode9vsnprintfEPttPKtSt9__va_list))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::parseFlagsAndPrecision(const unsigned short*&, unsigned short&, bool&, bool&, bool&, bool&, int&, bool&, int&)
-<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::composeString(const unsigned short*&, unsigned short, const unsigned short*, bool, bool, int, bool, int, bool, int&, unsigned short, unsigned short*)
-<LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::memset(void*, unsigned char, unsigned)
+<BR>[Calls]<UL><LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::memset(void*, unsigned char, unsigned)
 <LI><a href="#[3fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::utoa(unsigned, unsigned short*, unsigned short, int)
 <LI><a href="#[3f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int)
+<LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::parseFlagsAndPrecision(const unsigned short*&, unsigned short&, bool&, bool&, bool&, bool&, int&, bool&, int&)
+<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::composeString(const unsigned short*&, unsigned short, const unsigned short*, bool, bool, int, bool, int, bool, int&, unsigned short, unsigned short*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list)
 </UL>
@@ -8006,7 +8006,6 @@ Global Symbols
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenCheckMessage()
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenEntryPopup()
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::setupScreen()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::screenCheckMessage()
@@ -8015,6 +8014,7 @@ Global Symbols
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::moveSelectedBox()
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::screenEntryPopup()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::screenEntryPopup()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 </UL>
@@ -8297,8 +8297,8 @@ Global Symbols
 <P><STRONG><a name="[174]"></a>__cxa_pure_virtual</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, pure_virt.o(i.__cxa_pure_virtual))
 <BR><BR>[Calls]<UL><LI><a href="#[41e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGPVFN
 </UL>
-<BR>[Address Reference Count : 8]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
-<LI> abstractpainter.o(.constdata__ZTVN8touchgfx15AbstractPainterE)
+<BR>[Address Reference Count : 8]<UL><LI> abstractpainter.o(.constdata__ZTVN8touchgfx15AbstractPainterE)
+<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> abstractpartition.o(.constdata__ZTVN8touchgfx17AbstractPartitionE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
@@ -8315,16 +8315,16 @@ Global Symbols
 <P><STRONG><a name="[a0]"></a>accelerationModeTask</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, freertos.o(i.accelerationModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = accelerationModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a1]"></a>autocrossModeTask</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, freertos.o(i.autocrossModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = autocrossModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8332,8 +8332,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = aux1ButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8351,41 +8351,41 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>aux2ButtonTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.aux2ButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux2ButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a9]"></a>aux2Task</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.aux2Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux2Task &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[9d]"></a>aux3ButtonTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.aux3ButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux3ButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a6]"></a>boardDebugModeTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.boardDebugModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = boardDebugModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[91]"></a>canTask</STRONG> (Thumb, 62 bytes, Stack size 40 bytes, freertos.o(i.canTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = canTask &rArr; CAN_receive &rArr; dEfiSense_calculateVoltage &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8526,32 +8526,32 @@ Global Symbols
 <P><STRONG><a name="[a7]"></a>debugFreeRTOSTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.debugFreeRTOSTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = debugFreeRTOSTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a5]"></a>debugModeTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.debugModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = debugModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[93]"></a>downShiftTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.downShiftTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = downShiftTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a2]"></a>enduranceModeTask</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, freertos.o(i.enduranceModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = enduranceModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8561,7 +8561,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
 </UL>
 
-<P><STRONG><a name="[90]"></a>ledBlinkTask</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, freertos.o(i.ledBlinkTask))
+<P><STRONG><a name="[90]"></a>ledBlinkTask</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, freertos.o(i.ledBlinkTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = ledBlinkTask &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[420]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
@@ -8570,19 +8570,19 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
-<P><STRONG><a name="[96]"></a>leftEncoderTask</STRONG> (Thumb, 258 bytes, Stack size 0 bytes, freertos.o(i.leftEncoderTask))
+<P><STRONG><a name="[96]"></a>leftEncoderTask</STRONG> (Thumb, 248 bytes, Stack size 0 bytes, freertos.o(i.leftEncoderTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = leftEncoderTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[422]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;d_traction_control_setValue
-<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_left_encoder_movement
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[76]"></a>main</STRONG> (Thumb, 114 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1072<LI>Call Chain = main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[423]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelStart
 <LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_HW_Init()
@@ -8620,28 +8620,28 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>mapSelectorTask</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, freertos.o(i.mapSelectorTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = mapSelectorTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_set_engineMap
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[94]"></a>modeSelectorTask</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, freertos.o(i.modeSelectorTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = modeSelectorTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_set_driveMode
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[99]"></a>neutralButtonTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.neutralButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = neutralButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8649,8 +8649,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = okButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8746,23 +8746,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[43a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
 </UL>
 
-<P><STRONG><a name="[97]"></a>rightEncoderTask</STRONG> (Thumb, 202 bytes, Stack size 0 bytes, freertos.o(i.rightEncoderTask))
+<P><STRONG><a name="[97]"></a>rightEncoderTask</STRONG> (Thumb, 198 bytes, Stack size 0 bytes, freertos.o(i.rightEncoderTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = rightEncoderTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[445]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;d_rpm_limiter_setValue
-<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_right_encoder_movement
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[9e]"></a>rpmStripeTask</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, freertos.o(i.rpmStripeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = rpmStripeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8772,25 +8772,25 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_update
 <LI><a href="#[420]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
 <LI><a href="#[41f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Clutch_send
-<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_read
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a4]"></a>settingsModeTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.settingsModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = settingsModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a3]"></a>skidpadModeTask</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, freertos.o(i.skidpadModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = skidpadModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8798,16 +8798,16 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = startButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[92]"></a>upShiftTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.upShiftTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = upShiftTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9183,9 +9183,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[42a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 <LI><a href="#[429]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
+<BR>[Called By]<UL><LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[43e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 <LI><a href="#[362]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[451]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
@@ -9222,7 +9222,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Canvas::render()
 </UL>
 
-<P><STRONG><a name="[356]"></a>T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI11SKIDPADView16SKIDPADPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
+<P><STRONG><a name="[356]"></a>T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI11SKIDPADView16SKIDPADPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 648<LI>Call Chain = T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; SKIDPADView::SKIDPADView() &rArr; SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)
@@ -9274,7 +9274,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplicationBase::gotoAUTOCROSSScreenNoTransitionImpl()
 </UL>
 
-<P><STRONG><a name="[35a]"></a>T2* touchgfx::makeTransition&lang;ENDURANCEView, ENDURANCEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI13ENDURANCEView18ENDURANCEPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
+<P><STRONG><a name="[35a]"></a>T2* touchgfx::makeTransition&lang;ENDURANCEView, ENDURANCEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI13ENDURANCEView18ENDURANCEPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 648<LI>Call Chain = T2* touchgfx::makeTransition&lang;ENDURANCEView, ENDURANCEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; ENDURANCEView::ENDURANCEView() &rArr; ENDURANCEViewBase::ENDURANCEViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)
@@ -9301,7 +9301,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[35c]"></a>T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI15BOARD_DEBUGView20BOARD_DEBUGPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
-<BR><BR>[Stack]<UL><LI>Max Depth = 616<LI>Call Chain = T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; BOARD_DEBUGView::BOARD_DEBUGView() &rArr; BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = T2* touchgfx::makeTransition&lang;BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; BOARD_DEBUGView::BOARD_DEBUGView() &rArr; BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)
 <LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::prepareTransition(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::Transition**)
@@ -9340,8 +9340,7 @@ Global Symbols
 <P><STRONG><a name="[385]"></a>touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)</STRONG> (Thumb, 184 bytes, Stack size 48 bytes, boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned) &rArr; touchgfx::HAL::initialize() &rArr; touchgfx::OSWrappers::initialize() &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[463]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::HAL__sub_object(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, unsigned short, unsigned short)
-<LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::FrontendHeap()
+<BR>[Calls]<UL><LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendHeap::FrontendHeap()
 <LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Bitmap::registerBitmapDatabase(const touchgfx::Bitmap::BitmapData*, unsigned short, unsigned short*, unsigned, unsigned)
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Texts::setLanguage(unsigned short)
 <LI><a href="#[39b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::initialize()
@@ -9349,6 +9348,7 @@ Global Symbols
 <LI><a href="#[320]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Application::getInstance()
 <LI><a href="#[464]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BitmapDatabase::getInstanceSize()
 <LI><a href="#[465]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BitmapDatabase::getInstance()
+<LI><a href="#[463]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::HAL__sub_object(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, unsigned short, unsigned short)
 <LI><a href="#[1d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
 <LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_guard_acquire
 </UL>

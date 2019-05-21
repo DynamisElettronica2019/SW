@@ -45,7 +45,7 @@ void SETTINGSView::refreshSettings()
 		case 0 :
 			boxModeSelected.setVisible(false);
 			boxModeSelected.invalidate();
-			boxModeSelected.setPosition(10, 33 + (111*box_driveMode), 476, 75);
+			boxModeSelected.setPosition(10, 39 + (111*box_driveMode), 476, 75);
 			boxModeSelected.setVisible(true);
 			boxModeSelected.invalidate();
 			break;

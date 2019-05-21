@@ -17,16 +17,21 @@ public:
 		virtual void refreshBoardDebug();
 		virtual void checkChangeScreen();
 protected:
-		touchgfx::Unicode::UnicodeChar Title1[6];
-		touchgfx::Unicode::UnicodeChar Title2[6];
-		touchgfx::Unicode::UnicodeChar Title3[6];
-		touchgfx::Unicode::UnicodeChar Title4[6];
-		touchgfx::Unicode::UnicodeChar Title5[6];
+		touchgfx::Unicode::UnicodeChar Title1[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title2[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title3[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title4[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title5[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title6[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title7[TIT_LEN];
+
 		uint8_t pointer1;
 		uint8_t pointer2;
 		uint8_t pointer3;
 		uint8_t pointer4;
 		uint8_t pointer5;
+		uint8_t pointer6;
+		uint8_t pointer7;
 };
 
 #endif // BOARD_DEBUG_VIEW_HPP

@@ -76,7 +76,7 @@
 #define SENSORS_TIME										10		// 100Hz
 #define SENSORS_SEND_TIME								100		// 10HZ
 #define START_BUTTON_TIME								40		// 25HZ
-#define RPM_STRIPE_TIME									100	  // 1HZ
+#define RPM_STRIPE_TIME									100	  // 10HZ
 #define DRIVE_MODE_TIME									10		//---- valore da definire
 #define TRACTION_RPM_TIME 							100		// 10HZ
 	 

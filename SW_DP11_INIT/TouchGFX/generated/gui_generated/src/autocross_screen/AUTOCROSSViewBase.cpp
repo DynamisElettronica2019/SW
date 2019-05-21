@@ -210,7 +210,7 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxEntry.setBorderSize(5);
 
-    TEXTAutocrossEntry.setXY(102, 281);
+    TEXTAutocrossEntry.setXY(102, 283);
     TEXTAutocrossEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTAutocrossEntry.setLinespacing(0);
     TEXTAutocrossEntry.setTypedText(TypedText(T_SINGLEUSEID274));

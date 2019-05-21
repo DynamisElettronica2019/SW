@@ -210,7 +210,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxEntry.setBorderSize(5);
 
-    TEXTAccelerationEntry.setXY(41, 279);
+    TEXTAccelerationEntry.setXY(41, 283);
     TEXTAccelerationEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTAccelerationEntry.setLinespacing(0);
     TEXTAccelerationEntry.setTypedText(TypedText(T_SINGLEUSEID272));

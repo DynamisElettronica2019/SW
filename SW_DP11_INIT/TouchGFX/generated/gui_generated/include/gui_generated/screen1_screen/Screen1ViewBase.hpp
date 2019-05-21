@@ -29,7 +29,7 @@ protected:
      */
     touchgfx::Box box1;
     touchgfx::Image dynamis_scritta;
-    touchgfx::ScalableImage scalableImage2;
+    touchgfx::ScalableImage dynamis_logo;
 
 private:
 

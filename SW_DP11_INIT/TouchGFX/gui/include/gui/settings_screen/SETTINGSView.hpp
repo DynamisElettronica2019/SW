@@ -26,13 +26,13 @@ public:
 protected:
 		int flag_schermata;
 		touchgfx::Unicode::UnicodeChar TitleDriveMode[20];
-		touchgfx::Unicode::UnicodeChar Title[6];
-		touchgfx::Unicode::UnicodeChar Title1[6];
-		touchgfx::Unicode::UnicodeChar Title2[6];
-		touchgfx::Unicode::UnicodeChar Title3[6];
-		touchgfx::Unicode::UnicodeChar Title4[6];
-		touchgfx::Unicode::UnicodeChar Title5[6];
-		touchgfx::Unicode::UnicodeChar Title6[6];
+		touchgfx::Unicode::UnicodeChar Title[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title1[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title2[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title3[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title4[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title5[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title6[TIT_LEN];
 
 };
 

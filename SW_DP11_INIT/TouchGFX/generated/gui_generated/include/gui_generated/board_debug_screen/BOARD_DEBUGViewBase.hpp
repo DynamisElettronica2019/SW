@@ -58,6 +58,9 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndTitle6;
     touchgfx::TextAreaWithOneWildcard textIndValueTemp6;
     touchgfx::TextAreaWithOneWildcard textIndValueCurr6;
+    touchgfx::TextAreaWithOneWildcard textIndTitle7;
+    touchgfx::TextAreaWithOneWildcard textIndValueTemp7;
+    touchgfx::TextAreaWithOneWildcard textIndValueCurr7;
 
     /*
      * Wildcard Buffers
@@ -98,6 +101,12 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndValueTemp6Buffer[TEXTINDVALUETEMP6_SIZE];
     static const uint16_t TEXTINDVALUECURR6_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueCurr6Buffer[TEXTINDVALUECURR6_SIZE];
+    static const uint16_t TEXTINDTITLE7_SIZE = 7;
+    touchgfx::Unicode::UnicodeChar textIndTitle7Buffer[TEXTINDTITLE7_SIZE];
+    static const uint16_t TEXTINDVALUETEMP7_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValueTemp7Buffer[TEXTINDVALUETEMP7_SIZE];
+    static const uint16_t TEXTINDVALUECURR7_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValueCurr7Buffer[TEXTINDVALUECURR7_SIZE];
 
 private:
 

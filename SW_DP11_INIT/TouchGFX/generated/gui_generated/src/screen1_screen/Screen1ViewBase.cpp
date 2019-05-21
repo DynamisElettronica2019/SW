@@ -13,13 +13,13 @@ Screen1ViewBase::Screen1ViewBase()
     dynamis_scritta.setXY(130, 331);
     dynamis_scritta.setBitmap(Bitmap(BITMAP_DYNAMIS_380_ID));
 
-    scalableImage2.setBitmap(Bitmap(BITMAP_LOGO_300_ID));
-    scalableImage2.setPosition(170, 24, 300, 300);
-    scalableImage2.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
+    dynamis_logo.setBitmap(Bitmap(BITMAP_LOGO_300_ID));
+    dynamis_logo.setPosition(170, 24, 300, 300);
+    dynamis_logo.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
 
     add(box1);
     add(dynamis_scritta);
-    add(scalableImage2);
+    add(dynamis_logo);
 }
 
 void Screen1ViewBase::setupScreen()

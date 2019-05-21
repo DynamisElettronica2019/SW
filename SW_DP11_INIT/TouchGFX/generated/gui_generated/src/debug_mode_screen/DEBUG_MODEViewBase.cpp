@@ -227,12 +227,12 @@ DEBUG_MODEViewBase::DEBUG_MODEViewBase()
     textIndValue7sx.setWildcard(textIndValue7sxBuffer);
     textIndValue7sx.setTypedText(TypedText(T_SINGLEUSEID294));
 
-    textIndValue6sx_1.setPosition(161, 445, 154, 50);
-    textIndValue6sx_1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    textIndValue6sx_1.setLinespacing(0);
-    Unicode::snprintf(textIndValue6sx_1Buffer, TEXTINDVALUE6SX_1_SIZE, "%s", TypedText(T_SINGLEUSEID297).getText());
-    textIndValue6sx_1.setWildcard(textIndValue6sx_1Buffer);
-    textIndValue6sx_1.setTypedText(TypedText(T_SINGLEUSEID296));
+    textIndValue8sx.setPosition(161, 445, 154, 50);
+    textIndValue8sx.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndValue8sx.setLinespacing(0);
+    Unicode::snprintf(textIndValue8sxBuffer, TEXTINDVALUE8SX_SIZE, "%s", TypedText(T_SINGLEUSEID297).getText());
+    textIndValue8sx.setWildcard(textIndValue8sxBuffer);
+    textIndValue8sx.setTypedText(TypedText(T_SINGLEUSEID296));
 
     textIndTitle7dx.setPosition(320, 385, 166, 50);
     textIndTitle7dx.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -307,7 +307,7 @@ DEBUG_MODEViewBase::DEBUG_MODEViewBase()
     add(textIndTitle7sx);
     add(textIndTitle8sx);
     add(textIndValue7sx);
-    add(textIndValue6sx_1);
+    add(textIndValue8sx);
     add(textIndTitle7dx);
     add(textIndTitle6dx);
     add(textIndTitle8dx);

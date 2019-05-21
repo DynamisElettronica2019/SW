@@ -1,17 +1,1 @@
 Converting images
-Generating generated/fonts/UnicodeListRoboto_Black_100_4.txt
-Generating generated/fonts/UnicodeListRoboto_Regular_25_4.txt
-Generating generated/fonts/UnicodeListRoboto_Regular_35_4.txt
-Generating generated/fonts/UnicodeListRoboto_Regular_45_4.txt
-Generating generated/fonts/UnicodeListRoboto_Regular_63_4.txt
-Generating generated/fonts/UnicodeListRoboto_Regular_80_4.txt
-Generating generated/fonts/UnicodeListRoboto_Regular_180_4.txt
-Generating generated/fonts/UnicodeListRoboto_Regular_420_4.txt
-Generating generated/fonts/src/ApplicationFontProvider.cpp
-Generating generated/fonts/include/fonts/ApplicationFontProvider.hpp
-Generating generated/texts/include/texts/TextKeysAndLanguages.hpp
-Generating generated/texts/src/Texts.cpp
-Generating generated/texts/src/LanguageGb.cpp
-Generating generated/texts/include/texts/TypedTextDatabase.hpp
-Generating generated/texts/src/TypedTextDatabase.cpp
-Remapped 266 strings (1992 bytes saved)

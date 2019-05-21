@@ -500,15 +500,32 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
-	Indicators[OIL_PRESS] = (Indicator_Value) {OIL_PRESS, FLOAT, "POIL", DEF_VALUE,DEF_VALUE , 0,"?"};
-  Indicators[TH2O] = (Indicator_Value) {TH2O, INT, "TH2O", DEF_VALUE, DEF_VALUE, 0,"?"};
-  Indicators[OIL_TEMP_IN] = (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, DEF_VALUE, 0,"?"};
-  Indicators[TPS] = (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE,DEF_VALUE, 0,"?"};
-  Indicators[VBAT] = (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, DEF_VALUE, 0,"?"};
-  Indicators[FUEL_LEVEL] = (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, DEF_VALUE, 0,"?"};
-  Indicators[MAP] = (Indicator_Value) {MAP, INT, "MAP", 0, 80.3, 0,"?"};
-  Indicators[GEAR] = (Indicator_Value) {GEAR, INT,"", 0, 0, 0,"1"};
-	Indicators[TRACTION_CONTROL] = (Indicator_Value) {TRACTION_CONTROL, INT,"T", 6, 0, 0,"?"};
+	
+  Indicators[TH2O] 							= (Indicator_Value) {TH2O, INT, "TH2O", DEF_VALUE, DEF_VALUE, 0,"?"};	
+	Indicators[OIL_PRESS] 				= (Indicator_Value) {OIL_PRESS, FLOAT, "POIL", DEF_VALUE,DEF_VALUE , 0,"?"};
+	Indicators[TPS] 							= (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE,DEF_VALUE, 0,"?"};
+  Indicators[VBAT] 							= (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, DEF_VALUE, 0,"?"};
+  Indicators[RPM] 							= (Indicator_Value) {RPM, INT, "RPM", DEF_VALUE, DEF_VALUE, 0,"?"};	
+	Indicators[TRACTION_CONTROL] 	= (Indicator_Value) {TRACTION_CONTROL, INT,"TC", 6, 0, 0,"?"};	
+  Indicators[GEAR] 							= (Indicator_Value) {GEAR, INT,"GEAR", 0, 0, 0,"1"};	
+	Indicators[CLUTCH_POSITION] 	= (Indicator_Value) {CLUTCH_POSITION, FLOAT, "CL_POS", DEF_VALUE, DEF_VALUE, 0,"?"};
+  Indicators[OIL_TEMP_IN] 			= (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, DEF_VALUE, 0,"?"};
+	Indicators[OIL_TEMP_OUT] 			= (Indicator_Value) {OIL_TEMP_OUT, FLOAT,"TOIL_O", DEF_VALUE, DEF_VALUE, 0,"?"};
+	Indicators[CLUTCH_FEEDBACK]	 	= (Indicator_Value) {CLUTCH_FEEDBACK, FLOAT, "CL_FB", DEF_VALUE, DEF_VALUE, 0,"?"};
+  Indicators[ACQ] 							= (Indicator_Value) {ACQ, INT, "ACQ", 0, 0, 0,"?"};
+	
+	Indicators[GCU_BOARD] 				= (Indicator_Value) {GCU_BOARD, FLOAT, "GCU", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
+	Indicators[SW_BOARD] 					= (Indicator_Value) {SW_BOARD, FLOAT, "SW", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
+	Indicators[DCU_BOARD] 				= (Indicator_Value) {DCU_BOARD, FLOAT, "DCU", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
+	Indicators[XBEE] 							= (Indicator_Value) {XBEE, FLOAT, "XBEE", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
+	Indicators[DAU_FL_BOARD] 			= (Indicator_Value) {DAU_FL_BOARD, FLOAT, "DAU_FL", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
+	Indicators[DAU_FR_BOARD] 			= (Indicator_Value) {DAU_FR_BOARD, FLOAT, "DAU_FR", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
+	Indicators[DAU_R_BOARD] 			= (Indicator_Value) {DAU_R_BOARD, FLOAT, "DAU_R", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
+  
+	Indicators[FUEL_LEVEL] = (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, DEF_VALUE, 0,"?"};
+  Indicators[MAP] = (Indicator_Value) {MAP, INT, "MAP", 0, 0, 0,"?"};
+
+
   /* USER CODE END RTOS_QUEUES */
 }
 
@@ -553,6 +570,8 @@ void ledBlinkTask(void const * argument)
 		dSensors_Sensors_send();
 		
 		Indicators[TRACTION_CONTROL].intValore = state;
+		
+		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
 		
     osDelay(250);
   }
@@ -745,10 +764,10 @@ void leftEncoderTask(void const * argument)
 					board_debug_scroll = board_debug_scroll + 1;
 				if (movement == -1)
 					board_debug_scroll = board_debug_scroll - 1;
-				if (board_debug_scroll > END_BOARD)
-					board_debug_scroll = START_BOARD;
+				if (board_debug_scroll > END_BOARD - 6)
+					board_debug_scroll = END_BOARD - 6;
 				if (board_debug_scroll < START_BOARD)
-					board_debug_scroll = END_BOARD;
+					board_debug_scroll = START_BOARD;
 				break;
 			case SETTINGS_MODE:
 				switch (schermata_settings){
@@ -780,8 +799,8 @@ void leftEncoderTask(void const * argument)
 						debug_mode_scroll_sx = debug_mode_scroll_sx + 1;
 				if (movement == -1)
 						debug_mode_scroll_sx = debug_mode_scroll_sx - 1;
-				if (debug_mode_scroll_sx < 3 )
-					debug_mode_scroll_sx = 3;
+				if (debug_mode_scroll_sx < N_DEBUG_MODE_VALUES )
+					debug_mode_scroll_sx = N_DEBUG_MODE_VALUES - 1;
 				if (debug_mode_scroll_sx >= N_INDICATORS)
 					debug_mode_scroll_sx = N_INDICATORS - 1;
 				break;
@@ -825,10 +844,10 @@ void rightEncoderTask(void const * argument)
 					board_debug_scroll = board_debug_scroll + 1;
 				if (movement == -1)
 					board_debug_scroll = board_debug_scroll - 1;
-				if (board_debug_scroll > END_BOARD)
-					board_debug_scroll = START_BOARD;
+				if (board_debug_scroll > END_BOARD - 6)
+					board_debug_scroll = END_BOARD - 6;
 				if (board_debug_scroll < START_BOARD)
-					board_debug_scroll = END_BOARD;
+					board_debug_scroll = START_BOARD;
 				break;
 			case DEBUG_MODE:
 				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
@@ -836,8 +855,8 @@ void rightEncoderTask(void const * argument)
 						debug_mode_scroll_dx = debug_mode_scroll_dx + 1;
 				if (movement == -1)
 						debug_mode_scroll_dx = debug_mode_scroll_dx - 1;
-				if (debug_mode_scroll_dx < 3 )
-					debug_mode_scroll_dx = 3;
+				if (debug_mode_scroll_dx < N_DEBUG_MODE_VALUES )
+					debug_mode_scroll_dx = N_DEBUG_MODE_VALUES - 1;
 				if (debug_mode_scroll_dx >= N_INDICATORS)
 					debug_mode_scroll_dx = N_INDICATORS - 1;
 				break;

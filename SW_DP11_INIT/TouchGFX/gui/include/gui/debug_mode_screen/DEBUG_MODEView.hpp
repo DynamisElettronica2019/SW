@@ -7,7 +7,6 @@
 #include <general.h>
 #include <data.h>
 
-#define N_DEBUG_MODE_VALUES 5
 class DEBUG_MODEView : public DEBUG_MODEViewBase
 {
 public:
@@ -18,17 +17,24 @@ public:
 		virtual void refreshDebugMode();
 		virtual void checkChangeScreen();
 protected:
-		touchgfx::Unicode::UnicodeChar Title1sx[6];
-		touchgfx::Unicode::UnicodeChar Title2sx[6];
-		touchgfx::Unicode::UnicodeChar Title3sx[6];
-		touchgfx::Unicode::UnicodeChar Title4sx[6];
-		touchgfx::Unicode::UnicodeChar Title5sx[6];
+		touchgfx::Unicode::UnicodeChar Title1sx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title2sx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title3sx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title4sx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title5sx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title6sx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title7sx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title8sx[TIT_LEN];
 
-		touchgfx::Unicode::UnicodeChar Title1dx[6];
-		touchgfx::Unicode::UnicodeChar Title2dx[6];
-		touchgfx::Unicode::UnicodeChar Title3dx[6];
-		touchgfx::Unicode::UnicodeChar Title4dx[6];
-		touchgfx::Unicode::UnicodeChar Title5dx[6];
+		touchgfx::Unicode::UnicodeChar Title1dx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title2dx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title3dx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title4dx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title5dx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title6dx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title7dx[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar Title8dx[TIT_LEN];
+
 };
 
 #endif // DEBUG_MODE_VIEW_HPP

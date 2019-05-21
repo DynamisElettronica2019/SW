@@ -840,7 +840,7 @@
             "Alpha": 255,
             "Name": "boxEntry",
             "X": 8,
-            "Y": 279,
+            "Y": 277,
             "Width": 621,
             "Height": 104,
             "Type": "BoxWithBorder",
@@ -864,7 +864,7 @@
             "Name": "TEXTEnduranceEntry",
             "X": 78,
             "Y": 283,
-            "Width": 461,
+            "Width": 460,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -1865,8 +1865,8 @@
             "LineSpacing": 0,
             "Name": "TEXTAccelerationEntry",
             "X": 41,
-            "Y": 279,
-            "Width": 543,
+            "Y": 283,
+            "Width": 542,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -2920,8 +2920,8 @@
             "LineSpacing": 0,
             "Name": "TEXTAutocrossEntry",
             "X": 102,
-            "Y": 281,
-            "Width": 445,
+            "Y": 283,
+            "Width": 446,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -3925,7 +3925,7 @@
             "Name": "TEXTSkidpadEntry",
             "X": 166,
             "Y": 283,
-            "Width": 313,
+            "Width": 314,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -5470,6 +5470,90 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId316",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId317",
+              "UseBuffer": true,
+              "BufferSize": 7
+            },
+            "Name": "textIndTitle7",
+            "X": 0,
+            "Y": 450,
+            "Width": 166,
+            "Height": 55,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId318",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId319",
+              "UseBuffer": true,
+              "BufferSize": 6
+            },
+            "Name": "textIndValueTemp7",
+            "X": 250,
+            "Y": 450,
+            "Width": 140,
+            "Height": 55,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId320",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId321",
+              "UseBuffer": true,
+              "BufferSize": 6
+            },
+            "Name": "textIndValueCurr7",
+            "X": 460,
+            "Y": 450,
+            "Width": 140,
+            "Height": 55,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -6412,7 +6496,7 @@
               "UseBuffer": true,
               "BufferSize": 6
             },
-            "Name": "textIndValue6sx_1",
+            "Name": "textIndValue8sx",
             "X": 161,
             "Y": 445,
             "Width": 154,
@@ -6711,7 +6795,7 @@
             "Filename": "logo_300.png",
             "Alpha": 255,
             "ScalingAlgorithm": "Nearest-neighbor",
-            "Name": "scalableImage2",
+            "Name": "dynamis_logo",
             "X": 170,
             "Y": 24,
             "Width": 300,
@@ -7909,6 +7993,30 @@
       },
       {
         "TextEntryId": "SingleUseId315",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId316",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId317",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId318",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId319",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId320",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId321",
         "IsResource": false
       }
     ],

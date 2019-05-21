@@ -12,19 +12,20 @@
 	 
 #define N_INDICATORS 54 //------------- Da decidere quali indicatori utilizzare
 #define TIT_LEN 7				//------------- Lunghezza massima della stringa va visualizzare come titolo
-#define START_BOARD 10	//------------- Inizio indicatori per schermata board debug !!!(messi a caso)!!!
-#define END_BOARD 20		//------------- Fine indicatori per schermata board debug		!!!(messi a caso)!!!
+#define START_BOARD GCU_BOARD	//------------- Inizio indicatori per schermata board debug !!!(messi a caso)!!!
+#define END_BOARD DAU_R_BOARD		//------------- Fine indicatori per schermata board debug		!!!(messi a caso)!!!
 	 
 #define DEF_VALUE 9999  //------------- Valore con cui si inizializza la matrice di dati per capire se sono arrivati dati nuovi dal CAN o no
 #define DEF_SIMBOL "?"  
-	 
+
+#define N_DEBUG_MODE_VALUES 8	//--- numero di indicatori nella schermata di DEBUG_MODE
 /********************DATA TYPE********************/	 // per ora vengono creati in freertos.c e dichiarati come extern dalle altre parti
 
 typedef enum {
         /* car parameters */
-        TH2O, OIL_PRESS, TPS, VBAT, RPM, Adc, TRACTION_CONTROL, GEAR,
+        TH2O, OIL_PRESS, TPS, VBAT, RPM, TRACTION_CONTROL, GEAR,
 				CLUTCH_POSITION, OIL_TEMP_IN, OIL_TEMP_OUT, CLUTCH_FEEDBACK, ACQ,
-        EFI_STATUS, TH2O_SX_IN, TH2O_SX_OUT,
+        TH2O_SX_IN, TH2O_SX_OUT,
         TH2O_DX_IN, TH2O_DX_OUT, EFI_SLIP, LAUNCH_CONTROL, RPM_LIM, FUEL_LEVEL,
         FUEL_PRESS, MAP, TH2O_ENGINE, VH_SPEED, PH2O, EFI_SLIP_TARGET, MAN_LIM_ACT,
 				FAN, H2OPUMP_DC, PIT_LANE_ACT, FLAG_SMOT, LAMBDA, T_SCARICO_1, T_SCARICO_2,
