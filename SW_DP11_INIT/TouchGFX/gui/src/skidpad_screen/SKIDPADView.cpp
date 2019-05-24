@@ -15,12 +15,12 @@ SKIDPADView::SKIDPADView()
 
 void SKIDPADView::setupScreen()
 {
-	  SkiPointer[0] = OIL_PRESS;
-		SkiPointer[1] = TH2O;
-		SkiPointer[2] = OIL_TEMP_IN;
-		SkiPointer[3] = TPS;
-		SkiPointer[4] = VBAT;
-		SkiPointer[5] = FUEL_LEVEL;
+//	  SkiPointer[0] = OIL_PRESS;
+//		SkiPointer[1] = TH2O;
+//		SkiPointer[2] = OIL_TEMP_IN;
+//		SkiPointer[3] = TPS;
+//		SkiPointer[4] = VBAT;
+//		SkiPointer[5] = FUEL_LEVEL;
 		screenEntry = 0;
 		//textIndGearValue.setVisible(false);
 		SKIDPADViewBase::setupScreen();

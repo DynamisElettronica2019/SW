@@ -16,12 +16,12 @@ AUTOCROSSView::AUTOCROSSView()
 
 void AUTOCROSSView::setupScreen()
 { 
-		AutPointer[0] = OIL_PRESS;
-		AutPointer[1] = TH2O;
-		AutPointer[2] = OIL_TEMP_IN;
-		AutPointer[3] = TPS;
-		AutPointer[4] = VBAT;
-		AutPointer[5] = FUEL_LEVEL;
+//		AutPointer[0] = OIL_PRESS;
+//		AutPointer[1] = TH2O;
+//		AutPointer[2] = OIL_TEMP_IN;
+//		AutPointer[3] = TPS;
+//		AutPointer[4] = VBAT;
+//		AutPointer[5] = FUEL_LEVEL;
 		screenEntry = 0;
 		//textIndGearValue.setVisible(false);
 		AUTOCROSSViewBase::setupScreen();

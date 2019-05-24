@@ -91,45 +91,16 @@
 #define LED_6_BLUE			0x20
 
 
-#define EEPROM_ADDRESS 	0xA0
+#define EEPROM_ADDRESS 	0xA
 
-#define FirstOn 				0	 
-	 
-#define End_0						10
-#define End_1						11
-#define End_2						12
-#define End_3						13
-#define End_4						14
-#define End_5						15
+#define DEF_PAGE 				0	 
+#define END_PAGE 				1		
+#define ACC_PAGE 				2	
+#define AUT_PAGE 				3	
+#define SKI_PAGE 				4	
 
-#define Acc_0						20
-#define Acc_1 					21
-#define Acc_2 					22 
-#define Acc_3 					23
-#define Acc_4 					24
-#define Acc_5 					25
-
-#define Aut_0 					30
-#define Aut_1					  31
-#define Aut_2				   	32
-#define Aut_3 					33
-#define Aut_4 					34
-#define Aut_5 					35
-
-#define Ski_0 					40
-#define Ski_1 					41
-#define Ski_2 					42
-#define Ski_3 					43
-#define Ski_4 					44
-#define Ski_5 					45
-#define Ski_6 					46
-
-#define Def_0 					50
-#define Def_1 					51
-#define Def_2 					52
-#define Def_3 					53
-#define Def_4 					54
-#define Def_5 					55
+#define START_CELL			0
+#define DEF_CELL				10
  	 
 #define N_POINTERS 			6
 	 
@@ -169,11 +140,13 @@ void I2C_save_endPointers(void);
 void I2C_save_accPointers(void);
 void I2C_save_autPointers(void);
 void I2C_save_skiPointers(void);
+void I2C_save_defPointers(void);
 
 void I2C_get_endPointers(void);
 void I2C_get_accPointers(void);
 void I2C_get_autPointers(void);
 void I2C_get_skiPointers(void);
+void I2C_get_defPointers(void);
 
 void I2C_getPointers(void);
 

@@ -15,12 +15,12 @@ ENDURANCEView::ENDURANCEView()
 
 void ENDURANCEView::setupScreen()
 {
-		EndPointer[0] = OIL_PRESS;
-		EndPointer[1] = TH2O;
-		EndPointer[2] = OIL_TEMP_IN;
-		EndPointer[3] = TPS;
-		EndPointer[4] = VBAT;
-		EndPointer[5] = FUEL_LEVEL;
+//		EndPointer[0] = OIL_PRESS;
+//		EndPointer[1] = TH2O;
+//		EndPointer[2] = OIL_TEMP_IN;
+//		EndPointer[3] = TPS;
+//		EndPointer[4] = VBAT;
+//		EndPointer[5] = FUEL_LEVEL;
 		cont = 0;
 		screenEntry = 0;
 		textIndGearValue.setVisible(true);

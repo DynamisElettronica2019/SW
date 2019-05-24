@@ -19,12 +19,12 @@ ACCELERATIONView::ACCELERATIONView()
 void ACCELERATIONView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
-    AccPointer[0] = OIL_PRESS;
-		AccPointer[1] = TH2O;
-		AccPointer[2] = OIL_TEMP_IN;
-		AccPointer[3] = TPS;
-		AccPointer[4] = VBAT;
-		AccPointer[5] = FUEL_LEVEL;
+//    AccPointer[0] = OIL_PRESS;
+//		AccPointer[1] = TH2O;
+//		AccPointer[2] = OIL_TEMP_IN;
+//		AccPointer[3] = TPS;
+//		AccPointer[4] = VBAT;
+//		AccPointer[5] = FUEL_LEVEL;
 		cont = 0;
 		screenEntry = 0;
 //		textIndGearValue.setVisible(false);

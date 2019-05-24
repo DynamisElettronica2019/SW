@@ -114,6 +114,8 @@ int commandSent = 0;
 
 extern BaseType_t xHigherPriorityTaskWoken;
 
+int i = 0;
+
 //Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 
@@ -569,10 +571,10 @@ void ledBlinkTask(void const * argument)
 				
 		dSensors_Sensors_send();
 		
-		Indicators[TRACTION_CONTROL].intValore = state;
+		//Indicators[TRACTION_CONTROL].intValore = state;
 		
 		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
-		
+
     osDelay(250);
   }
   /* USER CODE END ledBlinkTask */
@@ -1313,19 +1315,8 @@ void aux1Task(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		//xSemaphoreTake(aux1SemaphoreHandle, portMAX_DELAY);
+		xSemaphoreTake(aux1SemaphoreHandle, portMAX_DELAY);
 		
-		/*----------------------- DEBUG EEORIM
-		vTaskDelay(500);
-		I2C_eeprom_write (indirizzo , 1);			// mando il valore 10 nell'inidirizzo 0 della eeprom
-		vTaskDelay(500);
-		if ( 11 == I2C_eeprom_read (1)){			// se leggo il valore 10 nell'indirizzo 0 della eeprom
-			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_SET);
-		}
-		else{
-			HAL_GPIO_WritePin ( DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin, GPIO_PIN_RESET);
-		}
-		-------------------------------------- */
     osDelay(1);
   }
   /* USER CODE END aux1Task */
