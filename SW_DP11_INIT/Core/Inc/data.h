@@ -10,7 +10,7 @@
 	 
 /********************DEFINES********************/
 	 
-#define N_INDICATORS 54 //------------- Da decidere quali indicatori utilizzare
+#define N_INDICATORS 60 //------------- Da decidere quali indicatori utilizzare
 #define TIT_LEN 7				//------------- Lunghezza massima della stringa va visualizzare come titolo
 #define START_BOARD GCU_BOARD	//------------- Inizio indicatori per schermata board debug !!!(messi a caso)!!!
 #define END_BOARD DAU_R_BOARD		//------------- Fine indicatori per schermata board debug		!!!(messi a caso)!!!
@@ -35,8 +35,9 @@ typedef enum {
         DAU_FL_BOARD, DAU_FR_BOARD, DAU_R_BOARD,
         /* sensors */
         FUEL_PUMP, H2O_PUMP, H2O_FAN_DX, H2O_FAN_SX, CLUTCH_CURR, GEAR_CURR,
-				DCU_3V3, DCU_5V, DCU_12V
-    
+				DCU_3V3, DCU_5V, DCU_12V, 
+				ACC_X_1, ACC_Y_1, ACC_Z_1, GYR_X_1, GYR_Y_1, GYR_Z_1, HEAD_1,
+				ACC_X_2, ACC_Y_2, ACC_Z_2, GYR_X_2, GYR_Y_2, GYR_Z_2, HEAD_2			
 } Indicator_ID;
 
 typedef enum { 

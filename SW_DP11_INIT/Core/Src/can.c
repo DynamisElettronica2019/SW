@@ -262,6 +262,28 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
      case DCU_ACQUISITION_SW_ID:
 				Indicators[ACQ].intValore = firstInt;
         break;
+		 case	IMU1_DATA_1_ID:
+			 	Indicators[ACC_X_1].floatValore = ((int)firstInt)/100.0;
+				Indicators[ACC_Y_1].floatValore = ((int)secondInt)/100.0;
+				Indicators[GYR_X_1].floatValore = ((int)thirdInt)/10.0;
+				Indicators[GYR_Z_1].floatValore = ((int)fourthInt)/10.0;
+			 break;
+		 case	IMU1_DATA_2_ID:
+			  Indicators[HEAD_1].floatValore 	= ((int)firstInt)/100.0;
+				Indicators[ACC_Z_1].floatValore = ((int)secondInt)/100.0;
+				Indicators[GYR_Y_1].floatValore = ((int)thirdInt)/10.0;
+			 break;
+		 case	IMU2_DATA_1_ID:
+			 	Indicators[ACC_X_2].floatValore = ((int)firstInt)/100.0;
+				Indicators[ACC_Y_2].floatValore = ((int)secondInt)/100.0;
+				Indicators[GYR_X_2].floatValore = ((int)thirdInt)/10.0;
+				Indicators[GYR_Z_2].floatValore = ((int)fourthInt)/10.0;
+			 break;
+		 case	IMU2_DATA_2_ID:
+			  Indicators[HEAD_2].floatValore  = ((int)firstInt)/100.0;
+				Indicators[ACC_Z_2].floatValore = ((int)secondInt)/100.0;
+				Indicators[GYR_Y_2].floatValore = ((int)thirdInt)/10.0;
+			 break;
 			// DAU ci interessa qualcosa oltre a  t e i ???
      case DAU_FR_DEBUG_ID:
 				Indicators[DAU_FR_BOARD].intValore = firstInt;
@@ -326,7 +348,6 @@ void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, 
 
 void CAN_changeState(int mode_feedback)
 {
-	//mode_feedback = driveMode;
 	switch (mode_feedback)
 	{
 		case ENDURANCE_MODE:
@@ -349,7 +370,6 @@ void CAN_changeState(int mode_feedback)
 			break;
 	}
 	
-	//Indicators[DRIVE_MODE].intValore = driveMode;
   Indicators[DRIVE_MODE].intValore = mode_feedback;
 }
 

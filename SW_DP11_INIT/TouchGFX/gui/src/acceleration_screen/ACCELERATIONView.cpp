@@ -124,7 +124,7 @@ void ACCELERATIONView::refreshAcceleration()
 	
 	/****************ACQUISITION*****************/
 	
-	if ( Indicators[ACQ].intValore == 1 ){			//--------- da decidere come modificare il valore quando letto da CAN
+	if ( Indicators[ACQ].intValore == ACQ_ON ){			//--------- da decidere come modificare il valore quando letto da CAN
 		touchgfx::Unicode::strncpy( Acquisition, "ON", 5);
 		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
 	}

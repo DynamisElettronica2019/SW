@@ -684,7 +684,7 @@ void I2C_getPointers(void){
 	
 	//--------------------- QUESTE RIGHE INVECE DOVRANNO ESSERE ELIMINATE
 	
-	I2C_save_defPointers();
+	//I2C_save_defPointers();
 	I2C_get_defPointers();
 }
 

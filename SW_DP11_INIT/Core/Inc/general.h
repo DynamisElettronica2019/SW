@@ -57,19 +57,25 @@
 #define SETTINGS_MODE_DEFAULT						0
 
 
-/******************** MAPS *************************/
+/***************** MAPS & OTHERS *******************/
 
 #define MAP_1														1
 #define MAP_2														2
 	 
+#define ACQ_ON													1
+#define ACQ_OFF					 								2
+
 /****************** COMMANDS ***********************/
 	
 #define COMMAND_STOP	 									0
 #define COMMAND_READY	 									1// - TIRA LA FRIZIONE
 #define COMMAND_GO			 								2// PARTIAMO
-	 
-#define DCU_ACQUISITION_CODE   				  0
-#define DCU_SAVE_LINEAR_CODE						1
+
+#define COMMAND_ACQ_START								1
+#define COMMAND_ACQ_STOP 								2
+
+#define DCU_ACQUISITION_CODE   				  1
+#define DCU_SAVE_LINEAR_CODE						2
 
 /****************** TIMINGS ************************/
 

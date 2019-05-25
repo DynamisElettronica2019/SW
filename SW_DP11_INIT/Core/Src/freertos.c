@@ -560,6 +560,7 @@ void StartDefaultTask(void const * argument)
 * @retval None
 */
 
+
 /* USER CODE END Header_ledBlinkTask */
 void ledBlinkTask(void const * argument)
 {
@@ -568,13 +569,14 @@ void ledBlinkTask(void const * argument)
   for(;;)
   {
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
-				
-		dSensors_Sensors_send();
 		
+		dSensors_Sensors_send();
+
 		//Indicators[TRACTION_CONTROL].intValore = state;
 		
 		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
-
+		Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
+		
     osDelay(250);
   }
   /* USER CODE END ledBlinkTask */
@@ -583,6 +585,7 @@ void ledBlinkTask(void const * argument)
 /* USER CODE BEGIN Header_canTask */
 /**
 * @brief Function implementing the can_Task thread.
+
 * @param argument: Not used
 * @retval None
 */
@@ -662,7 +665,8 @@ void downShiftTask(void const * argument)
 void modeSelectorTask(void const * argument)
 {
   /* USER CODE BEGIN modeSelectorTask */
- char old_driveMode;
+	char old_driveMode;
+	
   /* Infinite loop */
   for(;;)
   {
@@ -698,7 +702,7 @@ void modeSelectorTask(void const * argument)
 					state = SETTINGS_MODE_DEFAULT;
 				break;
 		}
-		//Indicators[DRIVE_MODE].intValore = driveMode;
+		
 		osDelay(1);
   }	
   /* USER CODE END modeSelectorTask */
@@ -974,11 +978,13 @@ void aux1ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux1ButtonSemaphoreHandle, portMAX_DELAY);
+		
 		startAcq = Indicators[ACQ].intValore;
-		if( startAcq == TRUE ) 
-			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, FALSE, EMPTY, EMPTY, 2);
-		else if ( startAcq == FALSE ) 
-			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, TRUE, EMPTY, EMPTY, 2);
+		
+		if( startAcq == ACQ_ON ) 
+			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_STOP, EMPTY, EMPTY, 2);
+		else if ( startAcq == ACQ_OFF ) 
+			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
 		
     osDelay(1);
   }

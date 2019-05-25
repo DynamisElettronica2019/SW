@@ -291,6 +291,7 @@ void GPIO_encoders_set_driveMode(void)
 	new_mode = GPIO_encoders_find_new_position(modeSelector.pin1, modeSelector.pin2, modeSelector.pin4);
 	
 	if( new_mode == EMPTY_POSITION ) new_mode = ENDURANCE_MODE;
+	
 	if( driveMode != new_mode )
 	{
 		driveMode = new_mode;
@@ -298,7 +299,7 @@ void GPIO_encoders_set_driveMode(void)
 	}
 	
 	HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
-	}
+}
 
 /**
   * @brief  finds the new position of the map selector encoder by 
