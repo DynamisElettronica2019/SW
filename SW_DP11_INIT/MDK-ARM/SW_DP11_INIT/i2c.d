@@ -42,4 +42,5 @@ sw_dp11_init\i2c.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h
 sw_dp11_init\i2c.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h
 sw_dp11_init\i2c.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\i2c.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
+sw_dp11_init\i2c.o: ../Core/Inc/general.h
 sw_dp11_init\i2c.o: ../Core/Inc/data.h

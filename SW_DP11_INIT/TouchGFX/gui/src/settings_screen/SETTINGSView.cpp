@@ -56,19 +56,19 @@ void SETTINGSView::refreshSettings()
 			SETTINGSView::moveSelectedBox();
 			
 			switch (box_driveMode){
-				case 0:
+				case SETT_ACC_BOX:
 					touchgfx::Unicode::strncpy( TitleDriveMode, "ACCELERATION", 15);					
 					SETTINGSView::displayAcceleration();
 					break;
-				case 1:
+				case SETT_END_BOX:
 					touchgfx::Unicode::strncpy( TitleDriveMode, "ENDURANCE", 15);
 					SETTINGSView::displayEndurance();
 					break;
-				case 2:
+				case SETT_AUT_BOX:
 					touchgfx::Unicode::strncpy( TitleDriveMode, "AUTOCROSS", 15);
 					SETTINGSView::displayAutocross();
 					break;
-				case 3:
+				case SETT_SKI_BOX:
 					touchgfx::Unicode::strncpy( TitleDriveMode, "SKIDPAD", 15);
 					SETTINGSView::displaySkidpad();
 					break;
@@ -154,6 +154,11 @@ void SETTINGSView::changeDisplay()
   textENDURANCE.setVisible(false);
   textAUTOCROSS.setVisible(false);
   textSKIDPAD.setVisible(false);
+	textACCELERATION.invalidate();
+	textENDURANCE.invalidate();
+	textAUTOCROSS.invalidate();
+	textSKIDPAD.invalidate();
+	boxModeSelected.invalidate();
 }
 
 void SETTINGSView::moveSelectedBox()
@@ -219,7 +224,7 @@ void SETTINGSView::displayAcceleration()
 		case 4 :
 			if (change_pointer == 1){
 				change_pointer = 0;
-				AccPointer[4] = (uint8_t) pointer_scroll;
+				AccPointer[4] = pointer_scroll;
 				}
 			touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[4]].NOME, TIT_LEN);
 			break;

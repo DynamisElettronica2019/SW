@@ -10,10 +10,14 @@
 	 
 /********************DEFINES********************/
 	 
-#define N_INDICATORS 60 //------------- Da decidere quali indicatori utilizzare
+#define N_INDICATORS 65 //------------- Da decidere quali indicatori utilizzare
 #define TIT_LEN 7				//------------- Lunghezza massima della stringa va visualizzare come titolo
+	 
 #define START_BOARD GCU_BOARD	//------------- Inizio indicatori per schermata board debug !!!(messi a caso)!!!
 #define END_BOARD DAU_R_BOARD		//------------- Fine indicatori per schermata board debug		!!!(messi a caso)!!!
+	 
+#define FIRST_CAR_PARAMETER 			0
+#define	LAST_CAR_PARAMETER 				DRIVE_MODE 
 	 
 #define DEF_VALUE 9999  //------------- Valore con cui si inizializza la matrice di dati per capire se sono arrivati dati nuovi dal CAN o no
 #define DEF_SIMBOL "?"  

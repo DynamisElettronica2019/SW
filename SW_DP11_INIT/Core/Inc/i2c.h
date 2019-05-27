@@ -57,7 +57,18 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
+	 
+#include "general.h"
+	 
+/* USER CODE END Includes */
 
+extern I2C_HandleTypeDef hi2c1;
+
+/* USER CODE BEGIN Private defines */
+
+#define controller_0 0x28
+#define controller_1 0x29
+	 
 #define RPM_STRIPE_MAX      12000
 #define RPM_STRIPE_MIN 			3000
 #define RPM_STRIPE_OFFSET 	(RPM_STRIPE_MAX/RPM_STRIPE_MIN)
@@ -103,16 +114,7 @@
 #define DEF_CELL				10
  	 
 #define N_POINTERS 			6
-	 
-/* USER CODE END Includes */
 
-extern I2C_HandleTypeDef hi2c1;
-
-/* USER CODE BEGIN Private defines */
-
-	#define controller_0 0x28
-	#define controller_1 0x29
-	 
 /* USER CODE END Private defines */
 
 void MX_I2C1_Init(void);
@@ -140,6 +142,7 @@ void I2C_save_endPointers(void);
 void I2C_save_accPointers(void);
 void I2C_save_autPointers(void);
 void I2C_save_skiPointers(void);
+void I2C_save_Pointers(void);
 void I2C_save_defPointers(void);
 
 void I2C_get_endPointers(void);

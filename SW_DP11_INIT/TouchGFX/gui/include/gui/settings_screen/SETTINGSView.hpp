@@ -7,7 +7,6 @@
 #include <general.h>
 #include <data.h>
 
-
 class SETTINGSView : public SETTINGSViewBase
 {
 public:

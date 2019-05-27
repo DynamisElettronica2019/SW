@@ -364,16 +364,21 @@ int GPIO_encoders_right_encoder_movement(void)
 {	
 	char new_pos;
 	int movement;
-	rightEncoder.pin1 = HAL_GPIO_ReadPin(ENC_RIGHT_1_INT_GPIO_Port, ENC_RIGHT_1_INT_Pin);
-	rightEncoder.pin2 = HAL_GPIO_ReadPin(ENC_RIGHT_2_GPIO_Port, ENC_RIGHT_2_Pin);
-	rightEncoder.pin4 = HAL_GPIO_ReadPin(ENC_RIGHT_4_GPIO_Port, ENC_RIGHT_4_Pin);
+	mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
+	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
+	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
+//	rightEncoder.pin1 = HAL_GPIO_ReadPin(ENC_RIGHT_1_INT_GPIO_Port, ENC_RIGHT_1_INT_Pin);
+//	rightEncoder.pin2 = HAL_GPIO_ReadPin(ENC_RIGHT_2_GPIO_Port, ENC_RIGHT_2_Pin);
+//	rightEncoder.pin4 = HAL_GPIO_ReadPin(ENC_RIGHT_4_GPIO_Port, ENC_RIGHT_4_Pin);
 
-	new_pos = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
+//	new_pos = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
 
+	new_pos = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
+	
 	HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 
 	movement = new_pos - rightPosition; // magari segni invertiti
-	rightPosition = new_pos;
+	//rightPosition = new_pos;
 
 	return movement;
 }

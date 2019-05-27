@@ -57,6 +57,8 @@ uint8_t i2cData[2];
 extern uint8_t EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 uint8_t DefPointer[6];
 extern Indicator_Value Indicators[N_INDICATORS];
+extern int box_driveMode;
+
 uint8_t devAddress;
 uint8_t memAddress;
 uint8_t defPage = 0;
@@ -585,7 +587,9 @@ void I2C_save_endPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | endPage >> 4;	
 	memAddress = endPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Write(&hi2c1, devAddress, 0, I2C_MEMADD_SIZE_8BIT, EndPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, EndPointer, N_POINTERS, 100);
+	
+	HAL_Delay(10);
 }
 
 void I2C_save_accPointers(void){	
@@ -593,7 +597,9 @@ void I2C_save_accPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | accPage >> 4;	
 	memAddress = accPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Write(&hi2c1, devAddress, 0, I2C_MEMADD_SIZE_8BIT, AccPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, AccPointer, N_POINTERS, 100);
+	
+	HAL_Delay(10);
 }
 
 void I2C_save_autPointers(void){
@@ -601,7 +607,9 @@ void I2C_save_autPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | autPage >> 4;	
 	memAddress = autPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Write(&hi2c1, devAddress, 0, I2C_MEMADD_SIZE_8BIT, AutPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, AutPointer, N_POINTERS, 100);
+	
+	HAL_Delay(10);
 }
 
 void I2C_save_skiPointers(void){
@@ -609,7 +617,9 @@ void I2C_save_skiPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | skiPage >> 4;	
 	memAddress = skiPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Write(&hi2c1, devAddress, 0, I2C_MEMADD_SIZE_8BIT, SkiPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, SkiPointer, N_POINTERS, 100);
+	
+	HAL_Delay(10);
 }
 
 void I2C_get_endPointers(void){
@@ -617,7 +627,7 @@ void I2C_get_endPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | endPage >> 4;	
 	memAddress = endPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Read(&hi2c1, devAddress, memAddress, I2C_MEMADD_SIZE_8BIT, EndPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, EndPointer, N_POINTERS, 100);
 }
 
 void I2C_get_accPointers(void){
@@ -625,7 +635,7 @@ void I2C_get_accPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | accPage >> 4;	
 	memAddress = accPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Read(&hi2c1, devAddress, memAddress, I2C_MEMADD_SIZE_8BIT, AccPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, AccPointer, N_POINTERS, 100);
 }
 
 void I2C_get_autPointers(void){
@@ -633,7 +643,7 @@ void I2C_get_autPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | autPage >> 4;	
 	memAddress = autPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Read(&hi2c1, devAddress, memAddress, I2C_MEMADD_SIZE_8BIT, AutPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, AutPointer, N_POINTERS, 100);
 }
 
 void I2C_get_skiPointers(void){
@@ -641,7 +651,7 @@ void I2C_get_skiPointers(void){
 	devAddress = EEPROM_ADDRESS << 3 | skiPage >> 4;	
 	memAddress = skiPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Read(&hi2c1, devAddress, memAddress, I2C_MEMADD_SIZE_8BIT, SkiPointer, N_POINTERS, 100);
+	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, SkiPointer, N_POINTERS, 100);
 }
 
 void I2C_get_defPointers(void){
@@ -660,7 +670,7 @@ void I2C_getPointers(void){
 	
 	uint8_t flag = 0;
 	
-	/*	--------------------- COMMENTATO PER ASSEGNARE I VALORI DI DEFAULT IN FASE DI DEBUG, DOPO LA PRIMA ACCENSIONE E SALVATAGGIO DEGLI INDICATORI è DA DECOMMENTARE
+	//	--------------------- COMMENTATO PER ASSEGNARE I VALORI DI DEFAULT IN FASE DI DEBUG, DOPO LA PRIMA ACCENSIONE E SALVATAGGIO DEGLI INDICATORI è DA DECOMMENTARE
 	
 	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
 	memAddress = defPage << 4 | START_CELL;	
@@ -669,33 +679,41 @@ void I2C_getPointers(void){
 		
 	if ( flag == 0 ){		
 		flag = 1;
+		I2C_save_defPointers();
 		I2C_get_defPointers();
 		devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
 		memAddress = defPage << 4 | DEF_CELL;
-		HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, 0, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
+		HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
+		HAL_Delay(10);
+		I2C_save_accPointers();
+		I2C_save_endPointers();
+		I2C_save_autPointers();
+		I2C_save_skiPointers();
+		Indicators[GEAR].intValore = 3;
 	}
 	else{
+		Indicators[GEAR].intValore = 4;
 		I2C_get_endPointers();
 		I2C_get_accPointers();
 		I2C_get_autPointers();
 		I2C_get_skiPointers();
 	}	
-		*/
+		
 	
 	//--------------------- QUESTE RIGHE INVECE DOVRANNO ESSERE ELIMINATE
 	
 	//I2C_save_defPointers();
-	I2C_get_defPointers();
+	//I2C_get_defPointers();
 }
 
 void I2C_save_defPointers(void){
 		
-	uint8_t flag = 0;
+	//uint8_t flag = 0;
 	
 	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
 	memAddress = defPage << 4 | START_CELL;
 	
-	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
+	//HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
 	
 	//------------messi temporaneamente, sono da sistemare
 	  DefPointer[0] = OIL_PRESS;
@@ -708,7 +726,27 @@ void I2C_save_defPointers(void){
 	memAddress = defPage << 4 | DEF_CELL;
 	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, DefPointer, N_POINTERS, 100);
 	
+	HAL_Delay(10);
+	
 }
+
+void I2C_save_Pointers(void){
+	switch (box_driveMode){
+		case SETT_ACC_BOX:
+			I2C_save_accPointers();
+			break;
+		case SETT_END_BOX:
+			I2C_save_endPointers();
+			break;
+		case SETT_AUT_BOX:
+			I2C_save_autPointers();
+			break;
+		case SETT_SKI_BOX:
+			I2C_save_skiPointers();
+			break;
+	}
+}
+
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

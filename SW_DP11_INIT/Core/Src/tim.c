@@ -400,8 +400,8 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
 			if(timer_ok_button >= 50)
 			{	
-					xSemaphoreGiveFromISR( aux1ButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
-					//xSemaphoreGiveFromISR( okButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
+					//	xSemaphoreGiveFromISR( aux1ButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
+					xSemaphoreGiveFromISR( okButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
 					timer_ok_button = 0;
 			}
 			timerRpmStripe = 0;	

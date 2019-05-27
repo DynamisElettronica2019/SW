@@ -563,9 +563,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     case AUX_2_BUTTON_INT_Pin: 
       break;
     case SEL_MAP_1_INT_Pin:
-			 xSemaphoreGiveFromISR(mapSelectorSemaphoreHandle, &xHigherPriorityTaskWoken);
+			 // xSemaphoreGiveFromISR(mapSelectorSemaphoreHandle, &xHigherPriorityTaskWoken);
 			// xSemaphoreGiveFromISR(leftEncoderSemaphoreHandle, &xHigherPriorityTaskWoken);
-			// xSemaphoreGiveFromISR(rightEncoderSemaphoreHandle, &xHigherPriorityTaskWoken);
+			 xSemaphoreGiveFromISR(rightEncoderSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case START_BUTTON_INT_Pin: 
       break;

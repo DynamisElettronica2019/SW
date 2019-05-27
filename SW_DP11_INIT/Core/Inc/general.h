@@ -14,6 +14,11 @@
 #define FALSE 													0
 	 
 #define EMPTY 													0
+	 
+#define SETT_ACC_BOX										0
+#define SETT_END_BOX										1
+#define SETT_AUT_BOX										2
+#define SETT_SKI_BOX										3
 	
 /******************** MODES ***********************/
 

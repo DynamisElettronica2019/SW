@@ -575,7 +575,7 @@ void ledBlinkTask(void const * argument)
 		//Indicators[TRACTION_CONTROL].intValore = state;
 		
 		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
-		Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
+		//Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
 		
     osDelay(250);
   }
@@ -677,6 +677,7 @@ void modeSelectorTask(void const * argument)
 		if (old_driveMode == SETTINGS_MODE)
 		{
 			// save settings on eeprom
+			I2C_save_Pointers();
 		}
 		switch (driveMode)
 		{
@@ -836,7 +837,7 @@ void rightEncoderTask(void const * argument)
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_encoders_right_encoder_movement();
 	  rightPosition = rightPosition + movement;
-		//Indicators[MAP].intValore = rightPosition;
+		Indicators[MAP].intValore = rightPosition;
 		
 		switch(driveMode)
 		{
@@ -868,18 +869,31 @@ void rightEncoderTask(void const * argument)
 				break;
 			case SETTINGS_MODE:
 				// scorri le finestrelle
+			switch (schermata_settings){
+				case 0: 
+							if (movement == 1)
+								box_driveMode = box_driveMode + 1;
+							if (movement == -1)
+								box_driveMode = box_driveMode - 1;
+							if (box_driveMode >= 4 )
+								box_driveMode = 0;
+							if (box_driveMode <= -1 )
+								box_driveMode = 3;
+							break;
+				case 1:
 				change_pointer = 1; 
 				if (movement == 1)
 					pointer_scroll = pointer_scroll + 1;
 				if (movement == -1)
 					pointer_scroll = pointer_scroll - 1;
-				if (pointer_scroll <= -1)
+				if (pointer_scroll < FIRST_CAR_PARAMETER)
 					pointer_scroll = N_INDICATORS - 1;
-				if (pointer_scroll >= N_INDICATORS)
+				if (pointer_scroll >	LAST_CAR_PARAMETER)
 					pointer_scroll = 0;
 				break;
 			default: 
 				break;
+				}
 		}
     osDelay(1);
 	}
@@ -957,6 +971,10 @@ void okButtonTask(void const * argument)
 		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
 			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
 			commandSent = 1;
+		}
+		if( driveMode == SETTINGS_MODE){
+			if (schermata_settings == 0 )
+				schermata_settings = 1;
 		}
     osDelay(1);
   }

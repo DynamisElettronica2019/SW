@@ -65,8 +65,8 @@ sw_dp11_init\main.o: ../Core/Inc/id_can.h
 sw_dp11_init\main.o: ../Core/Inc/crc.h
 sw_dp11_init\main.o: ../Core/Inc/dma.h
 sw_dp11_init\main.o: ../Core/Inc/i2c.h
+sw_dp11_init\main.o: ../Core/Inc/general.h
 sw_dp11_init\main.o: ../Core/Inc/quadspi.h
 sw_dp11_init\main.o: ../Core/Inc/spi.h
 sw_dp11_init\main.o: ../Core/Inc/tim.h
 sw_dp11_init\main.o: ../Core/Inc/gpio.h
-sw_dp11_init\main.o: ../Core/Inc/general.h

@@ -104,8 +104,9 @@ void touchgfx_init()
     HAL& hal = touchgfx_generic_init<STM32F7HAL>(dma, display, tc, dispWidth, dispHeight,(uint16_t*) 0, 
                                                0, 0);
 
-    hal.setFrameBufferStartAddress((uint16_t*)frameBuf0, bitdepth ,true , true);
-
+    //hal.setFrameBufferStartAddress((uint16_t*)frameBuf0, bitdepth ,true , true);
+		hal.setFrameBufferStartAddress((uint16_t*)frameBuf0);
+	
     hal.setTouchSampleRate(2);
     hal.setFingerSize(1);
 
