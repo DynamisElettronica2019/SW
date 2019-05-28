@@ -261,7 +261,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId2",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -289,7 +289,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId4",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -317,7 +317,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId8",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -345,7 +345,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId6",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -373,7 +373,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId10",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -401,7 +401,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId12",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -1212,7 +1212,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId108",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -1240,7 +1240,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId110",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -1268,7 +1268,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId112",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -1296,7 +1296,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId114",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -1324,7 +1324,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId116",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -1352,7 +1352,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId118",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -2267,7 +2267,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId73",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -2295,7 +2295,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId75",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -2323,7 +2323,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId77",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -2351,7 +2351,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId79",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -2379,7 +2379,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId81",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -2407,7 +2407,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId83",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -3322,7 +3322,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId38",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -3350,7 +3350,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId40",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -3378,7 +3378,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId42",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3",
             "X": 8,
@@ -3406,7 +3406,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId44",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4",
             "X": 166,
@@ -3434,7 +3434,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId46",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5",
             "X": 324,
@@ -3462,7 +3462,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId48",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6",
             "X": 482,
@@ -4049,7 +4049,7 @@
             "Alpha": 255,
             "Name": "boxIndSelected",
             "X": 0,
-            "Y": 0,
+            "Y": 2,
             "Width": 166,
             "Height": 101,
             "Type": "BoxWithBorder",
@@ -4070,13 +4070,13 @@
               "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 3,
+            "BorderSize": 2,
             "Alpha": 255,
             "Name": "boxIndicator1",
             "X": 8,
-            "Y": 8,
+            "Y": 12,
             "Width": 150,
-            "Height": 85,
+            "Height": 79,
             "Type": "BoxWithBorder",
             "Visible": false,
             "Draggable": false,
@@ -4095,13 +4095,13 @@
               "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 3,
+            "BorderSize": 2,
             "Alpha": 255,
             "Name": "boxIndicator2",
             "X": 482,
-            "Y": 8,
+            "Y": 12,
             "Width": 150,
-            "Height": 85,
+            "Height": 79,
             "Type": "BoxWithBorder",
             "Visible": false,
             "Draggable": false,
@@ -4120,13 +4120,13 @@
               "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 3,
+            "BorderSize": 2,
             "Alpha": 255,
             "Name": "boxIndicator3",
             "X": 8,
-            "Y": 387,
+            "Y": 381,
             "Width": 150,
-            "Height": 85,
+            "Height": 79,
             "Type": "BoxWithBorder",
             "Visible": false,
             "Draggable": false,
@@ -4145,13 +4145,13 @@
               "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 3,
+            "BorderSize": 2,
             "Alpha": 255,
             "Name": "boxIndicator4",
             "X": 166,
-            "Y": 387,
+            "Y": 381,
             "Width": 150,
-            "Height": 85,
+            "Height": 79,
             "Type": "BoxWithBorder",
             "Visible": false,
             "Draggable": false,
@@ -4170,13 +4170,13 @@
               "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 3,
+            "BorderSize": 2,
             "Alpha": 255,
             "Name": "boxIndicator5",
             "X": 324,
-            "Y": 387,
+            "Y": 381,
             "Width": 150,
-            "Height": 85,
+            "Height": 79,
             "Type": "BoxWithBorder",
             "Visible": false,
             "Draggable": false,
@@ -4195,13 +4195,13 @@
               "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 3,
+            "BorderSize": 2,
             "Alpha": 255,
             "Name": "boxIndicator6",
             "X": 482,
-            "Y": 387,
+            "Y": 381,
             "Width": 150,
-            "Height": 85,
+            "Height": 79,
             "Type": "BoxWithBorder",
             "Visible": false,
             "Draggable": false,
@@ -4223,7 +4223,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId157",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1",
             "X": 8,
@@ -4251,7 +4251,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId159",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2",
             "X": 482,
@@ -4279,11 +4279,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId161",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3",
             "X": 8,
-            "Y": 388,
+            "Y": 381,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -4307,11 +4307,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId163",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4",
             "X": 166,
-            "Y": 388,
+            "Y": 381,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -4335,11 +4335,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId165",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5",
             "X": 324,
-            "Y": 388,
+            "Y": 381,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -4363,11 +4363,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId167",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6",
             "X": 482,
-            "Y": 388,
+            "Y": 381,
             "Width": 80,
             "Height": 30,
             "Type": "TextArea",
@@ -4395,7 +4395,7 @@
             },
             "Name": "textIndValue1",
             "X": 18,
-            "Y": 25,
+            "Y": 24,
             "Width": 140,
             "Height": 65,
             "Type": "TextArea",
@@ -4423,7 +4423,7 @@
             },
             "Name": "textIndValue2",
             "X": 492,
-            "Y": 25,
+            "Y": 23,
             "Width": 140,
             "Height": 65,
             "Type": "TextArea",
@@ -4451,7 +4451,7 @@
             },
             "Name": "textIndValue3",
             "X": 18,
-            "Y": 404,
+            "Y": 394,
             "Width": 140,
             "Height": 65,
             "Type": "TextArea",
@@ -4479,7 +4479,7 @@
             },
             "Name": "textIndValue4",
             "X": 176,
-            "Y": 404,
+            "Y": 394,
             "Width": 140,
             "Height": 65,
             "Type": "TextArea",
@@ -4507,7 +4507,7 @@
             },
             "Name": "textIndValue5",
             "X": 334,
-            "Y": 404,
+            "Y": 394,
             "Width": 140,
             "Height": 65,
             "Type": "TextArea",
@@ -4535,7 +4535,7 @@
             },
             "Name": "textIndValue6",
             "X": 492,
-            "Y": 404,
+            "Y": 394,
             "Width": 140,
             "Height": 65,
             "Type": "TextArea",
@@ -4562,10 +4562,10 @@
               "BufferSize": 20
             },
             "Name": "textIndDriveMode",
-            "X": 202,
+            "X": 156,
             "Y": 34,
-            "Width": 236,
-            "Height": 32,
+            "Width": 328,
+            "Height": 44,
             "Type": "TextArea",
             "Visible": false,
             "Draggable": false,
@@ -4593,7 +4593,7 @@
             "X": 178,
             "Y": 209,
             "Width": 285,
-            "Height": 63,
+            "Height": 66,
             "Type": "TextArea",
             "Visible": false,
             "Draggable": false,
@@ -4831,7 +4831,7 @@
             "LineSpacing": 0,
             "Name": "textACCELERATION",
             "X": 432,
-            "Y": 17,
+            "Y": 6,
             "Width": 200,
             "Height": 75,
             "Type": "TextArea",
@@ -4854,7 +4854,7 @@
             "LineSpacing": 0,
             "Name": "textENDURANCE",
             "X": 220,
-            "Y": 17,
+            "Y": 6,
             "Width": 200,
             "Height": 75,
             "Type": "TextArea",
@@ -4879,7 +4879,7 @@
             "Alpha": 255,
             "Name": "boxIndCurrent",
             "X": 8,
-            "Y": 144,
+            "Y": 133,
             "Width": 624,
             "Height": 60,
             "Type": "BoxWithBorder",
@@ -4905,7 +4905,7 @@
             "LineEndingStyle": "Square",
             "Name": "line1",
             "X": 200,
-            "Y": 10,
+            "Y": -1,
             "Width": 20,
             "Height": 480,
             "Type": "Line",
@@ -4931,7 +4931,7 @@
             "LineEndingStyle": "Square",
             "Name": "line2",
             "X": 420,
-            "Y": 10,
+            "Y": -1,
             "Width": 20,
             "Height": 480,
             "Type": "Line",
@@ -4957,7 +4957,7 @@
             "LineEndingStyle": "Square",
             "Name": "line3",
             "X": 8,
-            "Y": 82,
+            "Y": 71,
             "Width": 632,
             "Height": 20,
             "Type": "Line",
@@ -4981,11 +4981,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId198",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1",
             "X": 0,
-            "Y": 90,
+            "Y": 79,
             "Width": 166,
             "Height": 55,
             "Type": "TextArea",
@@ -5009,11 +5009,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId194",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2",
             "X": 0,
-            "Y": 150,
+            "Y": 139,
             "Width": 166,
             "Height": 55,
             "Type": "TextArea",
@@ -5037,11 +5037,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId190",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3",
             "X": 0,
-            "Y": 210,
+            "Y": 199,
             "Width": 166,
             "Height": 55,
             "Type": "TextArea",
@@ -5065,11 +5065,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId200",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4",
             "X": 0,
-            "Y": 270,
+            "Y": 259,
             "Width": 166,
             "Height": 55,
             "Type": "TextArea",
@@ -5097,7 +5097,7 @@
             },
             "Name": "textIndValueTemp1",
             "X": 250,
-            "Y": 90,
+            "Y": 79,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5125,7 +5125,7 @@
             },
             "Name": "textIndValueTemp2",
             "X": 250,
-            "Y": 150,
+            "Y": 139,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5153,7 +5153,7 @@
             },
             "Name": "textIndValueTemp3",
             "X": 250,
-            "Y": 210,
+            "Y": 199,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5181,7 +5181,7 @@
             },
             "Name": "textIndValueTemp4",
             "X": 250,
-            "Y": 270,
+            "Y": 259,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5209,7 +5209,7 @@
             },
             "Name": "textIndValueCurr1",
             "X": 460,
-            "Y": 90,
+            "Y": 79,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5237,7 +5237,7 @@
             },
             "Name": "textIndValueCurr2",
             "X": 460,
-            "Y": 150,
+            "Y": 139,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5265,7 +5265,7 @@
             },
             "Name": "textIndValueCurr3",
             "X": 460,
-            "Y": 210,
+            "Y": 199,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5293,7 +5293,7 @@
             },
             "Name": "textIndValueCurr4",
             "X": 460,
-            "Y": 270,
+            "Y": 259,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5317,11 +5317,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId259",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5",
             "X": 0,
-            "Y": 330,
+            "Y": 319,
             "Width": 166,
             "Height": 55,
             "Type": "TextArea",
@@ -5349,7 +5349,7 @@
             },
             "Name": "textIndValueTemp5",
             "X": 250,
-            "Y": 330,
+            "Y": 319,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5377,7 +5377,7 @@
             },
             "Name": "textIndValueCurr5",
             "X": 460,
-            "Y": 330,
+            "Y": 319,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5401,11 +5401,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId311",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6",
             "X": 0,
-            "Y": 390,
+            "Y": 379,
             "Width": 166,
             "Height": 55,
             "Type": "TextArea",
@@ -5433,7 +5433,7 @@
             },
             "Name": "textIndValueTemp6",
             "X": 250,
-            "Y": 390,
+            "Y": 379,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5461,7 +5461,7 @@
             },
             "Name": "textIndValueCurr6",
             "X": 460,
-            "Y": 390,
+            "Y": 379,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5485,11 +5485,11 @@
             "Wildcard1": {
               "TextId": "SingleUseId317",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle7",
             "X": 0,
-            "Y": 450,
+            "Y": 439,
             "Width": 166,
             "Height": 55,
             "Type": "TextArea",
@@ -5517,7 +5517,7 @@
             },
             "Name": "textIndValueTemp7",
             "X": 250,
-            "Y": 450,
+            "Y": 439,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5545,7 +5545,7 @@
             },
             "Name": "textIndValueCurr7",
             "X": 460,
-            "Y": 450,
+            "Y": 439,
             "Width": 140,
             "Height": 55,
             "Type": "TextArea",
@@ -5719,7 +5719,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId218",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1sx",
             "X": 0,
@@ -5747,7 +5747,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId220",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2sx",
             "X": 0,
@@ -5775,7 +5775,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId222",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3sx",
             "X": 0,
@@ -5803,7 +5803,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId224",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4sx",
             "X": 0,
@@ -5831,7 +5831,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId226",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle1dx",
             "X": 320,
@@ -5859,7 +5859,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId228",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle2dx",
             "X": 320,
@@ -5887,7 +5887,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId230",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle3dx",
             "X": 320,
@@ -5915,7 +5915,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId232",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle4dx",
             "X": 320,
@@ -6242,7 +6242,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId265",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5sx",
             "X": 0,
@@ -6298,7 +6298,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId269",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle5dx",
             "X": 320,
@@ -6354,7 +6354,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId287",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6sx",
             "X": 0,
@@ -6410,7 +6410,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId291",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle7sx",
             "X": 0,
@@ -6438,7 +6438,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId293",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle8sx",
             "X": 0,
@@ -6522,7 +6522,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId299",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle7dx",
             "X": 320,
@@ -6550,7 +6550,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId301",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle6dx",
             "X": 320,
@@ -6578,7 +6578,7 @@
             "Wildcard1": {
               "TextId": "SingleUseId303",
               "UseBuffer": true,
-              "BufferSize": 7
+              "BufferSize": 12
             },
             "Name": "textIndTitle8dx",
             "X": 320,

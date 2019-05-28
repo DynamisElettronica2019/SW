@@ -167,22 +167,22 @@ void SETTINGSView::moveSelectedBox()
 	boxIndSelected.invalidate();
 	switch (box_indicator){
 		case 0 :
-			boxIndSelected.setPosition(0, 0, 166, 101);
+			boxIndSelected.setPosition(0, 1, 166, 101);
 			break;
 		case 1 :
-			boxIndSelected.setPosition(474, 0, 166, 101);
+			boxIndSelected.setPosition(474, 1, 166, 101);
 			break;
 		case 2 :
-			boxIndSelected.setPosition(0, 379, 166, 101);
+			boxIndSelected.setPosition(0, 371, 166, 101);
 			break;
 		case 3 :
-			boxIndSelected.setPosition(158, 379, 166, 101);
+			boxIndSelected.setPosition(158, 371, 166, 101);
 			break;
 		case 4 :
-			boxIndSelected.setPosition(316, 379, 166, 101);
+			boxIndSelected.setPosition(316, 371, 166, 101);
 			break;
 		case 5 :
-			boxIndSelected.setPosition(474, 379, 166, 101);
+			boxIndSelected.setPosition(474, 371, 166, 101);
 			break;
 	}
 	boxIndSelected.setVisible(true);

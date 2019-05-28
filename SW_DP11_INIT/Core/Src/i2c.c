@@ -689,10 +689,8 @@ void I2C_getPointers(void){
 		I2C_save_endPointers();
 		I2C_save_autPointers();
 		I2C_save_skiPointers();
-		Indicators[GEAR].intValore = 3;
 	}
 	else{
-		Indicators[GEAR].intValore = 4;
 		I2C_get_endPointers();
 		I2C_get_accPointers();
 		I2C_get_autPointers();

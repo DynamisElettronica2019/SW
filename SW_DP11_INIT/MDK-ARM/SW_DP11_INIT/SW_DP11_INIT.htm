@@ -3,9 +3,9 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon May 27 19:49:14 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue May 28 20:05:41 2019
 <BR><P>
-<H3>Maximum Stack Usage =       1408 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =       1528 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 <P>
@@ -1399,9 +1399,9 @@ Global Symbols
 
 <P><STRONG><a name="[47c]"></a>__rt_lib_shutdown_cpp_2</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, cpp_final.o(.text), UNUSED)
 
-<P><STRONG><a name="[47d]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
+<P><STRONG><a name="[47d]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[47e]"></a>__decompress0</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, __dczerorl.o(.text), UNUSED)
+<P><STRONG><a name="[47e]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[27]"></a>ADC_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.ADC_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = ADC_IRQHandler &rArr; HAL_ADC_IRQHandler &rArr; HAL_ADC_ConvCpltCallback &rArr; dSensors_CLUTCH &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
@@ -1492,7 +1492,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[204]"></a>CAN_receive</STRONG> (Thumb, 680 bytes, Stack size 40 bytes, can.o(i.CAN_receive))
+<P><STRONG><a name="[204]"></a>CAN_receive</STRONG> (Thumb, 722 bytes, Stack size 40 bytes, can.o(i.CAN_receive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = CAN_receive &rArr; dEfiSense_calculateVoltage &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_setGear
@@ -2038,8 +2038,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_DMA_Init &rArr; DMA_CheckFifoParam
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
 <LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
+<LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
 </UL>
 <BR>[Called By]<UL><LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 </UL>
@@ -2163,12 +2163,12 @@ Global Symbols
 <LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_CLUTLoading_Abort
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_Abort
-<LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 <LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
 <LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnTXISFlagUntilTimeout
 <LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnSTOPFlagUntilTimeout
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 <LI><a href="#[2c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_IsAcknowledgeFailed
+<LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 <LI><a href="#[2f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFifoStateUntilTimeout
 <LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Abort
@@ -2234,10 +2234,10 @@ Global Symbols
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 <LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_TransferConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_controller_1_ON
+<BR>[Called By]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_controller_1_ON
 <LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_controller_0_ON
 <LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_brightness_max
+<LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
 </UL>
 
 <P><STRONG><a name="[25b]"></a>HAL_I2C_Mem_Read</STRONG> (Thumb, 358 bytes, Stack size 64 bytes, stm32f7xx_hal_i2c.o(i.HAL_I2C_Mem_Read))
@@ -2494,11 +2494,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[27a]"></a>HAL_QSPI_Abort</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, stm32f7xx_hal_qspi.o(i.HAL_QSPI_Abort))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_QSPI_Abort &rArr; HAL_DMA_Abort
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_QSPI_Abort &rArr; QSPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 <LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
+<LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Transmit
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Receive
@@ -2620,7 +2620,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[28b]"></a>HAL_QSPI_Receive</STRONG> (Thumb, 194 bytes, Stack size 40 bytes, stm32f7xx_hal_qspi.o(i.HAL_QSPI_Receive))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_QSPI_Receive &rArr; HAL_QSPI_Abort &rArr; HAL_DMA_Abort
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_QSPI_Receive &rArr; HAL_QSPI_Abort &rArr; QSPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
@@ -2642,7 +2642,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[28c]"></a>HAL_QSPI_Transmit</STRONG> (Thumb, 186 bytes, Stack size 40 bytes, stm32f7xx_hal_qspi.o(i.HAL_QSPI_Transmit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_QSPI_Transmit &rArr; HAL_QSPI_Abort &rArr; HAL_DMA_Abort
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_QSPI_Transmit &rArr; HAL_QSPI_Abort &rArr; QSPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
@@ -2851,12 +2851,12 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; TIM_callback &rArr; TIM_tractionRpm_send &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
-<LI><a href="#[2ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_BreakCallback
 <LI><a href="#[2ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
 <LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
 <LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
 <LI><a href="#[2a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
 <LI><a href="#[2ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutationCallback
+<LI><a href="#[2ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_BreakCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM8_BRK_TIM12_IRQHandler
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM7_IRQHandler
@@ -2879,14 +2879,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2af]"></a>HAL_TIM_PWM_ConfigChannel</STRONG> (Thumb, 296 bytes, Stack size 16 bytes, stm32f7xx_hal_tim_ex.o(i.HAL_TIM_PWM_ConfigChannel))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC4_SetConfig
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC6_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
+<BR>[Calls]<UL><LI><a href="#[2b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC6_SetConfig
+<LI><a href="#[2b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC5_SetConfig
+<LI><a href="#[2b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
 <LI><a href="#[2b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC3_SetConfig
 <LI><a href="#[2b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
 <LI><a href="#[2b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
-<LI><a href="#[2b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC6_SetConfig
-<LI><a href="#[2b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC5_SetConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 <LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM12_Init
@@ -2982,8 +2982,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
 </UL>
 
-<P><STRONG><a name="[2cd]"></a>I2C_getPointers</STRONG> (Thumb, 166 bytes, Stack size 48 bytes, i2c.o(i.I2C_getPointers))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = I2C_getPointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
+<P><STRONG><a name="[2cd]"></a>I2C_getPointers</STRONG> (Thumb, 150 bytes, Stack size 40 bytes, i2c.o(i.I2C_getPointers))
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = I2C_getPointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[25b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
@@ -3052,7 +3052,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2da]"></a>I2C_rpm_update</STRONG> (Thumb, 430 bytes, Stack size 32 bytes, i2c.o(i.I2C_rpm_update))
+<P><STRONG><a name="[2da]"></a>I2C_rpm_update</STRONG> (Thumb, 432 bytes, Stack size 32 bytes, i2c.o(i.I2C_rpm_update))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = I2C_rpm_update &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
@@ -3077,8 +3077,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
-<LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
 <P><STRONG><a name="[2d6]"></a>I2C_save_autPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_autPointers))
@@ -3087,8 +3087,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
-<LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
 <P><STRONG><a name="[2d2]"></a>I2C_save_defPointers</STRONG> (Thumb, 84 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_defPointers))
@@ -3106,8 +3106,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
-<LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
 <P><STRONG><a name="[2d7]"></a>I2C_save_skiPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_skiPointers))
@@ -3116,11 +3116,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
-<LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
-<P><STRONG><a name="[206]"></a>I2C_setRPM</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, i2c.o(i.I2C_setRPM))
+<P><STRONG><a name="[206]"></a>I2C_setRPM</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, i2c.o(i.I2C_setRPM))
 <BR><BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
@@ -3175,13 +3175,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2e1]"></a>MX_FREERTOS_Init</STRONG> (Thumb, 1702 bytes, Stack size 1248 bytes, freertos.o(i.MX_FREERTOS_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[2e1]"></a>MX_FREERTOS_Init</STRONG> (Thumb, 1798 bytes, Stack size 1368 bytes, freertos.o(i.MX_FREERTOS_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 1528<LI>Call Chain = MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
-<LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<BR>[Calls]<UL><LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[2e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
 <LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
 <LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
@@ -3773,7 +3773,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 </UL>
-<P><STRONG><a name="[e9]"></a>SKIDPADView::refreshSkidpad()</STRONG> (Thumb, 836 bytes, Stack size 40 bytes, skidpadview.o(i._ZN11SKIDPADView14refreshSkidpadEv))
+<P><STRONG><a name="[e9]"></a>SKIDPADView::refreshSkidpad()</STRONG> (Thumb, 794 bytes, Stack size 40 bytes, skidpadview.o(i._ZN11SKIDPADView14refreshSkidpadEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = SKIDPADView::refreshSkidpad() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -3913,7 +3913,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 </UL>
-<P><STRONG><a name="[fb]"></a>SETTINGSView::displaySkidpad()</STRONG> (Thumb, 666 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView14displaySkidpadEv))
+<P><STRONG><a name="[fb]"></a>SETTINGSView::displaySkidpad()</STRONG> (Thumb, 624 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView14displaySkidpadEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 608<LI>Call Chain = SETTINGSView::displaySkidpad() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -3938,23 +3938,23 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 </UL>
 <P><STRONG><a name="[f4]"></a>SETTINGSView::refreshSettings()</STRONG> (Thumb, 324 bytes, Stack size 16 bytes, settingsview.o(i._ZN12SETTINGSView15refreshSettingsEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = SETTINGSView::refreshSettings() &rArr; SETTINGSView::displayAcceleration() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = SETTINGSView::refreshSettings() &rArr; SETTINGSView::displaySkidpad() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
 <LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
 <LI><a href="#[321]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::changeDisplay()
+<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::setPosition(short, short, short, short)
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::moveSelectedBox()
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::changeDisplay()
-<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::setPosition(short, short, short, short)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 </UL>
-<P><STRONG><a name="[fa]"></a>SETTINGSView::displayAutocross()</STRONG> (Thumb, 666 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView16displayAutocrossEv))
+<P><STRONG><a name="[fa]"></a>SETTINGSView::displayAutocross()</STRONG> (Thumb, 624 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView16displayAutocrossEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 608<LI>Call Chain = SETTINGSView::displayAutocross() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -3965,7 +3965,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 </UL>
-<P><STRONG><a name="[f9]"></a>SETTINGSView::displayEndurance()</STRONG> (Thumb, 666 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView16displayEnduranceEv))
+<P><STRONG><a name="[f9]"></a>SETTINGSView::displayEndurance()</STRONG> (Thumb, 624 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView16displayEnduranceEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 608<LI>Call Chain = SETTINGSView::displayEndurance() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -3991,7 +3991,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 </UL>
-<P><STRONG><a name="[f8]"></a>SETTINGSView::displayAcceleration()</STRONG> (Thumb, 666 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView19displayAccelerationEv))
+<P><STRONG><a name="[f8]"></a>SETTINGSView::displayAcceleration()</STRONG> (Thumb, 624 bytes, Stack size 48 bytes, settingsview.o(i._ZN12SETTINGSView19displayAccelerationEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 608<LI>Call Chain = SETTINGSView::displayAcceleration() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -4027,7 +4027,7 @@ Global Symbols
 <P><STRONG><a name="[fe]"></a>AUTOCROSSView::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, autocrossview.o(i._ZN13AUTOCROSSView14tearDownScreenEv))
 <BR>[Address Reference Count : 1]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 </UL>
-<P><STRONG><a name="[ff]"></a>AUTOCROSSView::refreshAutocross()</STRONG> (Thumb, 856 bytes, Stack size 40 bytes, autocrossview.o(i._ZN13AUTOCROSSView16refreshAutocrossEv))
+<P><STRONG><a name="[ff]"></a>AUTOCROSSView::refreshAutocross()</STRONG> (Thumb, 812 bytes, Stack size 40 bytes, autocrossview.o(i._ZN13AUTOCROSSView16refreshAutocrossEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = AUTOCROSSView::refreshAutocross() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4099,7 +4099,7 @@ Global Symbols
 <P><STRONG><a name="[105]"></a>ENDURANCEView::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, enduranceview.o(i._ZN13ENDURANCEView14tearDownScreenEv))
 <BR>[Address Reference Count : 1]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 </UL>
-<P><STRONG><a name="[106]"></a>ENDURANCEView::refreshEndurance()</STRONG> (Thumb, 852 bytes, Stack size 40 bytes, enduranceview.o(i._ZN13ENDURANCEView16refreshEnduranceEv))
+<P><STRONG><a name="[106]"></a>ENDURANCEView::refreshEndurance()</STRONG> (Thumb, 810 bytes, Stack size 40 bytes, enduranceview.o(i._ZN13ENDURANCEView16refreshEnduranceEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = ENDURANCEView::refreshEndurance() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4169,7 +4169,7 @@ Global Symbols
 <P><STRONG><a name="[10b]"></a>DEBUG_MODEView::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView14tearDownScreenEv))
 <BR>[Address Reference Count : 1]<UL><LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 </UL>
-<P><STRONG><a name="[10c]"></a>DEBUG_MODEView::refreshDebugMode()</STRONG> (Thumb, 1816 bytes, Stack size 80 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView16refreshDebugModeEv))
+<P><STRONG><a name="[10c]"></a>DEBUG_MODEView::refreshDebugMode()</STRONG> (Thumb, 1670 bytes, Stack size 80 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView16refreshDebugModeEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 640<LI>Call Chain = DEBUG_MODEView::refreshDebugMode() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4237,7 +4237,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 </UL>
-<P><STRONG><a name="[111]"></a>BOARD_DEBUGView::refreshBoardDebug()</STRONG> (Thumb, 852 bytes, Stack size 48 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView17refreshBoardDebugEv))
+<P><STRONG><a name="[111]"></a>BOARD_DEBUGView::refreshBoardDebug()</STRONG> (Thumb, 770 bytes, Stack size 48 bytes, board_debugview.o(i._ZN15BOARD_DEBUGView17refreshBoardDebugEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 472<LI>Call Chain = BOARD_DEBUGView::refreshBoardDebug() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4378,7 +4378,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 </UL>
-<P><STRONG><a name="[11a]"></a>ACCELERATIONView::refreshAcceleration()</STRONG> (Thumb, 982 bytes, Stack size 40 bytes, accelerationview.o(i._ZN16ACCELERATIONView19refreshAccelerationEv))
+<P><STRONG><a name="[11a]"></a>ACCELERATIONView::refreshAcceleration()</STRONG> (Thumb, 910 bytes, Stack size 40 bytes, accelerationview.o(i._ZN16ACCELERATIONView19refreshAccelerationEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = ACCELERATIONView::refreshAcceleration() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4414,7 +4414,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 </UL>
-<P><STRONG><a name="[337]"></a>SETTINGSViewBase::SETTINGSViewBase()</STRONG> (Thumb, 2502 bytes, Stack size 128 bytes, settingsviewbase.o(i._ZN16SETTINGSViewBaseC1Ev))
+<P><STRONG><a name="[337]"></a>SETTINGSViewBase::SETTINGSViewBase()</STRONG> (Thumb, 2496 bytes, Stack size 128 bytes, settingsviewbase.o(i._ZN16SETTINGSViewBaseC1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 552<LI>Call Chain = SETTINGSViewBase::SETTINGSViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -4679,7 +4679,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 </UL>
-<P><STRONG><a name="[33f]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()</STRONG> (Thumb, 2916 bytes, Stack size 160 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev))
+<P><STRONG><a name="[33f]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()</STRONG> (Thumb, 2918 bytes, Stack size 160 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 584<LI>Call Chain = BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -4853,9 +4853,9 @@ Global Symbols
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
 <P><STRONG><a name="[335]"></a>FrontendApplicationBase::gotoScreen1ScreenNoTransition()</STRONG> (Thumb, 36 bytes, Stack size 32 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase29gotoScreen1ScreenNoTransitionEv))
@@ -4891,10 +4891,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
 <P><STRONG><a name="[329]"></a>FrontendApplicationBase::gotoENDURANCEScreenNoTransition()</STRONG> (Thumb, 36 bytes, Stack size 32 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase31gotoENDURANCEScreenNoTransitionEv))
@@ -4907,9 +4907,9 @@ Global Symbols
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
 <P><STRONG><a name="[328]"></a>FrontendApplicationBase::gotoDEBUG_MODEScreenNoTransition()</STRONG> (Thumb, 36 bytes, Stack size 32 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase32gotoDEBUG_MODEScreenNoTransitionEv))
@@ -4921,10 +4921,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
 <P><STRONG><a name="[327]"></a>FrontendApplicationBase::gotoBOARD_DEBUGScreenNoTransition()</STRONG> (Thumb, 36 bytes, Stack size 32 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase33gotoBOARD_DEBUGScreenNoTransitionEv))
@@ -4936,10 +4936,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
 <P><STRONG><a name="[ad]"></a>FrontendApplicationBase::gotoSKIDPADScreenNoTransitionImpl()</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase33gotoSKIDPADScreenNoTransitionImplEv))
@@ -4965,10 +4965,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
 <P><STRONG><a name="[ae]"></a>FrontendApplicationBase::gotoSETTINGSScreenNoTransitionImpl()</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase34gotoSETTINGSScreenNoTransitionImplEv))
@@ -5145,11 +5145,11 @@ Global Symbols
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidateRect(touchgfx::Rect&) const
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
 <P><STRONG><a name="[149]"></a>touchgfx::Application::handleKeyEvent(unsigned char)</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx11Application14handleKeyEventEh))
@@ -6601,8 +6601,8 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -6617,8 +6617,8 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[ee]"></a>touchgfx::Screen::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, screen1view.o(i._ZN8touchgfx6Screen14tearDownScreenEv))
 <BR>[Address Reference Count : 10]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6632,8 +6632,8 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -6657,8 +6657,8 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -6676,8 +6676,8 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -6704,8 +6704,8 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -6727,8 +6727,8 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -6766,8 +6766,8 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
-<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
+<LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7035,12 +7035,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
 </UL>
 
 <P><STRONG><a name="[3f8]"></a>touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*)</STRONG> (Thumb, 52 bytes, Stack size 144 bytes, unicode.o(i._ZN8touchgfx7Unicode14snprintfFloatsEPttPKcPKf))
@@ -7113,13 +7113,13 @@ Global Symbols
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[400]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list)
 <LI><a href="#[3ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::utoa(unsigned, unsigned short*, unsigned short, int)
 <LI><a href="#[3fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int)
@@ -7139,16 +7139,16 @@ Global Symbols
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displaySkidpad()
 <LI><a href="#[33b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAutocross()
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
 </UL>
 
 <P><STRONG><a name="[400]"></a>touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list)</STRONG> (Thumb, 52 bytes, Stack size 144 bytes, unicode.o(i._ZN8touchgfx7Unicode9vsnprintfEPttPKcSt9__va_list))
@@ -7191,20 +7191,20 @@ Global Symbols
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::moveSelectedBox()
 <LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
 <LI><a href="#[33b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
 <LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::moveSelectedBox()
 </UL>
 <BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7244,8 +7244,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7257,8 +7257,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7270,8 +7270,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7283,8 +7283,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7304,8 +7304,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7317,8 +7317,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7338,8 +7338,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7351,8 +7351,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -7364,8 +7364,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -8081,20 +8081,20 @@ Global Symbols
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::screenCheckMessage()
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::screenEntryPopup()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::moveSelectedBox()
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::changeDisplay()
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::screenEntryPopup()
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::screenEntryPopup()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::moveSelectedBox()
 </UL>
 <BR>[Address Reference Count : 9]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8109,8 +8109,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -8127,8 +8127,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -8153,8 +8153,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
+<LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
@@ -8386,16 +8386,16 @@ Global Symbols
 <P><STRONG><a name="[a0]"></a>accelerationModeTask</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, freertos.o(i.accelerationModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = accelerationModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a1]"></a>autocrossModeTask</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, freertos.o(i.autocrossModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = autocrossModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8403,61 +8403,61 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = aux1ButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a8]"></a>aux1Task</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.aux1Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux1Task &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[9c]"></a>aux2ButtonTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.aux2ButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux2ButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a9]"></a>aux2Task</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.aux2Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux2Task &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[9d]"></a>aux3ButtonTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.aux3ButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux3ButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a6]"></a>boardDebugModeTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.boardDebugModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = boardDebugModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[91]"></a>canTask</STRONG> (Thumb, 62 bytes, Stack size 40 bytes, freertos.o(i.canTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = canTask &rArr; CAN_receive &rArr; dEfiSense_calculateVoltage &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
+<BR>[Calls]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
-<P><STRONG><a name="[209]"></a>dEfiSense_calculateOilInTemperature</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateOilInTemperature))
+<P><STRONG><a name="[209]"></a>dEfiSense_calculateOilInTemperature</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateOilInTemperature))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = dEfiSense_calculateOilInTemperature &rArr; __aeabi_i2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -8475,7 +8475,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[20f]"></a>dEfiSense_calculatePressure</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculatePressure))
+<P><STRONG><a name="[20f]"></a>dEfiSense_calculatePressure</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculatePressure))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = dEfiSense_calculatePressure &rArr; __aeabi_ui2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
@@ -8485,7 +8485,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[20e]"></a>dEfiSense_calculateSlip</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateSlip))
+<P><STRONG><a name="[20e]"></a>dEfiSense_calculateSlip</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateSlip))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = dEfiSense_calculateSlip &rArr; __aeabi_i2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -8495,7 +8495,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[20d]"></a>dEfiSense_calculateSpeed</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateSpeed))
+<P><STRONG><a name="[20d]"></a>dEfiSense_calculateSpeed</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = dEfiSense_calculateSpeed &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
@@ -8505,11 +8505,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[207]"></a>dEfiSense_calculateTPS</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, d_efisense.o(i.dEfiSense_calculateTPS))
+<P><STRONG><a name="[207]"></a>dEfiSense_calculateTPS</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, d_efisense.o(i.dEfiSense_calculateTPS))
 <BR><BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[20b]"></a>dEfiSense_calculateTemperature</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, d_efisense.o(i.dEfiSense_calculateTemperature))
+<P><STRONG><a name="[20b]"></a>dEfiSense_calculateTemperature</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, d_efisense.o(i.dEfiSense_calculateTemperature))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = dEfiSense_calculateTemperature &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
@@ -8523,7 +8523,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[20c]"></a>dEfiSense_calculateVoltage</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, d_efisense.o(i.dEfiSense_calculateVoltage))
+<P><STRONG><a name="[20c]"></a>dEfiSense_calculateVoltage</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, d_efisense.o(i.dEfiSense_calculateVoltage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = dEfiSense_calculateVoltage &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
@@ -8536,7 +8536,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[208]"></a>dEfiSense_calculateWaterTemperature</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateWaterTemperature))
+<P><STRONG><a name="[208]"></a>dEfiSense_calculateWaterTemperature</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, d_efisense.o(i.dEfiSense_calculateWaterTemperature))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = dEfiSense_calculateWaterTemperature &rArr; __aeabi_i2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -8594,32 +8594,32 @@ Global Symbols
 <P><STRONG><a name="[a7]"></a>debugFreeRTOSTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.debugFreeRTOSTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = debugFreeRTOSTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a5]"></a>debugModeTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.debugModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = debugModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[93]"></a>downShiftTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.downShiftTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = downShiftTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a2]"></a>enduranceModeTask</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, freertos.o(i.enduranceModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = enduranceModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8633,8 +8633,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = ledBlinkTask &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[425]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8642,15 +8642,15 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = leftEncoderTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[427]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;d_traction_control_setValue
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_left_encoder_movement
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[426]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[76]"></a>main</STRONG> (Thumb, 114 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<BR><BR>[Stack]<UL><LI>Max Depth = 1528<LI>Call Chain = main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[428]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelStart
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_HW_Init()
@@ -8688,29 +8688,29 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>mapSelectorTask</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, freertos.o(i.mapSelectorTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = mapSelectorTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_set_engineMap
+<BR>[Calls]<UL><LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_set_engineMap
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[426]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[94]"></a>modeSelectorTask</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, freertos.o(i.modeSelectorTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = modeSelectorTask &rArr; I2C_save_Pointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
-<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_set_driveMode
+<BR>[Calls]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_set_driveMode
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[426]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[2db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[99]"></a>neutralButtonTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.neutralButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = neutralButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8718,8 +8718,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = okButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8819,19 +8819,19 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = rightEncoderTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;d_rpm_limiter_setValue
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_right_encoder_movement
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[426]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[9e]"></a>rpmStripeTask</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, freertos.o(i.rpmStripeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = rpmStripeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8841,25 +8841,25 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_update
 <LI><a href="#[425]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
 <LI><a href="#[424]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Clutch_send
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_read
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a4]"></a>settingsModeTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.settingsModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = settingsModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[a3]"></a>skidpadModeTask</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, freertos.o(i.skidpadModeTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = skidpadModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8867,16 +8867,16 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = startButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[92]"></a>upShiftTask</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, freertos.o(i.upShiftTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = upShiftTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -8995,11 +8995,11 @@ Global Symbols
 <LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 <LI><a href="#[42d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rightEncoderTask
+<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rightEncoderTask
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modeSelectorTask
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mapSelectorTask
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;leftEncoderTask
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 
 <P><STRONG><a name="[445]"></a>vTaskMissedYield</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, tasks.o(i.vTaskMissedYield))
@@ -9090,8 +9090,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 <LI><a href="#[456]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
-<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<BR>[Called By]<UL><LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
 <LI><a href="#[42a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateCountingSemaphore
 <LI><a href="#[365]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::initialize()
 </UL>
@@ -9318,7 +9318,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
 </UL>
 
-<P><STRONG><a name="[35d]"></a>T2* touchgfx::makeTransition&lang;SETTINGSView, SETTINGSPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI12SETTINGSView17SETTINGSPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
+<P><STRONG><a name="[35d]"></a>T2* touchgfx::makeTransition&lang;SETTINGSView, SETTINGSPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI12SETTINGSView17SETTINGSPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 592<LI>Call Chain = T2* touchgfx::makeTransition&lang;SETTINGSView, SETTINGSPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; SETTINGSView::SETTINGSView() &rArr; SETTINGSViewBase::SETTINGSViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)
@@ -9344,7 +9344,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FrontendApplicationBase::gotoAUTOCROSSScreenNoTransitionImpl()
 </UL>
 
-<P><STRONG><a name="[35f]"></a>T2* touchgfx::makeTransition&lang;ENDURANCEView, ENDURANCEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI13ENDURANCEView18ENDURANCEPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
+<P><STRONG><a name="[35f]"></a>T2* touchgfx::makeTransition&lang;ENDURANCEView, ENDURANCEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI13ENDURANCEView18ENDURANCEPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 648<LI>Call Chain = T2* touchgfx::makeTransition&lang;ENDURANCEView, ENDURANCEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; ENDURANCEView::ENDURANCEView() &rArr; ENDURANCEViewBase::ENDURANCEViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)

@@ -11,7 +11,7 @@
 /********************DEFINES********************/
 	 
 #define N_INDICATORS 65 //------------- Da decidere quali indicatori utilizzare
-#define TIT_LEN 7				//------------- Lunghezza massima della stringa va visualizzare come titolo
+#define TIT_LEN 11				//------------- Lunghezza massima della stringa va visualizzare come titolo
 	 
 #define START_BOARD GCU_BOARD	//------------- Inizio indicatori per schermata board debug !!!(messi a caso)!!!
 #define END_BOARD DAU_R_BOARD		//------------- Fine indicatori per schermata board debug		!!!(messi a caso)!!!

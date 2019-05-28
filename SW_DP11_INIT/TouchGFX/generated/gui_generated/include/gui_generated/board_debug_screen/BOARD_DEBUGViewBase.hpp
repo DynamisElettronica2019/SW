@@ -65,13 +65,13 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTINDTITLE1_SIZE = 7;
+    static const uint16_t TEXTINDTITLE1_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle1Buffer[TEXTINDTITLE1_SIZE];
-    static const uint16_t TEXTINDTITLE2_SIZE = 7;
+    static const uint16_t TEXTINDTITLE2_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle2Buffer[TEXTINDTITLE2_SIZE];
-    static const uint16_t TEXTINDTITLE3_SIZE = 7;
+    static const uint16_t TEXTINDTITLE3_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle3Buffer[TEXTINDTITLE3_SIZE];
-    static const uint16_t TEXTINDTITLE4_SIZE = 7;
+    static const uint16_t TEXTINDTITLE4_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle4Buffer[TEXTINDTITLE4_SIZE];
     static const uint16_t TEXTINDVALUETEMP1_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueTemp1Buffer[TEXTINDVALUETEMP1_SIZE];
@@ -89,19 +89,19 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndValueCurr3Buffer[TEXTINDVALUECURR3_SIZE];
     static const uint16_t TEXTINDVALUECURR4_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueCurr4Buffer[TEXTINDVALUECURR4_SIZE];
-    static const uint16_t TEXTINDTITLE5_SIZE = 7;
+    static const uint16_t TEXTINDTITLE5_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle5Buffer[TEXTINDTITLE5_SIZE];
     static const uint16_t TEXTINDVALUETEMP5_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueTemp5Buffer[TEXTINDVALUETEMP5_SIZE];
     static const uint16_t TEXTINDVALUECURR5_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueCurr5Buffer[TEXTINDVALUECURR5_SIZE];
-    static const uint16_t TEXTINDTITLE6_SIZE = 7;
+    static const uint16_t TEXTINDTITLE6_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle6Buffer[TEXTINDTITLE6_SIZE];
     static const uint16_t TEXTINDVALUETEMP6_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueTemp6Buffer[TEXTINDVALUETEMP6_SIZE];
     static const uint16_t TEXTINDVALUECURR6_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueCurr6Buffer[TEXTINDVALUECURR6_SIZE];
-    static const uint16_t TEXTINDTITLE7_SIZE = 7;
+    static const uint16_t TEXTINDTITLE7_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle7Buffer[TEXTINDTITLE7_SIZE];
     static const uint16_t TEXTINDVALUETEMP7_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueTemp7Buffer[TEXTINDVALUETEMP7_SIZE];

@@ -70,17 +70,17 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTINDTITLE1_SIZE = 7;
+    static const uint16_t TEXTINDTITLE1_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle1Buffer[TEXTINDTITLE1_SIZE];
-    static const uint16_t TEXTINDTITLE2_SIZE = 7;
+    static const uint16_t TEXTINDTITLE2_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle2Buffer[TEXTINDTITLE2_SIZE];
-    static const uint16_t TEXTINDTITLE3_SIZE = 7;
+    static const uint16_t TEXTINDTITLE3_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle3Buffer[TEXTINDTITLE3_SIZE];
-    static const uint16_t TEXTINDTITLE4_SIZE = 7;
+    static const uint16_t TEXTINDTITLE4_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle4Buffer[TEXTINDTITLE4_SIZE];
-    static const uint16_t TEXTINDTITLE5_SIZE = 7;
+    static const uint16_t TEXTINDTITLE5_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle5Buffer[TEXTINDTITLE5_SIZE];
-    static const uint16_t TEXTINDTITLE6_SIZE = 7;
+    static const uint16_t TEXTINDTITLE6_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textIndTitle6Buffer[TEXTINDTITLE6_SIZE];
     static const uint16_t TEXTINDVALUE1_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValue1Buffer[TEXTINDVALUE1_SIZE];
