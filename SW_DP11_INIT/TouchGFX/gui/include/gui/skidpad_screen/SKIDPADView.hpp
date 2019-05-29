@@ -18,6 +18,8 @@ public:
 		virtual void checkChangeScreen();
 		virtual void screenEntryPopup();
 protected:
+		touchgfx::Unicode::UnicodeChar Empty[6];
+
 		touchgfx::Unicode::UnicodeChar Title1[TIT_LEN];
 		touchgfx::Unicode::UnicodeChar Title2[TIT_LEN];
 		touchgfx::Unicode::UnicodeChar Title3[TIT_LEN];

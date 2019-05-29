@@ -17,6 +17,8 @@ public:
 		virtual void refreshDebugMode();
 		virtual void checkChangeScreen();
 protected:
+		touchgfx::Unicode::UnicodeChar Empty[6];
+
 		touchgfx::Unicode::UnicodeChar Title1sx[TIT_LEN];
 		touchgfx::Unicode::UnicodeChar Title2sx[TIT_LEN];
 		touchgfx::Unicode::UnicodeChar Title3sx[TIT_LEN];

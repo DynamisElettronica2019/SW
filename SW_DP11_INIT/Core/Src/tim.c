@@ -77,6 +77,8 @@ int timerStartButton = 0;
 int timerRpmStripe = 0;
 int timerDriveMode = 0;
 int timerTractionRpm = 0;
+int timerEfiAlive = 0;
+
 int timer = 0;
 int timer_ok_button = 0;
 
@@ -384,6 +386,7 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerRpmStripe = timerRpmStripe + 1;
 		timerDriveMode = timerDriveMode + 1;
 		timerTractionRpm = timerTractionRpm + 1;
+		timerEfiAlive = timerEfiAlive + 1;
 	
 		if (  timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
@@ -411,6 +414,10 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			timerTractionRpm = 0;
 		}
 		
+		if ( timerEfiAlive >= EFI_DEAD_TIME ){
+			 data_efiOff();
+			 timerEfiAlive = 0;
+		}
 		if ( timerDriveMode >= DRIVE_MODE_TIME ){
 			switch ( driveMode ){
 				case SETTINGS_MODE	:

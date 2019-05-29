@@ -91,33 +91,16 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
-Indicator_Value Indicators[N_INDICATORS];	//---- Deve essere inserita una funzione dove si inizializza il vettore di indicatori
-
-int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
-int box_driveMode;
-int box_indicator;
-
-extern char driveMode, engineMap;
-extern char leftPosition, rightPosition;
-extern int state;
+char driveMode, engineMap;
+char leftPosition, rightPosition;
+int state;
 
 int timerClutch = 0;
 int timerTempCurr = 0;
 
-int debug_mode_scroll_sx;
-int debug_mode_scroll_dx;
-int board_debug_scroll;
-int pointer_scroll;
-int change_pointer;
-
-int commandSent = 0;
-
 extern BaseType_t xHigherPriorityTaskWoken;
 
-int i = 0;
-
-//Indicator_Pointer EndPointer, AccPointer, AutPointer, SkiPointer;
-uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
+extern Indicator_Value Indicators[N_INDICATORS];
 
 
 /* USER CODE END Variables */
@@ -503,82 +486,6 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
 	
-  Indicators[TH2O] 							= (Indicator_Value) {TH2O, INT, "TH2O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};	
-	Indicators[OIL_PRESS] 				= (Indicator_Value) {OIL_PRESS, FLOAT, "POIL", DEF_VALUE,DEF_VALUE , DEF_VALUE,"?"};
-	Indicators[TPS] 							= (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[VBAT] 							= (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[RPM] 							= (Indicator_Value) {RPM, INT, "RPM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};	
-	Indicators[TRACTION_CONTROL] 	= (Indicator_Value) {TRACTION_CONTROL, INT,"TC", 6, 0, 0,"?"};	
-  Indicators[GEAR] 							= (Indicator_Value) {GEAR, INT,"GEAR", 0, 0, 0,""};	
-	Indicators[CLUTCH_POSITION] 	= (Indicator_Value) {CLUTCH_POSITION, FLOAT, "CL_POS", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[OIL_TEMP_IN] 			= (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[OIL_TEMP_OUT] 			= (Indicator_Value) {OIL_TEMP_OUT, FLOAT,"TOIL_O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[CLUTCH_FEEDBACK]	 	= (Indicator_Value) {CLUTCH_FEEDBACK, FLOAT, "CL_FB", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  
-	Indicators[ACQ] 							= (Indicator_Value) {ACQ, INT, "ACQ", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};							//ok
-//  Indicators[TH2O_SX_IN] 				= (Indicator_Value) {TH2O_SX_IN, INT, "TH_SX_I", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		//-----
-//  Indicators[TH2O_SX_OUT] 			= (Indicator_Value) {TH2O_SX_OUT, INT, "TH_SX_O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		//-----
-//  Indicators[TH2O_DX_IN] 				= (Indicator_Value) {TH2O_DX_IN, INT, "TH_DX_I", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		//-----
-//  Indicators[TH2O_DX_OUT] 			= (Indicator_Value) {TH2O_DX_OUT, INT, "TH_DX_O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		//-----
-  Indicators[EFI_SLIP] 					= (Indicator_Value) {EFI_SLIP, INT, "EFI_SL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};			// ok
-
-//  Indicators[LAUNCH_CONTROL]		= (Indicator_Value) {LAUNCH_CONTROL, INT, "LA_CON", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-//  Indicators[RPM_LIM] 					= (Indicator_Value) {RPM_LIM, INT, "RPM_L", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[FUEL_LEVEL] 				= (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[FUEL_PRESS] 				= (Indicator_Value) {FUEL_PRESS, INT, "FU_PR", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  //Indicators[MAP] 							= (Indicator_Value) {MAP, INT, "MAP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-/*
-  Indicators[TH2O_ENGINE]				= (Indicator_Value) {TH2O_ENGINE, INT, "TH_EN", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[VH_SPEED]					= (Indicator_Value) {VH_SPEED, INT, "VH_SP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[PH2O] 							= (Indicator_Value) {PH2O, INT, "PH2O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[EFI_SLIP_TARGET]		= (Indicator_Value) {EFI_SLIP_TARGET, INT, "E_SL_T", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[MAN_LIM_ACT]				= (Indicator_Value) {MAN_LIM_ACT, INT, "M_L_A", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[FAN] 							= (Indicator_Value) {FAN, INT, "FAN", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[H2OPUMP_DC] 				= (Indicator_Value) {H2OPUMP_DC, INT, "H20_DC", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[PIT_LANE_ACT]			= (Indicator_Value) {PIT_LANE_ACT, INT, "PT_L_A", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[FLAG_SMOT]					= (Indicator_Value) {FLAG_SMOT, INT, "FL_SM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[LAMBDA]						= (Indicator_Value) {LAMBDA, INT, "LAMBDA", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[T_SCARICO_1] 			= (Indicator_Value) {T_SCARICO_1, INT, "T_SC_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[T_SCARICO_2] 			= (Indicator_Value) {T_SCARICO_2, INT, "T_SC_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  //Indicators[DRIVE_MODE]				= (Indicator_Value) {DRIVE_MODE, INT, "DR_MODE", 0, 0, 0,"?"};
-	
-*/	
-	Indicators[GCU_BOARD] 				= (Indicator_Value) {GCU_BOARD, FLOAT, "GCU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[SW_BOARD] 					= (Indicator_Value) {SW_BOARD, FLOAT, "SW", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[DCU_BOARD] 				= (Indicator_Value) {DCU_BOARD, FLOAT, "DCU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[XBEE] 							= (Indicator_Value) {XBEE, FLOAT, "XBEE", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[DAU_FL_BOARD] 			= (Indicator_Value) {DAU_FL_BOARD, FLOAT, "DAU_FL", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[DAU_FR_BOARD] 			= (Indicator_Value) {DAU_FR_BOARD, FLOAT, "DAU_FR", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
-	Indicators[DAU_R_BOARD] 			= (Indicator_Value) {DAU_R_BOARD, FLOAT, "DAU_R", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
-  
-/*	
-  Indicators[FUEL_PUMP] 				= (Indicator_Value) {FUEL_PUMP, INT, "FUEL_PU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[H2O_PUMP] 					= (Indicator_Value) {H2O_PUMP, INT, "H20_PU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[H2O_FAN_DX] 				= (Indicator_Value) {H2O_FAN_DX, INT, "H2O_F_D", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[H2O_FAN_SX] 				= (Indicator_Value) {H2O_FAN_SX, INT, "H2O_F_S", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[CLUTCH_CURR]				= (Indicator_Value) {CLUTCH_CURR, INT, "CLUT_CU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[GEAR_CURR] 				= (Indicator_Value) {GEAR_CURR, INT, "GEAR_CU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[DCU_3V3] 					= (Indicator_Value) {DCU_3V3, INT, "3V3", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[DCU_5V] 						= (Indicator_Value) {DCU_5V, INT, "5V", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[DCU_12V] 					= (Indicator_Value) {DCU_12V, INT, "12V", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[ACC_X_1] 					= (Indicator_Value) {ACC_X_1, INT, "ACC_X_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[ACC_Y_1] 					= (Indicator_Value) {ACC_Y_1, INT, "ACC_Y_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[ACC_Z_1] 					= (Indicator_Value) {ACC_Z_1, INT, "ACC_Z_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[GYR_X_1] 					= (Indicator_Value) {GYR_X_1, INT, "GYR_X_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[GYR_Y_1] 					= (Indicator_Value) {GYR_Y_1, INT, "GYR_Y_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[GYR_Z_1] 					= (Indicator_Value) {GYR_Z_1, INT, "GYR_Z_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[HEAD_1] 						= (Indicator_Value) {HEAD_1, INT, "HEAD_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[ACC_X_2] 					= (Indicator_Value) {ACC_X_2, INT, "ACC_X_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[ACC_Y_2] 					= (Indicator_Value) {ACC_Y_2, INT, "ACC_Y_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[ACC_Z_2] 					= (Indicator_Value) {ACC_Z_2, INT, "ACC_Z_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[GYR_X_2] 					= (Indicator_Value) {GYR_X_2, INT, "GYR_X_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[GYR_Y_2] 					= (Indicator_Value) {GYR_Y_2, INT, "GYR_Y_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[GYR_Z_2] 					= (Indicator_Value) {GYR_Z_2, INT, "GYR_Z_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[HEAD_2] 						= (Indicator_Value) {HEAD_2, INT, "HEAD_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-*/	
-	//Indicators[MAP] = (Indicator_Value) {MAP, INT, "MAP", 0, 0, 0,"?"};
-
-
   /* USER CODE END RTOS_QUEUES */
 }
 
@@ -724,7 +631,7 @@ void modeSelectorTask(void const * argument)
 		xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		old_driveMode = driveMode;
-		GPIO_encoders_set_driveMode();
+		GPIO_driveMode_set();
 		if (old_driveMode == SETTINGS_MODE)
 		{
 			// save settings on eeprom
@@ -776,7 +683,7 @@ void mapSelectorTask(void const * argument)
 		xSemaphoreTake(mapSelectorSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		
-		GPIO_encoders_set_engineMap();
+		GPIO_engineMap_set();
 		
 		//invio su can della mappa - polling ? appena si accende efi ? 
 		
@@ -799,11 +706,9 @@ void leftEncoderTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		// comunque non è meglio avere delle funzioni che contengono cosa bisogna fare in ogni modalità se si
-		// gira l'encoder ? Così evitiamo di avere una task mega lunga
 		xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
-		movement = GPIO_encoders_left_encoder_movement();
+		movement = GPIO_leftEncoder_movement();
 		leftPosition = leftPosition + movement; 
 		//Indicators[MAP].intValore = leftPosition;
 		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
@@ -818,49 +723,13 @@ void leftEncoderTask(void const * argument)
 				d_traction_control_setValue(movement);
 				break;
 			case BOARD_DEBUG_MODE:
-				if (movement == 1)
-					board_debug_scroll = board_debug_scroll + 1;
-				if (movement == -1)
-					board_debug_scroll = board_debug_scroll - 1;
-				if (board_debug_scroll > END_BOARD - 6)
-					board_debug_scroll = END_BOARD - 6;
-				if (board_debug_scroll < START_BOARD)
-					board_debug_scroll = START_BOARD;
+				GPIO_leftEncoder_boardDebugMode(movement);
+				break;		
+			case DEBUG_MODE:
+			  GPIO_leftEncoder_debugMode(movement);
 				break;
 			case SETTINGS_MODE:
-				switch (schermata_settings){
-				case 0: 
-							if (movement == 1)
-								box_driveMode = box_driveMode + 1;
-							if (movement == -1)
-								box_driveMode = box_driveMode - 1;
-							if (box_driveMode >= 4 )
-								box_driveMode = 0;
-							if (box_driveMode <= -1 )
-								box_driveMode = 3;
-							break;
-				case 1:
-							pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
-							if (movement == 1)
-								box_indicator = box_indicator + 1;
-							if (movement == -1)
-								box_indicator = box_indicator - 1;
-							if (box_indicator >= 6)
-								box_indicator = 0;
-							if (box_indicator <= -1)
-								box_indicator = 5;
-						break;
-				}
-			case DEBUG_MODE:
-					// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE
-				if (movement == 1)
-						debug_mode_scroll_sx = debug_mode_scroll_sx + 1;
-				if (movement == -1)
-						debug_mode_scroll_sx = debug_mode_scroll_sx - 1;
-				if (debug_mode_scroll_sx < N_DEBUG_MODE_VALUES )
-					debug_mode_scroll_sx = N_DEBUG_MODE_VALUES - 1;
-				if (debug_mode_scroll_sx >= N_INDICATORS)
-					debug_mode_scroll_sx = N_INDICATORS - 1;
+				GPIO_leftEncoder_settingsMode(movement);
 				break;
 			default: 
 				break;
@@ -886,7 +755,7 @@ void rightEncoderTask(void const * argument)
   {
 		xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
-		movement = GPIO_encoders_right_encoder_movement();
+		movement = GPIO_rightEncoder_movement();
 	  rightPosition = rightPosition + movement;
 		Indicators[MAP].intValore = rightPosition;
 		
@@ -897,54 +766,16 @@ void rightEncoderTask(void const * argument)
 				d_rpm_limiter_setValue(movement);
 				break;
 			case BOARD_DEBUG_MODE:
-				// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
-				if (movement == 1)
-					board_debug_scroll = board_debug_scroll + 1;
-				if (movement == -1)
-					board_debug_scroll = board_debug_scroll - 1;
-				if (board_debug_scroll > END_BOARD - 6)
-					board_debug_scroll = END_BOARD - 6;
-				if (board_debug_scroll < START_BOARD)
-					board_debug_scroll = START_BOARD;
+				GPIO_rightEncoder_boardDebugMode(movement);
 				break;
 			case DEBUG_MODE:
-				// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
-				if (movement == 1)
-						debug_mode_scroll_dx = debug_mode_scroll_dx + 1;
-				if (movement == -1)
-						debug_mode_scroll_dx = debug_mode_scroll_dx - 1;
-				if (debug_mode_scroll_dx < N_DEBUG_MODE_VALUES )
-					debug_mode_scroll_dx = N_DEBUG_MODE_VALUES - 1;
-				if (debug_mode_scroll_dx >= N_INDICATORS)
-					debug_mode_scroll_dx = N_INDICATORS - 1;
+				GPIO_rightEncoder_debugMode(movement);
 				break;
 			case SETTINGS_MODE:
-				// scorri le finestrelle
-			switch (schermata_settings){
-				case 0: 
-							if (movement == 1)
-								box_driveMode = box_driveMode + 1;
-							if (movement == -1)
-								box_driveMode = box_driveMode - 1;
-							if (box_driveMode >= 4 )
-								box_driveMode = 0;
-							if (box_driveMode <= -1 )
-								box_driveMode = 3;
-							break;
-				case 1:
-				change_pointer = 1; 
-				if (movement == 1)
-					pointer_scroll = pointer_scroll + 1;
-				if (movement == -1)
-					pointer_scroll = pointer_scroll - 1;
-				if (pointer_scroll < FIRST_CAR_PARAMETER)
-					pointer_scroll = N_INDICATORS - 1;
-				if (pointer_scroll >	LAST_CAR_PARAMETER)
-					pointer_scroll = 0;
+				GPIO_rightEncoder_settingsMode(movement);
 				break;
 			default: 
 				break;
-				}
 		}
     osDelay(1);
 	}
@@ -1006,27 +837,8 @@ void okButtonTask(void const * argument)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
 		
-		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
-			commandSent = 1;
-		}
-		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
-			commandSent = 1;
-		}
+		GPIO_okButton_handle();
 		
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
-			commandSent = 1;
-		}
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
-			commandSent = 1;
-		}
-		if( driveMode == SETTINGS_MODE){
-			if (schermata_settings == 0 )
-				schermata_settings = 1;
-		}
     osDelay(1);
   }
   /* USER CODE END okButtonTask */
@@ -1042,18 +854,12 @@ void okButtonTask(void const * argument)
 void aux1ButtonTask(void const * argument)
 {
   /* USER CODE BEGIN aux1ButtonTask */
-	int startAcq;
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(aux1ButtonSemaphoreHandle, portMAX_DELAY);
 		
-		startAcq = Indicators[ACQ].intValore;
-		
-		if( startAcq == ACQ_ON ) 
-			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_STOP, EMPTY, EMPTY, 2);
-		else if ( startAcq == ACQ_OFF ) 
-			CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
+		GPIO_aux1Button_handle();
 		
     osDelay(1);
   }

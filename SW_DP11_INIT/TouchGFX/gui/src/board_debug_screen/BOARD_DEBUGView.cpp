@@ -23,7 +23,7 @@ void BOARD_DEBUGView::tearDownScreen()
 void BOARD_DEBUGView::refreshBoardDebug()
 {
 	BOARD_DEBUGView::checkChangeScreen();
-	
+
 	pointer1 = board_debug_scroll;
 	pointer2 = board_debug_scroll + 1;
 	pointer3 = board_debug_scroll + 2;
@@ -31,6 +31,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 	pointer5 = board_debug_scroll + 4;
 	pointer6 = board_debug_scroll + 5;
 	pointer7 = board_debug_scroll + 6;
+	pointer8 = board_debug_scroll + 7;
 	
 	touchgfx::Unicode::strncpy( Title1, Indicators[pointer1].NOME, TIT_LEN);
 	touchgfx::Unicode::strncpy( Title2, Indicators[pointer2].NOME, TIT_LEN);
@@ -39,6 +40,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 	touchgfx::Unicode::strncpy( Title5, Indicators[pointer5].NOME, TIT_LEN);
 	touchgfx::Unicode::strncpy( Title6, Indicators[pointer6].NOME, TIT_LEN);
 	touchgfx::Unicode::strncpy( Title7, Indicators[pointer7].NOME, TIT_LEN);
+	touchgfx::Unicode::strncpy( Title8, Indicators[pointer8].NOME, TIT_LEN);
 	
 		//-------------- DA VALUTARE COME INSERIRE TEMPERATURA E CORRENTE E STAMPARLI NEGLI APPOSITI SPAZI ------------------
 	
@@ -56,6 +58,8 @@ void BOARD_DEBUGView::refreshBoardDebug()
 	Unicode::snprintf(textIndValueCurr6Buffer, TEXTINDVALUECURR6_SIZE, "%d", Indicators[pointer6].intValore2);
 	Unicode::snprintf(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%d", Indicators[pointer7].intValore);	
 	Unicode::snprintf(textIndValueCurr7Buffer, TEXTINDVALUECURR7_SIZE, "%d", Indicators[pointer7].intValore2);	
+	Unicode::snprintf(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%d", Indicators[pointer8].intValore);	
+	Unicode::snprintf(textIndValueCurr8Buffer, TEXTINDVALUECURR8_SIZE, "%d", Indicators[pointer8].intValore2);	
 		
 	Unicode::snprintf(textIndTitle1Buffer, TEXTINDTITLE1_SIZE, "%s", Title1);	
 	Unicode::snprintf(textIndTitle2Buffer, TEXTINDTITLE2_SIZE, "%s", Title2);	
@@ -64,6 +68,11 @@ void BOARD_DEBUGView::refreshBoardDebug()
 	Unicode::snprintf(textIndTitle5Buffer, TEXTINDTITLE5_SIZE, "%s", Title5);
 	Unicode::snprintf(textIndTitle6Buffer, TEXTINDTITLE6_SIZE, "%s", Title6);	
 	Unicode::snprintf(textIndTitle7Buffer, TEXTINDTITLE7_SIZE, "%s", Title7);
+	Unicode::snprintf(textIndTitle8Buffer, TEXTINDTITLE8_SIZE, "%s", Title8);
+	
+
+
+	boxIndCurrent.invalidate();	
 		
 	textIndTitle1.invalidate();
 	textIndTitle2.invalidate();
@@ -72,6 +81,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 	textIndTitle5.invalidate();
 	textIndTitle6.invalidate();
 	textIndTitle7.invalidate();
+	textIndTitle8.invalidate();
 		
 	textIndValueTemp1.invalidate();
 	textIndValueCurr1.invalidate();		
@@ -87,6 +97,8 @@ void BOARD_DEBUGView::refreshBoardDebug()
 	textIndValueCurr6.invalidate();		
 	textIndValueTemp7.invalidate();
 	textIndValueCurr7.invalidate();		
+	textIndValueTemp8.invalidate();
+	textIndValueCurr8.invalidate();		
 	
 }
 

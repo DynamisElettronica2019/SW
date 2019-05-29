@@ -77,6 +77,7 @@ extern osMessageQId canQueueHandle;
 extern Indicator_Value Indicators[N_INDICATORS];	
 extern char state, driveMode;
 extern int commandSent;
+extern int timerEfiAlive;
 
 /* USER CODE END 0 */
 
@@ -212,41 +213,48 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				dGears_setGear(firstInt);
 				I2C_setRPM(secondInt);
 				dEfiSense_calculateTPS(TPS,thirdInt);
-				Indicators[PH2O].intValore = fourthInt; // manca la conversione
+				dEfiSense_calculatePH2O(PH2O,fourthInt);
+				timerEfiAlive = 0;
 				break;
 		 case EFI_WATER_TEMPERATURE_ID:
 				dEfiSense_calculateWaterTemperature(TH2O_SX_IN, firstInt);
 				dEfiSense_calculateWaterTemperature(TH2O_SX_OUT, secondInt);
 				dEfiSense_calculateWaterTemperature(TH2O_DX_IN, thirdInt);
 				dEfiSense_calculateWaterTemperature(TH2O_DX_OUT, fourthInt);
+		 		timerEfiAlive = 0;
 				break;
 		case EFI_OIL_T_ENGINE_BAT_ID:
 				dEfiSense_calculateOilInTemperature(OIL_TEMP_IN, firstInt);
 				dEfiSense_calculateOilOutTemperature(OIL_TEMP_OUT, secondInt);
-				dEfiSense_calculateTemperature(TH2O_ENGINE, thirdInt);
+				dEfiSense_calculateTemperature(TH2O, thirdInt);
 				dEfiSense_calculateVoltage(VBAT, fourthInt);
+				timerEfiAlive = 0;
 				break;
      case EFI_TRACTION_CONTROL_ID:
 				dEfiSense_calculateSpeed(VH_SPEED, firstInt);
-				Indicators[EFI_SLIP_TARGET].intValore = secondInt; // manca la conversione
+				dEfiSense_calculateSlip(EFI_SLIP_TARGET, secondInt);
 			  dEfiSense_calculateSlip(EFI_SLIP, thirdInt);
+		  	timerEfiAlive = 0;
         break;
      case EFI_MANUAL_LIMITER_FAN_H2O_PIT_LANE_ID:
-			  Indicators[MAN_LIM_ACT].intValore = firstInt;	// manca la conversione
-			  Indicators[FAN].intValore = secondInt; // manca la conversione
-				Indicators[H2OPUMP_DC].intValore = thirdInt; // manca la conversione
-				Indicators[PIT_LANE_ACT].intValore = fourthInt; // manca la conversione
+			  Indicators[MAN_LIM_ACT].intValore = firstInt;	
+			  Indicators[FAN].intValore = secondInt; 
+				Indicators[H2OPUMP_DC].intValore = thirdInt;
+				Indicators[PIT_LANE_ACT].intValore = fourthInt; 
+		 		timerEfiAlive = 0;
         break;
      case EFI_PRESSURES_LAMBDA_SMOT_ID:
 				dEfiSense_calculatePressure(FUEL_PRESS, firstInt);
 				dEfiSense_calculatePressure(OIL_PRESS, secondInt);
-				Indicators[LAMBDA].intValore = thirdInt; // manca la conversione
-				Indicators[FLAG_SMOT].intValore = fourthInt; // manca la conversione
+				dEfiSense_calculatePressure(LAMBDA, thirdInt);
+				Indicators[FLAG_SMOT].intValore = fourthInt; 
+		 		timerEfiAlive = 0;
 				break;
 		 case EFI_LOIL_EXHAUST_ID:
-			  Indicators[FUEL_LEVEL].intValore = firstInt; // manca la conversione
-				Indicators[T_SCARICO_1].intValore = secondInt; // manca la conversione
-				Indicators[T_SCARICO_2].intValore = thirdInt; // manca la conversione
+				dEfiSense_calculateFuelLevel(FUEL_LEVEL, firstInt);
+				dEfiSense_calculateTempScarico(T_SCARICO_1, secondInt);
+				dEfiSense_calculateTempScarico(T_SCARICO_2, thirdInt);
+		 		timerEfiAlive = 0;
 				break;
      case GCU_CLUTCH_MODE_MAP_SW_ID:
 				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;

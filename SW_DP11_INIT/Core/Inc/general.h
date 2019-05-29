@@ -90,7 +90,8 @@
 #define RPM_STRIPE_TIME									100	  // 10HZ
 #define DRIVE_MODE_TIME									10		//---- valore da definire
 #define TRACTION_RPM_TIME 							100		// 10HZ
-	 
+#define EFI_DEAD_TIME			 							1000	// 1HZ (1s)
+
 #define POPUP_TIME         				      30
 
 /******************* FUNCTIONS *********************/

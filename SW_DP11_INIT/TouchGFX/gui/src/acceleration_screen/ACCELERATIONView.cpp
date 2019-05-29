@@ -7,7 +7,6 @@
 extern int state;
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
-//extern Indicator_Pointer AccPointer;
 extern uint8_t AccPointer[6];
 int screenEntry;
 
@@ -19,16 +18,7 @@ ACCELERATIONView::ACCELERATIONView()
 void ACCELERATIONView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
-//    AccPointer[0] = OIL_PRESS;
-//		AccPointer[1] = TH2O;
-//		AccPointer[2] = OIL_TEMP_IN;
-//		AccPointer[3] = TPS;
-//		AccPointer[4] = VBAT;
-//		AccPointer[5] = FUEL_LEVEL;
-		cont = 0;
 		screenEntry = 0;
-//		textIndGearValue.setVisible(false);
-		textIndGearValue.invalidate();
     ACCELERATIONViewBase::setupScreen();
 }
 
@@ -43,8 +33,6 @@ void ACCELERATIONView::refreshAcceleration()
 	ACCELERATIONView::screenEntryPopup();	
 	ACCELERATIONView::checkChangeScreen();
 	ACCELERATIONView::screenCheckMessage();
-	
-	cont ++;
 	
 	/******************TITOLI*******************/
 	touchgfx::Unicode::strncpy( Title1, Indicators[AccPointer[0]].NOME, TIT_LEN);	
@@ -124,7 +112,7 @@ void ACCELERATIONView::refreshAcceleration()
 	
 	/****************ACQUISITION*****************/
 	
-	if ( Indicators[ACQ].intValore == ACQ_ON ){			//--------- da decidere come modificare il valore quando letto da CAN
+	if ( Indicators[ACQ].intValore == ACQ_ON ){	
 		touchgfx::Unicode::strncpy( Acquisition, "ON", 5);
 		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
 	}
@@ -205,28 +193,24 @@ void ACCELERATIONView::screenEntryPopup()
 		boxIndicatorGear.invalidate();
 		textIndGearValue.invalidate();
 	}
-	else{
-//		textIndGearValue.setVisible(false);
-//		boxIndicatorGear.invalidate();
-//		textIndGearValue.invalidate();
-	}
 }
 
 void ACCELERATIONView::screenCheckMessage()
 {
 	boxMessage.invalidate();
 	textMessage.invalidate();
+	
 	switch(state)
 	{
 			case ACCELERATION_MODE_READY:
-				// stampa a schermo mex READY ?
+				// stampa a schermo mex READY 
 				touchgfx::Unicode::strncpy( Ready, "READY", 9);	
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
 				boxMessage.setVisible(true);
 				textMessage.setVisible(true);
 				break;
 			case ACCELERATION_MODE_GO:
-				// stampa a schermo mex GO - per un tot di sec?7		
+				// stampa a schermo mex GO - per un tot di sec 	
 				touchgfx::Unicode::strncpy( Go, "GOOO", 9);
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
 				boxMessage.setVisible(true);

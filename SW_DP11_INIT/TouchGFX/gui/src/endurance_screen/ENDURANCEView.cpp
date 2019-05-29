@@ -5,7 +5,6 @@
 
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
-//extern Indicator_Pointer EndPointer;
 extern uint8_t EndPointer[6];
 
 ENDURANCEView::ENDURANCEView()
@@ -15,16 +14,8 @@ ENDURANCEView::ENDURANCEView()
 
 void ENDURANCEView::setupScreen()
 {
-//		EndPointer[0] = OIL_PRESS;
-//		EndPointer[1] = TH2O;
-//		EndPointer[2] = OIL_TEMP_IN;
-//		EndPointer[3] = TPS;
-//		EndPointer[4] = VBAT;
-//		EndPointer[5] = FUEL_LEVEL;
-		cont = 0;
+		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
-		textIndGearValue.setVisible(true);
-//		textIndGearValue.setVisible(false);
 		ENDURANCEViewBase::setupScreen();
 }
 
@@ -35,7 +26,6 @@ void ENDURANCEView::tearDownScreen()
 
 void ENDURANCEView::refreshEndurance()
 {	
-	cont ++;
 	screenEntry ++;
 	ENDURANCEView::screenEntryPopup();	
 	
@@ -57,36 +47,54 @@ void ENDURANCEView::refreshEndurance()
 	Unicode::snprintf(textIndTitle6Buffer, TEXTINDTITLE6_SIZE, "%s", Title6);
 	
 	/******************VALORI*******************/
-	if ( Indicators[EndPointer[0]].TIPO == INT )
-		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[EndPointer[0]].intValore);
+	if (	Indicators[EndPointer[0]].intValore == DEF_VALUE && Indicators[EndPointer[0]].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[EndPointer[0]].floatValore);
-	
-	if ( Indicators[EndPointer[1]].TIPO == INT )
-		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[EndPointer[1]].intValore);
+		if ( Indicators[EndPointer[0]].TIPO == INT )
+			Unicode::snprintf(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%d", Indicators[EndPointer[0]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue1Buffer, TEXTINDVALUE1_SIZE, "%.1f", Indicators[EndPointer[0]].floatValore);
+		
+	if (	Indicators[EndPointer[1]].intValore == DEF_VALUE && Indicators[EndPointer[1]].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%.1f", Indicators[EndPointer[1]].floatValore);
+		if ( Indicators[EndPointer[1]].TIPO == INT )
+			Unicode::snprintf(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%d", Indicators[EndPointer[1]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue2Buffer, TEXTINDVALUE2_SIZE, "%.1f", Indicators[EndPointer[1]].floatValore);
 	
-	if ( Indicators[EndPointer[2]].TIPO == INT )
-		Unicode::snprintf(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%d", Indicators[EndPointer[2]].intValore);
+	if (	Indicators[EndPointer[2]].intValore == DEF_VALUE && Indicators[EndPointer[2]].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%.1f", Indicators[EndPointer[2]].floatValore);
-	
-	if ( Indicators[EndPointer[3]].TIPO == INT )
-		Unicode::snprintf(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%d", Indicators[EndPointer[3]].intValore);
+		if ( Indicators[EndPointer[2]].TIPO == INT )
+			Unicode::snprintf(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%d", Indicators[EndPointer[2]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue3Buffer, TEXTINDVALUE3_SIZE, "%.1f", Indicators[EndPointer[2]].floatValore);
+		
+	if (	Indicators[EndPointer[3]].intValore == DEF_VALUE && Indicators[EndPointer[3]].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%.1f", Indicators[EndPointer[3]].floatValore);
-	
-	if ( Indicators[EndPointer[4]].TIPO == INT )
-		Unicode::snprintf(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%d", Indicators[EndPointer[4]].intValore);
+		if ( Indicators[EndPointer[3]].TIPO == INT )
+			Unicode::snprintf(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%d", Indicators[EndPointer[3]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue4Buffer, TEXTINDVALUE4_SIZE, "%.1f", Indicators[EndPointer[3]].floatValore);
+		
+	if (	Indicators[EndPointer[4]].intValore == DEF_VALUE && Indicators[EndPointer[4]].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%.1f", Indicators[EndPointer[4]].floatValore);
+		if ( Indicators[EndPointer[4]].TIPO == INT )
+			Unicode::snprintf(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%d", Indicators[EndPointer[4]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue5Buffer, TEXTINDVALUE5_SIZE, "%.1f", Indicators[EndPointer[4]].floatValore);
 	
-	if ( Indicators[EndPointer[5]].TIPO == INT )
-		Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%d", Indicators[EndPointer[5]].intValore);
+	if (	Indicators[EndPointer[5]].intValore == DEF_VALUE && Indicators[EndPointer[5]].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[EndPointer[5]].floatValore);
-	
+		if ( Indicators[EndPointer[5]].TIPO == INT )
+			Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%d", Indicators[EndPointer[5]].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[EndPointer[5]].floatValore);
+		
 	/****************GEAR-TC-MAP*****************/
 	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR].charValore, 3);	//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
 																																						//-- comando strcpy altrimenti si hanno problemi di allocazione di memoria
@@ -172,11 +180,6 @@ void ENDURANCEView::screenEntryPopup()
 		background.invalidate();
 		textIndGearValue.setVisible(true);
 	  boxIndicatorGear.invalidate();
-	}
-	else{
-//		textIndGearValue.setVisible(false);
-//		boxIndicatorGear.invalidate();
-//		textIndGearValue.invalidate();
 	}
 }
 

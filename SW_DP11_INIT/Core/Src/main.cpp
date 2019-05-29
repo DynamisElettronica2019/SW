@@ -88,11 +88,6 @@
 
 /* USER CODE BEGIN PV */
 
-//int i = 0;
-char driveMode, engineMap;
-char leftPosition, rightPosition;
-int state;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -155,6 +150,7 @@ int main(void)
 	SPI_ltdc_init_sequence(&hspi1);
 	I2C_rpm_setup();
 	I2C_getPointers();
+	data_indicatorsInit();
 	
 	//GPIO_encoders_init();
 

@@ -53,6 +53,7 @@
 
 #include "general.h"
 #include "data.h"
+#include "can.h"
 
 /* USER CODE END 0 */
 
@@ -61,7 +62,21 @@
 /*----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
 
+extern int state;
 extern Indicator_Value Indicators[N_INDICATORS];
+
+int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
+
+int box_driveMode;
+int box_indicator;
+
+int debug_mode_scroll_sx;
+int debug_mode_scroll_dx;
+int board_debug_scroll;
+int pointer_scroll;
+int change_pointer;
+
+int commandSent = 0;
 
 /* USER CODE END 1 */
 
@@ -268,8 +283,8 @@ void GPIO_encoders_init(void)
 
 	rightPosition = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
 	
-	GPIO_encoders_set_driveMode();
-	GPIO_encoders_set_engineMap();
+	GPIO_driveMode_set();
+	GPIO_engineMap_set();
 	
 	Indicators[DRIVE_MODE].intValore = driveMode;
 	Indicators[MAP].intValore = engineMap;
@@ -281,7 +296,7 @@ void GPIO_encoders_init(void)
 	*					and sets the corresponding driving mode. (ABSOLUTE ENCODER)
   */
 
-void GPIO_encoders_set_driveMode(void)
+void GPIO_driveMode_set(void)
 {
 	char new_mode;
 	modeSelector.pin1 = HAL_GPIO_ReadPin(SEL_MODE_1_INT_GPIO_Port, SEL_MODE_1_INT_Pin);
@@ -307,7 +322,7 @@ void GPIO_encoders_set_driveMode(void)
 	*					and sets the corresponding engine map. (ABSOLUTE ENCODER)
   */
 
-void GPIO_encoders_set_engineMap(void)
+void GPIO_engineMap_set(void)
 {	
 	char new_map;
 	mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
@@ -335,7 +350,7 @@ void GPIO_encoders_set_engineMap(void)
   * @retval movement
   */
 
-int GPIO_encoders_left_encoder_movement(void)
+int GPIO_leftEncoder_movement(void)
 {	
 	char new_pos;
 	int movement;
@@ -360,7 +375,7 @@ int GPIO_encoders_left_encoder_movement(void)
   * @retval movement
   */
 
-int GPIO_encoders_right_encoder_movement(void)
+int GPIO_rightEncoder_movement(void)
 {	
 	char new_pos;
 	int movement;
@@ -383,8 +398,154 @@ int GPIO_encoders_right_encoder_movement(void)
 	return movement;
 }
 
+
+void GPIO_rightEncoder_boardDebugMode(int movement)
+{
+	// scorri il menu - AGGIORNARE LA MATRICE GLOBALE 
+	if (movement == 1)
+		board_debug_scroll = board_debug_scroll + 1;
+	if (movement == -1)
+		board_debug_scroll = board_debug_scroll - 1;
+	if (board_debug_scroll > END_BOARD - 7)
+		board_debug_scroll = END_BOARD - 7;
+	if (board_debug_scroll < START_BOARD)
+		board_debug_scroll = START_BOARD;
+}
+
+void GPIO_rightEncoder_debugMode(int movement)
+{
+	// scorri la parte dx del menu - AGGIORNARE LA MATRICE GLOBALE
+	if (movement == 1)
+			debug_mode_scroll_dx = debug_mode_scroll_dx + 1;
+	if (movement == -1)
+			debug_mode_scroll_dx = debug_mode_scroll_dx - 1;
+	if (debug_mode_scroll_dx < FIRST_CAR_PARAMETER_SX + N_DEBUG_MODE_VALUES )
+		debug_mode_scroll_dx = FIRST_CAR_PARAMETER_SX + N_DEBUG_MODE_VALUES - 1;
+	if (debug_mode_scroll_dx >= LAST_CAR_PARAMETER_DX)
+		debug_mode_scroll_dx = LAST_CAR_PARAMETER_DX - 1;
+}
+
+void GPIO_rightEncoder_settingsMode(int movement)
+{
+  // scorri le finestrelle
+	switch (schermata_settings){
+		case 0: 
+			if (movement == 1)
+				box_driveMode = box_driveMode + 1;
+			if (movement == -1)
+				box_driveMode = box_driveMode - 1;
+			if (box_driveMode >= 4 )
+				box_driveMode = 0;
+			if (box_driveMode <= -1 )
+				box_driveMode = 3;
+			break;
+		case 1:
+			change_pointer = 1; 
+			if (movement == 1)
+				pointer_scroll = pointer_scroll + 1;
+			if (movement == -1)
+				pointer_scroll = pointer_scroll - 1;
+			if (pointer_scroll < FIRST_CAR_PARAMETER)
+				pointer_scroll = N_INDICATORS - 1;
+			if (pointer_scroll >	LAST_CAR_PARAMETER)
+				pointer_scroll = 0;
+			break;
+		default:
+			break;
+	}
+}
+
+
+void GPIO_leftEncoder_boardDebugMode(int movement)
+{
+	if (movement == 1)
+		board_debug_scroll = board_debug_scroll + 1;
+	if (movement == -1)
+		board_debug_scroll = board_debug_scroll - 1;
+	if (board_debug_scroll > END_BOARD - 7)
+		board_debug_scroll = END_BOARD - 7;
+	if (board_debug_scroll < START_BOARD)
+		board_debug_scroll = START_BOARD;
+}
+
+void GPIO_leftEncoder_debugMode(int movement)
+{
+// scorri la parte sx del menu - AGGIORNIAMO MATRICE GLOBALE
+	if (movement == 1)
+			debug_mode_scroll_sx = debug_mode_scroll_sx + 1;
+	if (movement == -1)
+			debug_mode_scroll_sx = debug_mode_scroll_sx - 1;
+	if (debug_mode_scroll_sx < LAST_CAR_PARAMETER_SX )
+		debug_mode_scroll_sx = LAST_CAR_PARAMETER_SX - 1;
+	if (debug_mode_scroll_sx >= LAST_CAR_PARAMETER_DX)
+		debug_mode_scroll_sx = LAST_CAR_PARAMETER_DX - 1;
+}
+
+void GPIO_leftEncoder_settingsMode(int movement)
+{
+	switch (schermata_settings){
+		case 0: 
+			if (movement == 1)
+				box_driveMode = box_driveMode + 1;
+			if (movement == -1)
+				box_driveMode = box_driveMode - 1;
+			if (box_driveMode >= 4 )
+				box_driveMode = 0;
+			if (box_driveMode <= -1 )
+				box_driveMode = 3;
+			break;
+		case 1:
+			pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
+			if (movement == 1)
+				box_indicator = box_indicator + 1;
+			if (movement == -1)
+				box_indicator = box_indicator - 1;
+			if (box_indicator >= 6)
+				box_indicator = 0;
+			if (box_indicator <= -1)
+				box_indicator = 5;
+			break;
+		default:
+			break;
+		}
+}
+
 /******************************************************************************/
 
+void GPIO_okButton_handle(void)
+{
+		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT ){
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
+			commandSent = 1;
+		}
+		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY ){
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
+			commandSent = 1;
+		}
+		
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
+			commandSent = 1;
+		}
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
+			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
+			commandSent = 1;
+		}
+		if( driveMode == SETTINGS_MODE){
+			if (schermata_settings == 0 )
+				schermata_settings = 1;
+		}
+}
+
+
+void GPIO_aux1Button_handle(void)
+{
+	if( Indicators[ACQ].intValore == ACQ_ON ) 
+		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_STOP, EMPTY, EMPTY, 2);
+	else if ( Indicators[ACQ].intValore == ACQ_OFF ) 
+		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
+}
+		
 /* USER CODE END 2 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

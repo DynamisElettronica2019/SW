@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
+
   <SchemaVersion>2.1</SchemaVersion>
+
   <Header>### uVision Project, (C) Keil Software</Header>
+
   <Targets>
     <Target>
       <TargetName>SW_DP11_INIT</TargetName>
@@ -487,6 +490,11 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
             </File>
+            <File>
+              <FileName>data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\data.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -768,14 +776,14 @@
               <FilePath>../touchgfx/gui/src/autocross_screen/autocrosspresenter.cpp</FilePath>
             </File>
             <File>
-              <FileName>AUTOCROSSView.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</FilePath>
-            </File>
-            <File>
               <FileName>BOARD_DEBUGPresenter.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>AUTOCROSSView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</FilePath>
             </File>
             <File>
               <FileName>BOARD_DEBUGView.cpp</FileName>
@@ -1065,16 +1073,18 @@
       </Groups>
     </Target>
   </Targets>
+
   <RTE>
-    <apis></apis>
+    <apis/>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"></package>
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
         <targetInfos>
-          <targetInfo name="SW_DP11_INIT"></targetInfo>
+          <targetInfo name="SW_DP11_INIT"/>
         </targetInfos>
       </component>
     </components>
-    <files></files>
+    <files/>
   </RTE>
+
 </Project>

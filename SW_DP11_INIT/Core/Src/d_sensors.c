@@ -39,7 +39,7 @@ void dSensors_CLUTCH(int clutchAnalog)	{
 	
 	clutchValue = (int) (clutchOld * 100 / CLUTCH_MAX_VALUE ) ;
 	
-	Indicators[TH2O].intValore = clutchValue; 
+	Indicators[CLUTCH_POSITION].intValore = clutchValue; 
 	
 	return ;
 }

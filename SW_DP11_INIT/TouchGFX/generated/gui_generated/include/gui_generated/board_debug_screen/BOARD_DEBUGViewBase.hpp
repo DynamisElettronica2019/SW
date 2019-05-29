@@ -8,7 +8,6 @@
 #include <mvp/View.hpp>
 #include <gui/board_debug_screen/BOARD_DEBUGPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -31,8 +30,6 @@ protected:
      * Member Declarations
      */
     touchgfx::Box background;
-    touchgfx::TextArea textACCELERATION;
-    touchgfx::TextArea textENDURANCE;
     touchgfx::BoxWithBorder boxIndCurrent;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
@@ -61,6 +58,26 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndTitle7;
     touchgfx::TextAreaWithOneWildcard textIndValueTemp7;
     touchgfx::TextAreaWithOneWildcard textIndValueCurr7;
+    touchgfx::TextAreaWithOneWildcard textIndTitle8;
+    touchgfx::TextAreaWithOneWildcard textIndValueTemp8;
+    touchgfx::TextAreaWithOneWildcard textIndValueCurr8;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_1;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_2;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_1;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_2_1;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_3;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_4;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_5;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_6;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_7;
+    touchgfx::TextAreaWithOneWildcard textIndUnitSx_8;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_2;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_3;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_4;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_5;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_6;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_7;
+    touchgfx::TextAreaWithOneWildcard textIndUnitDx_8;
 
     /*
      * Wildcard Buffers
@@ -107,6 +124,46 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndValueTemp7Buffer[TEXTINDVALUETEMP7_SIZE];
     static const uint16_t TEXTINDVALUECURR7_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValueCurr7Buffer[TEXTINDVALUECURR7_SIZE];
+    static const uint16_t TEXTINDTITLE8_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndTitle8Buffer[TEXTINDTITLE8_SIZE];
+    static const uint16_t TEXTINDVALUETEMP8_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValueTemp8Buffer[TEXTINDVALUETEMP8_SIZE];
+    static const uint16_t TEXTINDVALUECURR8_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValueCurr8Buffer[TEXTINDVALUECURR8_SIZE];
+    static const uint16_t TEXTINDUNITSX_1_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_1Buffer[TEXTINDUNITSX_1_SIZE];
+    static const uint16_t TEXTINDUNITSX_2_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_2Buffer[TEXTINDUNITSX_2_SIZE];
+    static const uint16_t TEXTINDUNITDX_1_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_1Buffer[TEXTINDUNITDX_1_SIZE];
+    static const uint16_t TEXTINDUNITSX_2_1_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_2_1Buffer[TEXTINDUNITSX_2_1_SIZE];
+    static const uint16_t TEXTINDUNITSX_3_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_3Buffer[TEXTINDUNITSX_3_SIZE];
+    static const uint16_t TEXTINDUNITSX_4_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_4Buffer[TEXTINDUNITSX_4_SIZE];
+    static const uint16_t TEXTINDUNITSX_5_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_5Buffer[TEXTINDUNITSX_5_SIZE];
+    static const uint16_t TEXTINDUNITSX_6_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_6Buffer[TEXTINDUNITSX_6_SIZE];
+    static const uint16_t TEXTINDUNITSX_7_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_7Buffer[TEXTINDUNITSX_7_SIZE];
+    static const uint16_t TEXTINDUNITSX_8_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitSx_8Buffer[TEXTINDUNITSX_8_SIZE];
+    static const uint16_t TEXTINDUNITDX_2_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_2Buffer[TEXTINDUNITDX_2_SIZE];
+    static const uint16_t TEXTINDUNITDX_3_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_3Buffer[TEXTINDUNITDX_3_SIZE];
+    static const uint16_t TEXTINDUNITDX_4_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_4Buffer[TEXTINDUNITDX_4_SIZE];
+    static const uint16_t TEXTINDUNITDX_5_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_5Buffer[TEXTINDUNITDX_5_SIZE];
+    static const uint16_t TEXTINDUNITDX_6_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_6Buffer[TEXTINDUNITDX_6_SIZE];
+    static const uint16_t TEXTINDUNITDX_7_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_7Buffer[TEXTINDUNITDX_7_SIZE];
+    static const uint16_t TEXTINDUNITDX_8_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textIndUnitDx_8Buffer[TEXTINDUNITDX_8_SIZE];
 
 private:
 

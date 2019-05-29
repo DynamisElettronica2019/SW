@@ -11,9 +11,10 @@ DEBUG_MODEView::DEBUG_MODEView()
 }
 
 void DEBUG_MODEView::setupScreen()
-{
-		debug_mode_scroll_sx = N_DEBUG_MODE_VALUES - 1;		//--- indica l'indicatore più in basso
-		debug_mode_scroll_dx = N_DEBUG_MODE_VALUES - 1;
+{	
+		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
+		debug_mode_scroll_sx = FIRST_CAR_PARAMETER_SX + N_DEBUG_MODE_VALUES - 1;		//--- indica l'indicatore più in basso
+		debug_mode_scroll_dx = FIRST_CAR_PARAMETER_DX + N_DEBUG_MODE_VALUES - 1;
     DEBUG_MODEViewBase::setupScreen();
 }
 
@@ -64,88 +65,136 @@ void DEBUG_MODEView::refreshDebugMode()
 	
 //----- Colonna di sinistra
 
-	if ( Indicators[debug_mode_scroll_sx - 7].TIPO == INT )
-		Unicode::snprintf(textIndValue1sxBuffer, TEXTINDVALUE1SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 7].intValore);
+	if (	Indicators[debug_mode_scroll_sx - 7].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx - 7].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue1sxBuffer, TEXTINDVALUE1SX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue1sxBuffer, TEXTINDVALUE1SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 7].floatValore);
+		if ( Indicators[debug_mode_scroll_sx - 7].TIPO == INT )
+			Unicode::snprintf(textIndValue1sxBuffer, TEXTINDVALUE1SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 7].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue1sxBuffer, TEXTINDVALUE1SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 7].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_sx - 6].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx - 6].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue2sxBuffer, TEXTINDVALUE2SX_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[debug_mode_scroll_sx - 6].TIPO == INT )
+			Unicode::snprintf(textIndValue2sxBuffer, TEXTINDVALUE2SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 6].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue2sxBuffer, TEXTINDVALUE2SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 6].floatValore);
 	
-	if ( Indicators[debug_mode_scroll_sx - 6].TIPO == INT )
-		Unicode::snprintf(textIndValue2sxBuffer, TEXTINDVALUE2SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 6].intValore);
+	if (	Indicators[debug_mode_scroll_sx - 5].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx - 5].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue3sxBuffer, TEXTINDVALUE3SX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue2sxBuffer, TEXTINDVALUE2SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 6].floatValore);
+		if ( Indicators[debug_mode_scroll_sx - 5].TIPO == INT )
+			Unicode::snprintf(textIndValue3sxBuffer, TEXTINDVALUE3SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 5].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue3sxBuffer, TEXTINDVALUE3SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 5].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_sx - 4].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx - 4].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue4sxBuffer, TEXTINDVALUE4SX_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[debug_mode_scroll_sx - 4].TIPO == INT )
+			Unicode::snprintf(textIndValue4sxBuffer, TEXTINDVALUE4SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 4].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue4sxBuffer, TEXTINDVALUE4SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 4].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_sx - 3].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx - 3].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue5sxBuffer, TEXTINDVALUE5SX_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[debug_mode_scroll_sx - 3].TIPO == INT )
+			Unicode::snprintf(textIndValue5sxBuffer, TEXTINDVALUE5SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 3].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue5sxBuffer, TEXTINDVALUE5SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 3].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_sx - 2].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx - 2].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue6sxBuffer, TEXTINDVALUE6SX_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[debug_mode_scroll_sx - 2].TIPO == INT )
+			Unicode::snprintf(textIndValue6sxBuffer, TEXTINDVALUE6SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 2].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue6sxBuffer, TEXTINDVALUE6SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 2].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_sx - 1].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx - 1].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue7sxBuffer, TEXTINDVALUE7SX_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[debug_mode_scroll_sx - 1].TIPO == INT )
+			Unicode::snprintf(textIndValue7sxBuffer, TEXTINDVALUE7SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 1].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue7sxBuffer, TEXTINDVALUE7SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 1].floatValore);
 	
-	if ( Indicators[debug_mode_scroll_sx - 5].TIPO == INT )
-		Unicode::snprintf(textIndValue3sxBuffer, TEXTINDVALUE3SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 5].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue3sxBuffer, TEXTINDVALUE3SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 5].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_sx - 4].TIPO == INT )
-		Unicode::snprintf(textIndValue4sxBuffer, TEXTINDVALUE4SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 4].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue4sxBuffer, TEXTINDVALUE4SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 4].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_sx - 3].TIPO == INT )
-		Unicode::snprintf(textIndValue5sxBuffer, TEXTINDVALUE5SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 3].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue5sxBuffer, TEXTINDVALUE5SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 3].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_sx - 2].TIPO == INT )
-		Unicode::snprintf(textIndValue6sxBuffer, TEXTINDVALUE6SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 2].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue6sxBuffer, TEXTINDVALUE6SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 2].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_sx - 1].TIPO == INT )
-		Unicode::snprintf(textIndValue7sxBuffer, TEXTINDVALUE7SX_SIZE, "%d", Indicators[debug_mode_scroll_sx - 1].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue7sxBuffer, TEXTINDVALUE7SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx - 1].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_sx].TIPO == INT )
-		Unicode::snprintf(textIndValue8sxBuffer, TEXTINDVALUE8SX_SIZE, "%d", Indicators[debug_mode_scroll_sx].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue8sxBuffer, TEXTINDVALUE8SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx].floatValore);
+	if (	Indicators[debug_mode_scroll_sx].intValore == DEF_VALUE && Indicators[debug_mode_scroll_sx].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue8sxBuffer, TEXTINDVALUE8SX_SIZE, "%s", Empty);	
+	else		
+		if ( Indicators[debug_mode_scroll_sx].TIPO == INT )
+			Unicode::snprintf(textIndValue8sxBuffer, TEXTINDVALUE8SX_SIZE, "%d", Indicators[debug_mode_scroll_sx].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue8sxBuffer, TEXTINDVALUE8SX_SIZE, "%.1f", Indicators[debug_mode_scroll_sx].floatValore);
 
 //----- Colonna di destra
 	
-	if ( Indicators[debug_mode_scroll_dx - 7].TIPO == INT )
-		Unicode::snprintf(textIndValue1dxBuffer, TEXTINDVALUE1DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 7].intValore);
+	if (	Indicators[debug_mode_scroll_dx - 7].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx - 7].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue1dxBuffer, TEXTINDVALUE1DX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue1dxBuffer, TEXTINDVALUE1DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 7].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_dx - 6].TIPO == INT )
-		Unicode::snprintf(textIndValue2dxBuffer, TEXTINDVALUE2DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 6].intValore);
+		if ( Indicators[debug_mode_scroll_dx - 7].TIPO == INT )
+			Unicode::snprintf(textIndValue1dxBuffer, TEXTINDVALUE1DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 7].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue1dxBuffer, TEXTINDVALUE1DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 7].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_dx - 6].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx - 6].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue2dxBuffer, TEXTINDVALUE2DX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue2dxBuffer, TEXTINDVALUE2DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 6].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_dx - 5].TIPO == INT )
-		Unicode::snprintf(textIndValue3dxBuffer, TEXTINDVALUE3DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 5].intValore);
+		if ( Indicators[debug_mode_scroll_dx - 6].TIPO == INT )
+			Unicode::snprintf(textIndValue2dxBuffer, TEXTINDVALUE2DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 6].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue2dxBuffer, TEXTINDVALUE2DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 6].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_dx - 5].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx - 5].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue3dxBuffer, TEXTINDVALUE3DX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue3dxBuffer, TEXTINDVALUE3DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 5].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_dx - 4].TIPO == INT )
-		Unicode::snprintf(textIndValue4dxBuffer, TEXTINDVALUE4DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 4].intValore);
+		if ( Indicators[debug_mode_scroll_dx - 5].TIPO == INT )
+			Unicode::snprintf(textIndValue3dxBuffer, TEXTINDVALUE3DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 5].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue3dxBuffer, TEXTINDVALUE3DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 5].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_dx - 4].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx - 4].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue4dxBuffer, TEXTINDVALUE4DX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue4dxBuffer, TEXTINDVALUE4DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 4].floatValore);
-	
-	if ( Indicators[debug_mode_scroll_dx - 3].TIPO == INT )
-		Unicode::snprintf(textIndValue5dxBuffer, TEXTINDVALUE5DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 3].intValore);
+		if ( Indicators[debug_mode_scroll_dx - 4].TIPO == INT )
+			Unicode::snprintf(textIndValue4dxBuffer, TEXTINDVALUE4DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 4].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue4dxBuffer, TEXTINDVALUE4DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 4].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_dx - 3].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx - 3].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue5dxBuffer, TEXTINDVALUE5DX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue5dxBuffer, TEXTINDVALUE5DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 3].floatValore);
+		if ( Indicators[debug_mode_scroll_dx - 3].TIPO == INT )
+			Unicode::snprintf(textIndValue5dxBuffer, TEXTINDVALUE5DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 3].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue5dxBuffer, TEXTINDVALUE5DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 3].floatValore);
 
-	if ( Indicators[debug_mode_scroll_dx - 2].TIPO == INT )
-		Unicode::snprintf(textIndValue6dxBuffer, TEXTINDVALUE6DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 2].intValore);
+	if (	Indicators[debug_mode_scroll_dx - 2].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx - 2].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue6dxBuffer, TEXTINDVALUE6DX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue6dxBuffer, TEXTINDVALUE6DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 2].floatValore);
+		if ( Indicators[debug_mode_scroll_dx - 2].TIPO == INT )
+			Unicode::snprintf(textIndValue6dxBuffer, TEXTINDVALUE6DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 2].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue6dxBuffer, TEXTINDVALUE6DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 2].floatValore);
+		
+	if (	Indicators[debug_mode_scroll_dx - 1].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx - 1].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue7dxBuffer, TEXTINDVALUE7DX_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[debug_mode_scroll_dx - 1].TIPO == INT )
+			Unicode::snprintf(textIndValue7dxBuffer, TEXTINDVALUE7DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 1].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue7dxBuffer, TEXTINDVALUE7DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 1].floatValore);
 
-	if ( Indicators[debug_mode_scroll_dx - 1].TIPO == INT )
-		Unicode::snprintf(textIndValue7dxBuffer, TEXTINDVALUE7DX_SIZE, "%d", Indicators[debug_mode_scroll_dx - 1].intValore);
+	if (	Indicators[debug_mode_scroll_dx].intValore == DEF_VALUE && Indicators[debug_mode_scroll_dx].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValue8dxBuffer, TEXTINDVALUE8DX_SIZE, "%s", Empty);	
 	else
-		Unicode::snprintfFloat(textIndValue7dxBuffer, TEXTINDVALUE7DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx - 1].floatValore);
-
-	if ( Indicators[debug_mode_scroll_dx].TIPO == INT )
-		Unicode::snprintf(textIndValue8dxBuffer, TEXTINDVALUE8DX_SIZE, "%d", Indicators[debug_mode_scroll_dx].intValore);
-	else
-		Unicode::snprintfFloat(textIndValue8dxBuffer, TEXTINDVALUE8DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx].floatValore);	
-	
+		if ( Indicators[debug_mode_scroll_dx].TIPO == INT )
+			Unicode::snprintf(textIndValue8dxBuffer, TEXTINDVALUE8DX_SIZE, "%d", Indicators[debug_mode_scroll_dx].intValore);
+		else
+			Unicode::snprintfFloat(textIndValue8dxBuffer, TEXTINDVALUE8DX_SIZE, "%.1f", Indicators[debug_mode_scroll_dx].floatValore);	
+		
 	
 	textIndTitle1sx.invalidate();
 	textIndTitle2sx.invalidate();

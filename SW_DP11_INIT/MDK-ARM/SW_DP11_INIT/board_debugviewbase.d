@@ -53,12 +53,6 @@ sw_dp11_init\board_debugviewbase.o: ../TouchGFX/gui/include/gui/model/ModelListe
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 sw_dp11_init\board_debugviewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
-sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
-sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
-sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp
-sw_dp11_init\board_debugviewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
-sw_dp11_init\board_debugviewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
-sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp
@@ -78,5 +72,11 @@ sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framewor
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp
 sw_dp11_init\board_debugviewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
+sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
+sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
+sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp
+sw_dp11_init\board_debugviewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+sw_dp11_init\board_debugviewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
 sw_dp11_init\board_debugviewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp
 sw_dp11_init\board_debugviewbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp

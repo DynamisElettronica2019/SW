@@ -24,7 +24,7 @@ void dEfiSense_calculateWaterTemperature (Indicator_ID id, unsigned int value)
 
 void dEfiSense_calculateOilInTemperature(Indicator_ID id, unsigned int value)
 {
-		Indicators[id].floatValore = ((int) (( EFI_SENSE_OIL_MIN_TEMP - (value * EFI_SENSE_OIL_TEMP_RANGE ) ) * 100)) / 100.0;
+		 dEfiSense_calculateWaterTemperature(id,value);
 }
 
 void dEfiSense_calculateOilOutTemperature(Indicator_ID id, unsigned int value)
@@ -55,5 +55,20 @@ void dEfiSense_calculateSlip(Indicator_ID id, unsigned int value)
 void dEfiSense_calculatePressure(Indicator_ID id, unsigned int value)
 { //Value is Pressure in millibars
    Indicators[id].floatValore = (value / 10) / 100.0;
+}
+
+void dEfiSense_calculatePH2O(Indicator_ID id, unsigned int value)
+{ 
+	Indicators[id].floatValore = ((float)(value*EFI_SENSE_PH2O_RANGE)) - EFI_SENSE_PH2O_MIN;
+}
+
+void dEfiSense_calculateFuelLevel(Indicator_ID id, unsigned int value)
+{
+	 Indicators[id].floatValore = (float)(((EFI_FUEL_LEVEL_RANGE_1*value)-EFI_FUEL_LEVEL_OFFSET_1)/((EFI_FUEL_LEVEL_RANGE_2*value)+EFI_FUEL_LEVEL_OFFSET_2));
+}
+
+void dEfiSense_calculateTempScarico(Indicator_ID id, unsigned int value)
+{
+	 Indicators[id].floatValore = (float)(EFI_SCARICO_RANGE*value);
 }
 

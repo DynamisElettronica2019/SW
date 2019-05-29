@@ -79,12 +79,23 @@ typedef struct encoder_position
 } encoder_position;
 
 void GPIO_encoders_init(void);
-void GPIO_encoders_set_driveMode(void);
-void GPIO_encoders_set_engineMap(void);
-int GPIO_encoders_left_encoder_movement(void);
-int GPIO_encoders_right_encoder_movement(void);
+void GPIO_driveMode_set(void);
+void GPIO_engineMap_set(void);
+
+int GPIO_leftEncoder_movement(void);
+void GPIO_leftEncoder_boardDebugMode(int movement);
+void GPIO_leftEncoder_debugMode(int movement);
+void GPIO_leftEncoder_settingsMode(int movement);
+
+int GPIO_rightEncoder_movement(void);
+void GPIO_rightEncoder_boardDebugMode(int movement);
+void GPIO_rightEncoder_debugMode(int movement);
+void GPIO_rightEncoder_settingsMode(int movement);
 
 /******************************************************************************/
+
+void GPIO_okButton_handle(void);
+void GPIO_aux1Button_handle(void);
 
 /* USER CODE END Prototypes */
 

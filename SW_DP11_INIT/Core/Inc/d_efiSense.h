@@ -17,7 +17,13 @@
 #define EFI_SENSE_OIL_MIN_TEMP (196.36f)
 #define EFI_SENSE_SLIP (0.1f)
 #define EFI_SENSE_TPS_RANGE 255
-
+#define EFI_SENSE_PH2O_RANGE (0.009768f)
+#define EFI_SENSE_PH2O_MIN (0.996336f)
+#define EFI_FUEL_LEVEL_RANGE_1 (0.111721f)
+#define EFI_FUEL_LEVEL_RANGE_2 (0.007224f)
+#define EFI_FUEL_LEVEL_OFFSET_1 (18.7223f)
+#define EFI_FUEL_LEVEL_OFFSET_2 (12.29331f)
+#define EFI_SCARICO_RANGE (1.2219f)
 	 
 	 
 void dEfiSense_calculateTPS(Indicator_ID id, unsigned int value);
@@ -29,6 +35,9 @@ void dEfiSense_calculateVoltage(Indicator_ID id, unsigned int value);
 void dEfiSense_calculateSpeed(Indicator_ID id, unsigned int value);
 void dEfiSense_calculateSlip(Indicator_ID id, unsigned int value);
 void dEfiSense_calculatePressure(Indicator_ID id, unsigned int value);
+void dEfiSense_calculatePH2O(Indicator_ID id, unsigned int value);
+void dEfiSense_calculateFuelLevel(Indicator_ID id, unsigned int value);
+void dEfiSense_calculateTempScarico(Indicator_ID id, unsigned int value);
 
 #ifdef __cplusplus
 }
