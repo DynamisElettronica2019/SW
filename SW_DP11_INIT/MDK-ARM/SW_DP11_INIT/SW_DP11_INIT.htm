@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu May 30 16:32:56 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu May 30 17:26:22 2019
 <BR><P>
 <H3>Maximum Stack Usage =       2056 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1213,7 +1213,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___22_BoardConfiguration_cpp_2f1c5dae
 <LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
-<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Black_100_4bpp()
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
@@ -1221,6 +1220,7 @@ Global Symbols
 <LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_45_4bpp()
 <LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_35_4bpp()
+<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
 </UL>
 
 <P><STRONG><a name="[1db]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text))
@@ -1700,7 +1700,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;leftEncoderTask
 </UL>
 
-<P><STRONG><a name="[223]"></a>GPIO_okButton_handle</STRONG> (Thumb, 158 bytes, Stack size 40 bytes, gpio.o(i.GPIO_okButton_handle))
+<P><STRONG><a name="[223]"></a>GPIO_okButton_handle</STRONG> (Thumb, 162 bytes, Stack size 40 bytes, gpio.o(i.GPIO_okButton_handle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = GPIO_okButton_handle &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
@@ -4065,7 +4065,7 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[495]"></a>SETTINGSView::~SETTINGSView__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, settingsview.o(i._ZN12SETTINGSViewD1Ev), UNUSED)
 
-<P><STRONG><a name="[fd]"></a>AUTOCROSSView::setupScreen()</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, autocrossview.o(i._ZN13AUTOCROSSView11setupScreenEv))
+<P><STRONG><a name="[fd]"></a>AUTOCROSSView::setupScreen()</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, autocrossview.o(i._ZN13AUTOCROSSView11setupScreenEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = AUTOCROSSView::setupScreen() &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::setupScreen()
@@ -4090,7 +4090,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 </UL>
-<P><STRONG><a name="[101]"></a>AUTOCROSSView::screenEntryPopup()</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, autocrossview.o(i._ZN13AUTOCROSSView16screenEntryPopupEv))
+<P><STRONG><a name="[101]"></a>AUTOCROSSView::screenEntryPopup()</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, autocrossview.o(i._ZN13AUTOCROSSView16screenEntryPopupEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = AUTOCROSSView::screenEntryPopup() &rArr; touchgfx::Drawable::invalidate() const
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4114,7 +4114,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 </UL>
-<P><STRONG><a name="[102]"></a>AUTOCROSSView::screenCheckMessage()</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, autocrossview.o(i._ZN13AUTOCROSSView18screenCheckMessageEv))
+<P><STRONG><a name="[102]"></a>AUTOCROSSView::screenCheckMessage()</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, autocrossview.o(i._ZN13AUTOCROSSView18screenCheckMessageEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = AUTOCROSSView::screenCheckMessage() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4388,7 +4388,7 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[4a1]"></a>Screen1ViewBase::~Screen1ViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, screen1viewbase.o(i._ZN15Screen1ViewBaseD1Ev), UNUSED)
 
-<P><STRONG><a name="[118]"></a>ACCELERATIONView::setupScreen()</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, accelerationview.o(i._ZN16ACCELERATIONView11setupScreenEv))
+<P><STRONG><a name="[118]"></a>ACCELERATIONView::setupScreen()</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, accelerationview.o(i._ZN16ACCELERATIONView11setupScreenEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ACCELERATIONView::setupScreen() &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[327]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
@@ -4399,7 +4399,7 @@ Global Symbols
 <P><STRONG><a name="[119]"></a>ACCELERATIONView::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN16ACCELERATIONView14tearDownScreenEv))
 <BR>[Address Reference Count : 1]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 </UL>
-<P><STRONG><a name="[11c]"></a>ACCELERATIONView::screenEntryPopup()</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, accelerationview.o(i._ZN16ACCELERATIONView16screenEntryPopupEv))
+<P><STRONG><a name="[11c]"></a>ACCELERATIONView::screenEntryPopup()</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, accelerationview.o(i._ZN16ACCELERATIONView16screenEntryPopupEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ACCELERATIONView::screenEntryPopup() &rArr; touchgfx::Drawable::invalidate() const
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4423,8 +4423,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 </UL>
-<P><STRONG><a name="[11d]"></a>ACCELERATIONView::screenCheckMessage()</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, accelerationview.o(i._ZN16ACCELERATIONView18screenCheckMessageEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = ACCELERATIONView::screenCheckMessage() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<P><STRONG><a name="[11d]"></a>ACCELERATIONView::screenCheckMessage()</STRONG> (Thumb, 170 bytes, Stack size 32 bytes, accelerationview.o(i._ZN16ACCELERATIONView18screenCheckMessageEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 456<LI>Call Chain = ACCELERATIONView::screenCheckMessage() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
 <LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -4735,7 +4735,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 </UL>
-<P><STRONG><a name="[345]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()</STRONG> (Thumb, 4896 bytes, Stack size 232 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev))
+<P><STRONG><a name="[345]"></a>BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()</STRONG> (Thumb, 4916 bytes, Stack size 232 bytes, board_debugviewbase.o(i._ZN19BOARD_DEBUGViewBaseC1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 656<LI>Call Chain = BOARD_DEBUGViewBase::BOARD_DEBUGViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -4819,7 +4819,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 </UL>
-<P><STRONG><a name="[352]"></a>ACCELERATIONViewBase::ACCELERATIONViewBase()</STRONG> (Thumb, 3244 bytes, Stack size 200 bytes, accelerationviewbase.o(i._ZN20ACCELERATIONViewBaseC1Ev))
+<P><STRONG><a name="[352]"></a>ACCELERATIONViewBase::ACCELERATIONViewBase()</STRONG> (Thumb, 3218 bytes, Stack size 200 bytes, accelerationviewbase.o(i._ZN20ACCELERATIONViewBaseC1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = ACCELERATIONViewBase::ACCELERATIONViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -5667,14 +5667,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ConstFont::ConstFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, unsigned short, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
-<LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Black_100_4bpp()
+<BR>[Called By]<UL><LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Black_100_4bpp()
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 <LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_80_4bpp()
 <LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_45_4bpp()
 <LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_35_4bpp()
+<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
 </UL>
 
 <P><STRONG><a name="[4d5]"></a>touchgfx::InternalFlashFont::InternalFlashFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)</STRONG> (Thumb, 0 bytes, Stack size 56 bytes, internalflashfont.o(i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt), UNUSED)
@@ -6354,14 +6354,14 @@ Global Symbols
 <P><STRONG><a name="[3c2]"></a>touchgfx::Line::updateCachedShape()</STRONG> (Thumb, 796 bytes, Stack size 104 bytes, line.o(i._ZN8touchgfx4Line17updateCachedShapeEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = touchgfx::Line::updateCachedShape() &rArr; touchgfx::CWRUtil::muldivQ5(touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5) &rArr; touchgfx::muldiv(int, int, int, int&)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T1 touchgfx::abs&lang;touchgfx::CWRUtil::Q5&rang;(T1)
-<LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CWRUtil::Q5::operator +(const touchgfx::CWRUtil::Q5&) const
+<BR>[Calls]<UL><LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CWRUtil::Q5::operator +(const touchgfx::CWRUtil::Q5&) const
 <LI><a href="#[3c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CWRUtil::Q5::operator *(const touchgfx::CWRUtil::Q5&) const
 <LI><a href="#[3c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CWRUtil::Q5::operator -(const touchgfx::CWRUtil::Q5&) const
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CWRUtil::muldivQ5(touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5)
 <LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CWRUtil::sqrtQ10(touchgfx::CWRUtil::Q10)
 <LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T1 touchgfx::CWRUtil::Q5::to&lang;short&rang;() const
 <LI><a href="#[3c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T1 touchgfx::abs&lang;int&rang;(T1)
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T1 touchgfx::abs&lang;touchgfx::CWRUtil::Q5&rang;(T1)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::setStart(touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5)
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::setEnd(touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5)
@@ -8111,8 +8111,8 @@ Global Symbols
 <P><STRONG><a name="[423]"></a>touchgfx::CWRUtil::Q5::operator -() const</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, line.o(i._ZNK8touchgfx7CWRUtil2Q5ngEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::CWRUtil::Q5::operator -() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T1 touchgfx::abs&lang;touchgfx::CWRUtil::Q5&rang;(T1)
-<LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::drawCanvasWidget(const touchgfx::Rect&) const
+<BR>[Called By]<UL><LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::drawCanvasWidget(const touchgfx::Rect&) const
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T1 touchgfx::abs&lang;touchgfx::CWRUtil::Q5&rang;(T1)
 </UL>
 
 <P><STRONG><a name="[3c9]"></a>touchgfx::CWRUtil::Q5::operator +(const touchgfx::CWRUtil::Q5&) const</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, line.o(i._ZNK8touchgfx7CWRUtil2Q5plERKS1_))
@@ -8407,7 +8407,6 @@ Global Symbols
 
 <P><STRONG><a name="[315]"></a>__cxa_guard_acquire</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, cxa_guard_acquire.o(i.__cxa_guard_acquire))
 <BR><BR>[Called By]<UL><LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
-<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Black_100_4bpp()
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
@@ -8415,6 +8414,7 @@ Global Symbols
 <LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_45_4bpp()
 <LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_35_4bpp()
+<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
 </UL>
 
 <P><STRONG><a name="[174]"></a>__cxa_pure_virtual</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, pure_virt.o(i.__cxa_pure_virtual))
@@ -8710,7 +8710,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
 </UL>
 
-<P><STRONG><a name="[90]"></a>ledBlinkTask</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, freertos.o(i.ledBlinkTask))
+<P><STRONG><a name="[90]"></a>ledBlinkTask</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, freertos.o(i.ledBlinkTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = ledBlinkTask &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[42a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
@@ -10198,14 +10198,14 @@ Local Symbols
 <P><STRONG><a name="[1ca]"></a>__sti___21_typedtextdatabase_cpp_42ef4e5b</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, typedtextdatabase.o(i.__sti___21_typedtextdatabase_cpp_42ef4e5b))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = __sti___21_typedtextdatabase_cpp_42ef4e5b &rArr; getFont_Roboto_Black_100_4bpp() &rArr; touchgfx::InternalFlashFont::InternalFlashFont(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short) &rArr; touchgfx::ConstFont::ConstFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, unsigned short, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
-<LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Black_100_4bpp()
+<BR>[Calls]<UL><LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Black_100_4bpp()
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_420_4bpp()
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_180_4bpp()
 <LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_80_4bpp()
 <LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_63_4bpp()
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_45_4bpp()
 <LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_35_4bpp()
+<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFont_Roboto_Regular_25_4bpp()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> typedtextdatabase.o(.init_array)
 </UL>

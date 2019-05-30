@@ -8,7 +8,7 @@ extern int state;
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
 extern uint8_t AccPointer[6];
-int screenEntry;
+int screenEntry, goPopUp;
 
 ACCELERATIONView::ACCELERATIONView()
 {
@@ -19,6 +19,7 @@ void ACCELERATIONView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
+		goPopUp = 0;
     ACCELERATIONViewBase::setupScreen();
 }
 
@@ -183,7 +184,8 @@ void ACCELERATIONView::checkChangeScreen()
 
 void ACCELERATIONView::screenEntryPopup()
 {
-	if (screenEntry >= POPUP_TIME) {
+	if (screenEntry >= POPUP_TIME)
+	{
 		boxEntry.setVisible(false);
 		TEXTAccelerationEntry.setVisible(false);
 		boxEntry.invalidate();
@@ -192,6 +194,11 @@ void ACCELERATIONView::screenEntryPopup()
 		textIndGearValue.setVisible(true);
 		boxIndicatorGear.invalidate();
 		textIndGearValue.invalidate();
+	}
+	if (goPopUp >= POPUP_TIME)
+	{
+		boxMessage.setVisible(false);
+	  textMessage.setVisible(false);
 	}
 }
 
@@ -210,11 +217,14 @@ void ACCELERATIONView::screenCheckMessage()
 				textMessage.setVisible(true);
 				break;
 			case ACCELERATION_MODE_GO:
-				// stampa a schermo mex GO - per un tot di sec 	
-				touchgfx::Unicode::strncpy( Go, "GOOO", 9);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
-				boxMessage.setVisible(true);
-				textMessage.setVisible(true);
+				if(goPopUp < POPUP_TIME){
+					touchgfx::Unicode::strncpy( Go, "GOOO", 9);
+					Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+					boxMessage.setVisible(true);
+					textMessage.setVisible(true);
+					goPopUp++;
+				}
+				break;
 			default:
 				boxMessage.setVisible(false);
 				textMessage.setVisible(false);

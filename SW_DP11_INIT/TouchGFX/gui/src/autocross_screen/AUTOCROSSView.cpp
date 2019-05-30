@@ -17,6 +17,7 @@ void AUTOCROSSView::setupScreen()
 { 
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
+		goPopUp = 0;
 		AUTOCROSSViewBase::setupScreen();
 }
 
@@ -186,6 +187,11 @@ void AUTOCROSSView::screenEntryPopup()
 		textIndGearValue.setVisible(true);
 		boxIndicatorGear.invalidate();
 	}
+	if (goPopUp >= POPUP_TIME)
+	{
+		boxMessage.setVisible(false);
+	  textMessage.setVisible(false);
+	}
 }
 
 
@@ -206,10 +212,14 @@ void AUTOCROSSView::screenCheckMessage()
 				break;
 			case AUTOX_MODE_GO:
 				// stampa a schermo mex GO - per un tot di sec?7		
-				touchgfx::Unicode::strncpy( Go, "GOOO", 9);
-				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
-				boxMessage.setVisible(true);
-				textMessage.setVisible(true);
+				if(goPopUp < POPUP_TIME){
+					touchgfx::Unicode::strncpy( Go, "GOOO", 9);
+					Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+					boxMessage.setVisible(true);
+					textMessage.setVisible(true);
+					goPopUp++;
+				}
+				break;
 			default:
 				boxMessage.setVisible(false);
 				textMessage.setVisible(false);

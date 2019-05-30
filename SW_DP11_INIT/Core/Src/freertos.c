@@ -530,7 +530,7 @@ void ledBlinkTask(void const * argument)
 		
 		dSensors_Sensors_send();
 
-		//Indicators[TRACTION_CONTROL].intValore = state;
+		Indicators[TRACTION_CONTROL].intValore = state;
 		
 		//Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
 		//Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug

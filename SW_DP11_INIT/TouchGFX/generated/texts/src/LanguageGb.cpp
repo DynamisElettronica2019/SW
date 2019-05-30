@@ -66,7 +66,7 @@ TEXT_LOCATION_FLASH_PRAGMA
 KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId362_Gb[2] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x2d, 0x0 };
 
 TEXT_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[336] TEXT_LOCATION_FLASH_ATTRIBUTE =
+KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[335] TEXT_LOCATION_FLASH_ATTRIBUTE =
 {
     T_SingleUseId9_Gb,
     T_SingleUseId73_Gb,
@@ -325,7 +325,6 @@ KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[336] TEXT_LOCATI
     T_SingleUseId9_Gb,
     T_SingleUseId272_Gb+11,
     T_SingleUseId9_Gb,
-    T_SingleUseId285_Gb,
     T_SingleUseId9_Gb,
     T_SingleUseId285_Gb,
     T_SingleUseId9_Gb,

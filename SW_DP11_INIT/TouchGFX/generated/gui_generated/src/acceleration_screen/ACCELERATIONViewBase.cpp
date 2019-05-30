@@ -223,7 +223,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textMessage.setPosition(148, 197, 347, 110);
     textMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textMessage.setLinespacing(0);
-    Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", TypedText(T_SINGLEUSEID283).getText());
+    textMessageBuffer[0] = 0;
     textMessage.setWildcard(textMessageBuffer);
     textMessage.setTypedText(TypedText(T_SINGLEUSEID276));
 

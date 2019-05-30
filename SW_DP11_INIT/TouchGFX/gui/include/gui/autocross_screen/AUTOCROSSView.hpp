@@ -35,6 +35,8 @@ protected:
 		touchgfx::Unicode::UnicodeChar Gear[3];
 		touchgfx::Unicode::UnicodeChar Acquisition[5];
 		int screenEntry;
+		int goPopUp;
+
 };
 
 #endif // AUTOCROSS_VIEW_HPP

@@ -52,8 +52,8 @@ void data_indicatorsInit(void)
 	Indicators[DAU_FR_BOARD] 			= (Indicator_Value) {DAU_FR_BOARD, FLOAT, "DAU_FR", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
 	Indicators[DAU_R_BOARD] 			= (Indicator_Value) {DAU_R_BOARD, FLOAT, "DAU_R", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
  
-  Indicators[FUEL_PUMP] 				= (Indicator_Value) {FUEL_PUMP, INT, "FUEL_PU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[H2O_PUMP] 					= (Indicator_Value) {H2O_PUMP, INT, "H20_PU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+  Indicators[FUEL_PUMP] 				= (Indicator_Value) {FUEL_PUMP, INT, "FUEL_PUMP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+  Indicators[H2O_PUMP] 					= (Indicator_Value) {H2O_PUMP, INT, "H20_PUMP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[H2O_FAN_DX] 				= (Indicator_Value) {H2O_FAN_DX, INT, "HFAN_DX", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[H2O_FAN_SX] 				= (Indicator_Value) {H2O_FAN_SX, INT, "HFAN_SX", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[CLUTCH_CURR]				= (Indicator_Value) {CLUTCH_CURR, INT, "CLUTCH", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
