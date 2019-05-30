@@ -11,7 +11,7 @@ BOARD_DEBUGView::BOARD_DEBUGView()
 
 void BOARD_DEBUGView::setupScreen()
 {
-		board_debug_scroll = START_BOARD;		// parte da 1 perchè è riferito all'indicatore al centro
+		board_debug_scroll = START_BOARD_DEBUG;		// parte da 1 perchè è riferito all'indicatore al centro
     BOARD_DEBUGViewBase::setupScreen();
 }
 

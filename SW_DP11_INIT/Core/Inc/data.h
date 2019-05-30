@@ -15,8 +15,8 @@
 	 	 
 #define N_DEBUG_MODE_VALUES 8	//--- numero di indicatori nella schermata di DEBUG_MODE
 	 
-#define START_BOARD	  						GCU_BOARD	
-#define END_BOARD 								HEAD_2		
+#define START_BOARD_DEBUG	  			GCU_BOARD	
+#define END_BOARD_DEBUG 					HEAD_2		
 	 
 #define FIRST_CAR_PARAMETER 			0
 #define	LAST_CAR_PARAMETER				DRIVE_MODE

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu May 30 17:26:22 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu May 30 18:08:56 2019
 <BR><P>
 <H3>Maximum Stack Usage =       2056 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -3806,8 +3806,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[8c]"></a>STM32F7HAL::~STM32F7HAL()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-<LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[48d]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
@@ -4114,7 +4114,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
 </UL>
-<P><STRONG><a name="[102]"></a>AUTOCROSSView::screenCheckMessage()</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, autocrossview.o(i._ZN13AUTOCROSSView18screenCheckMessageEv))
+<P><STRONG><a name="[102]"></a>AUTOCROSSView::screenCheckMessage()</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, autocrossview.o(i._ZN13AUTOCROSSView18screenCheckMessageEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = AUTOCROSSView::screenCheckMessage() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4145,8 +4145,8 @@ Global Symbols
 <P><STRONG><a name="[104]"></a>ENDURANCEView::setupScreen()</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, enduranceview.o(i._ZN13ENDURANCEView11setupScreenEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ENDURANCEView::setupScreen() &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::setupScreen()
-<LI><a href="#[327]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[327]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::setupScreen()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 </UL>
@@ -4156,13 +4156,13 @@ Global Symbols
 <P><STRONG><a name="[106]"></a>ENDURANCEView::refreshEndurance()</STRONG> (Thumb, 880 bytes, Stack size 40 bytes, enduranceview.o(i._ZN13ENDURANCEView16refreshEnduranceEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = ENDURANCEView::refreshEndurance() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::screenEntryPopup()
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
+<BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
 <LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
 <LI><a href="#[327]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 <LI><a href="#[32a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
 <LI><a href="#[329]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float)
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::screenEntryPopup()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 </UL>
@@ -4218,8 +4218,8 @@ Global Symbols
 <P><STRONG><a name="[10a]"></a>DEBUG_MODEView::setupScreen()</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView11setupScreenEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = DEBUG_MODEView::setupScreen() &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::setupScreen()
-<LI><a href="#[327]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[327]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::setupScreen()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 </UL>
@@ -4229,11 +4229,11 @@ Global Symbols
 <P><STRONG><a name="[10c]"></a>DEBUG_MODEView::refreshDebugMode()</STRONG> (Thumb, 2082 bytes, Stack size 104 bytes, debug_modeview.o(i._ZN14DEBUG_MODEView16refreshDebugModeEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 664<LI>Call Chain = DEBUG_MODEView::refreshDebugMode() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
+<BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
 <LI><a href="#[328]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
 <LI><a href="#[327]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 <LI><a href="#[329]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float)
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 </UL>
@@ -4423,7 +4423,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 </UL>
-<P><STRONG><a name="[11d]"></a>ACCELERATIONView::screenCheckMessage()</STRONG> (Thumb, 170 bytes, Stack size 32 bytes, accelerationview.o(i._ZN16ACCELERATIONView18screenCheckMessageEv))
+<P><STRONG><a name="[11d]"></a>ACCELERATIONView::screenCheckMessage()</STRONG> (Thumb, 172 bytes, Stack size 32 bytes, accelerationview.o(i._ZN16ACCELERATIONView18screenCheckMessageEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 456<LI>Call Chain = ACCELERATIONView::screenCheckMessage() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4903,12 +4903,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::operator =(const touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
 
@@ -4927,12 +4927,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::operator =(const touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
 </UL>
 
@@ -4942,11 +4942,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::operator =(const touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
@@ -4957,11 +4957,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::operator =(const touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
@@ -4972,11 +4972,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::operator =(const touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
@@ -4987,11 +4987,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::operator =(const touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
@@ -5016,11 +5016,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::Callback(FrontendApplicationBase*, void(FrontendApplicationBase::*)())
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;::operator =(const touchgfx::Callback&lang;FrontendApplicationBase, void, void, void&rang;&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
 </UL>
@@ -5193,12 +5193,12 @@ Global Symbols
 <P><STRONG><a name="[32b]"></a>touchgfx::Application::getInstance()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, application.o(i._ZN8touchgfx11Application11getInstanceEv))
 <BR><BR>[Called By]<UL><LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL& touchgfx::touchgfx_generic_init&lang;STM32F7HAL&rang;(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, short, short, unsigned short*, unsigned, unsigned)
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::tick()
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::checkChangeScreen()
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::checkChangeScreen()
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::checkChangeScreen()
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1View::checkChangeScreen()
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::checkChangeScreen()
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::checkChangeScreen()
 <LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidateRect(touchgfx::Rect&) const
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkChangeScreen()
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::checkChangeScreen()
@@ -5323,8 +5323,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[170]"></a>touchgfx::CanvasWidget::setPainter(touchgfx::AbstractPainter&)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, canvaswidget.o(i._ZN8touchgfx12CanvasWidget10setPainterERNS_15AbstractPainterE))
-<BR><BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR><BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
@@ -5340,8 +5340,8 @@ Global Symbols
 <P><STRONG><a name="[4c7]"></a>touchgfx::CanvasWidget::~CanvasWidget()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, canvaswidget.o(i._ZN8touchgfx12CanvasWidgetD2Ev), UNUSED)
 
 <P><STRONG><a name="[15e]"></a>touchgfx::CanvasWidget::~CanvasWidget__sub_object()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, canvaswidget.o(i._ZN8touchgfx12CanvasWidgetD2Ev))
-<BR><BR>[Called By]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::~Line()
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::~BOARD_DEBUGViewBase()
+<BR><BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::~BOARD_DEBUGViewBase()
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::~Line()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 </UL>
@@ -5446,9 +5446,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Widget::Widget__sub_object()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
+<BR>[Called By]<UL><LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
 </UL>
@@ -5515,8 +5515,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> painterrgb565.o(.constdata__ZTVN8touchgfx13PainterRGB565E)
 </UL>
 <P><STRONG><a name="[356]"></a>touchgfx::PainterRGB565::setColor(touchgfx::colortype, unsigned char)</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, painterrgb565.o(i._ZN8touchgfx13PainterRGB5658setColorENS_9colortypeEh))
-<BR><BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR><BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[354]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::PainterRGB565(touchgfx::colortype, unsigned char)
 </UL>
 
@@ -5526,8 +5526,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[356]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::setColor(touchgfx::colortype, unsigned char)
 <LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::AbstractPainter::AbstractPainter__sub_object()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 
 <P><STRONG><a name="[4cd]"></a>touchgfx::PainterRGB565::PainterRGB565__sub_object(touchgfx::colortype, unsigned char)</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, painterrgb565.o(i._ZN8touchgfx13PainterRGB565C1ENS_9colortypeEh), UNUSED)
@@ -5605,8 +5605,8 @@ Global Symbols
 <P><STRONG><a name="[4d1]"></a>touchgfx::AbstractPainter::~AbstractPainter()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, abstractpainter.o(i._ZN8touchgfx15AbstractPainterD2Ev), UNUSED)
 
 <P><STRONG><a name="[187]"></a>touchgfx::AbstractPainter::~AbstractPainter__sub_object()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, abstractpainter.o(i._ZN8touchgfx15AbstractPainterD2Ev))
-<BR><BR>[Called By]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::~PainterRGB565()
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::~BOARD_DEBUGViewBase()
+<BR><BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::~BOARD_DEBUGViewBase()
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::~PainterRGB565()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> abstractpainter.o(.constdata__ZTVN8touchgfx15AbstractPainterE)
 </UL>
@@ -5730,8 +5730,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7instrumentation.o(.constdata__ZTVN8touchgfx22STM32F7InstrumentationE)
 </UL>
 <P><STRONG><a name="[355]"></a>touchgfx::CanvasWidgetRenderer::setupBuffer(unsigned char*, unsigned)</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, canvaswidgetrenderer.o(i._ZN8touchgfx20CanvasWidgetRenderer11setupBufferEPhj))
-<BR><BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR><BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 
 <P><STRONG><a name="[3f6]"></a>touchgfx::CanvasWidgetRenderer::getOutlineBuffer()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, canvaswidgetrenderer.o(i._ZN8touchgfx20CanvasWidgetRenderer16getOutlineBufferEv))
@@ -5890,11 +5890,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[34a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::TextArea()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
 </UL>
@@ -5945,9 +5945,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Widget::Widget__sub_object()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
+<BR>[Called By]<UL><LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 </UL>
 
@@ -6374,8 +6374,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::updateCachedShape()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 
 <P><STRONG><a name="[3cb]"></a>touchgfx::Line::setEnd(touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5)</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, line.o(i._ZN8touchgfx4Line6setEndENS_7CWRUtil2Q5ES2_))
@@ -6400,8 +6400,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidget::CanvasWidget__sub_object()
 <LI><a href="#[323]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_vec_ctor_nocookie_nodtor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 
 <P><STRONG><a name="[4de]"></a>touchgfx::Line::Line__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, line.o(i._ZN8touchgfx4LineC1Ev), UNUSED)
@@ -6494,15 +6494,15 @@ Global Symbols
 <P><STRONG><a name="[32a]"></a>touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, color.o(i._ZN8touchgfx5Color20getColorFrom24BitRGBEhhh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
-<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
+<LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
@@ -6650,11 +6650,11 @@ Global Symbols
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
-<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6665,10 +6665,10 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[ee]"></a>touchgfx::Screen::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, screen1view.o(i._ZN8touchgfx6Screen14tearDownScreenEv))
 <BR>[Address Reference Count : 10]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
@@ -6681,11 +6681,11 @@ Global Symbols
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
-<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6706,11 +6706,11 @@ Global Symbols
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
-<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6725,11 +6725,11 @@ Global Symbols
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
-<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6753,11 +6753,11 @@ Global Symbols
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
-<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6776,11 +6776,11 @@ Global Symbols
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
-<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6794,11 +6794,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Container::add(touchgfx::Drawable&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
 </UL>
@@ -6815,11 +6815,11 @@ Global Symbols
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
-<LI> screen1view.o(.constdata__ZTV11Screen1View)
-<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
+<LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
+<LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> settingsview.o(.constdata__ZTV12SETTINGSView)
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
@@ -6871,12 +6871,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[380]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::Rect(short, short, short, short)
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::Rect()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
-<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
 </UL>
@@ -6902,9 +6902,9 @@ Global Symbols
 <P><STRONG><a name="[34e]"></a>touchgfx::Widget::Widget__sub_object()</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, screen1viewbase.o(i._ZN8touchgfx6WidgetC2Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = touchgfx::Widget::Widget__sub_object()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
 <LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[34a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::TextArea()
 <LI><a href="#[347]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Box::Box()
 <LI><a href="#[348]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::BoxWithBorder::BoxWithBorder()
@@ -7080,10 +7080,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayEndurance()
@@ -7154,11 +7154,7 @@ Global Symbols
 <P><STRONG><a name="[327]"></a>touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, unicode.o(i._ZN8touchgfx7Unicode7strncpyEPtPKct))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::setupScreen()
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::setupScreen()
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
+<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::screenCheckMessage()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::setupScreen()
@@ -7166,6 +7162,10 @@ Global Symbols
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenCheckMessage()
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::setupScreen()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::setupScreen()
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::setupScreen()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::setupScreen()
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::displayAcceleration()
@@ -7183,11 +7183,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[405]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::screenCheckMessage()
@@ -7195,6 +7191,10 @@ Global Symbols
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenCheckMessage()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
@@ -7241,12 +7241,12 @@ Global Symbols
 <P><STRONG><a name="[165]"></a>touchgfx::Drawable::setPosition(short, short, short, short)</STRONG> (Thumb, 42 bytes, Stack size 24 bytes, settingsview.o(i._ZN8touchgfx8Drawable11setPositionEssss))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::Drawable::setPosition(short, short, short, short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
-<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
@@ -7381,10 +7381,10 @@ Global Symbols
 <P><STRONG><a name="[168]"></a>touchgfx::Drawable::setXY(short, short)</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable5setXYEss))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = touchgfx::Drawable::setXY(short, short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
-<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
+<BR>[Called By]<UL><LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Screen1ViewBase::Screen1ViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 </UL>
 <BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
@@ -7589,11 +7589,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[418]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::resizeToCurrentText()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
 </UL>
@@ -7620,9 +7620,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Widget::Widget__sub_object()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
+<BR>[Called By]<UL><LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
 <LI><a href="#[349]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextAreaWithOneWildcard::TextAreaWithOneWildcard()
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSViewBase::SETTINGSViewBase()
@@ -8125,16 +8125,16 @@ Global Symbols
 <P><STRONG><a name="[17c]"></a>touchgfx::Drawable::invalidate() const</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, drawable.o(i._ZNK8touchgfx8Drawable10invalidateEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = touchgfx::Drawable::invalidate() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::screenEntryPopup()
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
+<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGView::refreshBoardDebug()
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::screenCheckMessage()
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::screenEntryPopup()
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSView::refreshAutocross()
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::refreshAcceleration()
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenCheckMessage()
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONView::screenEntryPopup()
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::screenEntryPopup()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEView::refreshEndurance()
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::refreshDebugMode()
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::screenEntryPopup()
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SETTINGSView::refreshSettings()
@@ -8342,11 +8342,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::assertValid() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
-<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUTOCROSSViewBase::AUTOCROSSViewBase()
 <LI><a href="#[352]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCELERATIONViewBase::ACCELERATIONViewBase()
+<LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENDURANCEViewBase::ENDURANCEViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextAreaWithOneWildcard::draw(const touchgfx::Rect&) const
 <LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextAreaWithOneWildcard::getTextWidth() const
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextAreaWithOneWildcard::getTextHeight()
@@ -9448,8 +9448,8 @@ Global Symbols
 <P><STRONG><a name="[365]"></a>T2* touchgfx::makeTransition&lang;DEBUG_MODEView, DEBUG_MODEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI14DEBUG_MODEView19DEBUG_MODEPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 664<LI>Call Chain = T2* touchgfx::makeTransition&lang;DEBUG_MODEView, DEBUG_MODEPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; DEBUG_MODEView::DEBUG_MODEView() &rArr; DEBUG_MODEViewBase::DEBUG_MODEViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[342]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::DEBUG_MODEView()
-<LI><a href="#[471]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEPresenter::DEBUG_MODEPresenter(DEBUG_MODEView&)
+<BR>[Calls]<UL><LI><a href="#[471]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEPresenter::DEBUG_MODEPresenter(DEBUG_MODEView&)
+<LI><a href="#[342]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEView::DEBUG_MODEView()
 <LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)
 <LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::prepareTransition(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::Transition**)
 <LI><a href="#[46a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T1& touchgfx::AbstractPartition::at&lang;touchgfx::NoTransition&rang;(unsigned short)
@@ -9534,8 +9534,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::updateCachedShape()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 
 <P><STRONG><a name="[358]"></a>void touchgfx::Line::setEnd&lang;int&rang;(T1, T1)</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, board_debugviewbase.o(t._ZN8touchgfx4Line6setEndIiEEvT_S2_))
@@ -9543,8 +9543,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::setEnd(touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 
 <P><STRONG><a name="[357]"></a>void touchgfx::Line::setStart&lang;int&rang;(T1, T1)</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, board_debugviewbase.o(t._ZN8touchgfx4Line8setStartIiEEvT_S2_))
@@ -9552,8 +9552,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::setStart(touchgfx::CWRUtil::Q5, touchgfx::CWRUtil::Q5)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
-<LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<BR>[Called By]<UL><LI><a href="#[345]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
+<LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 </UL>
 
 <P><STRONG><a name="[37a]"></a>touchgfx::Vector&lang;touchgfx::Rect, (unsigned short)8&rang;::quickRemoveAt(unsigned short)</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, application.o(t._ZN8touchgfx6VectorINS_4RectELt8EE13quickRemoveAtEt))

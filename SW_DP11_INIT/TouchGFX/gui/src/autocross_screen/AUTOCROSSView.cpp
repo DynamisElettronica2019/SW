@@ -205,6 +205,7 @@ void AUTOCROSSView::screenCheckMessage()
 	{
 			case AUTOX_MODE_READY:
 				// stampa a schermo mex READY ?
+				goPopUp = 0;
 				touchgfx::Unicode::strncpy( Ready, "READY", 9);	
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
 				boxMessage.setVisible(true);

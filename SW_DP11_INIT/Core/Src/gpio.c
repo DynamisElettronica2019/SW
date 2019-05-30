@@ -406,10 +406,10 @@ void GPIO_rightEncoder_boardDebugMode(int movement)
 		board_debug_scroll = board_debug_scroll + 1;
 	if (movement == -1)
 		board_debug_scroll = board_debug_scroll - 1;
-	if (board_debug_scroll > END_BOARD - 7)
-		board_debug_scroll = END_BOARD - 7;
-	if (board_debug_scroll < START_BOARD)
-		board_debug_scroll = START_BOARD;
+	if (board_debug_scroll > END_BOARD_DEBUG - 7)
+		board_debug_scroll = END_BOARD_DEBUG - 7;
+	if (board_debug_scroll < START_BOARD_DEBUG)
+		board_debug_scroll = START_BOARD_DEBUG;
 }
 
 void GPIO_rightEncoder_debugMode(int movement)
@@ -462,10 +462,10 @@ void GPIO_leftEncoder_boardDebugMode(int movement)
 		board_debug_scroll = board_debug_scroll + 1;
 	if (movement == -1)
 		board_debug_scroll = board_debug_scroll - 1;
-	if (board_debug_scroll > END_BOARD - 7)
-		board_debug_scroll = END_BOARD - 7;
-	if (board_debug_scroll < START_BOARD)
-		board_debug_scroll = START_BOARD;
+	if (board_debug_scroll > END_BOARD_DEBUG - 7)
+		board_debug_scroll = END_BOARD_DEBUG - 7;
+	if (board_debug_scroll < START_BOARD_DEBUG)
+		board_debug_scroll = START_BOARD_DEBUG;
 }
 
 void GPIO_leftEncoder_debugMode(int movement)
