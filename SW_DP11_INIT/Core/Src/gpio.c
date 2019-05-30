@@ -515,20 +515,20 @@ void GPIO_leftEncoder_settingsMode(int movement)
 void GPIO_okButton_handle(void)
 {
 		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, EMPTY, EMPTY, 1);
 			commandSent = 1;
 		}
 		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, EMPTY, EMPTY, 1);
 			commandSent = 1;
 		}
 		
 		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_READY, EMPTY, EMPTY, EMPTY, 1);
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, EMPTY, EMPTY, 1);
 			commandSent = 1;
 		}
 		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
-			CAN_send(SW_OK_BUTTON_GCU_ID, COMMAND_GO, EMPTY, EMPTY, EMPTY, 1);
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, EMPTY, EMPTY, 1);
 			commandSent = 1;
 		}
 		if( driveMode == SETTINGS_MODE){

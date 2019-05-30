@@ -52,7 +52,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     boxIndicator6.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxIndicator6.setBorderSize(2);
 
-    textIndTitle1.setPosition(8, 9, 80, 30);
+    textIndTitle1.setPosition(11, 9, 125, 30);
     textIndTitle1.setVisible(false);
     textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle1.setLinespacing(0);
@@ -60,7 +60,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndTitle1.setWildcard(textIndTitle1Buffer);
     textIndTitle1.setTypedText(TypedText(T_SINGLEUSEID156));
 
-    textIndTitle2.setPosition(482, 9, 80, 30);
+    textIndTitle2.setPosition(486, 9, 125, 30);
     textIndTitle2.setVisible(false);
     textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle2.setLinespacing(0);
@@ -68,7 +68,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndTitle2.setWildcard(textIndTitle2Buffer);
     textIndTitle2.setTypedText(TypedText(T_SINGLEUSEID158));
 
-    textIndTitle3.setPosition(8, 381, 80, 30);
+    textIndTitle3.setPosition(11, 381, 125, 30);
     textIndTitle3.setVisible(false);
     textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle3.setLinespacing(0);
@@ -76,7 +76,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndTitle3.setWildcard(textIndTitle3Buffer);
     textIndTitle3.setTypedText(TypedText(T_SINGLEUSEID160));
 
-    textIndTitle4.setPosition(166, 381, 80, 30);
+    textIndTitle4.setPosition(170, 381, 125, 30);
     textIndTitle4.setVisible(false);
     textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle4.setLinespacing(0);
@@ -84,7 +84,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndTitle4.setWildcard(textIndTitle4Buffer);
     textIndTitle4.setTypedText(TypedText(T_SINGLEUSEID162));
 
-    textIndTitle5.setPosition(324, 381, 80, 30);
+    textIndTitle5.setPosition(328, 381, 125, 30);
     textIndTitle5.setVisible(false);
     textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle5.setLinespacing(0);
@@ -92,7 +92,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndTitle5.setWildcard(textIndTitle5Buffer);
     textIndTitle5.setTypedText(TypedText(T_SINGLEUSEID164));
 
-    textIndTitle6.setPosition(482, 381, 80, 30);
+    textIndTitle6.setPosition(486, 381, 125, 30);
     textIndTitle6.setVisible(false);
     textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle6.setLinespacing(0);

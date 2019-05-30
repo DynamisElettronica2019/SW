@@ -776,14 +776,14 @@
               <FilePath>../touchgfx/gui/src/autocross_screen/autocrosspresenter.cpp</FilePath>
             </File>
             <File>
-              <FileName>BOARD_DEBUGPresenter.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</FilePath>
-            </File>
-            <File>
               <FileName>AUTOCROSSView.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BOARD_DEBUGPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</FilePath>
             </File>
             <File>
               <FileName>BOARD_DEBUGView.cpp</FileName>

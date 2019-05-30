@@ -532,7 +532,7 @@ void ledBlinkTask(void const * argument)
 
 		//Indicators[TRACTION_CONTROL].intValore = state;
 		
-		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
+		//Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
 		//Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
 		
     osDelay(250);

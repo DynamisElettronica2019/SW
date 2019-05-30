@@ -55,42 +55,42 @@ SKIDPADViewBase::SKIDPADViewBase()
     boxIndicatorMap.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxIndicatorMap.setBorderSize(3);
 
-    textIndTitle1.setPosition(8, 9, 80, 30);
+    textIndTitle1.setPosition(11, 9, 125, 30);
     textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle1.setLinespacing(0);
     Unicode::snprintf(textIndTitle1Buffer, TEXTINDTITLE1_SIZE, "%s", TypedText(T_SINGLEUSEID38).getText());
     textIndTitle1.setWildcard(textIndTitle1Buffer);
     textIndTitle1.setTypedText(TypedText(T_SINGLEUSEID37));
 
-    textIndTitle2.setPosition(482, 9, 80, 30);
+    textIndTitle2.setPosition(486, 9, 1225, 30);
     textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle2.setLinespacing(0);
     Unicode::snprintf(textIndTitle2Buffer, TEXTINDTITLE2_SIZE, "%s", TypedText(T_SINGLEUSEID40).getText());
     textIndTitle2.setWildcard(textIndTitle2Buffer);
     textIndTitle2.setTypedText(TypedText(T_SINGLEUSEID39));
 
-    textIndTitle3.setPosition(8, 388, 80, 30);
+    textIndTitle3.setPosition(11, 388, 125, 30);
     textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle3.setLinespacing(0);
     Unicode::snprintf(textIndTitle3Buffer, TEXTINDTITLE3_SIZE, "%s", TypedText(T_SINGLEUSEID42).getText());
     textIndTitle3.setWildcard(textIndTitle3Buffer);
     textIndTitle3.setTypedText(TypedText(T_SINGLEUSEID41));
 
-    textIndTitle4.setPosition(166, 388, 80, 30);
+    textIndTitle4.setPosition(170, 388, 125, 30);
     textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle4.setLinespacing(0);
     Unicode::snprintf(textIndTitle4Buffer, TEXTINDTITLE4_SIZE, "%s", TypedText(T_SINGLEUSEID44).getText());
     textIndTitle4.setWildcard(textIndTitle4Buffer);
     textIndTitle4.setTypedText(TypedText(T_SINGLEUSEID43));
 
-    textIndTitle5.setPosition(324, 388, 80, 30);
+    textIndTitle5.setPosition(328, 388, 125, 30);
     textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle5.setLinespacing(0);
     Unicode::snprintf(textIndTitle5Buffer, TEXTINDTITLE5_SIZE, "%s", TypedText(T_SINGLEUSEID46).getText());
     textIndTitle5.setWildcard(textIndTitle5Buffer);
     textIndTitle5.setTypedText(TypedText(T_SINGLEUSEID45));
 
-    textIndTitle6.setPosition(482, 388, 80, 30);
+    textIndTitle6.setPosition(486, 388, 125, 30);
     textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle6.setLinespacing(0);
     Unicode::snprintf(textIndTitle6Buffer, TEXTINDTITLE6_SIZE, "%s", TypedText(T_SINGLEUSEID48).getText());

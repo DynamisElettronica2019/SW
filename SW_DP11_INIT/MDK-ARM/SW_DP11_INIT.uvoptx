@@ -1148,8 +1148,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</PathWithFileName>
-      <FilenameWithoutPath>BOARD_DEBUGPresenter.cpp</FilenameWithoutPath>
+      <PathWithFileName>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</PathWithFileName>
+      <FilenameWithoutPath>AUTOCROSSView.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1160,8 +1160,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</PathWithFileName>
-      <FilenameWithoutPath>AUTOCROSSView.cpp</FilenameWithoutPath>
+      <PathWithFileName>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</PathWithFileName>
+      <FilenameWithoutPath>BOARD_DEBUGPresenter.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
