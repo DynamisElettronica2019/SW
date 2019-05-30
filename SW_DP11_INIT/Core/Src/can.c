@@ -308,14 +308,14 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
      case GCU_DEBUG_1_ID:
 				Indicators[GCU_BOARD].intValore = firstInt;
 				Indicators[GCU_BOARD].intValore2 = secondInt;
-				Indicators[H2O_PUMP].intValore2 = thirdInt;
-        Indicators[FUEL_PUMP].intValore2 = fourthInt;
+				Indicators[H2O_PUMP].intValore2 = thirdInt/10;
+        Indicators[FUEL_PUMP].intValore2 = fourthInt/10;
         break;
      case GCU_DEBUG_2_ID:
-        Indicators[GEAR_CURR].intValore2 = firstInt;
-        Indicators[CLUTCH_CURR].intValore2 = secondInt;
-        Indicators[H2O_FAN_SX].intValore2 = thirdInt;
-        Indicators[H2O_FAN_DX].intValore2 = fourthInt;
+        Indicators[GEAR_CURR].intValore2 = firstInt/10;
+        Indicators[CLUTCH_CURR].intValore2 = secondInt/10;
+        Indicators[H2O_FAN_SX].intValore2 = thirdInt/10;
+        Indicators[H2O_FAN_DX].intValore2 = fourthInt/10;
         break;
      case DCU_DEBUG_1_ID:
         Indicators[DCU_BOARD].intValore = firstInt;

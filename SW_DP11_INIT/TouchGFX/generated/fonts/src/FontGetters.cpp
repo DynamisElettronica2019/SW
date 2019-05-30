@@ -26,7 +26,7 @@ touchgfx::InternalFlashFont& getFont_Roboto_Regular_25_4bpp();
 
 touchgfx::InternalFlashFont& getFont_Roboto_Regular_25_4bpp()
 {
-    static touchgfx::InternalFlashFont Roboto_Regular_25_4bpp(glyphs_Roboto_Regular_25_4bpp, 57, 25, 5, 4, 0, 1, unicodes_Roboto_Regular_25_4bpp, kerning_Roboto_Regular_25_4bpp, 0, 0);
+    static touchgfx::InternalFlashFont Roboto_Regular_25_4bpp(glyphs_Roboto_Regular_25_4bpp, 177, 25, 6, 4, 1, 2, unicodes_Roboto_Regular_25_4bpp, kerning_Roboto_Regular_25_4bpp, 0, 0);
     return Roboto_Regular_25_4bpp;
 }
 

@@ -17,6 +17,17 @@
 	 
 #define START_BOARD_DEBUG	  			GCU_BOARD	
 #define END_BOARD_DEBUG 					HEAD_2		
+#define END_BOARDS 								DAU_R_BOARD
+#define START_CURRENTS_ONLY_A 		FUEL_PUMP
+#define END_CURRENTS_ONLY_A				GEAR_CURR
+#define START_CURRENTS_ONLY_MA 		DCU_3V3
+#define END_CURRENTS_ONLY_MA			XBEE
+#define START_IMU_ACC							ACC_X_1
+#define END_IMU_ACC								ACC_Z_2
+#define START_IMU_GYR							GYR_X_1
+#define END_IMU_GYR 							GYR_Z_2
+#define START_IMU_HEAD						HEAD_1
+#define END_IMU_HEAD							HEAD_2
 	 
 #define FIRST_CAR_PARAMETER 			0
 #define	LAST_CAR_PARAMETER				DRIVE_MODE
@@ -28,6 +39,7 @@
 	 
 #define DEF_VALUE 9999  //------------- Valore con cui si inizializza la matrice di dati per capire se sono arrivati dati nuovi dal CAN o no
 #define DEF_SIMBOL "?"  
+#define NOT_DEF_SIMBOL "-"
 
 /********************DATA TYPE********************/	 
 
@@ -41,13 +53,14 @@ typedef enum {
 				FAN, H2OPUMP_DC, PIT_LANE_ACT, FLAG_SMOT, LAMBDA, 
 				DRIVE_MODE,
         /* boards */
-        GCU_BOARD, SW_BOARD, DCU_BOARD, XBEE,
+        GCU_BOARD, SW_BOARD, DCU_BOARD,
         DAU_FL_BOARD, DAU_FR_BOARD, DAU_R_BOARD,
         /* sensors */
         FUEL_PUMP, H2O_PUMP, H2O_FAN_DX, H2O_FAN_SX, CLUTCH_CURR, GEAR_CURR,
-				DCU_3V3, DCU_5V, DCU_12V, 
-				ACC_X_1, ACC_Y_1, ACC_Z_1, GYR_X_1, GYR_Y_1, GYR_Z_1, HEAD_1,
-				ACC_X_2, ACC_Y_2, ACC_Z_2, GYR_X_2, GYR_Y_2, GYR_Z_2, HEAD_2			
+				DCU_3V3, DCU_5V, DCU_12V, XBEE,
+				ACC_X_1, ACC_Y_1, ACC_Z_1, ACC_X_2, ACC_Y_2, ACC_Z_2, 
+				GYR_X_1, GYR_Y_1, GYR_Z_1, GYR_X_2, GYR_Y_2, GYR_Z_2,
+				HEAD_1, HEAD_2			
 } Indicator_ID;
 
 typedef enum { 
@@ -63,6 +76,7 @@ typedef struct {
 				int intValore2; // per corrente e temperatura
 				char	charValore[2];	//per gli indicatori tipo la marcia che posso contenre una lettera (come la N)
 } Indicator_Value;
+
 
 //typedef struct {
 //        Indicator_Value *BOX[6];
