@@ -864,7 +864,7 @@
             "Name": "TEXTEnduranceEntry",
             "X": 78,
             "Y": 283,
-            "Width": 461,
+            "Width": 460,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -4937,7 +4937,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle1",
-            "X": 0,
+            "X": 20,
             "Y": 11,
             "Width": 166,
             "Height": 55,
@@ -4965,7 +4965,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle2",
-            "X": 0,
+            "X": 20,
             "Y": 71,
             "Width": 166,
             "Height": 55,
@@ -4993,7 +4993,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle3",
-            "X": 0,
+            "X": 20,
             "Y": 131,
             "Width": 166,
             "Height": 55,
@@ -5021,7 +5021,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle4",
-            "X": 0,
+            "X": 20,
             "Y": 191,
             "Width": 166,
             "Height": 55,
@@ -5049,7 +5049,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp1",
-            "X": 203,
+            "X": 213,
             "Y": 11,
             "Width": 140,
             "Height": 55,
@@ -5077,7 +5077,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp2",
-            "X": 203,
+            "X": 213,
             "Y": 71,
             "Width": 140,
             "Height": 55,
@@ -5105,7 +5105,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp3",
-            "X": 203,
+            "X": 213,
             "Y": 131,
             "Width": 140,
             "Height": 55,
@@ -5133,7 +5133,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp4",
-            "X": 203,
+            "X": 213,
             "Y": 191,
             "Width": 140,
             "Height": 55,
@@ -5161,7 +5161,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr1",
-            "X": 427,
+            "X": 436,
             "Y": 11,
             "Width": 140,
             "Height": 55,
@@ -5189,7 +5189,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr2",
-            "X": 427,
+            "X": 436,
             "Y": 71,
             "Width": 140,
             "Height": 55,
@@ -5217,7 +5217,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr3",
-            "X": 427,
+            "X": 436,
             "Y": 131,
             "Width": 140,
             "Height": 55,
@@ -5245,7 +5245,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr4",
-            "X": 427,
+            "X": 436,
             "Y": 191,
             "Width": 140,
             "Height": 55,
@@ -5273,7 +5273,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle5",
-            "X": 0,
+            "X": 20,
             "Y": 251,
             "Width": 166,
             "Height": 55,
@@ -5301,7 +5301,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp5",
-            "X": 203,
+            "X": 213,
             "Y": 251,
             "Width": 140,
             "Height": 55,
@@ -5329,7 +5329,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr5",
-            "X": 427,
+            "X": 436,
             "Y": 251,
             "Width": 140,
             "Height": 55,
@@ -5357,7 +5357,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle6",
-            "X": 0,
+            "X": 20,
             "Y": 311,
             "Width": 166,
             "Height": 55,
@@ -5385,7 +5385,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp6",
-            "X": 203,
+            "X": 213,
             "Y": 311,
             "Width": 140,
             "Height": 55,
@@ -5413,7 +5413,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr6",
-            "X": 427,
+            "X": 436,
             "Y": 311,
             "Width": 140,
             "Height": 55,
@@ -5441,7 +5441,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle7",
-            "X": 0,
+            "X": 20,
             "Y": 371,
             "Width": 166,
             "Height": 55,
@@ -5469,7 +5469,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp7",
-            "X": 203,
+            "X": 213,
             "Y": 371,
             "Width": 140,
             "Height": 55,
@@ -5497,7 +5497,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr7",
-            "X": 427,
+            "X": 436,
             "Y": 371,
             "Width": 140,
             "Height": 55,
@@ -5525,7 +5525,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle8",
-            "X": 0,
+            "X": 20,
             "Y": 431,
             "Width": 166,
             "Height": 55,
@@ -5553,7 +5553,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueTemp8",
-            "X": 203,
+            "X": 213,
             "Y": 431,
             "Width": 140,
             "Height": 55,
@@ -5581,7 +5581,7 @@
               "BufferSize": 6
             },
             "Name": "textIndValueCurr8",
-            "X": 427,
+            "X": 436,
             "Y": 431,
             "Width": 140,
             "Height": 55,
@@ -6235,7 +6235,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle1sx",
-            "X": 5,
+            "X": 10,
             "Y": 16,
             "Width": 175,
             "Height": 50,
@@ -6263,7 +6263,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle2sx",
-            "X": 5,
+            "X": 10,
             "Y": 76,
             "Width": 175,
             "Height": 50,
@@ -6291,7 +6291,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle3sx",
-            "X": 5,
+            "X": 10,
             "Y": 136,
             "Width": 175,
             "Height": 50,
@@ -6319,7 +6319,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle4sx",
-            "X": 5,
+            "X": 10,
             "Y": 196,
             "Width": 175,
             "Height": 50,
@@ -6758,7 +6758,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle5sx",
-            "X": 5,
+            "X": 10,
             "Y": 256,
             "Width": 175,
             "Height": 50,
@@ -6870,7 +6870,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle6sx",
-            "X": 5,
+            "X": 10,
             "Y": 316,
             "Width": 175,
             "Height": 50,
@@ -6926,7 +6926,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle7sx",
-            "X": 5,
+            "X": 10,
             "Y": 376,
             "Width": 175,
             "Height": 50,
@@ -6954,7 +6954,7 @@
               "BufferSize": 12
             },
             "Name": "textIndTitle8sx",
-            "X": 5,
+            "X": 10,
             "Y": 436,
             "Width": 175,
             "Height": 50,

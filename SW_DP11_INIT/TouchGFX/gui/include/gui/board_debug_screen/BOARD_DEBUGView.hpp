@@ -17,14 +17,15 @@ public:
 		virtual void refreshBoardDebug();
 		virtual void checkChangeScreen();
 protected:
-	
-		touchgfx::Unicode::UnicodeChar notDef[6];
-		touchgfx::Unicode::UnicodeChar unit_A[6];
-		touchgfx::Unicode::UnicodeChar unit_mA[6];
-		touchgfx::Unicode::UnicodeChar unit_msq[6];
-		touchgfx::Unicode::UnicodeChar unit_degree[6];
-		touchgfx::Unicode::UnicodeChar unit_rps[6];
-		touchgfx::Unicode::UnicodeChar unit_C[6];
+
+		touchgfx::Unicode::UnicodeChar Empty[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar notDef[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar unit_A[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar unit_mA[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar unit_msq[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar unit_degree[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar unit_rps[TIT_LEN];
+		touchgfx::Unicode::UnicodeChar unit_C[TIT_LEN];
 
 		touchgfx::Unicode::UnicodeChar Title1[TIT_LEN];
 		touchgfx::Unicode::UnicodeChar Title2[TIT_LEN];

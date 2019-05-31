@@ -1,43 +1,41 @@
 Converting images
 Compiling gui/src/settings_screen/SETTINGSPresenter.cpp
 Compiling gui/src/settings_screen/SETTINGSView.cpp
+Compiling gui/src/common/FrontendApplication.cpp
 Compiling gui/src/board_debug_screen/BOARD_DEBUGView.cpp
 Compiling gui/src/board_debug_screen/BOARD_DEBUGPresenter.cpp
 Compiling gui/src/screen1_screen/Screen1Presenter.cpp
-Compiling gui/src/skidpad_screen/SKIDPADView.cpp
-Compiling gui/src/endurance_screen/ENDURANCEPresenter.cpp
-Compiling gui/src/common/FrontendApplication.cpp
 Compiling gui/src/screen1_screen/Screen1View.cpp
+Compiling gui/src/skidpad_screen/SKIDPADView.cpp
 Compiling gui/src/skidpad_screen/SKIDPADPresenter.cpp
-In file included from gui/src/settings_screen/SETTINGSPresenter.cpp:1:0:
-gui/include/gui/settings_screen/SETTINGSView.hpp:7:21: fatal error: general.h: No such file or directory
- #include <general.h>
-                     ^
-compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSPresenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSPresenter.o] Error 1
-make[2]: *** Waiting for unfinished jobs....
+Compiling gui/src/endurance_screen/ENDURANCEPresenter.cpp
 In file included from gui/src/settings_screen/SETTINGSView.cpp:1:0:
 gui/include/gui/settings_screen/SETTINGSView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
                      ^
 compilation terminated.
-In file included from gui/src/endurance_screen/ENDURANCEPresenter.cpp:1:0:
-gui/include/gui/endurance_screen/ENDURANCEView.hpp:7:21: fatal error: general.h: No such file or directory
+In file included from gui/src/screen1_screen/Screen1Presenter.cpp:1:0:
+gui/include/gui/screen1_screen/Screen1View.hpp:7:18: fatal error: data.h: No such file or directory
+ #include "data.h"
+                  ^
+compilation terminated.
+In file included from gui/src/board_debug_screen/BOARD_DEBUGView.cpp:1:0:
+gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
                      ^
 compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEPresenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEPresenter.o] Error 1
-In file included from gui/src/skidpad_screen/SKIDPADView.cpp:1:0:
-gui/include/gui/skidpad_screen/SKIDPADView.hpp:7:21: fatal error: general.h: No such file or directory
- #include <general.h>
-                     ^
+In file included from gui/src/screen1_screen/Screen1View.cpp:1:0:
+gui/include/gui/screen1_screen/Screen1View.hpp:7:18: fatal error: data.h: No such file or directory
+ #include "data.h"
+                  ^
 compilation terminated.
 simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSView.o' failed
 make[2]: *** [build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSView.o] Error 1
-In file included from gui/src/board_debug_screen/BOARD_DEBUGView.cpp:1:0:
-gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp:7:21: fatal error: general.h: No such file or directory
+make[2]: *** Waiting for unfinished jobs....
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1Presenter.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1Presenter.o] Error 1
+In file included from gui/src/settings_screen/SETTINGSPresenter.cpp:1:0:
+gui/include/gui/settings_screen/SETTINGSView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
                      ^
 compilation terminated.
@@ -46,19 +44,19 @@ gui/include/gui/board_debug_screen/BOARD_DEBUGView.hpp:7:21: fatal error: genera
  #include <general.h>
                      ^
 compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADView.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADView.o] Error 1
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1View.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1View.o] Error 1
 simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/board_debug_screen/BOARD_DEBUGView.o' failed
 make[2]: *** [build/MINGW32_NT-6.2/gui/src/board_debug_screen/BOARD_DEBUGView.o] Error 1
 simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/board_debug_screen/BOARD_DEBUGPresenter.o' failed
 make[2]: *** [build/MINGW32_NT-6.2/gui/src/board_debug_screen/BOARD_DEBUGPresenter.o] Error 1
-In file included from gui/src/screen1_screen/Screen1Presenter.cpp:1:0:
-gui/include/gui/screen1_screen/Screen1View.hpp:7:18: fatal error: data.h: No such file or directory
- #include "data.h"
-                  ^
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSPresenter.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/settings_screen/SETTINGSPresenter.o] Error 1
+In file included from gui/src/skidpad_screen/SKIDPADView.cpp:1:0:
+gui/include/gui/skidpad_screen/SKIDPADView.hpp:7:21: fatal error: general.h: No such file or directory
+ #include <general.h>
+                     ^
 compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1Presenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1Presenter.o] Error 1
 In file included from gui/src/skidpad_screen/SKIDPADPresenter.cpp:1:0:
 gui/include/gui/skidpad_screen/SKIDPADView.hpp:7:21: fatal error: general.h: No such file or directory
  #include <general.h>
@@ -66,13 +64,15 @@ gui/include/gui/skidpad_screen/SKIDPADView.hpp:7:21: fatal error: general.h: No 
 compilation terminated.
 simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADPresenter.o' failed
 make[2]: *** [build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADPresenter.o] Error 1
-In file included from gui/src/screen1_screen/Screen1View.cpp:1:0:
-gui/include/gui/screen1_screen/Screen1View.hpp:7:18: fatal error: data.h: No such file or directory
- #include "data.h"
-                  ^
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADView.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/skidpad_screen/SKIDPADView.o] Error 1
+In file included from gui/src/endurance_screen/ENDURANCEPresenter.cpp:1:0:
+gui/include/gui/endurance_screen/ENDURANCEView.hpp:7:21: fatal error: general.h: No such file or directory
+ #include <general.h>
+                     ^
 compilation terminated.
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1View.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1View.o] Error 1
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEPresenter.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/endurance_screen/ENDURANCEPresenter.o] Error 1
 simulator/gcc/Makefile:182: recipe for target 'generate_assets' failed
 make[1]: *** [generate_assets] Error 2
 simulator/gcc/Makefile:40: recipe for target 'all' failed
