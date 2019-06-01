@@ -258,7 +258,14 @@ encoder_position leftEncoder, rightEncoder;
 char GPIO_encoders_find_new_position(char pin1, char pin2, char pin4)
 {
 	char new_position;
-	new_position = pin1 | (pin2 << 1) | (pin4 << 2);
+	new_position = (pin1) | (pin2 << 1) | (pin4 << 2);
+	return new_position;
+}
+
+char GPIO_encoders_find_new_mode(char pin1, char pin2, char pin4)
+{
+	char new_position;
+	new_position = (8 - ((pin1) | (pin2 << 1) | (pin4 << 2))) & 7 ;
 	return new_position;
 }
 
@@ -303,7 +310,7 @@ void GPIO_driveMode_set(void)
 	modeSelector.pin2 = HAL_GPIO_ReadPin(SEL_MODE_2_GPIO_Port, SEL_MODE_2_Pin);
 	modeSelector.pin4 = HAL_GPIO_ReadPin(SEL_MODE_4_GPIO_Port, SEL_MODE_4_Pin);
 	
-	new_mode = GPIO_encoders_find_new_position(modeSelector.pin1, modeSelector.pin2, modeSelector.pin4);
+	new_mode = GPIO_encoders_find_new_mode(modeSelector.pin1, modeSelector.pin2, modeSelector.pin4);
 	
 	if( new_mode == EMPTY_POSITION ) new_mode = ENDURANCE_MODE;
 	
@@ -349,11 +356,12 @@ void GPIO_engineMap_set(void)
 	*					position and the previous -> RELATIVE ENCODER
   * @retval movement
   */
+int variabile;
 
 int GPIO_leftEncoder_movement(void)
 {	
 	char new_pos;
-	int movement;
+	int movement = 0;
 	leftEncoder.pin1 = HAL_GPIO_ReadPin(ENC_LEFT_1_INT_GPIO_Port, ENC_LEFT_1_INT_Pin);
 	leftEncoder.pin2 = HAL_GPIO_ReadPin(ENC_LEFT_2_GPIO_Port, ENC_LEFT_2_Pin);
 	leftEncoder.pin4 = HAL_GPIO_ReadPin(ENC_LEFT_4_GPIO_Port, ENC_LEFT_4_Pin);
@@ -363,8 +371,16 @@ int GPIO_leftEncoder_movement(void)
 	HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
 	
 	movement = new_pos - leftPosition; // magari segni invertiti
+	if (movement == -7 )
+		movement = 1;
+	else if (movement == 7)
+		movement = -1;
+	leftPosition = new_pos;
+	
+	//Indicators[CLUTCH_FEEDBACK].intValore = movement;
 
 	return movement;
+
 }
 
 /**
@@ -378,24 +394,27 @@ int GPIO_leftEncoder_movement(void)
 int GPIO_rightEncoder_movement(void)
 {	
 	char new_pos;
-	int movement;
-	mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
-	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
-	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
-//	rightEncoder.pin1 = HAL_GPIO_ReadPin(ENC_RIGHT_1_INT_GPIO_Port, ENC_RIGHT_1_INT_Pin);
-//	rightEncoder.pin2 = HAL_GPIO_ReadPin(ENC_RIGHT_2_GPIO_Port, ENC_RIGHT_2_Pin);
-//	rightEncoder.pin4 = HAL_GPIO_ReadPin(ENC_RIGHT_4_GPIO_Port, ENC_RIGHT_4_Pin);
+	int movement = 0;
 
-//	new_pos = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
+	rightEncoder.pin1 = HAL_GPIO_ReadPin(ENC_RIGHT_1_INT_GPIO_Port, ENC_RIGHT_1_INT_Pin);
+	rightEncoder.pin2 = HAL_GPIO_ReadPin(ENC_RIGHT_2_GPIO_Port, ENC_RIGHT_2_Pin);
+	rightEncoder.pin4 = HAL_GPIO_ReadPin(ENC_RIGHT_4_GPIO_Port, ENC_RIGHT_4_Pin);
 
-	new_pos = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
+	new_pos = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
+
 	
 	HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 
-	movement = new_pos - rightPosition; // magari segni invertiti
-	//rightPosition = new_pos;
-
+	movement = - new_pos + rightPosition; // magari segni invertiti
+	if (movement == -7 )
+		movement = 1;
+	else if (movement == 7)
+		movement = -1;
+	
+	rightPosition = new_pos;
+	Indicators[CLUTCH_FEEDBACK].intValore = movement;
 	return movement;
+
 }
 
 
@@ -475,8 +494,8 @@ void GPIO_leftEncoder_debugMode(int movement)
 			debug_mode_scroll_sx = debug_mode_scroll_sx + 1;
 	if (movement == -1)
 			debug_mode_scroll_sx = debug_mode_scroll_sx - 1;
-	if (debug_mode_scroll_sx < LAST_CAR_PARAMETER_SX )
-		debug_mode_scroll_sx = LAST_CAR_PARAMETER_SX - 1;
+	if (debug_mode_scroll_sx < FIRST_CAR_PARAMETER_SX + N_DEBUG_MODE_VALUES )
+		debug_mode_scroll_sx = FIRST_CAR_PARAMETER_SX + N_DEBUG_MODE_VALUES - 1;
 	if (debug_mode_scroll_sx >= LAST_CAR_PARAMETER_DX)
 		debug_mode_scroll_sx = LAST_CAR_PARAMETER_DX - 1;
 }
@@ -540,10 +559,14 @@ void GPIO_okButton_handle(void)
 
 void GPIO_aux1Button_handle(void)
 {
-	if( Indicators[ACQ].intValore == ACQ_ON ) 
+	if( Indicators[ACQ].intValore == ACQ_ON ) {
 		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_STOP, EMPTY, EMPTY, 2);
-	else if ( Indicators[ACQ].intValore == ACQ_OFF ) 
+		//Indicators[ACQ].intValore = ACQ_OFF;
+	}
+	else if ( Indicators[ACQ].intValore == ACQ_OFF ) {
 		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
+		//Indicators[ACQ].intValore = ACQ_ON;
+	} 
 }
 		
 /* USER CODE END 2 */

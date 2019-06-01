@@ -25,14 +25,14 @@ void d_traction_control_setValue(int movement)
 {
 	int value;
 	value = Indicators[TRACTION_CONTROL].intValore;
-	value = value + movement; //forse con -
+	value = value - movement; 
 	
-	if(value > TRACTION_MAX_VALUE){
+	if(value >= TRACTION_MAX_VALUE){
 		value = TRACTION_MAX_VALUE;
-  } else if(value < TRACTION_MIN_VALUE){
+  } else if(value <= TRACTION_MIN_VALUE){
     value = TRACTION_MIN_VALUE;
 	}
-	
+	Indicators[TRACTION_CONTROL].intValore = value;
 	d_tractionValue = value;
 }
 

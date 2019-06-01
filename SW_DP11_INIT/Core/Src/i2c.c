@@ -397,137 +397,138 @@ void I2C_debug_blue_off(uint16_t controller){
 
 void I2C_rpm_update(void){ 
 	int rpm_value;
-	rpm_value = Indicators[RPM].intValore;
+	//rpm_value = Indicators[RPM].intValore;
+	rpm_value = Indicators[RPM_LIM].intValore * 1000 ;
 	if (rpm_value > RPM_STRIPE_MIN){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_1_GREEN;
+		i2cData[0] = LED_6_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_1_GREEN;
+		i2cData[0] = LED_6_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_2_GREEN;
+		i2cData[0] = LED_5_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_2_GREEN;
+		i2cData[0] = LED_5_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+2*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_3_GREEN;
+		i2cData[0] = LED_4_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_3_GREEN;
+		i2cData[0] = LED_4_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+3*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_4_GREEN;
+		i2cData[0] = LED_3_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_4_GREEN;
+		i2cData[0] = LED_3_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+4*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_5_RED;
+		i2cData[0] = LED_2_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_5_RED;
+		i2cData[0] = LED_2_GREEN;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+5*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_6_RED;
+		i2cData[0] = LED_1_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_6_RED;
+		i2cData[0] = LED_1_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_0<<1, i2cData, 2, 10);
 	}
 	
 	
 	if (rpm_value > RPM_STRIPE_MIN+6*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_1_RED;
+		i2cData[0] = LED_6_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_1_RED;
+		i2cData[0] = LED_6_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+7*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_2_RED;
+		i2cData[0] = LED_5_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_2_RED;
+		i2cData[0] = LED_5_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+8*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_3_RED;
+		i2cData[0] = LED_4_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_3_RED;
+		i2cData[0] = LED_4_RED;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+9*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_4_BLUE;
+		i2cData[0] = LED_3_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_4_BLUE;
+		i2cData[0] = LED_3_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+10*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_5_BLUE;
+		i2cData[0] = LED_2_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_5_BLUE;
+		i2cData[0] = LED_2_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	
 	if (rpm_value > RPM_STRIPE_MIN+11*RPM_STRIPE_OFFSET){
 		i2cData[1] = 0xFF;
-		i2cData[0] = LED_6_BLUE;
+		i2cData[0] = LED_1_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	else{
 		i2cData[1] = 0x00;
-		i2cData[0] = LED_6_BLUE;
+		i2cData[0] = LED_1_BLUE;
 		HAL_I2C_Master_Transmit(&hi2c1, controller_1<<1, i2cData, 2, 10);
 	}
 	

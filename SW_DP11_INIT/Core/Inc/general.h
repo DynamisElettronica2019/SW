@@ -22,13 +22,13 @@
 	
 /******************** MODES ***********************/
 
-#define BOARD_DEBUG_MODE								0
-#define DEBUG_MODE											1
-#define SETTINGS_MODE										2
+#define BOARD_DEBUG_MODE								6
+#define DEBUG_MODE											5
+#define SETTINGS_MODE										4
 #define SKIDPAD_MODE										3
-#define AUTOX_MODE											4
-#define ACCELERATION_MODE								5
-#define ENDURANCE_MODE									6
+#define AUTOX_MODE											2
+#define ACCELERATION_MODE								1
+#define ENDURANCE_MODE									0
 #define EMPTY_POSITION									7
 	
 #define MAX_DRIVE_MODE						SKIDPAD_MODE

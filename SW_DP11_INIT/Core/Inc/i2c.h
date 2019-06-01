@@ -66,16 +66,13 @@ extern I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN Private defines */
 
-#define controller_0 0x28
-#define controller_1 0x29
+#define controller_0 0x29
+#define controller_1 0x28
 	 
 #define RPM_STRIPE_MAX      12000
 #define RPM_STRIPE_MIN 			3000
-#define RPM_STRIPE_OFFSET 	(RPM_STRIPE_MAX/RPM_STRIPE_MIN)
+#define RPM_STRIPE_OFFSET 	(RPM_STRIPE_MAX-RPM_STRIPE_MIN)/12
 
-
-#define controller_0 		0x28
-#define controller_1 		0x29
  
 #define LED_1_RED				0x0F
 #define LED_1_GREEN			0x10

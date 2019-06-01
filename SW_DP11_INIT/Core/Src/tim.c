@@ -401,12 +401,6 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			timer_ok_button ++;
 			HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
-			if(timer_ok_button >= 50)
-			{	
-					//	xSemaphoreGiveFromISR( aux1ButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
-					xSemaphoreGiveFromISR( okButtonSemaphoreHandle, &xHigherPriorityTaskWoken );
-					timer_ok_button = 0;
-			}
 			timerRpmStripe = 0;	
 		}
 		if ( timerTractionRpm >= TRACTION_RPM_TIME ){

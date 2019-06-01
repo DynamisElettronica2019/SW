@@ -1,5 +1,6 @@
 
 #include "data.h"
+#include "general.h"
 
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 
@@ -26,7 +27,7 @@ void data_indicatorsInit(void)
   Indicators[TH2O_DX_OUT] 			= (Indicator_Value) {TH2O_DX_OUT, FLOAT, "TH_DX_O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		//-----
   Indicators[EFI_SLIP] 					= (Indicator_Value) {EFI_SLIP, FLOAT, "EFI_SLIP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};			// ok
 
-  Indicators[RPM_LIM] 					= (Indicator_Value) {RPM_LIM, INT, "RPM_LIM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+  Indicators[RPM_LIM] 					= (Indicator_Value) {RPM_LIM, INT, "RPM_LIM", 9, DEF_VALUE, DEF_VALUE,"?"};
 	Indicators[FUEL_LEVEL] 				= (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[FUEL_PRESS] 				= (Indicator_Value) {FUEL_PRESS, FLOAT, "PFUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[MAP] 							= (Indicator_Value) {MAP, INT, "MAP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};

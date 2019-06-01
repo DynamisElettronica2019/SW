@@ -14,7 +14,7 @@
 #include "data.h"
 #include "string.h"
 
-char d_currentGear;
+char d_currentGear = 0;
 extern Indicator_Value Indicators[N_INDICATORS];
 
 void dGears_setGear (int newGear)
@@ -48,12 +48,16 @@ void dGear_setNeutral(void)
 {
 	if( d_currentGear != 0)
 	{
-		if( d_currentGear == 1 )
+		if( d_currentGear == 1 ){
 			CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_NEUTRAL_UP, EMPTY, EMPTY, EMPTY, 1);
+			dGears_setGear(0); //-------- TOGLIERE
+		}
 		
-		else if ( d_currentGear == 2 )
+		else if ( d_currentGear == 2 ){
 			CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_NEUTRAL_DOWN, EMPTY, EMPTY, EMPTY, 1);
-	}
+			dGears_setGear(0); //-------- TOGLIERE
+		}
+	}	
 }
 
 void dGears_upShift(void)
@@ -62,6 +66,7 @@ void dGears_upShift(void)
 		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_NEUTRAL_UP, EMPTY, EMPTY, EMPTY, 1);
 	else
 		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_UP, EMPTY, EMPTY, EMPTY, 1);
+	dGears_setGear(d_currentGear+1);
 }
 		
 void dGears_downShift(void)
@@ -70,4 +75,5 @@ void dGears_downShift(void)
 		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_NEUTRAL_DOWN, EMPTY, EMPTY, EMPTY, 1);
 	else
 		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_DOWN, EMPTY, EMPTY, EMPTY, 1);
+	dGears_setGear(d_currentGear-1);
 }

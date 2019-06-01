@@ -356,6 +356,29 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
+	xSemaphoreTake(aux1ButtonSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(aux2ButtonSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(aux3ButtonSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(canSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(upShiftSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(downShiftSemaphoreHandle, portMAX_DELAY);
+	//xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(mapSelectorSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(startButtonSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(neutralButtonSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(rpmStripeSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(sensorsSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(accelerationModeSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(autocrossModeSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(enduranceModeSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(skidpadModeSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(settingsModeSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(debugModeSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(boardDebugModeSemaphoreHandle, portMAX_DELAY);
+	
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -530,10 +553,10 @@ void ledBlinkTask(void const * argument)
 		
 		dSensors_Sensors_send();
 
-		Indicators[TRACTION_CONTROL].intValore = state;
+//		Indicators[TRACTION_CONTROL].intValore = state;
 		
-		//Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
-		//Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
+		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
+		Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
 		
     osDelay(250);
   }
@@ -587,7 +610,10 @@ void upShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(upShiftSemaphoreHandle, portMAX_DELAY);
-			// dGears_upShift();
+		vTaskDelay(90/portTICK_PERIOD_MS);
+		if ( 0 == HAL_GPIO_ReadPin(SHIFT_UP_INT_GPIO_Port, SHIFT_UP_INT_Pin) )
+			dGears_upShift();
+		vTaskDelay(150/portTICK_PERIOD_MS);
     osDelay(1);
   }
   /* USER CODE END upShiftTask */
@@ -607,7 +633,10 @@ void downShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(downShiftSemaphoreHandle, portMAX_DELAY);
-		// dGears_downShift();
+		vTaskDelay(80/portTICK_PERIOD_MS);
+		if ( 0 == HAL_GPIO_ReadPin(SHIFT_DOWN_INT_GPIO_Port, SHIFT_DOWN_INT_Pin) )
+			dGears_downShift();
+		vTaskDelay(100/portTICK_PERIOD_MS);
     osDelay(1);
   }
   /* USER CODE END downShiftTask */
@@ -709,7 +738,12 @@ void leftEncoderTask(void const * argument)
 		xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_leftEncoder_movement();
-		leftPosition = leftPosition + movement; 
+//		leftPosition = leftPosition + movement; 
+//		if (leftPosition > 7 )
+//			leftPosition = 0;
+//		else if (leftPosition < 0 )
+//			leftPosition = 7;
+		//Indicators[TRACTION_CONTROL].intValore = leftPosition;
 		//Indicators[MAP].intValore = leftPosition;
 		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
 		// la posizione relativa o assoluta
@@ -756,8 +790,12 @@ void rightEncoderTask(void const * argument)
 		xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_rightEncoder_movement();
-	  rightPosition = rightPosition + movement;
-		Indicators[MAP].intValore = rightPosition;
+//	  rightPosition = rightPosition + movement;
+//		if (rightPosition > 7 )
+//			rightPosition = 0;
+//		else if (rightPosition < 0 )
+//			rightPosition = 7;
+		//Indicators[MAP].intValore = rightPosition;
 		
 		switch(driveMode)
 		{
@@ -796,7 +834,12 @@ void startButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(startButtonSemaphoreHandle, portMAX_DELAY);
-		CAN_send(SW_FIRE_GCU_ID, TRUE, EMPTY, EMPTY, EMPTY, 1);
+		
+		if( 0 == HAL_GPIO_ReadPin(START_BUTTON_INT_GPIO_Port, START_BUTTON_INT_Pin) )
+		{
+			CAN_send(SW_FIRE_GCU_ID, TRUE, EMPTY, EMPTY, EMPTY, 1);
+		}
+
     osDelay(1);
   }
   /* USER CODE END startButtonTask */
@@ -816,7 +859,8 @@ void neutralButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(neutralButtonSemaphoreHandle, portMAX_DELAY);
-		// dGear_setNeutral();
+		dGear_setNeutral();
+		vTaskDelay(50/portTICK_PERIOD_MS);
     osDelay(1);
   }
   /* USER CODE END neutralButtonTask */
@@ -836,7 +880,7 @@ void okButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
-		
+		vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_okButton_handle();
 		
     osDelay(1);
@@ -858,7 +902,7 @@ void aux1ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux1ButtonSemaphoreHandle, portMAX_DELAY);
-		
+		vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_aux1Button_handle();
 		
     osDelay(1);
@@ -880,6 +924,7 @@ void aux2ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux2ButtonSemaphoreHandle, portMAX_DELAY);
+		vTaskDelay(50/portTICK_PERIOD_MS);
     osDelay(1);
   }
   /* USER CODE END aux2ButtonTask */
@@ -899,6 +944,7 @@ void aux3ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux3ButtonSemaphoreHandle, portMAX_DELAY);
+		vTaskDelay(50/portTICK_PERIOD_MS);
     osDelay(1);
   }
   /* USER CODE END aux3ButtonTask */
