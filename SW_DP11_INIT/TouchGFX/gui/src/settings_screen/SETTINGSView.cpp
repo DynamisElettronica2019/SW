@@ -15,7 +15,10 @@ extern uint8_t EndPointer[6];
 extern uint8_t AutPointer[6];
 extern uint8_t SkiPointer[6];
 
-
+extern int currentCalibration;
+extern int flagCalibration;
+extern int calibrationPopUp;
+	
 SETTINGSView::SETTINGSView()
 {
 
@@ -23,6 +26,9 @@ SETTINGSView::SETTINGSView()
 
 void SETTINGSView::setupScreen()
 {
+		flagCalibration = 0;
+		calibrationPopUp = 0;
+		currentCalibration = 1;
 		schermata_settings = 0;		// appena si entra nella modalità settings la variabile viene messa a 0, verrà messa a 1 in freertos.c
 		box_driveMode = 0;				// viene incrementata a 1, 2, 3 e poi riportata a 0.
 		box_indicator = 0;				// viene incrementata a 1, 2, 3, 4, 5 e poi riportata a 0.
@@ -45,7 +51,7 @@ void SETTINGSView::refreshSettings()
 		case 0 :
 			boxModeSelected.setVisible(false);
 			boxModeSelected.invalidate();
-			boxModeSelected.setPosition(10, 39 + (111*box_driveMode), 476, 75);
+			boxModeSelected.setPosition(15, 20 + (90*box_driveMode), 476, 75);
 			boxModeSelected.setVisible(true);
 			boxModeSelected.invalidate();
 			break;
@@ -71,7 +77,7 @@ void SETTINGSView::refreshSettings()
 				case SETT_SKI_BOX:
 					touchgfx::Unicode::strncpy( TitleDriveMode, "SKIDPAD", 15);
 					SETTINGSView::displaySkidpad();
-					break;
+					break;					
 			}
 			Unicode::snprintf(textIndDriveModeBuffer, TEXTINDDRIVEMODE_SIZE, "%s", TitleDriveMode);	
 			
@@ -90,10 +96,19 @@ void SETTINGSView::refreshSettings()
 			textIndValue4.invalidate();
 			textIndValue5.invalidate();
 			textIndValue6.invalidate();
-			
-			
-					
+				
 			break;
+		case 2:
+			if (flag_schermata == 0)
+				SETTINGSView::changeDisplay();
+			boxCalibrationSelected.setVisible(false);
+			boxCalibrationSelected.invalidate();
+			boxCalibrationSelected.setPosition(58, 22 + (90*(currentCalibration-1)), 535, 83);
+			boxCalibrationSelected.setVisible(true);
+			boxCalibrationSelected.invalidate();
+			SETTINGSView::calibrationDisplay();
+			break;
+			
 	}
 	
 }
@@ -127,39 +142,51 @@ void SETTINGSView::checkChangeScreen()
 void SETTINGSView::changeDisplay()
 {
 	flag_schermata = 1;
-	
-  boxIndSelected.setVisible(true);
-  boxIndicator1.setVisible(true);
-  boxIndicator2.setVisible(true);
-  boxIndicator3.setVisible(true);
-  boxIndicator4.setVisible(true);
-  boxIndicator5.setVisible(true);
-  boxIndicator6.setVisible(true);
-  textIndTitle1.setVisible(true);
-  textIndTitle2.setVisible(true);
-  textIndTitle3.setVisible(true);
-  textIndTitle4.setVisible(true);
-  textIndTitle5.setVisible(true);
-  textIndTitle6.setVisible(true);
-  textIndValue1.setVisible(true);
-  textIndValue2.setVisible(true);
-  textIndValue3.setVisible(true);
-  textIndValue4.setVisible(true);
-  textIndValue5.setVisible(true);
-  textIndValue6.setVisible(true);
-  textIndDriveMode.setVisible(true);
-  textIndTitleCurrent.setVisible(true);
+	if (schermata_settings == 1){
+		boxIndSelected.setVisible(true);
+		boxIndicator1.setVisible(true);
+		boxIndicator2.setVisible(true);
+		boxIndicator3.setVisible(true);
+		boxIndicator4.setVisible(true);
+		boxIndicator5.setVisible(true);
+		boxIndicator6.setVisible(true);
+		textIndTitle1.setVisible(true);
+		textIndTitle2.setVisible(true);
+		textIndTitle3.setVisible(true);
+		textIndTitle4.setVisible(true);
+		textIndTitle5.setVisible(true);
+		textIndTitle6.setVisible(true);
+		textIndValue1.setVisible(true);
+		textIndValue2.setVisible(true);
+		textIndValue3.setVisible(true);
+		textIndValue4.setVisible(true);
+		textIndValue5.setVisible(true);
+		textIndValue6.setVisible(true);
+		textIndDriveMode.setVisible(true);
+		textIndTitleCurrent.setVisible(true);
+	}
+	else if (schermata_settings == 2){
+		
+		textLOAD_CELL.setVisible(true);
+		textLINEAR.setVisible(true);
+		textAPPS_0.setVisible(true);
+		textAPPS_100.setVisible(true);
+		textSW_ANGLE.setVisible(true);
+		boxCalibrationSelected.setVisible(true);
+	}
   boxModeSelected.setVisible(false);
   textACCELERATION.setVisible(false);
   textENDURANCE.setVisible(false);
   textAUTOCROSS.setVisible(false);
   textSKIDPAD.setVisible(false);
+	textCALIBRATION.setVisible(false);
 	textACCELERATION.invalidate();
 	textENDURANCE.invalidate();
 	textAUTOCROSS.invalidate();
 	textSKIDPAD.invalidate();
 	boxModeSelected.invalidate();
 }
+
 
 void SETTINGSView::moveSelectedBox()
 {
@@ -567,4 +594,44 @@ void SETTINGSView::displaySkidpad()
 		Unicode::snprintf(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%d", Indicators[SkiPointer[5]].intValore);
 	else
 		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[SkiPointer[5]].floatValore);
+}
+
+void SETTINGSView::calibrationDisplay()
+{
+	if (flagCalibration == 1 && calibrationPopUp < (3 * POPUP_TIME)){
+		switch (currentCalibration){
+			case COMMAND_SAVE_APPS0:
+				touchgfx::Unicode::strncpy( CurrCalibration, "APPS 0%", 20);
+				break;
+			case COMMAND_SAVE_APPS100:
+				touchgfx::Unicode::strncpy( CurrCalibration, "APPS 100%", 20);
+				break;
+			case COMMAND_SAVE_SW_ANGLE:
+				touchgfx::Unicode::strncpy( CurrCalibration, "SW ANGLE", 20);
+				break;
+			case COMMAND_SAVE_LINEAR:
+				touchgfx::Unicode::strncpy( CurrCalibration, "LINEAR", 20);
+				break;
+			case COMMAND_SAVE_LOAD_CELL:
+				touchgfx::Unicode::strncpy( CurrCalibration, "LOAD CELL", 20);
+				break;
+			default:
+				touchgfx::Unicode::strncpy( CurrCalibration, "NOTHING", 20);
+				break;			
+		}
+		Unicode::snprintf(textDONEBuffer, TEXTDONE_SIZE, "%s", CurrCalibration);	
+		textDONE.setVisible(true);
+		textDONE.invalidate();
+		boxDONE.setVisible(true);
+		boxDONE.invalidate();
+		calibrationPopUp ++;
+	}
+	else{
+		calibrationPopUp = 0;
+		flagCalibration = 0;
+		boxDONE.setVisible(false);
+		boxDONE.invalidate();
+		textDONE.setVisible(false);
+		textDONE.invalidate();
+	}
 }

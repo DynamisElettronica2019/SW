@@ -164,30 +164,83 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndTitleCurrent.setWildcard(textIndTitleCurrentBuffer);
     textIndTitleCurrent.setTypedText(TypedText(T_SINGLEUSEID182));
 
-    boxModeSelected.setPosition(10, 57, 460, 83);
+    boxCalibrationSelected.setPosition(58, 16, 535, 83);
+    boxCalibrationSelected.setVisible(false);
+    boxCalibrationSelected.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxCalibrationSelected.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxCalibrationSelected.setBorderSize(6);
+
+    textAPPS_0.setXY(196, 22);
+    textAPPS_0.setVisible(false);
+    textAPPS_0.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textAPPS_0.setLinespacing(0);
+    textAPPS_0.setTypedText(TypedText(T_SINGLEUSEID364));
+
+    textAPPS_100.setXY(162, 112);
+    textAPPS_100.setVisible(false);
+    textAPPS_100.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textAPPS_100.setLinespacing(0);
+    textAPPS_100.setTypedText(TypedText(T_SINGLEUSEID365));
+
+    textSW_ANGLE.setXY(169, 202);
+    textSW_ANGLE.setVisible(false);
+    textSW_ANGLE.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textSW_ANGLE.setLinespacing(0);
+    textSW_ANGLE.setTypedText(TypedText(T_SINGLEUSEID366));
+
+    textLINEAR.setXY(218, 292);
+    textLINEAR.setVisible(false);
+    textLINEAR.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textLINEAR.setLinespacing(0);
+    textLINEAR.setTypedText(TypedText(T_SINGLEUSEID367));
+
+    textLOAD_CELL.setXY(167, 382);
+    textLOAD_CELL.setVisible(false);
+    textLOAD_CELL.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textLOAD_CELL.setLinespacing(0);
+    textLOAD_CELL.setTypedText(TypedText(T_SINGLEUSEID368));
+
+    boxDONE.setPosition(28, 188, 595, 104);
+    boxDONE.setVisible(false);
+    boxDONE.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+
+    textDONE.setPosition(70, 202, 511, 76);
+    textDONE.setVisible(false);
+    textDONE.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textDONE.setLinespacing(0);
+    Unicode::snprintf(textDONEBuffer, TEXTDONE_SIZE, "%s", TypedText(T_SINGLEUSEID370).getText());
+    textDONE.setWildcard(textDONEBuffer);
+    textDONE.setTypedText(TypedText(T_SINGLEUSEID369));
+
+    boxModeSelected.setPosition(10, 15, 460, 83);
     boxModeSelected.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxModeSelected.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     boxModeSelected.setBorderSize(6);
 
-    textACCELERATION.setPosition(20, 36, 450, 75);
+    textACCELERATION.setPosition(20, 22, 450, 75);
     textACCELERATION.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textACCELERATION.setLinespacing(0);
     textACCELERATION.setTypedText(TypedText(T_SINGLEUSEID152));
 
-    textENDURANCE.setPosition(20, 147, 450, 75);
+    textENDURANCE.setPosition(20, 112, 450, 75);
     textENDURANCE.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textENDURANCE.setLinespacing(0);
     textENDURANCE.setTypedText(TypedText(T_SINGLEUSEID153));
 
-    textAUTOCROSS.setPosition(20, 258, 450, 75);
+    textAUTOCROSS.setPosition(20, 202, 450, 75);
     textAUTOCROSS.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textAUTOCROSS.setLinespacing(0);
     textAUTOCROSS.setTypedText(TypedText(T_SINGLEUSEID154));
 
-    textSKIDPAD.setPosition(20, 369, 450, 75);
+    textSKIDPAD.setPosition(20, 292, 450, 75);
     textSKIDPAD.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textSKIDPAD.setLinespacing(0);
     textSKIDPAD.setTypedText(TypedText(T_SINGLEUSEID155));
+
+    textCALIBRATION.setPosition(20, 382, 450, 75);
+    textCALIBRATION.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textCALIBRATION.setLinespacing(0);
+    textCALIBRATION.setTypedText(TypedText(T_SINGLEUSEID363));
 
     add(background);
     add(boxIndSelected);
@@ -211,11 +264,20 @@ SETTINGSViewBase::SETTINGSViewBase()
     add(textIndValue6);
     add(textIndDriveMode);
     add(textIndTitleCurrent);
+    add(boxCalibrationSelected);
+    add(textAPPS_0);
+    add(textAPPS_100);
+    add(textSW_ANGLE);
+    add(textLINEAR);
+    add(textLOAD_CELL);
+    add(boxDONE);
+    add(textDONE);
     add(boxModeSelected);
     add(textACCELERATION);
     add(textENDURANCE);
     add(textAUTOCROSS);
     add(textSKIDPAD);
+    add(textCALIBRATION);
 }
 
 void SETTINGSViewBase::setupScreen()

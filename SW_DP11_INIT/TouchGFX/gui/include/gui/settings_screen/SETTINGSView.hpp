@@ -18,6 +18,7 @@ public:
 		virtual void checkChangeScreen();
 		virtual void changeDisplay();
 		virtual void moveSelectedBox();
+		virtual void calibrationDisplay();
 		virtual void displayAcceleration();
 		virtual void displayEndurance();
 		virtual void displayAutocross();
@@ -25,6 +26,7 @@ public:
 protected:
 		int flag_schermata;
 		touchgfx::Unicode::UnicodeChar TitleDriveMode[20];
+		touchgfx::Unicode::UnicodeChar CurrCalibration[20];
 		touchgfx::Unicode::UnicodeChar Title[TIT_LEN];
 		touchgfx::Unicode::UnicodeChar Title1[TIT_LEN];
 		touchgfx::Unicode::UnicodeChar Title2[TIT_LEN];

@@ -50,11 +50,20 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndValue6;
     touchgfx::TextAreaWithOneWildcard textIndDriveMode;
     touchgfx::TextAreaWithOneWildcard textIndTitleCurrent;
+    touchgfx::BoxWithBorder boxCalibrationSelected;
+    touchgfx::TextArea textAPPS_0;
+    touchgfx::TextArea textAPPS_100;
+    touchgfx::TextArea textSW_ANGLE;
+    touchgfx::TextArea textLINEAR;
+    touchgfx::TextArea textLOAD_CELL;
+    touchgfx::Box boxDONE;
+    touchgfx::TextAreaWithOneWildcard textDONE;
     touchgfx::BoxWithBorder boxModeSelected;
     touchgfx::TextArea textACCELERATION;
     touchgfx::TextArea textENDURANCE;
     touchgfx::TextArea textAUTOCROSS;
     touchgfx::TextArea textSKIDPAD;
+    touchgfx::TextArea textCALIBRATION;
 
     /*
      * Wildcard Buffers
@@ -87,6 +96,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndDriveModeBuffer[TEXTINDDRIVEMODE_SIZE];
     static const uint16_t TEXTINDTITLECURRENT_SIZE = 7;
     touchgfx::Unicode::UnicodeChar textIndTitleCurrentBuffer[TEXTINDTITLECURRENT_SIZE];
+    static const uint16_t TEXTDONE_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textDONEBuffer[TEXTDONE_SIZE];
 
 private:
 

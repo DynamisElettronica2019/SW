@@ -78,9 +78,15 @@
 
 #define COMMAND_ACQ_START								1
 #define COMMAND_ACQ_STOP 								2
+#define COMMAND_SAVE_APPS0							1
+#define COMMAND_SAVE_APPS100						2
+#define COMMAND_SAVE_SW_ANGLE						3
+#define COMMAND_SAVE_LINEAR							4
+#define COMMAND_SAVE_LOAD_CELL					5
+
 
 #define DCU_ACQUISITION_CODE   				  1
-#define DCU_SAVE_LINEAR_CODE						2
+#define DCU_SAVE_CALIBRATION_CODE				2
 
 /****************** TIMINGS ************************/
 

@@ -78,6 +78,9 @@ int change_pointer;
 
 int commandSent = 0;
 
+int flagCalibration;
+int calibrationPopUp;
+
 /* USER CODE END 1 */
 
 /** Configure pins as 
@@ -230,6 +233,7 @@ extern char driveMode, engineMap;
 extern char leftPosition, rightPosition;
 encoder_position modeSelector, mapSelector;
 encoder_position leftEncoder, rightEncoder;
+int currentCalibration;
 
 /************ TRUTH TABLE **************
 ----------------------------------------
@@ -453,10 +457,10 @@ void GPIO_rightEncoder_settingsMode(int movement)
 				box_driveMode = box_driveMode + 1;
 			if (movement == -1)
 				box_driveMode = box_driveMode - 1;
-			if (box_driveMode >= 4 )
+			if (box_driveMode >= 5 )
 				box_driveMode = 0;
 			if (box_driveMode <= -1 )
-				box_driveMode = 3;
+				box_driveMode = 4;
 			break;
 		case 1:
 			change_pointer = 1; 
@@ -468,6 +472,16 @@ void GPIO_rightEncoder_settingsMode(int movement)
 				pointer_scroll = N_INDICATORS - 1;
 			if (pointer_scroll >	LAST_CAR_PARAMETER)
 				pointer_scroll = 0;
+			break;
+		case 2:
+			if (movement == 1)
+				currentCalibration = currentCalibration + 1;
+			if (movement == -1)
+				currentCalibration = currentCalibration - 1;
+			if (currentCalibration >= 6)
+				currentCalibration = 1;
+			if (currentCalibration <= 0)
+				currentCalibration = 5;
 			break;
 		default:
 			break;
@@ -508,10 +522,10 @@ void GPIO_leftEncoder_settingsMode(int movement)
 				box_driveMode = box_driveMode + 1;
 			if (movement == -1)
 				box_driveMode = box_driveMode - 1;
-			if (box_driveMode >= 4 )
+			if (box_driveMode >= 5 )
 				box_driveMode = 0;
 			if (box_driveMode <= -1 )
-				box_driveMode = 3;
+				box_driveMode = 4;
 			break;
 		case 1:
 			pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
@@ -523,6 +537,16 @@ void GPIO_leftEncoder_settingsMode(int movement)
 				box_indicator = 0;
 			if (box_indicator <= -1)
 				box_indicator = 5;
+			break;
+		case 2:
+			if (movement == 1)
+				currentCalibration = currentCalibration + 1;
+			if (movement == -1)
+				currentCalibration = currentCalibration - 1;
+			if (currentCalibration >= 6)
+				currentCalibration = 1;
+			if (currentCalibration <= 0)
+				currentCalibration = 5;
 			break;
 		default:
 			break;
@@ -551,9 +575,16 @@ void GPIO_okButton_handle(void)
 			commandSent = 1;
 		}
 		if( driveMode == SETTINGS_MODE){
-			if (schermata_settings == 0 )
+			if (schermata_settings == 0 && box_driveMode >= 0 && box_driveMode <= 3)
 				schermata_settings = 1;
+			else if (schermata_settings == 0 && box_driveMode == 4 )
+				schermata_settings = 2;
+			else if (schermata_settings == 2 && flagCalibration == 0){
+				flagCalibration = 1; //----- da mettere su can.c
+				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentCalibration, EMPTY, EMPTY, 2);	
+			}				
 		}
+		
 }
 
 
