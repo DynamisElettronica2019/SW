@@ -879,10 +879,9 @@ void okButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
-		vTaskDelay(50/portTICK_PERIOD_MS);
+		//vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_okButton_handle();
-		okButtonPressed = 1;
-		vTaskDelay(1500/portTICK_PERIOD_MS);
+		vTaskDelay(200/portTICK_PERIOD_MS);
 		okButtonPressed = 0;
     osDelay(1);
   }

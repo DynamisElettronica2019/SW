@@ -8,7 +8,8 @@ extern int state;
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
 extern uint8_t AccPointer[6];
-int screenEntry, goPopUp;
+int screenEntry, goPopUp, stopPopUp;
+int acc_stop = 0;
 
 ACCELERATIONView::ACCELERATIONView()
 {
@@ -212,6 +213,7 @@ void ACCELERATIONView::screenCheckMessage()
 			case ACCELERATION_MODE_READY:
 				// stampa a schermo mex READY 
 				goPopUp = 0;
+				stopPopUp = 0;
 				touchgfx::Unicode::strncpy( Ready, "READY", 9);	
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
 				boxMessage.setVisible(true);
@@ -227,8 +229,18 @@ void ACCELERATIONView::screenCheckMessage()
 				}
 				break;
 			default:
-				boxMessage.setVisible(false);
-				textMessage.setVisible(false);
+				if( acc_stop == 1 && stopPopUp < 10)
+				{
+					touchgfx::Unicode::strncpy( Go, "STOP", 9);
+					Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+					boxMessage.setVisible(true);
+					textMessage.setVisible(true);
+					stopPopUp++;
+				}else{
+					boxMessage.setVisible(false);
+					textMessage.setVisible(false);
+					acc_stop = 0;
+				}
 				break;
 	}
 	

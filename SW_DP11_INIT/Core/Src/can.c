@@ -78,6 +78,7 @@ extern Indicator_Value Indicators[N_INDICATORS];
 extern char state, driveMode;
 extern int commandSent;
 extern int timerEfiAlive;
+extern int autox_stop, acc_stop;
 int flagCalibration;
 int feedbackCalibration;
 
@@ -402,8 +403,10 @@ void CAN_changeRoutineState(int command_feedback)
 				}
 				break;
 			case COMMAND_STOP:
-				if(state == ACCELERATION_MODE_READY || state == ACCELERATION_MODE_GO)
+				if(state == ACCELERATION_MODE_READY || state == ACCELERATION_MODE_GO){
 					state = ACCELERATION_MODE_DEFAULT;
+					acc_stop = 1;
+				}
 				break;
 			default:
 				break;
@@ -427,8 +430,10 @@ void CAN_changeRoutineState(int command_feedback)
 				}
 				break;
 			case COMMAND_STOP:
-				if(state == AUTOX_MODE_READY || state == AUTOX_MODE_GO)
+				if(state == AUTOX_MODE_READY || state == AUTOX_MODE_GO){
 					state = AUTOX_MODE_DEFAULT; 
+					autox_stop = 1;
+				}
 				break;
 		}
 	}

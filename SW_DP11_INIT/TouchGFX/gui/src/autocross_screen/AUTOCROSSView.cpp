@@ -7,6 +7,7 @@ extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
 extern uint8_t AutPointer[6];
 extern char state;
+int autox_stop = 0;
 
 AUTOCROSSView::AUTOCROSSView()
 {
@@ -18,6 +19,7 @@ void AUTOCROSSView::setupScreen()
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
 		goPopUp = 0;
+		stopPopUp = 0;
 		AUTOCROSSViewBase::setupScreen();
 }
 
@@ -206,6 +208,8 @@ void AUTOCROSSView::screenCheckMessage()
 			case AUTOX_MODE_READY:
 				// stampa a schermo mex READY ?
 				goPopUp = 0;
+				stopPopUp = 0;
+			  autox_stop = 0;
 				touchgfx::Unicode::strncpy( Ready, "READY", 9);	
 				Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Ready);
 				boxMessage.setVisible(true);
@@ -213,6 +217,7 @@ void AUTOCROSSView::screenCheckMessage()
 				break;
 			case AUTOX_MODE_GO:
 				// stampa a schermo mex GO - per un tot di sec?7		
+				autox_stop = 0;
 				if(goPopUp < POPUP_TIME){
 					touchgfx::Unicode::strncpy( Go, "GOOO", 9);
 					Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
@@ -222,8 +227,18 @@ void AUTOCROSSView::screenCheckMessage()
 				}
 				break;
 			default:
-				boxMessage.setVisible(false);
-				textMessage.setVisible(false);
+				if( autox_stop == 1 && stopPopUp < 10)
+				{
+					touchgfx::Unicode::strncpy( Go, "STOP", 9);
+					Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", Go);
+					boxMessage.setVisible(true);
+					textMessage.setVisible(true);
+					stopPopUp++;
+				}else{
+					boxMessage.setVisible(false);
+					textMessage.setVisible(false);
+					autox_stop = 0;
+				}
 				break;
 	}
 	
