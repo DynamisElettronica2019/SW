@@ -66,7 +66,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer1].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.1f", Indicators[pointer1].floatValore);
+			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.2f", Indicators[pointer1].floatValore);
 		Unicode::snprintf(textIndValueCurr1Buffer, TEXTINDVALUECURR1_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_1Buffer, TEXTINDUNITSX_1_SIZE, "%s",unit_A);	
 		Unicode::snprintf(textIndUnitDx_1Buffer, TEXTINDUNITDX_1_SIZE, "%s",notDef);	
@@ -82,7 +82,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer1].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.1f", Indicators[pointer1].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.2f", Indicators[pointer1].floatValore);	
 		Unicode::snprintf(textIndValueCurr1Buffer, TEXTINDVALUECURR1_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_1Buffer, TEXTINDUNITSX_1_SIZE, "%s",unit_msq);	
 		Unicode::snprintf(textIndUnitDx_1Buffer, TEXTINDUNITDX_1_SIZE, "%s",notDef);	
@@ -90,7 +90,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer1].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.1f", Indicators[pointer1].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.2f", Indicators[pointer1].floatValore);	
 		Unicode::snprintf(textIndValueCurr1Buffer, TEXTINDVALUECURR1_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_1Buffer, TEXTINDUNITSX_1_SIZE, "%s",unit_rps);	
 		Unicode::snprintf(textIndUnitDx_1Buffer, TEXTINDUNITDX_1_SIZE, "%s",notDef);	
@@ -98,7 +98,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer1].floatValore == DEF_VALUE)	
 			Unicode::snprintf(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.1f", Indicators[pointer1].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp1Buffer, TEXTINDVALUETEMP1_SIZE, "%.2f", Indicators[pointer1].floatValore);	
 		Unicode::snprintf(textIndValueCurr1Buffer, TEXTINDVALUECURR1_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_1Buffer, TEXTINDUNITSX_1_SIZE, "%s",unit_degree);	
 		Unicode::snprintf(textIndUnitDx_1Buffer, TEXTINDUNITDX_1_SIZE, "%s",notDef);	
@@ -172,7 +172,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer3].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.3f", Indicators[pointer3].floatValore);
+			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.2f", Indicators[pointer3].floatValore);
 		Unicode::snprintf(textIndValueCurr3Buffer, TEXTINDVALUECURR3_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_3Buffer, TEXTINDUNITSX_3_SIZE, "%s",unit_A);	
 		Unicode::snprintf(textIndUnitDx_3Buffer, TEXTINDUNITDX_3_SIZE, "%s",notDef);	
@@ -188,7 +188,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer3].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.3f", Indicators[pointer3].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.2f", Indicators[pointer3].floatValore);	
 		Unicode::snprintf(textIndValueCurr3Buffer, TEXTINDVALUECURR3_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_3Buffer, TEXTINDUNITSX_3_SIZE, "%s",unit_msq);	
 		Unicode::snprintf(textIndUnitDx_3Buffer, TEXTINDUNITDX_3_SIZE, "%s",notDef);	
@@ -196,7 +196,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer3].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.3f", Indicators[pointer3].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.2f", Indicators[pointer3].floatValore);	
 		Unicode::snprintf(textIndValueCurr3Buffer, TEXTINDVALUECURR3_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_3Buffer, TEXTINDUNITSX_3_SIZE, "%s",unit_rps);	
 		Unicode::snprintf(textIndUnitDx_3Buffer, TEXTINDUNITDX_3_SIZE, "%s",notDef);	
@@ -204,7 +204,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer3].floatValore == DEF_VALUE)	
 			Unicode::snprintf(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.3f", Indicators[pointer3].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp3Buffer, TEXTINDVALUETEMP3_SIZE, "%.2f", Indicators[pointer3].floatValore);	
 		Unicode::snprintf(textIndValueCurr3Buffer, TEXTINDVALUECURR3_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_3Buffer, TEXTINDUNITSX_3_SIZE, "%s",unit_degree);	
 		Unicode::snprintf(textIndUnitDx_3Buffer, TEXTINDUNITDX_3_SIZE, "%s",notDef);	
@@ -225,7 +225,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer4].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.4f", Indicators[pointer4].floatValore);
+			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.2f", Indicators[pointer4].floatValore);
 		Unicode::snprintf(textIndValueCurr4Buffer, TEXTINDVALUECURR4_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_4Buffer, TEXTINDUNITSX_4_SIZE, "%s",unit_A);	
 		Unicode::snprintf(textIndUnitDx_4Buffer, TEXTINDUNITDX_4_SIZE, "%s",notDef);	
@@ -241,7 +241,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer4].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.4f", Indicators[pointer4].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.2f", Indicators[pointer4].floatValore);	
 		Unicode::snprintf(textIndValueCurr4Buffer, TEXTINDVALUECURR4_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_4Buffer, TEXTINDUNITSX_4_SIZE, "%s",unit_msq);	
 		Unicode::snprintf(textIndUnitDx_4Buffer, TEXTINDUNITDX_4_SIZE, "%s",notDef);	
@@ -249,7 +249,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer4].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.4f", Indicators[pointer4].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.2f", Indicators[pointer4].floatValore);	
 		Unicode::snprintf(textIndValueCurr4Buffer, TEXTINDVALUECURR4_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_4Buffer, TEXTINDUNITSX_4_SIZE, "%s",unit_rps);	
 		Unicode::snprintf(textIndUnitDx_4Buffer, TEXTINDUNITDX_4_SIZE, "%s",notDef);	
@@ -257,7 +257,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer4].floatValore == DEF_VALUE)	
 			Unicode::snprintf(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.4f", Indicators[pointer4].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp4Buffer, TEXTINDVALUETEMP4_SIZE, "%.2f", Indicators[pointer4].floatValore);	
 		Unicode::snprintf(textIndValueCurr4Buffer, TEXTINDVALUECURR4_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_4Buffer, TEXTINDUNITSX_4_SIZE, "%s",unit_degree);	
 		Unicode::snprintf(textIndUnitDx_4Buffer, TEXTINDUNITDX_4_SIZE, "%s",notDef);	
@@ -278,7 +278,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer5].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.5f", Indicators[pointer5].floatValore);
+			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.2f", Indicators[pointer5].floatValore);
 		Unicode::snprintf(textIndValueCurr5Buffer, TEXTINDVALUECURR5_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_5Buffer, TEXTINDUNITSX_5_SIZE, "%s",unit_A);	
 		Unicode::snprintf(textIndUnitDx_5Buffer, TEXTINDUNITDX_5_SIZE, "%s",notDef);	
@@ -294,7 +294,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer5].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.5f", Indicators[pointer5].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.2f", Indicators[pointer5].floatValore);	
 		Unicode::snprintf(textIndValueCurr5Buffer, TEXTINDVALUECURR5_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_5Buffer, TEXTINDUNITSX_5_SIZE, "%s",unit_msq);	
 		Unicode::snprintf(textIndUnitDx_5Buffer, TEXTINDUNITDX_5_SIZE, "%s",notDef);	
@@ -302,7 +302,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer5].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.5f", Indicators[pointer5].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.2f", Indicators[pointer5].floatValore);	
 		Unicode::snprintf(textIndValueCurr5Buffer, TEXTINDVALUECURR5_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_5Buffer, TEXTINDUNITSX_5_SIZE, "%s",unit_rps);	
 		Unicode::snprintf(textIndUnitDx_5Buffer, TEXTINDUNITDX_5_SIZE, "%s",notDef);	
@@ -310,7 +310,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer5].floatValore == DEF_VALUE)	
 			Unicode::snprintf(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.5f", Indicators[pointer5].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp5Buffer, TEXTINDVALUETEMP5_SIZE, "%.2f", Indicators[pointer5].floatValore);	
 		Unicode::snprintf(textIndValueCurr5Buffer, TEXTINDVALUECURR5_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_5Buffer, TEXTINDUNITSX_5_SIZE, "%s",unit_degree);	
 		Unicode::snprintf(textIndUnitDx_5Buffer, TEXTINDUNITDX_5_SIZE, "%s",notDef);	
@@ -331,7 +331,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer6].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.6f", Indicators[pointer6].floatValore);
+			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.2f", Indicators[pointer6].floatValore);
 		Unicode::snprintf(textIndValueCurr6Buffer, TEXTINDVALUECURR6_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_6Buffer, TEXTINDUNITSX_6_SIZE, "%s",unit_A);	
 		Unicode::snprintf(textIndUnitDx_6Buffer, TEXTINDUNITDX_6_SIZE, "%s",notDef);	
@@ -347,7 +347,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer6].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.6f", Indicators[pointer6].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.2f", Indicators[pointer6].floatValore);	
 		Unicode::snprintf(textIndValueCurr6Buffer, TEXTINDVALUECURR6_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_6Buffer, TEXTINDUNITSX_6_SIZE, "%s",unit_msq);	
 		Unicode::snprintf(textIndUnitDx_6Buffer, TEXTINDUNITDX_6_SIZE, "%s",notDef);	
@@ -355,7 +355,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer6].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.6f", Indicators[pointer6].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.2f", Indicators[pointer6].floatValore);	
 		Unicode::snprintf(textIndValueCurr6Buffer, TEXTINDVALUECURR6_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_6Buffer, TEXTINDUNITSX_6_SIZE, "%s",unit_rps);	
 		Unicode::snprintf(textIndUnitDx_6Buffer, TEXTINDUNITDX_6_SIZE, "%s",notDef);	
@@ -363,7 +363,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer6].floatValore == DEF_VALUE)	
 			Unicode::snprintf(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.6f", Indicators[pointer6].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp6Buffer, TEXTINDVALUETEMP6_SIZE, "%.2f", Indicators[pointer6].floatValore);	
 		Unicode::snprintf(textIndValueCurr6Buffer, TEXTINDVALUECURR6_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_6Buffer, TEXTINDUNITSX_6_SIZE, "%s",unit_degree);	
 		Unicode::snprintf(textIndUnitDx_6Buffer, TEXTINDUNITDX_6_SIZE, "%s",notDef);	
@@ -384,7 +384,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer7].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.7f", Indicators[pointer7].floatValore);
+			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.2f", Indicators[pointer7].floatValore);
 		Unicode::snprintf(textIndValueCurr7Buffer, TEXTINDVALUECURR7_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_7Buffer, TEXTINDUNITSX_7_SIZE, "%s",unit_A);	
 		Unicode::snprintf(textIndUnitDx_7Buffer, TEXTINDUNITDX_7_SIZE, "%s",notDef);	
@@ -400,7 +400,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer7].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.7f", Indicators[pointer7].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.2f", Indicators[pointer7].floatValore);	
 		Unicode::snprintf(textIndValueCurr7Buffer, TEXTINDVALUECURR7_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_7Buffer, TEXTINDUNITSX_7_SIZE, "%s",unit_msq);	
 		Unicode::snprintf(textIndUnitDx_7Buffer, TEXTINDUNITDX_7_SIZE, "%s",notDef);	
@@ -408,7 +408,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer7].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.7f", Indicators[pointer7].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.2f", Indicators[pointer7].floatValore);	
 		Unicode::snprintf(textIndValueCurr7Buffer, TEXTINDVALUECURR7_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_7Buffer, TEXTINDUNITSX_7_SIZE, "%s",unit_rps);	
 		Unicode::snprintf(textIndUnitDx_7Buffer, TEXTINDUNITDX_7_SIZE, "%s",notDef);	
@@ -416,7 +416,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer7].floatValore == DEF_VALUE)	
 			Unicode::snprintf(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.7f", Indicators[pointer7].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp7Buffer, TEXTINDVALUETEMP7_SIZE, "%.2f", Indicators[pointer7].floatValore);	
 		Unicode::snprintf(textIndValueCurr7Buffer, TEXTINDVALUECURR7_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_7Buffer, TEXTINDUNITSX_7_SIZE, "%s",unit_degree);	
 		Unicode::snprintf(textIndUnitDx_7Buffer, TEXTINDUNITDX_7_SIZE, "%s",notDef);	
@@ -437,7 +437,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer8].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.8f", Indicators[pointer8].floatValore);
+			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.2f", Indicators[pointer8].floatValore);
 		Unicode::snprintf(textIndValueCurr8Buffer, TEXTINDVALUECURR8_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_8Buffer, TEXTINDUNITSX_8_SIZE, "%s",unit_A);	
 		Unicode::snprintf(textIndUnitDx_8Buffer, TEXTINDUNITDX_8_SIZE, "%s",notDef);	
@@ -453,7 +453,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer8].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.8f", Indicators[pointer8].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.2f", Indicators[pointer8].floatValore);	
 		Unicode::snprintf(textIndValueCurr8Buffer, TEXTINDVALUECURR8_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_8Buffer, TEXTINDUNITSX_8_SIZE, "%s",unit_msq);	
 		Unicode::snprintf(textIndUnitDx_8Buffer, TEXTINDUNITDX_8_SIZE, "%s",notDef);	
@@ -461,7 +461,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer8].floatValore == DEF_VALUE)
 			Unicode::snprintf(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.8f", Indicators[pointer8].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.2f", Indicators[pointer8].floatValore);	
 		Unicode::snprintf(textIndValueCurr8Buffer, TEXTINDVALUECURR8_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_8Buffer, TEXTINDUNITSX_8_SIZE, "%s",unit_rps);	
 		Unicode::snprintf(textIndUnitDx_8Buffer, TEXTINDUNITDX_8_SIZE, "%s",notDef);	
@@ -469,7 +469,7 @@ void BOARD_DEBUGView::refreshBoardDebug()
 		if(Indicators[pointer8].floatValore == DEF_VALUE)	
 			Unicode::snprintf(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%s", Empty);
 		else
-			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.8f", Indicators[pointer8].floatValore);	
+			Unicode::snprintfFloat(textIndValueTemp8Buffer, TEXTINDVALUETEMP8_SIZE, "%.2f", Indicators[pointer8].floatValore);	
 		Unicode::snprintf(textIndValueCurr8Buffer, TEXTINDVALUECURR8_SIZE, "%s",notDef);
 		Unicode::snprintf(textIndUnitSx_8Buffer, TEXTINDUNITSX_8_SIZE, "%s",unit_degree);	
 		Unicode::snprintf(textIndUnitDx_8Buffer, TEXTINDUNITDX_8_SIZE, "%s",notDef);	
