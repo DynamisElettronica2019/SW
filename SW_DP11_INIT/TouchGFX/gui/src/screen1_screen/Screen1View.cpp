@@ -1,5 +1,5 @@
 #include <gui/screen1_screen/Screen1View.hpp>
-
+#include "tim.h"
 
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
@@ -12,7 +12,7 @@ Screen1View::Screen1View()
 
 void Screen1View::setupScreen()
 {
-
+	
 }
 
 void Screen1View::refreshScreen1()
@@ -47,4 +47,5 @@ void Screen1View::checkChangeScreen()
 					application().gotoSKIDPADScreenNoTransition();
 					break;
 	}	
+	TIM_stopBuzzer();
 }

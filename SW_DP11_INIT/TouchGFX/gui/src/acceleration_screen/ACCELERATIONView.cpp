@@ -109,7 +109,7 @@ void ACCELERATIONView::refreshAcceleration()
 
 	/****************RPM LIMITER*****************/
 	
-	Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%d", Indicators[RPM_LIM].intValore);
+	Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%d", Indicators[RPM_LIM].intValore*1000);
 	
 	/****************ACQUISITION*****************/
 	

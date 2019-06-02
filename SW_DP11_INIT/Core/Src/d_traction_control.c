@@ -32,7 +32,7 @@ void d_traction_control_setValue(int movement)
   } else if(value <= TRACTION_MIN_VALUE){
     value = TRACTION_MIN_VALUE;
 	}
-	Indicators[TRACTION_CONTROL].intValore = value;
+	
 	d_tractionValue = value;
 }
 

@@ -99,3 +99,4 @@ sw_dp11_init\screen1view.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sp
 sw_dp11_init\screen1view.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\screen1view.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 sw_dp11_init\screen1view.o: ../Core/Inc/general.h
+sw_dp11_init\screen1view.o: ../Core/Inc/tim.h

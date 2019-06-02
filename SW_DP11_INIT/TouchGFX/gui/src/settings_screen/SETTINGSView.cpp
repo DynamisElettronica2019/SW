@@ -16,6 +16,7 @@ extern uint8_t AutPointer[6];
 extern uint8_t SkiPointer[6];
 
 extern int currentCalibration;
+extern int feedbackCalibration;
 extern int flagCalibration;
 extern int calibrationPopUp;
 	
@@ -599,7 +600,7 @@ void SETTINGSView::displaySkidpad()
 void SETTINGSView::calibrationDisplay()
 {
 	if (flagCalibration == 1 && calibrationPopUp < (3 * POPUP_TIME)){
-		switch (currentCalibration){
+		switch (feedbackCalibration){
 			case COMMAND_SAVE_APPS0:
 				touchgfx::Unicode::strncpy( CurrCalibration, "APPS 0%", 20);
 				break;

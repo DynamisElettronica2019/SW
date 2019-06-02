@@ -54,6 +54,7 @@
 #include "general.h"
 #include "data.h"
 #include "can.h"
+#include "i2c.h"
 
 /* USER CODE END 0 */
 
@@ -78,8 +79,8 @@ int change_pointer;
 
 int commandSent = 0;
 
-int flagCalibration;
 int calibrationPopUp;
+extern int flagCalibration;
 
 /* USER CODE END 1 */
 
@@ -340,7 +341,7 @@ void GPIO_engineMap_set(void)
 	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
 	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
 
-	new_map = GPIO_encoders_find_new_position(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
+	new_map = GPIO_encoders_find_new_mode(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
 	
 	// a Nico non piace il % :(
 	if(new_map == 0 || new_map == 2 || new_map == 4 || new_map == 6) new_map = MAP_1;
@@ -560,8 +561,7 @@ void GPIO_okButton_handle(void)
 		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT ){
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, EMPTY, EMPTY, 2);
 			commandSent = 1;
-		}
-		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY ){
+		}else	if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY ){
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, EMPTY, EMPTY, 2);
 			commandSent = 1;
 		}
@@ -569,18 +569,17 @@ void GPIO_okButton_handle(void)
 		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, EMPTY, EMPTY, 2);
 			commandSent = 1;
-		}
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
+		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, EMPTY, EMPTY, 2);
 			commandSent = 1;
 		}
+		
 		if( driveMode == SETTINGS_MODE){
 			if (schermata_settings == 0 && box_driveMode >= 0 && box_driveMode <= 3)
 				schermata_settings = 1;
 			else if (schermata_settings == 0 && box_driveMode == 4 )
 				schermata_settings = 2;
 			else if (schermata_settings == 2 && flagCalibration == 0){
-				flagCalibration = 1; //----- da mettere su can.c
 				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentCalibration, EMPTY, EMPTY, 2);	
 			}				
 		}
@@ -600,6 +599,11 @@ void GPIO_aux1Button_handle(void)
 	} 
 }
 		
+void GPIO_aux2Button_handle(void)
+{
+	HAL_NVIC_SystemReset();
+}
+
 /* USER CODE END 2 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

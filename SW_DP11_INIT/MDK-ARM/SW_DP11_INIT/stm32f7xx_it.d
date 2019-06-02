@@ -57,3 +57,4 @@ sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/general.h

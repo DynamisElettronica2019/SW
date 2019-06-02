@@ -77,6 +77,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt, uint8_t dlc_value);
 void CAN_changeState(int mode_feedback);
 void CAN_changeRoutineState(int routine_state);
+void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt);
 
 /* USER CODE END Prototypes */
 

@@ -109,6 +109,7 @@ extern I2C_HandleTypeDef hi2c1;
 
 #define START_CELL			0
 #define DEF_CELL				10
+#define RESET_CELL 			15
  	 
 #define N_POINTERS 			6
 
@@ -149,7 +150,6 @@ void I2C_get_skiPointers(void);
 void I2C_get_defPointers(void);
 
 void I2C_getPointers(void);
-
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

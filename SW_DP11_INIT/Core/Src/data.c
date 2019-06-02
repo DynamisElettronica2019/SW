@@ -30,7 +30,7 @@ void data_indicatorsInit(void)
   Indicators[RPM_LIM] 					= (Indicator_Value) {RPM_LIM, INT, "RPM_LIM", 9, DEF_VALUE, DEF_VALUE,"?"};
 	Indicators[FUEL_LEVEL] 				= (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[FUEL_PRESS] 				= (Indicator_Value) {FUEL_PRESS, FLOAT, "PFUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[MAP] 							= (Indicator_Value) {MAP, INT, "MAP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+//  Indicators[MAP] 							= (Indicator_Value) {MAP, INT, "MAP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 
 	Indicators[VH_SPEED]					= (Indicator_Value) {VH_SPEED, FLOAT, "VH_SPEED", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[PH2O] 							= (Indicator_Value) {PH2O, FLOAT, "PH2O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};

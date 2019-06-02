@@ -10,16 +10,23 @@ extern "C" {
 #include "adc.h"
 #include "data.h"
 	
-#define CLUTCH_MAX_VALUE 4000
+#define CLUTCH_MAX_VALUE 4050
 #define CLUTCH_MIN_VALUE 0
-
-	void dSensors_Clutch_send(void);	//in caso di invio diretto dalla task è inutile
-
-	void dSensors_Sensors_send(void);	//in caso di invio diretto dalla task è inutile	
 	
-	void dSensors_update(void);
+#define ADC_LSB 											(3.3f/4095.0f)
+#define INA_GAIN 											(uint8_t)100
+#define TEMP_VOLTAGE_OFFSET						100.0f 			/* [mV] */
+#define TEMP_GAIN 										0.1f 				/* [°C/mV] */
+#define TEMP_OFFSET										40.0f 			/* [°C] */
+#define SHUNT_RESISTOR 								0.022f		  /* [Ohm] */
+
+void dSensors_Clutch_send(void);	//in caso di invio diretto dalla task è inutile
+
+void dSensors_Sensors_send(void);	//in caso di invio diretto dalla task è inutile	
 	
-	void dSensors_CLUTCH(int);
+void dSensors_convert(int currValue, int tempValue);
+	
+void dSensors_CLUTCH(int);
 	
 #ifdef __cplusplus
 }

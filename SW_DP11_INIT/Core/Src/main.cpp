@@ -112,7 +112,7 @@ extern void GRAPHICS_MainTask(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  MX_FREERTOS_Init();
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -152,12 +152,9 @@ int main(void)
 	I2C_getPointers();
 	data_indicatorsInit();
 	
-	//GPIO_encoders_init();
+	GPIO_encoders_init();
 
-	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
-	
-	HAL_TIM_Base_Start_IT(&htim7);
+	TIM_startTimers();
 	
 	CAN_Start();
 	
@@ -170,7 +167,6 @@ int main(void)
   GRAPHICS_Init();
       
   /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
 
   /* Start scheduler */
 	

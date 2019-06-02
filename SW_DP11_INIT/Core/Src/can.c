@@ -78,6 +78,8 @@ extern Indicator_Value Indicators[N_INDICATORS];
 extern char state, driveMode;
 extern int commandSent;
 extern int timerEfiAlive;
+int flagCalibration;
+int feedbackCalibration;
 
 /* USER CODE END 0 */
 
@@ -262,13 +264,13 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
         break;
 		 case GCU_TRACTION_LIMITER_AUTOG_ACC_SW_ID:
-				//Indicators[TRACTION_CONTROL].intValore = firstInt;
+				Indicators[TRACTION_CONTROL].intValore = firstInt;
 				Indicators[RPM_LIM].intValore = secondInt;
 			  // autogearshift feedback
 				CAN_changeRoutineState(fourthInt);
         break;
      case DCU_ACQUISITION_SW_ID:
-				Indicators[ACQ].intValore = firstInt;
+				CAN_DCU_feedback(firstInt,secondInt);
         break;
 		 case	IMU1_DATA_1_ID:
 			 	Indicators[ACC_X_1].floatValore = ((int)firstInt)/100.0;
@@ -294,32 +296,32 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 			 break;
 			// DAU ci interessa qualcosa oltre a  t e i ???
      case DAU_FR_DEBUG_ID:
-				Indicators[DAU_FR_BOARD].intValore = firstInt;
-				Indicators[DAU_FR_BOARD].intValore2 = secondInt;
+				Indicators[DAU_FR_BOARD].intValore2 = firstInt;
+				Indicators[DAU_FR_BOARD].intValore = secondInt;
         break;
 	   case DAU_FL_DEBUG_ID:
-			  Indicators[DAU_FL_BOARD].intValore = thirdInt;
-			  Indicators[DAU_FL_BOARD].intValore2 = fourthInt; 
+			  Indicators[DAU_FL_BOARD].intValore2 = thirdInt;
+			  Indicators[DAU_FL_BOARD].intValore = fourthInt; 
         break;
      case DAU_REAR_DEBUG_ID:
 				Indicators[DAU_R_BOARD].intValore = firstInt;
 				Indicators[DAU_R_BOARD].intValore2 = secondInt;
 				break;
      case GCU_DEBUG_1_ID:
-				Indicators[GCU_BOARD].intValore = firstInt;
-				Indicators[GCU_BOARD].intValore2 = secondInt;
-				Indicators[H2O_PUMP].intValore2 = thirdInt/10;
-        Indicators[FUEL_PUMP].intValore2 = fourthInt/10;
+				Indicators[GCU_BOARD].intValore2 = firstInt;
+				Indicators[GCU_BOARD].intValore = secondInt;
+				Indicators[H2O_PUMP].floatValore = thirdInt/10;
+        Indicators[FUEL_PUMP].floatValore = fourthInt/10;
         break;
      case GCU_DEBUG_2_ID:
-        Indicators[GEAR_CURR].intValore2 = firstInt/10;
-        Indicators[CLUTCH_CURR].intValore2 = secondInt/10;
-        Indicators[H2O_FAN_SX].intValore2 = thirdInt/10;
-        Indicators[H2O_FAN_DX].intValore2 = fourthInt/10;
+        Indicators[GEAR_CURR].floatValore = firstInt/10;
+        Indicators[CLUTCH_CURR].floatValore = secondInt/10;
+        Indicators[H2O_FAN_SX].floatValore = thirdInt/10;
+        Indicators[H2O_FAN_DX].floatValore = fourthInt/10;
         break;
      case DCU_DEBUG_1_ID:
-        Indicators[DCU_BOARD].intValore = firstInt;
-				Indicators[DCU_BOARD].intValore2 = secondInt;
+        Indicators[DCU_BOARD].intValore2 = firstInt;
+				Indicators[DCU_BOARD].intValore = secondInt;
 				Indicators[XBEE].intValore2 = thirdInt;
 			  Indicators[DCU_3V3].intValore2 = fourthInt;
         break;
@@ -388,12 +390,16 @@ void CAN_changeRoutineState(int command_feedback)
 		switch(command_feedback)
 		{
 			case COMMAND_READY:
-				if(state == ACCELERATION_MODE_DEFAULT && commandSent == 1)
+				if(state == ACCELERATION_MODE_DEFAULT && commandSent == 1){
 					state = ACCELERATION_MODE_READY;
+					commandSent = 0;
+				}
 				break;
 			case COMMAND_GO:
-				if(state == ACCELERATION_MODE_READY && commandSent == 1)
+				if(state == ACCELERATION_MODE_READY && commandSent == 1){
 					state = ACCELERATION_MODE_GO;
+					commandSent = 0;
+				}
 				break;
 			case COMMAND_STOP:
 				if(state == ACCELERATION_MODE_READY || state == ACCELERATION_MODE_GO)
@@ -402,7 +408,6 @@ void CAN_changeRoutineState(int command_feedback)
 			default:
 				break;
 		}
-		commandSent = 0;
 	}
 	
 	if(Indicators[DRIVE_MODE].intValore == AUTOX_MODE)
@@ -410,20 +415,34 @@ void CAN_changeRoutineState(int command_feedback)
 		switch(command_feedback)
 		{
 			case COMMAND_READY:
-				if(state == AUTOX_MODE_DEFAULT && commandSent == 1)
+				if(state == AUTOX_MODE_DEFAULT && commandSent == 1){
 					state = AUTOX_MODE_READY;
+					commandSent = 0;
+				}
 				break;
 			case COMMAND_GO:
-				if(state == AUTOX_MODE_READY && commandSent == 1)
+				if(state == AUTOX_MODE_READY && commandSent == 1){
 					state = AUTOX_MODE_GO;
+					commandSent = 0;
+				}
 				break;
 			case COMMAND_STOP:
 				if(state == AUTOX_MODE_READY || state == AUTOX_MODE_GO)
 					state = AUTOX_MODE_DEFAULT; 
 				break;
 		}
-		commandSent = 0;
 	}
+}
+
+void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt)
+{
+	if( firstInt == DCU_ACQUISITION_CODE ){
+		Indicators[ACQ].intValore = firstInt;
+	}
+	if( firstInt == DCU_SAVE_CALIBRATION_CODE ){
+		feedbackCalibration	= secondInt;
+		flagCalibration = 1;
+	}			
 }
 
 

@@ -78,6 +78,8 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE BEGIN Prototypes */
 void TIM_tractionRpm_send(void);
 void TIM_callback(TIM_HandleTypeDef *htim);
+void TIM_startTimers(void);
+void TIM_stopBuzzer(void);
 
 /* USER CODE END Prototypes */
 

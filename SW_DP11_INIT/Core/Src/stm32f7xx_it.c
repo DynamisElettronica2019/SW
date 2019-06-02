@@ -39,6 +39,7 @@
 #include "cmsis_os.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "general.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,6 +61,9 @@
 /* USER CODE BEGIN PV */
 
 BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+extern int okButtonPressed;
+extern char driveMode;
 
 /* USER CODE END PV */
 
@@ -564,7 +568,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			xSemaphoreGiveFromISR(neutralButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case OK_BUTTON_INT_Pin:
-			xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
+			if( okButtonPressed == 0 || driveMode == SETTINGS_MODE )
+				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case AUX_1_BUTTON_INT_Pin:
 			xSemaphoreGiveFromISR(aux1ButtonSemaphoreHandle, &xHigherPriorityTaskWoken);

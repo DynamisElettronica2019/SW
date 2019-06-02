@@ -85,7 +85,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+extern void dGear_setNeutral(void);
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -97,6 +97,7 @@ int state;
 
 int timerClutch = 0;
 int timerTempCurr = 0;
+int okButtonPressed = 0;
 
 extern BaseType_t xHigherPriorityTaskWoken;
 
@@ -550,13 +551,11 @@ void ledBlinkTask(void const * argument)
   for(;;)
   {
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
-		
-		dSensors_Sensors_send();
 
 //		Indicators[TRACTION_CONTROL].intValore = state;
 		
-		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
-		Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
+//		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
+//		Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
 		
     osDelay(250);
   }
@@ -610,10 +609,10 @@ void upShiftTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(upShiftSemaphoreHandle, portMAX_DELAY);
-		vTaskDelay(90/portTICK_PERIOD_MS);
+		vTaskDelay(80/portTICK_PERIOD_MS);
 		if ( 0 == HAL_GPIO_ReadPin(SHIFT_UP_INT_GPIO_Port, SHIFT_UP_INT_Pin) )
 			dGears_upShift();
-		vTaskDelay(150/portTICK_PERIOD_MS);
+		vTaskDelay(100/portTICK_PERIOD_MS);
     osDelay(1);
   }
   /* USER CODE END upShiftTask */
@@ -882,7 +881,9 @@ void okButtonTask(void const * argument)
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_okButton_handle();
-		
+		okButtonPressed = 1;
+		vTaskDelay(1500/portTICK_PERIOD_MS);
+		okButtonPressed = 0;
     osDelay(1);
   }
   /* USER CODE END okButtonTask */
@@ -924,7 +925,8 @@ void aux2ButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(aux2ButtonSemaphoreHandle, portMAX_DELAY);
-		vTaskDelay(50/portTICK_PERIOD_MS);
+		vTaskDelay(200/portTICK_PERIOD_MS);
+		GPIO_aux2Button_handle();
     osDelay(1);
   }
   /* USER CODE END aux2ButtonTask */
@@ -1000,7 +1002,6 @@ void sensorsTask(void const * argument)
 		
 		if (timerTempCurr >= SENSORS_SEND_TIME){
 			dSensors_Sensors_send();	
-			dSensors_update();
 			timerTempCurr = 0;
 		}
 		
