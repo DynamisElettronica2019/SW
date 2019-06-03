@@ -398,7 +398,9 @@ void I2C_debug_blue_off(uint16_t controller){
 void I2C_rpm_update(void){ 
 	int rpm_value;
 	rpm_value = Indicators[RPM].intValore;
-	//rpm_value = Indicators[RPM_LIM].intValore * 1000 ;
+	
+	if(rpm_value == DEF_VALUE) rpm_value = 0;
+	
 	if (rpm_value > RPM_STRIPE_MIN){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_6_GREEN;

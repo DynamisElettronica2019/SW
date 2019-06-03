@@ -396,6 +396,11 @@
               <FilePath>..\Core\Src\stm32756g_eval_qspi.c</FilePath>
             </File>
             <File>
+              <FileName>data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\data.c</FilePath>
+            </File>
+            <File>
               <FileName>d_rpm_limiter.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\Src\d_rpm_limiter.c</FilePath>
@@ -489,11 +494,6 @@
               <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>data.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\data.c</FilePath>
             </File>
           </Files>
         </Group>

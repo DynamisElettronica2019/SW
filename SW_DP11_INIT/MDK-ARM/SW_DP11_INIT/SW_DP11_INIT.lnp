@@ -1,6 +1,7 @@
 --cpu Cortex-M7.fp.sp
 "sw_dp11_init\startup_stm32f746xx.o"
 "sw_dp11_init\stm32756g_eval_qspi.o"
+"sw_dp11_init\data.o"
 "sw_dp11_init\d_rpm_limiter.o"
 "sw_dp11_init\d_traction_control.o"
 "sw_dp11_init\d_sensors.o"
@@ -20,7 +21,6 @@
 "sw_dp11_init\stm32f7xx_it.o"
 "sw_dp11_init\stm32f7xx_hal_msp.o"
 "sw_dp11_init\stm32f7xx_hal_timebase_tim.o"
-"sw_dp11_init\data.o"
 "sw_dp11_init\boardconfiguration.o"
 "sw_dp11_init\gpio_1.o"
 "sw_dp11_init\stm32f7dma.o"
