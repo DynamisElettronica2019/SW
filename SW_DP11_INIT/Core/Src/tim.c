@@ -78,9 +78,9 @@ int timerRpmStripe = 0;
 int timerDriveMode = 0;
 int timerTractionRpm = 0;
 int timerEfiAlive = 0;
+int timerDCUAlive = 0;
 
-int timer = 0;
-int timer_ok_button = 0;
+int DCU_is_dead = 0;
 
 extern int d_tractionValue, d_rpmLimiterValue;
 
@@ -387,11 +387,15 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerDriveMode = timerDriveMode + 1;
 		timerTractionRpm = timerTractionRpm + 1;
 		timerEfiAlive = timerEfiAlive + 1;
+		timerDCUAlive = timerDCUAlive + 1;
 	
+		if (  timerDCUAlive >= DCU_DEAD_TIME ){
+			DCU_is_dead = 1;
+		}
+		
 		if (  timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
-			timerSensors = 0;
-			timer ++;	
+			timerSensors = 0;	
 		}
 		if ( timerStartButton >= START_BUTTON_TIME){
 			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );	

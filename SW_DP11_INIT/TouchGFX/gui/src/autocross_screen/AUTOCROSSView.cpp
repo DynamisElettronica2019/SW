@@ -9,6 +9,9 @@ extern uint8_t AutPointer[6];
 extern char state;
 int autox_stop = 0;
 
+extern int timerDCUdead;
+extern int DCU_is_dead;
+
 AUTOCROSSView::AUTOCROSSView()
 {
 
@@ -112,15 +115,27 @@ void AUTOCROSSView::refreshAutocross()
 	
 	/****************ACQUISITION*****************/
 	
-	if ( Indicators[ACQ].intValore == 1 ){			//--------- da decidere come modificare il valore quando letto da CAN
+	if ( Indicators[ACQ].intValore == ACQ_ON ){	
 		touchgfx::Unicode::strncpy( Acquisition, "ON", 5);
 		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
-	}
-	else{
+	}else if ( Indicators[ACQ].intValore == ACQ_READY ){
+		touchgfx::Unicode::strncpy( Acquisition, "OFF", 5);
+		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
+	}else{
 		touchgfx::Unicode::strncpy( Acquisition, "OFF", 5);
 		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
 	}
 	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
+	
+	if ( DCU_is_dead == 1 ){
+		boxDCUdead.setVisible(true);
+		textDCUdead.setVisible(true);
+		timerDCUdead = 0; 
+	}else{
+		timerDCUdead = 100;
+		boxDCUdead.setVisible(false);
+		textDCUdead.setVisible(false);
+	}
 	
 	/****************REFFRESH OGGETTI*****************/
 	
@@ -148,6 +163,9 @@ void AUTOCROSSView::refreshAutocross()
 	
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();
+	
+	boxDCUdead.invalidate();
+	textDCUdead.invalidate();
 	
 }
 
@@ -193,6 +211,11 @@ void AUTOCROSSView::screenEntryPopup()
 	{
 		boxMessage.setVisible(false);
 	  textMessage.setVisible(false);
+	}
+	if ( timerDCUdead >= 10)
+	{
+		boxDCUdead.setVisible(false);
+	  textDCUdead.setVisible(false);
 	}
 }
 

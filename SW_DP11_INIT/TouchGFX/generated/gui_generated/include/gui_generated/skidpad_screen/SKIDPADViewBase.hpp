@@ -62,6 +62,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
     touchgfx::BoxWithBorder boxEntry;
     touchgfx::TextArea TEXTSkidpadEntry;
+    touchgfx::BoxWithBorder boxDCUdead;
+    touchgfx::TextArea textDCUdead;
 
     /*
      * Wildcard Buffers

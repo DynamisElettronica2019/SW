@@ -62,6 +62,8 @@ protected:
     touchgfx::TextArea TEXTEndurance;
     touchgfx::BoxWithBorder boxEntry;
     touchgfx::TextArea TEXTEnduranceEntry;
+    touchgfx::BoxWithBorder boxDCUdead;
+    touchgfx::TextArea textDCUdead;
 
     /*
      * Wildcard Buffers

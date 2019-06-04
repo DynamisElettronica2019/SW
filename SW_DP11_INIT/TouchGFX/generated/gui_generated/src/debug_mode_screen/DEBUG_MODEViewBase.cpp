@@ -276,6 +276,18 @@ DEBUG_MODEViewBase::DEBUG_MODEViewBase()
     textIndValue8dx.setWildcard(textIndValue8dxBuffer);
     textIndValue8dx.setTypedText(TypedText(T_SINGLEUSEID308));
 
+    boxDCUdead.setPosition(66, 162, 523, 174);
+    boxDCUdead.setVisible(false);
+    boxDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxDCUdead.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxDCUdead.setBorderSize(5);
+
+    textDCUdead.setXY(82, 194);
+    textDCUdead.setVisible(false);
+    textDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textDCUdead.setLinespacing(0);
+    textDCUdead.setTypedText(TypedText(T_SINGLEUSEID377));
+
     add(background);
     add(boxIndCurrent);
     add(line1);
@@ -314,6 +326,8 @@ DEBUG_MODEViewBase::DEBUG_MODEViewBase()
     add(textIndValue6dx);
     add(textIndValue7dx);
     add(textIndValue8dx);
+    add(boxDCUdead);
+    add(textDCUdead);
 }
 
 void DEBUG_MODEViewBase::setupScreen()

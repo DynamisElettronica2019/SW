@@ -227,6 +227,18 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     textMessage.setWildcard(textMessageBuffer);
     textMessage.setTypedText(TypedText(T_SINGLEUSEID284));
 
+    boxDCUdead.setPosition(66, 162, 523, 174);
+    boxDCUdead.setVisible(false);
+    boxDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxDCUdead.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxDCUdead.setBorderSize(5);
+
+    textDCUdead.setXY(80, 189);
+    textDCUdead.setVisible(false);
+    textDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textDCUdead.setLinespacing(0);
+    textDCUdead.setTypedText(TypedText(T_SINGLEUSEID373));
+
     add(background);
     add(boxIndicator1);
     add(boxIndicator2);
@@ -265,6 +277,8 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     add(TEXTAutocrossEntry);
     add(boxMessage);
     add(textMessage);
+    add(boxDCUdead);
+    add(textDCUdead);
 }
 
 void AUTOCROSSViewBase::setupScreen()

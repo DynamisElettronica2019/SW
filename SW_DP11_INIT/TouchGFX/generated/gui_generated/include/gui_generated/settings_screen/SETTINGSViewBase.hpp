@@ -64,6 +64,8 @@ protected:
     touchgfx::TextArea textAUTOCROSS;
     touchgfx::TextArea textSKIDPAD;
     touchgfx::TextArea textCALIBRATION;
+    touchgfx::BoxWithBorder boxDCUdead;
+    touchgfx::TextArea textDCUdead;
 
     /*
      * Wildcard Buffers

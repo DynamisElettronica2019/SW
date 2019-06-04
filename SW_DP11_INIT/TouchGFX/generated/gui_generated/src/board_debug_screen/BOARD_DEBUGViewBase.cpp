@@ -331,6 +331,18 @@ BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
     textIndUnitDx_8.setWildcard(textIndUnitDx_8Buffer);
     textIndUnitDx_8.setTypedText(TypedText(T_SINGLEUSEID361));
 
+    boxDCUdead.setPosition(66, 162, 523, 174);
+    boxDCUdead.setVisible(false);
+    boxDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxDCUdead.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxDCUdead.setBorderSize(5);
+
+    textDCUdead.setXY(86, 189);
+    textDCUdead.setVisible(false);
+    textDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textDCUdead.setLinespacing(0);
+    textDCUdead.setTypedText(TypedText(T_SINGLEUSEID376));
+
     add(background);
     add(boxIndCurrent);
     add(line1);
@@ -377,6 +389,8 @@ BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
     add(textIndUnitDx_6);
     add(textIndUnitDx_7);
     add(textIndUnitDx_8);
+    add(boxDCUdead);
+    add(textDCUdead);
 }
 
 void BOARD_DEBUGViewBase::setupScreen()

@@ -872,6 +872,54 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxDCUdead",
+            "X": 66,
+            "Y": 162,
+            "Width": 523,
+            "Height": 174,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId371",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textDCUdead",
+            "X": 87,
+            "Y": 189,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -1920,6 +1968,54 @@
             "Y": 197,
             "Width": 347,
             "Height": 110,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxDCUdead",
+            "X": 66,
+            "Y": 162,
+            "Width": 523,
+            "Height": 174,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId372",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textDCUdead",
+            "X": 80,
+            "Y": 189,
+            "Width": 483,
+            "Height": 120,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -2981,6 +3077,54 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxDCUdead",
+            "X": 66,
+            "Y": 162,
+            "Width": 523,
+            "Height": 174,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId373",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textDCUdead",
+            "X": 80,
+            "Y": 189,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -3928,6 +4072,54 @@
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxDCUdead",
+            "X": 66,
+            "Y": 162,
+            "Width": 523,
+            "Height": 174,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId374",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textDCUdead",
+            "X": 88,
+            "Y": 189,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -4922,6 +5114,54 @@
             "Height": 75,
             "Type": "TextArea",
             "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxDCUdead",
+            "X": 66,
+            "Y": 162,
+            "Width": 523,
+            "Height": 174,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId375",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textDCUdead",
+            "X": 86,
+            "Y": 189,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -6277,6 +6517,54 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxDCUdead",
+            "X": 66,
+            "Y": 162,
+            "Width": 523,
+            "Height": 174,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId376",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textDCUdead",
+            "X": 86,
+            "Y": 189,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -7394,6 +7682,54 @@
             "Height": 50,
             "Type": "TextArea",
             "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxDCUdead",
+            "X": 66,
+            "Y": 162,
+            "Width": 523,
+            "Height": 174,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId377",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textDCUdead",
+            "X": 82,
+            "Y": 194,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -8920,6 +9256,34 @@
       },
       {
         "TextEntryId": "SingleUseId370",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId371",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId372",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId373",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId374",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId376",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId377",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId375",
         "IsResource": false
       }
     ],

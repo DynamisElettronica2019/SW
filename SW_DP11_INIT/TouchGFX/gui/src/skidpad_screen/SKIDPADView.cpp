@@ -8,6 +8,10 @@ extern Indicator_Value Indicators[N_INDICATORS];
 //extern Indicator_Pointer SkiPointer;
 extern uint8_t SkiPointer[6];
 
+int timerDCUdead = 100;
+extern int DCU_is_dead;
+
+
 SKIDPADView::SKIDPADView()
 {
 
@@ -117,6 +121,17 @@ void SKIDPADView::refreshSkidpad()
 	}
 	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
 	
+	if ( Indicators[ACQ].intValore == ACQ_ON ){	
+		touchgfx::Unicode::strncpy( Acquisition, "ON", 5);
+		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
+	}else if ( Indicators[ACQ].intValore == ACQ_READY ){
+		touchgfx::Unicode::strncpy( Acquisition, "OFF", 5);
+		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
+	}else{
+		touchgfx::Unicode::strncpy( Acquisition, "OFF", 5);
+		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+	}
+	
 	/****************REFFRESH OGGETTI*****************/
 	
 	textIndTitle1.invalidate();
@@ -142,6 +157,8 @@ void SKIDPADView::refreshSkidpad()
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();
 	
+	boxDCUdead.invalidate();
+	textDCUdead.invalidate();
 }
 
 void SKIDPADView::checkChangeScreen()
@@ -181,10 +198,12 @@ void SKIDPADView::screenEntryPopup()
 		textIndGearValue.setVisible(true);
 		boxIndicatorGear.invalidate();
 	}
-	else{
-//		textIndGearValue.setVisible(false);
-//		boxIndicatorGear.invalidate();
-//		textIndGearValue.invalidate();
+	
+	if ( timerDCUdead >= 10)
+	{
+		boxDCUdead.setVisible(false);
+	  textDCUdead.setVisible(false);
 	}
+
 }
 

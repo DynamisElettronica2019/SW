@@ -66,6 +66,8 @@ protected:
     touchgfx::TextArea TEXTAccelerationEntry;
     touchgfx::BoxWithBorder boxMessage;
     touchgfx::TextAreaWithOneWildcard textMessage;
+    touchgfx::BoxWithBorder boxDCUdead;
+    touchgfx::TextArea textDCUdead;
 
     /*
      * Wildcard Buffers

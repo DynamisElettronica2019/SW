@@ -82,6 +82,9 @@ extern int autox_stop, acc_stop;
 int flagCalibration;
 int feedbackCalibration;
 
+extern int timerDCUAlive;
+extern int DCU_is_dead;
+
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan1;
@@ -442,12 +445,14 @@ void CAN_changeRoutineState(int command_feedback)
 void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt)
 {
 	if( firstInt == DCU_ACQUISITION_CODE ){
-		Indicators[ACQ].intValore = firstInt;
+		Indicators[ACQ].intValore = secondInt;
 	}
 	if( firstInt == DCU_SAVE_CALIBRATION_CODE ){
 		feedbackCalibration	= secondInt;
 		flagCalibration = 1;
 	}			
+	timerDCUAlive = 0;
+	DCU_is_dead = 0;
 }
 
 

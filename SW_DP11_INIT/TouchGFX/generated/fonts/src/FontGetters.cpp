@@ -14,7 +14,7 @@ touchgfx::InternalFlashFont& getFont_Roboto_Black_100_4bpp();
 
 touchgfx::InternalFlashFont& getFont_Roboto_Black_100_4bpp()
 {
-    static touchgfx::InternalFlashFont Roboto_Black_100_4bpp(glyphs_Roboto_Black_100_4bpp, 52, 100, 22, 4, 2, 1, unicodes_Roboto_Black_100_4bpp, kerning_Roboto_Black_100_4bpp, 63, 0);
+    static touchgfx::InternalFlashFont Roboto_Black_100_4bpp(glyphs_Roboto_Black_100_4bpp, 53, 100, 22, 4, 2, 1, unicodes_Roboto_Black_100_4bpp, kerning_Roboto_Black_100_4bpp, 63, 0);
     return Roboto_Black_100_4bpp;
 }
 

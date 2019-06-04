@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class DEBUG_MODEViewBase : public touchgfx::View<DEBUG_MODEPresenter>
 {
@@ -71,6 +72,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndValue6dx;
     touchgfx::TextAreaWithOneWildcard textIndValue7dx;
     touchgfx::TextAreaWithOneWildcard textIndValue8dx;
+    touchgfx::BoxWithBorder boxDCUdead;
+    touchgfx::TextArea textDCUdead;
 
     /*
      * Wildcard Buffers

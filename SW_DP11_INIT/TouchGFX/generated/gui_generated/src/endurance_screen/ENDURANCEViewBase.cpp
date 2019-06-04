@@ -203,6 +203,18 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     TEXTEnduranceEntry.setLinespacing(0);
     TEXTEnduranceEntry.setTypedText(TypedText(T_SINGLEUSEID273));
 
+    boxDCUdead.setPosition(66, 162, 523, 174);
+    boxDCUdead.setVisible(false);
+    boxDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxDCUdead.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxDCUdead.setBorderSize(5);
+
+    textDCUdead.setXY(87, 189);
+    textDCUdead.setVisible(false);
+    textDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textDCUdead.setLinespacing(0);
+    textDCUdead.setTypedText(TypedText(T_SINGLEUSEID371));
+
     add(background);
     add(boxIndicator1);
     add(boxIndicator2);
@@ -237,6 +249,8 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     add(TEXTEndurance);
     add(boxEntry);
     add(TEXTEnduranceEntry);
+    add(boxDCUdead);
+    add(textDCUdead);
 }
 
 void ENDURANCEViewBase::setupScreen()

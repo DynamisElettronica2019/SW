@@ -417,7 +417,7 @@ int GPIO_rightEncoder_movement(void)
 		movement = -1;
 	
 	rightPosition = new_pos;
-	Indicators[CLUTCH_FEEDBACK].intValore = movement;
+	//Indicators[CLUTCH_FEEDBACK].intValore = movement;
 	return movement;
 
 }

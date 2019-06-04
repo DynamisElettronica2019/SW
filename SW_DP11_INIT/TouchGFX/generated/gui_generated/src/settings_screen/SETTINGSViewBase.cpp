@@ -242,6 +242,18 @@ SETTINGSViewBase::SETTINGSViewBase()
     textCALIBRATION.setLinespacing(0);
     textCALIBRATION.setTypedText(TypedText(T_SINGLEUSEID363));
 
+    boxDCUdead.setPosition(66, 162, 523, 174);
+    boxDCUdead.setVisible(false);
+    boxDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxDCUdead.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxDCUdead.setBorderSize(5);
+
+    textDCUdead.setXY(86, 189);
+    textDCUdead.setVisible(false);
+    textDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textDCUdead.setLinespacing(0);
+    textDCUdead.setTypedText(TypedText(T_SINGLEUSEID375));
+
     add(background);
     add(boxIndSelected);
     add(boxIndicator1);
@@ -278,6 +290,8 @@ SETTINGSViewBase::SETTINGSViewBase()
     add(textAUTOCROSS);
     add(textSKIDPAD);
     add(textCALIBRATION);
+    add(boxDCUdead);
+    add(textDCUdead);
 }
 
 void SETTINGSViewBase::setupScreen()

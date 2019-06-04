@@ -69,6 +69,7 @@
 	 
 #define ACQ_ON													1
 #define ACQ_OFF					 								2
+#define ACQ_READY												3
 
 /****************** COMMANDS ***********************/
 	
@@ -90,6 +91,7 @@
 
 /****************** TIMINGS ************************/
 
+#define DCU_DEAD_TIME 									10000 // 0.1Hz
 #define SENSORS_TIME										10		// 100Hz
 #define SENSORS_SEND_TIME								100		// 10HZ
 #define START_BUTTON_TIME								40		// 25HZ
