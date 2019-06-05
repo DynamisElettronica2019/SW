@@ -299,8 +299,10 @@ void GPIO_encoders_init(void)
 	
 	GPIO_driveMode_set();
 	GPIO_engineMap_set();
+	
 	d_traction_control_init(leftPosition);
 	d_rpm_limiter_init(rightPosition);
+	
 	Indicators[DRIVE_MODE].intValore = driveMode;
 	Indicators[MAP].intValore = engineMap;
 }
