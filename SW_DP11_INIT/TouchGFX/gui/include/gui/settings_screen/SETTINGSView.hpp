@@ -24,7 +24,6 @@ public:
 		virtual void displayAutocross();
 		virtual void displaySkidpad();
 protected:
-		int flag_schermata;
 		touchgfx::Unicode::UnicodeChar TitleDriveMode[20];
 		touchgfx::Unicode::UnicodeChar CurrCalibration[20];
 		touchgfx::Unicode::UnicodeChar Title[TIT_LEN];

@@ -268,6 +268,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[AN_SLIP_TRIM].intValore = secondInt;
 				Indicators[AN_MAN_LIM].intValore = thirdInt;
 				Indicators[OIL_LEVEL].intValore = fourthInt;
+				break;
      case GCU_CLUTCH_MODE_MAP_SW_ID:
 				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
 				CAN_changeState(secondInt);

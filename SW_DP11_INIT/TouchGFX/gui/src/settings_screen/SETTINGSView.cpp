@@ -19,6 +19,8 @@ extern int currentCalibration;
 extern int feedbackCalibration;
 extern int flagCalibration;
 extern int calibrationPopUp;
+
+int flag_schermata;
 	
 SETTINGSView::SETTINGSView()
 {
@@ -50,11 +52,31 @@ void SETTINGSView::refreshSettings()
 	
 	switch (schermata_settings){
 		case 0 :
+			if (flag_schermata == 0)
+				SETTINGSView::changeDisplay();
 			boxModeSelected.setVisible(false);
 			boxModeSelected.invalidate();
 			boxModeSelected.setPosition(15, 20 + (90*box_driveMode), 476, 75);
 			boxModeSelected.setVisible(true);
 			boxModeSelected.invalidate();
+			
+			textIndTitle1.invalidate();
+			textIndTitle2.invalidate();
+			textIndTitle3.invalidate();
+			textIndTitle4.invalidate();
+			textIndTitle5.invalidate();
+			textIndTitle6.invalidate();
+			textIndTitleCurrent.invalidate();
+			textIndDriveMode.invalidate();
+			
+			textIndValue1.invalidate();
+			textIndValue2.invalidate();
+			textIndValue3.invalidate();
+			textIndValue4.invalidate();
+			textIndValue5.invalidate();
+			textIndValue6.invalidate();
+			boxIndSelected.invalidate();
+			boxCalibrationSelected.invalidate();
 			break;
 		case 1 :
 			if (flag_schermata == 0)
@@ -165,6 +187,12 @@ void SETTINGSView::changeDisplay()
 		textIndValue6.setVisible(true);
 		textIndDriveMode.setVisible(true);
 		textIndTitleCurrent.setVisible(true);
+		boxModeSelected.setVisible(false);
+		textACCELERATION.setVisible(false);
+		textENDURANCE.setVisible(false);
+		textAUTOCROSS.setVisible(false);
+		textSKIDPAD.setVisible(false);
+		textCALIBRATION.setVisible(false);
 	}
 	else if (schermata_settings == 2){
 		
@@ -174,17 +202,54 @@ void SETTINGSView::changeDisplay()
 		textAPPS_100.setVisible(true);
 		textSW_ANGLE.setVisible(true);
 		boxCalibrationSelected.setVisible(true);
+		boxModeSelected.setVisible(false);
+		textACCELERATION.setVisible(false);
+		textENDURANCE.setVisible(false);
+		textAUTOCROSS.setVisible(false);
+		textSKIDPAD.setVisible(false);
+		textCALIBRATION.setVisible(false);
 	}
-  boxModeSelected.setVisible(false);
-  textACCELERATION.setVisible(false);
-  textENDURANCE.setVisible(false);
-  textAUTOCROSS.setVisible(false);
-  textSKIDPAD.setVisible(false);
-	textCALIBRATION.setVisible(false);
+	else if (schermata_settings == 0){
+		boxIndSelected.setVisible(false);
+		boxIndicator1.setVisible(false);
+		boxIndicator2.setVisible(false);
+		boxIndicator3.setVisible(false);
+		boxIndicator4.setVisible(false);
+		boxIndicator5.setVisible(false);
+		boxIndicator6.setVisible(false);
+		textIndTitle1.setVisible(false);
+		textIndTitle2.setVisible(false);
+		textIndTitle3.setVisible(false);
+		textIndTitle4.setVisible(false);
+		textIndTitle5.setVisible(false);
+		textIndTitle6.setVisible(false);
+		textIndValue1.setVisible(false);
+		textIndValue2.setVisible(false);
+		textIndValue3.setVisible(false);
+		textIndValue4.setVisible(false);
+		textIndValue5.setVisible(false);
+		textIndValue6.setVisible(false);
+		textIndDriveMode.setVisible(false);
+		textIndTitleCurrent.setVisible(false);
+		textLOAD_CELL.setVisible(false);
+		textLINEAR.setVisible(false);
+		textAPPS_0.setVisible(false);
+		textAPPS_100.setVisible(false);
+		textSW_ANGLE.setVisible(false);
+		boxCalibrationSelected.setVisible(false);
+		boxModeSelected.setVisible(true);
+		textACCELERATION.setVisible(true);
+		textENDURANCE.setVisible(true);
+		textAUTOCROSS.setVisible(true);
+		textSKIDPAD.setVisible(true);
+		textCALIBRATION.setVisible(true);
+		boxCalibrationSelected.setVisible(false);
+	}
 	textACCELERATION.invalidate();
 	textENDURANCE.invalidate();
 	textAUTOCROSS.invalidate();
 	textSKIDPAD.invalidate();
+	textCALIBRATION.invalidate();
 	boxModeSelected.invalidate();
 }
 

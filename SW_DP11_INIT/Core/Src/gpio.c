@@ -57,6 +57,7 @@
 #include "i2c.h"
 #include "d_traction_control.h"
 #include "d_rpm_limiter.h"
+#include "d_gears.h"
 
 /* USER CODE END 0 */
 
@@ -66,6 +67,7 @@
 /* USER CODE BEGIN 1 */
 
 extern int state;
+extern int flag_schermata;
 extern Indicator_Value Indicators[N_INDICATORS];
 
 int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
@@ -83,6 +85,7 @@ int commandSent = 0;
 
 int calibrationPopUp;
 extern int flagCalibration;
+extern void dGear_setNeutral(void);
 
 /* USER CODE END 1 */
 
@@ -577,17 +580,32 @@ void GPIO_okButton_handle(void)
 		}
 		
 		if( driveMode == SETTINGS_MODE){
-			if (schermata_settings == 0 && box_driveMode >= 0 && box_driveMode <= 3)
+			if (schermata_settings == 0 && box_driveMode >= 0 && box_driveMode <= 3){
+				flag_schermata = 0;
 				schermata_settings = 1;
-			else if (schermata_settings == 0 && box_driveMode == 4 )
+			}else if (schermata_settings == 0 && box_driveMode == 4 ){
+				flag_schermata = 0;
 				schermata_settings = 2;
-			else if (schermata_settings == 2 && flagCalibration == 0){
+			}else if (schermata_settings == 2 && flagCalibration == 0){
 				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentCalibration, EMPTY, EMPTY, 2);	
 			}				
 		}
 		
 }
 
+void GPIO_neutralButton_handle(void)
+{
+	if( driveMode == ENDURANCE_MODE || driveMode == ACCELERATION_MODE || driveMode == SKIDPAD_MODE || driveMode == AUTOX_MODE )
+			dGear_setNeutral();
+	else if( driveMode == SETTINGS_MODE){
+			if( schermata_settings == 1 || schermata_settings == 2 ){
+				schermata_settings = 0;		
+				flag_schermata = 0;
+				I2C_save_Pointers();
+			}				
+		}
+
+}
 
 void GPIO_aux1Button_handle(void)
 {
@@ -603,6 +621,9 @@ void GPIO_aux1Button_handle(void)
 		
 void GPIO_aux2Button_handle(void)
 {
+	if( driveMode == SETTINGS_MODE )
+		I2C_save_Pointers();
+	
 	HAL_NVIC_SystemReset();
 }
 

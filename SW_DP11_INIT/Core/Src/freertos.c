@@ -852,7 +852,7 @@ void neutralButtonTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(neutralButtonSemaphoreHandle, portMAX_DELAY);
-		dGear_setNeutral();
+		GPIO_neutralButton_handle();
 		vTaskDelay(50/portTICK_PERIOD_MS);
     osDelay(1);
   }

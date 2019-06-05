@@ -38,6 +38,6 @@ void d_rpm_limiter_setValue(int movement)
   } else if(value < RPM_LIMITER_MIN_VALUE){
     value = RPM_LIMITER_MIN_VALUE;
 	}
-	Indicators[RPM_LIM].intValore = value;
+	//Indicators[RPM_LIM].intValore = value;
 	d_rpmLimiterValue = value;
 }
