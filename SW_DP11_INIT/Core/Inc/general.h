@@ -79,6 +79,7 @@
 
 #define COMMAND_ACQ_START								1
 #define COMMAND_ACQ_STOP 								2
+
 #define COMMAND_SAVE_APPS0							1
 #define COMMAND_SAVE_APPS100						2
 #define COMMAND_SAVE_SW_ANGLE						3
@@ -91,7 +92,6 @@
 
 /****************** TIMINGS ************************/
 
-#define DCU_DEAD_TIME 									10000 // 0.1Hz
 #define SENSORS_TIME										10		// 100Hz
 #define SENSORS_SEND_TIME								100		// 10HZ
 #define START_BUTTON_TIME								40		// 25HZ
@@ -99,6 +99,7 @@
 #define DRIVE_MODE_TIME									10		//---- valore da definire
 #define TRACTION_RPM_TIME 							100		// 10HZ
 #define EFI_DEAD_TIME			 							1000	// 1HZ (1s)
+#define DCU_DEAD_TIME 									10000 // 0.1Hz
 
 #define POPUP_TIME         				      30
 

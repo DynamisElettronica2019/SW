@@ -78,6 +78,7 @@ void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, 
 void CAN_changeState(int mode_feedback);
 void CAN_changeRoutineState(int routine_state);
 void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt);
+void CAN_DCU_is_alive(void);
 
 /* USER CODE END Prototypes */
 

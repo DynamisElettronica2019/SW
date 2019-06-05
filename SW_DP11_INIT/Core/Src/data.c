@@ -20,6 +20,12 @@ void data_indicatorsInit(void)
 	Indicators[OIL_TEMP_OUT] 			= (Indicator_Value) {OIL_TEMP_OUT, FLOAT,"TOIL_O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 	Indicators[CLUTCH_FEEDBACK]	 	= (Indicator_Value) {CLUTCH_FEEDBACK, INT, "CLUTCHFB", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   
+
+	Indicators[AN_MAN_LIM] 				= (Indicator_Value) {AN_MAN_LIM, INT, "AN_MAN_LIM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};							//ok
+	Indicators[AN_SLIP_TRIM] 				= (Indicator_Value) {AN_SLIP_TRIM, INT, "AN_S_TRIM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};							//ok
+	Indicators[AN_SLIP_TRGT] 				= (Indicator_Value) {AN_SLIP_TRGT, INT, "AN_S_TRGT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};							//ok
+	Indicators[OIL_LEVEL] 				= (Indicator_Value) {OIL_LEVEL, INT, "L_OIL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};							//ok
+
 	Indicators[ACQ] 							= (Indicator_Value) {ACQ, INT, "ACQ", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};							//ok
   Indicators[TH2O_SX_IN] 				= (Indicator_Value) {TH2O_SX_IN, FLOAT, "TH_SX_I", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		//-----
   Indicators[TH2O_SX_OUT] 			= (Indicator_Value) {TH2O_SX_OUT, FLOAT, "TH_SX_O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		//-----

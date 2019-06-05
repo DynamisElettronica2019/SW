@@ -16,6 +16,12 @@ extern Indicator_Value Indicators[N_INDICATORS];
 
 int d_rpmLimiterValue;
 
+void d_rpm_limiter_init(int new_rpmLimiterValue)
+{
+//	Indicators[RPM_LIM].intValore = new_rpmLimiterValue;
+	d_rpmLimiterValue = new_rpmLimiterValue;
+}
+
 /**
   * @brief  computation of the new value of RPM and check if it is feasible 
   * @param  movements done with left encoder 
@@ -32,6 +38,6 @@ void d_rpm_limiter_setValue(int movement)
   } else if(value < RPM_LIMITER_MIN_VALUE){
     value = RPM_LIMITER_MIN_VALUE;
 	}
-	
+	Indicators[RPM_LIM].intValore = value;
 	d_rpmLimiterValue = value;
 }

@@ -55,6 +55,8 @@
 #include "data.h"
 #include "can.h"
 #include "i2c.h"
+#include "d_traction_control.h"
+#include "d_rpm_limiter.h"
 
 /* USER CODE END 0 */
 
@@ -297,7 +299,8 @@ void GPIO_encoders_init(void)
 	
 	GPIO_driveMode_set();
 	GPIO_engineMap_set();
-	
+	d_traction_control_init(leftPosition);
+	d_rpm_limiter_init(rightPosition);
 	Indicators[DRIVE_MODE].intValore = driveMode;
 	Indicators[MAP].intValore = engineMap;
 }
@@ -322,10 +325,7 @@ void GPIO_driveMode_set(void)
 	if( driveMode != new_mode )
 	{
 		driveMode = new_mode;
-		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 	}
-	
-	HAL_GPIO_TogglePin(DEBUG_LED_3_GPIO_Port, DEBUG_LED_3_Pin);
 }
 
 /**
@@ -417,7 +417,7 @@ int GPIO_rightEncoder_movement(void)
 		movement = -1;
 	
 	rightPosition = new_pos;
-	//Indicators[CLUTCH_FEEDBACK].intValore = movement;
+	
 	return movement;
 
 }

@@ -9,7 +9,7 @@ extern uint8_t EndPointer[6];
 
 extern int timerDCUdead;
 extern int DCU_is_dead;
-
+extern int DCU_was_not_dead;
 
 ENDURANCEView::ENDURANCEView()
 {
@@ -31,6 +31,7 @@ void ENDURANCEView::tearDownScreen()
 void ENDURANCEView::refreshEndurance()
 {	
 	screenEntry ++;
+	timerDCUdead ++;
 	ENDURANCEView::screenEntryPopup();	
 	
 	ENDURANCEView::checkChangeScreen();
@@ -120,14 +121,11 @@ void ENDURANCEView::refreshEndurance()
 	}
 	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
 		
-	if ( DCU_is_dead == 1 ){
+	if ( DCU_is_dead == 1 && DCU_was_not_dead == 0 ){
 		boxDCUdead.setVisible(true);
 		textDCUdead.setVisible(true);
-		timerDCUdead = 0; 
-	}else{
-		timerDCUdead = 100;
-		boxDCUdead.setVisible(false);
-		textDCUdead.setVisible(false);
+		timerDCUdead = 0;
+		DCU_was_not_dead = 1;
 	}
 	
 	/****************REFFRESH OGGETTI*****************/
@@ -200,7 +198,7 @@ void ENDURANCEView::screenEntryPopup()
 	  boxIndicatorGear.invalidate();
 	}
 	
-	if ( timerDCUdead >= 10)
+	if ( timerDCUdead >= POPUP_TIME)
 	{
 		boxDCUdead.setVisible(false);
 	  textDCUdead.setVisible(false);

@@ -47,3 +47,5 @@ sw_dp11_init\gpio.o: ../Core/Inc/data.h
 sw_dp11_init\gpio.o: ../Core/Inc/can.h
 sw_dp11_init\gpio.o: ../Core/Inc/id_can.h
 sw_dp11_init\gpio.o: ../Core/Inc/i2c.h
+sw_dp11_init\gpio.o: ../Core/Inc/d_traction_control.h
+sw_dp11_init\gpio.o: ../Core/Inc/d_rpm_limiter.h

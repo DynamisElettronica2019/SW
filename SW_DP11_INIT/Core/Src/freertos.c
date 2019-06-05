@@ -789,12 +789,6 @@ void rightEncoderTask(void const * argument)
 		xSemaphoreTake(rightEncoderSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_rightEncoder_movement();
-//	  rightPosition = rightPosition + movement;
-//		if (rightPosition > 7 )
-//			rightPosition = 0;
-//		else if (rightPosition < 0 )
-//			rightPosition = 7;
-		//Indicators[MAP].intValore = rightPosition;
 		
 		switch(driveMode)
 		{

@@ -81,6 +81,7 @@ int timerEfiAlive = 0;
 int timerDCUAlive = 0;
 
 int DCU_is_dead = 0;
+int DCU_was_not_dead = 0;
 
 extern int d_tractionValue, d_rpmLimiterValue;
 

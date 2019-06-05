@@ -16,6 +16,12 @@ extern Indicator_Value Indicators[N_INDICATORS];
 
 int d_tractionValue;
 
+void d_traction_control_init(int new_tractionValue)
+{
+	//Indicators[TRACTION_CONTROL].intValore = new_tractionValue;
+	d_tractionValue = new_tractionValue;
+}
+
 /**
   * @brief  computation of the new value of traction and check if it is feasible 
   * @param  movements done with left encoder 
@@ -32,7 +38,7 @@ void d_traction_control_setValue(int movement)
   } else if(value <= TRACTION_MIN_VALUE){
     value = TRACTION_MIN_VALUE;
 	}
-	
+	Indicators[TRACTION_CONTROL].intValore = value;
 	d_tractionValue = value;
 }
 

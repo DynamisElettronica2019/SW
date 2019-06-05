@@ -10,6 +10,8 @@
 #define TRACTION_MAX_VALUE		7
 
 void d_traction_control_setValue(int movement);
+	 
+void d_traction_control_init(int new_tractionValue);
 	
 #ifdef __cplusplus
 }

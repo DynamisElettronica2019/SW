@@ -10,6 +10,7 @@ extern uint8_t SkiPointer[6];
 
 int timerDCUdead = 100;
 extern int DCU_is_dead;
+extern int DCU_was_not_dead;
 
 
 SKIDPADView::SKIDPADView()
@@ -32,6 +33,7 @@ void SKIDPADView::tearDownScreen()
 void SKIDPADView::refreshSkidpad()
 {	
 	screenEntry ++;
+	timerDCUdead ++;
 	SKIDPADView::screenEntryPopup();	
 	
 	SKIDPADView::checkChangeScreen();
@@ -111,16 +113,6 @@ void SKIDPADView::refreshSkidpad()
 
 	/****************ACQUISITION*****************/
 	
-	if ( Indicators[ACQ].intValore == 1 ){					//--------- da decidere come modificare il valore quando letto da CAN
-		touchgfx::Unicode::strncpy( Acquisition, "ON", 5);
-		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
-	}
-	else{
-		touchgfx::Unicode::strncpy( Acquisition, "OFF", 5);
-		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
-	}
-	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
-	
 	if ( Indicators[ACQ].intValore == ACQ_ON ){	
 		touchgfx::Unicode::strncpy( Acquisition, "ON", 5);
 		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
@@ -131,7 +123,15 @@ void SKIDPADView::refreshSkidpad()
 		touchgfx::Unicode::strncpy( Acquisition, "OFF", 5);
 		boxAcquisition.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
 	}
+		
+	Unicode::snprintf(textIndAcquisitionValueBuffer, TEXTINDACQUISITIONVALUE_SIZE, "%s", Acquisition);
 	
+	if ( DCU_is_dead == 1 && DCU_was_not_dead == 0 ){
+		boxDCUdead.setVisible(true);
+		textDCUdead.setVisible(true);
+		timerDCUdead = 0;
+		DCU_was_not_dead = 1;
+	}
 	/****************REFFRESH OGGETTI*****************/
 	
 	textIndTitle1.invalidate();
@@ -199,7 +199,7 @@ void SKIDPADView::screenEntryPopup()
 		boxIndicatorGear.invalidate();
 	}
 	
-	if ( timerDCUdead >= 10)
+	if ( timerDCUdead >= POPUP_TIME)
 	{
 		boxDCUdead.setVisible(false);
 	  textDCUdead.setVisible(false);

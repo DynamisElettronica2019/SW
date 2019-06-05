@@ -84,6 +84,7 @@ int feedbackCalibration;
 
 extern int timerDCUAlive;
 extern int DCU_is_dead;
+extern int DCU_was_not_dead;
 
 /* USER CODE END 0 */
 
@@ -262,6 +263,11 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				dEfiSense_calculateTempScarico(T_SCARICO_2, thirdInt);
 		 		timerEfiAlive = 0;
 				break;
+		 case GCU_TRACTION_LIMITER_LOIL_EFI_ID:
+				Indicators[AN_SLIP_TRGT].intValore = firstInt;
+				Indicators[AN_SLIP_TRIM].intValore = secondInt;
+				Indicators[AN_MAN_LIM].intValore = thirdInt;
+				Indicators[OIL_LEVEL].intValore = fourthInt;
      case GCU_CLUTCH_MODE_MAP_SW_ID:
 				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
 				CAN_changeState(secondInt);
@@ -275,6 +281,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
         break;
      case DCU_ACQUISITION_SW_ID:
 				CAN_DCU_feedback(firstInt,secondInt);
+				CAN_DCU_is_alive();
         break;
 		 case	IMU1_DATA_1_ID:
 			 	Indicators[ACC_X_1].floatValore = ((int)firstInt)/100.0;
@@ -328,11 +335,13 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[DCU_BOARD].intValore = secondInt;
 				Indicators[XBEE].intValore2 = thirdInt;
 			  Indicators[DCU_3V3].intValore2 = fourthInt;
+				CAN_DCU_is_alive();
         break;
 		 case DCU_DEBUG_2_ID:
         Indicators[DCU_12V].intValore = firstInt;
         Indicators[DCU_5V].intValore = secondInt;
 				Indicators[DCU_3V3].intValore = thirdInt;
+				CAN_DCU_is_alive();
         break;
      default:
         break;
@@ -446,15 +455,18 @@ void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt)
 {
 	if( firstInt == DCU_ACQUISITION_CODE ){
 		Indicators[ACQ].intValore = secondInt;
-	}
-	if( firstInt == DCU_SAVE_CALIBRATION_CODE ){
+	} else if( firstInt == DCU_SAVE_CALIBRATION_CODE ){
 		feedbackCalibration	= secondInt;
 		flagCalibration = 1;
 	}			
-	timerDCUAlive = 0;
-	DCU_is_dead = 0;
 }
 
+void CAN_DCU_is_alive(void)
+{
+	timerDCUAlive = 0;
+	DCU_is_dead = 0;
+	DCU_was_not_dead = 0;
+}
 
 
 /* USER CODE END 1 */

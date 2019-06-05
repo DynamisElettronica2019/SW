@@ -10,6 +10,8 @@
 #define RPM_LIMITER_MIN_VALUE	 		0
 
 void d_rpm_limiter_setValue(int movement);
+	 
+void d_rpm_limiter_init(int new_rpmLimiterValue);
 	
 #ifdef __cplusplus
 }

@@ -10,7 +10,7 @@
 	 
 /********************DEFINES********************/
 	 
-#define N_INDICATORS 65 //------------- Da decidere quali indicatori utilizzare
+#define N_INDICATORS 70 //------------- Da decidere quali indicatori utilizzare
 #define TIT_LEN 11				//------------- Lunghezza massima della stringa va visualizzare come titolo
 	 	 
 #define N_DEBUG_MODE_VALUES 8	//--- numero di indicatori nella schermata di DEBUG_MODE
@@ -48,6 +48,7 @@ typedef enum {
         TH2O, OIL_PRESS, TPS, VBAT, RPM, TRACTION_CONTROL, GEAR,
 				CLUTCH_POSITION, CLUTCH_FEEDBACK, OIL_TEMP_IN, OIL_TEMP_OUT, ACQ,
         TH2O_SX_IN, TH2O_SX_OUT, TH2O_DX_IN, TH2O_DX_OUT, T_SCARICO_1, T_SCARICO_2,
+				OIL_LEVEL, AN_MAN_LIM, AN_SLIP_TRIM, AN_SLIP_TRGT,
         EFI_SLIP, EFI_SLIP_TARGET, RPM_LIM, FUEL_LEVEL,
         FUEL_PRESS, PH2O, MAP, VH_SPEED,  MAN_LIM_ACT,
 				FAN, H2OPUMP_DC, PIT_LANE_ACT, FLAG_SMOT, LAMBDA, 
