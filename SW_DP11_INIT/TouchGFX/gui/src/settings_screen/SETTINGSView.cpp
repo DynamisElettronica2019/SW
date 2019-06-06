@@ -243,7 +243,6 @@ void SETTINGSView::changeDisplay()
 		textAUTOCROSS.setVisible(true);
 		textSKIDPAD.setVisible(true);
 		textCALIBRATION.setVisible(true);
-		boxCalibrationSelected.setVisible(false);
 	}
 	textACCELERATION.invalidate();
 	textENDURANCE.invalidate();
@@ -251,6 +250,7 @@ void SETTINGSView::changeDisplay()
 	textSKIDPAD.invalidate();
 	textCALIBRATION.invalidate();
 	boxModeSelected.invalidate();
+	boxCalibrationSelected.invalidate();
 }
 
 

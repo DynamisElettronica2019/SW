@@ -748,6 +748,32 @@ void I2C_save_Pointers(void){
 	}
 }
 
+void I2C_save_Traction(int value){
+	
+	uint8_t tractionValue;
+	tractionValue = value;
+	
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | TRACTION_CELL;
+
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &tractionValue, 1, 100);
+	
+	HAL_Delay(10);
+	
+}
+
+int I2C_get_Traction(void){
+	
+	uint8_t tractionValue;
+	
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | TRACTION_CELL;
+
+	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &tractionValue, 1, 100);
+
+	return (tractionValue);
+	
+}
 
 /* USER CODE END 1 */
 

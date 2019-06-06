@@ -174,14 +174,14 @@
           },
           {
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "BorderColor": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
             },
             "BorderSize": 3,
             "Alpha": 255,
@@ -778,9 +778,9 @@
             "TextId": "SingleUseId277",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": false,
@@ -864,7 +864,7 @@
             "Name": "TEXTEnduranceEntry",
             "X": 78,
             "Y": 283,
-            "Width": 461,
+            "Width": 460,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -912,7 +912,7 @@
             "Name": "textDCUdead",
             "X": 87,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -1178,11 +1178,11 @@
               "Blue": 0
             },
             "BorderColor": {
-              "Red": 255,
+              "Red": 0,
               "Green": 255,
-              "Blue": 255
+              "Blue": 0
             },
-            "BorderSize": 3,
+            "BorderSize": 5,
             "Alpha": 255,
             "Name": "boxIndicatorGear",
             "X": 180,
@@ -1851,9 +1851,9 @@
             "TextId": "SingleUseId253",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
+              "Red": 0,
               "Green": 255,
-              "Blue": 255
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": false,
@@ -1914,7 +1914,7 @@
             "Name": "TEXTAccelerationEntry",
             "X": 41,
             "Y": 283,
-            "Width": 543,
+            "Width": 542,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -1960,6 +1960,7 @@
             "AutoSize": false,
             "LineSpacing": 0,
             "Wildcard1": {
+              "TextId": "SingleUseId378",
               "UseBuffer": true,
               "BufferSize": 10
             },
@@ -1994,7 +1995,7 @@
             "Width": 523,
             "Height": 174,
             "Type": "BoxWithBorder",
-            "Visible": true,
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -2014,10 +2015,10 @@
             "Name": "textDCUdead",
             "X": 80,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
-            "Visible": true,
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -2276,15 +2277,15 @@
           {
             "Color": {
               "Red": 0,
-              "Green": 0,
+              "Green": 255,
               "Blue": 0
             },
             "BorderColor": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
-            "BorderSize": 3,
+            "BorderSize": 5,
             "Alpha": 255,
             "Name": "boxIndicatorGear",
             "X": 180,
@@ -2954,8 +2955,8 @@
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": false,
@@ -3016,7 +3017,7 @@
             "Name": "TEXTAutocrossEntry",
             "X": 102,
             "Y": 283,
-            "Width": 445,
+            "Width": 446,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -3117,7 +3118,7 @@
             "Name": "textDCUdead",
             "X": 80,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -3384,10 +3385,10 @@
             },
             "BorderColor": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
-            "BorderSize": 3,
+            "BorderSize": 5,
             "Alpha": 255,
             "Name": "boxIndicatorGear",
             "X": 180,
@@ -4006,8 +4007,8 @@
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": false,
@@ -4068,7 +4069,7 @@
             "Name": "TEXTSkidpadEntry",
             "X": 166,
             "Y": 283,
-            "Width": 313,
+            "Width": 314,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -4116,7 +4117,7 @@
             "Name": "textDCUdead",
             "X": 88,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -9284,6 +9285,10 @@
       },
       {
         "TextEntryId": "SingleUseId375",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId378",
         "IsResource": false
       }
     ],

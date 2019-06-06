@@ -13,6 +13,7 @@
 #include "data.h"
 
 extern Indicator_Value Indicators[N_INDICATORS];
+extern int	TRACTION_save;
 
 int d_tractionValue;
 
@@ -32,6 +33,7 @@ void d_traction_control_setValue(int movement)
 	int value;
 	value = Indicators[TRACTION_CONTROL].intValore;
 	value = value - movement; 
+	TRACTION_save = 1;
 	
 	if(value >= TRACTION_MAX_VALUE){
 		value = TRACTION_MAX_VALUE;

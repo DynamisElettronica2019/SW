@@ -303,9 +303,9 @@ void GPIO_encoders_init(void)
 	GPIO_driveMode_set();
 	GPIO_engineMap_set();
 	
-	d_traction_control_init(leftPosition);
-	d_rpm_limiter_init(rightPosition);
-	
+//	d_traction_control_init(leftPosition);
+//	d_rpm_limiter_init(rightPosition);
+//	Indicators[TRACTION_CONTROL].intValore = leftPosition;
 	Indicators[DRIVE_MODE].intValore = driveMode;
 	Indicators[MAP].intValore = engineMap;
 }
@@ -613,7 +613,7 @@ void GPIO_aux1Button_handle(void)
 		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_STOP, EMPTY, EMPTY, 2);
 		//Indicators[ACQ].intValore = ACQ_OFF;
 	}
-	else if ( Indicators[ACQ].intValore == ACQ_OFF ) {
+	else if ( Indicators[ACQ].intValore == ACQ_OFF || Indicators[ACQ].intValore == ACQ_READY ) {
 		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
 		//Indicators[ACQ].intValore = ACQ_ON;
 	} 

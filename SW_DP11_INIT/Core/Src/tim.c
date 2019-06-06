@@ -56,6 +56,7 @@
 #include "cmsis_os.h"
 #include "data.h"
 #include "can.h"
+#include "i2c.h"
 
 extern osSemaphoreId aux1ButtonSemaphoreHandle;
 extern osSemaphoreId okButtonSemaphoreHandle;
@@ -79,9 +80,11 @@ int timerDriveMode = 0;
 int timerTractionRpm = 0;
 int timerEfiAlive = 0;
 int timerDCUAlive = 0;
+int timerTractionSave = 0;
 
 int DCU_is_dead = 0;
 int DCU_was_not_dead = 0;
+int	TRACTION_save = 0;
 
 extern int d_tractionValue, d_rpmLimiterValue;
 
@@ -414,6 +417,14 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		if ( timerEfiAlive >= EFI_DEAD_TIME ){
 			 data_efiOff();
 			 timerEfiAlive = 0;
+		}
+		if (TRACTION_save == 1 ){
+			 timerTractionSave =  timerTractionSave + 1;
+		}
+		if (  timerTractionSave >= 5000 ){
+			TRACTION_save = 0;
+			timerTractionSave = 0;
+			I2C_save_Traction(Indicators[TRACTION_CONTROL].intValore);
 		}
 		if ( timerDriveMode >= DRIVE_MODE_TIME ){
 			switch ( driveMode ){

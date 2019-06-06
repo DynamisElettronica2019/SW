@@ -61,3 +61,4 @@ sw_dp11_init\tim.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_gro
 sw_dp11_init\tim.o: ../Core/Inc/data.h
 sw_dp11_init\tim.o: ../Core/Inc/can.h
 sw_dp11_init\tim.o: ../Core/Inc/id_can.h
+sw_dp11_init\tim.o: ../Core/Inc/i2c.h

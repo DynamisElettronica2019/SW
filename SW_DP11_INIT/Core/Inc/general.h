@@ -96,10 +96,11 @@
 #define SENSORS_SEND_TIME								100		// 10HZ
 #define START_BUTTON_TIME								40		// 25HZ
 #define RPM_STRIPE_TIME									100	  // 10HZ
-#define DRIVE_MODE_TIME									10		//---- valore da definire
+#define DRIVE_MODE_TIME									10		// 100HZ
 #define TRACTION_RPM_TIME 							100		// 10HZ
 #define EFI_DEAD_TIME			 							1000	// 1HZ (1s)
 #define DCU_DEAD_TIME 									10000 // 0.1Hz
+#define TRACTION_SAVE_TIME							20000
 
 #define POPUP_TIME         				      30
 

@@ -42,8 +42,8 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
 
     boxIndicatorGear.setPosition(180, 20, 280, 320);
     boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    boxIndicatorGear.setBorderSize(3);
+    boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
+    boxIndicatorGear.setBorderSize(5);
 
     boxIndicatorTc.setPosition(21, 110, 125, 150);
     boxIndicatorTc.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
@@ -199,7 +199,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textRpmLimiterValue.setTypedText(TypedText(T_SINGLEUSEID146));
 
     textIndGearValue.setPosition(156, -90, 329, 504);
-    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
     textIndGearValue.setLinespacing(0);
     Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID254).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);
@@ -223,16 +223,18 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textMessage.setPosition(148, 197, 347, 110);
     textMessage.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textMessage.setLinespacing(0);
-    textMessageBuffer[0] = 0;
+    Unicode::snprintf(textMessageBuffer, TEXTMESSAGE_SIZE, "%s", TypedText(T_SINGLEUSEID378).getText());
     textMessage.setWildcard(textMessageBuffer);
     textMessage.setTypedText(TypedText(T_SINGLEUSEID276));
 
     boxDCUdead.setPosition(66, 162, 523, 174);
+    boxDCUdead.setVisible(false);
     boxDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     boxDCUdead.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxDCUdead.setBorderSize(5);
 
     textDCUdead.setXY(80, 189);
+    textDCUdead.setVisible(false);
     textDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textDCUdead.setLinespacing(0);
     textDCUdead.setTypedText(TypedText(T_SINGLEUSEID372));

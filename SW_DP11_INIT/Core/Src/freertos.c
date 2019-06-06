@@ -660,6 +660,10 @@ void modeSelectorTask(void const * argument)
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		old_driveMode = driveMode;
 		GPIO_driveMode_set();
+		
+		//Indicators[DRIVE_MODE].intValore = driveMode;	//------ DA TOGLIERE 
+		
+		
 		if (old_driveMode == SETTINGS_MODE)
 		{
 			// save settings on eeprom

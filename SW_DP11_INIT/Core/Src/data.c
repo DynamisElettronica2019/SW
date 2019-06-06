@@ -1,6 +1,7 @@
 
 #include "data.h"
 #include "general.h"
+#include "i2c.h"
 
 uint8_t  EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 
@@ -13,7 +14,7 @@ void data_indicatorsInit(void)
 	Indicators[TPS] 							= (Indicator_Value) {TPS, FLOAT, "TPS", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
   Indicators[VBAT] 							= (Indicator_Value) {VBAT, FLOAT, "VBAT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[RPM] 							= (Indicator_Value) {RPM, INT, "RPM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};	
-	Indicators[TRACTION_CONTROL] 	= (Indicator_Value) {TRACTION_CONTROL, INT,"TC", 6, 0, 0,"?"};	
+	Indicators[TRACTION_CONTROL] 	= (Indicator_Value) {TRACTION_CONTROL, INT,"TC", 0, 0, 0,"?"};	
   Indicators[GEAR] 							= (Indicator_Value) {GEAR, INT,"GEAR", 0, 0, 0,"N"};	
 	Indicators[CLUTCH_POSITION] 	= (Indicator_Value) {CLUTCH_POSITION, INT, "CLUTCH", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[OIL_TEMP_IN] 			= (Indicator_Value) {OIL_TEMP_IN, FLOAT,"TOIL_I", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
@@ -82,8 +83,8 @@ void data_indicatorsInit(void)
   Indicators[GYR_Y_2] 					= (Indicator_Value) {GYR_Y_2, FLOAT, "GYR_Y_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[GYR_Z_2] 					= (Indicator_Value) {GYR_Z_2, FLOAT, "GYR_Z_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[HEAD_2] 						= (Indicator_Value) {HEAD_2, FLOAT, "HEAD_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-
-	Indicators[MAP] = (Indicator_Value) {MAP, INT, "MAP", 0, 0, 0,"?"};
+	
+	Indicators[TRACTION_CONTROL].intValore = I2C_get_Traction();
 
 }
 
@@ -114,4 +115,6 @@ void data_efiOff(void)
   Indicators[T_SCARICO_1] 			= (Indicator_Value) {T_SCARICO_1, FLOAT, "T_SC_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[T_SCARICO_2] 			= (Indicator_Value) {T_SCARICO_2, FLOAT, "T_SC_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
  	Indicators[FUEL_LEVEL] 				= (Indicator_Value) {FUEL_LEVEL, FLOAT, "FUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+  Indicators[GEAR] 							= (Indicator_Value) {GEAR, INT,"GEAR", 0, 0, 0,"?"};	
+
 }

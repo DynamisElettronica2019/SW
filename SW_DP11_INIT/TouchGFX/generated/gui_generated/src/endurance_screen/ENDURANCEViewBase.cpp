@@ -41,8 +41,8 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     boxIndicator6.setBorderSize(3);
 
     boxIndicatorGear.setPosition(180, 20, 280, 320);
-    boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     boxIndicatorGear.setBorderSize(3);
 
     boxIndicatorTc.setPosition(21, 110, 125, 150);
@@ -182,7 +182,7 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 234, 0));
 
     textIndGearValue.setPosition(156, -90, 329, 504);
-    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textIndGearValue.setLinespacing(0);
     Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID278).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);
