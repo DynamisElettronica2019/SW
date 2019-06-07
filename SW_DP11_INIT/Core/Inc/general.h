@@ -100,7 +100,8 @@
 #define TRACTION_RPM_TIME 							100		// 10HZ
 #define EFI_DEAD_TIME			 							1000	// 1HZ (1s)
 #define DCU_DEAD_TIME 									10000 // 0.1Hz
-#define TRACTION_SAVE_TIME							20000
+#define TRACTION_SAVE_TIME							5000  // 0.2 Hz
+#define RPM_LIM_SAVE_TIME							  5000  // 0.2 Hz
 
 #define POPUP_TIME         				      30
 

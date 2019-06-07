@@ -41,8 +41,8 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     boxIndicator6.setBorderSize(3);
 
     boxIndicatorGear.setPosition(180, 20, 280, 320);
-    boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
+    boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     boxIndicatorGear.setBorderSize(5);
 
     boxIndicatorTc.setPosition(21, 110, 125, 150);
@@ -62,7 +62,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textIndTitle1.setWildcard(textIndTitle1Buffer);
     textIndTitle1.setTypedText(TypedText(T_SINGLEUSEID107));
 
-    textIndTitle2.setPosition(486, 9, 125, 30);
+    textIndTitle2.setPosition(486, 2, 125, 30);
     textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle2.setLinespacing(0);
     Unicode::snprintf(textIndTitle2Buffer, TEXTINDTITLE2_SIZE, "%s", TypedText(T_SINGLEUSEID110).getText());
@@ -199,7 +199,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textRpmLimiterValue.setTypedText(TypedText(T_SINGLEUSEID146));
 
     textIndGearValue.setPosition(156, -90, 329, 504);
-    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 255, 0));
+    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textIndGearValue.setLinespacing(0);
     Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID254).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);

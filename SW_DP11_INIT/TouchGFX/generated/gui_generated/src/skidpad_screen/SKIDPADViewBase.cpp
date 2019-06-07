@@ -41,7 +41,7 @@ SKIDPADViewBase::SKIDPADViewBase()
     boxIndicator6.setBorderSize(3);
 
     boxIndicatorGear.setPosition(180, 20, 280, 320);
-    boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     boxIndicatorGear.setBorderSize(5);
 
@@ -187,7 +187,7 @@ SKIDPADViewBase::SKIDPADViewBase()
     TEXTSkidpad.setTypedText(TypedText(T_SINGLEUSEID71));
 
     textIndGearValue.setPosition(156, -90, 329, 504);
-    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    textIndGearValue.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textIndGearValue.setLinespacing(0);
     Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID282).getText());
     textIndGearValue.setWildcard(textIndGearValueBuffer);

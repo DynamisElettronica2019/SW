@@ -84,8 +84,6 @@ void data_indicatorsInit(void)
   Indicators[GYR_Z_2] 					= (Indicator_Value) {GYR_Z_2, FLOAT, "GYR_Z_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[HEAD_2] 						= (Indicator_Value) {HEAD_2, FLOAT, "HEAD_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 	
-	Indicators[TRACTION_CONTROL].intValore = I2C_get_Traction();
-
 }
 
 void data_efiOff(void)

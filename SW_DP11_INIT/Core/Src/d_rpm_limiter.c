@@ -13,6 +13,7 @@
 #include "data.h"
 
 extern Indicator_Value Indicators[N_INDICATORS];
+extern int RPM_LIM_save;
 
 int d_rpmLimiterValue;
 
@@ -32,6 +33,7 @@ void d_rpm_limiter_setValue(int movement)
 	int value;
 	value = (Indicators[RPM_LIM].intValore);
 	value = value - movement; //forse con -
+	RPM_LIM_save = 1;
 	
 	if(value > RPM_LIMITER_MAX_VALUE){
 		value = RPM_LIMITER_MAX_VALUE;

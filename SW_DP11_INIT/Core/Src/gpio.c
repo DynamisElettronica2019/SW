@@ -306,6 +306,8 @@ void GPIO_encoders_init(void)
 //	d_traction_control_init(leftPosition);
 //	d_rpm_limiter_init(rightPosition);
 //	Indicators[TRACTION_CONTROL].intValore = leftPosition;
+	Indicators[TRACTION_CONTROL].intValore = I2C_get_Traction();
+	Indicators[RPM_LIM].intValore = I2C_get_RpmLimiter();
 	Indicators[DRIVE_MODE].intValore = driveMode;
 	Indicators[MAP].intValore = engineMap;
 }

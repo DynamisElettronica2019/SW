@@ -97,6 +97,7 @@ void GPIO_rightEncoder_settingsMode(int movement);
 void GPIO_okButton_handle(void);
 void GPIO_aux1Button_handle(void);
 void GPIO_aux2Button_handle(void);
+void GPIO_neutralButton_handle(void);
 
 /* USER CODE END Prototypes */
 

@@ -775,6 +775,32 @@ int I2C_get_Traction(void){
 	
 }
 
+void I2C_save_RpmLimiter(int value){
+	
+	uint8_t rpmLimValue;
+	rpmLimValue = value;
+	
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | RPM_LIM_CELL;
+
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &rpmLimValue, 1, 100);
+	
+	HAL_Delay(10);
+	
+}
+
+int I2C_get_RpmLimiter(void){
+	
+	uint8_t rpmLimValue;
+	
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | RPM_LIM_CELL;
+
+	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &rpmLimValue, 1, 100);
+
+	return (rpmLimValue);
+	
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

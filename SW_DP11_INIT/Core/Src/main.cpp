@@ -150,10 +150,11 @@ int main(void)
 	SPI_ltdc_init_sequence(&hspi1);
 	I2C_rpm_setup();
 	I2C_getPointers();
+	
 	data_indicatorsInit();
 	
 	GPIO_encoders_init();
-
+	
 	TIM_startTimers();
 	
 	CAN_Start();

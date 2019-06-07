@@ -110,6 +110,7 @@ extern I2C_HandleTypeDef hi2c1;
 #define START_CELL			0
 #define DEF_CELL				10
 #define TRACTION_CELL 	15
+#define RPM_LIM_CELL		14
  	 
 #define N_POINTERS 			6
 
@@ -152,7 +153,9 @@ void I2C_get_defPointers(void);
 void I2C_getPointers(void);
 
 void I2C_save_Traction(int tractionValue);
+void I2C_save_RpmLimiter(int rpmLimValue);
 int I2C_get_Traction(void);
+int I2C_get_RpmLimiter(void);
 
 /* USER CODE END Prototypes */
 

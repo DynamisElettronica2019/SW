@@ -81,10 +81,13 @@ int timerTractionRpm = 0;
 int timerEfiAlive = 0;
 int timerDCUAlive = 0;
 int timerTractionSave = 0;
+int timerRpmLimiterSave  = 0;
 
 int DCU_is_dead = 0;
 int DCU_was_not_dead = 0;
 int	TRACTION_save = 0;
+int RPM_LIM_save 	= 0;
+			
 
 extern int d_tractionValue, d_rpmLimiterValue;
 
@@ -421,10 +424,18 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		if (TRACTION_save == 1 ){
 			 timerTractionSave =  timerTractionSave + 1;
 		}
-		if (  timerTractionSave >= 5000 ){
+		if (RPM_LIM_save == 1 ){
+			 timerRpmLimiterSave = timerRpmLimiterSave  + 1;
+		}
+		if (  timerTractionSave >= TRACTION_SAVE_TIME ){
 			TRACTION_save = 0;
 			timerTractionSave = 0;
 			I2C_save_Traction(Indicators[TRACTION_CONTROL].intValore);
+		}
+		if ( timerRpmLimiterSave >= RPM_LIM_SAVE_TIME ){
+			RPM_LIM_save 	= 0;
+			timerRpmLimiterSave = 0;
+			I2C_save_RpmLimiter(Indicators[RPM_LIM].intValore);
 		}
 		if ( timerDriveMode >= DRIVE_MODE_TIME ){
 			switch ( driveMode ){
