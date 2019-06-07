@@ -17,6 +17,8 @@ public:
 		virtual void refreshEndurance();
 		virtual void checkChangeScreen();
 		virtual void screenEntryPopup();
+		virtual void checkEmergency();
+		virtual void checkFuelIndicator();
 protected:
 		touchgfx::Unicode::UnicodeChar Empty[6];
 		touchgfx::Unicode::UnicodeChar Title1[TIT_LEN];
@@ -30,6 +32,7 @@ protected:
 		touchgfx::Unicode::UnicodeChar Acquisition[5];
 		int cont;
 		int screenEntry;
+		int emergencyBlinkCont;
 };
 
 #endif // ENDURANCE_VIEW_HPP

@@ -70,7 +70,7 @@ extern I2C_HandleTypeDef hi2c1;
 #define controller_1 0x28
 	 
 #define RPM_STRIPE_MAX      12000
-#define RPM_STRIPE_MIN 			3000
+#define RPM_STRIPE_MIN 			4000
 #define RPM_STRIPE_OFFSET 	(RPM_STRIPE_MAX-RPM_STRIPE_MIN)/12
 
  
@@ -108,7 +108,7 @@ extern I2C_HandleTypeDef hi2c1;
 #define SKI_PAGE 				4	
 
 #define START_CELL			0
-#define DEF_CELL				10
+#define DEF_CELL				5
 #define TRACTION_CELL 	15
 #define RPM_LIM_CELL		14
  	 

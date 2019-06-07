@@ -46,6 +46,9 @@ void Screen1View::checkChangeScreen()
 				case SKIDPAD_MODE	:
 					application().gotoSKIDPADScreenNoTransition();
 					break;
+				case NOISE_MODE	:
+					application().gotoNOISE_MODEScreenNoTransition();
+					break;
 	}	
 	TIM_stopBuzzer();
 }

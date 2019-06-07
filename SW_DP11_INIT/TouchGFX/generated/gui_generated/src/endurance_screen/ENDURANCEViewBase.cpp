@@ -43,7 +43,7 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     boxIndicatorGear.setPosition(180, 20, 280, 320);
     boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxIndicatorGear.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
-    boxIndicatorGear.setBorderSize(3);
+    boxIndicatorGear.setBorderSize(5);
 
     boxIndicatorTc.setPosition(21, 110, 125, 150);
     boxIndicatorTc.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));

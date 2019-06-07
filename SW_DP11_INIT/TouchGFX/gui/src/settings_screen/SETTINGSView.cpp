@@ -54,9 +54,10 @@ void SETTINGSView::refreshSettings()
 		case 0 :
 			if (flag_schermata == 0)
 				SETTINGSView::changeDisplay();
+			
 			boxModeSelected.setVisible(false);
 			boxModeSelected.invalidate();
-			boxModeSelected.setPosition(15, 20 + (90*box_driveMode), 476, 75);
+			boxModeSelected.setPosition(15, 23 + (90*box_driveMode), 476, 75);
 			boxModeSelected.setVisible(true);
 			boxModeSelected.invalidate();
 			
@@ -159,6 +160,9 @@ void SETTINGSView::checkChangeScreen()
 				case SKIDPAD_MODE	:
 					application().gotoSKIDPADScreenNoTransition();
 					break;
+				case NOISE_MODE	:
+					application().gotoNOISE_MODEScreenNoTransition();
+					break;
 	}	
 }
 
@@ -251,6 +255,11 @@ void SETTINGSView::changeDisplay()
 	textCALIBRATION.invalidate();
 	boxModeSelected.invalidate();
 	boxCalibrationSelected.invalidate();
+	textLOAD_CELL.invalidate();
+	textLINEAR.invalidate();
+	textAPPS_0.invalidate();
+	textAPPS_100.invalidate();
+	textSW_ANGLE.invalidate();
 }
 
 

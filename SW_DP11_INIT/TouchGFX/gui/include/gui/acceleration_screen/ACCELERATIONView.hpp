@@ -18,6 +18,8 @@ public:
 		virtual void checkChangeScreen();
 		virtual void screenEntryPopup();
 		virtual void screenCheckMessage();
+		virtual void checkEmergency();
+		virtual void checkFuelIndicator();
 protected:
 		touchgfx::Unicode::UnicodeChar Empty[6];
 		touchgfx::Unicode::UnicodeChar Ready[9];
@@ -34,6 +36,7 @@ protected:
 		touchgfx::Unicode::UnicodeChar Gear[3];
 		touchgfx::Unicode::UnicodeChar Acquisition[5];
 		int cont;
+		int emergencyBlinkCont;
 };
 
 #endif // ACCELERATION_VIEW_HPP

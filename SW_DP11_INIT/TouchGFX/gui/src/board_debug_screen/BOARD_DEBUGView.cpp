@@ -556,5 +556,8 @@ void BOARD_DEBUGView::checkChangeScreen()
 				case SKIDPAD_MODE	:
 					application().gotoSKIDPADScreenNoTransition();
 					break;
+				case NOISE_MODE	:
+					application().gotoNOISE_MODEScreenNoTransition();
+					break;
 	}	
 }

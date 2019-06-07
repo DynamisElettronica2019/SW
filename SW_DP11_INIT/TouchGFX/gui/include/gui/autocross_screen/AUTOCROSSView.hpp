@@ -18,6 +18,8 @@ public:
 		virtual void checkChangeScreen();
 		virtual void screenEntryPopup();
 	  virtual void screenCheckMessage();
+		virtual void checkEmergency();
+		virtual void checkFuelIndicator();
 protected:
 	
 		touchgfx::Unicode::UnicodeChar Empty[6];
@@ -36,6 +38,7 @@ protected:
 		touchgfx::Unicode::UnicodeChar Acquisition[5];
 		int screenEntry;
 		int goPopUp, stopPopUp;
+		int emergencyBlinkCont;
 
 };
 

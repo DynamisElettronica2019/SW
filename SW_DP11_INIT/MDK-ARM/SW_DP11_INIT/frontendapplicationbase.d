@@ -143,6 +143,9 @@ sw_dp11_init\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\asse
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEView.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/debug_mode_screen/DEBUG_MODEViewBase.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/debug_mode_screen/DEBUG_MODEPresenter.hpp
+sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/noise_mode_screen/NOISE_MODEView.hpp
+sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/noise_mode_screen/NOISE_MODEViewBase.hpp
+sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/noise_mode_screen/NOISE_MODEPresenter.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp
 sw_dp11_init\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp

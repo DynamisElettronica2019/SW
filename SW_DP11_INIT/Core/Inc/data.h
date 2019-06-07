@@ -41,6 +41,18 @@
 #define DEF_SIMBOL "?"  
 #define NOT_DEF_SIMBOL "-"
 
+#define EMERGENCY_P_OIL						(3.5f)
+#define EMERGENCY_T_OIL						(130.0f)
+#define EMERGENCY_P_H2O						(2.0f)
+#define EMERGENCY_T_H2O						(95.0f)
+#define EMERGENCY_L_FUEL					(0.5f)
+#define EMERGENCY_V_BAT						(11.5f)
+#define EMERGENCY_P_FUEL					(4.2f)
+#define EMERGENCY_DC_H2O					36
+#define EMERGENCY_VH_SPEED				(0.0f)
+
+#define VH_SPEED_MIN							(2.0f)
+
 /********************DATA TYPE********************/	 
 
 typedef enum {

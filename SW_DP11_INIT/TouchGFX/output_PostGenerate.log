@@ -59,6 +59,16 @@
   <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
 </File>
 <File>
+  <FileName>NOISE_MODEPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/noise_mode_screen/noise_modepresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>NOISE_MODEView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/noise_mode_screen/noise_modeview.cpp</FilePath>
+</File>
+<File>
   <FileName>Screen1Presenter.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/screen1_screen/screen1presenter.cpp</FilePath>
@@ -232,6 +242,11 @@
   <FileName>logo_300.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/images/src/logo_300.cpp</FilePath>
+</File>
+<File>
+  <FileName>NOISE_MODEViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/gui_generated/src/noise_mode_screen/noise_modeviewbase.cpp</FilePath>
 </File>
 <File>
   <FileName>Screen1ViewBase.cpp</FileName>

@@ -156,7 +156,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     textIndDriveMode.setWildcard(textIndDriveModeBuffer);
     textIndDriveMode.setTypedText(TypedText(T_SINGLEUSEID180));
 
-    textIndTitleCurrent.setPosition(178, 209, 285, 66);
+    textIndTitleCurrent.setPosition(124, 206, 393, 66);
     textIndTitleCurrent.setVisible(false);
     textIndTitleCurrent.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitleCurrent.setLinespacing(0);

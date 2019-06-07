@@ -62,7 +62,7 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textIndTitle1.setWildcard(textIndTitle1Buffer);
     textIndTitle1.setTypedText(TypedText(T_SINGLEUSEID107));
 
-    textIndTitle2.setPosition(486, 2, 125, 30);
+    textIndTitle2.setPosition(486, 9, 125, 30);
     textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTitle2.setLinespacing(0);
     Unicode::snprintf(textIndTitle2Buffer, TEXTINDTITLE2_SIZE, "%s", TypedText(T_SINGLEUSEID110).getText());

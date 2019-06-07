@@ -555,7 +555,7 @@ void ledBlinkTask(void const * argument)
 //		Indicators[TRACTION_CONTROL].intValore = state;
 		
 //		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
-//		Indicators[MAP].intValore = engineMap;		//--- da togliere, solo per debug
+//		Indicators[MAP].intValore = engineMap;					//--- da togliere, solo per debug
 		
     osDelay(250);
   }
@@ -659,10 +659,7 @@ void modeSelectorTask(void const * argument)
 		xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		old_driveMode = driveMode;
-		GPIO_driveMode_set();
-		
-		//Indicators[DRIVE_MODE].intValore = driveMode;	//------ DA TOGLIERE 
-		
+		GPIO_driveMode_set();		
 		
 		if (old_driveMode == SETTINGS_MODE)
 		{

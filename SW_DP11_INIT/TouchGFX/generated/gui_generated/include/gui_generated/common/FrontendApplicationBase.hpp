@@ -43,6 +43,10 @@ public:
     void gotoDEBUG_MODEScreenNoTransition();
 
 
+    // NOISE_MODE
+    void gotoNOISE_MODEScreenNoTransition();
+
+
     // Screen1
     void gotoScreen1ScreenNoTransition();
 
@@ -77,6 +81,10 @@ protected:
 
     // DEBUG_MODE
     void gotoDEBUG_MODEScreenNoTransitionImpl();
+
+
+    // NOISE_MODE
+    void gotoNOISE_MODEScreenNoTransitionImpl();
 
 
     // Screen1

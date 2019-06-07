@@ -709,12 +709,12 @@ void I2C_getPointers(void){
 
 void I2C_save_defPointers(void){
 		
-	//uint8_t flag = 0;
+	uint8_t flag = 0;
 	
 	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
 	memAddress = defPage << 4 | START_CELL;
 	
-	//HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
 	
 	//------------messi temporaneamente, sono da sistemare
 	  DefPointer[0] = OIL_PRESS;

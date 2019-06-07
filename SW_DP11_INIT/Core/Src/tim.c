@@ -82,7 +82,10 @@ int timerEfiAlive = 0;
 int timerDCUAlive = 0;
 int timerTractionSave = 0;
 int timerRpmLimiterSave  = 0;
+int timerEmergency = 0;
 
+int emergencyFlag = 0;
+int emergencyBlink = 0;
 int DCU_is_dead = 0;
 int DCU_was_not_dead = 0;
 int	TRACTION_save = 0;
@@ -395,12 +398,21 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerTractionRpm = timerTractionRpm + 1;
 		timerEfiAlive = timerEfiAlive + 1;
 		timerDCUAlive = timerDCUAlive + 1;
-	
-		if (  timerDCUAlive >= DCU_DEAD_TIME ){
+		
+		if ( emergencyFlag == 1 ){
+			timerEmergency = timerEmergency + 1;
+			emergencyBlink = 1;
+		}
+		if ( timerEmergency >= EMERGENCY_BLINK_TIME ){
+			emergencyBlink = 0;
+			//timerEmergency = 0;
+			emergencyFlag = 2;
+		}
+		if ( timerDCUAlive >= DCU_DEAD_TIME ){
 			DCU_is_dead = 1;
 		}
 		
-		if (  timerSensors >= SENSORS_TIME ){
+		if ( timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerSensors = 0;	
 		}

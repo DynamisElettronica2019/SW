@@ -50,7 +50,7 @@ touchgfx::InternalFlashFont& getFont_Roboto_Regular_45_4bpp();
 
 touchgfx::InternalFlashFont& getFont_Roboto_Regular_45_4bpp()
 {
-    static touchgfx::InternalFlashFont Roboto_Regular_45_4bpp(glyphs_Roboto_Regular_45_4bpp, 51, 45, 10, 4, 0, 1, unicodes_Roboto_Regular_45_4bpp, kerning_Roboto_Regular_45_4bpp, 63, 0);
+    static touchgfx::InternalFlashFont Roboto_Regular_45_4bpp(glyphs_Roboto_Regular_45_4bpp, 52, 45, 10, 4, 0, 1, unicodes_Roboto_Regular_45_4bpp, kerning_Roboto_Regular_45_4bpp, 63, 0);
     return Roboto_Regular_45_4bpp;
 }
 

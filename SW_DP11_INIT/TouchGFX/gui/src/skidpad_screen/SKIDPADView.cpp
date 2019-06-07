@@ -5,13 +5,13 @@
 
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
-//extern Indicator_Pointer SkiPointer;
 extern uint8_t SkiPointer[6];
 
 int timerDCUdead = 100;
 extern int DCU_is_dead;
 extern int DCU_was_not_dead;
-
+extern int emergencyFlag;
+extern int emergencyBlink;
 
 SKIDPADView::SKIDPADView()
 {
@@ -37,6 +37,38 @@ void SKIDPADView::refreshSkidpad()
 	SKIDPADView::screenEntryPopup();	
 	
 	SKIDPADView::checkChangeScreen();
+	
+	/*************CONTROLLO VALORI EMERGENZA**************/
+	if (((Indicators[H2OPUMP_DC].intValore < EMERGENCY_DC_H2O && Indicators[VH_SPEED].floatValore > EMERGENCY_VH_SPEED) ||
+				Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL || Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL || 
+				Indicators[PH2O].floatValore > EMERGENCY_P_H2O || Indicators[TH2O].floatValore > EMERGENCY_T_H2O || 
+				Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL || Indicators[FUEL_PRESS].floatValore < EMERGENCY_P_FUEL ||
+				Indicators[VBAT].floatValore < EMERGENCY_V_BAT) && emergencyFlag == 0
+			  ){ 
+		emergencyFlag = 1;
+	}
+				
+	if ( emergencyBlink == 1 ){
+		emergencyBlinkCont ++;
+		if ( emergencyBlinkCont < 10 ){
+			background.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+		}
+		else{
+			background.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+			boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+		}
+		if ( emergencyBlinkCont > 20 )
+			emergencyBlinkCont = 0;
+	}
+	else {
+		boxIndicatorGear.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+		background.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+	}		
+	background.invalidate();
+	boxIndicatorGear.invalidate();
+	if ( emergencyFlag == 2) 
+		checkEmergency();
 	
 	/******************TITOLI*******************/
 	touchgfx::Unicode::strncpy( Title1, Indicators[SkiPointer[0]].NOME, TIT_LEN);	
@@ -185,6 +217,9 @@ void SKIDPADView::checkChangeScreen()
 				case SKIDPAD_MODE	:
 					
 					break;
+				case NOISE_MODE	:
+					application().gotoNOISE_MODEScreenNoTransition();
+					break;
 	}	
 }
 void SKIDPADView::screenEntryPopup()
@@ -204,6 +239,527 @@ void SKIDPADView::screenEntryPopup()
 		boxDCUdead.setVisible(false);
 	  textDCUdead.setVisible(false);
 	}
-
 }
 
+void SKIDPADView::checkEmergency()
+{
+	switch (SkiPointer[0]){
+		case OIL_PRESS:
+			if ( Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL ){
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case OIL_TEMP_IN:
+			if ( Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL ){
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case PH2O:
+			if ( Indicators[PH2O].floatValore > EMERGENCY_P_H2O ){
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case TH2O:
+			if ( Indicators[TH2O].floatValore > EMERGENCY_T_H2O ){
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case FUEL_LEVEL:
+			if ( Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL ){
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case VBAT:
+			if ( Indicators[VBAT].floatValore < EMERGENCY_V_BAT ){
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator1.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue1.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+	}
+	switch (SkiPointer[1]){
+		case OIL_PRESS:
+			if ( Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL ){
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case OIL_TEMP_IN:
+			if ( Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL ){
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case PH2O:
+			if ( Indicators[PH2O].floatValore > EMERGENCY_P_H2O ){
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case TH2O:
+			if ( Indicators[TH2O].floatValore > EMERGENCY_T_H2O ){
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case FUEL_LEVEL:
+			if ( Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL ){
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case VBAT:
+			if ( Indicators[VBAT].floatValore < EMERGENCY_V_BAT ){
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator2.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue2.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+	}
+	switch (SkiPointer[2]){
+		case OIL_PRESS:
+			if ( Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL ){
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case OIL_TEMP_IN:
+			if ( Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL ){
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case PH2O:
+			if ( Indicators[PH2O].floatValore > EMERGENCY_P_H2O ){
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case TH2O:
+			if ( Indicators[TH2O].floatValore > EMERGENCY_T_H2O ){
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case FUEL_LEVEL:
+			if ( Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL ){
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case VBAT:
+			if ( Indicators[VBAT].floatValore < EMERGENCY_V_BAT ){
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator3.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue3.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+	}
+	switch (SkiPointer[3]){
+		case OIL_PRESS:
+			if ( Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL ){
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case OIL_TEMP_IN:
+			if ( Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL ){
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case PH2O:
+			if ( Indicators[PH2O].floatValore > EMERGENCY_P_H2O ){
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case TH2O:
+			if ( Indicators[TH2O].floatValore > EMERGENCY_T_H2O ){
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case FUEL_LEVEL:
+			if ( Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL ){
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case VBAT:
+			if ( Indicators[VBAT].floatValore < EMERGENCY_V_BAT ){
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator4.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue4.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+	}
+	switch (SkiPointer[4]){
+		case OIL_PRESS:
+			if ( Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL ){
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case OIL_TEMP_IN:
+			if ( Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL ){
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case PH2O:
+			if ( Indicators[PH2O].floatValore > EMERGENCY_P_H2O ){
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case TH2O:
+			if ( Indicators[TH2O].floatValore > EMERGENCY_T_H2O ){
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case FUEL_LEVEL:
+			if ( Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL ){
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case VBAT:
+			if ( Indicators[VBAT].floatValore < EMERGENCY_V_BAT ){
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator5.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue5.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+	}
+	switch (SkiPointer[5]){
+				case OIL_PRESS:
+			if ( Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL ){
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case OIL_TEMP_IN:
+			if ( Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL ){
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case PH2O:
+			if ( Indicators[PH2O].floatValore > EMERGENCY_P_H2O ){
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case TH2O:
+			if ( Indicators[TH2O].floatValore > EMERGENCY_T_H2O ){
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case FUEL_LEVEL:
+			if ( Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL ){
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+		case VBAT:
+			if ( Indicators[VBAT].floatValore < EMERGENCY_V_BAT ){
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 0, 0));
+			}
+			else{
+				boxIndicator6.setColor(touchgfx::Color::getColorFrom24BitRGB( 0, 0, 0));
+				textIndTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+				textIndValue6.setColor(touchgfx::Color::getColorFrom24BitRGB( 255, 255, 255));
+			}
+			break;
+	}
+}
+
+void SKIDPADView::checkFuelIndicator(){
+	if ( Indicators[SkiPointer[0]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+		textIndTitle1.setVisible(false);
+		textIndValue1.setVisible(false);
+		textIndTitle1.invalidate();
+		textIndValue1.invalidate();
+	}
+	else{
+		textIndTitle1.setVisible(true);
+		textIndValue1.setVisible(true);
+		textIndTitle1.invalidate();
+		textIndValue1.invalidate();
+	}
+	if ( Indicators[SkiPointer[1]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+		textIndTitle2.setVisible(false);
+		textIndValue2.setVisible(false);
+		textIndTitle2.invalidate();
+		textIndValue2.invalidate();
+	}
+	else{
+		textIndTitle2.setVisible(true);
+		textIndValue2.setVisible(true);
+		textIndTitle2.invalidate();
+		textIndValue2.invalidate();
+	}
+	if ( Indicators[SkiPointer[2]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+		textIndTitle3.setVisible(false);
+		textIndValue3.setVisible(false);
+		textIndTitle3.invalidate();
+		textIndValue3.invalidate();
+	}
+	else{
+		textIndTitle3.setVisible(true);
+		textIndValue3.setVisible(true);
+		textIndTitle3.invalidate();
+		textIndValue3.invalidate();
+	}
+	if ( Indicators[SkiPointer[3]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+		textIndTitle4.setVisible(false);
+		textIndValue4.setVisible(false);
+		textIndTitle4.invalidate();
+		textIndValue4.invalidate();
+	}
+	else{
+		textIndTitle4.setVisible(true);
+		textIndValue4.setVisible(true);
+		textIndTitle4.invalidate();
+		textIndValue4.invalidate();
+	}
+	if ( Indicators[SkiPointer[4]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+		textIndTitle5.setVisible(false);
+		textIndValue5.setVisible(false);
+		textIndTitle5.invalidate();
+		textIndValue5.invalidate();
+	}
+	else{
+		textIndTitle5.setVisible(true);
+		textIndValue5.setVisible(true);
+		textIndTitle5.invalidate();
+		textIndValue5.invalidate();
+	}
+	if ( Indicators[SkiPointer[5]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+		textIndTitle6.setVisible(false);
+		textIndValue6.setVisible(false);
+		textIndTitle6.invalidate();
+		textIndValue6.invalidate();
+	}
+	else{
+		textIndTitle6.setVisible(true);
+		textIndValue6.setVisible(true);
+		textIndTitle6.invalidate();
+		textIndValue6.invalidate();
+	}
+}

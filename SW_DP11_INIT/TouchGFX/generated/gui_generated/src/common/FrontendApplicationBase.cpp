@@ -21,6 +21,8 @@
 #include <gui/board_debug_screen/BOARD_DEBUGPresenter.hpp>
 #include <gui/debug_mode_screen/DEBUG_MODEView.hpp>
 #include <gui/debug_mode_screen/DEBUG_MODEPresenter.hpp>
+#include <gui/noise_mode_screen/NOISE_MODEView.hpp>
+#include <gui/noise_mode_screen/NOISE_MODEPresenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 
@@ -128,6 +130,19 @@ void FrontendApplicationBase::gotoDEBUG_MODEScreenNoTransition()
 void FrontendApplicationBase::gotoDEBUG_MODEScreenNoTransitionImpl()
 {
     makeTransition<DEBUG_MODEView, DEBUG_MODEPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// NOISE_MODE
+
+void FrontendApplicationBase::gotoNOISE_MODEScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoNOISE_MODEScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoNOISE_MODEScreenNoTransitionImpl()
+{
+    makeTransition<NOISE_MODEView, NOISE_MODEPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Screen1

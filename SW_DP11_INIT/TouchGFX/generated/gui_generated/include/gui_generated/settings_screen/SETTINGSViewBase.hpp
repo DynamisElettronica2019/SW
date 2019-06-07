@@ -96,7 +96,7 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndValue6Buffer[TEXTINDVALUE6_SIZE];
     static const uint16_t TEXTINDDRIVEMODE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar textIndDriveModeBuffer[TEXTINDDRIVEMODE_SIZE];
-    static const uint16_t TEXTINDTITLECURRENT_SIZE = 7;
+    static const uint16_t TEXTINDTITLECURRENT_SIZE = 13;
     touchgfx::Unicode::UnicodeChar textIndTitleCurrentBuffer[TEXTINDTITLECURRENT_SIZE];
     static const uint16_t TEXTDONE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar textDONEBuffer[TEXTDONE_SIZE];

@@ -327,7 +327,7 @@ void GPIO_driveMode_set(void)
 	
 	new_mode = GPIO_encoders_find_new_mode(modeSelector.pin1, modeSelector.pin2, modeSelector.pin4);
 	
-	if( new_mode == EMPTY_POSITION ) new_mode = ENDURANCE_MODE;
+//	if( new_mode == EMPTY_POSITION ) new_mode = ENDURANCE_MODE;	----- commentato perchè ora c'è NOISE_MODE
 	
 	if( driveMode != new_mode )
 	{

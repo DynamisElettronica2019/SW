@@ -29,7 +29,8 @@
 #define AUTOX_MODE											2
 #define ACCELERATION_MODE								1
 #define ENDURANCE_MODE									0
-#define EMPTY_POSITION									7
+//#define EMPTY_POSITION									7
+#define NOISE_MODE											7
 	
 #define MAX_DRIVE_MODE						SKIDPAD_MODE
 	
@@ -102,6 +103,7 @@
 #define DCU_DEAD_TIME 									10000 // 0.1Hz
 #define TRACTION_SAVE_TIME							5000  // 0.2 Hz
 #define RPM_LIM_SAVE_TIME							  5000  // 0.2 Hz
+#define EMERGENCY_BLINK_TIME						5000 	// 0.2 HZ (5s)
 
 #define POPUP_TIME         				      30
 
