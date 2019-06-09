@@ -16,6 +16,7 @@ extern int DCU_is_dead;
 extern int DCU_was_not_dead;
 extern int emergencyFlag;
 extern int emergencyBlink;
+extern int contBlink;
 
 ACCELERATIONView::ACCELERATIONView()
 {
@@ -27,6 +28,7 @@ void ACCELERATIONView::setupScreen()
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
 		goPopUp = 0;
+		contBlink = 0;
 	  emergencyBlinkCont = 0;
     ACCELERATIONViewBase::setupScreen();
 }
@@ -44,6 +46,7 @@ void ACCELERATIONView::refreshAcceleration()
 	ACCELERATIONView::checkChangeScreen();
 	ACCELERATIONView::screenCheckMessage();
 	ACCELERATIONView::checkFuelIndicator();
+	ACCELERATIONView::checkAntistall();
 	/*************CONTROLLO VALORI EMERGENZA**************/
 	if (((Indicators[H2OPUMP_DC].intValore < EMERGENCY_DC_H2O && Indicators[VH_SPEED].floatValore > EMERGENCY_VH_SPEED) ||
 				Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL || Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL || 
@@ -834,4 +837,32 @@ void ACCELERATIONView::checkFuelIndicator(){
 		textIndTitle6.invalidate();
 		textIndValue6.invalidate();
 	}
+}
+
+void ACCELERATIONView::checkAntistall(void)
+{
+		if(Indicators[ANTISTALL].intValore == 1)
+		{
+			contBlink ++;
+			
+			if ( contBlink < 20 ){
+				boxAntistall.setVisible(true);
+				textAntistall.setVisible(true);
+			}
+			else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+			}
+			
+			if ( contBlink > 40 ){
+				contBlink = 0;
+			}
+		}
+		else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+		}
+		
+	boxAntistall.invalidate();
+	textAntistall.invalidate();
 }

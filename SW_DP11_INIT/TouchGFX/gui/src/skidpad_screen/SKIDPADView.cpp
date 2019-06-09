@@ -12,6 +12,7 @@ extern int DCU_is_dead;
 extern int DCU_was_not_dead;
 extern int emergencyFlag;
 extern int emergencyBlink;
+extern int contBlink;
 
 SKIDPADView::SKIDPADView()
 {
@@ -22,6 +23,7 @@ void SKIDPADView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
+		contBlink = 0;
 		SKIDPADViewBase::setupScreen();
 }
 
@@ -35,8 +37,9 @@ void SKIDPADView::refreshSkidpad()
 	screenEntry ++;
 	timerDCUdead ++;
 	SKIDPADView::screenEntryPopup();	
-	
 	SKIDPADView::checkChangeScreen();
+	SKIDPADView::checkFuelIndicator();
+	SKIDPADView::checkAntistall();
 	
 	/*************CONTROLLO VALORI EMERGENZA**************/
 	if (((Indicators[H2OPUMP_DC].intValore < EMERGENCY_DC_H2O && Indicators[VH_SPEED].floatValore > EMERGENCY_VH_SPEED) ||
@@ -762,4 +765,32 @@ void SKIDPADView::checkFuelIndicator(){
 		textIndTitle6.invalidate();
 		textIndValue6.invalidate();
 	}
+}
+
+void SKIDPADView::checkAntistall(void)
+{
+		if(Indicators[ANTISTALL].intValore == 1)
+		{
+			contBlink ++;
+			
+			if ( contBlink < 20 ){
+				boxAntistall.setVisible(true);
+				textAntistall.setVisible(true);
+			}
+			else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+			}
+			
+			if ( contBlink > 40 ){
+				contBlink = 0;
+			}
+		}
+		else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+		}
+		
+	boxAntistall.invalidate();
+	textAntistall.invalidate();
 }

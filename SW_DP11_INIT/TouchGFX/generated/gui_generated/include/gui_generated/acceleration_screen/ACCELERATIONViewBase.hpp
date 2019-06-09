@@ -68,6 +68,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textMessage;
     touchgfx::BoxWithBorder boxDCUdead;
     touchgfx::TextArea textDCUdead;
+    touchgfx::BoxWithBorder boxAntistall;
+    touchgfx::TextArea textAntistall;
 
     /*
      * Wildcard Buffers

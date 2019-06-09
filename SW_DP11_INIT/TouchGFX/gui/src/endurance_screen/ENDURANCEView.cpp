@@ -12,6 +12,7 @@ extern int DCU_is_dead;
 extern int DCU_was_not_dead;
 extern int emergencyFlag;
 extern int emergencyBlink;
+extern int contBlink;
 
 ENDURANCEView::ENDURANCEView()
 {
@@ -22,6 +23,7 @@ void ENDURANCEView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
+		contBlink = 0;
 		ENDURANCEViewBase::setupScreen();
 }
 
@@ -35,8 +37,9 @@ void ENDURANCEView::refreshEndurance()
 	screenEntry ++;
 	timerDCUdead ++;
 	ENDURANCEView::screenEntryPopup();	
-	
+	ENDURANCEView::checkFuelIndicator();
 	ENDURANCEView::checkChangeScreen();
+	ENDURANCEView::checkAntistall();
 	
 	/******************TITOLI*******************/
 	touchgfx::Unicode::strncpy( Title1, Indicators[EndPointer[0]].NOME, TIT_LEN);	
@@ -763,4 +766,32 @@ void ENDURANCEView::checkFuelIndicator(){
 		textIndTitle6.invalidate();
 		textIndValue6.invalidate();
 	}
+}
+
+void ENDURANCEView::checkAntistall(void)
+{
+		if(Indicators[ANTISTALL].intValore == 1)
+		{
+			contBlink ++;
+			
+			if ( contBlink < 20 ){
+				boxAntistall.setVisible(true);
+				textAntistall.setVisible(true);
+			}
+			else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+			}
+			
+			if ( contBlink > 40 ){
+				contBlink = 0;
+			}
+		}
+		else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+		}
+		
+	boxAntistall.invalidate();
+	textAntistall.invalidate();
 }

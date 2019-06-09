@@ -273,6 +273,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
 				CAN_changeState(secondInt);
 				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
+				Indicators[ANTISTALL].intValore = fourthInt;
         break;
 		 case GCU_TRACTION_LIMITER_AUTOG_ACC_SW_ID:
 				Indicators[TRACTION_CONTROL].intValore = firstInt;

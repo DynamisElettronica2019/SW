@@ -20,6 +20,7 @@ public:
 		virtual void screenCheckMessage();
 		virtual void checkEmergency();
 		virtual void checkFuelIndicator();
+		virtual void checkAntistall();
 protected:
 		touchgfx::Unicode::UnicodeChar Empty[6];
 		touchgfx::Unicode::UnicodeChar Ready[9];

@@ -14,6 +14,7 @@ extern int DCU_is_dead;
 extern int DCU_was_not_dead;
 extern int emergencyFlag;
 extern int emergencyBlink;
+extern int contBlink;
 
 AUTOCROSSView::AUTOCROSSView()
 {
@@ -26,6 +27,7 @@ void AUTOCROSSView::setupScreen()
 		screenEntry = 0;
 		goPopUp = 0;
 		stopPopUp = 0;
+		contBlink = 0;
 		AUTOCROSSViewBase::setupScreen();
 }
 
@@ -39,10 +41,10 @@ void AUTOCROSSView::refreshAutocross()
 	screenEntry ++;
 	timerDCUdead ++;
 	AUTOCROSSView::screenEntryPopup();	
-	
+	AUTOCROSSView::checkFuelIndicator();
 	AUTOCROSSView::checkChangeScreen();
 	AUTOCROSSView::screenCheckMessage();
-	
+	AUTOCROSSView::checkAntistall();
 	/*************CONTROLLO VALORI EMERGENZA**************/
 	if (((Indicators[H2OPUMP_DC].intValore < EMERGENCY_DC_H2O && Indicators[VH_SPEED].floatValore > EMERGENCY_VH_SPEED) ||
 				Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL || Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL || 
@@ -828,4 +830,32 @@ void AUTOCROSSView::checkFuelIndicator(){
 		textIndTitle6.invalidate();
 		textIndValue6.invalidate();
 	}
+}
+
+void AUTOCROSSView::checkAntistall(void)
+{
+		if(Indicators[ANTISTALL].intValore == 1)
+		{
+			contBlink ++;
+			
+			if ( contBlink < 20 ){
+				boxAntistall.setVisible(true);
+				textAntistall.setVisible(true);
+			}
+			else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+			}
+			
+			if ( contBlink > 40 ){
+				contBlink = 0;
+			}
+		}
+		else{
+			boxAntistall.setVisible(false);
+			textAntistall.setVisible(false);
+		}
+		
+	boxAntistall.invalidate();
+	textAntistall.invalidate();
 }

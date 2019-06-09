@@ -215,6 +215,18 @@ SKIDPADViewBase::SKIDPADViewBase()
     textDCUdead.setLinespacing(0);
     textDCUdead.setTypedText(TypedText(T_SINGLEUSEID374));
 
+    boxAntistall.setPosition(28, 162, 581, 213);
+    boxAntistall.setVisible(false);
+    boxAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxAntistall.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxAntistall.setBorderSize(5);
+
+    textAntistall.setXY(90, 208);
+    textAntistall.setVisible(false);
+    textAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textAntistall.setLinespacing(0);
+    textAntistall.setTypedText(TypedText(T_SINGLEUSEID401));
+
     add(background);
     add(boxIndicator1);
     add(boxIndicator2);
@@ -251,6 +263,8 @@ SKIDPADViewBase::SKIDPADViewBase()
     add(TEXTSkidpadEntry);
     add(boxDCUdead);
     add(textDCUdead);
+    add(boxAntistall);
+    add(textAntistall);
 }
 
 void SKIDPADViewBase::setupScreen()

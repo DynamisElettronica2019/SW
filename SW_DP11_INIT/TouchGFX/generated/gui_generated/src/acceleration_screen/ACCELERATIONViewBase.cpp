@@ -239,6 +239,18 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     textDCUdead.setLinespacing(0);
     textDCUdead.setTypedText(TypedText(T_SINGLEUSEID372));
 
+    boxAntistall.setPosition(28, 162, 581, 213);
+    boxAntistall.setVisible(false);
+    boxAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxAntistall.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    boxAntistall.setBorderSize(5);
+
+    textAntistall.setXY(87, 208);
+    textAntistall.setVisible(false);
+    textAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textAntistall.setLinespacing(0);
+    textAntistall.setTypedText(TypedText(T_SINGLEUSEID399));
+
     add(background);
     add(boxIndicator1);
     add(boxIndicator2);
@@ -279,6 +291,8 @@ ACCELERATIONViewBase::ACCELERATIONViewBase()
     add(textMessage);
     add(boxDCUdead);
     add(textDCUdead);
+    add(boxAntistall);
+    add(textAntistall);
 }
 
 void ACCELERATIONViewBase::setupScreen()

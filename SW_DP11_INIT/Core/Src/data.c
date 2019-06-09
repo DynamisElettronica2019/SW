@@ -38,6 +38,7 @@ void data_indicatorsInit(void)
 	Indicators[FUEL_LEVEL] 				= (Indicator_Value) {FUEL_LEVEL, FLOAT, "L_FUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[FUEL_PRESS] 				= (Indicator_Value) {FUEL_PRESS, FLOAT, "P_FUEL", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[MAP] 							= (Indicator_Value) {MAP, INT, "MAP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+  Indicators[ANTISTALL] 				= (Indicator_Value) {ANTISTALL, INT, "ANTIST", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 
 	Indicators[VH_SPEED]					= (Indicator_Value) {VH_SPEED, FLOAT, "VH_SPEED", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[PH2O] 							= (Indicator_Value) {PH2O, FLOAT, "PH2O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
@@ -48,8 +49,8 @@ void data_indicatorsInit(void)
   Indicators[PIT_LANE_ACT]			= (Indicator_Value) {PIT_LANE_ACT, INT, "PITLANE_ACT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[FLAG_SMOT]					= (Indicator_Value) {FLAG_SMOT, INT, "SMOT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[LAMBDA]						= (Indicator_Value) {LAMBDA, FLOAT, "LAMBDA", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[T_SCARICO_1] 			= (Indicator_Value) {T_SCARICO_1, FLOAT, "T_SC_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-  Indicators[T_SCARICO_2] 			= (Indicator_Value) {T_SCARICO_2, FLOAT, "T_SC_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+  Indicators[T_SCARICO_1] 			= (Indicator_Value) {T_SCARICO_1, FLOAT, "TRMC_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+  Indicators[T_SCARICO_2] 			= (Indicator_Value) {T_SCARICO_2, FLOAT, "TRMC_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
   Indicators[DRIVE_MODE]				= (Indicator_Value) {DRIVE_MODE, INT, "MODE", 0, 0, 0,"?"};
 	
 	Indicators[GCU_BOARD] 				= (Indicator_Value) {GCU_BOARD, FLOAT, "GCU", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};

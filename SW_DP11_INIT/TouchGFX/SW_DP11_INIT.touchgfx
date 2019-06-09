@@ -864,7 +864,7 @@
             "Name": "TEXTEnduranceEntry",
             "X": 78,
             "Y": 283,
-            "Width": 460,
+            "Width": 461,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -912,7 +912,55 @@
             "Name": "textDCUdead",
             "X": 87,
             "Y": 189,
-            "Width": 484,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxAntistall",
+            "X": 28,
+            "Y": 162,
+            "Width": 581,
+            "Height": 213,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId398",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAntistall",
+            "X": 80,
+            "Y": 211,
+            "Width": 476,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -1914,7 +1962,7 @@
             "Name": "TEXTAccelerationEntry",
             "X": 41,
             "Y": 283,
-            "Width": 542,
+            "Width": 543,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -2015,7 +2063,55 @@
             "Name": "textDCUdead",
             "X": 80,
             "Y": 189,
-            "Width": 484,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxAntistall",
+            "X": 28,
+            "Y": 162,
+            "Width": 581,
+            "Height": 213,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId399",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAntistall",
+            "X": 87,
+            "Y": 208,
+            "Width": 476,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -3029,7 +3125,7 @@
             "Name": "TEXTAutocrossEntry",
             "X": 102,
             "Y": 283,
-            "Width": 446,
+            "Width": 445,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -3130,7 +3226,55 @@
             "Name": "textDCUdead",
             "X": 80,
             "Y": 189,
-            "Width": 484,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxAntistall",
+            "X": 28,
+            "Y": 162,
+            "Width": 581,
+            "Height": 213,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId400",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAntistall",
+            "X": 77,
+            "Y": 208,
+            "Width": 476,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -4081,7 +4225,7 @@
             "Name": "TEXTSkidpadEntry",
             "X": 166,
             "Y": 283,
-            "Width": 314,
+            "Width": 313,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -4129,7 +4273,55 @@
             "Name": "textDCUdead",
             "X": 88,
             "Y": 189,
-            "Width": 484,
+            "Width": 483,
+            "Height": 120,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxAntistall",
+            "X": 28,
+            "Y": 162,
+            "Width": 581,
+            "Height": 213,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId401",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAntistall",
+            "X": 90,
+            "Y": 208,
+            "Width": 476,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -4844,7 +5036,7 @@
             "Name": "textAPPS_0",
             "X": 196,
             "Y": 22,
-            "Width": 248,
+            "Width": 247,
             "Height": 76,
             "Type": "TextArea",
             "Visible": false,
@@ -4867,7 +5059,7 @@
             "Name": "textAPPS_100",
             "X": 162,
             "Y": 112,
-            "Width": 316,
+            "Width": 315,
             "Height": 76,
             "Type": "TextArea",
             "Visible": false,
@@ -5171,7 +5363,7 @@
             "Name": "textDCUdead",
             "X": 86,
             "Y": 189,
-            "Width": 484,
+            "Width": 483,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -9820,6 +10012,22 @@
       },
       {
         "TextEntryId": "SingleUseId397",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId398",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId399",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId400",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId401",
         "IsResource": false
       }
     ],

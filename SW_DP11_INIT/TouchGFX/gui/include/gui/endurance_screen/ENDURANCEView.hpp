@@ -19,6 +19,7 @@ public:
 		virtual void screenEntryPopup();
 		virtual void checkEmergency();
 		virtual void checkFuelIndicator();
+		virtual void checkAntistall();
 protected:
 		touchgfx::Unicode::UnicodeChar Empty[6];
 		touchgfx::Unicode::UnicodeChar Title1[TIT_LEN];
