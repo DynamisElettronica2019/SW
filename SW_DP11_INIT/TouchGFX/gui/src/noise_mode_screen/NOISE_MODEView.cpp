@@ -49,7 +49,7 @@ void NOISE_MODEView::refreshNoiseMode()
 	textMapPopUp.invalidate();
 	
 	
-	
+	/******************VALORI*******************/	
 	if (	Indicators[T_SCARICO_1].intValore == DEF_VALUE && Indicators[T_SCARICO_1].floatValore == DEF_VALUE )
 		Unicode::snprintf(textTrmcValue1Buffer, TEXTTRMCVALUE1_SIZE, "%s", Empty);	
 	else
@@ -62,7 +62,7 @@ void NOISE_MODEView::refreshNoiseMode()
 		Unicode::snprintf(textTrmcValue2Buffer, TEXTTRMCVALUE2_SIZE, "%s", Empty);	
 	else
 		if ( Indicators[T_SCARICO_2].TIPO == INT )
-			Unicode::snprintf(textTrmcValue1Buffer, TEXTTRMCVALUE2_SIZE, "%d", Indicators[T_SCARICO_2].intValore);
+			Unicode::snprintf(textTrmcValue2Buffer, TEXTTRMCVALUE2_SIZE, "%d", Indicators[T_SCARICO_2].intValore);
 		else
 			Unicode::snprintfFloat(textTrmcValue2Buffer, TEXTTRMCVALUE2_SIZE, "%.1f", Indicators[T_SCARICO_2].floatValore);
 		
@@ -82,6 +82,17 @@ void NOISE_MODEView::refreshNoiseMode()
 		else
 			Unicode::snprintfFloat(textRpmValueBuffer, TEXTRPMVALUE_SIZE, "%.1f", Indicators[RPM].floatValore);
 		
+		
+	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR].charValore, 3);	
+	Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", Gear);
+		
+	/****************REFFRESH OGGETTI*****************/
+		
+	textIndGearValue.invalidate();
+	textTrmcValue1.invalidate();
+	textTrmcValue2.invalidate();
+	textTpsValue.invalidate();
+	textRpmValue.invalidate();
 }
 
 void NOISE_MODEView::checkChangeScreen()

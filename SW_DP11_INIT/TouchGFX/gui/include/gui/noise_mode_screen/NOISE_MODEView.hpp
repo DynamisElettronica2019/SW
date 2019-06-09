@@ -18,6 +18,7 @@ public:
 		virtual void refreshNoiseMode();
 protected:
 		touchgfx::Unicode::UnicodeChar Empty[6];
+		touchgfx::Unicode::UnicodeChar Gear[3];
 };
 
 #endif // NOISE_MODE_VIEW_HPP
