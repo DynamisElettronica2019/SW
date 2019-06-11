@@ -33,6 +33,7 @@ protected:
     touchgfx::BoxWithBorder boxTPS;
     touchgfx::BoxWithBorder boxTRMC2;
     touchgfx::BoxWithBorder boxTRMC1;
+    touchgfx::Box boxText;
     touchgfx::TextArea textNOISEMODE;
     touchgfx::TextArea textRPM;
     touchgfx::TextAreaWithOneWildcard textRpmValue;
@@ -40,12 +41,20 @@ protected:
     touchgfx::TextAreaWithOneWildcard textTpsValue;
     touchgfx::TextArea textTRMC2;
     touchgfx::TextArea textTRMC1;
-    touchgfx::TextAreaWithOneWildcard textTrmcValue1;
     touchgfx::TextAreaWithOneWildcard textTrmcValue2;
     touchgfx::BoxWithBorder boxIndicatorGear;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
     touchgfx::BoxWithBorder boxMapPopUp;
     touchgfx::TextArea textMapPopUp;
+    touchgfx::BoxWithBorder boxTRMC1_1;
+    touchgfx::TextArea textTRMC1_1;
+    touchgfx::TextAreaWithOneWildcard textTrmcValue1;
+    touchgfx::BoxWithBorder boxIndicator1;
+    touchgfx::TextAreaWithOneWildcard textIndValueVBAT;
+    touchgfx::BoxWithBorder boxIndicator1_1;
+    touchgfx::TextAreaWithOneWildcard textIndValuePOIL;
+    touchgfx::TextArea textIndTitle1;
+    touchgfx::TextArea textIndTitle2;
 
     /*
      * Wildcard Buffers
@@ -54,12 +63,16 @@ protected:
     touchgfx::Unicode::UnicodeChar textRpmValueBuffer[TEXTRPMVALUE_SIZE];
     static const uint16_t TEXTTPSVALUE_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textTpsValueBuffer[TEXTTPSVALUE_SIZE];
-    static const uint16_t TEXTTRMCVALUE1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTrmcValue1Buffer[TEXTTRMCVALUE1_SIZE];
     static const uint16_t TEXTTRMCVALUE2_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textTrmcValue2Buffer[TEXTTRMCVALUE2_SIZE];
     static const uint16_t TEXTINDGEARVALUE_SIZE = 3;
     touchgfx::Unicode::UnicodeChar textIndGearValueBuffer[TEXTINDGEARVALUE_SIZE];
+    static const uint16_t TEXTTRMCVALUE1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTrmcValue1Buffer[TEXTTRMCVALUE1_SIZE];
+    static const uint16_t TEXTINDVALUEVBAT_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValueVBATBuffer[TEXTINDVALUEVBAT_SIZE];
+    static const uint16_t TEXTINDVALUEPOIL_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar textIndValuePOILBuffer[TEXTINDVALUEPOIL_SIZE];
 
 private:
 

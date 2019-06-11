@@ -924,7 +924,7 @@
           {
             "Color": {
               "Red": 255,
-              "Green": 0,
+              "Green": 246,
               "Blue": 0
             },
             "BorderColor": {
@@ -951,14 +951,14 @@
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textAntistall",
-            "X": 80,
+            "X": 60,
             "Y": 211,
             "Width": 476,
             "Height": 120,
@@ -2074,8 +2074,8 @@
           },
           {
             "Color": {
-              "Red": 255,
-              "Green": 0,
+              "Red": 225,
+              "Green": 255,
               "Blue": 0
             },
             "BorderColor": {
@@ -2102,14 +2102,14 @@
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textAntistall",
-            "X": 87,
+            "X": 60,
             "Y": 208,
             "Width": 476,
             "Height": 120,
@@ -3238,7 +3238,7 @@
           {
             "Color": {
               "Red": 255,
-              "Green": 0,
+              "Green": 233,
               "Blue": 0
             },
             "BorderColor": {
@@ -3265,14 +3265,14 @@
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textAntistall",
-            "X": 77,
+            "X": 60,
             "Y": 208,
             "Width": 476,
             "Height": 120,
@@ -4285,7 +4285,7 @@
           {
             "Color": {
               "Red": 255,
-              "Green": 0,
+              "Green": 233,
               "Blue": 0
             },
             "BorderColor": {
@@ -4312,14 +4312,14 @@
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textAntistall",
-            "X": 90,
+            "X": 60,
             "Y": 208,
             "Width": 476,
             "Height": 120,
@@ -8141,19 +8141,38 @@
             "Moveable": false
           },
           {
+            "Color": {
+              "Red": 43,
+              "Green": 255,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "Name": "boxText",
+            "X": 202,
+            "Y": 8,
+            "Width": 235,
+            "Height": 28,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "TextId": "SingleUseId379",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
             },
             "Alpha": 255,
             "AutoSize": false,
             "LineSpacing": 0,
             "Name": "textNOISEMODE",
             "X": 220,
-            "Y": 6,
+            "Y": 8,
             "Width": 201,
             "Height": 35,
             "Type": "TextArea",
@@ -8312,34 +8331,6 @@
             "Moveable": false
           },
           {
-            "TextId": "SingleUseId391",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Wildcard1": {
-              "TextId": "SingleUseId392",
-              "UseBuffer": true,
-              "BufferSize": 10
-            },
-            "Name": "textTrmcValue1",
-            "X": 70,
-            "Y": 267,
-            "Width": 195,
-            "Height": 67,
-            "Type": "TextArea",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "TextId": "SingleUseId387",
             "TextRotation": "0",
             "Color": {
@@ -8410,7 +8401,7 @@
             },
             "Name": "textIndGearValue",
             "X": 238,
-            "Y": 6,
+            "Y": 14,
             "Width": 164,
             "Height": 216,
             "Type": "TextArea",
@@ -8463,6 +8454,234 @@
             "Height": 240,
             "Type": "TextArea",
             "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 3,
+            "Alpha": 255,
+            "Name": "boxTRMC1_1",
+            "X": 22,
+            "Y": 219,
+            "Width": 270,
+            "Height": 122,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId402",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textTRMC1_1",
+            "X": 29,
+            "Y": 227,
+            "Width": 165,
+            "Height": 54,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId403",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId404",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textTrmcValue1",
+            "X": 71,
+            "Y": 270,
+            "Width": 195,
+            "Height": 67,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 3,
+            "Alpha": 255,
+            "Name": "boxIndicator1",
+            "X": 23,
+            "Y": 82,
+            "Width": 150,
+            "Height": 85,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId407",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId408",
+              "UseBuffer": true,
+              "BufferSize": 6
+            },
+            "Name": "textIndValueVBAT",
+            "X": 37,
+            "Y": 101,
+            "Width": 140,
+            "Height": 65,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 3,
+            "Alpha": 255,
+            "Name": "boxIndicator1_1",
+            "X": 457,
+            "Y": 82,
+            "Width": 150,
+            "Height": 85,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId410",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId411",
+              "UseBuffer": true,
+              "BufferSize": 6
+            },
+            "Name": "textIndValuePOIL",
+            "X": 471,
+            "Y": 100,
+            "Width": 140,
+            "Height": 65,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId412",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textIndTitle1",
+            "X": 27,
+            "Y": 85,
+            "Width": 125,
+            "Height": 30,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId414",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textIndTitle2",
+            "X": 460,
+            "Y": 83,
+            "Width": 87,
+            "Height": 32,
+            "Type": "TextArea",
+            "Visible": true,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -9995,14 +10214,6 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId391",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId392",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId394",
         "IsResource": false
       },
@@ -10028,6 +10239,42 @@
       },
       {
         "TextEntryId": "SingleUseId401",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId402",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId407",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId408",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId410",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId411",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId412",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId414",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId403",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId404",
         "IsResource": false
       }
     ],

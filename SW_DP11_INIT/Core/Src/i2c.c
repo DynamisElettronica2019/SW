@@ -58,6 +58,7 @@ extern uint8_t EndPointer[6], AccPointer[6], AutPointer[6], SkiPointer[6];
 uint8_t DefPointer[6];
 extern Indicator_Value Indicators[N_INDICATORS];
 extern int box_driveMode;
+extern int flagEngineOn;
 
 uint8_t devAddress;
 uint8_t memAddress;
@@ -172,6 +173,11 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 
 void I2C_setRPM(int rpm_value)
 {
+	if (rpm_value >= RPM_STRIPE_MIN) 
+			 flagEngineOn = TRUE;
+	else 
+		flagEngineOn = FALSE;
+	
 	if (rpm_value < RPM_STRIPE_MIN)
      rpm_value = RPM_STRIPE_MIN;
 	else if ( rpm_value > RPM_STRIPE_MAX)

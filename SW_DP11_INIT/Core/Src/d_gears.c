@@ -38,6 +38,8 @@ void dGears_setGear (int newGear)
 		case 5:
 			strcpy ( Indicators[GEAR].charValore, "5");
 			break;
+		case 8:
+			strcpy ( Indicators[GEAR].charValore, "E");
 		default:
 			break;
 	}

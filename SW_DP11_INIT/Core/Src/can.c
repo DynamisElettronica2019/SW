@@ -44,6 +44,8 @@
   * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
   * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   *
+	192
+	228
   ******************************************************************************
   */
 
@@ -81,6 +83,7 @@ extern int timerEfiAlive;
 extern int autox_stop, acc_stop;
 int flagCalibration;
 int feedbackCalibration;
+int flagEngineOn = FALSE;
 
 extern int timerDCUAlive;
 extern int DCU_is_dead;
@@ -307,18 +310,23 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[ACC_Z_2].floatValore = ((int)secondInt)/100.0;
 				Indicators[GYR_Y_2].floatValore = ((int)thirdInt)/10.0;
 			 break;
-			// DAU ci interessa qualcosa oltre a  t e i ???
+//		 case DAU_FR_ID:
+//			  Indicators[BPS_F].intValore  = thirdInt; //da togliere
+//			 break;
+//		 case DAU_FL_ID:
+//			  Indicators[BPS_R].intValore  = thirdInt; //da togliere
+//			 break;
      case DAU_FR_DEBUG_ID:
 				Indicators[DAU_FR_BOARD].intValore2 = firstInt;
 				Indicators[DAU_FR_BOARD].intValore = secondInt;
         break;
 	   case DAU_FL_DEBUG_ID:
-			  Indicators[DAU_FL_BOARD].intValore2 = thirdInt;
-			  Indicators[DAU_FL_BOARD].intValore = fourthInt; 
+			  Indicators[DAU_FL_BOARD].intValore2 = firstInt;
+			  Indicators[DAU_FL_BOARD].intValore = secondInt; 
         break;
      case DAU_REAR_DEBUG_ID:
-				Indicators[DAU_R_BOARD].intValore = firstInt;
-				Indicators[DAU_R_BOARD].intValore2 = secondInt;
+				Indicators[DAU_R_BOARD].intValore2 = firstInt;
+				Indicators[DAU_R_BOARD].intValore = secondInt;
 				break;
      case GCU_DEBUG_1_ID:
 				Indicators[GCU_BOARD].intValore2 = firstInt;
@@ -343,6 +351,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
         Indicators[DCU_12V].intValore = firstInt;
         Indicators[DCU_5V].intValore = secondInt;
 				Indicators[DCU_3V3].intValore = thirdInt;
+				Indicators[BRAKE_BIAS].intValore = fourthInt;
 				CAN_DCU_is_alive();
         break;
      default:

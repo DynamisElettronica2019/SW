@@ -22,6 +22,7 @@
 	
 /******************** MODES ***********************/
 
+#define NOISE_MODE											7
 #define BOARD_DEBUG_MODE								6
 #define DEBUG_MODE											5
 #define SETTINGS_MODE										4
@@ -29,10 +30,6 @@
 #define AUTOX_MODE											2
 #define ACCELERATION_MODE								1
 #define ENDURANCE_MODE									0
-//#define EMPTY_POSITION									7
-#define NOISE_MODE											7
-	
-#define MAX_DRIVE_MODE						SKIDPAD_MODE
 	
 /********************* STATES *********************/
 
@@ -93,21 +90,22 @@
 
 /****************** TIMINGS ************************/
 
-#define SENSORS_TIME										10		// 100Hz
-#define SENSORS_SEND_TIME								100		// 10HZ
-#define START_BUTTON_TIME								40		// 25HZ
-#define RPM_STRIPE_TIME									100	  // 10HZ
-#define DRIVE_MODE_TIME									10		// 100HZ
-#define TRACTION_RPM_TIME 							100		// 10HZ
-#define EFI_DEAD_TIME			 							1000	// 1HZ (1s)
-#define DCU_DEAD_TIME 									10000 // 0.1Hz
-#define TRACTION_SAVE_TIME							5000  // 0.2 Hz
-#define RPM_LIM_SAVE_TIME							  5000  // 0.2 Hz
-#define EMERGENCY_BLINK_TIME						5000 	// 0.2 HZ (5s)
+#define SENSORS_TIME										10		// 100  Hz
+#define SENSORS_SEND_TIME								100		// 10   Hz
+#define START_BUTTON_TIME								40		// 25   Hz
+#define RPM_STRIPE_TIME									100	  // 10   Hz
+#define DRIVE_MODE_TIME									10		// 100  Hz
+#define TRACTION_RPM_TIME 							100		// 10   Hz
+#define EFI_DEAD_TIME			 							1000	// 1    Hz (1s)
+#define DCU_DEAD_TIME 									20000 // 0.05 Hz
+#define TRACTION_SAVE_TIME							5000  // 0.2  Hz
+#define RPM_LIM_SAVE_TIME							  5000  // 0.2  Hz
+#define EMERGENCY_BLINK_TIME						5000 	// 0.2  HZ (5s)
 
 #define POPUP_TIME         				      30
 
 /******************* FUNCTIONS *********************/
+
 
 void MX_FREERTOS_Init(void);
 void GRAPHICS_MainTask(void);

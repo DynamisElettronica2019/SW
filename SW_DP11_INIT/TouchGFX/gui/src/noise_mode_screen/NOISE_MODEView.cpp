@@ -82,6 +82,22 @@ void NOISE_MODEView::refreshNoiseMode()
 		else
 			Unicode::snprintfFloat(textRpmValueBuffer, TEXTRPMVALUE_SIZE, "%.1f", Indicators[RPM].floatValore);
 		
+	if (	Indicators[VBAT].intValore == DEF_VALUE && Indicators[VBAT].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValueVBATBuffer, TEXTINDVALUEVBAT_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[VBAT].TIPO == INT )
+			Unicode::snprintf(textIndValueVBATBuffer, TEXTINDVALUEVBAT_SIZE, "%d", Indicators[VBAT].intValore);
+		else
+			Unicode::snprintfFloat(textIndValueVBATBuffer, TEXTINDVALUEVBAT_SIZE, "%.1f", Indicators[VBAT].floatValore);
+			
+	if (	Indicators[OIL_PRESS].intValore == DEF_VALUE && Indicators[OIL_PRESS].floatValore == DEF_VALUE )
+		Unicode::snprintf(textIndValuePOILBuffer, TEXTINDVALUEPOIL_SIZE, "%s", Empty);	
+	else
+		if ( Indicators[OIL_PRESS].TIPO == INT )
+			Unicode::snprintf(textIndValuePOILBuffer, TEXTINDVALUEPOIL_SIZE, "%d", Indicators[OIL_PRESS].intValore);
+		else
+			Unicode::snprintfFloat(textIndValuePOILBuffer, TEXTINDVALUEPOIL_SIZE, "%.1f", Indicators[OIL_PRESS].floatValore);
+		
 		
 	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR].charValore, 3);	
 	Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", Gear);
@@ -93,6 +109,8 @@ void NOISE_MODEView::refreshNoiseMode()
 	textTrmcValue2.invalidate();
 	textTpsValue.invalidate();
 	textRpmValue.invalidate();
+	textIndValueVBAT.invalidate();
+	textIndValuePOIL.invalidate();
 }
 
 void NOISE_MODEView::checkChangeScreen()

@@ -93,7 +93,7 @@ int RPM_LIM_save 	= 0;
 			
 
 extern int d_tractionValue, d_rpmLimiterValue;
-
+extern int flagEngineOn; 
 extern Indicator_Value Indicators[N_INDICATORS];	
 
 /* USER CODE END 0 */

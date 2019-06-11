@@ -68,6 +68,7 @@
 
 extern int state;
 extern int flag_schermata;
+extern int d_rpmLimiterValue, d_tractionValue;
 extern Indicator_Value Indicators[N_INDICATORS];
 
 int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
@@ -302,12 +303,9 @@ void GPIO_encoders_init(void)
 	
 	GPIO_driveMode_set();
 	GPIO_engineMap_set();
-	
-//	d_traction_control_init(leftPosition);
-//	d_rpm_limiter_init(rightPosition);
-//	Indicators[TRACTION_CONTROL].intValore = leftPosition;
-	Indicators[TRACTION_CONTROL].intValore = I2C_get_Traction();
-	Indicators[RPM_LIM].intValore = I2C_get_RpmLimiter();
+
+	d_tractionValue = I2C_get_Traction();
+	d_rpmLimiterValue = I2C_get_RpmLimiter();
 	Indicators[DRIVE_MODE].intValore = driveMode;
 	Indicators[MAP].intValore = engineMap;
 }

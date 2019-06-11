@@ -216,12 +216,14 @@ ENDURANCEViewBase::ENDURANCEViewBase()
     textDCUdead.setTypedText(TypedText(T_SINGLEUSEID371));
 
     boxAntistall.setPosition(28, 162, 581, 213);
-    boxAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxAntistall.setVisible(false);
+    boxAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 246, 0));
     boxAntistall.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxAntistall.setBorderSize(5);
 
-    textAntistall.setXY(80, 211);
-    textAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textAntistall.setXY(60, 211);
+    textAntistall.setVisible(false);
+    textAntistall.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     textAntistall.setLinespacing(0);
     textAntistall.setTypedText(TypedText(T_SINGLEUSEID398));
 

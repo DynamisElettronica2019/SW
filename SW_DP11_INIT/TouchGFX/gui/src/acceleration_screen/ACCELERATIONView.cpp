@@ -17,6 +17,7 @@ extern int DCU_was_not_dead;
 extern int emergencyFlag;
 extern int emergencyBlink;
 extern int contBlink;
+extern int flagEngineOn;
 
 ACCELERATIONView::ACCELERATIONView()
 {
@@ -52,8 +53,7 @@ void ACCELERATIONView::refreshAcceleration()
 				Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL || Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL || 
 				Indicators[PH2O].floatValore > EMERGENCY_P_H2O || Indicators[TH2O].floatValore > EMERGENCY_T_H2O || 
 				Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL || Indicators[FUEL_PRESS].floatValore < EMERGENCY_P_FUEL ||
-				Indicators[VBAT].floatValore < EMERGENCY_V_BAT) && emergencyFlag == 0
-			  ){ 
+				Indicators[VBAT].floatValore < EMERGENCY_V_BAT) && flagEngineOn && emergencyFlag == 0){ 
 		emergencyFlag = 1;
 	}
 				
@@ -765,7 +765,7 @@ void ACCELERATIONView::checkEmergency()
 }
 
 void ACCELERATIONView::checkFuelIndicator(){
-	if ( Indicators[AccPointer[0]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+	if ( Indicators[AccPointer[0]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn){
 		textIndTitle1.setVisible(false);
 		textIndValue1.setVisible(false);
 		textIndTitle1.invalidate();
@@ -777,7 +777,7 @@ void ACCELERATIONView::checkFuelIndicator(){
 		textIndTitle1.invalidate();
 		textIndValue1.invalidate();
 	}
-	if ( Indicators[AccPointer[1]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+	if ( Indicators[AccPointer[1]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn){
 		textIndTitle2.setVisible(false);
 		textIndValue2.setVisible(false);
 		textIndTitle2.invalidate();
@@ -789,7 +789,7 @@ void ACCELERATIONView::checkFuelIndicator(){
 		textIndTitle2.invalidate();
 		textIndValue2.invalidate();
 	}
-	if ( Indicators[AccPointer[2]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+	if ( Indicators[AccPointer[2]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn){
 		textIndTitle3.setVisible(false);
 		textIndValue3.setVisible(false);
 		textIndTitle3.invalidate();
@@ -801,7 +801,7 @@ void ACCELERATIONView::checkFuelIndicator(){
 		textIndTitle3.invalidate();
 		textIndValue3.invalidate();
 	}
-	if ( Indicators[AccPointer[3]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+	if ( Indicators[AccPointer[3]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn){
 		textIndTitle4.setVisible(false);
 		textIndValue4.setVisible(false);
 		textIndTitle4.invalidate();
@@ -813,7 +813,7 @@ void ACCELERATIONView::checkFuelIndicator(){
 		textIndTitle4.invalidate();
 		textIndValue4.invalidate();
 	}
-	if ( Indicators[AccPointer[4]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+	if ( Indicators[AccPointer[4]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn ){
 		textIndTitle5.setVisible(false);
 		textIndValue5.setVisible(false);
 		textIndTitle5.invalidate();
@@ -825,7 +825,7 @@ void ACCELERATIONView::checkFuelIndicator(){
 		textIndTitle5.invalidate();
 		textIndValue5.invalidate();
 	}
-	if ( Indicators[AccPointer[5]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN ){
+	if ( Indicators[AccPointer[5]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn){
 		textIndTitle6.setVisible(false);
 		textIndValue6.setVisible(false);
 		textIndTitle6.invalidate();
@@ -845,7 +845,7 @@ void ACCELERATIONView::checkAntistall(void)
 		{
 			contBlink ++;
 			
-			if ( contBlink < 20 ){
+			if ( contBlink < 10 ){
 				boxAntistall.setVisible(true);
 				textAntistall.setVisible(true);
 			}
@@ -854,7 +854,7 @@ void ACCELERATIONView::checkAntistall(void)
 			textAntistall.setVisible(false);
 			}
 			
-			if ( contBlink > 40 ){
+			if ( contBlink > 15 ){
 				contBlink = 0;
 			}
 		}
