@@ -72,6 +72,7 @@ extern int d_rpmLimiterValue, d_tractionValue;
 extern Indicator_Value Indicators[N_INDICATORS];
 
 int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
+int flag_defaultIndicators = 0;
 
 int box_driveMode;
 int box_indicator;
@@ -349,8 +350,8 @@ void GPIO_engineMap_set(void)
 	new_map = GPIO_encoders_find_new_mode(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
 	
 	// a Nico non piace il % :(
-	if(new_map == 0 || new_map == 2 || new_map == 4 || new_map == 6) new_map = MAP_1;
-	else new_map = MAP_2;
+	if(new_map == 0 || new_map == 2 || new_map == 4 || new_map == 6) new_map = MAP_2;
+	else new_map = MAP_1;
 	if(engineMap != new_map)
 	{
 		engineMap = new_map;
@@ -609,14 +610,17 @@ void GPIO_neutralButton_handle(void)
 
 void GPIO_aux1Button_handle(void)
 {
-	if( Indicators[ACQ].intValore == ACQ_ON ) {
+	if( Indicators[ACQ].intValore == ACQ_ON && driveMode != SETTINGS_MODE) {
 		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_STOP, EMPTY, EMPTY, 2);
 		//Indicators[ACQ].intValore = ACQ_OFF;
 	}
-	else if ( Indicators[ACQ].intValore == ACQ_OFF || Indicators[ACQ].intValore == ACQ_READY ) {
+	else if (( Indicators[ACQ].intValore == ACQ_OFF || Indicators[ACQ].intValore == ACQ_READY ) && driveMode != SETTINGS_MODE) {
 		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
 		//Indicators[ACQ].intValore = ACQ_ON;
 	} 
+	else if ( driveMode == SETTINGS_MODE && schermata_settings == 1 ) {
+		flag_defaultIndicators = 1;
+	}
 }
 		
 void GPIO_aux2Button_handle(void)

@@ -738,15 +738,6 @@ void leftEncoderTask(void const * argument)
 		xSemaphoreTake(leftEncoderSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_leftEncoder_movement();
-//		leftPosition = leftPosition + movement; 
-//		if (leftPosition > 7 )
-//			leftPosition = 0;
-//		else if (leftPosition < 0 )
-//			leftPosition = 7;
-		//Indicators[TRACTION_CONTROL].intValore = leftPosition;
-		//Indicators[MAP].intValore = leftPosition;
-		// leftposition magari non serve - dobbiamo vedere se è meglio ci serve
-		// la posizione relativa o assoluta
 		
 		switch(driveMode)
 		{

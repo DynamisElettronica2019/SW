@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Jun 11 14:00:58 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Jun 11 15:02:55 2019
 <BR><P>
 <H3>Maximum Stack Usage =       2280 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1196,8 +1196,8 @@ Global Symbols
 <P><STRONG><a name="[292]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[45b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_indicatorsInit
 <LI><a href="#[331]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_efiOff
-<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
 <LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_ConfigLayer
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&)
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LockFreeDMA_Queue::pushCopyOf(const touchgfx::BlitOp&)
 <LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ScalableImage::drawTriangle(const touchgfx::Rect&, unsigned short*, const float*, const float*, const float*, const float*, const float*) const
@@ -2240,11 +2240,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
+<LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 <LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
-<LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[2c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[2b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
@@ -2580,21 +2580,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[275]"></a>HAL_NVIC_DisableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_DisableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_MemoryMappedMode
-<LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspDeInit
+<BR><BR>[Called By]<UL><LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspDeInit
 <LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspDeInit
+<LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_MemoryMappedMode
 <LI><a href="#[2aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspDeInit
 </UL>
 
 <P><STRONG><a name="[217]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ))
 <BR><BR>[Called By]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
+<LI><a href="#[274]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
+<LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 <LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
 <LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
-<LI><a href="#[274]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
-<LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[2b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
@@ -2608,13 +2608,13 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
+<LI><a href="#[274]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
+<LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 <LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
 <LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
-<LI><a href="#[274]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
-<LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 <LI><a href="#[2b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
@@ -3739,8 +3739,8 @@ Global Symbols
 <P><STRONG><a name="[333]"></a>MX_FMC_Init()</STRONG> (Thumb, 88 bytes, Stack size 48 bytes, hw_init.o(i._Z11MX_FMC_Initv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = MX_FMC_Init() &rArr; HAL_SDRAM_Init &rArr; HAL_SDRAM_MspInit &rArr; HAL_FMC_MspInit() &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[2bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_Init
+<BR>[Calls]<UL><LI><a href="#[2bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_Init
+<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[33a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_HW_Init()
 </UL>
@@ -3748,11 +3748,11 @@ Global Symbols
 <P><STRONG><a name="[334]"></a>MX_LCD_Init()</STRONG> (Thumb, 166 bytes, Stack size 72 bytes, hw_init.o(i._Z11MX_LCD_Initv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = MX_LCD_Init() &rArr; HAL_LTDC_Init &rArr; HAL_LTDC_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_SetPitch
+<BR>[Calls]<UL><LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_SetPitch
 <LI><a href="#[29a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_Init
 <LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_DeInit
 <LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_ConfigLayer
+<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[33a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_HW_Init()
 </UL>
@@ -6293,9 +6293,9 @@ Global Symbols
 <P><STRONG><a name="[1b3]"></a>touchgfx::STM32F7Instrumentation::init()</STRONG> (Thumb, 100 bytes, Stack size 40 bytes, stm32f7instrumentation.o(i._ZN8touchgfx22STM32F7Instrumentation4initEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = touchgfx::STM32F7Instrumentation::init() &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
+<BR>[Calls]<UL><LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
 <LI><a href="#[3c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetClockConfig
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
@@ -9819,8 +9819,8 @@ Global Symbols
 <LI><a href="#[488]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortValidateInterruptPriority
 <LI><a href="#[473]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_RxFifo0MsgPendingCallback
-<LI><a href="#[29d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::signalVSync()
+<BR>[Called By]<UL><LI><a href="#[29d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::signalVSync()
+<LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_RxFifo0MsgPendingCallback
 </UL>
 
 <P><STRONG><a name="[236]"></a>xQueueGiveFromISR</STRONG> (Thumb, 172 bytes, Stack size 16 bytes, queue.o(i.xQueueGiveFromISR))

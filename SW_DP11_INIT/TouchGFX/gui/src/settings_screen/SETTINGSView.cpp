@@ -9,6 +9,7 @@ extern int box_driveMode;
 extern int box_indicator;
 extern int pointer_scroll;
 extern int change_pointer;
+extern int flag_defaultIndicators;
 
 extern uint8_t AccPointer[6];
 extern uint8_t EndPointer[6];
@@ -293,50 +294,59 @@ void SETTINGSView::moveSelectedBox()
 
 void SETTINGSView::displayAcceleration()
 {
-	
-		switch (box_indicator){
-		case 0 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AccPointer[0] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[0]].NOME, TIT_LEN);
-			break;
-		case 1 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AccPointer[1] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[1]].NOME, TIT_LEN);
-			break;
-		case 2 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AccPointer[2] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[2]].NOME, TIT_LEN);
-			break;
-		case 3 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AccPointer[3] = pointer_scroll;
+		if ( flag_defaultIndicators == 1 ){
+			AccPointer[0] = TH2O;
+			AccPointer[1] = VBAT;
+			AccPointer[2] = OIL_PRESS;
+			AccPointer[3] = OIL_TEMP_IN;
+			AccPointer[4] = TPS;
+			AccPointer[5] = FUEL_LEVEL;
+			flag_defaultIndicators = 0;
+		} else {
+			switch (box_indicator){
+			case 0 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AccPointer[0] = pointer_scroll;
 				}
-			touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[3]].NOME, TIT_LEN);
-			break;
-		case 4 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AccPointer[4] = pointer_scroll;
+				touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[0]].NOME, TIT_LEN);
+				break;
+			case 1 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AccPointer[1] = pointer_scroll;
 				}
-			touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[4]].NOME, TIT_LEN);
-			break;
-		case 5 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AccPointer[5] = pointer_scroll;
+				touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[1]].NOME, TIT_LEN);
+				break;
+			case 2 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AccPointer[2] = pointer_scroll;
 				}
-			touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[5]].NOME, TIT_LEN);
-			break;
+				touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[2]].NOME, TIT_LEN);
+				break;
+			case 3 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AccPointer[3] = pointer_scroll;
+					}
+				touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[3]].NOME, TIT_LEN);
+				break;
+			case 4 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AccPointer[4] = pointer_scroll;
+					}
+				touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[4]].NOME, TIT_LEN);
+				break;
+			case 5 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AccPointer[5] = pointer_scroll;
+					}
+				touchgfx::Unicode::strncpy( Title, Indicators[AccPointer[5]].NOME, TIT_LEN);
+				break;
+		}
 	}
 		
 	touchgfx::Unicode::strncpy( Title1, Indicators[AccPointer[0]].NOME, TIT_LEN);	
@@ -388,50 +398,59 @@ void SETTINGSView::displayAcceleration()
 
 void SETTINGSView::displayEndurance()
 {
-	
-	switch (box_indicator){
-		case 0 :			
-			if (change_pointer == 1){
-				change_pointer = 0;
-				EndPointer[0] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[0]].NOME, TIT_LEN);
-			break;
-		case 1 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				EndPointer[1] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[1]].NOME, TIT_LEN);
-			break;
-		case 2 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				EndPointer[2] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[2]].NOME, TIT_LEN);
-			break;
-		case 3 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				EndPointer[3] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[3]].NOME, TIT_LEN);
-			break;
-		case 4 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				EndPointer[4] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[4]].NOME, TIT_LEN);
-			break;
-		case 5 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				EndPointer[5] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[5]].NOME, TIT_LEN);
-			break;
+	if ( flag_defaultIndicators == 1 ){
+			EndPointer[0] = TH2O;
+			EndPointer[1] = VBAT;
+			EndPointer[2] = OIL_PRESS;
+			EndPointer[3] = OIL_TEMP_IN;
+			EndPointer[4] = BRAKE_BIAS;
+			EndPointer[5] = FUEL_LEVEL;
+			flag_defaultIndicators = 0;
+		} else {
+		switch (box_indicator){
+			case 0 :			
+				if (change_pointer == 1){
+					change_pointer = 0;
+					EndPointer[0] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[0]].NOME, TIT_LEN);
+				break;
+			case 1 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					EndPointer[1] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[1]].NOME, TIT_LEN);
+				break;
+			case 2 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					EndPointer[2] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[2]].NOME, TIT_LEN);
+				break;
+			case 3 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					EndPointer[3] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[3]].NOME, TIT_LEN);
+				break;
+			case 4 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					EndPointer[4] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[4]].NOME, TIT_LEN);
+				break;
+			case 5 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					EndPointer[5] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[EndPointer[5]].NOME, TIT_LEN);
+				break;
+		}
 	}
 	
 	touchgfx::Unicode::strncpy( Title1, Indicators[EndPointer[0]].NOME, TIT_LEN);	
@@ -483,50 +502,59 @@ void SETTINGSView::displayEndurance()
 
 void SETTINGSView::displayAutocross()
 {
-	
-	switch (box_indicator){
-		case 0 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AutPointer[0] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[0]].NOME, TIT_LEN);
-			break;
-		case 1 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AutPointer[1] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[1]].NOME, TIT_LEN);
-			break;
-		case 2 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AutPointer[2] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[2]].NOME, TIT_LEN);
-			break;
-		case 3 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AutPointer[3] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[3]].NOME, TIT_LEN);
-			break;
-		case 4 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AutPointer[4] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[4]].NOME, TIT_LEN);
-			break;
-		case 5 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				AutPointer[5] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[5]].NOME, TIT_LEN);
-			break;
+	if ( flag_defaultIndicators == 1 ){
+			AutPointer[0] = TH2O;
+			AutPointer[1] = VBAT;
+			AutPointer[2] = OIL_PRESS;
+			AutPointer[3] = OIL_TEMP_IN;
+			AutPointer[4] = BRAKE_BIAS;
+			AutPointer[5] = FUEL_LEVEL;
+			flag_defaultIndicators = 0;
+		} else {
+		switch (box_indicator){
+			case 0 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AutPointer[0] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[0]].NOME, TIT_LEN);
+				break;
+			case 1 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AutPointer[1] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[1]].NOME, TIT_LEN);
+				break;
+			case 2 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AutPointer[2] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[2]].NOME, TIT_LEN);
+				break;
+			case 3 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AutPointer[3] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[3]].NOME, TIT_LEN);
+				break;
+			case 4 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AutPointer[4] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[4]].NOME, TIT_LEN);
+				break;
+			case 5 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					AutPointer[5] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[AutPointer[5]].NOME, TIT_LEN);
+				break;
+		}
 	}
 	
 	touchgfx::Unicode::strncpy( Title1, Indicators[AutPointer[0]].NOME, TIT_LEN);	
@@ -578,52 +606,60 @@ void SETTINGSView::displayAutocross()
 
 void SETTINGSView::displaySkidpad()
 {
-	
-	switch (box_indicator){
-		case 0 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				SkiPointer[0] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[0]].NOME, TIT_LEN);
-			break;
-		case 1 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				SkiPointer[1] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[1]].NOME, TIT_LEN);
-			break;
-		case 2 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				SkiPointer[2] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[2]].NOME, TIT_LEN);
-			break;
-		case 3 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				SkiPointer[3] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[3]].NOME, TIT_LEN);
-			break;
-		case 4 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				SkiPointer[4] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[4]].NOME, TIT_LEN);
-			break;
-		case 5 :
-			if (change_pointer == 1){
-				change_pointer = 0;
-				SkiPointer[5] = pointer_scroll;
-			}
-			touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[5]].NOME, TIT_LEN);
-			break;
+	if ( flag_defaultIndicators == 1 ){
+			SkiPointer[0] = TH2O;
+			SkiPointer[1] = VBAT;
+			SkiPointer[2] = OIL_PRESS;
+			SkiPointer[3] = OIL_TEMP_IN;
+			SkiPointer[4] = TPS;
+			SkiPointer[5] = FUEL_LEVEL;
+			flag_defaultIndicators = 0;
+	} else {
+		switch (box_indicator){
+			case 0 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					SkiPointer[0] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[0]].NOME, TIT_LEN);
+				break;
+			case 1 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					SkiPointer[1] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[1]].NOME, TIT_LEN);
+				break;
+			case 2 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					SkiPointer[2] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[2]].NOME, TIT_LEN);
+				break;
+			case 3 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					SkiPointer[3] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[3]].NOME, TIT_LEN);
+				break;
+			case 4 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					SkiPointer[4] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[4]].NOME, TIT_LEN);
+				break;
+			case 5 :
+				if (change_pointer == 1){
+					change_pointer = 0;
+					SkiPointer[5] = pointer_scroll;
+				}
+				touchgfx::Unicode::strncpy( Title, Indicators[SkiPointer[5]].NOME, TIT_LEN);
+				break;
+		}
 	}
-	
 	touchgfx::Unicode::strncpy( Title1, Indicators[SkiPointer[0]].NOME, TIT_LEN);	
 	touchgfx::Unicode::strncpy( Title2, Indicators[SkiPointer[1]].NOME, TIT_LEN);		
 	touchgfx::Unicode::strncpy( Title3, Indicators[SkiPointer[2]].NOME, TIT_LEN);		
