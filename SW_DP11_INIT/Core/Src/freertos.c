@@ -744,8 +744,10 @@ void leftEncoderTask(void const * argument)
 			case AUTOX_MODE:
 			case ACCELERATION_MODE:
 			case ENDURANCE_MODE:
-			case SKIDPAD_MODE:
 				d_traction_control_setValue(movement);
+				break;
+			case SKIDPAD_MODE:
+				dSensors_setClutchTarget(movement);
 				break;
 			case BOARD_DEBUG_MODE:
 				GPIO_leftEncoder_boardDebugMode(movement);

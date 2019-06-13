@@ -26,7 +26,8 @@ void data_indicatorsInit(void)
 		Indicators[CLUTCH_CURR]				= (Indicator_Value) {CLUTCH_CURR, FLOAT, "CLUTCH", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[CLUTCH_FEEDBACK]	 	= (Indicator_Value) {CLUTCH_FEEDBACK, INT, "CLUTCH_FB", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
    	Indicators[CLUTCH_POSITION] 	= (Indicator_Value) {CLUTCH_POSITION, INT, "CLUTCH", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	  Indicators[DRIVE_MODE]				= (Indicator_Value) {DRIVE_MODE, INT, "MODE", 0, 0, 0,"?"};
+	  Indicators[CLUTCH_TRGT] 			= (Indicator_Value) {CLUTCH_TRGT, INT, "CLUTCH_TRGT", 0, 0, 0,"?"};
+		Indicators[DRIVE_MODE]				= (Indicator_Value) {DRIVE_MODE, INT, "MODE", 0, 0, 0,"?"};
 		Indicators[DAU_FL_BOARD] 			= (Indicator_Value) {DAU_FL_BOARD, FLOAT, "DAU_FL", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[DAU_FR_BOARD] 			= (Indicator_Value) {DAU_FR_BOARD, FLOAT, "DAU_FR", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[DAU_R_BOARD] 			= (Indicator_Value) {DAU_R_BOARD, FLOAT, "DAU_R", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};

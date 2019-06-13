@@ -84,6 +84,7 @@ int pointer_scroll;
 int change_pointer;
 
 int commandSent = 0;
+int buttonPressed = 0;
 
 int calibrationPopUp;
 extern int flagCalibration;
@@ -590,6 +591,15 @@ void GPIO_okButton_handle(void)
 			}else if (schermata_settings == 2 && flagCalibration == 0){
 				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentCalibration, EMPTY, EMPTY, 2);	
 			}				
+		}
+		
+		if( driveMode == SKIDPAD_MODE ){
+			if( buttonPressed == 0 ){
+				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, 100, driveMode, engineMap, EMPTY, 3);
+			}
+			else if( buttonPressed == 1 ){
+				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, Indicators[CLUTCH_TRGT].intValore, driveMode, engineMap, EMPTY, 3);
+			}
 		}
 		
 }

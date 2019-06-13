@@ -83,6 +83,7 @@ int flagCalibration;
 int feedbackCalibration;
 int flagEngineOn = FALSE;
 
+extern int buttonPressed;
 extern int timerDCUAlive;
 extern int DCU_is_dead;
 extern int DCU_was_not_dead;
@@ -275,6 +276,12 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				CAN_changeState(secondInt);
 				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
 				Indicators[ANTISTALL].intValore = fourthInt;
+				
+				if( Indicators[CLUTCH_FEEDBACK].intValore == 100 && driveMode == SKIDPAD_MODE)
+					buttonPressed = 1;
+				else if( driveMode == SKIDPAD_MODE ) 
+					buttonPressed = 0;
+				
         break;
 		 case GCU_TRACTION_LIMITER_AUTOG_ACC_SW_ID:
 				Indicators[TRACTION_CONTROL].intValore = firstInt;

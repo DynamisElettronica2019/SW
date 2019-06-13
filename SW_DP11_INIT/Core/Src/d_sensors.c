@@ -16,7 +16,14 @@ void dSensors_convert(int currValue, int tempValue)	{
 
 
 void dSensors_Clutch_send(void)	{
-	CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
+	if( driveMode != SKIDPAD_MODE )
+		CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
+	else if( driveMode == SKIDPAD_MODE ){
+		if( clutchValue > 30 )
+			CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
+		else 
+			CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, Indicators[CLUTCH_TRGT].intValore, driveMode, engineMap, EMPTY, 3);
+	}
 	return ;
 }
 
@@ -40,5 +47,19 @@ void dSensors_CLUTCH(int clutchAnalog){
 	
 	Indicators[CLUTCH_POSITION].intValore = clutchValue; 
 	
+	return ;
+}
+
+void dSensors_setClutchTarget(int movement)
+{
+	
+	Indicators[CLUTCH_TRGT].intValore = Indicators[CLUTCH_TRGT].intValore + 5*movement;
+	
+	if (Indicators[CLUTCH_TRGT].intValore >= CLUTCH_MAX_VALUE)
+		Indicators[CLUTCH_TRGT].intValore = CLUTCH_MAX_VALUE;
+	
+	else if (Indicators[CLUTCH_TRGT].intValore <= CLUTCH_MIN_VALUE)
+		Indicators[CLUTCH_TRGT].intValore = CLUTCH_MIN_VALUE;
+
 	return ;
 }

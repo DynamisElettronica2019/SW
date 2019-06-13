@@ -242,7 +242,7 @@ SETTINGSViewBase::SETTINGSViewBase()
     textCALIBRATION.setLinespacing(0);
     textCALIBRATION.setTypedText(TypedText(T_SINGLEUSEID363));
 
-    boxDCUdead.setPosition(66, 166, 523, 174);
+    boxDCUdead.setPosition(66, 162, 523, 174);
     boxDCUdead.setVisible(false);
     boxDCUdead.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     boxDCUdead.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
