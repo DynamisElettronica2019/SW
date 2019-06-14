@@ -60,6 +60,8 @@ protected:
     touchgfx::Box boxText;
     touchgfx::TextArea TEXTSkidpad;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
+    touchgfx::TextArea TEXTRpmLimiter;
+    touchgfx::TextAreaWithOneWildcard textRpmLimiterValue;
     touchgfx::BoxWithBorder boxEntry;
     touchgfx::TextArea TEXTSkidpadEntry;
     touchgfx::BoxWithBorder boxDCUdead;
@@ -102,6 +104,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndAcquisitionValueBuffer[TEXTINDACQUISITIONVALUE_SIZE];
     static const uint16_t TEXTINDGEARVALUE_SIZE = 3;
     touchgfx::Unicode::UnicodeChar textIndGearValueBuffer[TEXTINDGEARVALUE_SIZE];
+    static const uint16_t TEXTRPMLIMITERVALUE_SIZE = 7;
+    touchgfx::Unicode::UnicodeChar textRpmLimiterValueBuffer[TEXTRPMLIMITERVALUE_SIZE];
 
 private:
 

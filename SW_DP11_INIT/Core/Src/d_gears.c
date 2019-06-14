@@ -66,11 +66,11 @@ void dGear_setNeutral(void)
 void dGears_upShift(void)
 {
 	CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_UP, EMPTY, EMPTY, EMPTY, 1);
-  dGears_setGear(d_currentGear+1);
+ // dGears_setGear(d_currentGear+1);
 }
 		
 void dGears_downShift(void)
 {
 		CAN_send(SW_GEARSHIFT_ID, GEAR_COMMAND_DOWN, EMPTY, EMPTY, EMPTY, 1);
-		dGears_setGear(d_currentGear-1);
+ //	dGears_setGear(d_currentGear-1);
 }

@@ -44,8 +44,6 @@ protected:
     touchgfx::TextAreaWithOneWildcard textTrmcValue2;
     touchgfx::BoxWithBorder boxIndicatorGear;
     touchgfx::TextAreaWithOneWildcard textIndGearValue;
-    touchgfx::BoxWithBorder boxMapPopUp;
-    touchgfx::TextArea textMapPopUp;
     touchgfx::BoxWithBorder boxTRMC1_1;
     touchgfx::TextArea textTRMC1_1;
     touchgfx::TextAreaWithOneWildcard textTrmcValue1;
@@ -55,6 +53,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndValuePOIL;
     touchgfx::TextArea textIndTitle1;
     touchgfx::TextArea textIndTitle2;
+    touchgfx::BoxWithBorder boxMapPopUp;
+    touchgfx::TextArea textMapPopUp;
 
     /*
      * Wildcard Buffers

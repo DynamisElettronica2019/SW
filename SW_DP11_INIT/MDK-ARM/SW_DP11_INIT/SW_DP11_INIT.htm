@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Jun 14 16:05:18 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Jun 14 16:17:13 2019
 <BR><P>
 <H3>Maximum Stack Usage =       2312 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -3997,7 +3997,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 </UL>
-<P><STRONG><a name="[ea]"></a>SKIDPADView::refreshSkidpad()</STRONG> (Thumb, 1318 bytes, Stack size 56 bytes, skidpadview.o(i._ZN11SKIDPADView14refreshSkidpadEv))
+<P><STRONG><a name="[ea]"></a>SKIDPADView::refreshSkidpad()</STRONG> (Thumb, 1358 bytes, Stack size 56 bytes, skidpadview.o(i._ZN11SKIDPADView14refreshSkidpadEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 616<LI>Call Chain = SKIDPADView::refreshSkidpad() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
@@ -4050,7 +4050,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 </UL>
 <P><STRONG><a name="[35b]"></a>SKIDPADView::SKIDPADView()</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, skidpadview.o(i._ZN11SKIDPADViewC1Ev))
-<BR><BR>[Stack]<UL><LI>Max Depth = 632<LI>Call Chain = SKIDPADView::SKIDPADView() &rArr; SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR><BR>[Stack]<UL><LI>Max Depth = 640<LI>Call Chain = SKIDPADView::SKIDPADView() &rArr; SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 </UL>
@@ -4650,8 +4650,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 </UL>
-<P><STRONG><a name="[35c]"></a>SKIDPADViewBase::SKIDPADViewBase()</STRONG> (Thumb, 3176 bytes, Stack size 200 bytes, skidpadviewbase.o(i._ZN15SKIDPADViewBaseC1Ev))
-<BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<P><STRONG><a name="[35c]"></a>SKIDPADViewBase::SKIDPADViewBase()</STRONG> (Thumb, 3364 bytes, Stack size 208 bytes, skidpadviewbase.o(i._ZN15SKIDPADViewBaseC1Ev))
+<BR><BR>[Stack]<UL><LI>Max Depth = 632<LI>Call Chain = SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[351]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
 <LI><a href="#[350]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
@@ -4669,7 +4669,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[35b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::SKIDPADView()
 </UL>
 
-<P><STRONG><a name="[4d0]"></a>SKIDPADViewBase::SKIDPADViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 200 bytes, skidpadviewbase.o(i._ZN15SKIDPADViewBaseC1Ev), UNUSED)
+<P><STRONG><a name="[4d0]"></a>SKIDPADViewBase::SKIDPADViewBase__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 208 bytes, skidpadviewbase.o(i._ZN15SKIDPADViewBaseC1Ev), UNUSED)
 
 <P><STRONG><a name="[123]"></a>SKIDPADViewBase::~SKIDPADViewBase()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, skidpadview.o(i._ZN15SKIDPADViewBaseD1Ev))
 <BR><BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::~SKIDPADView()
@@ -5089,7 +5089,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
 </UL>
-<P><STRONG><a name="[36f]"></a>NOISE_MODEViewBase::NOISE_MODEViewBase()</STRONG> (Thumb, 2128 bytes, Stack size 160 bytes, noise_modeviewbase.o(i._ZN18NOISE_MODEViewBaseC1Ev))
+<P><STRONG><a name="[36f]"></a>NOISE_MODEViewBase::NOISE_MODEViewBase()</STRONG> (Thumb, 2122 bytes, Stack size 160 bytes, noise_modeviewbase.o(i._ZN18NOISE_MODEViewBaseC1Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 584<LI>Call Chain = NOISE_MODEViewBase::NOISE_MODEViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[351]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
@@ -5431,7 +5431,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[ad]"></a>FrontendApplicationBase::gotoSKIDPADScreenNoTransitionImpl()</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, frontendapplicationbase.o(i._ZN23FrontendApplicationBase33gotoSKIDPADScreenNoTransitionImplEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 672<LI>Call Chain = FrontendApplicationBase::gotoSKIDPADScreenNoTransitionImpl() &rArr; T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; SKIDPADView::SKIDPADView() &rArr; SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR><BR>[Stack]<UL><LI>Max Depth = 680<LI>Call Chain = FrontendApplicationBase::gotoSKIDPADScreenNoTransitionImpl() &rArr; T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; SKIDPADView::SKIDPADView() &rArr; SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)
 </UL>
@@ -6127,7 +6127,8 @@ Global Symbols
 <P><STRONG><a name="[50b]"></a>touchgfx::InternalFlashFont::InternalFlashFont__sub_object(const touchgfx::GlyphNode*, unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, unsigned char, const unsigned char*, const touchgfx::KerningNode*, unsigned short, unsigned short)</STRONG> (Thumb, 0 bytes, Stack size 56 bytes, internalflashfont.o(i._ZN8touchgfx17InternalFlashFontC1EPKNS_9GlyphNodeEtthhhhPKhPKNS_11KerningNodeEtt), UNUSED)
 
 <P><STRONG><a name="[7f]"></a>touchgfx::InternalFlashFont::~InternalFlashFont()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, fontgetters.o(i._ZN8touchgfx17InternalFlashFontD1Ev))
-<BR>[Address Reference Count : 9]<UL><LI> fontgetters.o(i._Z29getFont_Roboto_Black_100_4bppv)
+<BR>[Address Reference Count : 9]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> fontgetters.o(i._Z29getFont_Roboto_Black_100_4bppv)
 <LI> fontgetters.o(i._Z30getFont_Roboto_Regular_25_4bppv)
 <LI> fontgetters.o(i._Z30getFont_Roboto_Regular_35_4bppv)
 <LI> fontgetters.o(i._Z30getFont_Roboto_Regular_45_4bppv)
@@ -6135,7 +6136,6 @@ Global Symbols
 <LI> fontgetters.o(i._Z30getFont_Roboto_Regular_80_4bppv)
 <LI> fontgetters.o(i._Z31getFont_Roboto_Regular_180_4bppv)
 <LI> fontgetters.o(i._Z31getFont_Roboto_Regular_420_4bppv)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
 </UL>
 <P><STRONG><a name="[50c]"></a>touchgfx::InternalFlashFont::~InternalFlashFont__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fontgetters.o(i._ZN8touchgfx17InternalFlashFontD1Ev), UNUSED)
 
@@ -7108,6 +7108,7 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> noise_modeview.o(.constdata__ZTV14NOISE_MODEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7115,7 +7116,6 @@ Global Symbols
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7125,10 +7125,10 @@ Global Symbols
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7142,6 +7142,7 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> noise_modeview.o(.constdata__ZTV14NOISE_MODEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7149,7 +7150,6 @@ Global Symbols
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7169,6 +7169,7 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> noise_modeview.o(.constdata__ZTV14NOISE_MODEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7176,7 +7177,6 @@ Global Symbols
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7190,6 +7190,7 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> noise_modeview.o(.constdata__ZTV14NOISE_MODEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7197,7 +7198,6 @@ Global Symbols
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7220,6 +7220,7 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> noise_modeview.o(.constdata__ZTV14NOISE_MODEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7227,7 +7228,6 @@ Global Symbols
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7245,6 +7245,7 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> noise_modeview.o(.constdata__ZTV14NOISE_MODEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7252,7 +7253,6 @@ Global Symbols
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7287,6 +7287,7 @@ Global Symbols
 <LI> accelerationview.o(.constdata__ZTV16ACCELERATIONView)
 <LI> enduranceviewbase.o(.constdata__ZTV17ENDURANCEViewBase)
 <LI> noise_modeviewbase.o(.constdata__ZTV18NOISE_MODEViewBase)
+<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> enduranceview.o(.constdata__ZTV13ENDURANCEView)
 <LI> noise_modeview.o(.constdata__ZTV14NOISE_MODEView)
 <LI> screen1view.o(.constdata__ZTV11Screen1View)
@@ -7294,7 +7295,6 @@ Global Symbols
 <LI> skidpadview.o(.constdata__ZTV11SKIDPADView)
 <LI> board_debugviewbase.o(.constdata__ZTV19BOARD_DEBUGViewBase)
 <LI> debug_modeviewbase.o(.constdata__ZTV18DEBUG_MODEViewBase)
-<LI> screen1viewbase.o(.constdata__ZTV15Screen1ViewBase)
 <LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> skidpadviewbase.o(.constdata__ZTV15SKIDPADViewBase)
 <LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
@@ -7361,10 +7361,10 @@ Global Symbols
 <P><STRONG><a name="[51e]"></a>touchgfx::Screen::~Screen__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, screen.o(i._ZN8touchgfx6ScreenD1Ev), UNUSED)
 
 <P><STRONG><a name="[17c]"></a>touchgfx::Widget::getLastChild(short, short, touchgfx::Drawable**)</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx6Widget12getLastChildEssPPNS_8DrawableE))
-<BR>[Address Reference Count : 9]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 9]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
@@ -7734,14 +7734,14 @@ Global Symbols
 <LI><a href="#[36f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NOISE_MODEViewBase::NOISE_MODEViewBase()
 <LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 </UL>
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7763,11 +7763,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[189]"></a>touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable14setupDrawChainERKNS_4RectEPPS0_))
-<BR>[Address Reference Count : 10]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 10]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
@@ -7775,53 +7775,53 @@ Global Symbols
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[187]"></a>touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable15handleDragEventERKNS_9DragEventE))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[188]"></a>touchgfx::Drawable::handleTickEvent()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable15handleTickEventEv))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[185]"></a>touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable16handleClickEventERKNS_10ClickEventE))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[186]"></a>touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable18handleGestureEventERKNS_12GestureEventE))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7835,27 +7835,27 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[180]"></a>touchgfx::Drawable::setX(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable4setXEs))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[181]"></a>touchgfx::Drawable::setY(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable4setYEs))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7873,40 +7873,40 @@ Global Symbols
 <LI><a href="#[36f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NOISE_MODEViewBase::NOISE_MODEViewBase()
 <LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADViewBase::SKIDPADViewBase()
 </UL>
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[183]"></a>touchgfx::Drawable::setWidth(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable8setWidthEs))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[184]"></a>touchgfx::Drawable::setHeight(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, accelerationviewbase.o(i._ZN8touchgfx8Drawable9setHeightEs))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8336,26 +8336,26 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1a8]"></a>touchgfx::Font::getFontHeight() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, font.o(i._ZNK8touchgfx4Font13getFontHeightEv))
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1a7]"></a>touchgfx::Font::getStringWidth(unsigned char, const unsigned short*, ...) const</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, font.o(i._ZNK8touchgfx4Font14getStringWidthEhPKtz))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::Font::getStringWidth(unsigned char, const unsigned short*, ...) const
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1aa]"></a>touchgfx::Font::getBitsPerPixel() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, font.o(i._ZNK8touchgfx4Font15getBitsPerPixelEv))
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1a6]"></a>touchgfx::Font::getEllipsisChar() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, font.o(i._ZNK8touchgfx4Font15getEllipsisCharEv))
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1a5]"></a>touchgfx::Font::getFallbackChar() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, font.o(i._ZNK8touchgfx4Font15getFallbackCharEv))
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[9]"></a>touchgfx::Font::getStringWidthLTR(unsigned char, const unsigned short*, std::__va_list) const</STRONG> (Thumb, 126 bytes, Stack size 56 bytes, font.o(i._ZNK8touchgfx4Font17getStringWidthLTREhPKtSt9__va_list))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = touchgfx::Font::getStringWidthLTR(unsigned char, const unsigned short*, std::__va_list) const &rArr; touchgfx::TextProvider::getNextLigature(unsigned char) &rArr; touchgfx::TextProvider::getNextChar() &rArr; touchgfx::TextProvider::getNextCharInternal()
@@ -8367,14 +8367,14 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> texts.o(.data)
 </UL>
 <P><STRONG><a name="[1a9]"></a>touchgfx::Font::getMinimumTextHeight() const</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, font.o(i._ZNK8touchgfx4Font20getMinimumTextHeightEv))
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1a4]"></a>touchgfx::Font::getGlyph(unsigned short) const</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, font.o(i._ZNK8touchgfx4Font8getGlyphEt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = touchgfx::Font::getGlyph(unsigned short) const
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1c3]"></a>touchgfx::Line::getMinimalRect() const</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, line.o(i._ZNK8touchgfx4Line14getMinimalRectEv))
 <BR>[Address Reference Count : 1]<UL><LI> line.o(.constdata__ZTVN8touchgfx4LineE)
@@ -8641,13 +8641,13 @@ Global Symbols
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::refreshSkidpad()
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SKIDPADView::checkAntistall()
 </UL>
-<BR>[Address Reference Count : 9]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 9]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
@@ -8656,14 +8656,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &=(const touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8674,14 +8674,14 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[353]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Application::getInstance()
 <LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &=(const touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8700,14 +8700,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[17e]"></a>touchgfx::Drawable::translateRectToAbsolute(touchgfx::Rect&) const</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, drawable.o(i._ZNK8touchgfx8Drawable23translateRectToAbsoluteERNS_4RectE))
-<BR>[Address Reference Count : 11]<UL><LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 11]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
+<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8767,8 +8767,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[453]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ConstFont::find(unsigned short) const
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
-<LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<BR>[Address Reference Count : 2]<UL><LI> internalflashfont.o(.constdata__ZTVN8touchgfx17InternalFlashFontE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1d8]"></a>touchgfx::Container::getSolidRect() const</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, container.o(i._ZNK8touchgfx9Container12getSolidRectEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::Container::getSolidRect() const
@@ -8926,12 +8926,12 @@ Global Symbols
 <P><STRONG><a name="[18e]"></a>__cxa_pure_virtual</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, pure_virt.o(i.__cxa_pure_virtual))
 <BR><BR>[Calls]<UL><LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGPVFN
 </UL>
-<BR>[Address Reference Count : 8]<UL><LI> abstractpainter.o(.constdata__ZTVN8touchgfx15AbstractPainterE)
-<LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
+<BR>[Address Reference Count : 8]<UL><LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> abstractpartition.o(.constdata__ZTVN8touchgfx17AbstractPartitionE)
+<LI> abstractpainter.o(.constdata__ZTVN8touchgfx15AbstractPainterE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
-<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
+<LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 <LI> hal.o(.constdata__ZTVN8touchgfx3HALE)
 <LI> abstractpainterrgb565.o(.constdata__ZTVN8touchgfx21AbstractPainterRGB565E)
 </UL>
@@ -9128,26 +9128,22 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_neutralButton_handle
 </UL>
 
-<P><STRONG><a name="[456]"></a>dGears_downShift</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, d_gears.o(i.dGears_downShift))
+<P><STRONG><a name="[456]"></a>dGears_downShift</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, d_gears.o(i.dGears_downShift))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = dGears_downShift &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_setGear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;downShiftTask
 </UL>
 
 <P><STRONG><a name="[220]"></a>dGears_setGear</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, d_gears.o(i.dGears_setGear))
 <BR><BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
-<LI><a href="#[457]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_upShift
-<LI><a href="#[456]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_downShift
 </UL>
 
-<P><STRONG><a name="[457]"></a>dGears_upShift</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, d_gears.o(i.dGears_upShift))
+<P><STRONG><a name="[457]"></a>dGears_upShift</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, d_gears.o(i.dGears_upShift))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = dGears_upShift &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_setGear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
 </UL>
@@ -9943,7 +9939,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[38c]"></a>T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*)</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, frontendapplicationbase.o(t._ZN8touchgfx14makeTransitionI11SKIDPADView16SKIDPADPresenterNS_12NoTransitionE5ModelEEPT0_PPNS_6ScreenEPPNS_9PresenterERNS_7MVPHeapEPPNS_10TransitionEPT2_))
-<BR><BR>[Stack]<UL><LI>Max Depth = 664<LI>Call Chain = T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; SKIDPADView::SKIDPADView() &rArr; SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
+<BR><BR>[Stack]<UL><LI>Max Depth = 672<LI>Call Chain = T2* touchgfx::makeTransition&lang;SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model&rang;(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::MVPHeap&, touchgfx::Transition**, T4*) &rArr; SKIDPADView::SKIDPADView() &rArr; SKIDPADViewBase::SKIDPADViewBase() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::finalizeTransition(touchgfx::Screen*, touchgfx::Presenter*, touchgfx::Transition*)
 <LI><a href="#[3bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::prepareTransition(touchgfx::Screen**, touchgfx::Presenter**, touchgfx::Transition**)

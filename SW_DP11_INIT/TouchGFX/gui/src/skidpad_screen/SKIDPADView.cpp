@@ -147,6 +147,10 @@ void SKIDPADView::refreshSkidpad()
 	Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", Gear);
 	Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%d", Indicators[CLUTCH_TRGT].intValore);
 	Unicode::snprintf(textIndMapValueBuffer, TEXTINDMAPVALUE_SIZE, "%d", Indicators[MAP].intValore);
+	
+	/****************RPM LIMITER*****************/
+	
+	Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%d", Indicators[RPM_LIM].intValore*1000);
 
 	/****************ACQUISITION*****************/
 	
@@ -190,7 +194,9 @@ void SKIDPADView::refreshSkidpad()
 	textIndMapValue.invalidate();
 	
 	boxIndicatorGear.invalidate();
-
+	
+	textRpmLimiterValue.invalidate();
+	
 	textIndAcquisitionValue.invalidate();
 	boxAcquisition.invalidate();
 	

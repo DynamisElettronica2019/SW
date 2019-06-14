@@ -193,6 +193,18 @@ SKIDPADViewBase::SKIDPADViewBase()
     textIndGearValue.setWildcard(textIndGearValueBuffer);
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID281));
 
+    TEXTRpmLimiter.setPosition(470, 286, 173, 33);
+    TEXTRpmLimiter.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    TEXTRpmLimiter.setLinespacing(0);
+    TEXTRpmLimiter.setTypedText(TypedText(T_SINGLEUSEID415));
+
+    textRpmLimiterValue.setPosition(470, 308, 173, 65);
+    textRpmLimiterValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textRpmLimiterValue.setLinespacing(0);
+    Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID417).getText());
+    textRpmLimiterValue.setWildcard(textRpmLimiterValueBuffer);
+    textRpmLimiterValue.setTypedText(TypedText(T_SINGLEUSEID416));
+
     boxEntry.setPosition(8, 277, 621, 104);
     boxEntry.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 200, 255));
     boxEntry.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
@@ -259,6 +271,8 @@ SKIDPADViewBase::SKIDPADViewBase()
     add(boxText);
     add(TEXTSkidpad);
     add(textIndGearValue);
+    add(TEXTRpmLimiter);
+    add(textRpmLimiterValue);
     add(boxEntry);
     add(TEXTSkidpadEntry);
     add(boxDCUdead);

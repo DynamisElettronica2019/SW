@@ -4187,6 +4187,57 @@
             "Moveable": false
           },
           {
+            "TextId": "SingleUseId415",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "TEXTRpmLimiter",
+            "X": 470,
+            "Y": 286,
+            "Width": 173,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId416",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId417",
+              "UseBuffer": true,
+              "BufferSize": 7
+            },
+            "Name": "textRpmLimiterValue",
+            "X": 470,
+            "Y": 308,
+            "Width": 173,
+            "Height": 65,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "Color": {
               "Red": 0,
               "Green": 200,
@@ -8413,54 +8464,6 @@
           },
           {
             "Color": {
-              "Red": 255,
-              "Green": 254,
-              "Blue": 0
-            },
-            "BorderColor": {
-              "Red": 255,
-              "Green": 0,
-              "Blue": 0
-            },
-            "BorderSize": 5,
-            "Alpha": 255,
-            "Name": "boxMapPopUp",
-            "X": 94,
-            "Y": 135,
-            "Width": 470,
-            "Height": 289,
-            "Type": "BoxWithBorder",
-            "Visible": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "TextId": "SingleUseId389",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 0,
-              "Blue": 0
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Name": "textMapPopUp",
-            "X": 118,
-            "Y": 159,
-            "Width": 422,
-            "Height": 240,
-            "Type": "TextArea",
-            "Visible": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Color": {
               "Red": 0,
               "Green": 0,
               "Blue": 0
@@ -8682,6 +8685,54 @@
             "Height": 32,
             "Type": "TextArea",
             "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 254,
+              "Blue": 0
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxMapPopUp",
+            "X": 94,
+            "Y": 135,
+            "Width": 470,
+            "Height": 289,
+            "Type": "BoxWithBorder",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId389",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textMapPopUp",
+            "X": 118,
+            "Y": 159,
+            "Width": 422,
+            "Height": 240,
+            "Type": "TextArea",
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -10275,6 +10326,18 @@
       },
       {
         "TextEntryId": "SingleUseId404",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId415",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId416",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId417",
         "IsResource": false
       }
     ],
