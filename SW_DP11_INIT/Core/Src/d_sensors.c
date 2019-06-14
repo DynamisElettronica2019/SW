@@ -25,7 +25,7 @@ void dSensors_Clutch_send(void)	{
 			state = SKIDPAD_MODE_DEFAULT;
 			buttonPressed = 0;
 		}
-		if( state == SKIDPAD_MODE_DEFAULT ) 
+		if( state == SKIDPAD_MODE_DEFAULT || state == SKIDPAD_MODE_START ) 
 			CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
 	}
 	return ;
