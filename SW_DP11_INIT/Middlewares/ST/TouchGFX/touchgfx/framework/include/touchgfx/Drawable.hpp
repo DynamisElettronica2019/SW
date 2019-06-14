@@ -250,7 +250,7 @@ public:
     {
         setXY(x, y);
         setWidth(width);
-        setHeight(height);
+        setHeight(height);	
     };
 
     /**

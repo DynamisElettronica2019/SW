@@ -53,37 +53,30 @@ void SETTINGSView::refreshSettings()
 	
 	switch (schermata_settings){
 		case 0 :
-			if (flag_schermata == 0)
-				SETTINGSView::changeDisplay();
-			
+			if (flag_schermata == 0){
+				flag_schermata = 1;
+				changeSchermata0(true);
+				changeSchermata1(false);
+				changeSchermata2(false);
+				changeSchermata3(false);
+			}
+			//	SETTINGSView::changeDisplay();		
 			boxModeSelected.setVisible(false);
 			boxModeSelected.invalidate();
 			boxModeSelected.setPosition(15, 23 + (90*box_driveMode), 476, 75);
 			boxModeSelected.setVisible(true);
 			boxModeSelected.invalidate();
-			
-			textIndTitle1.invalidate();
-			textIndTitle2.invalidate();
-			textIndTitle3.invalidate();
-			textIndTitle4.invalidate();
-			textIndTitle5.invalidate();
-			textIndTitle6.invalidate();
-			textIndTitleCurrent.invalidate();
-			textIndDriveMode.invalidate();
-			
-			textIndValue1.invalidate();
-			textIndValue2.invalidate();
-			textIndValue3.invalidate();
-			textIndValue4.invalidate();
-			textIndValue5.invalidate();
-			textIndValue6.invalidate();
-			boxIndSelected.invalidate();
+		
 			boxCalibrationSelected.invalidate();
 			break;
 		case 1 :
-			if (flag_schermata == 0)
-				SETTINGSView::changeDisplay();
-			
+			if (flag_schermata == 0){
+				flag_schermata = 1;
+				changeSchermata0(false);
+				changeSchermata1(true);
+				changeSchermata2(false);
+				changeSchermata3(false);
+			}		
 			SETTINGSView::moveSelectedBox();
 			
 			switch (box_driveMode){
@@ -124,21 +117,25 @@ void SETTINGSView::refreshSettings()
 				
 			break;
 		case 2:
-			if (flag_schermata == 0)
-				SETTINGSView::changeDisplay();
+			if (flag_schermata == 0){
+				flag_schermata = 1;
+				changeSchermata0(false);
+				changeSchermata1(false);
+				changeSchermata2(true);
+				changeSchermata3(false);
+			}	
+			//	SETTINGSView::changeDisplay();
 			boxCalibrationSelected.setVisible(false);
 			boxCalibrationSelected.invalidate();
-			boxCalibrationSelected.setPosition(58, 22 + (90*(currentCalibration-1)), 535, 83);
+			boxCalibrationSelected.setPosition(58, 10 + (80*(currentCalibration-1)), 535, 63);
 			boxCalibrationSelected.setVisible(true);
 			boxCalibrationSelected.invalidate();
 			SETTINGSView::calibrationDisplay();
 			break;
-			
 	}
 	
 }
-void SETTINGSView::checkChangeScreen()
-{
+void SETTINGSView::checkChangeScreen(){
 	switch ( Indicators[DRIVE_MODE].intValore ){
 				case SETTINGS_MODE	:
 					
@@ -167,100 +164,82 @@ void SETTINGSView::checkChangeScreen()
 	}	
 }
 
-void SETTINGSView::changeDisplay()
-{
-	flag_schermata = 1;
-	if (schermata_settings == 1){
-		boxIndSelected.setVisible(true);
-		boxIndicator1.setVisible(true);
-		boxIndicator2.setVisible(true);
-		boxIndicator3.setVisible(true);
-		boxIndicator4.setVisible(true);
-		boxIndicator5.setVisible(true);
-		boxIndicator6.setVisible(true);
-		textIndTitle1.setVisible(true);
-		textIndTitle2.setVisible(true);
-		textIndTitle3.setVisible(true);
-		textIndTitle4.setVisible(true);
-		textIndTitle5.setVisible(true);
-		textIndTitle6.setVisible(true);
-		textIndValue1.setVisible(true);
-		textIndValue2.setVisible(true);
-		textIndValue3.setVisible(true);
-		textIndValue4.setVisible(true);
-		textIndValue5.setVisible(true);
-		textIndValue6.setVisible(true);
-		textIndDriveMode.setVisible(true);
-		textIndTitleCurrent.setVisible(true);
-		boxModeSelected.setVisible(false);
-		textACCELERATION.setVisible(false);
-		textENDURANCE.setVisible(false);
-		textAUTOCROSS.setVisible(false);
-		textSKIDPAD.setVisible(false);
-		textCALIBRATION.setVisible(false);
-	}
-	else if (schermata_settings == 2){
+void SETTINGSView::changeSchermata0(bool visible){
+		boxModeSelected.setVisible(visible);
+		textACCELERATION.setVisible(visible);
+		textENDURANCE.setVisible(visible);
+		textAUTOCROSS.setVisible(visible);
+		textSKIDPAD.setVisible(visible);
+		textCALIBRATION.setVisible(visible);
+		textACCELERATION.invalidate();
+		textENDURANCE.invalidate();
+		textAUTOCROSS.invalidate();
+		textSKIDPAD.invalidate();
+		boxModeSelected.invalidate();
+}
+
+void SETTINGSView::changeSchermata1(bool visible){
+		boxIndSelected.setVisible(visible);
+		boxIndicator1.setVisible(visible);
+		boxIndicator2.setVisible(visible);
+		boxIndicator3.setVisible(visible);
+		boxIndicator4.setVisible(visible);
+		boxIndicator5.setVisible(visible);
+		boxIndicator6.setVisible(visible);
+		textIndTitle1.setVisible(visible);
+		textIndTitle2.setVisible(visible);
+		textIndTitle3.setVisible(visible);
+		textIndTitle4.setVisible(visible);
+		textIndTitle5.setVisible(visible);
+		textIndTitle6.setVisible(visible);
+		textIndValue1.setVisible(visible);
+		textIndValue2.setVisible(visible);
+		textIndValue3.setVisible(visible);
+		textIndValue4.setVisible(visible);
+		textIndValue5.setVisible(visible);
+		textIndValue6.setVisible(visible);
+		textIndDriveMode.setVisible(visible);
+		textIndTitleCurrent.setVisible(visible);
+	
+		textIndTitle1.invalidate();
+		textIndTitle2.invalidate();
+		textIndTitle3.invalidate();
+		textIndTitle4.invalidate();
+		textIndTitle5.invalidate();
+		textIndTitle6.invalidate();
+		textIndTitleCurrent.invalidate();
+		textIndDriveMode.invalidate();
+		textIndTitleCurrent.invalidate();
 		
-		textLOAD_CELL.setVisible(true);
-		textLINEAR.setVisible(true);
-		textAPPS_0.setVisible(true);
-		textAPPS_100.setVisible(true);
-		textSW_ANGLE.setVisible(true);
-		boxCalibrationSelected.setVisible(true);
-		boxModeSelected.setVisible(false);
-		textACCELERATION.setVisible(false);
-		textENDURANCE.setVisible(false);
-		textAUTOCROSS.setVisible(false);
-		textSKIDPAD.setVisible(false);
-		textCALIBRATION.setVisible(false);
-	}
-	else if (schermata_settings == 0){
-		boxIndSelected.setVisible(false);
-		boxIndicator1.setVisible(false);
-		boxIndicator2.setVisible(false);
-		boxIndicator3.setVisible(false);
-		boxIndicator4.setVisible(false);
-		boxIndicator5.setVisible(false);
-		boxIndicator6.setVisible(false);
-		textIndTitle1.setVisible(false);
-		textIndTitle2.setVisible(false);
-		textIndTitle3.setVisible(false);
-		textIndTitle4.setVisible(false);
-		textIndTitle5.setVisible(false);
-		textIndTitle6.setVisible(false);
-		textIndValue1.setVisible(false);
-		textIndValue2.setVisible(false);
-		textIndValue3.setVisible(false);
-		textIndValue4.setVisible(false);
-		textIndValue5.setVisible(false);
-		textIndValue6.setVisible(false);
-		textIndDriveMode.setVisible(false);
-		textIndTitleCurrent.setVisible(false);
-		textLOAD_CELL.setVisible(false);
-		textLINEAR.setVisible(false);
-		textAPPS_0.setVisible(false);
-		textAPPS_100.setVisible(false);
-		textSW_ANGLE.setVisible(false);
-		boxCalibrationSelected.setVisible(false);
-		boxModeSelected.setVisible(true);
-		textACCELERATION.setVisible(true);
-		textENDURANCE.setVisible(true);
-		textAUTOCROSS.setVisible(true);
-		textSKIDPAD.setVisible(true);
-		textCALIBRATION.setVisible(true);
-	}
-	textACCELERATION.invalidate();
-	textENDURANCE.invalidate();
-	textAUTOCROSS.invalidate();
-	textSKIDPAD.invalidate();
-	textCALIBRATION.invalidate();
-	boxModeSelected.invalidate();
-	boxCalibrationSelected.invalidate();
-	textLOAD_CELL.invalidate();
-	textLINEAR.invalidate();
-	textAPPS_0.invalidate();
-	textAPPS_100.invalidate();
-	textSW_ANGLE.invalidate();
+		textIndValue1.invalidate();
+		textIndValue2.invalidate();
+		textIndValue3.invalidate();
+		textIndValue4.invalidate();
+		textIndValue5.invalidate();
+		textIndValue6.invalidate();
+		boxIndSelected.invalidate();
+}
+
+void SETTINGSView::changeSchermata2(bool visible){
+		textLOAD_CELL.setVisible(visible);
+		textLINEAR.setVisible(visible);
+		textAPPS_0.setVisible(visible);
+		textAPPS_100.setVisible(visible);
+		textSW_ANGLE.setVisible(visible);
+		textIMU.setVisible(visible);
+		boxCalibrationSelected.setVisible(visible);
+	
+		textLOAD_CELL.invalidate();
+		textLINEAR.invalidate();
+		textAPPS_0.invalidate();
+		textAPPS_100.invalidate();
+		textSW_ANGLE.invalidate();
+		textIMU.invalidate();
+		boxCalibrationSelected.invalidate();
+}
+
+void SETTINGSView::changeSchermata3(bool visible){
+	
 }
 
 

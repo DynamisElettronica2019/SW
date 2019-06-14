@@ -91,18 +91,6 @@ NOISE_MODEViewBase::NOISE_MODEViewBase()
     textIndGearValue.setWildcard(textIndGearValueBuffer);
     textIndGearValue.setTypedText(TypedText(T_SINGLEUSEID394));
 
-    boxMapPopUp.setPosition(94, 135, 470, 289);
-    boxMapPopUp.setVisible(false);
-    boxMapPopUp.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 254, 0));
-    boxMapPopUp.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
-    boxMapPopUp.setBorderSize(5);
-
-    textMapPopUp.setPosition(118, 159, 422, 240);
-    textMapPopUp.setVisible(false);
-    textMapPopUp.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
-    textMapPopUp.setLinespacing(0);
-    textMapPopUp.setTypedText(TypedText(T_SINGLEUSEID389));
-
     boxTRMC1_1.setPosition(22, 219, 270, 122);
     boxTRMC1_1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxTRMC1_1.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -154,6 +142,18 @@ NOISE_MODEViewBase::NOISE_MODEViewBase()
     textIndTitle2.setLinespacing(0);
     textIndTitle2.setTypedText(TypedText(T_SINGLEUSEID414));
 
+    boxMapPopUp.setPosition(94, 135, 470, 289);
+    boxMapPopUp.setVisible(false);
+    boxMapPopUp.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 254, 0));
+    boxMapPopUp.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    boxMapPopUp.setBorderSize(5);
+
+    textMapPopUp.setPosition(118, 159, 422, 240);
+    textMapPopUp.setVisible(false);
+    textMapPopUp.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
+    textMapPopUp.setLinespacing(0);
+    textMapPopUp.setTypedText(TypedText(T_SINGLEUSEID389));
+
     add(background);
     add(boxRPM);
     add(boxTPS);
@@ -170,8 +170,6 @@ NOISE_MODEViewBase::NOISE_MODEViewBase()
     add(textTrmcValue2);
     add(boxIndicatorGear);
     add(textIndGearValue);
-    add(boxMapPopUp);
-    add(textMapPopUp);
     add(boxTRMC1_1);
     add(textTRMC1_1);
     add(textTrmcValue1);
@@ -181,6 +179,8 @@ NOISE_MODEViewBase::NOISE_MODEViewBase()
     add(textIndValuePOIL);
     add(textIndTitle1);
     add(textIndTitle2);
+    add(boxMapPopUp);
+    add(textMapPopUp);
 }
 
 void NOISE_MODEViewBase::setupScreen()

@@ -16,7 +16,10 @@ public:
     virtual void tearDownScreen();
 		virtual void refreshSettings();
 		virtual void checkChangeScreen();
-		virtual void changeDisplay();
+		virtual void changeSchermata0(bool visible);
+		virtual void changeSchermata1(bool visible);
+		virtual void changeSchermata2(bool visible);
+		virtual void changeSchermata3(bool visible);
 		virtual void moveSelectedBox();
 		virtual void calibrationDisplay();
 		virtual void displayAcceleration();

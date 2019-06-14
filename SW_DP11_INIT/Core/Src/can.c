@@ -287,26 +287,26 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				CAN_DCU_is_alive();
         break;
 		 case	IMU1_DATA_1_ID:
-			 	Indicators[ACC_X_1].floatValore = ((int)firstInt)/100.0;
-				Indicators[ACC_Y_1].floatValore = ((int)secondInt)/100.0;
-				Indicators[GYR_X_1].floatValore = ((int)thirdInt)/10.0;
-				Indicators[GYR_Z_1].floatValore = ((int)fourthInt)/10.0;
+			 	Indicators[ACC_X_1].floatValore = ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Y_1].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_X_1].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[GYR_Z_1].floatValore = ((int16_t)fourthInt)/10.0;
 			 break;
 		 case	IMU1_DATA_2_ID:
-			  Indicators[HEAD_1].floatValore 	= ((int)firstInt)/100.0;
-				Indicators[ACC_Z_1].floatValore = ((int)secondInt)/100.0;
-				Indicators[GYR_Y_1].floatValore = ((int)thirdInt)/10.0;
+			  Indicators[HEAD_1].floatValore 	= ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Z_1].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_Y_1].floatValore = ((int16_t)thirdInt)/10.0;
 			 break;
 		 case	IMU2_DATA_1_ID:
-			 	Indicators[ACC_X_2].floatValore = ((int)firstInt)/100.0;
-				Indicators[ACC_Y_2].floatValore = ((int)secondInt)/100.0;
-				Indicators[GYR_X_2].floatValore = ((int)thirdInt)/10.0;
-				Indicators[GYR_Z_2].floatValore = ((int)fourthInt)/10.0;
+			 	Indicators[ACC_X_2].floatValore = ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Y_2].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_X_2].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[GYR_Z_2].floatValore = ((int16_t)fourthInt)/10.0;
 			 break;
 		 case	IMU2_DATA_2_ID:
-			  Indicators[HEAD_2].floatValore  = ((int)firstInt)/100.0;
-				Indicators[ACC_Z_2].floatValore = ((int)secondInt)/100.0;
-				Indicators[GYR_Y_2].floatValore = ((int)thirdInt)/10.0;
+			  Indicators[HEAD_2].floatValore  = ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Z_2].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_Y_2].floatValore = ((int16_t)thirdInt)/10.0;
 			 break;
 //		 case DAU_FR_ID:
 //			  Indicators[BPS_F].intValore  = thirdInt; //da togliere
