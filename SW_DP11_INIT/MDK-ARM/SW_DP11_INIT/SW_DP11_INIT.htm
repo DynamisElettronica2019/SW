@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Jun 13 13:29:51 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Jun 14 15:27:15 2019
 <BR><P>
 <H3>Maximum Stack Usage =       2312 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1582,6 +1582,7 @@ Global Symbols
 <LI><a href="#[456]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_downShift
 <LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGear_setNeutral
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skidpadModeTask
 <LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_tractionRpm_send
 </UL>
 
@@ -1794,7 +1795,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;neutralButtonTask
 </UL>
 
-<P><STRONG><a name="[248]"></a>GPIO_okButton_handle</STRONG> (Thumb, 242 bytes, Stack size 40 bytes, gpio.o(i.GPIO_okButton_handle))
+<P><STRONG><a name="[248]"></a>GPIO_okButton_handle</STRONG> (Thumb, 212 bytes, Stack size 40 bytes, gpio.o(i.GPIO_okButton_handle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = GPIO_okButton_handle &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
@@ -3972,7 +3973,7 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[4bd]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
-<P><STRONG><a name="[e2]"></a>SKIDPADView::setupScreen()</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, skidpadview.o(i._ZN11SKIDPADView11setupScreenEv))
+<P><STRONG><a name="[e2]"></a>SKIDPADView::setupScreen()</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, skidpadview.o(i._ZN11SKIDPADView11setupScreenEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SKIDPADView::setupScreen() &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[34f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
@@ -9127,22 +9128,26 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_neutralButton_handle
 </UL>
 
-<P><STRONG><a name="[456]"></a>dGears_downShift</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, d_gears.o(i.dGears_downShift))
+<P><STRONG><a name="[456]"></a>dGears_downShift</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, d_gears.o(i.dGears_downShift))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = dGears_downShift &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
+<LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_setGear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;downShiftTask
 </UL>
 
 <P><STRONG><a name="[220]"></a>dGears_setGear</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, d_gears.o(i.dGears_setGear))
 <BR><BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
+<LI><a href="#[457]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_upShift
+<LI><a href="#[456]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_downShift
 </UL>
 
-<P><STRONG><a name="[457]"></a>dGears_upShift</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, d_gears.o(i.dGears_upShift))
+<P><STRONG><a name="[457]"></a>dGears_upShift</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, d_gears.o(i.dGears_upShift))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = dGears_upShift &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
+<LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_setGear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
 </UL>
@@ -9158,8 +9163,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
 </UL>
 
-<P><STRONG><a name="[458]"></a>dSensors_Clutch_send</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, d_sensors.o(i.dSensors_Clutch_send))
-<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = dSensors_Clutch_send &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
+<P><STRONG><a name="[458]"></a>dSensors_Clutch_send</STRONG> (Thumb, 104 bytes, Stack size 40 bytes, d_sensors.o(i.dSensors_Clutch_send))
+<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = dSensors_Clutch_send &rArr; CAN_send &rArr; HAL_CAN_AddTxMessage
 </UL>
 <BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
 </UL>
@@ -9179,7 +9184,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[459]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
 </UL>
 
-<P><STRONG><a name="[45d]"></a>dSensors_setClutchTarget</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, d_sensors.o(i.dSensors_setClutchTarget))
+<P><STRONG><a name="[45d]"></a>dSensors_setClutchTarget</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, d_sensors.o(i.dSensors_setClutchTarget))
 <BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;leftEncoderTask
 </UL>
 
@@ -9258,7 +9263,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
-<P><STRONG><a name="[96]"></a>leftEncoderTask</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, freertos.o(i.leftEncoderTask))
+<P><STRONG><a name="[96]"></a>leftEncoderTask</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, freertos.o(i.leftEncoderTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = leftEncoderTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_setClutchTarget
@@ -9485,10 +9490,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
-<P><STRONG><a name="[a3]"></a>skidpadModeTask</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, freertos.o(i.skidpadModeTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = skidpadModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[a3]"></a>skidpadModeTask</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, freertos.o(i.skidpadModeTask))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = skidpadModeTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
+<LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)

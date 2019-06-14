@@ -3,11 +3,12 @@
 #include "general.h"
 #include "can.h"
 
-extern char driveMode, engineMap;
+extern char driveMode, engineMap, state;
 extern int ADC_BUF[3];
 extern Indicator_Value Indicators[N_INDICATORS];
 int clutchOld = 0;
 int clutchValue = 0;
+extern int buttonPressed;
 
 void dSensors_convert(int currValue, int tempValue)	{
 	Indicators[SW_BOARD].intValore  = (uint16_t)((float)currValue*ADC_LSB/(SHUNT_RESISTOR*INA_GAIN)*1000.0f);
@@ -19,10 +20,13 @@ void dSensors_Clutch_send(void)	{
 	if( driveMode != SKIDPAD_MODE )
 		CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
 	else if( driveMode == SKIDPAD_MODE ){
-		if( clutchValue > 30 )
+		if( clutchValue > 30 ){
 			CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
-		else 
-			CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, Indicators[CLUTCH_TRGT].intValore, driveMode, engineMap, EMPTY, 3);
+			state = SKIDPAD_MODE_DEFAULT;
+			buttonPressed = 0;
+		}
+		if( state == SKIDPAD_MODE_DEFAULT ) 
+			CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, clutchValue, driveMode, engineMap, EMPTY, 3);
 	}
 	return ;
 }
@@ -55,11 +59,11 @@ void dSensors_setClutchTarget(int movement)
 	
 	Indicators[CLUTCH_TRGT].intValore = Indicators[CLUTCH_TRGT].intValore + 5*movement;
 	
-	if (Indicators[CLUTCH_TRGT].intValore >= CLUTCH_MAX_VALUE)
-		Indicators[CLUTCH_TRGT].intValore = CLUTCH_MAX_VALUE;
+	if (Indicators[CLUTCH_TRGT].intValore >= 100)
+		Indicators[CLUTCH_TRGT].intValore = 100;
 	
-	else if (Indicators[CLUTCH_TRGT].intValore <= CLUTCH_MIN_VALUE)
-		Indicators[CLUTCH_TRGT].intValore = CLUTCH_MIN_VALUE;
+	else if (Indicators[CLUTCH_TRGT].intValore <= 0)
+		Indicators[CLUTCH_TRGT].intValore = 0;
 
 	return ;
 }

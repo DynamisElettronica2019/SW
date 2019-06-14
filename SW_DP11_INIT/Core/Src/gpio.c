@@ -595,10 +595,10 @@ void GPIO_okButton_handle(void)
 		
 		if( driveMode == SKIDPAD_MODE ){
 			if( buttonPressed == 0 ){
-				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, 100, driveMode, engineMap, EMPTY, 3);
+				state = SKIDPAD_SEND_100_STATE;
 			}
 			else if( buttonPressed == 1 ){
-				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, Indicators[CLUTCH_TRGT].intValore, driveMode, engineMap, EMPTY, 3);
+				state = SKIDPAD_SEND_TRGT_VALUE;
 			}
 		}
 		

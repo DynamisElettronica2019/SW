@@ -14,6 +14,7 @@ extern int emergencyFlag;
 extern int emergencyBlink;
 extern int contBlink;
 extern int flagEngineOn;
+extern int buttonPressed;
 
 SKIDPADView::SKIDPADView()
 {
@@ -24,6 +25,7 @@ void SKIDPADView::setupScreen()
 {
 		touchgfx::Unicode::strncpy( Empty, DEF_SIMBOL, TIT_LEN);
 		screenEntry = 0;
+		buttonPressed = 0;
 		contBlink = 0;
 		SKIDPADViewBase::setupScreen();
 }

@@ -52,6 +52,8 @@
 #define SKIDPAD_MODE_DEFAULT						0
 #define SKIDPAD_MODE_FEEDBACK						1
 #define SKIDPAD_MODE_START							2
+#define SKIDPAD_SEND_TRGT_VALUE 				3
+#define SKIDPAD_SEND_100_STATE					4
 
 #define DEBUG_MODE_DEFAULT							0
 
