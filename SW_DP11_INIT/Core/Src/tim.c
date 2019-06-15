@@ -83,7 +83,9 @@ int timerDCUAlive = 0;
 int timerTractionSave = 0;
 int timerRpmLimiterSave  = 0;
 int timerEmergency = 0;
+int timerFlash = 0;
 
+int flag_flash = 1;
 int emergencyFlag = 0;
 int emergencyBlink = 0;
 int DCU_is_dead = 0;
@@ -422,6 +424,15 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		}
 		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
+			if( Indicators[RPM].intValore > 10000 ) {
+				timerFlash ++;
+				if( timerFlash > 5 ){
+					flag_flash = 0;
+					timerFlash = 0;
+				}else{
+					flag_flash = 1;
+				}
+			}
 			timerRpmStripe = 0;	
 		}
 		if ( timerTractionRpm >= TRACTION_RPM_TIME ){

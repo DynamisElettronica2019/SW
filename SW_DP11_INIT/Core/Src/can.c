@@ -87,6 +87,7 @@ extern int timerDCUAlive;
 extern int DCU_is_dead;
 extern int DCU_was_not_dead;
 
+
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan1;
@@ -296,6 +297,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 			  Indicators[HEAD_1].floatValore 	= ((int16_t)firstInt)/100.0;
 				Indicators[ACC_Z_1].floatValore = ((int16_t)secondInt)/100.0;
 				Indicators[GYR_Y_1].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[IMU1_INFO].intValore = fourthInt;
 			 break;
 		 case	IMU2_DATA_1_ID:
 			 	Indicators[ACC_X_2].floatValore = ((int16_t)firstInt)/100.0;
@@ -307,6 +309,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 			  Indicators[HEAD_2].floatValore  = ((int16_t)firstInt)/100.0;
 				Indicators[ACC_Z_2].floatValore = ((int16_t)secondInt)/100.0;
 				Indicators[GYR_Y_2].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[IMU2_INFO].intValore = fourthInt;
 			 break;
 //		 case DAU_FR_ID:
 //			  Indicators[BPS_F].intValore  = thirdInt; //da togliere
@@ -476,7 +479,6 @@ void CAN_DCU_is_alive(void)
 	DCU_is_dead = 0;
 	DCU_was_not_dead = 0;
 }
-
 
 /* USER CODE END 1 */
 

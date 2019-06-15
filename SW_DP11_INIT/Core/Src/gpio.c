@@ -241,7 +241,7 @@ extern char driveMode, engineMap;
 extern char leftPosition, rightPosition;
 encoder_position modeSelector, mapSelector;
 encoder_position leftEncoder, rightEncoder;
-int currentCalibration;
+int currentCalibration, currentIMUCalibration;
 
 /************ TRUTH TABLE **************
 ----------------------------------------
@@ -485,10 +485,20 @@ void GPIO_rightEncoder_settingsMode(int movement)
 				currentCalibration = currentCalibration + 1;
 			if (movement == -1)
 				currentCalibration = currentCalibration - 1;
-			if (currentCalibration >= 6)
+			if (currentCalibration >= 7)
 				currentCalibration = 1;
 			if (currentCalibration <= 0)
-				currentCalibration = 5;
+				currentCalibration = 6;
+			break;
+		case 3:
+			if (movement == 1)
+				currentIMUCalibration = currentIMUCalibration + 1;
+			if (movement == -1)
+				currentIMUCalibration = currentIMUCalibration - 1;
+			if (currentIMUCalibration >= 11)
+				currentIMUCalibration = 1;
+			if (currentIMUCalibration <= 0)
+				currentIMUCalibration = 10;
 			break;
 		default:
 			break;
@@ -550,10 +560,20 @@ void GPIO_leftEncoder_settingsMode(int movement)
 				currentCalibration = currentCalibration + 1;
 			if (movement == -1)
 				currentCalibration = currentCalibration - 1;
-			if (currentCalibration >= 6)
+			if (currentCalibration >= 7)
 				currentCalibration = 1;
 			if (currentCalibration <= 0)
-				currentCalibration = 5;
+				currentCalibration = 6;
+			break;
+		case 3:
+			if (movement == 1)
+				currentIMUCalibration = currentIMUCalibration + 1;
+			if (movement == -1)
+				currentIMUCalibration = currentIMUCalibration - 1;
+			if (currentIMUCalibration >= 11)
+				currentIMUCalibration = 1;
+			if (currentIMUCalibration <= 0)
+				currentIMUCalibration = 10;
 			break;
 		default:
 			break;
@@ -587,9 +607,14 @@ void GPIO_okButton_handle(void)
 			}else if (schermata_settings == 0 && box_driveMode == 4 ){
 				flag_schermata = 0;
 				schermata_settings = 2;
-			}else if (schermata_settings == 2 && flagCalibration == 0){
+			}else if (schermata_settings == 2 && currentCalibration >= 0 && currentCalibration <= 5 && flagCalibration == 0){
 				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentCalibration, EMPTY, EMPTY, 2);	
-			}				
+			}else if (schermata_settings == 2 && currentCalibration == 6 && flagCalibration == 0){
+				flag_schermata = 0;
+				schermata_settings = 3;
+			}	else if (schermata_settings == 3){
+			//	CAN_send(id_pacchetto_IMU, Indicators[SEL_IMU].intValore, currentIMUCalibration, EMPTY, EMPTY, 2);	
+			}
 		}
 		
 }
@@ -603,7 +628,10 @@ void GPIO_neutralButton_handle(void)
 				schermata_settings = 0;		
 				flag_schermata = 0;
 				I2C_save_Pointers();
-			}				
+			}	else if( schermata_settings == 3 ){
+				schermata_settings = 2;
+				flag_schermata = 0;
+			}
 		}
 
 }
@@ -620,6 +648,12 @@ void GPIO_aux1Button_handle(void)
 	} 
 	else if ( driveMode == SETTINGS_MODE && schermata_settings == 1 ) {
 		flag_defaultIndicators = 1;
+	}
+	else if ( driveMode == SETTINGS_MODE && schermata_settings == 3 ) {
+		if( Indicators[SEL_IMU].intValore == 1 ) 
+			Indicators[SEL_IMU].intValore = 2;
+		else if ( Indicators[SEL_IMU].intValore == 2 ) 
+			Indicators[SEL_IMU].intValore = 1;
 	}
 }
 		

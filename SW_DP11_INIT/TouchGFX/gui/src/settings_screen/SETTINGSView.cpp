@@ -16,7 +16,7 @@ extern uint8_t EndPointer[6];
 extern uint8_t AutPointer[6];
 extern uint8_t SkiPointer[6];
 
-extern int currentCalibration;
+extern int currentCalibration, currentIMUCalibration;
 extern int feedbackCalibration;
 extern int flagCalibration;
 extern int calibrationPopUp;
@@ -33,6 +33,7 @@ void SETTINGSView::setupScreen()
 		flagCalibration = 0;
 		calibrationPopUp = 0;
 		currentCalibration = 1;
+		currentIMUCalibration = 1;
 		schermata_settings = 0;		// appena si entra nella modalità settings la variabile viene messa a 0, verrà messa a 1 in freertos.c
 		box_driveMode = 0;				// viene incrementata a 1, 2, 3 e poi riportata a 0.
 		box_indicator = 0;				// viene incrementata a 1, 2, 3, 4, 5 e poi riportata a 0.
@@ -131,6 +132,61 @@ void SETTINGSView::refreshSettings()
 			boxCalibrationSelected.setVisible(true);
 			boxCalibrationSelected.invalidate();
 			SETTINGSView::calibrationDisplay();
+			break;
+		case 3:
+			if (flag_schermata == 0){
+				flag_schermata = 1;
+				changeSchermata0(false);
+				changeSchermata1(false);
+				changeSchermata2(false);
+				changeSchermata3(true);
+			}	
+			boxCalibrationImuSelected.setVisible(false);
+			boxCalibrationImuSelected.invalidate();
+			if( currentIMUCalibration >= 1 && currentIMUCalibration <= 5 )
+				boxCalibrationImuSelected.setPosition(2, 135 + (70*(currentIMUCalibration-1)), 300, 50);
+			else if ( currentIMUCalibration >= 5 && currentIMUCalibration <= 10 )
+				boxCalibrationImuSelected.setPosition(310, 135 + (70*(currentIMUCalibration-5)), 300, 50);
+			boxCalibrationImuSelected.setVisible(true);
+			boxCalibrationImuSelected.invalidate();
+			
+//			SETTINGSView::calibrationDisplay();
+			if( Indicators[SEL_IMU].intValore == 1 ){
+				box1.setVisible(false);
+				box1.invalidate();
+				box1.setPosition(208, 87, 108, 44);
+				textIMU1.setVisible(true);
+				textIMU2.setVisible(false);
+				box1.setVisible(true);
+				box1.invalidate();
+				textIMU1.invalidate();
+				textIMU2.invalidate();
+				
+				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<7)|(Indicators[IMU1_INFO].intValore<<6));
+				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<5)|(Indicators[IMU1_INFO].intValore<<4));
+				Unicode::snprintf(textValue3Buffer, TEXTVALUE3_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<3)|(Indicators[IMU1_INFO].intValore<<2));
+				Unicode::snprintf(textValue4Buffer, TEXTVALUE4_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<1)|(Indicators[IMU1_INFO].intValore));
+			
+			}else if( Indicators[SEL_IMU].intValore == 2 ){
+				box1.setVisible(false);
+				box1.invalidate();
+				box1.setPosition(327, 87, 108, 44);
+				textIMU1.setVisible(false);
+				textIMU2.setVisible(true);
+				box1.setVisible(true);
+				box1.invalidate();
+				textIMU1.invalidate();
+				textIMU2.invalidate();
+				
+				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<7)|(Indicators[IMU2_INFO].intValore<<6));
+				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<5)|(Indicators[IMU2_INFO].intValore<<4));
+				Unicode::snprintf(textValue3Buffer, TEXTVALUE3_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<3)|(Indicators[IMU2_INFO].intValore<<2));
+				Unicode::snprintf(textValue4Buffer, TEXTVALUE4_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<1)|(Indicators[IMU2_INFO].intValore));
+			}
+			textValue1.invalidate();
+			textValue2.invalidate();
+			textValue3.invalidate();
+			textValue4.invalidate();
 			break;
 	}
 	
@@ -240,6 +296,60 @@ void SETTINGSView::changeSchermata2(bool visible){
 
 void SETTINGSView::changeSchermata3(bool visible){
 	
+		textValue1.setVisible(visible);
+		textValue2.setVisible(visible);
+		textValue3.setVisible(visible);
+		textValue4.setVisible(visible);
+		textInd1.setVisible(visible);
+		textInd2.setVisible(visible);
+		textInd3.setVisible(visible);
+		textInd4.setVisible(visible);
+		textIMU1.setVisible(visible);
+		textIMU2.setVisible(visible);
+		textTitle1.setVisible(visible);
+		textTitle2.setVisible(visible);
+		textTitle3.setVisible(visible);
+		textTitle4.setVisible(visible);
+		textTitle5.setVisible(visible);
+		textTitle6.setVisible(visible);
+		textTitle7.setVisible(visible);
+		textTitle8.setVisible(visible);
+		textTitle9.setVisible(visible);
+		textTitle10.setVisible(visible);
+		boxCalibrationImuSelected.setVisible(visible);
+		box1.setVisible(visible);
+		boxCalibration1.setVisible(visible);
+		boxCalibration2.setVisible(visible);
+		boxCalibration3.setVisible(visible);
+		boxCalibration4.setVisible(visible);
+	
+		textValue1.invalidate();
+		textValue2.invalidate();
+		textValue3.invalidate();
+		textValue4.invalidate();
+		textInd1.invalidate();
+		textInd2.invalidate();
+		textInd3.invalidate();
+		textInd4.invalidate();
+		textIMU1.invalidate();
+		textIMU2.invalidate();
+		textTitle1.invalidate();
+		textTitle2.invalidate();
+		textTitle3.invalidate();
+		textTitle4.invalidate();
+		textTitle5.invalidate();
+		textTitle6.invalidate();
+		textTitle7.invalidate();
+		textTitle8.invalidate();
+		textTitle9.invalidate();
+		textTitle10.invalidate();
+		boxCalibrationImuSelected.invalidate();
+		box1.invalidate();
+		boxCalibration1.invalidate();
+		boxCalibration2.invalidate();
+		boxCalibration3.invalidate();
+		boxCalibration4.invalidate();
+		boxCalibrationSelected.invalidate();
 }
 
 
