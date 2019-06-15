@@ -133,6 +133,8 @@ void I2C_debug_red_off(uint16_t);
 void I2C_debug_green_off(uint16_t);
 void I2C_debug_blue_off(uint16_t);
 void I2C_rpm_update(void);
+void I2C_rpm_command(int);
+void I2C_rpm_flash(void);
  
 void I2C_eeprom_write(uint8_t , uint16_t);	//si passa l'indice dell'inidicatore e l'indirizzo della memmoria
 uint8_t I2C_eeprom_read(uint16_t);		 			// ritorna l'indice dell'indicatore da visualizzare

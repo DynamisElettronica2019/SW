@@ -79,9 +79,11 @@ extern char state, driveMode;
 extern int commandSent;
 extern int timerEfiAlive;
 extern int autox_stop, acc_stop;
-int flagCalibration;
-int feedbackCalibration;
+int flagDcuCalibration;
+int flagImuCalibration;
+int feedbackDcuCalibration;
 int flagEngineOn = FALSE;
+int feedbackImuCalibration;
 
 extern int timerDCUAlive;
 extern int DCU_is_dead;
@@ -355,6 +357,10 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[BRAKE_BIAS].intValore = fourthInt;
 				CAN_DCU_is_alive();
         break;
+		 case IMU_CALIBRATION_FB_SW_ID:
+			 	flagImuCalibration = 1;
+				feedbackImuCalibration = firstInt;
+				break;
      default:
         break;
 	}
@@ -468,8 +474,8 @@ void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt)
 	if( firstInt == DCU_ACQUISITION_CODE ){
 		Indicators[ACQ].intValore = secondInt;
 	} else if( firstInt == DCU_SAVE_CALIBRATION_CODE ){
-		feedbackCalibration	= secondInt;
-		flagCalibration = 1;
+		feedbackDcuCalibration	= secondInt;
+		flagDcuCalibration = 1;
 	}			
 }
 

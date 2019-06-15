@@ -82,11 +82,13 @@ int debug_mode_scroll_dx;
 int board_debug_scroll;
 int pointer_scroll;
 int change_pointer;
+extern int flagImuCalibration;
 
 int commandSent = 0;
 
-int calibrationPopUp;
-extern int flagCalibration;
+int calibrationDcuPopUp;
+int calibrationImuPopUp;
+extern int flagDcuCalibration;
 extern void dGear_setNeutral(void);
 
 /* USER CODE END 1 */
@@ -241,7 +243,7 @@ extern char driveMode, engineMap;
 extern char leftPosition, rightPosition;
 encoder_position modeSelector, mapSelector;
 encoder_position leftEncoder, rightEncoder;
-int currentCalibration, currentIMUCalibration;
+int currentDcuCalibration, currentImuCalibration;
 
 /************ TRUTH TABLE **************
 ----------------------------------------
@@ -482,23 +484,23 @@ void GPIO_rightEncoder_settingsMode(int movement)
 			break;
 		case 2:
 			if (movement == 1)
-				currentCalibration = currentCalibration + 1;
+				currentDcuCalibration = currentDcuCalibration + 1;
 			if (movement == -1)
-				currentCalibration = currentCalibration - 1;
-			if (currentCalibration >= 7)
-				currentCalibration = 1;
-			if (currentCalibration <= 0)
-				currentCalibration = 6;
+				currentDcuCalibration = currentDcuCalibration - 1;
+			if (currentDcuCalibration >= 7)
+				currentDcuCalibration = 1;
+			if (currentDcuCalibration <= 0)
+				currentDcuCalibration = 6;
 			break;
 		case 3:
 			if (movement == 1)
-				currentIMUCalibration = currentIMUCalibration + 1;
+				currentImuCalibration = currentImuCalibration + 1;
 			if (movement == -1)
-				currentIMUCalibration = currentIMUCalibration - 1;
-			if (currentIMUCalibration >= 11)
-				currentIMUCalibration = 1;
-			if (currentIMUCalibration <= 0)
-				currentIMUCalibration = 10;
+				currentImuCalibration = currentImuCalibration - 1;
+			if (currentImuCalibration >= 11)
+				currentImuCalibration = 1;
+			if (currentImuCalibration <= 0)
+				currentImuCalibration = 10;
 			break;
 		default:
 			break;
@@ -557,23 +559,23 @@ void GPIO_leftEncoder_settingsMode(int movement)
 			break;
 		case 2:
 			if (movement == 1)
-				currentCalibration = currentCalibration + 1;
+				currentDcuCalibration = currentDcuCalibration + 1;
 			if (movement == -1)
-				currentCalibration = currentCalibration - 1;
-			if (currentCalibration >= 7)
-				currentCalibration = 1;
-			if (currentCalibration <= 0)
-				currentCalibration = 6;
+				currentDcuCalibration = currentDcuCalibration - 1;
+			if (currentDcuCalibration >= 7)
+				currentDcuCalibration = 1;
+			if (currentDcuCalibration <= 0)
+				currentDcuCalibration = 6;
 			break;
 		case 3:
 			if (movement == 1)
-				currentIMUCalibration = currentIMUCalibration + 1;
+				currentImuCalibration = currentImuCalibration + 1;
 			if (movement == -1)
-				currentIMUCalibration = currentIMUCalibration - 1;
-			if (currentIMUCalibration >= 11)
-				currentIMUCalibration = 1;
-			if (currentIMUCalibration <= 0)
-				currentIMUCalibration = 10;
+				currentImuCalibration = currentImuCalibration - 1;
+			if (currentImuCalibration >= 11)
+				currentImuCalibration = 1;
+			if (currentImuCalibration <= 0)
+				currentImuCalibration = 10;
 			break;
 		default:
 			break;
@@ -607,13 +609,13 @@ void GPIO_okButton_handle(void)
 			}else if (schermata_settings == 0 && box_driveMode == 4 ){
 				flag_schermata = 0;
 				schermata_settings = 2;
-			}else if (schermata_settings == 2 && currentCalibration >= 0 && currentCalibration <= 5 && flagCalibration == 0){
-				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentCalibration, EMPTY, EMPTY, 2);	
-			}else if (schermata_settings == 2 && currentCalibration == 6 && flagCalibration == 0){
+			}else if (schermata_settings == 2 && currentDcuCalibration >= 0 && currentDcuCalibration <= 5 && flagDcuCalibration == 0){
+				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentDcuCalibration, EMPTY, EMPTY, 2);	
+			}else if (schermata_settings == 2 && currentDcuCalibration == 6 && flagDcuCalibration == 0){
 				flag_schermata = 0;
 				schermata_settings = 3;
-			}	else if (schermata_settings == 3){
-			//	CAN_send(id_pacchetto_IMU, Indicators[SEL_IMU].intValore, currentIMUCalibration, EMPTY, EMPTY, 2);	
+			}	else if (schermata_settings == 3 && flagImuCalibration == 0){
+				CAN_send(SW_CALIBRATION_IMU_ID, Indicators[SEL_IMU].intValore, currentImuCalibration, EMPTY, EMPTY, 2);	
 			}
 		}
 		

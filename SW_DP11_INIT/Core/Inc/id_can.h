@@ -26,6 +26,7 @@
 #define SW_OK_BUTTON_GCU_ID													0x202
 #define SW_TRACTION_LIMITER_GCU_ID									0x203
 #define SW_ACQUISITION_DCU_ID												0x400
+#define SW_CALIBRATION_IMU_ID												0x500	//------- da mettere il valore vero
 
 /************************** DCU ***************************/
 #define DCU_ACQUISITION_SW_ID												0x401
@@ -47,7 +48,7 @@
 #define IMU1_DATA_2_ID															0x70B
 #define IMU2_DATA_1_ID															0x70C
 #define IMU2_DATA_2_ID															0x70D
-
+#define IMU_CALIBRATION_FB_SW_ID										0X70E	//------- da mettere il valore vero
 
 /************************* DEBUG **************************/
 #define DAU_FR_DEBUG_ID															0x312

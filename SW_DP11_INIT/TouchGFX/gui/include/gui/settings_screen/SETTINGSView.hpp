@@ -21,7 +21,8 @@ public:
 		virtual void changeSchermata2(bool visible);
 		virtual void changeSchermata3(bool visible);
 		virtual void moveSelectedBox();
-		virtual void calibrationDisplay();
+		virtual void calibrationDcuDisplay();
+		virtual void calibrationImuDisplay();
 		virtual void displayAcceleration();
 		virtual void displayEndurance();
 		virtual void displayAutocross();

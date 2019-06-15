@@ -106,3 +106,4 @@ sw_dp11_init\settingsview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_s
 sw_dp11_init\settingsview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\settingsview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 sw_dp11_init\settingsview.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+sw_dp11_init\settingsview.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp

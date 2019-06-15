@@ -1,6 +1,7 @@
 #include <gui/settings_screen/SETTINGSView.hpp>
 
 #include <string.h>
+#include <touchgfx/Color.hpp>
 
 extern char driveMode;
 extern Indicator_Value Indicators[N_INDICATORS];
@@ -16,12 +17,16 @@ extern uint8_t EndPointer[6];
 extern uint8_t AutPointer[6];
 extern uint8_t SkiPointer[6];
 
-extern int currentCalibration, currentIMUCalibration;
-extern int feedbackCalibration;
-extern int flagCalibration;
-extern int calibrationPopUp;
+extern int currentDcuCalibration, currentImuCalibration;
+extern int feedbackDcuCalibration;
+extern int flagDcuCalibration;
+extern int calibrationDcuPopUp;
+extern int flagImuCalibration;
+extern int calibrationImuPopUp;
+extern int feedbackImuCalibration;
 
 int flag_schermata;
+int indValue1, indValue2, indValue3, indValue4;
 	
 SETTINGSView::SETTINGSView()
 {
@@ -30,10 +35,12 @@ SETTINGSView::SETTINGSView()
 
 void SETTINGSView::setupScreen()
 {
-		flagCalibration = 0;
-		calibrationPopUp = 0;
-		currentCalibration = 1;
-		currentIMUCalibration = 1;
+		flagImuCalibration = 0;
+		flagDcuCalibration = 0;
+		calibrationDcuPopUp = 0;
+	  calibrationImuPopUp = 0;
+		currentDcuCalibration = 1;
+		currentImuCalibration = 1;
 		schermata_settings = 0;		// appena si entra nella modalità settings la variabile viene messa a 0, verrà messa a 1 in freertos.c
 		box_driveMode = 0;				// viene incrementata a 1, 2, 3 e poi riportata a 0.
 		box_indicator = 0;				// viene incrementata a 1, 2, 3, 4, 5 e poi riportata a 0.
@@ -128,10 +135,10 @@ void SETTINGSView::refreshSettings()
 			//	SETTINGSView::changeDisplay();
 			boxCalibrationSelected.setVisible(false);
 			boxCalibrationSelected.invalidate();
-			boxCalibrationSelected.setPosition(58, 10 + (80*(currentCalibration-1)), 535, 63);
+			boxCalibrationSelected.setPosition(58, 10 + (80*(currentDcuCalibration-1)), 535, 63);
 			boxCalibrationSelected.setVisible(true);
 			boxCalibrationSelected.invalidate();
-			SETTINGSView::calibrationDisplay();
+			SETTINGSView::calibrationDcuDisplay();
 			break;
 		case 3:
 			if (flag_schermata == 0){
@@ -143,14 +150,15 @@ void SETTINGSView::refreshSettings()
 			}	
 			boxCalibrationImuSelected.setVisible(false);
 			boxCalibrationImuSelected.invalidate();
-			if( currentIMUCalibration >= 1 && currentIMUCalibration <= 5 )
-				boxCalibrationImuSelected.setPosition(2, 135 + (70*(currentIMUCalibration-1)), 300, 50);
-			else if ( currentIMUCalibration >= 5 && currentIMUCalibration <= 10 )
-				boxCalibrationImuSelected.setPosition(310, 135 + (70*(currentIMUCalibration-5)), 300, 50);
+			if( currentImuCalibration >= 1 && currentImuCalibration <= 5 )
+				boxCalibrationImuSelected.setPosition(2, 135 + (70*(currentImuCalibration-1)), 300, 50);
+			else if ( currentImuCalibration >= 5 && currentImuCalibration <= 10 )
+				boxCalibrationImuSelected.setPosition(310, 135 + (70*(currentImuCalibration-5)), 300, 50);
 			boxCalibrationImuSelected.setVisible(true);
 			boxCalibrationImuSelected.invalidate();
 			
-//			SETTINGSView::calibrationDisplay();
+			SETTINGSView::calibrationImuDisplay();
+			
 			if( Indicators[SEL_IMU].intValore == 1 ){
 				box1.setVisible(false);
 				box1.invalidate();
@@ -162,11 +170,16 @@ void SETTINGSView::refreshSettings()
 				textIMU1.invalidate();
 				textIMU2.invalidate();
 				
-				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<7)|(Indicators[IMU1_INFO].intValore<<6));
-				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<5)|(Indicators[IMU1_INFO].intValore<<4));
-				Unicode::snprintf(textValue3Buffer, TEXTVALUE3_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<3)|(Indicators[IMU1_INFO].intValore<<2));
-				Unicode::snprintf(textValue4Buffer, TEXTVALUE4_SIZE, "%d", (Indicators[IMU1_INFO].intValore<<1)|(Indicators[IMU1_INFO].intValore));
-			
+				indValue1 = ((Indicators[IMU1_INFO].intValore >> 6) & 3);
+				indValue2 = ((Indicators[IMU1_INFO].intValore >> 4) & 3);
+				indValue3 = ((Indicators[IMU1_INFO].intValore >> 2) & 3);
+				indValue4 = ((Indicators[IMU1_INFO].intValore >> 0) & 3);
+				
+				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", indValue1);
+				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", indValue2);
+				Unicode::snprintf(textValue3Buffer, TEXTVALUE3_SIZE, "%d", indValue3);
+				Unicode::snprintf(textValue4Buffer, TEXTVALUE4_SIZE, "%d", indValue4);
+								
 			}else if( Indicators[SEL_IMU].intValore == 2 ){
 				box1.setVisible(false);
 				box1.invalidate();
@@ -177,16 +190,77 @@ void SETTINGSView::refreshSettings()
 				box1.invalidate();
 				textIMU1.invalidate();
 				textIMU2.invalidate();
-				
-				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<7)|(Indicators[IMU2_INFO].intValore<<6));
-				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<5)|(Indicators[IMU2_INFO].intValore<<4));
-				Unicode::snprintf(textValue3Buffer, TEXTVALUE3_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<3)|(Indicators[IMU2_INFO].intValore<<2));
-				Unicode::snprintf(textValue4Buffer, TEXTVALUE4_SIZE, "%d", (Indicators[IMU2_INFO].intValore<<1)|(Indicators[IMU2_INFO].intValore));
+			
+				indValue1 = ((Indicators[IMU2_INFO].intValore >> 6) & 3);
+				indValue2 = ((Indicators[IMU2_INFO].intValore >> 4) & 3);
+				indValue3 = ((Indicators[IMU2_INFO].intValore >> 2) & 3);
+				indValue4 = ((Indicators[IMU2_INFO].intValore >> 0) & 3);
+								
+				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", indValue1);
+				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", indValue2);
+				Unicode::snprintf(textValue3Buffer, TEXTVALUE3_SIZE, "%d", indValue3);
+				Unicode::snprintf(textValue4Buffer, TEXTVALUE4_SIZE, "%d", indValue4);
 			}
+			
+			if (indValue1 >= 2){
+				boxCalibration1.setColor(touchgfx::Color::getColorFrom24BitRGB(0,255,0));
+				textInd1.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textValue1.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+			}
+			else{
+				boxCalibration1.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textInd1.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+				textValue1.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+			}
+			if (indValue2 >= 2){
+				boxCalibration2.setColor(touchgfx::Color::getColorFrom24BitRGB(0,255,0));
+				textInd2.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textValue2.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+			}
+			else{
+				boxCalibration2.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textInd2.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+				textValue2.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+			}
+			if (indValue3 >= 2){
+				boxCalibration3.setColor(touchgfx::Color::getColorFrom24BitRGB(0,255,0));
+				textInd3.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textValue3.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+			}
+			else{
+				boxCalibration3.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textInd3.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+				textValue3.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+			}
+			if (indValue4 >= 2){
+				boxCalibration4.setColor(touchgfx::Color::getColorFrom24BitRGB(0,255,0));
+				textInd4.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textValue4.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+			}
+			else{
+				boxCalibration4.setColor(touchgfx::Color::getColorFrom24BitRGB(0,0,0));
+				textInd4.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+				textValue4.setColor(touchgfx::Color::getColorFrom24BitRGB(255,255,255));
+			}			
+			
 			textValue1.invalidate();
 			textValue2.invalidate();
 			textValue3.invalidate();
 			textValue4.invalidate();
+			
+			boxCalibration1.invalidate();
+			textInd1.invalidate();
+			textValue1.invalidate();
+			boxCalibration2.invalidate();
+			textInd2.invalidate();
+			textValue2.invalidate();
+			boxCalibration3.invalidate();
+			textInd3.invalidate();
+			textValue3.invalidate();
+			boxCalibration4.invalidate();
+			textInd4.invalidate();
+			textValue4.invalidate();
+			
 			break;
 	}
 	
@@ -796,10 +870,10 @@ void SETTINGSView::displaySkidpad()
 		Unicode::snprintfFloat(textIndValue6Buffer, TEXTINDVALUE6_SIZE, "%.1f", Indicators[SkiPointer[5]].floatValore);
 }
 
-void SETTINGSView::calibrationDisplay()
+void SETTINGSView::calibrationDcuDisplay()
 {
-	if (flagCalibration == 1 && calibrationPopUp < (3 * POPUP_TIME)){
-		switch (feedbackCalibration){
+	if (flagDcuCalibration == 1 && calibrationDcuPopUp < (3 * POPUP_TIME)){
+		switch (feedbackDcuCalibration){
 			case COMMAND_SAVE_APPS0:
 				touchgfx::Unicode::strncpy( CurrCalibration, "APPS 0%", 20);
 				break;
@@ -824,11 +898,66 @@ void SETTINGSView::calibrationDisplay()
 		textDONE.invalidate();
 		boxDONE.setVisible(true);
 		boxDONE.invalidate();
-		calibrationPopUp ++;
+		calibrationDcuPopUp ++;
 	}
 	else{
-		calibrationPopUp = 0;
-		flagCalibration = 0;
+		calibrationDcuPopUp = 0;
+		flagDcuCalibration = 0;
+		boxDONE.setVisible(false);
+		boxDONE.invalidate();
+		textDONE.setVisible(false);
+		textDONE.invalidate();
+	}
+}
+
+void SETTINGSView::calibrationImuDisplay()
+{
+	if (flagImuCalibration == 1 && calibrationImuPopUp < (3 * POPUP_TIME)){
+		switch (feedbackImuCalibration){
+			case 1:
+				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB ALL DONE", 20);
+				break;
+			case 2:
+				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB AGM DONE", 20);
+				break;
+			case 3:
+				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB PLAN DONE", 20);
+				break;
+			case 4:
+				touchgfx::Unicode::strncpy( CurrCalibration, "SAVE DCD DONE", 20);
+				break;
+			case 5:
+				touchgfx::Unicode::strncpy( CurrCalibration, "RESET DCD DONE", 20);
+				break;
+			case 6:
+				touchgfx::Unicode::strncpy( CurrCalibration, "TARE NOW DONE", 20);
+				break;
+			case 7:
+				touchgfx::Unicode::strncpy( CurrCalibration, "RESET TARE DONE", 20);
+				break;
+			case 8:
+				touchgfx::Unicode::strncpy( CurrCalibration, "STOP CALIB DONE", 20);
+				break;
+			case 9:
+				touchgfx::Unicode::strncpy( CurrCalibration, "RE-INIT IMU DONE", 20);
+				break;
+			case 10:
+				touchgfx::Unicode::strncpy( CurrCalibration, "REL TO ABS DONE", 20);
+				break;
+			default:
+				touchgfx::Unicode::strncpy( CurrCalibration, "NOTHING", 20);
+				break;			
+		}
+		Unicode::snprintf(textDONEBuffer, TEXTDONE_SIZE, "%s", CurrCalibration);	
+		textDONE.setVisible(true);
+		textDONE.invalidate();
+		boxDONE.setVisible(true);
+		boxDONE.invalidate();
+		calibrationDcuPopUp ++;
+	}
+	else{
+		calibrationImuPopUp = 0;
+		flagImuCalibration = 0;
 		boxDONE.setVisible(false);
 		boxDONE.invalidate();
 		textDONE.setVisible(false);

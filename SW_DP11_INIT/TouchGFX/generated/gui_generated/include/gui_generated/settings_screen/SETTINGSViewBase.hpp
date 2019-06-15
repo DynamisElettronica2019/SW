@@ -57,8 +57,6 @@ protected:
     touchgfx::TextArea textLINEAR;
     touchgfx::TextArea textLOAD_CELL;
     touchgfx::TextArea textIMU;
-    touchgfx::Box boxDONE;
-    touchgfx::TextAreaWithOneWildcard textDONE;
     touchgfx::BoxWithBorder boxCalibration1;
     touchgfx::BoxWithBorder boxCalibration2;
     touchgfx::BoxWithBorder boxCalibration3;
@@ -85,6 +83,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textValue2;
     touchgfx::TextAreaWithOneWildcard textValue3;
     touchgfx::TextAreaWithOneWildcard textValue4;
+    touchgfx::Box boxDONE;
+    touchgfx::TextAreaWithOneWildcard textDONE;
     touchgfx::BoxWithBorder boxModeSelected;
     touchgfx::TextArea textACCELERATION;
     touchgfx::TextArea textENDURANCE;
@@ -125,8 +125,6 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndDriveModeBuffer[TEXTINDDRIVEMODE_SIZE];
     static const uint16_t TEXTINDTITLECURRENT_SIZE = 13;
     touchgfx::Unicode::UnicodeChar textIndTitleCurrentBuffer[TEXTINDTITLECURRENT_SIZE];
-    static const uint16_t TEXTDONE_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar textDONEBuffer[TEXTDONE_SIZE];
     static const uint16_t TEXTVALUE1_SIZE = 4;
     touchgfx::Unicode::UnicodeChar textValue1Buffer[TEXTVALUE1_SIZE];
     static const uint16_t TEXTVALUE2_SIZE = 4;
@@ -135,6 +133,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textValue3Buffer[TEXTVALUE3_SIZE];
     static const uint16_t TEXTVALUE4_SIZE = 4;
     touchgfx::Unicode::UnicodeChar textValue4Buffer[TEXTVALUE4_SIZE];
+    static const uint16_t TEXTDONE_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textDONEBuffer[TEXTDONE_SIZE];
 
 private:
 
