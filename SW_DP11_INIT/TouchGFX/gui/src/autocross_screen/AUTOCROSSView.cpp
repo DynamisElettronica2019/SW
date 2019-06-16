@@ -150,7 +150,7 @@ void AUTOCROSSView::refreshAutocross()
 
 	/****************RPM LIMITER*****************/
 	
-	Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%d", Indicators[RPM_LIM].intValore*1000);
+	Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%d", Indicators[RPM_LIM].intValore*100);
 	
 	/****************ACQUISITION*****************/
 	

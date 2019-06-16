@@ -615,7 +615,7 @@ void GPIO_okButton_handle(void)
 				flag_schermata = 0;
 				schermata_settings = 3;
 			}	else if (schermata_settings == 3 && flagImuCalibration == 0){
-				CAN_send(SW_CALIBRATION_IMU_ID, Indicators[SEL_IMU].intValore, currentImuCalibration, EMPTY, EMPTY, 2);	
+				CAN_send(SW_IMU_CALIBRATION_ID, Indicators[SEL_IMU].intValore, currentImuCalibration, EMPTY, EMPTY, 2);	
 			}
 		}
 		

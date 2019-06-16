@@ -357,7 +357,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[BRAKE_BIAS].intValore = fourthInt;
 				CAN_DCU_is_alive();
         break;
-		 case IMU_CALIBRATION_FB_SW_ID:
+		 case IMU_SW_FEEDBACK_ID:
 			 	flagImuCalibration = 1;
 				feedbackImuCalibration = firstInt;
 				break;
