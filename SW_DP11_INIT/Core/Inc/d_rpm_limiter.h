@@ -6,9 +6,9 @@
  extern "C" {
 #endif
 
-#define RPM_LIMITER_MAX_VALUE 		11000
-#define RPM_LIMITER_MIN_VALUE	 		6500
-#define RPM_LIMITER_STEP 					500
+#define RPM_LIMITER_MAX_VALUE 		115 /*11500*/
+#define RPM_LIMITER_MIN_VALUE	 		65	/* 6500*/
+#define RPM_LIMITER_STEP 					5		/*  500*/
 
 void d_rpm_limiter_setValue(int movement);
 	 

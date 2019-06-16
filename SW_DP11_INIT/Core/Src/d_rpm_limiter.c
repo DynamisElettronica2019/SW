@@ -41,5 +41,5 @@ void d_rpm_limiter_setValue(int movement)
     value = RPM_LIMITER_MIN_VALUE;
 	}
 	//Indicators[RPM_LIM].intValore = value;
-	d_rpmLimiterValue = value/100;
+	d_rpmLimiterValue = value;
 }
