@@ -62,6 +62,7 @@ extern int flagEngineOn;
 extern int driveMode;
 extern int flag_flash;
 
+int changeGearFlag = 0;
 uint8_t devAddress;
 uint8_t memAddress;
 uint8_t defPage = 0;
@@ -404,6 +405,13 @@ void I2C_debug_blue_off(uint16_t controller){
 }
 
 void I2C_rpm_command(int rpm_value){
+	
+	if( changeGearFlag == 1 ){
+		I2C_debug_blue_off(controller_0);
+		I2C_debug_blue_off(controller_1);
+		changeGearFlag = 0;
+	}
+	
 	if (rpm_value > RPM_STRIPE_MIN){
 		i2cData[1] = 0xFF;
 		i2cData[0] = LED_6_GREEN;
@@ -554,17 +562,19 @@ void I2C_rpm_update(void){
 	rpm_value = Indicators[RPM].intValore;
 	
 	if(rpm_value == DEF_VALUE) rpm_value = 0;
-
+	
 	if ( Indicators[DRIVE_MODE].intValore == ENDURANCE_MODE ){
 		if( rpm_value < 10000 || Indicators[GEAR].intValore == 5){
 			I2C_rpm_command(rpm_value);
 		}else {
+			changeGearFlag = 1;
 			I2C_rpm_flash();
 		}
 	}else if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
 		if( rpm_value < 10500 || Indicators[GEAR].intValore == 5){
 			I2C_rpm_command(rpm_value);
 		}else {
+			changeGearFlag = 1;
 			I2C_rpm_flash();
 		}	
 	}else{		

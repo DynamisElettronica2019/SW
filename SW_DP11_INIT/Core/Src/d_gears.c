@@ -16,6 +16,7 @@
 
 char d_currentGear = 0;
 extern Indicator_Value Indicators[N_INDICATORS];
+extern int changeGearFlag;
 
 void dGears_setGear (int newGear)
 {
@@ -43,6 +44,7 @@ void dGears_setGear (int newGear)
 		default:
 			break;
 	}
+	
 	d_currentGear = newGear;
 	Indicators[GEAR].intValore = newGear;
 }

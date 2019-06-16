@@ -26,7 +26,8 @@ void data_indicatorsInit(void)
 		Indicators[CLUTCH_CURR]				= (Indicator_Value) {CLUTCH_CURR, FLOAT, "CLUTCH", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[CLUTCH_FEEDBACK]	 	= (Indicator_Value) {CLUTCH_FEEDBACK, INT, "CLUTCH_FB", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
    	Indicators[CLUTCH_POSITION] 	= (Indicator_Value) {CLUTCH_POSITION, INT, "CLUTCH", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-	  Indicators[DRIVE_MODE]				= (Indicator_Value) {DRIVE_MODE, INT, "MODE", 0, 0, 0,"?"};
+	 	Indicators[CLUTCH_TRGT] 			= (Indicator_Value) {CLUTCH_TRGT, INT, "CLUTCH_TRGT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+		Indicators[DRIVE_MODE]				= (Indicator_Value) {DRIVE_MODE, INT, "MODE", 0, 0, 0,"?"};
 		Indicators[DAU_FL_BOARD] 			= (Indicator_Value) {DAU_FL_BOARD, FLOAT, "DAU_FL", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[DAU_FR_BOARD] 			= (Indicator_Value) {DAU_FR_BOARD, FLOAT, "DAU_FR", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[DAU_R_BOARD] 			= (Indicator_Value) {DAU_R_BOARD, FLOAT, "DAU_R", DEF_VALUE,DEF_VALUE, DEF_VALUE,"?"};
@@ -56,8 +57,8 @@ void data_indicatorsInit(void)
 		Indicators[H2O_PUMP] 					= (Indicator_Value) {H2O_PUMP, FLOAT, "H20_PUMP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[HEAD_1] 						= (Indicator_Value) {HEAD_1, FLOAT, "HEAD_1", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[HEAD_2] 						= (Indicator_Value) {HEAD_2, FLOAT, "HEAD_2", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-		Indicators[IMU1_INFO]					= (Indicator_Value) {IMU1_INFO, INT, "IMU1_INFO", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
-		Indicators[IMU2_INFO]					= (Indicator_Value) {IMU2_INFO, INT, "IMU2_INFO", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
+		Indicators[IMU1_INFO]					= (Indicator_Value) {IMU1_INFO, INT, "IMU1_INFO", 0, DEF_VALUE, DEF_VALUE,"?"};
+		Indicators[IMU2_INFO]					= (Indicator_Value) {IMU2_INFO, INT, "IMU2_INFO", 0, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[LAMBDA]						= (Indicator_Value) {LAMBDA, FLOAT, "LAMBDA", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[MAN_LIM_ACT]				= (Indicator_Value) {MAN_LIM_ACT, INT, "MAN_LIM_ACT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[MAP] 							= (Indicator_Value) {MAP, INT, "MAP", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
@@ -68,7 +69,7 @@ void data_indicatorsInit(void)
 		Indicators[PH2O] 							= (Indicator_Value) {PH2O, FLOAT, "PH2O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[PIT_LANE_ACT]			= (Indicator_Value) {PIT_LANE_ACT, INT, "PITLANE_ACT", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[RPM] 							= (Indicator_Value) {RPM, INT, "RPM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		
-		Indicators[RPM_LIM] 					= (Indicator_Value) {RPM_LIM, INT, "RPM_LIM", 9, DEF_VALUE, DEF_VALUE,"?"};
+		Indicators[RPM_LIM] 					= (Indicator_Value) {RPM_LIM, INT, "RPM_LIM", 65, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[SEL_IMU] 					= (Indicator_Value) {SEL_IMU, INT, "SEL_IMU", 1, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[SW_BOARD] 					= (Indicator_Value) {SW_BOARD, FLOAT, "SW", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[TH2O] 							= (Indicator_Value) {TH2O, FLOAT, "TH2O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};	

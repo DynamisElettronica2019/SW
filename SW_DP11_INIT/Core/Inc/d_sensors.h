@@ -27,6 +27,8 @@ void dSensors_Sensors_send(void);	//in caso di invio diretto dalla task è inutil
 void dSensors_convert(int currValue, int tempValue);
 	
 void dSensors_CLUTCH(int);
+
+void dSensors_setClutchTarget(int movement);
 	
 #ifdef __cplusplus
 }

@@ -79,6 +79,7 @@ extern char state, driveMode;
 extern int commandSent;
 extern int timerEfiAlive;
 extern int autox_stop, acc_stop;
+extern int buttonPressed;
 int flagDcuCalibration;
 int flagImuCalibration;
 int feedbackDcuCalibration;
@@ -225,7 +226,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				I2C_setRPM(secondInt);
 				dEfiSense_calculateTPS(TPS,thirdInt);
 				dEfiSense_calculatePH2O(PH2O,fourthInt);
-				timerEfiAlive = 0;
+				timerEfiAlive = 0;	 
 				break;
 		 case EFI_WATER_TEMPERATURE_ID:
 				dEfiSense_calculateWaterTemperature(TH2O_SX_IN, firstInt);
@@ -284,6 +285,12 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[RPM_LIM].intValore = secondInt;
 			  // autogearshift feedback
 				CAN_changeRoutineState(fourthInt);
+		 		
+				if( Indicators[CLUTCH_FEEDBACK].intValore == 100 && driveMode == SKIDPAD_MODE)
+					buttonPressed = 1;
+				else if( driveMode == SKIDPAD_MODE ) 
+					buttonPressed = 0;
+				
         break;
      case DCU_ACQUISITION_SW_ID:
 				CAN_DCU_feedback(firstInt,secondInt);
@@ -299,7 +306,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 			  Indicators[HEAD_1].floatValore 	= ((int16_t)firstInt)/100.0;
 				Indicators[ACC_Z_1].floatValore = ((int16_t)secondInt)/100.0;
 				Indicators[GYR_Y_1].floatValore = ((int16_t)thirdInt)/10.0;
-				Indicators[IMU1_INFO].intValore = fourthInt;
+				Indicators[IMU1_INFO].intValore = (uint8_t)fourthInt;
 			 break;
 		 case	IMU2_DATA_1_ID:
 			 	Indicators[ACC_X_2].floatValore = ((int16_t)firstInt)/100.0;
@@ -311,7 +318,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 			  Indicators[HEAD_2].floatValore  = ((int16_t)firstInt)/100.0;
 				Indicators[ACC_Z_2].floatValore = ((int16_t)secondInt)/100.0;
 				Indicators[GYR_Y_2].floatValore = ((int16_t)thirdInt)/10.0;
-				Indicators[IMU2_INFO].intValore = fourthInt;
+				Indicators[IMU2_INFO].intValore = (uint8_t)fourthInt;
 			 break;
 //		 case DAU_FR_ID:
 //			  Indicators[BPS_F].intValore  = thirdInt; //da togliere

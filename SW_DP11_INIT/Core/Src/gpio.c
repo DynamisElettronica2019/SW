@@ -76,6 +76,7 @@ int flag_defaultIndicators = 0;
 
 int box_driveMode;
 int box_indicator;
+int buttonPressed = 0;
 
 int debug_mode_scroll_sx;
 int debug_mode_scroll_dx;
@@ -619,6 +620,15 @@ void GPIO_okButton_handle(void)
 			}
 		}
 		
+		if( driveMode == SKIDPAD_MODE ){
+			if( buttonPressed == 0 ){
+				state = SKIDPAD_SEND_100_STATE;
+			}
+			else if( buttonPressed == 1 ){
+				state = SKIDPAD_SEND_TRGT_VALUE;
+			}
+		}
+		
 }
 
 void GPIO_neutralButton_handle(void)
@@ -635,7 +645,6 @@ void GPIO_neutralButton_handle(void)
 				flag_schermata = 0;
 			}
 		}
-
 }
 
 void GPIO_aux1Button_handle(void)

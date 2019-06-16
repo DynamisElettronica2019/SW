@@ -152,12 +152,13 @@ void SETTINGSView::refreshSettings()
 			boxCalibrationImuSelected.invalidate();
 			if( currentImuCalibration >= 1 && currentImuCalibration <= 5 )
 				boxCalibrationImuSelected.setPosition(2, 135 + (70*(currentImuCalibration-1)), 300, 50);
-			else if ( currentImuCalibration >= 5 && currentImuCalibration <= 10 )
-				boxCalibrationImuSelected.setPosition(310, 135 + (70*(currentImuCalibration-5)), 300, 50);
+			else if ( currentImuCalibration > 5 && currentImuCalibration <= 11 )
+				boxCalibrationImuSelected.setPosition(310, 135 + (70*(currentImuCalibration-6)), 300, 50);
 			boxCalibrationImuSelected.setVisible(true);
 			boxCalibrationImuSelected.invalidate();
 			
 			SETTINGSView::calibrationImuDisplay();
+
 			
 			if( Indicators[SEL_IMU].intValore == 1 ){
 				box1.setVisible(false);
@@ -170,10 +171,10 @@ void SETTINGSView::refreshSettings()
 				textIMU1.invalidate();
 				textIMU2.invalidate();
 				
-				indValue1 = ((Indicators[IMU1_INFO].intValore >> 6) & 3);
-				indValue2 = ((Indicators[IMU1_INFO].intValore >> 4) & 3);
-				indValue3 = ((Indicators[IMU1_INFO].intValore >> 2) & 3);
-				indValue4 = ((Indicators[IMU1_INFO].intValore >> 0) & 3);
+				indValue1 = (((uint8_t)(Indicators[IMU1_INFO].intValore) >> 0) & 0x03);
+				indValue2 = (((uint8_t)(Indicators[IMU1_INFO].intValore) >> 2) & 0x03);
+				indValue3 = (((uint8_t)(Indicators[IMU1_INFO].intValore) >> 4) & 0x03);
+				indValue4 = (((uint8_t)(Indicators[IMU1_INFO].intValore) >> 6) & 0x03);
 				
 				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", indValue1);
 				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", indValue2);
@@ -191,10 +192,10 @@ void SETTINGSView::refreshSettings()
 				textIMU1.invalidate();
 				textIMU2.invalidate();
 			
-				indValue1 = ((Indicators[IMU2_INFO].intValore >> 6) & 3);
-				indValue2 = ((Indicators[IMU2_INFO].intValore >> 4) & 3);
-				indValue3 = ((Indicators[IMU2_INFO].intValore >> 2) & 3);
-				indValue4 = ((Indicators[IMU2_INFO].intValore >> 0) & 3);
+				indValue1 = (((Indicators[IMU2_INFO].intValore) >> 0) & 0x03);
+				indValue2 = (((Indicators[IMU2_INFO].intValore) >> 2) & 0x03);
+				indValue3 = (((Indicators[IMU2_INFO].intValore) >> 4) & 0x03);
+				indValue4 = (((Indicators[IMU2_INFO].intValore) >> 6) & 0x03);
 								
 				Unicode::snprintf(textValue1Buffer, TEXTVALUE1_SIZE, "%d", indValue1);
 				Unicode::snprintf(textValue2Buffer, TEXTVALUE2_SIZE, "%d", indValue2);
@@ -953,7 +954,7 @@ void SETTINGSView::calibrationImuDisplay()
 		textDONE.invalidate();
 		boxDONE.setVisible(true);
 		boxDONE.invalidate();
-		calibrationDcuPopUp ++;
+		calibrationImuPopUp ++;
 	}
 	else{
 		calibrationImuPopUp = 0;
