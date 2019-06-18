@@ -1962,7 +1962,7 @@
             "Name": "TEXTAccelerationEntry",
             "X": 41,
             "Y": 283,
-            "Width": 543,
+            "Width": 542,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -2063,7 +2063,7 @@
             "Name": "textDCUdead",
             "X": 80,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -4117,6 +4117,57 @@
             "Moveable": false
           },
           {
+            "TextId": "SingleUseId444",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "TEXTRpmLimiter",
+            "X": 467,
+            "Y": 271,
+            "Width": 173,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId445",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId446",
+              "UseBuffer": true,
+              "BufferSize": 7
+            },
+            "Name": "textRpmLimiterValue",
+            "X": 467,
+            "Y": 299,
+            "Width": 173,
+            "Height": 65,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "Color": {
               "Red": 0,
               "Green": 200,
@@ -4225,7 +4276,7 @@
             "Name": "TEXTSkidpadEntry",
             "X": 166,
             "Y": 283,
-            "Width": 313,
+            "Width": 314,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -4273,7 +4324,7 @@
             "Name": "textDCUdead",
             "X": 88,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -11022,6 +11073,18 @@
       },
       {
         "TextEntryId": "SingleUseId443",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId444",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId445",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId446",
         "IsResource": false
       }
     ],

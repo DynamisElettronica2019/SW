@@ -786,6 +786,7 @@ void rightEncoderTask(void const * argument)
 		{
 			case AUTOX_MODE:
 			case ACCELERATION_MODE:
+			case SKIDPAD_MODE:
 				d_rpm_limiter_setValue(movement);
 				break;
 			case BOARD_DEBUG_MODE:

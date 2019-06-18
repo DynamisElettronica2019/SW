@@ -1,1 +1,29 @@
 Converting images
+Generating generated/fonts/UnicodeListRoboto_Black_100_4.txt
+Generating generated/fonts/UnicodeListRoboto_Regular_25_4.txt
+Generating generated/fonts/UnicodeListRoboto_Regular_35_4.txt
+Generating generated/fonts/UnicodeListRoboto_Regular_45_4.txt
+Generating generated/fonts/UnicodeListRoboto_Regular_63_4.txt
+Generating generated/fonts/UnicodeListRoboto_Regular_80_4.txt
+Generating generated/fonts/UnicodeListRoboto_Regular_180_4.txt
+Generating generated/fonts/UnicodeListRoboto_Regular_420_4.txt
+Generating generated/fonts/src/ApplicationFontProvider.cpp
+Generating generated/fonts/include/fonts/ApplicationFontProvider.hpp
+Generating generated/texts/include/texts/TextKeysAndLanguages.hpp
+Generating generated/texts/src/Texts.cpp
+Generating generated/texts/src/LanguageGb.cpp
+Generating generated/texts/include/texts/TypedTextDatabase.hpp
+Generating generated/texts/src/TypedTextDatabase.cpp
+Processing font: C:/Users/io98/Desktop/GIT_REPO/SW/SW_DP11_INIT/TouchGFX/assets/fonts/Roboto-Regular.ttf
+  Font loaded
+  Number of glyphs: 1250
+  Family name: Roboto
+  Style name: Regular
+Reading character list file: generated/fonts/UnicodeListRoboto_Regular_25_4.txt
+WARNING - Char 0x7F is used but does not exist in the font!
+WARNING - A total of 33 unicode characters did not exist in the font!
+Appending C:/Users/io98/Desktop/GIT_REPO/SW/SW_DP11_INIT/TouchGFX/generated/fonts/src/FontGetters.cpp
+Generating: C:/Users/io98/Desktop/GIT_REPO/SW/SW_DP11_INIT/TouchGFX/generated/fonts/CharSizes_Roboto_Regular_25_4bpp.csv
+Generating: C:/Users/io98/Desktop/GIT_REPO/SW/SW_DP11_INIT/TouchGFX/generated/fonts/src/Table_Roboto_Regular_25_4bpp.cpp
+Generating: C:/Users/io98/Desktop/GIT_REPO/SW/SW_DP11_INIT/TouchGFX/generated/fonts/src/Font_Roboto_Regular_25_4bpp.cpp
+Remapped 346 strings (2554 bytes saved)

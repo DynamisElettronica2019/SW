@@ -915,34 +915,34 @@ void SETTINGSView::calibrationImuDisplay()
 	if (flagImuCalibration == 1 && calibrationImuPopUp < (3 * POPUP_TIME)){
 		switch (feedbackImuCalibration){
 			case 1:
-				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB ALL DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB ALL", 20);
 				break;
 			case 2:
-				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB AGM DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB AGM", 20);
 				break;
 			case 3:
-				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB PLAN DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "CALIB PLAN", 20);
 				break;
 			case 4:
-				touchgfx::Unicode::strncpy( CurrCalibration, "SAVE DCD DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "SAVE DCD", 20);
 				break;
 			case 5:
-				touchgfx::Unicode::strncpy( CurrCalibration, "RESET DCD DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "RESET DCD", 20);
 				break;
 			case 6:
-				touchgfx::Unicode::strncpy( CurrCalibration, "TARE NOW DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "TARE NOW", 20);
 				break;
 			case 7:
-				touchgfx::Unicode::strncpy( CurrCalibration, "RESET TARE DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "RESET TARE", 20);
 				break;
 			case 8:
-				touchgfx::Unicode::strncpy( CurrCalibration, "STOP CALIB DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "STOP CALIB", 20);
 				break;
 			case 9:
-				touchgfx::Unicode::strncpy( CurrCalibration, "RE-INIT IMU DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "RE-INIT IMU", 20);
 				break;
 			case 10:
-				touchgfx::Unicode::strncpy( CurrCalibration, "REL TO ABS DONE", 20);
+				touchgfx::Unicode::strncpy( CurrCalibration, "REL TO ABS", 20);
 				break;
 			default:
 				touchgfx::Unicode::strncpy( CurrCalibration, "NOTHING", 20);

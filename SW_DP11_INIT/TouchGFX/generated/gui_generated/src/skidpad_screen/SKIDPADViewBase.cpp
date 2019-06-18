@@ -178,6 +178,18 @@ SKIDPADViewBase::SKIDPADViewBase()
     textIndAcquisitionValue.setWildcard(textIndAcquisitionValueBuffer);
     textIndAcquisitionValue.setTypedText(TypedText(T_SINGLEUSEID69));
 
+    TEXTRpmLimiter.setPosition(467, 271, 173, 33);
+    TEXTRpmLimiter.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    TEXTRpmLimiter.setLinespacing(0);
+    TEXTRpmLimiter.setTypedText(TypedText(T_SINGLEUSEID444));
+
+    textRpmLimiterValue.setPosition(467, 299, 173, 65);
+    textRpmLimiterValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textRpmLimiterValue.setLinespacing(0);
+    Unicode::snprintf(textRpmLimiterValueBuffer, TEXTRPMLIMITERVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID446).getText());
+    textRpmLimiterValue.setWildcard(textRpmLimiterValueBuffer);
+    textRpmLimiterValue.setTypedText(TypedText(T_SINGLEUSEID445));
+
     boxText.setPosition(180, 347, 280, 28);
     boxText.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 200, 255));
 
@@ -256,6 +268,8 @@ SKIDPADViewBase::SKIDPADViewBase()
     add(TEXTIndAcquisition);
     add(boxAcquisition);
     add(textIndAcquisitionValue);
+    add(TEXTRpmLimiter);
+    add(textRpmLimiterValue);
     add(boxText);
     add(TEXTSkidpad);
     add(textIndGearValue);
