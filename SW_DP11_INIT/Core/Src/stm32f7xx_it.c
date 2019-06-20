@@ -65,6 +65,7 @@ BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 extern int okButtonPressed;
 extern char driveMode;
 
+extern int flagAutoX;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -571,6 +572,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			if( okButtonPressed == 0 || driveMode == SETTINGS_MODE ) { 
 				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
 				okButtonPressed = 1;
+				flagAutoX = 0;
 			}
       break;
     case AUX_1_BUTTON_INT_Pin:

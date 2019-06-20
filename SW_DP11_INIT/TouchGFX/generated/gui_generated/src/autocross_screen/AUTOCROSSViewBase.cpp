@@ -139,7 +139,7 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     textIndValue6.setWildcard(textIndValue6Buffer);
     textIndValue6.setTypedText(TypedText(T_SINGLEUSEID94));
 
-    TEXTIndTc.setPosition(22, 170, 38, 29);
+    TEXTIndTc.setPosition(13, 228, 140, 32);
     TEXTIndTc.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     TEXTIndTc.setLinespacing(0);
     TEXTIndTc.setTypedText(TypedText(T_SINGLEUSEID97));
@@ -149,10 +149,10 @@ AUTOCROSSViewBase::AUTOCROSSViewBase()
     TEXTIndMap.setLinespacing(0);
     TEXTIndMap.setTypedText(TypedText(T_SINGLEUSEID98));
 
-    textIndTcValue.setPosition(48, 70, 98, 185);
+    textIndTcValue.setPosition(24, 110, 121, 113);
     textIndTcValue.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textIndTcValue.setLinespacing(0);
-    Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID100).getText());
+    Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID447).getText());
     textIndTcValue.setWildcard(textIndTcValueBuffer);
     textIndTcValue.setTypedText(TypedText(T_SINGLEUSEID99));
 

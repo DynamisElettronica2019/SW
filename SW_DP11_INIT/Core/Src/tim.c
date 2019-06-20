@@ -93,6 +93,7 @@ int DCU_was_not_dead = 0;
 int	TRACTION_save = 0;
 int RPM_LIM_save 	= 0;
 			
+int flagAutoX = 1;
 
 extern int d_tractionValue, d_rpmLimiterValue;
 extern int flagEngineOn; 
@@ -416,7 +417,15 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		
 		if ( timerSensors >= SENSORS_TIME ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
-			timerSensors = 0;	
+			timerSensors = 0;
+			
+			//------------------ Per chiamata in polling a 100Hz quando si è in autocross
+			if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
+				flagAutoX = 1;					
+				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
+				portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+			}
+				
 		}
 		if ( timerStartButton >= START_BUTTON_TIME){
 			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );	

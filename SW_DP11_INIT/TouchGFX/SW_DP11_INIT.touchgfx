@@ -864,7 +864,7 @@
             "Name": "TEXTEnduranceEntry",
             "X": 78,
             "Y": 283,
-            "Width": 461,
+            "Width": 460,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -912,7 +912,7 @@
             "Name": "textDCUdead",
             "X": 87,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -2805,10 +2805,10 @@
             "AutoSize": false,
             "LineSpacing": 0,
             "Name": "TEXTIndTc",
-            "X": 22,
-            "Y": 170,
-            "Width": 38,
-            "Height": 29,
+            "X": 13,
+            "Y": 228,
+            "Width": 140,
+            "Height": 32,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -2851,15 +2851,15 @@
             "AutoSize": false,
             "LineSpacing": 0,
             "Wildcard1": {
-              "TextId": "SingleUseId100",
+              "TextId": "SingleUseId447",
               "UseBuffer": true,
               "BufferSize": 3
             },
             "Name": "textIndTcValue",
-            "X": 48,
-            "Y": 70,
-            "Width": 98,
-            "Height": 185,
+            "X": 24,
+            "Y": 110,
+            "Width": 121,
+            "Height": 113,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -3125,7 +3125,7 @@
             "Name": "TEXTAutocrossEntry",
             "X": 102,
             "Y": 283,
-            "Width": 445,
+            "Width": 446,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -3226,7 +3226,7 @@
             "Name": "textDCUdead",
             "X": 80,
             "Y": 189,
-            "Width": 483,
+            "Width": 484,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -9844,10 +9844,6 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId100",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId101",
         "IsResource": false
       },
@@ -11085,6 +11081,10 @@
       },
       {
         "TextEntryId": "SingleUseId446",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId447",
         "IsResource": false
       }
     ],

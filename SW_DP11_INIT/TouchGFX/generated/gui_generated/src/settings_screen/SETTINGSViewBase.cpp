@@ -230,57 +230,68 @@ SETTINGSViewBase::SETTINGSViewBase()
     boxCalibration4.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxCalibration4.setBorderSize(5);
 
-    boxCalibrationImuSelected.setPosition(2, 415, 322, 50);
+    boxCalibrationImuSelected.setPosition(2, 135, 322, 50);
+    boxCalibrationImuSelected.setVisible(false);
     boxCalibrationImuSelected.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     boxCalibrationImuSelected.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 0, 0));
     boxCalibrationImuSelected.setBorderSize(5);
 
     textTitle1.setXY(8, 140);
+    textTitle1.setVisible(false);
     textTitle1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle1.setLinespacing(0);
     textTitle1.setTypedText(TypedText(T_SINGLEUSEID416));
 
     textTitle2.setXY(8, 210);
+    textTitle2.setVisible(false);
     textTitle2.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle2.setLinespacing(0);
     textTitle2.setTypedText(TypedText(T_SINGLEUSEID418));
 
     textTitle3.setXY(8, 280);
+    textTitle3.setVisible(false);
     textTitle3.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle3.setLinespacing(0);
     textTitle3.setTypedText(TypedText(T_SINGLEUSEID420));
 
     textTitle4.setXY(9, 350);
+    textTitle4.setVisible(false);
     textTitle4.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle4.setLinespacing(0);
     textTitle4.setTypedText(TypedText(T_SINGLEUSEID422));
 
     textTitle5.setXY(5, 420);
+    textTitle5.setVisible(false);
     textTitle5.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle5.setLinespacing(0);
     textTitle5.setTypedText(TypedText(T_SINGLEUSEID424));
 
     textTitle6.setXY(327, 140);
+    textTitle6.setVisible(false);
     textTitle6.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle6.setLinespacing(0);
     textTitle6.setTypedText(TypedText(T_SINGLEUSEID425));
 
     textTitle7.setXY(327, 210);
+    textTitle7.setVisible(false);
     textTitle7.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle7.setLinespacing(0);
     textTitle7.setTypedText(TypedText(T_SINGLEUSEID426));
 
     textTitle8.setXY(327, 277);
+    textTitle8.setVisible(false);
     textTitle8.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle8.setLinespacing(0);
     textTitle8.setTypedText(TypedText(T_SINGLEUSEID427));
 
     textTitle9.setXY(328, 350);
+    textTitle9.setVisible(false);
     textTitle9.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle9.setLinespacing(0);
     textTitle9.setTypedText(TypedText(T_SINGLEUSEID428));
 
     textTitle10.setXY(324, 420);
+    textTitle10.setVisible(false);
     textTitle10.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textTitle10.setLinespacing(0);
     textTitle10.setTypedText(TypedText(T_SINGLEUSEID429));
@@ -375,31 +386,26 @@ SETTINGSViewBase::SETTINGSViewBase()
     boxModeSelected.setBorderSize(6);
 
     textACCELERATION.setPosition(20, 22, 450, 75);
-    textACCELERATION.setVisible(false);
     textACCELERATION.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textACCELERATION.setLinespacing(0);
     textACCELERATION.setTypedText(TypedText(T_SINGLEUSEID152));
 
     textENDURANCE.setPosition(20, 112, 450, 75);
-    textENDURANCE.setVisible(false);
     textENDURANCE.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textENDURANCE.setLinespacing(0);
     textENDURANCE.setTypedText(TypedText(T_SINGLEUSEID153));
 
     textAUTOCROSS.setPosition(20, 202, 450, 75);
-    textAUTOCROSS.setVisible(false);
     textAUTOCROSS.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textAUTOCROSS.setLinespacing(0);
     textAUTOCROSS.setTypedText(TypedText(T_SINGLEUSEID154));
 
     textSKIDPAD.setPosition(20, 292, 450, 75);
-    textSKIDPAD.setVisible(false);
     textSKIDPAD.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textSKIDPAD.setLinespacing(0);
     textSKIDPAD.setTypedText(TypedText(T_SINGLEUSEID155));
 
     textCALIBRATION.setPosition(20, 382, 450, 75);
-    textCALIBRATION.setVisible(false);
     textCALIBRATION.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textCALIBRATION.setLinespacing(0);
     textCALIBRATION.setTypedText(TypedText(T_SINGLEUSEID363));

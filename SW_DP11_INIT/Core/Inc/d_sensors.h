@@ -29,6 +29,8 @@ void dSensors_convert(int currValue, int tempValue);
 void dSensors_CLUTCH(int);
 
 void dSensors_setClutchTarget(int movement);
+
+void dSensors_setAutoXTarget(int movement);
 	
 #ifdef __cplusplus
 }

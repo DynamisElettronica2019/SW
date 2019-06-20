@@ -470,6 +470,7 @@ void CAN_changeRoutineState(int command_feedback)
 				if(state == AUTOX_MODE_READY || state == AUTOX_MODE_GO){
 					state = AUTOX_MODE_DEFAULT; 
 					autox_stop = 1;
+					commandSent = 0; //-----aggiunto per test su autocross
 				}
 				break;
 		}

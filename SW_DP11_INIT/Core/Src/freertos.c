@@ -98,6 +98,7 @@ int state;
 int timerClutch = 0;
 int timerTempCurr = 0;
 int okButtonPressed = 0;
+int AutoxTarget = 0;
 
 extern BaseType_t xHigherPriorityTaskWoken;
 
@@ -742,6 +743,8 @@ void leftEncoderTask(void const * argument)
 		switch(driveMode)
 		{
 			case AUTOX_MODE:
+				dSensors_setAutoXTarget(-movement);
+				break;
 			case ACCELERATION_MODE:
 			case ENDURANCE_MODE:
 				d_traction_control_setValue(movement);
@@ -869,7 +872,7 @@ void okButtonTask(void const * argument)
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
 		//vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_okButton_handle();
-		vTaskDelay(200/portTICK_PERIOD_MS);
+		vTaskDelay(5/portTICK_PERIOD_MS); // abbaassato a 5ms perchè altrimenti non funzionerebbe il polling in autocross
 		okButtonPressed = 0;
     osDelay(1);
   }

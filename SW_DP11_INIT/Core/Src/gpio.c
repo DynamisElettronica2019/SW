@@ -92,6 +92,9 @@ int calibrationImuPopUp;
 extern int flagDcuCalibration;
 extern void dGear_setNeutral(void);
 
+extern int flagAutoX;
+extern int AutoxTarget;
+
 /* USER CODE END 1 */
 
 /** Configure pins as 
@@ -595,14 +598,23 @@ void GPIO_okButton_handle(void)
 			commandSent = 1;
 		}
 		
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, EMPTY, EMPTY, 2);
+		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT && flagAutoX == 0 ){
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, AutoxTarget, EMPTY, 3);
 			commandSent = 1;
-		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY ) {
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, EMPTY, EMPTY, 2);
+		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY  && flagAutoX ==0 ) {
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, AutoxTarget, EMPTY, 3);
+			commandSent = 1;
+		}else if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT && flagAutoX == 1 ){
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_STOP, AutoxTarget, EMPTY, 3);
+			commandSent = 1;
+		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY  && flagAutoX ==1 ) {
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, AutoxTarget, EMPTY, 3);
+			commandSent = 1;
+		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_GO  && flagAutoX ==1 ) {
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, AutoxTarget, EMPTY, 3);
 			commandSent = 1;
 		}
-		
+
 		if( driveMode == SETTINGS_MODE){
 			if (schermata_settings == 0 && box_driveMode >= 0 && box_driveMode <= 3){
 				flag_schermata = 0;

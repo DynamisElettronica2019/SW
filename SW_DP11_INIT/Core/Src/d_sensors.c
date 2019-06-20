@@ -7,6 +7,7 @@ extern char driveMode, engineMap, state;
 extern int buttonPressed;
 extern int ADC_BUF[3];
 extern Indicator_Value Indicators[N_INDICATORS];
+extern int AutoxTarget;
 int clutchOld = 0;
 int clutchValue = 0;
 
@@ -66,4 +67,15 @@ void dSensors_setClutchTarget(int movement)
 		Indicators[CLUTCH_TRGT].intValore = 0;
 
 	return ;
+}
+
+void dSensors_setAutoXTarget(int movement)
+{	
+	AutoxTarget = AutoxTarget + movement;
+	
+	if (AutoxTarget>= 10)
+		AutoxTarget = 10;	
+	else if (AutoxTarget <= 0)
+		AutoxTarget = 0;
+
 }
