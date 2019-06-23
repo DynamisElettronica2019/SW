@@ -90,6 +90,7 @@ extern int timerDCUAlive;
 extern int DCU_is_dead;
 extern int DCU_was_not_dead;
 
+extern int temp_stato;
 
 /* USER CODE END 0 */
 
@@ -468,6 +469,7 @@ void CAN_changeRoutineState(int command_feedback)
 				break;
 			case COMMAND_STOP:
 				if(state == AUTOX_MODE_READY || state == AUTOX_MODE_GO){
+					temp_stato = 0;
 					state = AUTOX_MODE_DEFAULT; 
 					autox_stop = 1;
 					commandSent = 0; //-----aggiunto per test su autocross

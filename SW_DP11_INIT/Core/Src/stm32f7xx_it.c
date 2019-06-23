@@ -570,9 +570,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
       break;
     case OK_BUTTON_INT_Pin:
 			if( okButtonPressed == 0 || driveMode == SETTINGS_MODE ) { 
+				flagAutoX = 0;
 				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
 				okButtonPressed = 1;
-				flagAutoX = 0;
 			}
       break;
     case AUX_1_BUTTON_INT_Pin:

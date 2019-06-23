@@ -95,6 +95,8 @@ extern void dGear_setNeutral(void);
 extern int flagAutoX;
 extern int AutoxTarget;
 
+int temp_stato = 0;
+
 /* USER CODE END 1 */
 
 /** Configure pins as 
@@ -600,17 +602,19 @@ void GPIO_okButton_handle(void)
 		
 		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT && flagAutoX == 0 ){
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, AutoxTarget, EMPTY, 3);
+			temp_stato = 1;
 			commandSent = 1;
 		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY  && flagAutoX ==0 ) {
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, AutoxTarget, EMPTY, 3);
+			temp_stato = 2;
 			commandSent = 1;
-		}else if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT && flagAutoX == 1 ){
+		}else if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_DEFAULT*/ && flagAutoX == 1 && temp_stato == 0){
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_STOP, AutoxTarget, EMPTY, 3);
 			commandSent = 1;
-		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY  && flagAutoX ==1 ) {
+		}else	if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_READY*/  && flagAutoX ==1 && temp_stato == 1) {
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, AutoxTarget, EMPTY, 3);
 			commandSent = 1;
-		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_GO  && flagAutoX ==1 ) {
+		}else	if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_GO */ && flagAutoX ==1 && temp_stato == 2) {
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, AutoxTarget, EMPTY, 3);
 			commandSent = 1;
 		}

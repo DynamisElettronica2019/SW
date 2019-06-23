@@ -420,11 +420,11 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			timerSensors = 0;
 			
 			//------------------ Per chiamata in polling a 100Hz quando si è in autocross
-			if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
-				flagAutoX = 1;					
-				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
-				portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-			}
+//			if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
+//				flagAutoX = 1;					
+//				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
+//				portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+//			}
 				
 		}
 		if ( timerStartButton >= START_BUTTON_TIME){
@@ -432,6 +432,13 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			timerStartButton = 0;
 		}
 		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
+			//-------------
+			if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
+				flagAutoX = 1;					
+				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
+				portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+			}
+			//--------------			
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
 			if( Indicators[RPM].intValore > 10000 ) {
 				timerFlash ++;
