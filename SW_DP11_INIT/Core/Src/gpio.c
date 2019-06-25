@@ -609,7 +609,7 @@ void GPIO_okButton_handle(void)
 			temp_stato = 2;
 			commandSent = 1;
 		}else if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_DEFAULT*/ && flagAutoX == 1 && temp_stato == 0){
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_STOP, AutoxTarget, EMPTY, 3);
+			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, 5, AutoxTarget, EMPTY, 3);
 			commandSent = 1;
 		}else	if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_READY*/  && flagAutoX ==1 && temp_stato == 1) {
 			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, AutoxTarget, EMPTY, 3);
