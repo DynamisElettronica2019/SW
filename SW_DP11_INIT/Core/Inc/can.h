@@ -79,6 +79,7 @@ void CAN_changeState(int mode_feedback);
 void CAN_changeRoutineState(int routine_state);
 void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt);
 void CAN_DCU_is_alive(void);
+void CAN_GCU_is_alive(void);
 
 /* USER CODE END Prototypes */
 

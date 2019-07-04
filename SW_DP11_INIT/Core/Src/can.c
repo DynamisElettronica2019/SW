@@ -89,6 +89,8 @@ int feedbackImuCalibration;
 extern int timerDCUAlive;
 extern int DCU_is_dead;
 extern int DCU_was_not_dead;
+extern int GCU_is_dead;
+extern int timerGCUAlive;
 
 extern int temp_stato;
 
@@ -276,6 +278,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[OIL_LEVEL].intValore = fourthInt;
 				break;
      case GCU_CLUTCH_MODE_MAP_SW_ID:
+				CAN_GCU_is_alive();
 				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
 				CAN_changeState(secondInt);
 				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
@@ -495,7 +498,11 @@ void CAN_DCU_is_alive(void)
 	DCU_is_dead = 0;
 	DCU_was_not_dead = 0;
 }
-
+void CAN_GCU_is_alive(void)
+{
+	timerGCUAlive = 0;
+	GCU_is_dead = 0;
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -99,9 +99,10 @@
 #define DRIVE_MODE_TIME									10		// 100  Hz
 #define TRACTION_RPM_TIME 							100		// 10   Hz
 #define EFI_DEAD_TIME			 							1000	// 1    Hz (1s)
-#define DCU_DEAD_TIME 									20000 // 0.05 Hz
-#define TRACTION_SAVE_TIME							5000  // 0.2  Hz
-#define RPM_LIM_SAVE_TIME							  5000  // 0.2  Hz
+#define DCU_DEAD_TIME 									20000 // 0.05 Hz (20s)
+#define GCU_DEAD_TIME										1000	// 1		HZ (1s)
+#define TRACTION_SAVE_TIME							5000  // 0.2  Hz (5s)
+#define RPM_LIM_SAVE_TIME							  5000  // 0.2  Hz (5s)
 #define EMERGENCY_BLINK_TIME						5000 	// 0.2  HZ (5s)
 
 #define POPUP_TIME         				      30

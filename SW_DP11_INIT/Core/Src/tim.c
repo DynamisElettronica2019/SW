@@ -80,6 +80,7 @@ int timerDriveMode = 0;
 int timerTractionRpm = 0;
 int timerEfiAlive = 0;
 int timerDCUAlive = 0;
+int timerGCUAlive = 0;
 int timerTractionSave = 0;
 int timerRpmLimiterSave  = 0;
 int timerEmergency = 0;
@@ -88,6 +89,7 @@ int timerFlash = 0;
 int flag_flash = 1;
 int emergencyFlag = 0;
 int emergencyBlink = 0;
+int GCU_is_dead = 0;
 int DCU_is_dead = 0;
 int DCU_was_not_dead = 0;
 int	TRACTION_save = 0;
@@ -128,7 +130,7 @@ void MX_TIM4_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 50;
+  sConfigOC.Pulse = 195;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -401,6 +403,7 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerTractionRpm = timerTractionRpm + 1;
 		timerEfiAlive = timerEfiAlive + 1;
 		timerDCUAlive = timerDCUAlive + 1;
+		timerGCUAlive = timerGCUAlive + 1;
 		
 		if ( emergencyFlag == 1 ){
 			timerEmergency = timerEmergency + 1;
@@ -413,6 +416,9 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		}
 		if ( timerDCUAlive >= DCU_DEAD_TIME ){
 			DCU_is_dead = 1;
+		}
+		if ( timerGCUAlive >= GCU_DEAD_TIME ){
+			GCU_is_dead = 1;
 		}
 		
 		if ( timerSensors >= SENSORS_TIME ){
@@ -432,13 +438,20 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			timerStartButton = 0;
 		}
 		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
+			
 			//-------------
 			if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
 				flagAutoX = 1;					
 				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
 				portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 			}
-			//--------------			
+			//--------------	
+			
+			if ( GCU_is_dead == 1	)
+			{
+				CAN_send(SW_CAN_ERROR_GCU_ID, 1, EMPTY, EMPTY, EMPTY, 1);
+			}
+	
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
 			if( Indicators[RPM].intValore > 10000 ) {
 				timerFlash ++;
