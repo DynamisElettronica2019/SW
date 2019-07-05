@@ -88,7 +88,8 @@ int feedbackImuCalibration;
 extern int timerDCUAlive;
 extern int DCU_is_dead;
 extern int DCU_was_not_dead;
-
+extern int GCU_is_dead;
+extern int timerGCUAlive;
 
 /* USER CODE END 0 */
 
@@ -484,6 +485,12 @@ void CAN_DCU_is_alive(void)
 	timerDCUAlive = 0;
 	DCU_is_dead = 0;
 	DCU_was_not_dead = 0;
+}
+
+void CAN_GCU_is_alive(void)
+{
+	timerGCUAlive = 0;
+	GCU_is_dead = 0;
 }
 
 /* USER CODE END 1 */

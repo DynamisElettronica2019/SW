@@ -27,6 +27,7 @@
 #define SW_TRACTION_LIMITER_GCU_ID									0x203
 #define SW_ACQUISITION_DCU_ID												0x400
 #define SW_IMU_CALIBRATION_ID												0x700	
+#define SW_CAN_ERROR_GCU_ID													0x205
 /************************** DCU ***************************/
 #define DCU_ACQUISITION_SW_ID												0x401
 #define DCU_AUTOGEARSHIFT_GCU_ID										0x207
