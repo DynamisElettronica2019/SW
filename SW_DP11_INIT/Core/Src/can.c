@@ -269,6 +269,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 		 		timerEfiAlive = 0;
 				break;
 		 case GCU_TRACTION_LIMITER_LOIL_EFI_ID:
+				CAN_GCU_is_alive();
 				Indicators[AN_SLIP_TRGT].intValore = firstInt;
 				Indicators[AN_SLIP_TRIM].intValore = secondInt;
 				Indicators[AN_MAN_LIM].intValore = thirdInt;
