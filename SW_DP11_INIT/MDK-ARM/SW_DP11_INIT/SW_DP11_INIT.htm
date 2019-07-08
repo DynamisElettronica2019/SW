@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Jul 04 19:21:40 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Jul 08 22:57:44 2019
 <BR><P>
 <H3>Maximum Stack Usage =       2408 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -9036,8 +9036,8 @@ Global Symbols
 <LI> abstractpartition.o(.constdata__ZTVN8touchgfx17AbstractPartitionE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
-<LI> abstractpainterrgb565.o(.constdata__ZTVN8touchgfx21AbstractPainterRGB565E)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
+<LI> abstractpainterrgb565.o(.constdata__ZTVN8touchgfx21AbstractPainterRGB565E)
 <LI> hal.o(.constdata__ZTVN8touchgfx3HALE)
 </UL>
 <P><STRONG><a name="[532]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
@@ -9293,8 +9293,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;leftEncoderTask
 </UL>
 
-<P><STRONG><a name="[48f]"></a>d_rpm_limiter_setValue</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, d_rpm_limiter.o(i.d_rpm_limiter_setValue))
-<BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rightEncoderTask
+<P><STRONG><a name="[48f]"></a>d_rpm_limiter_setValue</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, d_rpm_limiter.o(i.d_rpm_limiter_setValue))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = d_rpm_limiter_setValue
+</UL>
+<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rightEncoderTask
 </UL>
 
 <P><STRONG><a name="[468]"></a>d_traction_control_setValue</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, d_traction_control.o(i.d_traction_control_setValue))
@@ -9843,9 +9845,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[49d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 <LI><a href="#[48b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<BR>[Called By]<UL><LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::initialize()
+<LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 <LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
-<LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::initialize()
 <LI><a href="#[46f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueCreateCountingSemaphore
 </UL>
 
@@ -9867,7 +9869,10 @@ Global Symbols
 <LI><a href="#[479]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[477]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
+<BR>[Called By]<UL><LI><a href="#[3a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::tryTakeFrameBufferSemaphore()
+<LI><a href="#[3a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::takeFrameBufferSemaphore()
+<LI><a href="#[3a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::waitForVSync()
+<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skidpadModeTask
@@ -9893,9 +9898,6 @@ Global Symbols
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aux1ButtonTask
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autocrossModeTask
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accelerationModeTask
-<LI><a href="#[3a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::tryTakeFrameBufferSemaphore()
-<LI><a href="#[3a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::takeFrameBufferSemaphore()
-<LI><a href="#[3a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::waitForVSync()
 </UL>
 
 <P><STRONG><a name="[49d]"></a>xQueueGenericReset</STRONG> (Thumb, 148 bytes, Stack size 32 bytes, queue.o(i.xQueueGenericReset))
@@ -9924,9 +9926,9 @@ Global Symbols
 <LI><a href="#[479]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[477]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
-<LI><a href="#[3a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::giveFrameBufferSemaphore()
+<BR>[Called By]<UL><LI><a href="#[3a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::giveFrameBufferSemaphore()
 <LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::initialize()
+<LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 </UL>
 
 <P><STRONG><a name="[26c]"></a>xQueueGenericSendFromISR</STRONG> (Thumb, 204 bytes, Stack size 32 bytes, queue.o(i.xQueueGenericSendFromISR))
@@ -9946,13 +9948,13 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[489]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[495]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortValidateInterruptPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
+<BR>[Called By]<UL><LI><a href="#[3a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::giveFrameBufferSemaphoreFromISR()
+<LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
 <LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI3_IRQHandler
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI2_IRQHandler
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
-<LI><a href="#[3a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::giveFrameBufferSemaphoreFromISR()
 </UL>
 
 <P><STRONG><a name="[4a1]"></a>xTaskCheckForTimeOut</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, tasks.o(i.xTaskCheckForTimeOut))

@@ -11,6 +11,7 @@
 
 #include "d_rpm_limiter.h"
 #include "data.h"
+#include "general.h"
 
 extern Indicator_Value Indicators[N_INDICATORS];
 extern int RPM_LIM_save;
@@ -32,14 +33,32 @@ void d_rpm_limiter_setValue(int movement)
 {
 	int value;
 	value = (Indicators[RPM_LIM].intValore);
-	value = value - movement*RPM_LIMITER_STEP; //forse con -
-	RPM_LIM_save = 1;
 	
-	if(value > RPM_LIMITER_MAX_VALUE){
-		value = RPM_LIMITER_MAX_VALUE;
-  } else if(value < RPM_LIMITER_MIN_VALUE){
-    value = RPM_LIMITER_MIN_VALUE;
+	if( Indicators[DRIVE_MODE].intValore	== SKIDPAD_MODE )
+	{
+		value = value - movement*RPM_LIMITER_SKIDPAD_STEP; //forse con -
+		RPM_LIM_save = 1;
+		
+		if(value > RPM_LIMITER_SKIDPAD_MAX_VALUE){
+			value = RPM_LIMITER_SKIDPAD_MAX_VALUE;
+		} else if(value < RPM_LIMITER_SKIDPAD_MIN_VALUE){
+			value = RPM_LIMITER_SKIDPAD_MIN_VALUE;
+		}
+	}
+	else if( Indicators[DRIVE_MODE].intValore == AUTOX_MODE || Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE )
+	{
+		value = value - movement*RPM_LIMITER_STEP; //forse con -
+		RPM_LIM_save = 1;
+		
+		if(value > RPM_LIMITER_MAX_VALUE){
+			value = RPM_LIMITER_MAX_VALUE;
+		} else if(value < RPM_LIMITER_MIN_VALUE){
+			value = RPM_LIMITER_MIN_VALUE;
+		}
 	}
 	//Indicators[RPM_LIM].intValore = value;
 	d_rpmLimiterValue = value;
 }
+
+
+
