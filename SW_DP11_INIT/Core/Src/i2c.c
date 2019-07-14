@@ -652,7 +652,7 @@ void I2C_save_accPointers(void){
 }
 
 void I2C_save_autPointers(void){
-		
+
 	devAddress = EEPROM_ADDRESS << 3 | autPage >> 4;	
 	memAddress = autPage << 4 | START_CELL;
 	
@@ -662,7 +662,7 @@ void I2C_save_autPointers(void){
 }
 
 void I2C_save_skiPointers(void){
-		
+
 	devAddress = EEPROM_ADDRESS << 3 | skiPage >> 4;	
 	memAddress = skiPage << 4 | START_CELL;
 	
@@ -734,10 +734,14 @@ void I2C_getPointers(void){
 		memAddress = defPage << 4 | DEF_CELL;
 		HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
 		HAL_Delay(10);
-		I2C_save_accPointers();
-		I2C_save_endPointers();
-		I2C_save_autPointers();
-		I2C_save_skiPointers();
+		I2C_save_RpmLimiter(7000);
+		I2C_save_Traction(0);
+		I2C_get_endPointers();
+		I2C_get_accPointers();
+		I2C_get_autPointers();
+		I2C_get_skiPointers();
+		I2C_get_RpmLimiter();
+		I2C_get_Traction();
 	}
 	else{
 		I2C_get_endPointers();
@@ -745,15 +749,9 @@ void I2C_getPointers(void){
 		I2C_get_autPointers();
 		I2C_get_skiPointers();
 	}	
-		
-	
-	//--------------------- QUESTE RIGHE INVECE DOVRANNO ESSERE ELIMINATE
-	
-	//I2C_save_defPointers();
-	//I2C_get_defPointers();
 }
 
-void I2C_save_defPointers(void){		// in teoria non serve più
+void I2C_save_defPointers(void){		
 		
 	uint8_t flag = 0;
 	
@@ -772,8 +770,39 @@ void I2C_save_defPointers(void){		// in teoria non serve più
 	
 	memAddress = defPage << 4 | DEF_CELL;
 	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, DefPointer, N_POINTERS, 100);
-	
 	HAL_Delay(10);
+	
+	AutPointer[0] = TH2O;
+	AutPointer[1] = VBAT;
+	AutPointer[2] = OIL_PRESS;
+	AutPointer[3] = OIL_TEMP_IN;
+	AutPointer[4] = BRAKE_BIAS;
+	AutPointer[5] = FUEL_LEVEL;
+	I2C_save_autPointers();
+	
+	AccPointer[0] = TH2O;
+	AccPointer[1] = VBAT;
+	AccPointer[2] = OIL_PRESS;
+	AccPointer[3] = OIL_TEMP_IN;
+	AccPointer[4] = TPS;
+	AccPointer[5] = FUEL_LEVEL;
+	I2C_save_accPointers();
+	
+	EndPointer[0] = TH2O;
+	EndPointer[1] = VBAT;
+	EndPointer[2] = OIL_PRESS;
+	EndPointer[3] = OIL_TEMP_IN;
+	EndPointer[4] = BRAKE_BIAS;
+	EndPointer[5] = FUEL_LEVEL;
+	I2C_save_endPointers();
+				
+	SkiPointer[0] = TH2O;
+	SkiPointer[1] = VBAT;
+	SkiPointer[2] = OIL_PRESS;
+	SkiPointer[3] = OIL_TEMP_IN;
+	SkiPointer[4] = TPS;
+	SkiPointer[5] = FUEL_LEVEL;
+	I2C_save_skiPointers();
 	
 }
 

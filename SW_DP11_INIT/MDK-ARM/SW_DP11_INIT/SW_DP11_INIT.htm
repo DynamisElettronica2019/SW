@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Jul 08 23:36:28 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sun Jul 14 15:40:07 2019
 <BR><P>
 <H3>Maximum Stack Usage =       2376 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1226,16 +1226,16 @@ Global Symbols
 <P><STRONG><a name="[256]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[466]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_indicatorsInit
 <LI><a href="#[33c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_efiOff
+<LI><a href="#[2dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<LI><a href="#[2b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
+<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
 <LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 <LI><a href="#[323]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 <LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM12_Init
 <LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[2dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
-<LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
-<LI><a href="#[2b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
-<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 </UL>
 
 <P><STRONG><a name="[4bb]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -1588,11 +1588,11 @@ Global Symbols
 <LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGear_setNeutral
 <LI><a href="#[464]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
 <LI><a href="#[463]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Clutch_send
+<LI><a href="#[33b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_tractionRpm_send
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
 <LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
 <LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_okButton_handle
 <LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_aux1Button_handle
-<LI><a href="#[33b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_tractionRpm_send
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
 </UL>
 
 <P><STRONG><a name="[3b9]"></a>CRC_Lock</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, stm32_crc_lock.o(i.CRC_Lock))
@@ -1732,8 +1732,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_find_new_mode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modeSelectorTask
+<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modeSelectorTask
+<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
 </UL>
 
 <P><STRONG><a name="[243]"></a>GPIO_encoders_find_new_mode</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio.o(i.GPIO_encoders_find_new_mode))
@@ -1767,8 +1767,8 @@ Global Symbols
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_find_new_mode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mapSelectorTask
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mapSelectorTask
+<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
 </UL>
 
 <P><STRONG><a name="[468]"></a>GPIO_leftEncoder_boardDebugMode</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, gpio.o(i.GPIO_leftEncoder_boardDebugMode))
@@ -2204,15 +2204,15 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[26a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
-<LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
+<BR>[Called By]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
+<LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
 <LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_defPointers
-<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
-<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
-<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Traction
-<LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_RpmLimiter
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
+<LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
+<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Traction
+<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_RpmLimiter
+<LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 <LI><a href="#[344]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SDRAM_InitEx()
 </UL>
 
@@ -2248,41 +2248,38 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
-<LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
-<LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
-<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[2dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
 <LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[2b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
+<LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
+<LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
+<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[2c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
 </UL>
 
 <P><STRONG><a name="[242]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
-<BR><BR>[Called By]<UL><LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_rightEncoder_movement
+<BR><BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;downShiftTask
+<LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_rightEncoder_movement
 <LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_leftEncoder_movement
 <LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_engineMap_set
 <LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_driveMode_set
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;downShiftTask
 </UL>
 
 <P><STRONG><a name="[249]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
-<BR><BR>[Called By]<UL><LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ledBlinkTask
+<LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
 <LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_rightEncoder_movement
 <LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_leftEncoder_movement
 <LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_engineMap_set
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ledBlinkTask
 </UL>
 
-<P><STRONG><a name="[30e]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
-<LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
-<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_sleep_out
+<P><STRONG><a name="[30c]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_WritePin))
+<BR><BR>[Called By]<UL><LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_sleep_out
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_setRGBIF
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_setPANEL
 <LI><a href="#[334]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_setGAMMA
@@ -2292,6 +2289,9 @@ Global Symbols
 <LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_display_ON
 <LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_colmod
 <LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_brightness
+<LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
+<LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
+<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 </UL>
 
 <P><STRONG><a name="[26a]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_hal.o(i.HAL_GetTick))
@@ -2301,6 +2301,11 @@ Global Symbols
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Command
 <LI><a href="#[2ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_AutoPolling
+<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
+<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
+<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_Start
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_Init
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
@@ -2308,11 +2313,6 @@ Global Symbols
 <LI><a href="#[2bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[2bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
-<LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
-<LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
-<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_CLUTLoading_Abort
 <LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_Abort
 <LI><a href="#[288]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnTXISFlagUntilTimeout
@@ -2386,7 +2386,7 @@ Global Symbols
 <LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_TransferConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_command
+<BR>[Called By]<UL><LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_command
 <LI><a href="#[2ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_debug_red_off
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_debug_green_off
 <LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_debug_blue_on
@@ -2405,14 +2405,14 @@ Global Symbols
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_TransferConfig
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryRead
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
-<LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_Traction
-<LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_RpmLimiter
-<LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_skiPointers
+<BR>[Called By]<UL><LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_skiPointers
 <LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_endPointers
 <LI><a href="#[306]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_defPointers
 <LI><a href="#[303]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_autPointers
 <LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_accPointers
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_Traction
+<LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_RpmLimiter
 </UL>
 
 <P><STRONG><a name="[28c]"></a>HAL_I2C_Mem_Write</STRONG> (Thumb, 354 bytes, Stack size 64 bytes, stm32f7xx_hal_i2c.o(i.HAL_I2C_Mem_Write))
@@ -2425,14 +2425,14 @@ Global Symbols
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_TransferConfig
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryWrite
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
-<LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
+<BR>[Called By]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
+<LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
 <LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_defPointers
-<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
-<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
-<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Traction
-<LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_RpmLimiter
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
+<LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
+<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Traction
+<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_RpmLimiter
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 </UL>
 
 <P><STRONG><a name="[284]"></a>HAL_I2C_MspInit</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, i2c.o(i.HAL_I2C_MspInit))
@@ -2592,23 +2592,23 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[27a]"></a>HAL_NVIC_DisableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_DisableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_MemoryMappedMode
-<LI><a href="#[2af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspDeInit
+<BR><BR>[Called By]<UL><LI><a href="#[2af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspDeInit
+<LI><a href="#[326]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_MemoryMappedMode
 <LI><a href="#[29a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspDeInit
 <LI><a href="#[275]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspDeInit
 </UL>
 
 <P><STRONG><a name="[21b]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ))
 <BR><BR>[Called By]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
-<LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
-<LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
-<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
-<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
 <LI><a href="#[2ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[2b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
+<LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
+<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
+<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[279]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
 <LI><a href="#[2c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
@@ -2620,16 +2620,16 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
-<LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
-<LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
-<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
-<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
 <LI><a href="#[2ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[2b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
+<LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_MspInit
+<LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
+<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
+<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[279]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
 <LI><a href="#[2c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit()
@@ -2971,9 +2971,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[2cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[325]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM7_Init
+<BR>[Called By]<UL><LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[325]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM7_Init
 <LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM12_Init
-<LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::STM32F7Instrumentation::init()
 </UL>
 
@@ -2991,9 +2991,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[295]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_Base_Start_IT))
-<BR><BR>[Called By]<UL><LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_startTimers
+<BR><BR>[Called By]<UL><LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_startTimers
 <LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
-<LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
 <P><STRONG><a name="[2d0]"></a>HAL_TIM_ConfigClockSource</STRONG> (Thumb, 246 bytes, Stack size 16 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_ConfigClockSource))
@@ -3134,7 +3134,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 <LI><a href="#[2f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_brightness_max
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
+<BR>[Called By]<UL><LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
 </UL>
 
 <P><STRONG><a name="[2fb]"></a>I2C_controller_1_ON</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, i2c.o(i.I2C_controller_1_ON))
@@ -3143,7 +3143,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 <LI><a href="#[2f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_brightness_max
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
+<BR>[Called By]<UL><LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
 </UL>
 
 <P><STRONG><a name="[2fc]"></a>I2C_debug_blue_off</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, i2c.o(i.I2C_debug_blue_off))
@@ -3151,8 +3151,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
-<LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_command
+<BR>[Called By]<UL><LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
+<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_command
 </UL>
 
 <P><STRONG><a name="[2fd]"></a>I2C_debug_blue_on</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, i2c.o(i.I2C_debug_blue_on))
@@ -3160,7 +3160,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
+<BR>[Called By]<UL><LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
 </UL>
 
 <P><STRONG><a name="[2fe]"></a>I2C_debug_green_off</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, i2c.o(i.I2C_debug_green_off))
@@ -3168,7 +3168,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
+<BR>[Called By]<UL><LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
 </UL>
 
 <P><STRONG><a name="[2ff]"></a>I2C_debug_red_off</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, i2c.o(i.I2C_debug_red_off))
@@ -3176,25 +3176,25 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
+<BR>[Called By]<UL><LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
 </UL>
 
-<P><STRONG><a name="[300]"></a>I2C_getPointers</STRONG> (Thumb, 150 bytes, Stack size 40 bytes, i2c.o(i.I2C_getPointers))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = I2C_getPointers &rArr; I2C_save_defPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
+<P><STRONG><a name="[300]"></a>I2C_getPointers</STRONG> (Thumb, 172 bytes, Stack size 40 bytes, i2c.o(i.I2C_getPointers))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = I2C_getPointers &rArr; I2C_save_defPointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
 <LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_defPointers
-<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
-<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
+<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Traction
+<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_RpmLimiter
 <LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_skiPointers
 <LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_endPointers
 <LI><a href="#[306]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_defPointers
 <LI><a href="#[303]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_autPointers
 <LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_accPointers
+<LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_Traction
+<LI><a href="#[248]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_get_RpmLimiter
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -3204,7 +3204,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
+<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
 </UL>
 
 <P><STRONG><a name="[247]"></a>I2C_get_Traction</STRONG> (Thumb, 52 bytes, Stack size 32 bytes, i2c.o(i.I2C_get_Traction))
@@ -3212,7 +3213,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
+<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
 </UL>
 
 <P><STRONG><a name="[302]"></a>I2C_get_accPointers</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, i2c.o(i.I2C_get_accPointers))
@@ -3255,16 +3257,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 </UL>
 
-<P><STRONG><a name="[30b]"></a>I2C_rpm_command</STRONG> (Thumb, 480 bytes, Stack size 32 bytes, i2c.o(i.I2C_rpm_command))
+<P><STRONG><a name="[309]"></a>I2C_rpm_command</STRONG> (Thumb, 480 bytes, Stack size 32 bytes, i2c.o(i.I2C_rpm_command))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = I2C_rpm_command &rArr; I2C_debug_blue_off &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
 <LI><a href="#[2fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_debug_blue_off
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
+<BR>[Called By]<UL><LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
 </UL>
 
-<P><STRONG><a name="[30c]"></a>I2C_rpm_flash</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, i2c.o(i.I2C_rpm_flash))
+<P><STRONG><a name="[30a]"></a>I2C_rpm_flash</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, i2c.o(i.I2C_rpm_flash))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = I2C_rpm_flash &rArr; I2C_debug_red_off &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_debug_red_off
@@ -3272,24 +3274,24 @@ Global Symbols
 <LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_debug_blue_on
 <LI><a href="#[2fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_debug_blue_off
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
+<BR>[Called By]<UL><LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
 </UL>
 
-<P><STRONG><a name="[30d]"></a>I2C_rpm_setup</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, i2c.o(i.I2C_rpm_setup))
+<P><STRONG><a name="[30b]"></a>I2C_rpm_setup</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, i2c.o(i.I2C_rpm_setup))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = I2C_rpm_setup &rArr; I2C_controller_1_ON &rArr; I2C_brightness_max &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_controller_1_ON
+<BR>[Calls]<UL><LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_controller_1_ON
 <LI><a href="#[2fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_controller_0_ON
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[30f]"></a>I2C_rpm_update</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, i2c.o(i.I2C_rpm_update))
+<P><STRONG><a name="[30d]"></a>I2C_rpm_update</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, i2c.o(i.I2C_rpm_update))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = I2C_rpm_update &rArr; I2C_rpm_command &rArr; I2C_debug_blue_off &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
-<LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_command
+<BR>[Calls]<UL><LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_flash
+<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_command
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rpmStripeTask
 </UL>
@@ -3297,80 +3299,86 @@ Global Symbols
 <P><STRONG><a name="[23f]"></a>I2C_save_Pointers</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, i2c.o(i.I2C_save_Pointers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2C_save_Pointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
-<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
-<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
+<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
+<LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
+<LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
 </UL>
-<BR>[Called By]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_neutralButton_handle
+<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modeSelectorTask
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_neutralButton_handle
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_aux2Button_handle
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modeSelectorTask
 </UL>
 
-<P><STRONG><a name="[310]"></a>I2C_save_RpmLimiter</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_RpmLimiter))
+<P><STRONG><a name="[307]"></a>I2C_save_RpmLimiter</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_RpmLimiter))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2C_save_RpmLimiter &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 </UL>
 
-<P><STRONG><a name="[311]"></a>I2C_save_Traction</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_Traction))
+<P><STRONG><a name="[308]"></a>I2C_save_Traction</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_Traction))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2C_save_Traction &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 </UL>
 
-<P><STRONG><a name="[307]"></a>I2C_save_accPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_accPointers))
+<P><STRONG><a name="[30f]"></a>I2C_save_accPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_accPointers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2C_save_accPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_defPointers
 <LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
-<P><STRONG><a name="[309]"></a>I2C_save_autPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_autPointers))
+<P><STRONG><a name="[311]"></a>I2C_save_autPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_autPointers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2C_save_autPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_defPointers
 <LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
-<P><STRONG><a name="[305]"></a>I2C_save_defPointers</STRONG> (Thumb, 114 bytes, Stack size 40 bytes, i2c.o(i.I2C_save_defPointers))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = I2C_save_defPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
+<P><STRONG><a name="[305]"></a>I2C_save_defPointers</STRONG> (Thumb, 228 bytes, Stack size 56 bytes, i2c.o(i.I2C_save_defPointers))
+<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = I2C_save_defPointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_skiPointers
+<LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_endPointers
+<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_autPointers
+<LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_accPointers
 </UL>
 <BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 </UL>
 
-<P><STRONG><a name="[308]"></a>I2C_save_endPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_endPointers))
+<P><STRONG><a name="[310]"></a>I2C_save_endPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_endPointers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2C_save_endPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_defPointers
 <LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
-<P><STRONG><a name="[30a]"></a>I2C_save_skiPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_skiPointers))
+<P><STRONG><a name="[30e]"></a>I2C_save_skiPointers</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, i2c.o(i.I2C_save_skiPointers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
+<BR>[Called By]<UL><LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_defPointers
 <LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
 </UL>
 
@@ -3448,7 +3456,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -3457,10 +3465,10 @@ Global Symbols
 <P><STRONG><a name="[31d]"></a>MX_I2C1_Init</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, i2c.o(i.MX_I2C1_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = MX_I2C1_Init &rArr; HAL_I2C_Init &rArr; HAL_I2C_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
+<BR>[Calls]<UL><LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
 <LI><a href="#[31f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2CEx_ConfigDigitalFilter
 <LI><a href="#[31e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2CEx_ConfigAnalogFilter
+<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -3477,8 +3485,8 @@ Global Symbols
 <P><STRONG><a name="[321]"></a>MX_SPI1_Init</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, spi.o(i.MX_SPI1_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = MX_SPI1_Init &rArr; HAL_SPI_Init &rArr; HAL_SPI_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<BR>[Calls]<UL><LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -3486,11 +3494,11 @@ Global Symbols
 <P><STRONG><a name="[322]"></a>MX_TIM12_Init</STRONG> (Thumb, 124 bytes, Stack size 56 bytes, tim.o(i.MX_TIM12_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = MX_TIM12_Init &rArr; HAL_TIM_MspPostInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[2e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<BR>[Calls]<UL><LI><a href="#[2e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
 <LI><a href="#[2d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
 <LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[2dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 <LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
@@ -3500,10 +3508,10 @@ Global Symbols
 <P><STRONG><a name="[323]"></a>MX_TIM4_Init</STRONG> (Thumb, 104 bytes, Stack size 48 bytes, tim.o(i.MX_TIM4_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = MX_TIM4_Init &rArr; HAL_TIM_MspPostInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[2e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<BR>[Calls]<UL><LI><a href="#[2e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
 <LI><a href="#[324]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
 <LI><a href="#[2dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 <LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
@@ -3513,9 +3521,9 @@ Global Symbols
 <P><STRONG><a name="[325]"></a>MX_TIM7_Init</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, tim.o(i.MX_TIM7_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = MX_TIM7_Init &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
+<BR>[Calls]<UL><LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[324]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
+<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -3552,8 +3560,8 @@ Global Symbols
 <P><STRONG><a name="[32b]"></a>SPI_brightness</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, spi.o(i.SPI_brightness))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_brightness &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3561,8 +3569,8 @@ Global Symbols
 <P><STRONG><a name="[32c]"></a>SPI_colmod</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, spi.o(i.SPI_colmod))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_colmod &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3570,8 +3578,8 @@ Global Symbols
 <P><STRONG><a name="[32d]"></a>SPI_display_ON</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, spi.o(i.SPI_display_ON))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_display_ON &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3579,8 +3587,8 @@ Global Symbols
 <P><STRONG><a name="[32e]"></a>SPI_flip_horizontal</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, spi.o(i.SPI_flip_horizontal))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_flip_horizontal &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3588,8 +3596,8 @@ Global Symbols
 <P><STRONG><a name="[32f]"></a>SPI_invert_colors</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, spi.o(i.SPI_invert_colors))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_invert_colors &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3597,8 +3605,7 @@ Global Symbols
 <P><STRONG><a name="[330]"></a>SPI_ltdc_init_sequence</STRONG> (Thumb, 188 bytes, Stack size 24 bytes, spi.o(i.SPI_ltdc_init_sequence))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = SPI_ltdc_init_sequence &rArr; SPI_setGAMMA &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_sleep_out
+<BR>[Calls]<UL><LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_sleep_out
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_setRGBIF
 <LI><a href="#[333]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_setPANEL
 <LI><a href="#[334]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_setGAMMA
@@ -3609,6 +3616,7 @@ Global Symbols
 <LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_colmod
 <LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_brightness
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -3616,8 +3624,8 @@ Global Symbols
 <P><STRONG><a name="[331]"></a>SPI_setEXTC</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, spi.o(i.SPI_setEXTC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = SPI_setEXTC &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3625,8 +3633,8 @@ Global Symbols
 <P><STRONG><a name="[334]"></a>SPI_setGAMMA</STRONG> (Thumb, 312 bytes, Stack size 40 bytes, spi.o(i.SPI_setGAMMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = SPI_setGAMMA &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3634,8 +3642,8 @@ Global Symbols
 <P><STRONG><a name="[333]"></a>SPI_setPANEL</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, spi.o(i.SPI_setPANEL))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_setPANEL &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3643,8 +3651,8 @@ Global Symbols
 <P><STRONG><a name="[332]"></a>SPI_setRGBIF</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, spi.o(i.SPI_setRGBIF))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_setRGBIF &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3652,8 +3660,8 @@ Global Symbols
 <P><STRONG><a name="[335]"></a>SPI_sleep_out</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, spi.o(i.SPI_sleep_out))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_sleep_out &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ltdc_init_sequence
 </UL>
@@ -3765,12 +3773,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
 <LI><a href="#[33c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_efiOff
-<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
-<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
 <LI><a href="#[33b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_tractionRpm_send
-<LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Traction
-<LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_RpmLimiter
+<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Traction
+<LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_RpmLimiter
+<LI><a href="#[2e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
+<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
@@ -4034,8 +4042,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[8c]"></a>STM32F7HAL::~STM32F7HAL()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
-<LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<BR>[Address Reference Count : 2]<UL><LI> boardconfiguration.o(t._ZN8touchgfx21touchgfx_generic_initI10STM32F7HALEERNS_3HALERNS_13DMA_InterfaceERNS_3LCDERNS_15TouchControllerEssPtjj)
+<LI> stm32f7hal.o(.constdata__ZTV10STM32F7HAL)
 </UL>
 <P><STRONG><a name="[4c7]"></a>STM32F7HAL::~STM32F7HAL__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, boardconfiguration.o(i._ZN10STM32F7HALD1Ev), UNUSED)
 
@@ -6391,10 +6399,10 @@ Global Symbols
 <P><STRONG><a name="[1b7]"></a>touchgfx::STM32F7Instrumentation::init()</STRONG> (Thumb, 100 bytes, Stack size 40 bytes, stm32f7instrumentation.o(i._ZN8touchgfx22STM32F7Instrumentation4initEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = touchgfx::STM32F7Instrumentation::init() &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
+<BR>[Calls]<UL><LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 <LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetClockConfig
+<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[3d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
 <LI><a href="#[3d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 </UL>
@@ -9064,10 +9072,10 @@ Global Symbols
 <P><STRONG><a name="[9b]"></a>aux1ButtonTask</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, freertos.o(i.aux1ButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = aux1ButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_aux1Button_handle
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_aux1Button_handle
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9082,10 +9090,10 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>aux2ButtonTask</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, freertos.o(i.aux2ButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = aux2ButtonTask &rArr; GPIO_aux2Button_handle &rArr; I2C_save_Pointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_aux2Button_handle
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_aux2Button_handle
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9117,9 +9125,9 @@ Global Symbols
 <P><STRONG><a name="[91]"></a>canTask</STRONG> (Thumb, 62 bytes, Stack size 40 bytes, freertos.o(i.canTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = canTask &rArr; CAN_receive &rArr; dEfiSense_calculateVoltage &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9332,10 +9340,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = downShiftTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[461]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_downShift
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9356,8 +9364,8 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>ledBlinkTask</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, freertos.o(i.ledBlinkTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = ledBlinkTask &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
-<LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<BR>[Calls]<UL><LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9365,13 +9373,13 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = leftEncoderTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;d_traction_control_setValue
+<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[46a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_leftEncoder_settingsMode
 <LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_leftEncoder_movement
 <LI><a href="#[469]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_leftEncoder_debugMode
 <LI><a href="#[468]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_leftEncoder_boardDebugMode
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9396,7 +9404,7 @@ Global Symbols
 <LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_CRC_Init
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_CAN1_Init
 <LI><a href="#[312]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_ADC1_Init
-<LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
+<LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
 <LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
@@ -9415,41 +9423,41 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>mapSelectorTask</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, freertos.o(i.mapSelectorTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = mapSelectorTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_engineMap_set
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_engineMap_set
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[94]"></a>modeSelectorTask</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, freertos.o(i.modeSelectorTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = modeSelectorTask &rArr; I2C_save_Pointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
-<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_driveMode_set
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_save_Pointers
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_driveMode_set
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[99]"></a>neutralButtonTask</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, freertos.o(i.neutralButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = neutralButtonTask &rArr; GPIO_neutralButton_handle &rArr; I2C_save_Pointers &rArr; I2C_save_skiPointers &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_neutralButton_handle
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_neutralButton_handle
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[9a]"></a>okButtonTask</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, freertos.o(i.okButtonTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = okButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_okButton_handle
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_okButton_handle
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9549,13 +9557,13 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = rightEncoderTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[48d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;d_rpm_limiter_setValue
+<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[490]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_rightEncoder_settingsMode
 <LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_rightEncoder_movement
 <LI><a href="#[48f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_rightEncoder_debugMode
 <LI><a href="#[48e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_rightEncoder_boardDebugMode
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9564,7 +9572,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
+<LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_update
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9573,9 +9581,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[464]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Sensors_send
 <LI><a href="#[463]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dSensors_Clutch_send
-<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_read
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_read
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9599,9 +9607,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = startButtonTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9609,10 +9617,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = upShiftTask &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[462]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_upShift
-<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -9720,8 +9728,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[494]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortGetIPSR
 </UL>
-<BR>[Called By]<UL><LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
-<LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
+<BR>[Called By]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
+<LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 </UL>
 
 <P><STRONG><a name="[460]"></a>vTaskDelay</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, tasks.o(i.vTaskDelay))
@@ -9857,8 +9865,7 @@ Global Symbols
 <LI><a href="#[477]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[475]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
+<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upShiftTask
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startButtonTask
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skidpadModeTask
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;settingsModeTask
@@ -9883,6 +9890,7 @@ Global Symbols
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;aux1ButtonTask
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;autocrossModeTask
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accelerationModeTask
+<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FREERTOS_Init
 <LI><a href="#[3a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::tryTakeFrameBufferSemaphore()
 <LI><a href="#[3a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::takeFrameBufferSemaphore()
 <LI><a href="#[3a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::waitForVSync()
@@ -9936,12 +9944,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[487]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 <LI><a href="#[493]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortValidateInterruptPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
-<LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
+<BR>[Called By]<UL><LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI3_IRQHandler
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI2_IRQHandler
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
+<LI><a href="#[2ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_callback
 <LI><a href="#[3a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::giveFrameBufferSemaphoreFromISR()
 </UL>
 
@@ -9999,9 +10007,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[472]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 <LI><a href="#[471]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
-<LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
+<BR>[Called By]<UL><LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 <LI><a href="#[3a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[49b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 <LI><a href="#[486]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
