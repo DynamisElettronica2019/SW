@@ -36,8 +36,8 @@ protected:
     touchgfx::BoxWithBorder boxIndicator5;
     touchgfx::BoxWithBorder boxIndicator6;
     touchgfx::BoxWithBorder boxIndicatorGear;
-    touchgfx::BoxWithBorder boxIndicatorTc;
     touchgfx::BoxWithBorder boxIndicatorMap;
+    touchgfx::BoxWithBorder boxIndicatorTc;
     touchgfx::TextAreaWithOneWildcard textIndTitle1;
     touchgfx::TextAreaWithOneWildcard textIndTitle2;
     touchgfx::TextAreaWithOneWildcard textIndTitle3;
@@ -50,10 +50,10 @@ protected:
     touchgfx::TextAreaWithOneWildcard textIndValue4;
     touchgfx::TextAreaWithOneWildcard textIndValue5;
     touchgfx::TextAreaWithOneWildcard textIndValue6;
-    touchgfx::TextArea TEXTIndTc;
     touchgfx::TextArea TEXTIndMap;
-    touchgfx::TextAreaWithOneWildcard textIndTcValue;
+    touchgfx::TextArea TEXTIndTc;
     touchgfx::TextAreaWithOneWildcard textIndMapValue;
+    touchgfx::TextAreaWithOneWildcard textIndTcValue;
     touchgfx::TextArea TEXTIndAcquisition;
     touchgfx::Box boxAcquisition;
     touchgfx::TextAreaWithOneWildcard textIndAcquisitionValue;
@@ -96,10 +96,10 @@ protected:
     touchgfx::Unicode::UnicodeChar textIndValue5Buffer[TEXTINDVALUE5_SIZE];
     static const uint16_t TEXTINDVALUE6_SIZE = 6;
     touchgfx::Unicode::UnicodeChar textIndValue6Buffer[TEXTINDVALUE6_SIZE];
-    static const uint16_t TEXTINDTCVALUE_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar textIndTcValueBuffer[TEXTINDTCVALUE_SIZE];
     static const uint16_t TEXTINDMAPVALUE_SIZE = 3;
     touchgfx::Unicode::UnicodeChar textIndMapValueBuffer[TEXTINDMAPVALUE_SIZE];
+    static const uint16_t TEXTINDTCVALUE_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar textIndTcValueBuffer[TEXTINDTCVALUE_SIZE];
     static const uint16_t TEXTINDACQUISITIONVALUE_SIZE = 5;
     touchgfx::Unicode::UnicodeChar textIndAcquisitionValueBuffer[TEXTINDACQUISITIONVALUE_SIZE];
     static const uint16_t TEXTINDGEARVALUE_SIZE = 3;

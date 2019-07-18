@@ -750,7 +750,7 @@ void leftEncoderTask(void const * argument)
 				d_traction_control_setValue(movement);
 				break;
 			case SKIDPAD_MODE:
-				dSensors_setClutchTarget(-movement);
+				d_traction_control_setValue(movement);
 			case BOARD_DEBUG_MODE:
 				GPIO_leftEncoder_boardDebugMode(movement);
 				break;		
@@ -1118,12 +1118,12 @@ void skidpadModeTask(void const * argument)
 			case SKIDPAD_MODE_FEEDBACK:
 				state = SKIDPAD_MODE_DEFAULT;
 				break;
-			case SKIDPAD_SEND_100_STATE:
-				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, 100, driveMode, engineMap, EMPTY, 3);
-				break;
-			case SKIDPAD_SEND_TRGT_VALUE:
-				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, Indicators[CLUTCH_TRGT].intValore, driveMode, engineMap, EMPTY, 3);
-				break;
+//			case SKIDPAD_SEND_100_STATE:
+//				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, 100, driveMode, engineMap, EMPTY, 3);
+//				break;
+//			case SKIDPAD_SEND_TRGT_VALUE:
+//				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, Indicators[CLUTCH_TRGT].intValore, driveMode, engineMap, EMPTY, 3);
+//				break;
 			case SKIDPAD_MODE_DEFAULT:
 				break;
 		}

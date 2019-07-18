@@ -636,14 +636,14 @@ void GPIO_okButton_handle(void)
 			}
 		}
 		
-		if( driveMode == SKIDPAD_MODE ){
-			if( buttonPressed == 0 ){
-				state = SKIDPAD_SEND_100_STATE;
-			}
-			else if( buttonPressed == 1 ){
-				state = SKIDPAD_SEND_TRGT_VALUE;
-			}
-		}
+//		if( driveMode == SKIDPAD_MODE ){
+//			if( buttonPressed == 0 ){
+//				state = SKIDPAD_SEND_100_STATE;
+//			}
+//			else if( buttonPressed == 1 ){
+//				state = SKIDPAD_SEND_TRGT_VALUE;
+//			}
+//		}
 		
 }
 

@@ -142,7 +142,7 @@ void SKIDPADView::refreshSkidpad()
 	touchgfx::Unicode::strncpy( Gear, Indicators[GEAR].charValore, 3);		//-- Nello switch case del CAN si mette il carattere (N,1,2,..) con il 
 																																							//-- comando strcpy altrimenti si hanno problemi di allocazione di memoria
 	Unicode::snprintf(textIndGearValueBuffer, TEXTINDGEARVALUE_SIZE, "%s", Gear);
-	Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%d", Indicators[CLUTCH_TRGT].intValore);
+	Unicode::snprintf(textIndTcValueBuffer, TEXTINDTCVALUE_SIZE, "%d", Indicators[TRACTION_CONTROL].intValore);
 	Unicode::snprintf(textIndMapValueBuffer, TEXTINDMAPVALUE_SIZE, "%d", Indicators[MAP].intValore);
 
 		
