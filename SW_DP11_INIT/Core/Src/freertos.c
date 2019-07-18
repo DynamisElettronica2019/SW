@@ -872,7 +872,10 @@ void okButtonTask(void const * argument)
 		xSemaphoreTake(okButtonSemaphoreHandle, portMAX_DELAY);
 		//vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_okButton_handle();
-		vTaskDelay(5/portTICK_PERIOD_MS); // abbaassato a 5ms perchè altrimenti non funzionerebbe il polling in autocross
+		if( Indicators[DRIVE_MODE].intValore == AUTOX_MODE )
+			vTaskDelay(5/portTICK_PERIOD_MS); // abbaassato a 5ms perchè altrimenti non funzionerebbe il polling in autocross
+		else
+			vTaskDelay(200/portTICK_PERIOD_MS); // abbaassato a 5ms perchè altrimenti non funzionerebbe il polling in autocross
 		okButtonPressed = 0;
     osDelay(1);
   }
