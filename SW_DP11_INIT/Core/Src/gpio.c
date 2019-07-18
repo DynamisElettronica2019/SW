@@ -635,7 +635,7 @@ void GPIO_okButton_handle(void)
 				CAN_send(SW_IMU_CALIBRATION_ID, Indicators[SEL_IMU].intValore, currentImuCalibration, EMPTY, EMPTY, 2);	
 			}
 		}
-		
+//		
 //		if( driveMode == SKIDPAD_MODE ){
 //			if( buttonPressed == 0 ){
 //				state = SKIDPAD_SEND_100_STATE;
