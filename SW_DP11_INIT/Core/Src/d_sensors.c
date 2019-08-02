@@ -40,7 +40,11 @@ void dSensors_Sensors_send(void)	{
 }
 
 void dSensors_CLUTCH(int clutchAnalog){
-
+	
+	//---------- Modifica per secondo volante --------
+	clutchAnalog = (clutchAnalog - CLUTCH_OFFSET) * ( CLUTCH_MAX_VALUE / (CLUTCH_MAX_VALUE - CLUTCH_OFFSET) );	
+	//------------------------------------------------
+	
 	if (clutchAnalog >= CLUTCH_MAX_VALUE)
 		clutchOld= CLUTCH_MAX_VALUE;
 	else if (clutchAnalog <= CLUTCH_MIN_VALUE)

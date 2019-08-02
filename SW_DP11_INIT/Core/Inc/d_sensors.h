@@ -10,8 +10,9 @@ extern "C" {
 #include "adc.h"
 #include "data.h"
 	
-#define CLUTCH_MAX_VALUE 4050
-#define CLUTCH_MIN_VALUE 0
+#define CLUTCH_MAX_VALUE 	4050
+#define CLUTCH_MIN_VALUE 	0
+#define CLUTCH_OFFSET 		530
 	
 #define ADC_LSB 											(3.3f/4095.0f)
 #define INA_GAIN 											(uint8_t)100
