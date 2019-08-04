@@ -672,7 +672,13 @@ void GPIO_aux1Button_handle(void)
 	else if (( Indicators[ACQ].intValore == ACQ_OFF || Indicators[ACQ].intValore == ACQ_READY ) && driveMode != SETTINGS_MODE) {
 		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
 		//Indicators[ACQ].intValore = ACQ_ON;
-	} 
+	} 	
+	else if ( driveMode == SETTINGS_MODE && schermata_settings == 0 ) {
+		if( Indicators[SEL_SW].intValore == 1 ) 
+			Indicators[SEL_SW].intValore = 2;
+		else if ( Indicators[SEL_SW].intValore == 2 ) 
+			Indicators[SEL_SW].intValore = 1;
+	}
 	else if ( driveMode == SETTINGS_MODE && schermata_settings == 1 ) {
 		flag_defaultIndicators = 1;
 	}

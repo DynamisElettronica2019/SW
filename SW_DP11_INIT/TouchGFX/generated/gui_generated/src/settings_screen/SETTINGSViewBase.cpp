@@ -422,6 +422,24 @@ SETTINGSViewBase::SETTINGSViewBase()
     textDCUdead.setLinespacing(0);
     textDCUdead.setTypedText(TypedText(T_SINGLEUSEID375));
 
+    boxSW.setPosition(537, 387, 93, 84);
+    boxSW.setColor(touchgfx::Color::getColorFrom24BitRGB(9, 0, 140));
+    boxSW.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    boxSW.setBorderSize(5);
+
+    textSW.setPosition(554, 393, 61, 26);
+    textSW.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textSW.setLinespacing(0);
+    textSW.setTypedText(TypedText(T_SINGLEUSEID451));
+
+    textSWnumber.setXY(571, 419);
+    textSWnumber.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textSWnumber.setLinespacing(0);
+    Unicode::snprintf(textSWnumberBuffer, TEXTSWNUMBER_SIZE, "%s", TypedText(T_SINGLEUSEID453).getText());
+    textSWnumber.setWildcard(textSWnumberBuffer);
+    textSWnumber.resizeToCurrentText();
+    textSWnumber.setTypedText(TypedText(T_SINGLEUSEID452));
+
     add(background);
     add(boxIndSelected);
     add(boxIndicator1);
@@ -487,6 +505,9 @@ SETTINGSViewBase::SETTINGSViewBase()
     add(textCALIBRATION);
     add(boxDCUdead);
     add(textDCUdead);
+    add(boxSW);
+    add(textSW);
+    add(textSWnumber);
 }
 
 void SETTINGSViewBase::setupScreen()

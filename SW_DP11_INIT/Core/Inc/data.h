@@ -10,7 +10,7 @@
 	 
 /********************DEFINES********************/
 	 
-#define N_INDICATORS 75//------------- Da decidere quali indicatori utilizzare
+#define N_INDICATORS 80//------------- Da decidere quali indicatori utilizzare
 #define TIT_LEN 11				//------------- Lunghezza massima della stringa va visualizzare come titolo
 	 	 
 #define N_DEBUG_MODE_VALUES 8	//--- numero di indicatori nella schermata di DEBUG_MODE
@@ -64,7 +64,7 @@ typedef enum {
         EFI_SLIP, EFI_SLIP_TARGET, RPM_LIM, FUEL_LEVEL,
         FUEL_PRESS, PH2O, MAP, VH_SPEED,  MAN_LIM_ACT,
 				FAN, H2OPUMP_DC, PIT_LANE_ACT, FLAG_SMOT, LAMBDA,  BPS_R, BPS_F,CLUTCH_TRGT,
-				DRIVE_MODE,SEL_IMU,IMU1_INFO,IMU2_INFO,
+				DRIVE_MODE,SEL_IMU,SEL_SW,IMU1_INFO,IMU2_INFO,
         /* boards */
         GCU_BOARD, SW_BOARD, DCU_BOARD,
         DAU_FL_BOARD, DAU_FR_BOARD, DAU_R_BOARD,

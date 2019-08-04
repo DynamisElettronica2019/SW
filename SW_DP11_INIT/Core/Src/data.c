@@ -71,6 +71,7 @@ void data_indicatorsInit(void)
 		Indicators[RPM] 							= (Indicator_Value) {RPM, INT, "RPM", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		
 		Indicators[RPM_LIM] 					= (Indicator_Value) {RPM_LIM, INT, "RPM_LIM", 65, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[SEL_IMU] 					= (Indicator_Value) {SEL_IMU, INT, "SEL_IMU", 1, DEF_VALUE, DEF_VALUE,"?"};
+		Indicators[SEL_SW] 						= (Indicator_Value) {SEL_SW, INT, "SEL_SW", 1, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[SW_BOARD] 					= (Indicator_Value) {SW_BOARD, FLOAT, "SW", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};
 		Indicators[TH2O] 							= (Indicator_Value) {TH2O, FLOAT, "TH2O", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};	
 		Indicators[TH2O_DX_IN] 				= (Indicator_Value) {TH2O_DX_IN, FLOAT, "TH_DX_IN", DEF_VALUE, DEF_VALUE, DEF_VALUE,"?"};		

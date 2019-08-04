@@ -864,7 +864,7 @@
             "Name": "TEXTEnduranceEntry",
             "X": 78,
             "Y": 283,
-            "Width": 460,
+            "Width": 461,
             "Height": 96,
             "Type": "TextArea",
             "Visible": true,
@@ -912,7 +912,7 @@
             "Name": "textDCUdead",
             "X": 87,
             "Y": 189,
-            "Width": 484,
+            "Width": 483,
             "Height": 120,
             "Type": "TextArea",
             "Visible": false,
@@ -6069,6 +6069,82 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 9,
+              "Green": 0,
+              "Blue": 140
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 5,
+            "Alpha": 255,
+            "Name": "boxSW",
+            "X": 537,
+            "Y": 387,
+            "Width": 93,
+            "Height": 84,
+            "Type": "BoxWithBorder",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId451",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textSW",
+            "X": 554,
+            "Y": 393,
+            "Width": 61,
+            "Height": 26,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId452",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId453",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textSWnumber",
+            "X": 571,
+            "Y": 419,
+            "Width": 24,
+            "Height": 54,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -11085,6 +11161,18 @@
       },
       {
         "TextEntryId": "SingleUseId450",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId451",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId452",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId453",
         "IsResource": false
       }
     ],

@@ -68,7 +68,10 @@ void SETTINGSView::refreshSettings()
 				changeSchermata2(false);
 				changeSchermata3(false);
 			}
-			//	SETTINGSView::changeDisplay();		
+			
+			Unicode::snprintf(textSWnumberBuffer, TEXTSWNUMBER_SIZE, "%d", Indicators[SEL_SW].intValore);
+			textSWnumber.invalidate();
+			
 			boxModeSelected.setVisible(false);
 			boxModeSelected.invalidate();
 			boxModeSelected.setPosition(15, 23 + (90*box_driveMode), 476, 75);

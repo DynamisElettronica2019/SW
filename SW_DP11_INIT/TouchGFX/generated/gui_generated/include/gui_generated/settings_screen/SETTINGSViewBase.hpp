@@ -93,6 +93,9 @@ protected:
     touchgfx::TextArea textCALIBRATION;
     touchgfx::BoxWithBorder boxDCUdead;
     touchgfx::TextArea textDCUdead;
+    touchgfx::BoxWithBorder boxSW;
+    touchgfx::TextArea textSW;
+    touchgfx::TextAreaWithOneWildcard textSWnumber;
 
     /*
      * Wildcard Buffers
@@ -135,6 +138,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textValue4Buffer[TEXTVALUE4_SIZE];
     static const uint16_t TEXTDONE_SIZE = 20;
     touchgfx::Unicode::UnicodeChar textDONEBuffer[TEXTDONE_SIZE];
+    static const uint16_t TEXTSWNUMBER_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSWnumberBuffer[TEXTSWNUMBER_SIZE];
 
 private:
 
