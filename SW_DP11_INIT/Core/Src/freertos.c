@@ -100,6 +100,8 @@ int timerTempCurr = 0;
 int okButtonPressed = 0;
 int AutoxTarget = 0;
 
+extern int temp_stato;
+
 extern BaseType_t xHigherPriorityTaskWoken;
 
 extern Indicator_Value Indicators[N_INDICATORS];
@@ -1057,6 +1059,7 @@ void autocrossModeTask(void const * argument)
 				break;
 			case AUTOX_MODE_FEEDBACK:
 				state = AUTOX_MODE_DEFAULT;
+				temp_stato = 0;
 				break;
 			case AUTOX_MODE_READY:
 				// stampa a schermo mex READY ?

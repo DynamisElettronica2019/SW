@@ -33,27 +33,27 @@
 	
 /********************* STATES *********************/
 
-#define AUTOX_MODE_DEFAULT							0
-#define AUTOX_MODE_FEEDBACK							1
-#define AUTOX_MODE_START								2
-#define AUTOX_MODE_READY								3
-#define AUTOX_MODE_GO 									5
+#define AUTOX_MODE_DEFAULT							20
+#define AUTOX_MODE_FEEDBACK							21
+#define AUTOX_MODE_START								22
+#define AUTOX_MODE_READY								23
+#define AUTOX_MODE_GO 									25
 
-#define ACCELERATION_MODE_DEFAULT				0
-#define ACCELERATION_MODE_FEEDBACK	 	  1
-#define ACCELERATION_MODE_START					2
-#define ACCELERATION_MODE_READY					3
-#define ACCELERATION_MODE_GO 						5
+#define ACCELERATION_MODE_DEFAULT				10
+#define ACCELERATION_MODE_FEEDBACK	 	  11
+#define ACCELERATION_MODE_START					12
+#define ACCELERATION_MODE_READY					13
+#define ACCELERATION_MODE_GO 						15
 
 #define ENDURANCE_MODE_DEFAULT					0
 #define ENDURANCE_MODE_FEEDBACK					1
 #define ENDURANCE_MODE_START						2
 
-#define SKIDPAD_MODE_DEFAULT						0
-#define SKIDPAD_MODE_FEEDBACK						1
-#define SKIDPAD_MODE_START							2
-#define SKIDPAD_SEND_TRGT_VALUE 				3
-#define SKIDPAD_SEND_100_STATE					4
+#define SKIDPAD_MODE_DEFAULT						30
+#define SKIDPAD_MODE_FEEDBACK						31
+#define SKIDPAD_MODE_START							32
+#define SKIDPAD_SEND_TRGT_VALUE 				33
+#define SKIDPAD_SEND_100_STATE					34
 
 #define DEBUG_MODE_DEFAULT							0
 

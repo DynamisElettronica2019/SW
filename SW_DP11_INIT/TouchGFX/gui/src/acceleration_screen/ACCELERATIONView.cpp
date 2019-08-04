@@ -310,12 +310,6 @@ void ACCELERATIONView::screenCheckMessage()
 	background.invalidate();
 }
 
-//	if (((Indicators[H2OPUMP_DC].intValore < EMERGENCY_DC_H2O && Indicators[VH_SPEED].floatValore > EMERGENCY_VH_SPEED) ||
-//				Indicators[OIL_PRESS].floatValore < EMERGENCY_P_OIL || Indicators[OIL_TEMP_IN].floatValore > EMERGENCY_T_OIL || 
-//				Indicators[PH2O].floatValore > EMERGENCY_P_H2O || Indicators[TH2O].floatValore > EMERGENCY_T_H2O || 
-//				Indicators[FUEL_LEVEL].floatValore < EMERGENCY_L_FUEL || Indicators[FUEL_PRESS].floatValore < EMERGENCY_P_FUEL ||
-//				Indicators[VBAT].floatValore > EMERGENCY_V_BAT) && emergencyFlag == 0
-
 void ACCELERATIONView::checkEmergency()
 {
 	switch (AccPointer[0]){
@@ -764,7 +758,8 @@ void ACCELERATIONView::checkEmergency()
 	}
 }
 
-void ACCELERATIONView::checkFuelIndicator(){
+void ACCELERATIONView::checkFuelIndicator()
+{
 	if ( Indicators[AccPointer[0]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn){
 		textIndTitle1.setVisible(false);
 		textIndValue1.setVisible(false);

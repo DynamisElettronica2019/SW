@@ -759,7 +759,8 @@ void AUTOCROSSView::checkEmergency()
 	}
 }
 
-void AUTOCROSSView::checkFuelIndicator(){
+void AUTOCROSSView::checkFuelIndicator()
+{
 	if ( Indicators[AutPointer[0]].ID == FUEL_LEVEL && Indicators[VH_SPEED].floatValore > VH_SPEED_MIN && flagEngineOn){
 		textIndTitle1.setVisible(false);
 		textIndValue1.setVisible(false);
