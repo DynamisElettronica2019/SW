@@ -873,9 +873,9 @@ void okButtonTask(void const * argument)
 		//vTaskDelay(50/portTICK_PERIOD_MS);
 		GPIO_okButton_handle();
 		if( Indicators[DRIVE_MODE].intValore == AUTOX_MODE )
-			vTaskDelay(5/portTICK_PERIOD_MS); // abbaassato a 5ms perchè altrimenti non funzionerebbe il polling in autocross
+			vTaskDelay(5/portTICK_PERIOD_MS); // abbassato a 5ms perchè altrimenti non funzionerebbe il polling in autocross
 		else
-			vTaskDelay(200/portTICK_PERIOD_MS); // abbaassato a 5ms perchè altrimenti non funzionerebbe il polling in autocross
+			vTaskDelay(200/portTICK_PERIOD_MS); 
 		okButtonPressed = 0;
     osDelay(1);
   }

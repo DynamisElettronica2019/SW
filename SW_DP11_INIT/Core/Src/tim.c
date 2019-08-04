@@ -85,6 +85,7 @@ int timerTractionSave = 0;
 int timerRpmLimiterSave  = 0;
 int timerEmergency = 0;
 int timerFlash = 0;
+int timerOkButtonDelay = 0;
 
 int flag_flash = 1;
 int emergencyFlag = 0;
@@ -94,6 +95,7 @@ int DCU_is_dead = 0;
 int DCU_was_not_dead = 0;
 int	TRACTION_save = 0;
 int RPM_LIM_save 	= 0;
+int okButtonCanBePressed = 0;
 			
 int flagAutoX = 1;
 
@@ -404,6 +406,7 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerEfiAlive = timerEfiAlive + 1;
 		timerDCUAlive = timerDCUAlive + 1;
 		timerGCUAlive = timerGCUAlive + 1;
+		timerOkButtonDelay = timerOkButtonDelay + 1;
 		
 		if ( emergencyFlag == 1 ){
 			timerEmergency = timerEmergency + 1;
@@ -468,7 +471,9 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 			TIM_tractionRpm_send();
 			timerTractionRpm = 0;
 		}
-		
+		if ( timerOkButtonDelay >= OK_BUTTON_BOUNCE_TIME ){
+			okButtonCanBePressed = 1;
+		}
 		if ( timerEfiAlive >= EFI_DEAD_TIME ){
 			 data_efiOff();
 			 timerEfiAlive = 0;

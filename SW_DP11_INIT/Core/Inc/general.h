@@ -104,6 +104,7 @@
 #define TRACTION_SAVE_TIME							5000  // 0.2  Hz (5s)
 #define RPM_LIM_SAVE_TIME							  5000  // 0.2  Hz (5s)
 #define EMERGENCY_BLINK_TIME						5000 	// 0.2  HZ (5s)
+#define OK_BUTTON_BOUNCE_TIME						1000	// 1    Hs (1s)
 
 #define POPUP_TIME         				      30
 
