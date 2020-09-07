@@ -42,15 +42,18 @@ void dSensors_Sensors_send(void)	{
 void dSensors_CLUTCH(int clutchAnalog){
 	
 	//---------- Modifica per secondo volante --------
-	// clutchAnalog = (clutchAnalog - CLUTCH_OFFSET) * ( CLUTCH_MAX_VALUE / (CLUTCH_MAX_VALUE - CLUTCH_OFFSET) );	
+	//clutchAnalog = (clutchAnalog - CLUTCH_OFFSET) * ( CLUTCH_MAX_VALUE / (CLUTCH_MAX_VALUE - CLUTCH_OFFSET) );	
 	//------------------------------------------------
 	
+	Indicators[CLUTCH_FEEDBACK].intValore = clutchAnalog;
+	
 	if (clutchAnalog >= CLUTCH_MAX_VALUE)
-		clutchOld= CLUTCH_MAX_VALUE;
+		clutchOld = CLUTCH_MAX_VALUE;
 	else if (clutchAnalog <= CLUTCH_MIN_VALUE)
 		clutchOld = CLUTCH_MIN_VALUE;
 	else
-		clutchOld = (int) (clutchAnalog * 0.8 ) + (clutchOld * 0.2);
+		clutchOld = (int) (clutchAnalog * 0.8) + (clutchOld * 0.2);
+	
 	
 	clutchValue = (int) (clutchOld * 100 / CLUTCH_MAX_VALUE ) ;
 	

@@ -279,7 +279,7 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				break;
      case GCU_CLUTCH_MODE_MAP_SW_ID:
 				CAN_GCU_is_alive();
-				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
+//				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
 				CAN_changeState(secondInt);
 				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
 				Indicators[ANTISTALL].intValore = fourthInt;
