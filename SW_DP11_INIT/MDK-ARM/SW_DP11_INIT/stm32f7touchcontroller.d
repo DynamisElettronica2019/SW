@@ -2,8 +2,8 @@ sw_dp11_init\stm32f7touchcontroller.o: ../TouchGFX/target/STM32F7TouchController
 sw_dp11_init\stm32f7touchcontroller.o: ../TouchGFX/target/STM32F7TouchController.hpp
 sw_dp11_init\stm32f7touchcontroller.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/driver/touch/TouchController.hpp
 sw_dp11_init\stm32f7touchcontroller.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
-sw_dp11_init\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-sw_dp11_init\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\stm32f7touchcontroller.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sw_dp11_init\stm32f7touchcontroller.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\stm32f7touchcontroller.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp
 sw_dp11_init\stm32f7touchcontroller.o: ../Core/Inc/main.h
 sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
@@ -20,7 +20,7 @@ sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/CMSIS/Include/core_cmSimd.h
 sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-sw_dp11_init\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+sw_dp11_init\stm32f7touchcontroller.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h
 sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h
 sw_dp11_init\stm32f7touchcontroller.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h

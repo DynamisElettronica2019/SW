@@ -1,8 +1,8 @@
 sw_dp11_init\stm32f7dma.o: ../TouchGFX/target/STM32F7DMA.cpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/HAL.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp
@@ -15,7 +15,7 @@ sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/DMA.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Atomic.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Unicode.hpp
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/driver/touch/TouchController.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/driver/button/ButtonController.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp
@@ -23,10 +23,10 @@ sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Font.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TextProvider.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Bitmap.hpp
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\stm32f7dma.o: ../TouchGFX/target/STM32F7DMA.hpp
 sw_dp11_init\stm32f7dma.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 sw_dp11_init\stm32f7dma.o: ../Core/Inc/stm32f7xx_hal_conf.h
@@ -42,7 +42,7 @@ sw_dp11_init\stm32f7dma.o: ../Drivers/CMSIS/Include/core_cmSimd.h
 sw_dp11_init\stm32f7dma.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 sw_dp11_init\stm32f7dma.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 sw_dp11_init\stm32f7dma.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+sw_dp11_init\stm32f7dma.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 sw_dp11_init\stm32f7dma.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h
 sw_dp11_init\stm32f7dma.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h
 sw_dp11_init\stm32f7dma.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h

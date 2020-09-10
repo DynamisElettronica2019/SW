@@ -10,7 +10,7 @@ extern "C" {
 #include "adc.h"
 #include "data.h"
 	
-#define CLUTCH_MAX_VALUE 	10000
+#define CLUTCH_MAX_VALUE 	4000
 #define CLUTCH_MIN_VALUE 	0
 #define CLUTCH_OFFSET 		530
 	

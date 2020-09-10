@@ -45,7 +45,7 @@ void dSensors_CLUTCH(int clutchAnalog){
 	//clutchAnalog = (clutchAnalog - CLUTCH_OFFSET) * ( CLUTCH_MAX_VALUE / (CLUTCH_MAX_VALUE - CLUTCH_OFFSET) );	
 	//------------------------------------------------
 	
-	Indicators[CLUTCH_FEEDBACK].intValore = clutchAnalog;
+//	Indicators[CLUTCH_FEEDBACK].intValore = clutchAnalog;
 	
 	if (clutchAnalog >= CLUTCH_MAX_VALUE)
 		clutchOld = CLUTCH_MAX_VALUE;
