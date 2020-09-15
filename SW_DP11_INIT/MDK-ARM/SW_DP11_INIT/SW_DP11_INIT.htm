@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SW_DP11_INIT\SW_DP11_INIT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SW_DP11_INIT\SW_DP11_INIT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Sep 10 18:35:39 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Sep 15 16:50:10 2020
 <BR><P>
 <H3>Maximum Stack Usage =       2408 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1517,11 +1517,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
-<P><STRONG><a name="[223]"></a>CAN_DCU_feedback</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, can.o(i.CAN_DCU_feedback))
+<P><STRONG><a name="[235]"></a>CAN_DCU_feedback</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, can.o(i.CAN_DCU_feedback))
 <BR><BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[235]"></a>CAN_DCU_is_alive</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, can.o(i.CAN_DCU_is_alive))
+<P><STRONG><a name="[223]"></a>CAN_DCU_is_alive</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, can.o(i.CAN_DCU_is_alive))
 <BR><BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
@@ -1529,12 +1529,20 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[21d]"></a>CAN_Start</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, can.o(i.CAN_Start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = CAN_Start &rArr; CAN_filterConfig &rArr; HAL_CAN_ConfigFilter
+<P><STRONG><a name="[21d]"></a>CAN_SetFiler</STRONG> (Thumb, 46 bytes, Stack size 56 bytes, can.o(i.CAN_SetFiler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = CAN_SetFiler &rArr; HAL_CAN_ConfigFilter
 </UL>
-<BR>[Calls]<UL><LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_Start
-<LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_ActivateNotification
-<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_filterConfig
+<BR>[Calls]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_ConfigFilter
+</UL>
+<BR>[Called By]<UL><LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
+</UL>
+
+<P><STRONG><a name="[21f]"></a>CAN_Start</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, can.o(i.CAN_Start))
+<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = CAN_Start &rArr; CAN_SetFiler &rArr; HAL_CAN_ConfigFilter
+</UL>
+<BR>[Calls]<UL><LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_Start
+<LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_ActivateNotification
+<LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetFiler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1549,7 +1557,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_receive
 </UL>
 
-<P><STRONG><a name="[222]"></a>CAN_receive</STRONG> (Thumb, 996 bytes, Stack size 56 bytes, can.o(i.CAN_receive))
+<P><STRONG><a name="[222]"></a>CAN_receive</STRONG> (Thumb, 1020 bytes, Stack size 56 bytes, can.o(i.CAN_receive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = CAN_receive &rArr; dEfiSense_calculateVoltage &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dGears_setGear
@@ -1572,8 +1580,8 @@ Global Symbols
 <LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_changeState
 <LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_changeRoutineState
 <LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_GCU_is_alive
-<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_DCU_is_alive
-<LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_DCU_feedback
+<LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_DCU_is_alive
+<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_DCU_feedback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;canTask
 </UL>
@@ -1920,8 +1928,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
 </UL>
 
-<P><STRONG><a name="[21f]"></a>HAL_CAN_ActivateNotification</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_ActivateNotification))
-<BR><BR>[Called By]<UL><LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
+<P><STRONG><a name="[220]"></a>HAL_CAN_ActivateNotification</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_ActivateNotification))
+<BR><BR>[Called By]<UL><LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
 </UL>
 
 <P><STRONG><a name="[237]"></a>HAL_CAN_AddTxMessage</STRONG> (Thumb, 214 bytes, Stack size 20 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_AddTxMessage))
@@ -1930,10 +1938,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send
 </UL>
 
-<P><STRONG><a name="[221]"></a>HAL_CAN_ConfigFilter</STRONG> (Thumb, 262 bytes, Stack size 12 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_ConfigFilter))
+<P><STRONG><a name="[21e]"></a>HAL_CAN_ConfigFilter</STRONG> (Thumb, 262 bytes, Stack size 12 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_ConfigFilter))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = HAL_CAN_ConfigFilter
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_filterConfig
+<BR>[Called By]<UL><LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetFiler
 </UL>
 
 <P><STRONG><a name="[267]"></a>HAL_CAN_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_ErrorCallback))
@@ -2012,12 +2020,12 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_IRQHandler
 </UL>
 
-<P><STRONG><a name="[220]"></a>HAL_CAN_Start</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_Start))
+<P><STRONG><a name="[221]"></a>HAL_CAN_Start</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_CAN_Start
 </UL>
 <BR>[Calls]<UL><LI><a href="#[26a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
+<BR>[Called By]<UL><LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
 </UL>
 
 <P><STRONG><a name="[25c]"></a>HAL_CAN_TxMailbox0AbortCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_can.o(i.HAL_CAN_TxMailbox0AbortCallback))
@@ -2301,7 +2309,7 @@ Global Symbols
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Command
 <LI><a href="#[2ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_AutoPolling
-<LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_Start
+<LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_Start
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_Init
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 <LI><a href="#[2bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -5122,12 +5130,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::Line()
 <LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::setLineEndingStyle(touchgfx::Line::LINE_ENDING_STYLE)
 <LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidgetRenderer::setupBuffer(unsigned char*, unsigned)
-<LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
-<LI><a href="#[35b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::setPosition(short, short, short, short)
 <LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::PainterRGB565(touchgfx::colortype, unsigned char)
 <LI><a href="#[38d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::setColor(touchgfx::colortype, unsigned char)
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidget::setPainter(touchgfx::AbstractPainter&)
+<LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
+<LI><a href="#[35b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::setPosition(short, short, short, short)
 <LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;void touchgfx::Line::setStart&lang;int&rang;(T1, T1)
 <LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;void touchgfx::Line::setEnd&lang;int&rang;(T1, T1)
 <LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;void touchgfx::Line::setLineWidth&lang;int&rang;(T1)
@@ -5225,12 +5233,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::Line()
 <LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Line::setLineEndingStyle(touchgfx::Line::LINE_ENDING_STYLE)
 <LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidgetRenderer::setupBuffer(unsigned char*, unsigned)
-<LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
-<LI><a href="#[35b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::setPosition(short, short, short, short)
 <LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::PainterRGB565(touchgfx::colortype, unsigned char)
 <LI><a href="#[38d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::setColor(touchgfx::colortype, unsigned char)
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidget::setPainter(touchgfx::AbstractPainter&)
+<LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...)
+<LI><a href="#[35b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Color::getColorFrom24BitRGB(unsigned char, unsigned char, unsigned char)
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::setPosition(short, short, short, short)
 <LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;void touchgfx::Line::setStart&lang;int&rang;(T1, T1)
 <LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;void touchgfx::Line::setEnd&lang;int&rang;(T1, T1)
 <LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;void touchgfx::Line::setLineWidth&lang;int&rang;(T1)
@@ -6059,9 +6067,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> painterrgb565.o(.constdata__ZTVN8touchgfx13PainterRGB565E)
 </UL>
 <P><STRONG><a name="[38d]"></a>touchgfx::PainterRGB565::setColor(touchgfx::colortype, unsigned char)</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, painterrgb565.o(i._ZN8touchgfx13PainterRGB5658setColorENS_9colortypeEh))
-<BR><BR>[Called By]<UL><LI><a href="#[378]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
+<BR><BR>[Called By]<UL><LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::PainterRGB565(touchgfx::colortype, unsigned char)
+<LI><a href="#[378]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_MODEViewBase::DEBUG_MODEViewBase()
 <LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BOARD_DEBUGViewBase::BOARD_DEBUGViewBase()
-<LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::PainterRGB565::PainterRGB565(touchgfx::colortype, unsigned char)
 </UL>
 
 <P><STRONG><a name="[38b]"></a>touchgfx::PainterRGB565::PainterRGB565(touchgfx::colortype, unsigned char)</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, painterrgb565.o(i._ZN8touchgfx13PainterRGB565C1ENS_9colortypeEh))
@@ -6984,13 +6992,13 @@ Global Symbols
 <LI><a href="#[443]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Bitmap::getSolidRect() const
 <LI><a href="#[1d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawTextureMapScanLine(const touchgfx::DrawingSurface&, const touchgfx::Gradients&, const touchgfx::Edge*, const touchgfx::Edge*, const touchgfx::TextureSurface&, const touchgfx::Rect&, const touchgfx::Rect&, unsigned short, unsigned char, unsigned short)
 <LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawPartialBitmap(const touchgfx::Bitmap&, short, short, const touchgfx::Rect&, unsigned char, bool)
+<LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD::drawStringLTR(const touchgfx::Rect&, const touchgfx::Rect&, const touchgfx::LCD::StringVisuals&, const unsigned short*, std::__va_list)
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidget::draw(const touchgfx::Rect&) const
 <LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidget::getMinimalRect() const
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidget::getSolidRect() const
 <LI><a href="#[3bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CanvasWidget::CanvasWidget__sub_object()
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::BoxWithBorder::draw(const touchgfx::Rect&) const
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::BoxWithBorder::getSolidRect() const
-<LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD::drawStringLTR(const touchgfx::Rect&, const touchgfx::Rect&, const touchgfx::LCD::StringVisuals&, const unsigned short*, std::__va_list)
 <LI><a href="#[386]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ScalableImage::ScalableImage()
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ScalableImage::getSolidRect() const
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ScalableImage::drawTriangle(const touchgfx::Rect&, unsigned short*, const float*, const float*, const float*, const float*, const float*) const
@@ -7199,8 +7207,8 @@ Global Symbols
 
 <P><STRONG><a name="[e9]"></a>touchgfx::Screen::handleKeyEvent(unsigned char)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen14handleKeyEventEh))
 <BR>[Address Reference Count : 19]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
@@ -7233,8 +7241,8 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[e3]"></a>touchgfx::Screen::afterTransition()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen15afterTransitionEv))
 <BR>[Address Reference Count : 19]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
@@ -7260,8 +7268,8 @@ Global Symbols
 <LI><a href="#[41f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ClickEvent::ClickEvent(touchgfx::ClickEvent::ClickEventType, short, short, short)
 </UL>
 <BR>[Address Reference Count : 19]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
@@ -7281,8 +7289,8 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[e8]"></a>touchgfx::Screen::handleTickEvent()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, accelerationview.o(i._ZN8touchgfx6Screen15handleTickEventEv))
 <BR>[Address Reference Count : 19]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
@@ -7311,8 +7319,8 @@ Global Symbols
 <LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Address Reference Count : 19]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
@@ -7336,8 +7344,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[41d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::getAbsoluteRect() const
 </UL>
 <BR>[Address Reference Count : 19]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
@@ -7378,8 +7386,8 @@ Global Symbols
 <LI><a href="#[420]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::startSMOC(touchgfx::Rect&)
 </UL>
 <BR>[Address Reference Count : 19]<UL><LI> autocrossview.o(.constdata__ZTV13AUTOCROSSView)
-<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> board_debugview.o(.constdata__ZTV15BOARD_DEBUGView)
+<LI> settingsviewbase.o(.constdata__ZTV16SETTINGSViewBase)
 <LI> debug_modeview.o(.constdata__ZTV14DEBUG_MODEView)
 <LI> accelerationviewbase.o(.constdata__ZTV20ACCELERATIONViewBase)
 <LI> autocrossviewbase.o(.constdata__ZTV17AUTOCROSSViewBase)
@@ -7839,9 +7847,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7868,8 +7876,8 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7880,9 +7888,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7893,9 +7901,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7906,9 +7914,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7919,9 +7927,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7940,9 +7948,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7953,9 +7961,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7978,9 +7986,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -7991,9 +7999,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8004,9 +8012,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8518,8 +8526,8 @@ Global Symbols
 <LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD::realY(const touchgfx::Rect&, short, short, touchgfx::TextRotation)
 <LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawGlyph(unsigned short*, touchgfx::Rect, short, short, unsigned short, unsigned short, const touchgfx::Rect&, const touchgfx::GlyphNode*, const unsigned char*, touchgfx::colortype, unsigned char, unsigned char, touchgfx::TextRotation)
 <LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD16bpp::drawPartialBitmap(const touchgfx::Bitmap&, short, short, const touchgfx::Rect&, unsigned char, bool)
-<LI><a href="#[1dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Container::getLastChild(short, short, touchgfx::Drawable**)
 <LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD::drawStringLTR(const touchgfx::Rect&, const touchgfx::Rect&, const touchgfx::LCD::StringVisuals&, const unsigned short*, std::__va_list)
+<LI><a href="#[1dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Container::getLastChild(short, short, touchgfx::Drawable**)
 <LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::LCD::drawTextureMapTriangle(const touchgfx::DrawingSurface&, const touchgfx::Point3D*, const touchgfx::TextureSurface&, const touchgfx::Rect&, const touchgfx::Rect&, unsigned short, unsigned char, unsigned short)
 <LI><a href="#[41e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::intersect(short, short) const
 <LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::JSMOC(const touchgfx::Rect&, touchgfx::Drawable*)
@@ -8749,9 +8757,9 @@ Global Symbols
 <LI> accelerationviewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
@@ -8765,9 +8773,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8783,9 +8791,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -8809,9 +8817,9 @@ Global Symbols
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> boxwithborder.o(.constdata__ZTVN8touchgfx13BoxWithBorderE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> line.o(.constdata__ZTVN8touchgfx4LineE)
 <LI> scalableimage.o(.constdata__ZTVN8touchgfx13ScalableImageE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -9404,7 +9412,7 @@ Global Symbols
 <LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_rpm_setup
 <LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_getPointers
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
+<LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
 <LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_encoders_init
@@ -10345,14 +10353,6 @@ Local Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Init
 <LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
-</UL>
-
-<P><STRONG><a name="[21e]"></a>CAN_filterConfig</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, can.o(i.CAN_filterConfig))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = CAN_filterConfig &rArr; HAL_CAN_ConfigFilter
-</UL>
-<BR>[Calls]<UL><LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CAN_ConfigFilter
-</UL>
-<BR>[Called By]<UL><LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Start
 </UL>
 
 <P><STRONG><a name="[1e6]"></a>__sti___22_BoardConfiguration_cpp_2f1c5dae</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, boardconfiguration.o(i.__sti___22_BoardConfiguration_cpp_2f1c5dae))

@@ -72,6 +72,7 @@ void MX_CAN1_Init(void);
 
 extern void CAN_Start(void);
 static void CAN_filterConfig(void);
+void CAN_SetFiler(uint8_t filterBank, uint16_t filterMask, uint16_t filterID, uint32_t CAN_FIFO_Number);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt);
 void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt, uint8_t dlc_value);

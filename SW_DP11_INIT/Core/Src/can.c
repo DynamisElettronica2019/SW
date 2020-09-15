@@ -196,18 +196,30 @@ extern void CAN_Start(void)
 
 static void CAN_filterConfig(void)
 {
-	canFilterConfigHeader.FilterBank = 0;
-  canFilterConfigHeader.FilterMode = CAN_FILTERMODE_IDMASK;
-  canFilterConfigHeader.FilterScale = CAN_FILTERSCALE_32BIT;
-	canFilterConfigHeader.FilterIdHigh = (0x000 << 5);
-  canFilterConfigHeader.FilterIdLow = 0x0000;
-  canFilterConfigHeader.FilterMaskIdHigh = (0x000 << 5);
-  canFilterConfigHeader.FilterMaskIdLow = 0x0000;
-	canFilterConfigHeader.FilterFIFOAssignment = CAN_RX_FIFO0;
-  canFilterConfigHeader.FilterActivation = ENABLE;	
-  canFilterConfigHeader.SlaveStartFilterBank = 14;
-	filterInitReturn = HAL_CAN_ConfigFilter(&hcan1, &canFilterConfigHeader);
+	CAN_SetFiler(0, 0x7FC, 0x304, CAN_RX_FIFO0); 		/* EFI mask 1 */
+	CAN_SetFiler(1, 0x7F8, 0x30C, CAN_RX_FIFO0); 		/* EFI mask 2 */
+	CAN_SetFiler(2, 0x7F0, 0x312, CAN_RX_FIFO0); 		/* Debug and GCU mask 1 */
+	CAN_SetFiler(3, 0x7FF, 0x500, CAN_RX_FIFO0); 		/* GCU mask 2 */
+	CAN_SetFiler(4, 0x7F0, 0x650, CAN_RX_FIFO0); 		/* DAUs and Datron mask */
+	CAN_SetFiler(5, 0x7F8, 0x708, CAN_RX_FIFO0); 		/* IMUs */
+	CAN_SetFiler(6, 0x1F9, 0x607, CAN_RX_FIFO0);		/* DCU */
 	return;
+}
+
+void CAN_SetFiler(uint8_t filterBank, uint16_t filterMask, uint16_t filterID, uint32_t CAN_FIFO_Number)
+{
+	CAN_FilterTypeDef CAN_FilterConfigHeader;
+  CAN_FilterConfigHeader.FilterBank = filterBank;
+  CAN_FilterConfigHeader.FilterMode = CAN_FILTERMODE_IDMASK;
+  CAN_FilterConfigHeader.FilterScale = CAN_FILTERSCALE_32BIT;
+	CAN_FilterConfigHeader.FilterIdHigh = (filterID << 5);
+  CAN_FilterConfigHeader.FilterIdLow = 0x0000;
+  CAN_FilterConfigHeader.FilterMaskIdHigh = (filterMask << 5);
+  CAN_FilterConfigHeader.FilterMaskIdLow = 0x0000;
+	CAN_FilterConfigHeader.FilterFIFOAssignment = CAN_FIFO_Number;
+  CAN_FilterConfigHeader.FilterActivation = ENABLE;	
+  CAN_FilterConfigHeader.SlaveStartFilterBank = 14;
+	HAL_CAN_ConfigFilter(&hcan1, &CAN_FilterConfigHeader);
 }
 
 
@@ -324,12 +336,12 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 				Indicators[GYR_Y_2].floatValore = ((int16_t)thirdInt)/10.0;
 				Indicators[IMU2_INFO].intValore = (uint8_t)fourthInt;
 			 break;
-//		 case DAU_FR_ID:
-//			  Indicators[BPS_F].intValore  = thirdInt; //da togliere
-//			 break;
-//		 case DAU_FL_ID:
-//			  Indicators[BPS_R].intValore  = thirdInt; //da togliere
-//			 break;
+		 case DAU_FR_ID:
+			  Indicators[BPS_F].intValore  = thirdInt; //da togliere
+			 break;
+		 case DAU_FL_ID:
+			  Indicators[BPS_R].intValore  = thirdInt; //da togliere
+			 break;
      case DAU_FR_DEBUG_ID:
 				Indicators[DAU_FR_BOARD].intValore2 = firstInt;
 				Indicators[DAU_FR_BOARD].intValore = secondInt;
