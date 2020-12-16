@@ -7,18 +7,19 @@
 
 Screen1ViewBase::Screen1ViewBase()
 {
-    background.setPosition(0, 0, 640, 480);
-    background.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    box1.setPosition(0, 0, 640, 480);
+    box1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
-    logoDynamis.setXY(170, 21);
-    logoDynamis.setBitmap(Bitmap(BITMAP_LOGO_300_ID));
+    dynamis_scritta.setXY(130, 331);
+    dynamis_scritta.setBitmap(Bitmap(BITMAP_DYNAMIS_380_ID));
 
-    textDynamis.setXY(130, 341);
-    textDynamis.setBitmap(Bitmap(BITMAP_DYNAMIS_380_ID));
+    dynamis_logo.setBitmap(Bitmap(BITMAP_LOGO_300_ID));
+    dynamis_logo.setPosition(170, 24, 300, 300);
+    dynamis_logo.setScalingAlgorithm(ScalableImage::NEAREST_NEIGHBOR);
 
-    add(background);
-    add(logoDynamis);
-    add(textDynamis);
+    add(box1);
+    add(dynamis_scritta);
+    add(dynamis_logo);
 }
 
 void Screen1ViewBase::setupScreen()

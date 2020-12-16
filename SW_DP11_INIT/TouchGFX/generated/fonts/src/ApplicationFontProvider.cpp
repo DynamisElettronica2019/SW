@@ -10,7 +10,7 @@ using namespace touchgfx;
 
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_25_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_63_4bpp();
-extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_290_4bpp();
+extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_420_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_180_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_45_4bpp();
 extern touchgfx::InternalFlashFont& getFont_Roboto_Regular_80_4bpp();
@@ -26,7 +26,7 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId fontId)
     case Typography::MEDIUM:
         return &(getFont_Roboto_Regular_63_4bpp());
     case Typography::EXTRA:
-        return &(getFont_Roboto_Regular_290_4bpp());
+        return &(getFont_Roboto_Regular_420_4bpp());
     case Typography::LARGE:
         return &(getFont_Roboto_Regular_180_4bpp());
     case Typography::LITTLEMEDIUM:

@@ -174,6 +174,20 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
 
 /**************** RPM STRIPE *****************/
 
+void I2C_setRPM(int rpm_value)
+{
+	if (rpm_value >= RPM_STRIPE_MIN) 
+			 flagEngineOn = TRUE;
+	else 
+		flagEngineOn = FALSE;
+	
+	if (rpm_value < RPM_STRIPE_MIN)
+     rpm_value = RPM_STRIPE_MIN;
+	else if ( rpm_value > RPM_STRIPE_MAX)
+     rpm_value = RPM_STRIPE_MAX;
+	Indicators[RPM].intValore = rpm_value;
+}
+
 void I2C_brightness_max (uint16_t controller){
 
 	i2cData[1] = 0x55;
@@ -543,6 +557,31 @@ void I2C_rpm_flash(void){
 	}
 }
 
+void I2C_rpm_update(void){ 
+	int rpm_value;
+	rpm_value = Indicators[RPM].intValore;
+	
+	if(rpm_value == DEF_VALUE) rpm_value = 0;
+	
+	if ( Indicators[DRIVE_MODE].intValore == ENDURANCE_MODE ){
+		if( rpm_value < 10000 || Indicators[GEAR].intValore == 5){
+			I2C_rpm_command(rpm_value);
+		}else {
+			changeGearFlag = 1;
+			I2C_rpm_flash();
+		}
+	}else if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
+		if( rpm_value < 10500 || Indicators[GEAR].intValore == 5){
+			I2C_rpm_command(rpm_value);
+		}else {
+			changeGearFlag = 1;
+			I2C_rpm_flash();
+		}	
+	}else{		
+		I2C_rpm_command(rpm_value);
+	}
+	return;
+}
 
 void I2C_test(void){
 	
@@ -725,12 +764,12 @@ void I2C_save_defPointers(void){		// in teoria non serve più
 	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &flag, 1, 100);
 	
 	//------------messi temporaneamente, sono da sistemare
-	  DefPointer[0] = FIRST_DEFAULT_INDICATOR;
-		DefPointer[1] = SECOND_DEFAULT_INDICATOR;
-		DefPointer[2] = THIRD_DEFAULT_INDICATOR;
-		DefPointer[3] = FOURTH_DEFAULT_INDICATOR;
-//		DefPointer[4] = VBAT;
-//		DefPointer[5] = FUEL_LEVEL;
+	  DefPointer[0] = OIL_PRESS;
+		DefPointer[1] = TH2O;
+		DefPointer[2] = OIL_TEMP_IN;
+		DefPointer[3] = TPS;
+		DefPointer[4] = VBAT;
+		DefPointer[5] = FUEL_LEVEL;
 	
 	memAddress = defPage << 4 | DEF_CELL;
 	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, DefPointer, N_POINTERS, 100);
@@ -761,8 +800,8 @@ void I2C_save_Traction(int value){
 	uint8_t tractionValue;
 	tractionValue = value;
 	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | TRACTION_CELL;
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | TRACTION_CELL;
 
 	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &tractionValue, 1, 100);
 	
@@ -774,8 +813,8 @@ int I2C_get_Traction(void){
 	
 	uint8_t tractionValue;
 	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | TRACTION_CELL;
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | TRACTION_CELL;
 
 	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &tractionValue, 1, 100);
 
@@ -783,87 +822,32 @@ int I2C_get_Traction(void){
 	
 }
 
-void I2C_save_Torque(int value){
+void I2C_save_RpmLimiter(int value){
 	
-	uint8_t torqueValue;
-	torqueValue = value;
+	uint8_t rpmLimValue;
+	rpmLimValue = value;
 	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | TORQUE_CELL;
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | RPM_LIM_CELL;
 
-	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &torqueValue, 1, 100);
+	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &rpmLimValue, 1, 100);
 	
 	HAL_Delay(10);
 	
 }
 
-int I2C_get_Torque(void){
+int I2C_get_RpmLimiter(void){
 	
-	uint8_t torqueValue;
+	uint8_t rpmLimValue;
 	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | TORQUE_CELL;
+	devAddress = EEPROM_ADDRESS << 3 | defPage >> 4;
+	memAddress = defPage << 4 | RPM_LIM_CELL;
 
-	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &torqueValue, 1, 100);
+	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &rpmLimValue, 1, 100);
 
-	return (torqueValue);
+	return (rpmLimValue);
 	
 }
-
-void I2C_save_PowerLimiter(int value){
-	
-	uint8_t powLimValue;
-	powLimValue = value;
-	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | POW_LIM_CELL;
-
-	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &powLimValue, 1, 100);
-	
-	HAL_Delay(10);
-	
-}
-
-int I2C_get_PowerLimiter(void){
-	
-	uint8_t powLimValue;
-	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | POW_LIM_CELL;
-
-	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &powLimValue, 1, 100);
-
-	return (powLimValue);
-	
-}
-
-void I2C_save_Kalman(int value){
-	
-	uint8_t kalmanValue;
-	kalmanValue = value;
-	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | KALMAN_CELL;
-
-	HAL_I2C_Mem_Write(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &kalmanValue, 1, 100);
-	
-	HAL_Delay(10);
-	
-}
-
-int I2C_get_Kalman(void){
-	
-	uint8_t kalmanValue;
-	
-	devAddress = EEPROM_ADDRESS << 3 | TARGET_PAGE >> 4;
-	memAddress = TARGET_PAGE << 4 | KALMAN_CELL;
-
-	HAL_I2C_Mem_Read(&hi2c1, devAddress<<1, memAddress, I2C_MEMADD_SIZE_8BIT, &kalmanValue, 1, 100);
-
-	return (kalmanValue);
-	
-}
-
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -1,7 +1,7 @@
 sw_dp11_init\freertos.o: ../Core/Src/freertos.c
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-sw_dp11_init\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-sw_dp11_init\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sw_dp11_init\freertos.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+sw_dp11_init\freertos.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 sw_dp11_init\freertos.o: ../Core/Inc/FreeRTOSConfig.h
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 sw_dp11_init\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -25,7 +25,7 @@ sw_dp11_init\freertos.o: ../Drivers/CMSIS/Include/core_cmSimd.h
 sw_dp11_init\freertos.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 sw_dp11_init\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 sw_dp11_init\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-sw_dp11_init\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+sw_dp11_init\freertos.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 sw_dp11_init\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h
 sw_dp11_init\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h
 sw_dp11_init\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h
@@ -66,6 +66,6 @@ sw_dp11_init\freertos.o: ../Core/Inc/adc.h
 sw_dp11_init\freertos.o: ../Core/Inc/tim.h
 sw_dp11_init\freertos.o: ../Core/Inc/can.h
 sw_dp11_init\freertos.o: ../Core/Inc/id_can.h
+sw_dp11_init\freertos.o: ../Core/Inc/d_gears.h
+sw_dp11_init\freertos.o: ../Core/Inc/d_rpm_limiter.h
 sw_dp11_init\freertos.o: ../Core/Inc/d_traction_control.h
-sw_dp11_init\freertos.o: ../Core/Inc/d_torque_vectoring.h
-sw_dp11_init\freertos.o: ../Core/Inc/d_pow_limiter.h

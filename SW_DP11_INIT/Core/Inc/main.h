@@ -171,8 +171,6 @@ void Error_Handler(void);
 #define DEBUG_LED_1_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
-#define	SIM_MODE
-
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

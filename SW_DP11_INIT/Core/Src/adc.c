@@ -199,6 +199,7 @@ void ADC_read(void)	{ // nulla
 }
 
 void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef * hadc){
+		dSensors_CLUTCH(ADC_BUF[CLUTCH_ADC]);
 		HAL_ADC_Stop_DMA (&hadc1);
 }
 

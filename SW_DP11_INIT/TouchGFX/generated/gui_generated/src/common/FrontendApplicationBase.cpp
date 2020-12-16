@@ -7,8 +7,6 @@
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Texts.hpp>
-#include <gui/screen1_screen/Screen1View.hpp>
-#include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <gui/endurance_screen/ENDURANCEView.hpp>
 #include <gui/endurance_screen/ENDURANCEPresenter.hpp>
 #include <gui/acceleration_screen/ACCELERATIONView.hpp>
@@ -17,6 +15,16 @@
 #include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
 #include <gui/skidpad_screen/SKIDPADView.hpp>
 #include <gui/skidpad_screen/SKIDPADPresenter.hpp>
+#include <gui/settings_screen/SETTINGSView.hpp>
+#include <gui/settings_screen/SETTINGSPresenter.hpp>
+#include <gui/board_debug_screen/BOARD_DEBUGView.hpp>
+#include <gui/board_debug_screen/BOARD_DEBUGPresenter.hpp>
+#include <gui/debug_mode_screen/DEBUG_MODEView.hpp>
+#include <gui/debug_mode_screen/DEBUG_MODEPresenter.hpp>
+#include <gui/noise_mode_screen/NOISE_MODEView.hpp>
+#include <gui/noise_mode_screen/NOISE_MODEPresenter.hpp>
+#include <gui/screen1_screen/Screen1View.hpp>
+#include <gui/screen1_screen/Screen1Presenter.hpp>
 
 using namespace touchgfx;
 
@@ -33,19 +41,6 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
 /*
  * Screen Transition Declarations
  */
-// Screen1
-
-void FrontendApplicationBase::gotoScreen1ScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
-{
-    makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
 // ENDURANCE
 
 void FrontendApplicationBase::gotoENDURANCEScreenNoTransition()
@@ -96,5 +91,70 @@ void FrontendApplicationBase::gotoSKIDPADScreenNoTransition()
 void FrontendApplicationBase::gotoSKIDPADScreenNoTransitionImpl()
 {
     makeTransition<SKIDPADView, SKIDPADPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// SETTINGS
+
+void FrontendApplicationBase::gotoSETTINGSScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSETTINGSScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoSETTINGSScreenNoTransitionImpl()
+{
+    makeTransition<SETTINGSView, SETTINGSPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// BOARD_DEBUG
+
+void FrontendApplicationBase::gotoBOARD_DEBUGScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoBOARD_DEBUGScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoBOARD_DEBUGScreenNoTransitionImpl()
+{
+    makeTransition<BOARD_DEBUGView, BOARD_DEBUGPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// DEBUG_MODE
+
+void FrontendApplicationBase::gotoDEBUG_MODEScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoDEBUG_MODEScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoDEBUG_MODEScreenNoTransitionImpl()
+{
+    makeTransition<DEBUG_MODEView, DEBUG_MODEPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// NOISE_MODE
+
+void FrontendApplicationBase::gotoNOISE_MODEScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoNOISE_MODEScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoNOISE_MODEScreenNoTransitionImpl()
+{
+    makeTransition<NOISE_MODEView, NOISE_MODEPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Screen1
+
+void FrontendApplicationBase::gotoScreen1ScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
+{
+    makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 

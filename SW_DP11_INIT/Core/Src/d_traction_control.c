@@ -15,11 +15,11 @@
 extern Indicator_Value Indicators[N_INDICATORS];
 extern int	TRACTION_save;
 
-int targetTraction;
+int d_tractionValue;
 
 void d_traction_control_init(int new_tractionValue)
 {
-	Indicators[TC].intValore = new_tractionValue;
+	Indicators[TRACTION_CONTROL].intValore = new_tractionValue;
 }
 
 /**
@@ -30,7 +30,7 @@ void d_traction_control_init(int new_tractionValue)
 void d_traction_control_setValue(int movement)
 {
 	int value;
-	value = Indicators[TC].intValore;
+	value = Indicators[TRACTION_CONTROL].intValore;
 	value = value - movement; 
 	TRACTION_save = 1;
 	
@@ -39,13 +39,8 @@ void d_traction_control_setValue(int movement)
   } else if(value <= TRACTION_MIN_VALUE){
     value = TRACTION_MIN_VALUE;
 	}
-	
-	targetTraction = value;
-	
-	#ifdef SIM_MODE
-		Indicators[TC].intValore = value;
-	#endif
-		
+	//Indicators[TRACTION_CONTROL].intValore = value
+	d_tractionValue = value;
 }
 
 

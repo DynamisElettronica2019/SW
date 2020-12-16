@@ -1,11 +1,11 @@
-sw_dp11_init\stm32f7hal.o: ..\TouchGFX\target\STM32F7HAL.cpp
+sw_dp11_init\stm32f7hal.o: ../TouchGFX/target/STM32F7HAL.cpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
-sw_dp11_init\stm32f7hal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-sw_dp11_init\stm32f7hal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\stm32f7hal.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+sw_dp11_init\stm32f7hal.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/lcd/LCD.hpp
-sw_dp11_init\stm32f7hal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+sw_dp11_init\stm32f7hal.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/HAL.hpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Gestures.hpp
@@ -23,8 +23,8 @@ sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Font.hpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TextProvider.hpp
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Bitmap.hpp
-sw_dp11_init\stm32f7hal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
-sw_dp11_init\stm32f7hal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+sw_dp11_init\stm32f7hal.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+sw_dp11_init\stm32f7hal.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\stm32f7hal.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/GPIO.hpp
 sw_dp11_init\stm32f7hal.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h
@@ -40,7 +40,7 @@ sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-sw_dp11_init\stm32f7hal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+sw_dp11_init\stm32f7hal.o: C:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h
 sw_dp11_init\stm32f7hal.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h

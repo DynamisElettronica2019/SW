@@ -9,6 +9,7 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -26,9 +27,9 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::Box background;
-    touchgfx::Image logoDynamis;
-    touchgfx::Image textDynamis;
+    touchgfx::Box box1;
+    touchgfx::Image dynamis_scritta;
+    touchgfx::ScalableImage dynamis_logo;
 
 private:
 

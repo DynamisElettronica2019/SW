@@ -36,15 +36,12 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f7xx_it.h"
-#include "FreeRTOS.h"
-#include "task.h"
+#include "cmsis_os.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "general.h"
-#include "cmsis_os.h"
-#include "data.h"
 /* USER CODE END Includes */
-  
+
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
 
@@ -67,10 +64,9 @@ BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
 extern int okButtonPressed, okButtonCanBePressed;
 extern int timerOkButtonDelay;
-extern char targetMode;
-extern Indicator_Value Indicators[N_INDICATORS];
+extern char driveMode;
 
-//extern int flagAutoX;
+extern int flagAutoX;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -84,12 +80,13 @@ extern Indicator_Value Indicators[N_INDICATORS];
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern DMA2D_HandleTypeDef hdma2d;
+extern SDRAM_HandleTypeDef hsdram1;
+extern LTDC_HandleTypeDef hltdc;
 extern DMA_HandleTypeDef hdma_adc1;
 extern ADC_HandleTypeDef hadc1;
 extern CAN_HandleTypeDef hcan1;
-extern DMA2D_HandleTypeDef hdma2d;
 extern I2C_HandleTypeDef hi2c1;
-extern LTDC_HandleTypeDef hltdc;
 extern QSPI_HandleTypeDef hqspi;
 extern TIM_HandleTypeDef htim4;
 extern TIM_HandleTypeDef htim7;
@@ -441,6 +438,20 @@ void TIM8_BRK_TIM12_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles FMC global interrupt.
+  */
+void FMC_IRQHandler(void)
+{
+  /* USER CODE BEGIN FMC_IRQn 0 */
+
+  /* USER CODE END FMC_IRQn 0 */
+  HAL_SDRAM_IRQHandler(&hsdram1);
+  /* USER CODE BEGIN FMC_IRQn 1 */
+
+  /* USER CODE END FMC_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM6 global interrupt, DAC1 and DAC2 underrun error interrupts.
   */
 void TIM6_DAC_IRQHandler(void)
@@ -559,11 +570,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			xSemaphoreGiveFromISR(neutralButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
       break;
     case OK_BUTTON_INT_Pin:
-			if( ( okButtonPressed == 0 && okButtonCanBePressed == 1) || Indicators[DRIVE_MODE].intValore == SETTINGS_MODE ) { 
+			if( ( okButtonPressed == 0 && okButtonCanBePressed == 1) || driveMode == SETTINGS_MODE ) { 
+				flagAutoX = 0;
+				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
 				okButtonPressed = 1;
 				okButtonCanBePressed = 0;
 				timerOkButtonDelay = 0;
-				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
 			}
       break;
     case AUX_1_BUTTON_INT_Pin:

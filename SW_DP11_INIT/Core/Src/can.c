@@ -4,16 +4,46 @@
   * Description        : This file provides code for the configuration
   *                      of the CAN instances.
   ******************************************************************************
-  * @attention
+  * This notice applies to any and all portions of this file
+  * that are not between comment pairs USER CODE BEGIN and
+  * USER CODE END. Other portions of this file, whether 
+  * inserted by the user or by software development tools
+  * are owned by their respective copyright owners.
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2019 STMicroelectronics International N.V. 
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted, provided that the following conditions are met:
   *
+  * 1. Redistribution of source code must retain the above copyright notice, 
+  *    this list of conditions and the following disclaimer.
+  * 2. Redistributions in binary form must reproduce the above copyright notice,
+  *    this list of conditions and the following disclaimer in the documentation
+  *    and/or other materials provided with the distribution.
+  * 3. Neither the name of STMicroelectronics nor the names of other 
+  *    contributors to this software may be used to endorse or promote products 
+  *    derived from this software without specific written permission.
+  * 4. This software, including modifications and/or derivative works of this 
+  *    software, must execute solely and exclusively on microcontroller or
+  *    microprocessor devices manufactured by or for STMicroelectronics.
+  * 5. Redistribution and use of this software other than as permitted under 
+  *    this license is void and will automatically terminate your rights under 
+  *    this license. 
+  *
+  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
+  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
+  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
+  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
+  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  *	
   ******************************************************************************
   */
 
@@ -24,8 +54,9 @@
 #include "data.h"
 #include "cmsis_os.h"
 #include "i2c.h"
+#include "d_efiSense.h"
 #include "general.h"
-#include "d_sensors.h"
+#include "d_gears.h"
 
 CAN_TxHeaderTypeDef packetHeader;
 CAN_FilterTypeDef canFilterConfigHeader;
@@ -44,28 +75,24 @@ extern BaseType_t xHigherPriorityTaskWoken;
 extern osMessageQId canQueueHandle;
 
 extern Indicator_Value Indicators[N_INDICATORS];	
-extern char state, targetMode;
+extern char state, driveMode;
 extern int commandSent;
+extern int timerEfiAlive;
 extern int autox_stop, acc_stop;
 extern int buttonPressed;
 int flagDcuCalibration;
-int flagVcuCalibration;
+int flagImuCalibration;
 int feedbackDcuCalibration;
-int feedbackVcuCalibration;
+int flagEngineOn = FALSE;
+int feedbackImuCalibration;
 
 extern int timerDCUAlive;
 extern int DCU_is_dead;
 extern int DCU_was_not_dead;
+extern int GCU_is_dead;
+extern int timerGCUAlive;
 
-extern char targetMode;
-extern int targetMap;
-extern int targetTraction;
-extern int targetTorque;
-extern int targetKalman;
-extern int targetRTD;
-extern int targetRegen;
-
-//extern int temp_stato;
+extern int temp_stato;
 
 /* USER CODE END 0 */
 
@@ -197,214 +224,156 @@ void CAN_receive(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdIn
 {
 	switch(ID)
 	{
-		case DCU_ACQUISITION_FEEDBACK_ID:
-			CAN_DCU_feedback(firstInt);
-			CAN_DCU_is_alive();
-			break;
-		case DCU_DEBUG_1_ID:
-			Indicators[DCU_BOARD].intValore2 = firstInt;
-			Indicators[DCU_BOARD].intValore = secondInt;
-			Indicators[XBEE].intValore2 = thirdInt;
-			Indicators[VOLTAGE_3V3_DCU].intValore2 = fourthInt;
-			CAN_DCU_is_alive();
-			break;
-		case DCU_DEBUG_2_ID:
-			Indicators[VOLTAGE_12V_DCU].intValore = firstInt;
-			Indicators[VOLTAGE_5V_DCU].intValore = secondInt;
-			Indicators[VOLTAGE_3V3_DCU].intValore = thirdInt;
-			Indicators[BRAKE_BIAS].intValore = fourthInt;
-			CAN_DCU_is_alive();
-			break;
-		case DAU_FRONT_LIN_ID:
-			// non li leggiamo perchè non lo abbiamo mai fatto, non per altre ragioni più profonde
-			break;
-		case DAU_FRONT_WH_ID:
-			dSensors_calculateWaterTemperature(TH2O_FR, firstInt);
-			dSensors_calculateWaterTemperature(TH2O_FL, secondInt);
-			dSensors_calculateOilTemperature(TH2O_FR, thirdInt);
-			dSensors_calculateOilTemperature(TH2O_FL, fourthInt);
-			break;
-		case DAU_FRONT_IR_1_ID:
-			dSensors_calculateBrakeTemperature(TBRAKE_FR, firstInt);
-			dSensors_calculateBrakeTemperature(TBRAKE_FL, secondInt);
-			// gli altri ir non sono sempre in macchina. di solito non li leggiamo perchè non ci interessano
-			break;
-		case DAU_FRONT_IR_2_ID:
-			// vedi sopra
-			break;
-		case DAU_FRONT_MISC_ID:
-			Indicators[PBRAKE_F].intValore = firstInt;	//non ci dovrebbe essere una conversione-->verificare
-			Indicators[PBRAKE_R].intValore = secondInt;
-			Indicators[PITOT].intValore = thirdInt;		//verificare conversione e se ci interessa vederlo
-			break;
-		case DAU_FRONT_4TV_ID:
-			Indicators[STRAIN_GAUGE_FR].intValore = firstInt; //verificare conversione e se ci interessa vederlo
-			Indicators[STRAIN_GAUGE_FL].intValore = secondInt;
-			dSensors_calculateSteeringWheelAngle(SW_ANGLE, thirdInt);	//manca la conversione!
-			break;
-		case DAU_FRONT_DEBUG_ID:
-			Indicators[DAU_FRONT_BOARD].intValore2 = firstInt;
-			Indicators[DAU_FRONT_BOARD].intValore = secondInt;
-			break;
-		case DAU_REAR_LIN_ID:
-			// non li leggiamo perchè non lo abbiamo mai fatto, non per altre ragioni più profonde
-			break;
-		case DAU_REAR_WH_ID:
-			dSensors_calculateWaterTemperature(TH2O_RR, firstInt);
-			dSensors_calculateWaterTemperature(TH2O_RL, secondInt);
-			dSensors_calculateOilTemperature(TH2O_RR, thirdInt);
-			dSensors_calculateOilTemperature(TH2O_RL, fourthInt);			
-			break;
-		case DAU_REAR_IR_1_ID:
-			dSensors_calculateBrakeTemperature(TBRAKE_RR, firstInt);
-			dSensors_calculateBrakeTemperature(TBRAKE_RL, secondInt);
-			// gli altri ir non sono sempre in macchina. di solito non li leggiamo perchè non ci interessano
-			break;
-		case DAU_REAR_IR_2_ID:
-			// vedi sopra --> poi possiamo togliere i case dove non facciamo niente
-			break;
-		case DAU_REAR_COOL_ID:
-			dSensors_calculateWaterTemperature(TH2O_RAD, firstInt);
-			dSensors_calculateWaterPressure(PH2O, firstInt);			
-			break;
-		case DAU_REAR_4TV_ID:
-			Indicators[STRAIN_GAUGE_RR].intValore = firstInt; //verificare conversione e se ci interessa vederlo
-			Indicators[STRAIN_GAUGE_RL].intValore = secondInt;
-			break;
-		case DAU_REAR_DEBUG_ID:
-			Indicators[DAU_REAR_BOARD].intValore2 = firstInt;
-			Indicators[DAU_REAR_BOARD].intValore = secondInt;
-			break;
-		case IMU_FRONT_ACC_ID:
-			Indicators[ACC_X_FRONT].floatValore = ((int16_t)firstInt)/100.0; 	//sono le conversioni DP11 --> verificare quelle nuove!			
-			Indicators[ACC_Y_FRONT].floatValore = ((int16_t)secondInt)/100.0;
-			Indicators[ACC_Z_FRONT].floatValore = ((int16_t)thirdInt)/100.0;
-			break;
-		case IMU_FRONT_GYRO_ID:
-			Indicators[GYRO_X_FRONT].floatValore = ((int16_t)firstInt)/10.0; 	//sono le conversioni DP11 --> verificare quelle nuove!			
-			Indicators[GYRO_Y_FRONT].floatValore = ((int16_t)secondInt)/10.0;
-			Indicators[GYRO_Z_FRONT].floatValore = ((int16_t)thirdInt)/10.0;
-			break;
-		case IMU_FRONT_DEBUG_ID:
-			Indicators[IMU_FRONT_BOARD].intValore2 = firstInt;
-			Indicators[IMU_FRONT_BOARD].intValore = secondInt;
-			break;
-		case IMU_REAR_ACC_ID:
-			Indicators[ACC_X_REAR].floatValore = ((int16_t)firstInt)/100.0; 	//sono le conversioni DP11 --> verificare quelle nuove!			
-			Indicators[ACC_Y_REAR].floatValore = ((int16_t)secondInt)/100.0;
-			Indicators[ACC_Z_REAR].floatValore = ((int16_t)thirdInt)/100.0;
-			break;
-		case IMU_REAR_GYRO_ID:
-			Indicators[GYRO_X_REAR].floatValore = ((int16_t)firstInt)/10.0; 	//sono le conversioni DP11 --> verificare quelle nuove!			
-			Indicators[GYRO_Y_REAR].floatValore = ((int16_t)secondInt)/10.0;
-			Indicators[GYRO_Z_REAR].floatValore = ((int16_t)thirdInt)/10.0;
-			break;
-		case IMU_REAR_DEBUG_ID:
-			Indicators[IMU_REAR_BOARD].intValore2 = firstInt;
-			Indicators[IMU_REAR_BOARD].intValore = secondInt;
-			break;
-		case VCU_FEEDBACK_ID:
-			CAN_VCU_feedback(firstInt,secondInt,thirdInt,fourthInt);
-//		CAN_VCU_is_alive();  --> Ha senso?
-			break;
-		case VCU_DRIVER_INPUT_ID:
-			dSensors_calculateAPPS(APPS_1, firstInt);
-			dSensors_calculateAPPS(APPS_2, secondInt);
-			dSensors_calculateRegen(LOAD_CELL,thirdInt);
-			Indicators[IMPLAUSIBILITY].intValore = fourthInt;
-			break;
-		case VCU_CRITICAL_DEBUG_ID:
-			//serve il cooling domain? secondo me no 
-			Indicators[LVB_VOLTAGE].intValore = secondInt;
-			Indicators[DCDC_VOLTAGE].intValore = thirdInt;
-			Indicators[VOLTAGE_24V_VCU].intValore = fourthInt;
-			break;
-		case VCU_DEBUG_1_ID:
-			Indicators[VOLTAGE_5V_VCU].intValore = firstInt;
-			Indicators[VOLTAGE_3V3_VCU].intValore = secondInt;
-			Indicators[LVB_VOLTAGE].intValore2 = thirdInt; //Possiamo togliere GLVS_CURR
-			Indicators[PUMP_CURR].intValore = fourthInt;
-			break;
-		case VCU_DEBUG_2_ID:
-			Indicators[DCDC_VOLTAGE].intValore2 = firstInt; //Possiamo togliere GLVS_CURR
-			Indicators[BATTERY_FAN_CURR].intValore2 = secondInt;
-			Indicators[RAD_FAN_CURR].intValore2 = thirdInt; 
-			Indicators[VOLTAGE_24V_VCU].intValore2 = fourthInt; //''
-			break;
-		case VCU_DEBUG_3_ID:
-			Indicators[VCU_BOARD].intValore2 = firstInt; 
-			Indicators[VCU_BOARD].intValore = secondInt;
-			Indicators[SPEAKER_CURR].intValore2 = thirdInt; 
-			break;
-		case VCU_COOLING_ID:
-			//secondo me non serve acquisirlo
-			break;
-		case VCU_INSS_X_ID:
-			Indicators[INSS_ACC_X].floatValore = (firstInt << 16) | (secondInt & 0xFF); 
-			Indicators[INSS_GYRO_X].floatValore = (thirdInt << 16) | (fourthInt & 0xFF);
-			break;
-		case VCU_INSS_Y_ID:
-			Indicators[INSS_ACC_Y].floatValore = (firstInt << 16) | (secondInt & 0xFF); 
-			Indicators[INSS_GYRO_Y].floatValore = (thirdInt << 16) | (fourthInt & 0xFF);
-			break;
-		case VCU_INSS_Z_ID:
-			Indicators[INSS_ACC_Z].floatValore = (firstInt << 16) | (secondInt & 0xFF); 
-			Indicators[INSS_GYRO_Z].floatValore = (thirdInt << 16) | (fourthInt & 0xFF);
-			break;
-		case VCU_INSS_SPEED_ID:
-			Indicators[INSS_SPEED].floatValore = (firstInt << 16) | (secondInt & 0xFF);
-			break;
-		case VCU_INSS_LAT_ID:
-			Indicators[INSS_LAT].floatValore = (firstInt << 16) | (secondInt & 0xFF); 
-			Indicators[INSS_LONG].floatValore = (thirdInt << 16) | (fourthInt & 0xFF);
-			break;
-		case VCU_INSS_TIME_ID:
-			//don't care
-			break;
-		case VCU_INSS_GPS_ID:
-			Indicators[INSS_HDOP].floatValore = (firstInt << 16) | (secondInt & 0xFF);
-			Indicators[INSS_N_SETELLITES].floatValore = fourthInt;
-			break;
-		case VCU_AUX_ID:
-			//empty for now
-			break;
-		case BMS_ACCUMULATOR_VOLTAGE_ID:
-			Indicators[V_TS_INVERTER].intValore = firstInt; 
-			Indicators[VBAT].intValore = secondInt; //possiamo eliminare V_TS_ACCUMULATOR
-			Indicators[SUM_OF_CELLS].intValore = thirdInt;  // a che serve?
-			break;
-		case BMS_CURRENT_LIMITER_AIR_TEMP_ID:
-			// non ce ne frega niente
-			break;
-		case BMS_ACCUMULATOR_CELL_STATE_ID:
-			Indicators[MAX_CELL_VOLTAGE].intValore = firstInt; 
-			Indicators[MIN_CELL_VOLTAGE].intValore = secondInt;
-			Indicators[MAX_CELL_TEMP].intValore = thirdInt; 
-			Indicators[MIN_CELL_TEMP].intValore = fourthInt; 
-			break;
-		case BMS_ACCUMULATOR_SYSTEM_STATE1_ID:
-			Indicators[SOC].intValore = thirdInt;
-			break;
-		case BMS_ACCUMULATOR_SYSTEM_STATE2_ID:
-			// ci serve?
-			break;
-		case BMS_DEBUG_1_ID:
-			Indicators[BMS_MASTER_BOARD].intValore = firstInt;
-			Indicators[BMS_MASTER_BOARD].intValore2 = secondInt;
-			Indicators[BMS_12V_SENSE].intValore = thirdInt;
-			Indicators[BMS_STATE].intValore = fourthInt; 
-			break;
-		case BMS_DEBUG_2_ID:
-			//serve?
-			break;
-		case BMS_CELL_TEMPERATURE_ID:
-			//anche no
-			break;
-		case BMS_AUX_ID:
-			//per ora niente
-			break;
-    default:
-      break;
+	   case EFI_GEAR_RPM_TPS_PH2O_ID:
+				dGears_setGear(firstInt);
+				I2C_setRPM(secondInt);
+				dEfiSense_calculateTPS(TPS,thirdInt);
+				dEfiSense_calculatePH2O(PH2O,fourthInt);
+				timerEfiAlive = 0;	 
+				break;
+		 case EFI_WATER_TEMPERATURE_ID:
+				dEfiSense_calculateWaterTemperature(TH2O_SX_IN, firstInt);
+				dEfiSense_calculateWaterTemperature(TH2O_SX_OUT, secondInt);
+				dEfiSense_calculateWaterTemperature(TH2O_DX_IN, thirdInt);
+				dEfiSense_calculateWaterTemperature(TH2O_DX_OUT, fourthInt);
+		 		timerEfiAlive = 0;
+				break;
+		case EFI_OIL_T_ENGINE_BAT_ID:
+				dEfiSense_calculateOilInTemperature(OIL_TEMP_IN, firstInt);
+				dEfiSense_calculateOilOutTemperature(OIL_TEMP_OUT, secondInt);
+				dEfiSense_calculateTemperature(TH2O, thirdInt);
+				dEfiSense_calculateVoltage(VBAT, fourthInt);
+				timerEfiAlive = 0;
+				break;
+     case EFI_TRACTION_CONTROL_ID:
+				dEfiSense_calculateSpeed(VH_SPEED, firstInt);
+				dEfiSense_calculateSlip(EFI_SLIP_TARGET, secondInt);
+			  dEfiSense_calculateSlip(EFI_SLIP, thirdInt);
+		  	timerEfiAlive = 0;
+        break;
+     case EFI_MANUAL_LIMITER_FAN_H2O_PIT_LANE_ID:
+			  Indicators[MAN_LIM_ACT].intValore = firstInt;	
+			  Indicators[FAN].intValore = secondInt; 
+				Indicators[H2OPUMP_DC].intValore = thirdInt;
+				Indicators[PIT_LANE_ACT].intValore = fourthInt; 
+		 		timerEfiAlive = 0;
+        break;
+     case EFI_PRESSURES_LAMBDA_SMOT_ID:
+				dEfiSense_calculatePressure(FUEL_PRESS, firstInt);
+				dEfiSense_calculatePressure(OIL_PRESS, secondInt);
+				dEfiSense_calculatePressure(LAMBDA, thirdInt);
+				Indicators[FLAG_SMOT].intValore = fourthInt; 
+		 		timerEfiAlive = 0;
+				break;
+		 case EFI_LOIL_EXHAUST_ID:
+				dEfiSense_calculateFuelLevel(FUEL_LEVEL, firstInt);
+				dEfiSense_calculateTempScarico(T_SCARICO_1, secondInt);
+				dEfiSense_calculateTempScarico(T_SCARICO_2, thirdInt);
+		 		timerEfiAlive = 0;
+				break;
+		 case GCU_TRACTION_LIMITER_LOIL_EFI_ID:
+				Indicators[AN_SLIP_TRGT].intValore = firstInt;
+				Indicators[AN_SLIP_TRIM].intValore = secondInt;
+				Indicators[AN_MAN_LIM].intValore = thirdInt;
+				Indicators[OIL_LEVEL].intValore = fourthInt;
+				break;
+     case GCU_CLUTCH_MODE_MAP_SW_ID:
+				CAN_GCU_is_alive();
+				Indicators[CLUTCH_FEEDBACK].intValore = firstInt;
+				CAN_changeState(secondInt);
+				Indicators[MAP].intValore = thirdInt; // 0 1 o 1 2 ??
+				Indicators[ANTISTALL].intValore = fourthInt;
+        break;
+		 case GCU_TRACTION_LIMITER_AUTOG_ACC_SW_ID:
+				Indicators[TRACTION_CONTROL].intValore = firstInt;
+				Indicators[RPM_LIM].intValore = secondInt;
+			  // autogearshift feedback
+				CAN_changeRoutineState(fourthInt);
+		 		
+				if( Indicators[CLUTCH_FEEDBACK].intValore == 100 && driveMode == SKIDPAD_MODE)
+					buttonPressed = 1;
+				else if( driveMode == SKIDPAD_MODE ) 
+					buttonPressed = 0;
+				
+        break;
+     case DCU_ACQUISITION_SW_ID:
+				CAN_DCU_feedback(firstInt,secondInt);
+				CAN_DCU_is_alive();
+        break;
+		 case	IMU1_DATA_1_ID:
+			 	Indicators[ACC_X_1].floatValore = ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Y_1].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_X_1].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[GYR_Z_1].floatValore = ((int16_t)fourthInt)/10.0;
+			 break;
+		 case	IMU1_DATA_2_ID:
+			  Indicators[HEAD_1].floatValore 	= ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Z_1].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_Y_1].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[IMU1_INFO].intValore = (uint8_t)fourthInt;
+			 break;
+		 case	IMU2_DATA_1_ID:
+			 	Indicators[ACC_X_2].floatValore = ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Y_2].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_X_2].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[GYR_Z_2].floatValore = ((int16_t)fourthInt)/10.0;
+			 break;
+		 case	IMU2_DATA_2_ID:
+			  Indicators[HEAD_2].floatValore  = ((int16_t)firstInt)/100.0;
+				Indicators[ACC_Z_2].floatValore = ((int16_t)secondInt)/100.0;
+				Indicators[GYR_Y_2].floatValore = ((int16_t)thirdInt)/10.0;
+				Indicators[IMU2_INFO].intValore = (uint8_t)fourthInt;
+			 break;
+//		 case DAU_FR_ID:
+//			  Indicators[BPS_F].intValore  = thirdInt; //da togliere
+//			 break;
+//		 case DAU_FL_ID:
+//			  Indicators[BPS_R].intValore  = thirdInt; //da togliere
+//			 break;
+     case DAU_FR_DEBUG_ID:
+				Indicators[DAU_FR_BOARD].intValore2 = firstInt;
+				Indicators[DAU_FR_BOARD].intValore = secondInt;
+        break;
+	   case DAU_FL_DEBUG_ID:
+			  Indicators[DAU_FL_BOARD].intValore2 = firstInt;
+			  Indicators[DAU_FL_BOARD].intValore = secondInt; 
+        break;
+     case DAU_REAR_DEBUG_ID:
+				Indicators[DAU_R_BOARD].intValore2 = firstInt;
+				Indicators[DAU_R_BOARD].intValore = secondInt;
+				break;
+     case GCU_DEBUG_1_ID:
+				Indicators[GCU_BOARD].intValore2 = firstInt;
+				Indicators[GCU_BOARD].intValore = secondInt;
+				Indicators[H2O_PUMP].floatValore = thirdInt/10;
+        Indicators[FUEL_PUMP].floatValore = fourthInt/10;
+        break;
+     case GCU_DEBUG_2_ID:
+        Indicators[GEAR_CURR].floatValore = firstInt/10;
+        Indicators[CLUTCH_CURR].floatValore = secondInt/10;
+        Indicators[H2O_FAN_SX].floatValore = thirdInt/10;
+        Indicators[H2O_FAN_DX].floatValore = fourthInt/10;
+        break;
+     case DCU_DEBUG_1_ID:
+        Indicators[DCU_BOARD].intValore2 = firstInt;
+				Indicators[DCU_BOARD].intValore = secondInt;
+				Indicators[XBEE].intValore2 = thirdInt;
+			  Indicators[DCU_3V3].intValore2 = fourthInt;
+				CAN_DCU_is_alive();
+        break;
+		 case DCU_DEBUG_2_ID:
+        Indicators[DCU_12V].intValore = firstInt;
+        Indicators[DCU_5V].intValore = secondInt;
+				Indicators[DCU_3V3].intValore = thirdInt;
+				Indicators[BRAKE_BIAS].intValore = fourthInt;
+				CAN_DCU_is_alive();
+        break;
+		 case IMU_SW_FEEDBACK_ID:
+			 	flagImuCalibration = 1;
+				feedbackImuCalibration = firstInt;
+				break;
+     default:
+        break;
 	}
 }
 
@@ -429,7 +398,7 @@ void CAN_send(int ID, uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, 
   HAL_CAN_AddTxMessage(&hcan1, &header, dataPacket, &mailbox);
 }
 
-void CAN_changeState(uint8_t mode_feedback)
+void CAN_changeState(int mode_feedback)
 {
 	switch (mode_feedback)
 	{
@@ -456,28 +425,71 @@ void CAN_changeState(uint8_t mode_feedback)
   Indicators[DRIVE_MODE].intValore = mode_feedback;
 }
 
-void CAN_DCU_feedback(uint16_t firstInt)	//---------------- da inserire anche VCU
+void CAN_changeRoutineState(int command_feedback)
 {
-	// NB. SOFI HA DEI DISAGI CON LE OPERAZIONI BIT A BIT!
-	uint8_t DCUcode, DCUcommand;
-	
-	DCUcode = (uint8_t)((firstInt >> 8) & 0x00FF);
-	DCUcommand = (uint8_t)(firstInt & 0x00FF); //forse non il modo migliore
-	
-	switch( DCUcode ){
-		case DCU_ACQUISITION_FB:
-			Indicators[ACQ].intValore = DCUcommand;
-			break;
-		case DCU_NEW_START_POSITION_FB:
-			//flagNewPosition = 1;
-			break;
-		case DCU_CALIBRATE_SENSOR_FB:
-			feedbackDcuCalibration = DCUcommand;
-			flagDcuCalibration = 1;	
-			break;
-		default: 
-			break;
+	if(Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE)
+	{
+		switch(command_feedback)
+		{
+			case COMMAND_READY:
+				if(state == ACCELERATION_MODE_DEFAULT && commandSent == 1){
+					state = ACCELERATION_MODE_READY;
+					commandSent = 0;
+				}
+				break;
+			case COMMAND_GO:
+				if(state == ACCELERATION_MODE_READY && commandSent == 1){
+					state = ACCELERATION_MODE_GO;
+					commandSent = 0;
+				}
+				break;
+			case COMMAND_STOP:
+				if(state == ACCELERATION_MODE_READY || state == ACCELERATION_MODE_GO){
+					state = ACCELERATION_MODE_DEFAULT;
+					acc_stop = 1;
+				}
+				break;
+			default:
+				break;
+		}
 	}
+	
+	if(Indicators[DRIVE_MODE].intValore == AUTOX_MODE)
+	{
+		switch(command_feedback)
+		{
+			case COMMAND_READY:
+				if(state == AUTOX_MODE_DEFAULT && commandSent == 1){
+					state = AUTOX_MODE_READY;
+					commandSent = 0;
+				}
+				break;
+			case COMMAND_GO:
+				if(state == AUTOX_MODE_READY && commandSent == 1){
+					state = AUTOX_MODE_GO;
+					commandSent = 0;
+				}
+				break;
+			case COMMAND_STOP:
+				if(state == AUTOX_MODE_READY || state == AUTOX_MODE_GO){
+					temp_stato = 0;
+					state = AUTOX_MODE_DEFAULT; 
+					autox_stop = 1;
+					commandSent = 0; //-----aggiunto per test su autocross
+				}
+				break;
+		}
+	}
+}
+
+void CAN_DCU_feedback(uint16_t firstInt, uint16_t secondInt)
+{
+	if( firstInt == DCU_ACQUISITION_CODE ){
+		Indicators[ACQ].intValore = secondInt;
+	} else if( firstInt == DCU_SAVE_CALIBRATION_CODE ){
+		feedbackDcuCalibration	= secondInt;
+		flagDcuCalibration = 1;
+	}			
 }
 
 void CAN_DCU_is_alive(void)
@@ -486,64 +498,11 @@ void CAN_DCU_is_alive(void)
 	DCU_is_dead = 0;
 	DCU_was_not_dead = 0;
 }
-
-void CAN_targetMessage(void)
+void CAN_GCU_is_alive(void)
 {
-	uint16_t firstInt, secondInt, thirdInt;
-	
-	firstInt = 0;
-	firstInt = targetMap & 0xFF;
-	firstInt = firstInt | (targetMode << 8);
-	
-	secondInt = 0;
-	secondInt = targetTorque & 0xFF;
-	secondInt = secondInt | (targetTraction << 8);
-	
-	thirdInt = 0;
-	thirdInt = (( targetKalman << 8 ) || (( Indicators[TS].intValore << 6) & 0x03 ) ||
-							(( Indicators[REGEN].intValore << 4) & 0x03 ) || ((Indicators[ACQ].intValore << 2) & 0X03) );
-	
-	CAN_send(SW_TARGET_ID, firstInt, secondInt, thirdInt, EMPTY, 3);
-	
+	timerGCUAlive = 0;
+	GCU_is_dead = 0;
 }
-
-void CAN_VCU_feedback(uint16_t firstInt, uint16_t secondInt, uint16_t thirdInt, uint16_t fourthInt)
-{
-	CAN_changeState((uint8_t)((firstInt >> 8) & 0x00FF));
-	Indicators[MAP].intValore = (uint8_t)(firstInt & 0x00FF);
-	
-	Indicators[TC].intValore = ((uint8_t)((secondInt >> 8) & 0x00FF)); 
-	Indicators[TV].intValore = (uint8_t)(secondInt & 0x00FF);
-	
-	CAN_unpackThirdIntVCU(thirdInt);
-	
-//	CAN_changeRoutineState((uint8_t)((fourthInt >> 8) & 0x00FF)); --> quando ci sarà una routine di ACC
-	feedbackVcuCalibration = (uint8_t)(fourthInt & 0x00FF);
-	flagVcuCalibration = 1;	
-}
-
-
-void CAN_unpackThirdIntVCU(uint16_t thirdInt)
-{
-//		uint8_t keyValue, rtdFBValue;
-//		Indicators[KF].intValore = ...; c'è una ragione se ishac non ha messo l'indicator del kf?
-//		Indicators[POW_LIM].intValore = ...; operazione bit a bit da fare
-//		Indicators[REGEN].intValore = ...; '' 
-
-//		keyValue =  ...; solita operazione bit a bit
-// 		rtdFBValue = ...; ''
-
-// 		if( keyValue == TS_OFF && rtdFBValue == TS_OFF )
-//				Indicators[TS].intValore = TS_OFF;
-//		else if( keyValue == TS_ON && rtdFBValue == TS_OFF )
-//				Indicators[TS].intValore = TS_ON;
-//		else if( keyValue == TS_ON && rtdFBValue == TS_RTD )
-//				Indicators[TS].intValore = TS_RTD;
-//		else
-//				PROBLEMA!!
-
-}
-
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

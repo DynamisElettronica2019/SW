@@ -153,10 +153,6 @@ int main(void)
 	
 	data_indicatorsInit();
 	
-	#ifdef SIM_MODE
-		data_simMode_init();
-	#endif
-	
 	GPIO_encoders_init();
 	
 	TIM_startTimers();
