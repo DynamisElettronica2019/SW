@@ -42,7 +42,6 @@ sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_s
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/stm32f7xx_it.h
-sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 sw_dp11_init\stm32f7xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/FreeRTOSConfig.h
@@ -53,8 +52,10 @@ sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/general.h
+sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 sw_dp11_init\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/general.h
+sw_dp11_init\stm32f7xx_it.o: ../Core/Inc/data.h

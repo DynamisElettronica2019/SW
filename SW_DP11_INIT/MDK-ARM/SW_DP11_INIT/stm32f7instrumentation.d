@@ -1,4 +1,4 @@
-sw_dp11_init\stm32f7instrumentation.o: ../TouchGFX/target/STM32F7Instrumentation.cpp
+sw_dp11_init\stm32f7instrumentation.o: ..\TouchGFX\target\STM32F7Instrumentation.cpp
 sw_dp11_init\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 sw_dp11_init\stm32f7instrumentation.o: ../Core/Inc/stm32f7xx_hal_conf.h
 sw_dp11_init\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h

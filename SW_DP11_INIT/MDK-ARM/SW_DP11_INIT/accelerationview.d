@@ -105,5 +105,6 @@ sw_dp11_init\accelerationview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_h
 sw_dp11_init\accelerationview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h
 sw_dp11_init\accelerationview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\accelerationview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
+sw_dp11_init\accelerationview.o: ../Core/Inc/tim.h
 sw_dp11_init\accelerationview.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 sw_dp11_init\accelerationview.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp

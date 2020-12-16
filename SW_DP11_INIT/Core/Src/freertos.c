@@ -66,10 +66,10 @@
 #include "general.h"
 #include "data.h"
 
-#include "d_gears.h"
-#include "d_rpm_limiter.h"
 #include "d_sensors.h"
 #include "d_traction_control.h"
+#include "d_torque_vectoring.h"
+#include "d_pow_limiter.h"
 
 /* USER CODE END Includes */
 
@@ -85,22 +85,20 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-extern void dGear_setNeutral(void);
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
-char driveMode, engineMap;
+char targetMode, targetMap;
 char leftPosition, rightPosition;
 int state;
 
-int timerClutch = 0;
 int timerTempCurr = 0;
 int okButtonPressed = 0;
-int AutoxTarget = 0;
 
-extern int temp_stato;
+extern int targetRTD;
 
 extern BaseType_t xHigherPriorityTaskWoken;
 
@@ -555,10 +553,10 @@ void ledBlinkTask(void const * argument)
   {
 		HAL_GPIO_TogglePin(DEBUG_LED_1_GPIO_Port, DEBUG_LED_1_Pin);
 
-//		Indicators[TRACTION_CONTROL].intValore = state;
-		
-//		Indicators[DRIVE_MODE].intValore = driveMode;		//--- da togliere, solo per debug
-//		Indicators[MAP].intValore = engineMap;					//--- da togliere, solo per debug
+		#ifdef SIM_MODE		
+			Indicators[DRIVE_MODE].intValore = targetMode;		
+			Indicators[MAP].intValore = targetMap;	
+		#endif
 		
     osDelay(250);
   }
@@ -608,13 +606,14 @@ void canTask(void const * argument)
 void upShiftTask(void const * argument)
 {
   /* USER CODE BEGIN upShiftTask */
+ int torque_increase = -1;
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(upShiftSemaphoreHandle, portMAX_DELAY);
-		vTaskDelay(80/portTICK_PERIOD_MS);
-		if ( 0 == HAL_GPIO_ReadPin(SHIFT_UP_INT_GPIO_Port, SHIFT_UP_INT_Pin) )
-			dGears_upShift();
+		if ( 0 == HAL_GPIO_ReadPin(SHIFT_UP_INT_GPIO_Port, SHIFT_UP_INT_Pin) ){
+			d_torque_vectoring_setValue(torque_increase);
+		}
 		vTaskDelay(100/portTICK_PERIOD_MS);
     osDelay(1);
   }
@@ -631,13 +630,14 @@ void upShiftTask(void const * argument)
 void downShiftTask(void const * argument)
 {
   /* USER CODE BEGIN downShiftTask */
+	int torque_increase = 1;
   /* Infinite loop */
   for(;;)
   {
 		xSemaphoreTake(downShiftSemaphoreHandle, portMAX_DELAY);
-		vTaskDelay(80/portTICK_PERIOD_MS);
-		if ( 0 == HAL_GPIO_ReadPin(SHIFT_DOWN_INT_GPIO_Port, SHIFT_DOWN_INT_Pin) )
-			dGears_downShift();
+		if ( 0 == HAL_GPIO_ReadPin(SHIFT_DOWN_INT_GPIO_Port, SHIFT_DOWN_INT_Pin) ){
+			d_torque_vectoring_setValue(torque_increase);
+		}
 		vTaskDelay(100/portTICK_PERIOD_MS);
     osDelay(1);
   }
@@ -659,9 +659,9 @@ void modeSelectorTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
+	xSemaphoreTake(modeSelectorSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
-		old_driveMode = driveMode;
+		old_driveMode = targetMode;
 		GPIO_driveMode_set();		
 		
 		if (old_driveMode == SETTINGS_MODE)
@@ -669,7 +669,7 @@ void modeSelectorTask(void const * argument)
 			// save settings on eeprom
 			I2C_save_Pointers();
 		}
-		switch (driveMode)
+		switch (targetMode)
 		{
 			case AUTOX_MODE:
 					state = AUTOX_MODE_START;
@@ -715,10 +715,8 @@ void mapSelectorTask(void const * argument)
 		xSemaphoreTake(mapSelectorSemaphoreHandle, portMAX_DELAY);
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		
-		GPIO_engineMap_set();
-		
-		//invio su can della mappa - polling ? appena si accende efi ? 
-		
+		GPIO_map_set();
+				
     osDelay(1);
   }
   /* USER CODE END mapSelectorTask */
@@ -734,7 +732,7 @@ void mapSelectorTask(void const * argument)
 void leftEncoderTask(void const * argument)
 {
   /* USER CODE BEGIN leftEncoderTask */
-  int movement = 0;
+int movement = 0;
   /* Infinite loop */
   for(;;)
   {
@@ -742,17 +740,14 @@ void leftEncoderTask(void const * argument)
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_leftEncoder_movement();
 		
-		switch(driveMode)
+		switch(Indicators[DRIVE_MODE].intValore)
 		{
 			case AUTOX_MODE:
-				dSensors_setAutoXTarget(-movement);
-				break;
 			case ACCELERATION_MODE:
 			case ENDURANCE_MODE:
-				d_traction_control_setValue(movement);
-				break;
 			case SKIDPAD_MODE:
 				d_traction_control_setValue(movement);
+				break;
 			case BOARD_DEBUG_MODE:
 				GPIO_leftEncoder_boardDebugMode(movement);
 				break;		
@@ -780,7 +775,7 @@ void leftEncoderTask(void const * argument)
 void rightEncoderTask(void const * argument)
 {
   /* USER CODE BEGIN rightEncoderTask */
-  int movement = 0;
+ int movement = 0;
   /* Infinite loop */
   for(;;)
   {
@@ -788,12 +783,13 @@ void rightEncoderTask(void const * argument)
 		vTaskDelay(50/portTICK_PERIOD_MS);
 		movement = GPIO_rightEncoder_movement();
 		
-		switch(driveMode)
+		switch(Indicators[DRIVE_MODE].intValore)
 		{
 			case AUTOX_MODE:
 			case ACCELERATION_MODE:
+			case ENDURANCE_MODE:
 			case SKIDPAD_MODE:
-				d_rpm_limiter_setValue(movement);
+				d_power_limiter_setValue(movement);
 				break;
 			case BOARD_DEBUG_MODE:
 				GPIO_rightEncoder_boardDebugMode(movement);
@@ -822,6 +818,7 @@ void rightEncoderTask(void const * argument)
 void startButtonTask(void const * argument)
 {
   /* USER CODE BEGIN startButtonTask */
+	
   /* Infinite loop */
   for(;;)
   {
@@ -829,11 +826,11 @@ void startButtonTask(void const * argument)
 		
 		if( 0 == HAL_GPIO_ReadPin(START_BUTTON_INT_GPIO_Port, START_BUTTON_INT_Pin) )
 		{
-			CAN_send(SW_FIRE_GCU_ID, TRUE, EMPTY, EMPTY, EMPTY, 1);
+			GPIO_startButton_handle();
 		}
-
+				
     osDelay(1);
-  }
+	}
   /* USER CODE END startButtonTask */
 }
 
@@ -964,9 +961,6 @@ void rpmStripeTask(void const * argument)
   for(;;)
   {
 		xSemaphoreTake(rpmStripeSemaphoreHandle, portMAX_DELAY);
-			
-		I2C_rpm_update();
-
     osDelay(1);
   }
   /* USER CODE END rpmStripeTask */
@@ -984,20 +978,16 @@ void sensorsTask(void const * argument)
   /* USER CODE BEGIN sensorsTask */
 
   /* Infinite loop */
-  for(;;)
+    for(;;)
   {
 		xSemaphoreTake(sensorsSemaphoreHandle, portMAX_DELAY);
 		
-		timerClutch = timerClutch + 1;
 		timerTempCurr = timerTempCurr + 1;
 		
 		ADC_read();
 		
-	  dSensors_Clutch_send();	
-		
-		if (timerTempCurr >= SENSORS_SEND_TIME){
+		if (timerTempCurr >= TIMER_10HZ){
 			dSensors_Sensors_send();	
-			timerTempCurr = 0;
 		}
 		
     osDelay(1);
@@ -1022,6 +1012,7 @@ void accelerationModeTask(void const * argument)
     switch(state)
 		{
 			case ACCELERATION_MODE_START:
+				d_torque_vectoring_setValue(1); //irrilevante --> sentire se ha senso come cosa
 				break;
 			case ACCELERATION_MODE_FEEDBACK:
 				state = ACCELERATION_MODE_DEFAULT;
@@ -1059,7 +1050,6 @@ void autocrossModeTask(void const * argument)
 				break;
 			case AUTOX_MODE_FEEDBACK:
 				state = AUTOX_MODE_DEFAULT;
-				temp_stato = 0;
 				break;
 			case AUTOX_MODE_READY:
 				// stampa a schermo mex READY ?
@@ -1124,12 +1114,6 @@ void skidpadModeTask(void const * argument)
 			case SKIDPAD_MODE_FEEDBACK:
 				state = SKIDPAD_MODE_DEFAULT;
 				break;
-//			case SKIDPAD_SEND_100_STATE:
-//				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, 100, driveMode, engineMap, EMPTY, 3);
-//				break;
-//			case SKIDPAD_SEND_TRGT_VALUE:
-//				CAN_send(SW_CLUTCH_MODE_MAP_GCU_ID, Indicators[CLUTCH_TRGT].intValore, driveMode, engineMap, EMPTY, 3);
-//				break;
 			case SKIDPAD_MODE_DEFAULT:
 				break;
 		}

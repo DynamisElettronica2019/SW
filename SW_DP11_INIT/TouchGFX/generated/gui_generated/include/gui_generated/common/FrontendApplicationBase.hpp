@@ -15,6 +15,10 @@ public:
     FrontendApplicationBase(Model& m, FrontendHeap& heap);
     virtual ~FrontendApplicationBase() { }
 
+    // Screen1
+    void gotoScreen1ScreenNoTransition();
+
+
     // ENDURANCE
     void gotoENDURANCEScreenNoTransition();
 
@@ -30,30 +34,14 @@ public:
     // SKIDPAD
     void gotoSKIDPADScreenNoTransition();
 
-
-    // SETTINGS
-    void gotoSETTINGSScreenNoTransition();
-
-
-    // BOARD_DEBUG
-    void gotoBOARD_DEBUGScreenNoTransition();
-
-
-    // DEBUG_MODE
-    void gotoDEBUG_MODEScreenNoTransition();
-
-
-    // NOISE_MODE
-    void gotoNOISE_MODEScreenNoTransition();
-
-
-    // Screen1
-    void gotoScreen1ScreenNoTransition();
-
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
+
+    // Screen1
+    void gotoScreen1ScreenNoTransitionImpl();
+
 
     // ENDURANCE
     void gotoENDURANCEScreenNoTransitionImpl();
@@ -69,26 +57,6 @@ protected:
 
     // SKIDPAD
     void gotoSKIDPADScreenNoTransitionImpl();
-
-
-    // SETTINGS
-    void gotoSETTINGSScreenNoTransitionImpl();
-
-
-    // BOARD_DEBUG
-    void gotoBOARD_DEBUGScreenNoTransitionImpl();
-
-
-    // DEBUG_MODE
-    void gotoDEBUG_MODEScreenNoTransitionImpl();
-
-
-    // NOISE_MODE
-    void gotoNOISE_MODEScreenNoTransitionImpl();
-
-
-    // Screen1
-    void gotoScreen1ScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

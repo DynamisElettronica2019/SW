@@ -1,4 +1,4 @@
-sw_dp11_init\stm32f7dma.o: ../TouchGFX/target/STM32F7DMA.cpp
+sw_dp11_init\stm32f7dma.o: ..\TouchGFX\target\STM32F7DMA.cpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp
 sw_dp11_init\stm32f7dma.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
 sw_dp11_init\stm32f7dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

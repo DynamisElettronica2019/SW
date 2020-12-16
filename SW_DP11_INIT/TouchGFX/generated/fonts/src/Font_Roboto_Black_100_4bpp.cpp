@@ -3,8 +3,6 @@
 FONT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint8_t unicodes_Roboto_Black_100_4bpp[] FONT_LOCATION_FLASH_ATTRIBUTE =
 {
-    // Unicode: [0x0002, ]
-    // (Has no glyph data)
     // Unicode: [0x0020, ]
     // (Has no glyph data)
     // Unicode: [0x002A, ]

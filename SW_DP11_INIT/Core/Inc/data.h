@@ -10,70 +10,119 @@
 	 
 /********************DEFINES********************/
 	 
-#define N_INDICATORS 75//------------- Da decidere quali indicatori utilizzare
-#define TIT_LEN 11				//------------- Lunghezza massima della stringa va visualizzare come titolo
+#define N_INDICATORS BMS_SLAVE_6_BOARD+1		
+#define TIT_LEN 11													//--- Lunghezza massima della stringa va visualizzare come titolo
 	 	 
-#define N_DEBUG_MODE_VALUES 8	//--- numero di indicatori nella schermata di DEBUG_MODE
+#define N_DEBUG_MODE_VALUES 8								//--- numero di indicatori nella schermata di DEBUG_MODE
 	 
-#define START_BOARD_DEBUG	  			GCU_BOARD	
-#define END_BOARD_DEBUG 					HEAD_2		
-#define END_BOARDS 								DAU_R_BOARD
-#define START_CURRENTS_ONLY_A 		FUEL_PUMP
-#define END_CURRENTS_ONLY_A				GEAR_CURR
-#define START_CURRENTS_ONLY_MA 		DCU_3V3
-#define END_CURRENTS_ONLY_MA			XBEE
-#define START_IMU_ACC							ACC_X_1
-#define END_IMU_ACC								ACC_Z_2
-#define START_IMU_GYR							GYR_X_1
-#define END_IMU_GYR 							GYR_Z_2
-#define START_IMU_HEAD						HEAD_1
-#define END_IMU_HEAD							HEAD_2
+#define START_BOARD_DEBUG	  			DCU_BOARD	
+#define END_BOARD_DEBUG 					BMS_SLAVE_6_BOARD		
+#define END_BOARDS 								BMS_SLAVE_6_BOARD
 	 
-#define FIRST_CAR_PARAMETER 			0
-#define	LAST_CAR_PARAMETER				DRIVE_MODE
+	 
+#define START_CURRENTS_ONLY_A 		GLVS_CURR
+#define END_CURRENTS_ONLY_A				INVERTER_CURR
+	 
+#define START_CURRENTS_ONLY_MA 		XBEE
+#define END_CURRENTS_ONLY_MA			SPEAKER_CURR
+
+#define START_IMU_ACC							ACC_X_FRONT
+#define END_IMU_ACC								ACC_Z_REAR
+
+#define START_IMU_GYR							GYRO_X_FRONT
+#define END_IMU_GYR 							GYRO_Z_REAR
+	 
+#define FIRST_CAR_PARAMETER 			TV
+#define	LAST_CAR_PARAMETER				BMS_SLAVE_6_BOARD
+	 
 	 
 #define FIRST_CAR_PARAMETER_SX 		FIRST_CAR_PARAMETER
-#define	LAST_CAR_PARAMETER_SX 		LAST_CAR_PARAMETER/2+1
-#define	FIRST_CAR_PARAMETER_DX 		LAST_CAR_PARAMETER/2+2 
-#define	LAST_CAR_PARAMETER_DX 		LAST_CAR_PARAMETER 
+#define	LAST_CAR_PARAMETER_SX 		GYRO_Z_REAR
+
+#define	FIRST_CAR_PARAMETER_DX 		V_TS_INVERTER 
+#define	LAST_CAR_PARAMETER_DX 		MIN_CELL_TEMP 
 	 
 #define DEF_VALUE 9999  //------------- Valore con cui si inizializza la matrice di dati per capire se sono arrivati dati nuovi dal CAN o no
 #define DEF_SIMBOL "?"  
 #define NOT_DEF_SIMBOL "-"
 
-#define EMERGENCY_P_OIL						(3.5f)
-#define EMERGENCY_T_OIL						(130.0f)
-#define EMERGENCY_P_H2O						(2.0f)
-#define EMERGENCY_T_H2O						(95.0f)
-#define EMERGENCY_L_FUEL					(0.5f)
-#define EMERGENCY_V_BAT						(11.5f)
-#define EMERGENCY_P_FUEL					(4.2f)
-#define EMERGENCY_DC_H2O					36
-#define EMERGENCY_VH_SPEED				(0.0f)
+#define MAX_HDOP									5
+#define MIN_N_SATELLITES					10
 
-#define VH_SPEED_MIN							(2.0f)
+#define FIRST_DEFAULT_INDICATOR		PH2O
+#define SECOND_DEFAULT_INDICATOR	TH2O_RAD
+#define THIRD_DEFAULT_INDICATOR		TH2O_FR
+#define FOURTH_DEFAULT_INDICATOR	TH2O_FL
 
 /********************DATA TYPE********************/	 
 
 typedef enum {
         /* car parameters */
-        TH2O, OIL_PRESS, TPS, VBAT, RPM, TRACTION_CONTROL, BRAKE_BIAS, ANTISTALL, GEAR,
-				CLUTCH_POSITION, CLUTCH_FEEDBACK, OIL_TEMP_IN, OIL_TEMP_OUT, ACQ,
-        TH2O_SX_IN, TH2O_SX_OUT, TH2O_DX_IN, TH2O_DX_OUT, T_SCARICO_1, T_SCARICO_2,
-				OIL_LEVEL, AN_MAN_LIM, AN_SLIP_TRIM, AN_SLIP_TRGT, 
-        EFI_SLIP, EFI_SLIP_TARGET, RPM_LIM, FUEL_LEVEL,
-        FUEL_PRESS, PH2O, MAP, VH_SPEED,  MAN_LIM_ACT,
-				FAN, H2OPUMP_DC, PIT_LANE_ACT, FLAG_SMOT, LAMBDA,  BPS_R, BPS_F,CLUTCH_TRGT,
-				DRIVE_MODE,SEL_IMU,IMU1_INFO,IMU2_INFO,
-        /* boards */
-        GCU_BOARD, SW_BOARD, DCU_BOARD,
-        DAU_FL_BOARD, DAU_FR_BOARD, DAU_R_BOARD,
-        /* sensors */
-        FUEL_PUMP, H2O_PUMP, H2O_FAN_DX, H2O_FAN_SX, CLUTCH_CURR, GEAR_CURR,
-				DCU_3V3, DCU_5V, DCU_12V, XBEE,
-				ACC_X_1, ACC_Y_1, ACC_Z_1, ACC_X_2, ACC_Y_2, ACC_Z_2, 
-				GYR_X_1, GYR_Y_1, GYR_Z_1, GYR_X_2, GYR_Y_2, GYR_Z_2,
-				HEAD_1, HEAD_2			
+				
+				/*-------Parameters--------*/ 			// indicatori fissi sulle schermate
+				TV, SOC, VBAT, TC, 
+				TS, ACQ, REGEN, SD_STATE, DRIVE_MODE, MAP, POW_LIM,
+
+
+				/*------Temperatures-------*/			//	inizio degli indicatori da poter selezionare
+				TH2O_FL, TH2O_FR, TOIL_FR, TOIL_FL, TH2O_RR, TH2O_RL,		
+				TBRAKE_FR, TBRAKE_FL, TBRAKE_RR, TBRAKE_RL,
+				TOIL_RR, TOIL_RL, TH2O_RAD, PH2O,
+
+
+				/*---------Sensors---------*/
+				PBRAKE_F, PBRAKE_R,	PITOT,																								
+				STRAIN_GAUGE_FR, STRAIN_GAUGE_FL, SW_ANGLE,																					
+				STRAIN_GAUGE_RR, STRAIN_GAUGE_RL, PT100,																																
+				BRAKE_BIAS, APPS_1, APPS_2, LOAD_CELL,
+
+
+				/*---------Others----------*/			// fine degli indicatori da poter selezionare
+				IMPLAUSIBILITY,	 PWM_BATTERY_FAN, PWM_RAD_FAN,
+
+
+				/*--------Voltages---------*/
+				VOLTAGE_12V_DCU, VOLTAGE_5V_DCU, VOLTAGE_3V3_DCU, 
+				VOLTAGE_24V_VCU, VOLTAGE_5V_VCU, VOLTAGE_3V3_VCU,
+				LVB_VOLTAGE, DCDC_VOLTAGE,
+
+
+				/*--------Currents---------*/ 					
+				GLVS_CURR, PUMP_CURR,	RAD_FAN_CURR, 												
+				DCDC_CURR, BATTERY_FAN_CURR, 
+				INVERTER_CURR, XBEE, SPEAKER_CURR,														
+
+
+				/*----------IMUs-----------*/
+				ACC_X_FRONT, ACC_Y_FRONT, ACC_Z_FRONT,																																	
+				ACC_X_REAR, ACC_Y_REAR, ACC_Z_REAR,																													
+				GYRO_X_FRONT, GYRO_Y_FRONT, GYRO_Z_FRONT,																														
+				GYRO_X_REAR, GYRO_Y_REAR, GYRO_Z_REAR,																															
+				INSS_ACC_X,	INSS_ACC_Y, INSS_ACC_Z,
+				INSS_GYRO_X, INSS_GYRO_Y, INSS_GYRO_Z,										
+				INSS_SPEED,						
+				INSS_LAT, INSS_LONG,
+				INSS_HDOP, INSS_N_SETELLITES,
+
+
+				/*-------High Voltage------*/
+				V_TS_INVERTER, V_TS_ACCUMULATOR, SUM_OF_CELLS,
+				MAX_CELL_VOLTAGE, MIN_CELL_VOLTAGE,
+				ACC_AIR_TEMP1, ACC_AIR_TEMP2,															
+				ACC_STATE, IMD_INS, BMS_STATE, ACCUMULATOR_SOC, TS_PRECHARGING_STATE,															
+				ACC_TS_CURRENT, BMS_MAX_HUMIDITY, BMS_12V_SENSE,
+				CURR_LIM_MAX_INPUT_CURRENT, CURR_LIM_MAX_OUTPUT_CURRENT,
+				MAX_CELL_TEMP, MIN_CELL_TEMP,
+
+
+				/*--------Boards-----------*/
+				DCU_BOARD, DAU_FRONT_BOARD, DAU_REAR_BOARD,
+				IMU_FRONT_BOARD, IMU_REAR_BOARD, VCU_BOARD,
+				SW_BOARD, BMS_MASTER_BOARD,
+				BMS_SLAVE_1_BOARD, BMS_SLAVE_2_BOARD,
+				BMS_SLAVE_3_BOARD, BMS_SLAVE_4_BOARD,
+				BMS_SLAVE_5_BOARD, BMS_SLAVE_6_BOARD,
+						
 } Indicator_ID;
 
 typedef enum { 
@@ -91,10 +140,6 @@ typedef struct {
 } Indicator_Value;
 
 
-//typedef struct {
-//        Indicator_Value *BOX[6];
-//} Indicator_Pointer;
-
 typedef struct {
 	CAN_RxHeaderTypeDef CAN_RxPacket_Header;
 	uint8_t CAN_RxPacket_Data[8];
@@ -103,9 +148,11 @@ typedef struct {
 
 void data_indicatorsInit(void);
 void data_efiOff(void);
+void data_simMode_init(void);
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif //DATA_H
+

@@ -4,45 +4,15 @@
   * Description        : This file provides code for the configuration
   *                      of the I2C instances.
   ******************************************************************************
-  * This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
+  * @attention
   *
-  * Copyright (c) 2019 STMicroelectronics International N.V. 
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without 
-  * modification, are permitted, provided that the following conditions are met:
-  *
-  * 1. Redistribution of source code must retain the above copyright notice, 
-  *    this list of conditions and the following disclaimer.
-  * 2. Redistributions in binary form must reproduce the above copyright notice,
-  *    this list of conditions and the following disclaimer in the documentation
-  *    and/or other materials provided with the distribution.
-  * 3. Neither the name of STMicroelectronics nor the names of other 
-  *    contributors to this software may be used to endorse or promote products 
-  *    derived from this software without specific written permission.
-  * 4. This software, including modifications and/or derivative works of this 
-  *    software, must execute solely and exclusively on microcontroller or
-  *    microprocessor devices manufactured by or for STMicroelectronics.
-  * 5. Redistribution and use of this software other than as permitted under 
-  *    this license is void and will automatically terminate your rights under 
-  *    this license. 
-  *
-  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
-  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
-  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
-  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
-  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
-  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -98,21 +68,23 @@ extern I2C_HandleTypeDef hi2c1;
 #define LED_6_GREEN			0x1F
 #define LED_6_BLUE			0x20
 
-
 #define EEPROM_ADDRESS 	0xA
 
 #define DEF_PAGE 				0	 
 #define END_PAGE 				1		
 #define ACC_PAGE 				2	
 #define AUT_PAGE 				3	
-#define SKI_PAGE 				4	
+#define SKI_PAGE 				4
+#define TARGET_PAGE			5
 
 #define START_CELL			0
 #define DEF_CELL				5
-#define TRACTION_CELL 	15
-#define RPM_LIM_CELL		14
+#define TRACTION_CELL 	1
+#define TORQUE_CELL			2
+#define KALMAN_CELL 		3
+#define POW_LIM_CELL		4
  	 
-#define N_POINTERS 			6
+#define N_POINTERS 			4	//6
 
 /* USER CODE END Private defines */
 
@@ -132,7 +104,6 @@ void I2C_debug_blue_on(uint16_t);
 void I2C_debug_red_off(uint16_t);
 void I2C_debug_green_off(uint16_t);
 void I2C_debug_blue_off(uint16_t);
-void I2C_rpm_update(void);
 void I2C_rpm_command(int);
 void I2C_rpm_flash(void);
  
@@ -154,11 +125,14 @@ void I2C_get_defPointers(void);
 
 void I2C_getPointers(void);
 
-void I2C_save_Traction(int tractionValue);
-void I2C_save_RpmLimiter(int rpmLimValue);
+void I2C_save_Traction(int value);
 int I2C_get_Traction(void);
-int I2C_get_RpmLimiter(void);
-
+void I2C_save_Torque(int value);
+int I2C_get_Torque(void);
+void I2C_save_PowerLimiter(int value);
+int I2C_get_PowerLimiter(void);
+void I2C_save_Kalman(int value);
+int I2C_get_Kalman(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

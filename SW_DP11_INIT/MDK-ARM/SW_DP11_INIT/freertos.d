@@ -66,6 +66,6 @@ sw_dp11_init\freertos.o: ../Core/Inc/adc.h
 sw_dp11_init\freertos.o: ../Core/Inc/tim.h
 sw_dp11_init\freertos.o: ../Core/Inc/can.h
 sw_dp11_init\freertos.o: ../Core/Inc/id_can.h
-sw_dp11_init\freertos.o: ../Core/Inc/d_gears.h
-sw_dp11_init\freertos.o: ../Core/Inc/d_rpm_limiter.h
 sw_dp11_init\freertos.o: ../Core/Inc/d_traction_control.h
+sw_dp11_init\freertos.o: ../Core/Inc/d_torque_vectoring.h
+sw_dp11_init\freertos.o: ../Core/Inc/d_pow_limiter.h

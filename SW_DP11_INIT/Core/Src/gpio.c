@@ -4,45 +4,15 @@
   * Description        : This file provides code for the configuration
   *                      of all used GPIO pins.
   ******************************************************************************
-  * This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
+  * @attention
   *
-  * Copyright (c) 2019 STMicroelectronics International N.V. 
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without 
-  * modification, are permitted, provided that the following conditions are met:
-  *
-  * 1. Redistribution of source code must retain the above copyright notice, 
-  *    this list of conditions and the following disclaimer.
-  * 2. Redistributions in binary form must reproduce the above copyright notice,
-  *    this list of conditions and the following disclaimer in the documentation
-  *    and/or other materials provided with the distribution.
-  * 3. Neither the name of STMicroelectronics nor the names of other 
-  *    contributors to this software may be used to endorse or promote products 
-  *    derived from this software without specific written permission.
-  * 4. This software, including modifications and/or derivative works of this 
-  *    software, must execute solely and exclusively on microcontroller or
-  *    microprocessor devices manufactured by or for STMicroelectronics.
-  * 5. Redistribution and use of this software other than as permitted under 
-  *    this license is void and will automatically terminate your rights under 
-  *    this license. 
-  *
-  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
-  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
-  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
-  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
-  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
-  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -56,8 +26,6 @@
 #include "can.h"
 #include "i2c.h"
 #include "d_traction_control.h"
-#include "d_rpm_limiter.h"
-#include "d_gears.h"
 
 /* USER CODE END 0 */
 
@@ -68,14 +36,23 @@
 
 extern int state;
 extern int flag_schermata;
-extern int d_rpmLimiterValue, d_tractionValue;
+extern int targetTraction;
+extern int targetTorque;
+extern int targetPower;
+int targetKalman;
+int targetRegen = 2; // start with STOP_REGEN target
+
 extern Indicator_Value Indicators[N_INDICATORS];
 
 int schermata_settings;		//---- Variabile che viene settata a 1 quando si è entrati in settings e si preme il pulsante ok nella prima schermata
 int flag_defaultIndicators = 0;
 
+int settingsScreen;
 int box_driveMode;
 int box_indicator;
+int box_setting;
+int box_kalman;
+
 int buttonPressed = 0;
 
 int debug_mode_scroll_sx;
@@ -83,19 +60,16 @@ int debug_mode_scroll_dx;
 int board_debug_scroll;
 int pointer_scroll;
 int change_pointer;
-extern int flagImuCalibration;
 
 int commandSent = 0;
 
 int calibrationDcuPopUp;
 int calibrationImuPopUp;
 extern int flagDcuCalibration;
-extern void dGear_setNeutral(void);
 
 extern int flagAutoX;
 extern int AutoxTarget;
-
-int temp_stato = 0;
+extern int targetRTD;
 
 /* USER CODE END 1 */
 
@@ -245,7 +219,7 @@ void MX_GPIO_Init(void)
 
 /*********** SELECTORS AND ENCODERS *******************************************/
 
-extern char driveMode, engineMap;
+extern char targetMode, targetMap;
 extern char leftPosition, rightPosition;
 encoder_position modeSelector, mapSelector;
 encoder_position leftEncoder, rightEncoder;
@@ -311,12 +285,18 @@ void GPIO_encoders_init(void)
 	rightPosition = GPIO_encoders_find_new_position(rightEncoder.pin1, rightEncoder.pin2, rightEncoder.pin4);
 	
 	GPIO_driveMode_set();
-	GPIO_engineMap_set();
-
-	d_tractionValue = I2C_get_Traction();
-	d_rpmLimiterValue = I2C_get_RpmLimiter();
-	Indicators[DRIVE_MODE].intValore = driveMode;
-	Indicators[MAP].intValore = engineMap;
+	GPIO_map_set();
+		
+	#ifndef SIM_MODE
+		targetTraction = I2C_get_Traction();
+		targetPower	=	I2C_get_PowerLimiter();
+	#elsif
+		Indicators[TC].intValore = I2C_get_Traction();
+		Indicators[POW_LIM].intValore = I2C_get_PowerLimiter();
+	#endif
+		
+	Indicators[DRIVE_MODE].intValore = targetMode;
+	Indicators[MAP].intValore = targetMap;
 }
 
 /**
@@ -328,18 +308,26 @@ void GPIO_encoders_init(void)
 void GPIO_driveMode_set(void)
 {
 	char new_mode;
-	modeSelector.pin1 = HAL_GPIO_ReadPin(SEL_MODE_1_INT_GPIO_Port, SEL_MODE_1_INT_Pin);
-	modeSelector.pin2 = HAL_GPIO_ReadPin(SEL_MODE_2_GPIO_Port, SEL_MODE_2_Pin);
-	modeSelector.pin4 = HAL_GPIO_ReadPin(SEL_MODE_4_GPIO_Port, SEL_MODE_4_Pin);
 	
-	new_mode = GPIO_encoders_find_new_mode(modeSelector.pin1, modeSelector.pin2, modeSelector.pin4);
+	#ifndef SIM_MODE
+	if ( Indicators[INSS_SPEED].floatValore <= MIN_SPEED){
+	#endif	
 	
-//	if( new_mode == EMPTY_POSITION ) new_mode = ENDURANCE_MODE;	----- commentato perchè ora c'è NOISE_MODE
+		modeSelector.pin1 = HAL_GPIO_ReadPin(SEL_MODE_1_INT_GPIO_Port, SEL_MODE_1_INT_Pin);
+		modeSelector.pin2 = HAL_GPIO_ReadPin(SEL_MODE_2_GPIO_Port, SEL_MODE_2_Pin);
+		modeSelector.pin4 = HAL_GPIO_ReadPin(SEL_MODE_4_GPIO_Port, SEL_MODE_4_Pin);
+		
+		new_mode = GPIO_encoders_find_new_mode(modeSelector.pin1, modeSelector.pin2, modeSelector.pin4);
 	
-	if( driveMode != new_mode )
-	{
-		driveMode = new_mode;
+		if( new_mode == EMPTY_POSITION ) 
+			new_mode = ENDURANCE_MODE;	
+		if( targetMode != new_mode )
+			targetMode = new_mode;
+		
+	#ifndef SIM_MODE
 	}
+	#endif
+	
 }
 
 /**
@@ -348,24 +336,29 @@ void GPIO_driveMode_set(void)
 	*					and sets the corresponding engine map. (ABSOLUTE ENCODER)
   */
 
-void GPIO_engineMap_set(void)
+void GPIO_map_set(void)
 {	
 	char new_map;
-	mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
-	mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
-	mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
 
-	new_map = GPIO_encoders_find_new_mode(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
+	#ifndef SIM_MODE
+	if ( Indicators[INSS_SPEED].floatValore <= MIN_SPEED){
+	#endif
+		
+		mapSelector.pin1 = HAL_GPIO_ReadPin(SEL_MAP_1_INT_GPIO_Port, SEL_MAP_1_INT_Pin);
+		mapSelector.pin2 = HAL_GPIO_ReadPin(SEL_MAP_2_GPIO_Port, SEL_MAP_2_Pin);
+		mapSelector.pin4 = HAL_GPIO_ReadPin(SEL_MAP_4_GPIO_Port, SEL_MAP_4_Pin);
+
+		new_map = GPIO_encoders_find_new_mode(mapSelector.pin1, mapSelector.pin2, mapSelector.pin4);
 	
-	// a Nico non piace il % :(
-	if(new_map == 0 || new_map == 2 || new_map == 4 || new_map == 6) new_map = MAP_2;
-	else new_map = MAP_1;
-	if(engineMap != new_map)
-	{
-		engineMap = new_map;
-		HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
+		if( targetMap != new_map )
+		{
+			targetMap = new_map;
+		}
+		
+	#ifndef SIM_MODE	
 	}
-
+	#endif
+	
 }
 
 /**
@@ -375,7 +368,6 @@ void GPIO_engineMap_set(void)
 	*					position and the previous -> RELATIVE ENCODER
   * @retval movement
   */
-int variabile;
 
 int GPIO_leftEncoder_movement(void)
 {	
@@ -396,8 +388,6 @@ int GPIO_leftEncoder_movement(void)
 		movement = -1;
 	leftPosition = new_pos;
 	
-	//Indicators[CLUTCH_FEEDBACK].intValore = movement;
-
 	return movement;
 
 }
@@ -424,7 +414,7 @@ int GPIO_rightEncoder_movement(void)
 	
 	HAL_GPIO_TogglePin(DEBUG_LED_2_GPIO_Port, DEBUG_LED_2_Pin);
 
-	movement = - new_pos + rightPosition; // magari segni invertiti
+	movement = - new_pos + rightPosition;
 	if (movement == -7 )
 		movement = 1;
 	else if (movement == 7)
@@ -466,8 +456,18 @@ void GPIO_rightEncoder_debugMode(int movement)
 void GPIO_rightEncoder_settingsMode(int movement)
 {
   // scorri le finestrelle
-	switch (schermata_settings){
-		case 0: 
+	switch(settingsScreen){
+		case SETTINGS_DEFAULT:
+			if (movement == 1)
+				box_setting = box_setting + 1;
+			if (movement == -1)
+				box_setting = box_setting - 1;
+			if (box_driveMode >= 5 )
+				box_setting = 0;
+			if (box_driveMode <= -1 )
+				box_setting = 4;
+			break;
+		case SETTINGS_INDICATORS_MODE: 
 			if (movement == 1)
 				box_driveMode = box_driveMode + 1;
 			if (movement == -1)
@@ -477,7 +477,7 @@ void GPIO_rightEncoder_settingsMode(int movement)
 			if (box_driveMode <= -1 )
 				box_driveMode = 4;
 			break;
-		case 1:
+		case SETTINGS_INDICATORS_CHANGE:
 			change_pointer = 1; 
 			if (movement == 1)
 				pointer_scroll = pointer_scroll + 1;
@@ -488,31 +488,33 @@ void GPIO_rightEncoder_settingsMode(int movement)
 			if (pointer_scroll >	LAST_CAR_PARAMETER)
 				pointer_scroll = 0;
 			break;
-		case 2:
+		case SETTINGS_INSS_DATA:
+			
+			break;
+		case SETTINGS_CALIBRATION:
 			if (movement == 1)
 				currentDcuCalibration = currentDcuCalibration + 1;
 			if (movement == -1)
 				currentDcuCalibration = currentDcuCalibration - 1;
-			if (currentDcuCalibration >= 7)
+			if (currentDcuCalibration >= 6)
 				currentDcuCalibration = 1;
 			if (currentDcuCalibration <= 0)
-				currentDcuCalibration = 6;
+				currentDcuCalibration = 5;
 			break;
-		case 3:
+		case SETTINGS_KALMAN:
 			if (movement == 1)
-				currentImuCalibration = currentImuCalibration + 1;
+				box_kalman = box_kalman + 1;
 			if (movement == -1)
-				currentImuCalibration = currentImuCalibration - 1;
-			if (currentImuCalibration >= 11)
-				currentImuCalibration = 1;
-			if (currentImuCalibration <= 0)
-				currentImuCalibration = 10;
+				box_kalman = box_kalman - 1;
+			if (box_driveMode >= 6 )
+				box_kalman = 1;
+			if (box_driveMode <= -1 )
+				box_kalman = 5;
 			break;
 		default:
 			break;
 	}
 }
-
 
 void GPIO_leftEncoder_boardDebugMode(int movement)
 {
@@ -541,8 +543,18 @@ void GPIO_leftEncoder_debugMode(int movement)
 
 void GPIO_leftEncoder_settingsMode(int movement)
 {
-	switch (schermata_settings){
-		case 0: 
+	switch(settingsScreen){
+		case SETTINGS_DEFAULT:
+			if (movement == 1)
+				box_setting = box_setting + 1;
+			if (movement == -1)
+				box_setting = box_setting - 1;
+			if (box_driveMode >= 5 )
+				box_setting = 0;
+			if (box_driveMode <= -1 )
+				box_setting = 4;
+			break;
+		case SETTINGS_INDICATORS_MODE: 
 			if (movement == 1)
 				box_driveMode = box_driveMode + 1;
 			if (movement == -1)
@@ -552,36 +564,39 @@ void GPIO_leftEncoder_settingsMode(int movement)
 			if (box_driveMode <= -1 )
 				box_driveMode = 4;
 			break;
-		case 1:
+		case SETTINGS_INDICATORS_CHANGE:
 			pointer_scroll = 0; //------- ogni volta che si cambia box si azzera lo scorrimento degli indicatori
 			if (movement == 1)
 				box_indicator = box_indicator + 1;
 			if (movement == -1)
 				box_indicator = box_indicator - 1;
-			if (box_indicator >= 6)
+			if (box_indicator >= 4)
 				box_indicator = 0;
 			if (box_indicator <= -1)
-				box_indicator = 5;
+				box_indicator = 4;
 			break;
-		case 2:
+		case SETTINGS_INSS_DATA:
+			
+			break;
+		case SETTINGS_CALIBRATION:
 			if (movement == 1)
 				currentDcuCalibration = currentDcuCalibration + 1;
 			if (movement == -1)
 				currentDcuCalibration = currentDcuCalibration - 1;
-			if (currentDcuCalibration >= 7)
+			if (currentDcuCalibration >= 6)
 				currentDcuCalibration = 1;
 			if (currentDcuCalibration <= 0)
-				currentDcuCalibration = 6;
+				currentDcuCalibration = 5;
 			break;
-		case 3:
+		case SETTINGS_KALMAN:
 			if (movement == 1)
-				currentImuCalibration = currentImuCalibration + 1;
+				box_kalman = box_kalman + 1;
 			if (movement == -1)
-				currentImuCalibration = currentImuCalibration - 1;
-			if (currentImuCalibration >= 11)
-				currentImuCalibration = 1;
-			if (currentImuCalibration <= 0)
-				currentImuCalibration = 10;
+				box_kalman = box_kalman - 1;
+			if (box_driveMode >= 6 )
+				box_kalman = 1;
+			if (box_driveMode <= -1 )
+				box_kalman = 5;
 			break;
 		default:
 			break;
@@ -592,105 +607,159 @@ void GPIO_leftEncoder_settingsMode(int movement)
 
 void GPIO_okButton_handle(void)
 {
-		if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_DEFAULT ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, EMPTY, EMPTY, 2);
-			commandSent = 1;
-		}else	if( driveMode == ACCELERATION_MODE && state == ACCELERATION_MODE_READY ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, EMPTY, EMPTY, 2);
-			commandSent = 1;
-		}
-		
-		if( driveMode == AUTOX_MODE && state == AUTOX_MODE_DEFAULT && flagAutoX == 0 ){
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, AutoxTarget, EMPTY, 3);
-			temp_stato = 1;
-			commandSent = 1;
-		}else	if( driveMode == AUTOX_MODE && state == AUTOX_MODE_READY  && flagAutoX ==0 ) {
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, AutoxTarget, EMPTY, 3);
-			temp_stato = 2;
-			commandSent = 1;
-		}else if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_DEFAULT*/ && flagAutoX == 1 && temp_stato == 0){
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, 5, AutoxTarget, EMPTY, 3);
-			commandSent = 1;
-		}else	if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_READY*/  && flagAutoX ==1 && temp_stato == 1) {
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_READY, AutoxTarget, EMPTY, 3);
-			commandSent = 1;
-		}else	if( driveMode == AUTOX_MODE /*&& state == AUTOX_MODE_GO */ && flagAutoX ==1 && temp_stato == 2) {
-			CAN_send(SW_OK_BUTTON_GCU_ID, driveMode, COMMAND_GO, AutoxTarget, EMPTY, 3);
-			commandSent = 1;
-		}
+	uint16_t canMessagge = 0;
+	
+	#ifdef SIM_MODE
+		if (Indicators[TS].intValore == TS_ON)
+			Indicators[TS].intValore = TS_OFF;
+		else if (Indicators[TS].intValore == TS_OFF)
+			Indicators[TS].intValore = TS_ON;
+	#endif
 
-		if( driveMode == SETTINGS_MODE){
-			if (schermata_settings == 0 && box_driveMode >= 0 && box_driveMode <= 3){
-				flag_schermata = 0;
-				schermata_settings = 1;
-			}else if (schermata_settings == 0 && box_driveMode == 4 ){
-				flag_schermata = 0;
-				schermata_settings = 2;
-			}else if (schermata_settings == 2 && currentDcuCalibration >= 0 && currentDcuCalibration <= 5 && flagDcuCalibration == 0){
-				CAN_send(SW_ACQUISITION_DCU_ID, DCU_SAVE_CALIBRATION_CODE, currentDcuCalibration, EMPTY, EMPTY, 2);	
-			}else if (schermata_settings == 2 && currentDcuCalibration == 6 && flagDcuCalibration == 0){
-				flag_schermata = 0;
-				schermata_settings = 3;
-			}	else if (schermata_settings == 3 && flagImuCalibration == 0){
-				CAN_send(SW_IMU_CALIBRATION_ID, Indicators[SEL_IMU].intValore, currentImuCalibration, EMPTY, EMPTY, 2);	
+	if( Indicators[DRIVE_MODE].intValore == SETTINGS_MODE){
+		
+		if ( settingsScreen == SETTINGS_DEFAULT ){
+			if ( box_setting <= 3 ) {
+				settingsScreen = box_setting;
+			}
+			else if ( box_setting == 4 ){	
+				
+				canMessagge = DCU_SAVE_NEW_START_POSITION & 0xFF;
+				canMessagge = canMessagge | ( DCU_SAVE_NEW_START_POSITION << 8 );
+			
+				CAN_send(SW_ACQUISITION_ID, canMessagge, EMPTY, EMPTY, EMPTY, 1);	
 			}
 		}
-//		
-//		if( driveMode == SKIDPAD_MODE ){
-//			if( buttonPressed == 0 ){
-//				state = SKIDPAD_SEND_100_STATE;
-//			}
-//			else if( buttonPressed == 1 ){
-//				state = SKIDPAD_SEND_TRGT_VALUE;
-//			}
-//		}
-		
+		else if ( settingsScreen == SETTINGS_INDICATORS_MODE ){
+			settingsScreen = SETTINGS_INDICATORS_CHANGE;
+		}
+		else if ( settingsScreen == SETTINGS_INSS_DATA ) {
+			
+		}
+		else if ( settingsScreen == SETTINGS_CALIBRATION ) {
+			
+			canMessagge = currentDcuCalibration & 0xFF;
+			canMessagge = canMessagge | ( DCU_VCU_CALIBRATE_SENSOR << 8 );
+			
+			CAN_send(SW_ACQUISITION_ID, canMessagge, EMPTY, EMPTY, EMPTY, 1);	
+		}
+		else if ( settingsScreen == SETTINGS_KALMAN ) {
+			targetKalman = box_kalman;
+		}
+	}
 }
 
 void GPIO_neutralButton_handle(void)
 {
-	if( driveMode == ENDURANCE_MODE || driveMode == ACCELERATION_MODE || driveMode == SKIDPAD_MODE || driveMode == AUTOX_MODE )
-			dGear_setNeutral();
-	else if( driveMode == SETTINGS_MODE){
-			if( schermata_settings == 1 || schermata_settings == 2 ){
-				schermata_settings = 0;		
-				flag_schermata = 0;
-				I2C_save_Pointers();
-			}	else if( schermata_settings == 3 ){
-				schermata_settings = 2;
-				flag_schermata = 0;
-			}
+	uint16_t canMessagge = 0;
+	
+	if( Indicators[DRIVE_MODE].intValore == SETTINGS_MODE ){
+		if( settingsScreen == SETTINGS_INDICATORS_MODE || settingsScreen == SETTINGS_INSS_DATA || 
+				settingsScreen == SETTINGS_CALIBRATION || settingsScreen == SETTINGS_KALMAN ){
+			settingsScreen = SETTINGS_DEFAULT;
 		}
+		else if( schermata_settings == SETTINGS_INDICATORS_CHANGE ){
+			settingsScreen = SETTINGS_DEFAULT;
+			I2C_save_Pointers();
+		}
+	}
+	else if ( Indicators[DRIVE_MODE].intValore == ENDURANCE_MODE || Indicators[DRIVE_MODE].intValore == ACCELERATION_MODE ||
+						Indicators[DRIVE_MODE].intValore == SKIDPAD_MODE || Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
+		if ( Indicators[REGEN].intValore == START_REGEN ){
+			targetRegen = STOP_REGEN;
+		}
+		else if ( Indicators[REGEN].intValore == STOP_REGEN ){
+				targetRegen = START_REGEN;
+		}
+		
+		canMessagge = targetRegen & 0xFF;
+		canMessagge = canMessagge | ( VCU_REGEN_REQUEST << 8 );
+		
+		CAN_send(SW_BUTTONS_ID, canMessagge, EMPTY, EMPTY, EMPTY, 1);
+		
+		#ifdef SIM_MODE
+			Indicators[REGEN].intValore = targetRegen;
+		#endif
+		
+	}
 }
 
 void GPIO_aux1Button_handle(void)
 {
-	if( Indicators[ACQ].intValore == ACQ_ON && driveMode != SETTINGS_MODE) {
-		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_STOP, EMPTY, EMPTY, 2);
-		//Indicators[ACQ].intValore = ACQ_OFF;
+	uint16_t canMessagge = 0;
+	
+	if( Indicators[ACQ].intValore == ACQ_ON && Indicators[DRIVE_MODE].intValore != SETTINGS_MODE) {
+		
+		canMessagge = COMMAND_ACQ_STOP & 0xFF;
+		canMessagge = canMessagge | ( DCU_ACQUISITION_REQUEST << 8 );
+		
+		CAN_send(SW_ACQUISITION_ID, canMessagge, EMPTY, EMPTY, EMPTY, 1);
+		
+		#ifdef SIM_MODE
+			Indicators[ACQ].intValore = ACQ_OFF;
+			Indicators[BMS_STATE].intValore = ACQ_OFF;
+		#endif
+		
 	}
-	else if (( Indicators[ACQ].intValore == ACQ_OFF || Indicators[ACQ].intValore == ACQ_READY ) && driveMode != SETTINGS_MODE) {
-		CAN_send(SW_ACQUISITION_DCU_ID, DCU_ACQUISITION_CODE, COMMAND_ACQ_START, EMPTY, EMPTY, 2);
-		//Indicators[ACQ].intValore = ACQ_ON;
+	else if (( Indicators[ACQ].intValore == ACQ_OFF || Indicators[ACQ].intValore == ACQ_READY ) && Indicators[DRIVE_MODE].intValore != SETTINGS_MODE) {
+		
+		canMessagge = COMMAND_ACQ_START & 0xFF;
+		canMessagge = canMessagge | ( DCU_ACQUISITION_REQUEST << 8 );
+		
+		CAN_send(SW_ACQUISITION_ID, canMessagge, EMPTY, EMPTY, EMPTY, 1);
+		
+		#ifdef SIM_MODE
+			Indicators[ACQ].intValore = ACQ_ON;
+			Indicators[BMS_STATE].intValore = ACQ_ON;
+		#endif
+		
 	} 
-	else if ( driveMode == SETTINGS_MODE && schermata_settings == 1 ) {
+	else if ( Indicators[DRIVE_MODE].intValore == SETTINGS_MODE && settingsScreen == SETTINGS_INDICATORS_CHANGE ) {
+		
 		flag_defaultIndicators = 1;
-	}
-	else if ( driveMode == SETTINGS_MODE && schermata_settings == 3 ) {
-		if( Indicators[SEL_IMU].intValore == 1 ) 
-			Indicators[SEL_IMU].intValore = 2;
-		else if ( Indicators[SEL_IMU].intValore == 2 ) 
-			Indicators[SEL_IMU].intValore = 1;
 	}
 }
 		
 void GPIO_aux2Button_handle(void)
 {
-	if( driveMode == SETTINGS_MODE )
+	if( Indicators[DRIVE_MODE].intValore == SETTINGS_MODE )
 		I2C_save_Pointers();
 	
 	HAL_NVIC_SystemReset();
 }
+
+void GPIO_startButton_handle(void)
+{
+	uint16_t canMessagge = 0;
+
+	#ifndef SIM_MODE
+	if( Indicators[INSS_SPEED].floatValore <= MIN_SPEED ){		
+	{
+	#endif
+	
+		if (Indicators[TS].intValore == TS_RTD){
+			targetRTD = STOP_RTD;
+			#ifdef SIM_MODE
+				Indicators[TS].intValore = TS_ON;
+			#endif
+		}else if( Indicators[TS].intValore == TS_ON ){
+				targetRTD = START_RTD;
+			#ifdef SIM_MODE
+				Indicators[TS].intValore = TS_RTD;
+			#endif
+		}
+		
+		if ( Indicators[TS].intValore != targetRTD ){
+			canMessagge = targetRTD & 0xFF;
+			canMessagge = canMessagge | ( VCU_RTD_REQUEST << 8 );
+			CAN_send(SW_BUTTONS_ID, canMessagge, EMPTY, EMPTY, EMPTY, 1);	
+		}			
+	
+	#ifndef SIM_MODE
+	}
+	#endif
+}
+
 
 /* USER CODE END 2 */
 

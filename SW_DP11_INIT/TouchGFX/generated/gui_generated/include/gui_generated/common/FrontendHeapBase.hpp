@@ -21,40 +21,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
+#include <gui/screen1_screen/Screen1View.hpp>
+#include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <gui/endurance_screen/ENDURANCEView.hpp>
 #include <gui/endurance_screen/ENDURANCEPresenter.hpp>
 #include <gui/acceleration_screen/ACCELERATIONView.hpp>
@@ -63,16 +34,6 @@
 #include <gui/autocross_screen/AUTOCROSSPresenter.hpp>
 #include <gui/skidpad_screen/SKIDPADView.hpp>
 #include <gui/skidpad_screen/SKIDPADPresenter.hpp>
-#include <gui/settings_screen/SETTINGSView.hpp>
-#include <gui/settings_screen/SETTINGSPresenter.hpp>
-#include <gui/board_debug_screen/BOARD_DEBUGView.hpp>
-#include <gui/board_debug_screen/BOARD_DEBUGPresenter.hpp>
-#include <gui/debug_mode_screen/DEBUG_MODEView.hpp>
-#include <gui/debug_mode_screen/DEBUG_MODEPresenter.hpp>
-#include <gui/noise_mode_screen/NOISE_MODEView.hpp>
-#include <gui/noise_mode_screen/NOISE_MODEPresenter.hpp>
-#include <gui/screen1_screen/Screen1View.hpp>
-#include <gui/screen1_screen/Screen1Presenter.hpp>
 
 
 /**
@@ -95,16 +56,12 @@ public:
      * A list of all view types. Must end with meta::Nil.
      * @note All view types used in the application MUST be added to this list!
      */
-    typedef meta::TypeList< ENDURANCEView,
+    typedef meta::TypeList< Screen1View,
+            meta::TypeList< ENDURANCEView,
             meta::TypeList< ACCELERATIONView,
             meta::TypeList< AUTOCROSSView,
             meta::TypeList< SKIDPADView,
-            meta::TypeList< SETTINGSView,
-            meta::TypeList< BOARD_DEBUGView,
-            meta::TypeList< DEBUG_MODEView,
-            meta::TypeList< NOISE_MODEView,
-            meta::TypeList< Screen1View,
-            meta::Nil > > > > > > > >
+            meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -116,16 +73,12 @@ public:
      * A list of all presenter types. Must end with meta::Nil.
      * @note All presenter types used in the application MUST be added to this list!
      */
-    typedef meta::TypeList< ENDURANCEPresenter,
+    typedef meta::TypeList< Screen1Presenter,
+            meta::TypeList< ENDURANCEPresenter,
             meta::TypeList< ACCELERATIONPresenter,
             meta::TypeList< AUTOCROSSPresenter,
             meta::TypeList< SKIDPADPresenter,
-            meta::TypeList< SETTINGSPresenter,
-            meta::TypeList< BOARD_DEBUGPresenter,
-            meta::TypeList< DEBUG_MODEPresenter,
-            meta::TypeList< NOISE_MODEPresenter,
-            meta::TypeList< Screen1Presenter,
-            meta::Nil > > > > > > > >
+            meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**

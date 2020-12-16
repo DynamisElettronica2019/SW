@@ -401,11 +401,6 @@
               <FilePath>..\Core\Src\data.c</FilePath>
             </File>
             <File>
-              <FileName>d_rpm_limiter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\d_rpm_limiter.c</FilePath>
-            </File>
-            <File>
               <FileName>d_traction_control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\Src\d_traction_control.c</FilePath>
@@ -414,16 +409,6 @@
               <FileName>d_sensors.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\Src\d_sensors.c</FilePath>
-            </File>
-            <File>
-              <FileName>d_efiSense.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\d_efiSense.c</FilePath>
-            </File>
-            <File>
-              <FileName>d_gears.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\d_gears.c</FilePath>
             </File>
             <File>
               <FileName>gpio.c</FileName>
@@ -495,45 +480,15 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application/User/TouchGFX/target</GroupName>
-          <Files>
             <File>
-              <FileName>BoardConfiguration.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../TouchGFX/target/BoardConfiguration.cpp</FilePath>
+              <FileName>d_pow_limiter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_pow_limiter.c</FilePath>
             </File>
             <File>
-              <FileName>GPIO.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../TouchGFX/target/GPIO.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>STM32F7DMA.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../TouchGFX/target/STM32F7DMA.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>STM32F7HAL.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../TouchGFX/target/STM32F7HAL.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>STM32F7TouchController.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../TouchGFX/target/STM32F7TouchController.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>STM32F7Instrumentation.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../TouchGFX/target/STM32F7Instrumentation.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>HW_Init.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../TouchGFX/target/HW_Init.cpp</FilePath>
+              <FileName>d_torque_vectoring.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\d_torque_vectoring.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -743,21 +698,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/TouchGFX</GroupName>
-          <Files>
-            <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
-              <FileName>OSWrappers.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Application/User/TouchGFX/gui</GroupName>
           <Files>
             <File>
@@ -781,26 +721,6 @@
               <FilePath>../touchgfx/gui/src/autocross_screen/autocrossview.cpp</FilePath>
             </File>
             <File>
-              <FileName>BOARD_DEBUGPresenter.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugpresenter.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>BOARD_DEBUGView.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/board_debug_screen/board_debugview.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>DEBUG_MODEPresenter.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/debug_mode_screen/debug_modepresenter.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>DEBUG_MODEView.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/debug_mode_screen/debug_modeview.cpp</FilePath>
-            </File>
-            <File>
               <FileName>ENDURANCEPresenter.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/endurance_screen/endurancepresenter.cpp</FilePath>
@@ -821,16 +741,6 @@
               <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
             </File>
             <File>
-              <FileName>NOISE_MODEPresenter.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/noise_mode_screen/noise_modepresenter.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>NOISE_MODEView.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/noise_mode_screen/noise_modeview.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Screen1Presenter.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/screen1_screen/screen1presenter.cpp</FilePath>
@@ -839,16 +749,6 @@
               <FileName>Screen1View.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/screen1_screen/screen1view.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>SETTINGSPresenter.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/settings_screen/settingspresenter.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>SETTINGSView.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/settings_screen/settingsview.cpp</FilePath>
             </File>
             <File>
               <FileName>SKIDPADPresenter.cpp</FileName>
@@ -886,16 +786,6 @@
               <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
             </File>
             <File>
-              <FileName>BOARD_DEBUGViewBase.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/gui_generated/src/board_debug_screen/board_debugviewbase.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>DEBUG_MODEViewBase.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/gui_generated/src/debug_mode_screen/debug_modeviewbase.cpp</FilePath>
-            </File>
-            <File>
               <FileName>dynamis_380.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/dynamis_380.cpp</FilePath>
@@ -921,14 +811,14 @@
               <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_25_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_Roboto_Regular_290_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_290_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Font_Roboto_Regular_35_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_35_4bpp.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Font_Roboto_Regular_420_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_roboto_regular_420_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Font_Roboto_Regular_45_4bpp.cpp</FileName>
@@ -971,14 +861,14 @@
               <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_25_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Kerning_Roboto_Regular_290_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_290_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Kerning_Roboto_Regular_35_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_35_4bpp.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Kerning_Roboto_Regular_420_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_roboto_regular_420_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_Roboto_Regular_45_4bpp.cpp</FileName>
@@ -1011,19 +901,9 @@
               <FilePath>../touchgfx/generated/images/src/logo_300.cpp</FilePath>
             </File>
             <File>
-              <FileName>NOISE_MODEViewBase.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/gui_generated/src/noise_mode_screen/noise_modeviewbase.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Screen1ViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>SETTINGSViewBase.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/gui_generated/src/settings_screen/settingsviewbase.cpp</FilePath>
             </File>
             <File>
               <FileName>SKIDPADViewBase.cpp</FileName>
@@ -1046,14 +926,14 @@
               <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_25_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>Table_Roboto_Regular_290_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_290_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Table_Roboto_Regular_35_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_35_4bpp.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Table_Roboto_Regular_420_4bpp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_roboto_regular_420_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_Roboto_Regular_45_4bpp.cpp</FileName>
@@ -1079,6 +959,61 @@
               <FileName>TypedTextDatabase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/texts/src/typedtextdatabase.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/TouchGFX/target</GroupName>
+          <Files>
+            <File>
+              <FileName>BoardConfiguration.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\TouchGFX\target\BoardConfiguration.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\TouchGFX\target\GPIO.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HW_Init.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\TouchGFX\target\HW_Init.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7DMA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\TouchGFX\target\STM32F7DMA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7HAL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\TouchGFX\target\STM32F7HAL.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7Instrumentation.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\TouchGFX\target\STM32F7Instrumentation.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7TouchController.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\TouchGFX\target\STM32F7TouchController.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/TouchGFX</GroupName>
+          <Files>
+            <File>
+              <FileName>OSWrappers.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>../middlewares/st/touchgfx/touchgfx/lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
             </File>
           </Files>
         </Group>

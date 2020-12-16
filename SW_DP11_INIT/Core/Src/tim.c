@@ -4,45 +4,15 @@
   * Description        : This file provides code for the configuration
   *                      of the TIM instances.
   ******************************************************************************
-  * This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
+  * @attention
   *
-  * Copyright (c) 2019 STMicroelectronics International N.V. 
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without 
-  * modification, are permitted, provided that the following conditions are met:
-  *
-  * 1. Redistribution of source code must retain the above copyright notice, 
-  *    this list of conditions and the following disclaimer.
-  * 2. Redistributions in binary form must reproduce the above copyright notice,
-  *    this list of conditions and the following disclaimer in the documentation
-  *    and/or other materials provided with the distribution.
-  * 3. Neither the name of STMicroelectronics nor the names of other 
-  *    contributors to this software may be used to endorse or promote products 
-  *    derived from this software without specific written permission.
-  * 4. This software, including modifications and/or derivative works of this 
-  *    software, must execute solely and exclusively on microcontroller or
-  *    microprocessor devices manufactured by or for STMicroelectronics.
-  * 5. Redistribution and use of this software other than as permitted under 
-  *    this license is void and will automatically terminate your rights under 
-  *    this license. 
-  *
-  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
-  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
-  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
-  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
-  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
-  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
-  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
   *
   ******************************************************************************
   */
@@ -55,6 +25,7 @@
 #include "general.h"
 #include "cmsis_os.h"
 #include "data.h"
+#include "gpio.h"
 #include "can.h"
 #include "i2c.h"
 
@@ -71,18 +42,19 @@ extern osSemaphoreId accelerationModeSemaphoreHandle;
 extern osSemaphoreId autocrossModeSemaphoreHandle;
 extern osSemaphoreId skidpadModeSemaphoreHandle;
 
-extern char driveMode;
+extern char targetMode;
 	
 int timerSensors = 0;
 int timerStartButton = 0;
 int timerRpmStripe = 0;
 int timerDriveMode = 0;
 int timerTractionRpm = 0;
-int timerEfiAlive = 0;
+int timerCanTarget = 0;
 int timerDCUAlive = 0;
 int timerGCUAlive = 0;
 int timerTractionSave = 0;
-int timerRpmLimiterSave  = 0;
+int timerTorqueVectoringSave  = 0;
+int timerPowerLimiterSave = 0;
 int timerEmergency = 0;
 int timerFlash = 0;
 int timerOkButtonDelay = 0;
@@ -93,13 +65,17 @@ int emergencyBlink = 0;
 int GCU_is_dead = 0;
 int DCU_is_dead = 0;
 int DCU_was_not_dead = 0;
-int	TRACTION_save = 0;
-int RPM_LIM_save 	= 0;
-int okButtonCanBePressed = 0;
-			
-int flagAutoX = 1;
 
-extern int d_tractionValue, d_rpmLimiterValue;
+int	TRACTION_save = 0;
+int TV_save = 0;
+int POW_LIM_save = 0;
+int KALMAN_save = 0;
+
+int okButtonCanBePressed = 0;
+int counterRTD = 0;
+			
+int targetRTD = 0;
+extern int targetTraction, targetTorque, targetKalman;
 extern int flagEngineOn; 
 extern Indicator_Value Indicators[N_INDICATORS];	
 
@@ -107,6 +83,7 @@ extern Indicator_Value Indicators[N_INDICATORS];
 
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim7;
+TIM_HandleTypeDef htim10;
 TIM_HandleTypeDef htim12;
 
 /* TIM4 init function */
@@ -148,9 +125,9 @@ void MX_TIM7_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig = {0};
 
   htim7.Instance = TIM7;
-  htim7.Init.Prescaler = 9999;
+  htim7.Init.Prescaler = 10000-1;
   htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 9-1;
+  htim7.Init.Period = 10-1;
   htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
   {
@@ -159,6 +136,22 @@ void MX_TIM7_Init(void)
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+}
+/* TIM10 init function */
+void MX_TIM10_Init(void)
+{
+
+  htim10.Instance = TIM10;
+  htim10.Init.Prescaler = 0;
+  htim10.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim10.Init.Period = 0;
+  htim10.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim10.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim10) != HAL_OK)
   {
     Error_Handler();
   }
@@ -380,17 +373,17 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 /* USER CODE BEGIN 1 */
 
 void TIM_tractionRpm_send(void){
-	CAN_send(SW_TRACTION_LIMITER_GCU_ID, d_tractionValue, d_rpmLimiterValue, EMPTY, EMPTY, 2);
+//	CAN_send(SW_TRACTION_LIMITER_GCU_ID, d_tractionValue, d_rpmLimiterValue, EMPTY, EMPTY, 2);
 }
 
 void TIM_callback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
 
-  /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM6) {
-    HAL_IncTick();
-  }
+  /* USER CODE END Callback 0 */ //-----già presente nella prima chiamata alla funzione
+//  if (htim->Instance == TIM6) {
+//    HAL_IncTick();
+//  }
   /* USER CODE BEGIN Callback 1 */
 		
 	if (htim->Instance == TIM7) {	
@@ -403,99 +396,58 @@ void TIM_callback(TIM_HandleTypeDef *htim)
 		timerRpmStripe = timerRpmStripe + 1;
 		timerDriveMode = timerDriveMode + 1;
 		timerTractionRpm = timerTractionRpm + 1;
-		timerEfiAlive = timerEfiAlive + 1;
+		timerCanTarget = timerCanTarget + 1;
 		timerDCUAlive = timerDCUAlive + 1;
-		timerGCUAlive = timerGCUAlive + 1;
 		timerOkButtonDelay = timerOkButtonDelay + 1;
-		
-		if ( emergencyFlag == 1 ){
-			timerEmergency = timerEmergency + 1;
-			emergencyBlink = 1;
-		}
-		if ( timerEmergency >= EMERGENCY_BLINK_TIME ){
-			emergencyBlink = 0;
-			//timerEmergency = 0;
-			emergencyFlag = 2;
+
+		if ( timerCanTarget >= TIMER_100HZ){
+			timerCanTarget = 0;
+			CAN_targetMessage ();
 		}
 		if ( timerDCUAlive >= DCU_DEAD_TIME ){
 			DCU_is_dead = 1;
 		}
-		if ( timerGCUAlive >= GCU_DEAD_TIME ){
-			GCU_is_dead = 1;
-		}
-		
-		if ( timerSensors >= SENSORS_TIME ){
+		if ( timerSensors >= TIMER_100HZ ){
 			xSemaphoreGiveFromISR( sensorsSemaphoreHandle, &xHigherPriorityTaskWoken );
 			timerSensors = 0;
-			
-			//------------------ Per chiamata in polling a 100Hz quando si è in autocross
-//			if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
-//				flagAutoX = 1;					
-//				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
-//				portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-//			}
-				
 		}
 		if ( timerStartButton >= START_BUTTON_TIME){
 			xSemaphoreGiveFromISR( startButtonSemaphoreHandle, &xHigherPriorityTaskWoken );	
 			timerStartButton = 0;
 		}
-		if ( timerRpmStripe >= RPM_STRIPE_TIME ){
-			
-			//-------------
-			if ( Indicators[DRIVE_MODE].intValore == AUTOX_MODE ){
-				flagAutoX = 1;					
-				xSemaphoreGiveFromISR(okButtonSemaphoreHandle, &xHigherPriorityTaskWoken);
-				portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-			}
-			//--------------	
-			
-			if ( GCU_is_dead == 1	)
-			{
-				CAN_send(SW_CAN_ERROR_GCU_ID, 1, EMPTY, EMPTY, EMPTY, 1);
-			}
-	
+		if ( timerRpmStripe >= TIMER_10HZ ){
 			xSemaphoreGiveFromISR( rpmStripeSemaphoreHandle, &xHigherPriorityTaskWoken );
-			if( Indicators[RPM].intValore > 10000 ) {
-				timerFlash ++;
-				if( timerFlash > 5 ){
-					flag_flash = 0;
-					timerFlash = 0;
-				}else{
-					flag_flash = 1;
-				}
-			}
 			timerRpmStripe = 0;	
 		}
 		if ( timerTractionRpm >= TRACTION_RPM_TIME ){
-			TIM_tractionRpm_send();
 			timerTractionRpm = 0;
 		}
 		if ( timerOkButtonDelay >= OK_BUTTON_BOUNCE_TIME ){
 			okButtonCanBePressed = 1;
 		}
-		if ( timerEfiAlive >= EFI_DEAD_TIME ){
-			 data_efiOff();
-			 timerEfiAlive = 0;
-		}
 		if (TRACTION_save == 1 ){
 			 timerTractionSave =  timerTractionSave + 1;
 		}
-		if (RPM_LIM_save == 1 ){
-			 timerRpmLimiterSave = timerRpmLimiterSave  + 1;
+		if (TV_save == 1 ){
+			 timerTorqueVectoringSave = timerTorqueVectoringSave  + 1;
+		}
+		if (KALMAN_save == 1){
+			I2C_save_Kalman(targetKalman);
+			KALMAN_save = 0;
 		}
 		if (  timerTractionSave >= TRACTION_SAVE_TIME ){
 			TRACTION_save = 0;
 			timerTractionSave = 0;
-			I2C_save_Traction(Indicators[TRACTION_CONTROL].intValore);
+			I2C_save_Traction(Indicators[TC].intValore);
 		}
-		if ( timerRpmLimiterSave >= RPM_LIM_SAVE_TIME ){
-			RPM_LIM_save 	= 0;
-			timerRpmLimiterSave = 0;
-			I2C_save_RpmLimiter(Indicators[RPM_LIM].intValore);
+		if ( timerTorqueVectoringSave >= TV_SAVE_TIME ){
+			TV_save 	= 0;
+			timerTorqueVectoringSave = 0;
+			I2C_save_Torque(Indicators[TV].intValore);
 		}
+		
 		if ( timerDriveMode >= DRIVE_MODE_TIME ){
-			switch ( driveMode ){
+			switch ( Indicators[DRIVE_MODE].intValore ){
 				case SETTINGS_MODE	:
 					xSemaphoreGiveFromISR( settingsModeSemaphoreHandle, &xHigherPriorityTaskWoken );
 					break;

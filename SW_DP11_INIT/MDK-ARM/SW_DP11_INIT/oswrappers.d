@@ -1,4 +1,4 @@
-sw_dp11_init\oswrappers.o: ../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp
+sw_dp11_init\oswrappers.o: ..\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers.cpp
 sw_dp11_init\oswrappers.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp
 sw_dp11_init\oswrappers.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
 sw_dp11_init\oswrappers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

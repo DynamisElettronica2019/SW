@@ -1,5 +1,5 @@
 sw_dp11_init\skidpadview.o: ../touchgfx/gui/src/skidpad_screen/skidpadview.cpp
-sw_dp11_init\skidpadview.o: ../TouchGFX/gui/include/gui/skidpad_screen/SKIDPADView.hpp
+sw_dp11_init\skidpadview.o: ../TouchGFX/gui/include/gui/SKIDPAD_screen/SKIDPADView.hpp
 sw_dp11_init\skidpadview.o: ../TouchGFX/generated/gui_generated/include/gui_generated/skidpad_screen/SKIDPADViewBase.hpp
 sw_dp11_init\skidpadview.o: ../TouchGFX/gui/include/gui/common/FrontendApplication.hpp
 sw_dp11_init\skidpadview.o: ../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp
@@ -105,5 +105,6 @@ sw_dp11_init\skidpadview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qs
 sw_dp11_init\skidpadview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h
 sw_dp11_init\skidpadview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 sw_dp11_init\skidpadview.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
+sw_dp11_init\skidpadview.o: ../Core/Inc/tim.h
 sw_dp11_init\skidpadview.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 sw_dp11_init\skidpadview.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp

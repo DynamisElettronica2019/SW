@@ -1,5 +1,5 @@
-sw_dp11_init\stm32f7touchcontroller.o: ../TouchGFX/target/STM32F7TouchController.cpp
-sw_dp11_init\stm32f7touchcontroller.o: ../TouchGFX/target/STM32F7TouchController.hpp
+sw_dp11_init\stm32f7touchcontroller.o: ..\TouchGFX\target\STM32F7TouchController.cpp
+sw_dp11_init\stm32f7touchcontroller.o: ..\TouchGFX\target\STM32F7TouchController.hpp
 sw_dp11_init\stm32f7touchcontroller.o: ../middlewares/st/touchgfx/touchgfx/framework/include/platform/driver/touch/TouchController.hpp
 sw_dp11_init\stm32f7touchcontroller.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
 sw_dp11_init\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

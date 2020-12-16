@@ -55,7 +55,6 @@ sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/i
 sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 sw_dp11_init\screen1presenter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Image.hpp
-sw_dp11_init\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp
 sw_dp11_init\screen1presenter.o: ../Core/Inc/data.h
 sw_dp11_init\screen1presenter.o: ../Core/Inc/main.h
 sw_dp11_init\screen1presenter.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
